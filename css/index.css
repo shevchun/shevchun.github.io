@@ -1061,7 +1061,8 @@ a, svg {
     -ms-flex: 0 0 9.2rem;
     flex: 0 0 9.2rem;
     max-width: 9.2rem;
-    width: 100%; }
+    width: 100%;
+    padding-right: 2.5rem; }
   .for-whom__text {
     font-size: 1.8rem;
     -webkit-box-flex: 1;
