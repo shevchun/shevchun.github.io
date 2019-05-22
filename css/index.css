@@ -1309,6 +1309,10 @@ a, svg {
   background-attachment: fixed;
   margin-bottom: 12rem; }
 
+.img-box2 {
+  margin-bottom: 5rem;
+  text-align: center; }
+
 .info2 {
   position: relative;
   background: #7DA0B8; }
@@ -1980,11 +1984,13 @@ a, svg {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 5rem;
     margin-bottom: 3.5rem;
     border-radius: 50%;
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out; }
+    .section__item-img img {
+      max-height: 100%; }
   .section__item-title {
     font-family: 'Bebas';
     font-weight: 700;
@@ -2199,6 +2205,9 @@ select {
   position: relative;
   padding-top: 8rem;
   padding-bottom: 8rem; }
+  .text--2 {
+    padding-bottom: 12.7rem;
+    padding-top: 10rem; }
   .text--mb120 {
     margin-bottom: 12rem; }
   .text__box {
@@ -2243,7 +2252,29 @@ select {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-left: -5rem; }
+    margin-left: -5rem;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .text__list--2 {
+      margin-bottom: 4rem;
+      position: relative; }
+      .text__list--2::before {
+        content: '';
+        position: absolute;
+        background: url("../images/decor.svg") center/100% 100% no-repeat;
+        width: 40rem;
+        height: 45.2rem;
+        top: -1rem;
+        left: 50%;
+        margin-left: -20rem; }
+      .text__list--2 .text__list-item {
+        margin-bottom: 8rem; }
+      .text__list--2 .advantages__title {
+        font-size: 2.4rem;
+        margin-bottom: 2.4rem; }
   .text__list-item {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 calc(33.333% - 5rem);
