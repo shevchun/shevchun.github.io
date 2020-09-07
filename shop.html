@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Kegglers">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>Kegglers</title>
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
+  <link rel="preload" href="/fonts/GothamPro-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Medium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Light.woff" as="font" type="font/woff" crossorigin>
+  <link href="css/index.css" rel="stylesheet">
+</head>
+
+
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="header__container">
+      <div class="header__mobile-btn js-mobile-btn"></div>
+      <div class="header__logo">
+        <img src="images/logo.png" width="135" height="34" alt="logo">
+        <a href="#" class="header__logo-link"></a>
+      </div>
+      <div class="header__middle">
+        <div class="header__middle-overlay js-close-mobile-menu"></div>
+        <div class="header__middle-box">
+          <div class="header__middle-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          <a href="#" class="header__catalog-btn">
+            <svg class="header__catalog-btn-icon" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
+            <span class="header__catalog-btn-text">Shop</span>
+          </a>
+          <nav class="header__nav">
+            <ul>
+              <li><a href="#">Kegel balls and Weights</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Dilators</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Dilators Dilators Dilators Dilators Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">Yoni Care</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header__controls">
+        <div class="header__search">
+          <div class="header__search-btn"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></div>
+          <form class="header__search-form">
+            <input type="text" class="header__search-input">
+            <button type="submit" class="header__search-button"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
+          </form>
+        </div>
+        <div class="header__basket">
+          <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+          <span class="header__basket-count">3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__popup">
+    <div class="container">
+      <div class="header__popup-container">
+        <div class="header__popup-box">
+          <div class="header__popup-head">
+            <div class="header__popup-head-left">
+              <div class="header__popup-head-icon"></div>
+              <div class="header__popup-head-text">ITEM ADDED TO BAG</div>
+            </div>
+            <div class="header__popup-close"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          </div>
+          <div class="header__popup-holder">
+            <div class="basket-list">
+              <div class="basket-item">
+                <a href="#" class="basket-item__img"><img src="data/basket.jpg" width="150" height="150" alt="basket"></a>
+                <div class="basket-item__box">
+                  <a href="#" class="basket-item__title">Lapis Lazuli Yoni Egg</a>
+                  <div class="basket-item__price">$18,99</div>
+                  <div class="basket-item__descriptions">+ 1 Extra Options</div>
+                </div>
+                <div class="basket-item__remove"><svg width="15" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#remove"></use></svg></div>
+              </div>
+            </div>
+            <div class="header__popup-controls">
+              <div class="header__btn-cart header__popup-btn btn-2">VIEW CART</div>
+              <div class="header__btn-checkout header__popup-btn btn-1">CHECKOUT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div class="wrapper">
+    <div class="shop">
+      <div class="shop__head">
+        <!-- <svg class="shop__decor" width="709" height="220"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor8"></use></svg> -->
+        <div class="container">
+          <div class="shop__box">
+            <div class="shop__left">
+              <div class="shop__row">
+                <a href="#" class="main-products__title-box">
+                  <div class="main-products__title-img main-products__title-img--small"><img src="data/Ben-Wa-Balls-icon.svg" width="54" height="54" alt="Ben-Wa-Balls-icon"></div>
+                  <div class="main-products__title">Ben Wa Balls</div>
+                </a>
+              </div>
+              <ul class="breadcrumb">
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Ben Wa Balls</a></li>
+                <li><span>Large ben wa balls</span></li>
+              </ul>
+            </div>
+            <div class="shop__text">
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shop__filter-mobile-box">
+        <div class="shop__filter-mobile-btn btn-1 js-mobile-filter">Фильтр</div>
+      </div>
+      <div class="shop__container">
+        <div class="shop__filter">
+          <div class="shop__filter-overlay js-close-filter"></div>
+          <div class="shop__filter-box">
+            <div class="shop__filter-close js-close-filter"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+            connect filter plugin and paste here
+          </div>
+        </div>
+        <div class="shop__holder">
+          <div class="shop__holder-head">
+            <div class="shop__holder-head-text">Showing 1-12 of 84 Results</div>
+            <div class="shop__select">
+              <div class="shop__select-title">Sort:</div>
+              <div class="shop__select-holder">
+                <div class="select2-parent">
+                  <select class="init-select2">
+                    <option value="By Popularity">By Popularity</option>
+                    <option value="По убыванию цены">Descending price</option>
+                    <option value="По возрастанию цены">Ascending price</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-list">
+            <div class="product">
+              <div class="product__label product__label--sale">SALE</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price-new">$15,99</div>
+                <div class="product__price-old">$26,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product product--out-stock">
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__out-stock">Out of Stock</div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product__label product__label--sale">SALE</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price-new">$15,99</div>
+                <div class="product__price-old">$26,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product product--out-stock">
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__out-stock">Out of Stock</div>
+              </div>
+            </div> 
+            <div class="product">
+              <div class="product__label product__label--sale">SALE</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price-new">$15,99</div>
+                <div class="product__price-old">$26,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product product--out-stock">
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__out-stock">Out of Stock</div>
+              </div>
+            </div> 
+            <div class="product">
+              <div class="product__label product__label--sale">SALE</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price-new">$15,99</div>
+                <div class="product__price-old">$26,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product product--out-stock">
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__out-stock">Out of Stock</div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product__label product__label--sale">SALE</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price-new">$15,99</div>
+                <div class="product__price-old">$26,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product product--out-stock">
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__out-stock">Out of Stock</div>
+              </div>
+            </div> 
+            <div class="product">
+              <div class="product__label product__label--sale">SALE</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price-new">$15,99</div>
+                <div class="product__price-old">$26,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product product--out-stock">
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__out-stock">Out of Stock</div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product__label product__label--sale">SALE</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price-new">$15,99</div>
+                <div class="product__price-old">$26,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product product--out-stock">
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__out-stock">Out of Stock</div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product__label product__label--sale">SALE</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price-new">$15,99</div>
+                <div class="product__price-old">$26,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+            <div class="product product--out-stock">
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__out-stock">Out of Stock</div>
+              </div>
+            </div>    
+          </div>
+          <div class="download-btn">
+            <div class="btn-1">
+              <svg width="18" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#load"></use></svg>
+              LOAD MORE
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="featured-products featured-products--bg">
+      <div class="container">
+        <div class="featured-products__title title">Featured Products</div>
+        <div class="featured-products__slider">
+          <div class="featured-products__item">
+            <div class="product">
+              <div class="product__label product__label--sale">SALE</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price-new">$15,99</div>
+                <div class="product__price-old">$26,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-products__item">
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-products__item">
+            <div class="product">
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price-new">$15,99</div>
+                <div class="product__price-old">$26,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-products__item">
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-products__item">
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <div class="content">
+      <div class="container">
+        <div class="content__box text-content">
+          <h1>The Divine Feminine Within:</h1>
+          <p>The Hindu tradition refers to a woman’s genitalia as the yoni. The Daoist tradition uses other terms for female genitalia, such as the <a href="#">golden lotus</a> and the gate of paradise.</p>
+          <p>As you can see, both traditions revere the female sexual organs. This perspective is quite different from that of the Western world. We can learn a great deal from these ancient traditions.</p>
+          &nbsp;
+          <h2 class="line">The Sacred Energy of the Yoni</h2>
+          <p>For most women, this perspective is positive and necessary. A woman’s sexual organs are powerful, and, indeed, <b>sacred</b>. They deserve our respect, but unfortunately, are often abused by modern society.</p>
+          <p>The word “yoni” conjures up <b>reverence,</b> unlike some of the more derogatory, modern terms used to describe the female sexual organs. We should all practice this kind of <a href="#">sacred regard</a> for female sexuality. It is a much more awe-inspiring way to experience sexuality and life itself.</p>
+          <p>The yoni is also sometimes called the <b>pindika.</b> In some yogic belief systems, the pindika is symbolic of <b>Shakti,</b> the Hindu goddess of <b>feminine energy</b>. Her male counterpart is Shiva, the Hindu god of masculine energy. Together, they represent the divine feminine and masculine energies that are said to reside within us all.</p>
+          &nbsp;
+          <h2 class="line">Where Is the Yoni Mentioned?</h2>
+          <span class="bg">
+            <p>The yoni is included in several Hindu traditions:</p>
+            <ul>
+              <li><b>Kashmir Shaivism</b>, a major Hindu tradition</li>
+              <li><b>Kaula</b>, an <b>esoteric, Hindu practice of spiritual connectedness</b></li>
+              <li><b>Tantra</b>, the Hindu art of <b>sacred sexuality</b></li>
+              <li>The <b>Rig Veda</b>, a sacred Hindu text</li>
+            </ul>
+          </span>
+          &nbsp;
+          <p>According to scholars, the word “yoni” first appears in the <a href="#">Rig Veda</a>. The Rig Veda is a Vedic text, which birthed the yoga tradition.</p>
+          <p>The yoni can be a spiritual metaphor for life, namely <b>regeneration, rebirth, and the creative powers of the divine feminine.</b> It is also symbolic of <b>Mother Nature</b> and her four distinct seasons, in which there is death and rebirth.</p>
+          <p>Women can become empowered when they get in touch with, and give attention to, their yoni. For this reason, the tradition known as tantra is becoming more widespread. It is time for the divine feminine to rise up!</p>
+        </div>
+      </div>
+    </div>
+    <div class="subscribe-box">
+      <svg class="subscribe-box__decor subscribe-box__decor--left" width="703" height="266"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#subscribe1"></use></svg>
+      <svg class="subscribe-box__decor subscribe-box__decor--right" width="638" height="315"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#subscribe2"></use></svg>
+      <div class="container">
+        <div class="subscribe-box__head">
+          <div class="subscribe-box__title">Stay tuned for more yoni insights!</div>
+          <div class="subscribe-box__right">
+            <div class="subscribe-box__descriptions">Subscribe to our newsletter for more news about yoni and promotions for our products.</div>
+            <div class="subscribe-box__attention">We don’t send spam emails.</div>
+          </div>
+        </div>
+        <form class="subscribe-box__form">
+          <div class="subscribe-box__input-box">
+            <input type="email" class="subscribe-box__input" placeholder="Enter email">
+            <p class="error">error</p>
+          </div>
+          <div class="subscribe-box__checkbox">
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input">
+              <span class="checkbox__text">I agree to <a href="#" target="_blank" rel="nofollow">Terms & Conditions</a> and <a href="#" target="_blank" rel="nofollow">Privacy Policy</a></span>
+            </label>
+          </div>
+          <div class="subscribe-box__form-btn-box">
+            <button type="submit" class="btn-1">SUBSCRIBE</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__container">
+      <div class="footer__logo-box">
+        <div class="footer__logo">
+          <img src="images/logo.png" width="135" height="34" alt="logo">
+          <a href="#" class="footer__logo-link"></a>
+        </div>
+        <div class="footer__logo-descriptions">© MyKegelTools 2019. <br> All product names, logos, and brands are property of their respective owners.</div>
+      </div>
+      <nav class="footer__nav">
+        <div class="footer__nav-cell">
+          <div class="footer__nav-title">Useful Pages</div>
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Shipping and Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__nav-cell">
+          <div class="footer__nav-title">Legal Pages</div>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Cookies Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="footer__subscribe">
+        <div class="footer__subscribe-title">Join our mailing list</div>
+        <form class="footer__subscribe-form">
+          <input type="email" class="footer__subscribe-input" placeholder="Enter email">
+          <button type="submit" class="footer__subscribe-btn"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#letter"></use></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="btn-top js-top-scroll">
+    <svg class="btn-top__arrow" width="10" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#top"></use></svg>
+    <svg class="btn-top__bg" width="1920" height="40" viewBox="0 0 1920 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M933.5 11C943.1 1.4 953.5 -1.56795e-05 960 1.31701e-10C966.5 -1.56795e-05 976.9 1.4 986.5 11C987.677 12.1766 988.762 13.286 989.783 14.3299C999.167 23.9217 1003.15 27.9909 1022.93 28H1920V40H0V28H897.067C916.852 27.9909 920.833 23.9217 930.217 14.3299C931.238 13.286 932.323 12.1766 933.5 11Z" fill="url(#paint0_linear)"/>
+      <defs>
+      <linearGradient id="paint0_linear" x1="1920" y1="39.9902" x2="0" y2="39.9902" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BA58E1"/>
+      <stop offset="1" stop-color="#6F49BC"/>
+      </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</footer>
+  <script src="/js/app.js"></script>
+
+</body>
+
+</html>

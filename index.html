@@ -12,6 +12,10 @@
   <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
   <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
+  <link rel="preload" href="/fonts/GothamPro-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Medium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Light.woff" as="font" type="font/woff" crossorigin>
   <link href="css/index.css" rel="stylesheet">
 </head>
 
@@ -20,41 +24,46 @@
   <header class="header">
   <div class="container">
     <div class="header__container">
+      <div class="header__mobile-btn js-mobile-btn"></div>
       <div class="header__logo">
         <img src="images/logo.png" width="135" height="34" alt="logo">
         <a href="#" class="header__logo-link"></a>
       </div>
       <div class="header__middle">
-        <a href="#" class="header__catalog-btn">
-          <svg class="header__catalog-btn-icon" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
-          <span class="header__catalog-btn-text">Shop</span>
-        </a>
-        <nav class="header__nav">
-          <ul>
-            <li><a href="#">Kegel balls and Weights</a></li>
-            <li class="menu-item-has-children">
-              <a href="#">Dilators</a>
-              <ul class="sub-menu">
-                <li><a href="#">Dilators Dilators Dilators Dilators Dilators</a></li>
-                <li><a href="#">Dilators</a></li>
-                <li><a href="#">Dilators</a></li>
-                <li><a href="#">Dilators</a></li>
-                <li><a href="#">Dilators</a></li>
-              </ul>
-            </li>
-            <li class="menu-item-has-children">
-              <a href="#">Yoni Care</a>
-              <ul class="sub-menu">
-                <li><a href="#">Yoni Care</a></li>
-                <li><a href="#">Yoni Care</a></li>
-                <li><a href="#">Yoni Care</a></li>
-                <li><a href="#">Yoni Care</a></li>
-                <li><a href="#">Yoni Care</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </nav>
+        <div class="header__middle-overlay js-close-mobile-menu"></div>
+        <div class="header__middle-box">
+          <div class="header__middle-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          <a href="#" class="header__catalog-btn">
+            <svg class="header__catalog-btn-icon" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
+            <span class="header__catalog-btn-text">Shop</span>
+          </a>
+          <nav class="header__nav">
+            <ul>
+              <li><a href="#">Kegel balls and Weights</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Dilators</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Dilators Dilators Dilators Dilators Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">Yoni Care</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
       <div class="header__controls">
         <div class="header__search">
@@ -210,10 +219,10 @@
           <img class="main-products__row-decor" src="data/Ben-Wa-Balls-Illustration.svg" alt="Ben-Wa-Balls-Illustration">
           <div class="main-products__box">
             <div class="main-products__info">
-              <div class="main-products__title-box">
+              <a href="#" class="main-products__title-box">
                 <div class="main-products__title-img"><img src="data/Ben-Wa-Balls-icon.svg" width="75" height="75" alt="Ben-Wa-Balls-icon"></div>
                 <div class="main-products__title">Ben Wa Balls</div>
-              </div>
+              </a>
               <div class="main-products__text text-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.</p>
               </div>
@@ -257,10 +266,10 @@
           <img class="main-products__row-decor" src="data/Yoni-Eggs-Illustration.svg" alt="Yoni-Eggs-Illustration">
           <div class="main-products__box">
             <div class="main-products__info">
-              <div class="main-products__title-box">
+              <a href="#" class="main-products__title-box">
                 <div class="main-products__title-img"><img src="data/Yoni-Eggs-icon.svg" width="75" height="75" alt="Yoni-Eggs-icon"></div>
                 <div class="main-products__title">Yoni Eggs</div>
-              </div>
+              </a>
               <div class="main-products__text text-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.</p>
               </div>
@@ -304,10 +313,10 @@
           <img class="main-products__row-decor" src="data/Yoni-Wands-Illustration.svg" alt="Yoni-Wands-Illustration">
           <div class="main-products__box">
             <div class="main-products__info">
-              <div class="main-products__title-box">
+              <a href="#" class="main-products__title-box">
                 <div class="main-products__title-img"><img src="data/Yoni-Wands-icon.svg" width="75" height="75" alt="Yoni-Eggs-icon"></div>
                 <div class="main-products__title">Yoni Wands</div>
-              </div>
+              </a>
               <div class="main-products__text text-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.</p>
               </div>
@@ -351,10 +360,10 @@
           <img class="main-products__row-decor" src="data/Yoni-Care-Illustration.svg" alt="Yoni-Care-Illustration">
           <div class="main-products__box">
             <div class="main-products__info">
-              <div class="main-products__title-box">
+              <a href="#" class="main-products__title-box">
                 <div class="main-products__title-img"><img src="data/Yoni-Care-icon.svg" width="75" height="75" alt="Yoni-Eggs-icon"></div>
                 <div class="main-products__title">Yoni Care</div>
-              </div>
+              </a>
               <div class="main-products__text text-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.</p>
               </div>
@@ -398,34 +407,34 @@
       <div class="container">
         <div class="resources__title title">Resources</div>
         <div class="resources__list">
-          <div class="resources__item">
+          <a href="#" class="resources__item">
             <!-- <div class="resources__item-decor"><svg width="299" height="283"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor5"></use></svg></div> -->
-            <div class="resources__item-img"><img src="data/Pelvic-Floor-Muscles-Explained.jpg" width="260" height="320" alt="Pelvic Floor Muscles Explained"></div>
-            <div class="resources__item-box">
-              <div class="resources__item-title">Pelvic Floor Muscles Explained</div>
-              <div class="resources__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut.</div>
-              <div class="resources__item-btn">
-                <a href="#" class="btn-5">
+            <span class="resources__item-img"><img src="data/Pelvic-Floor-Muscles-Explained.jpg" width="260" height="320" alt="Pelvic Floor Muscles Explained"></span>
+            <span class="resources__item-box">
+              <span class="resources__item-title">Pelvic Floor Muscles Explained</span>
+              <span class="resources__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut.</span>
+              <span class="resources__item-btn">
+                <span class="btn-5">
                   Read more
                   <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="resources__item">
+                </span>
+              </span>
+            </span>
+          </a>
+          <a href="#" class="resources__item">
             <!-- <div class="resources__item-decor"><svg width="299" height="283"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor5"></use></svg></div> -->
-            <div class="resources__item-img"><img src="data/Discovering-Nurturing-Your-Yoni.jpg" width="260" height="320" alt="Discovering-Nurturing-Your-Yoni"></div>
-            <div class="resources__item-box">
-              <div class="resources__item-title">Discovering & Nurturing Your Yoni</div>
-              <div class="resources__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut.</div>
-              <div class="resources__item-btn">
-                <a href="#" class="btn-5">
+            <span class="resources__item-img"><img src="data/Discovering-Nurturing-Your-Yoni.jpg" width="260" height="320" alt="Discovering-Nurturing-Your-Yoni"></span>
+            <span class="resources__item-box">
+              <span class="resources__item-title">Discovering & Nurturing Your Yoni</span>
+              <span class="resources__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut.</span>
+              <span class="resources__item-btn">
+                <div class="btn-5">
                   Read more
                   <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-                </a>
-              </div>
-            </div>
-          </div>
+                </div>
+              </span>
+            </span>
+          </a>
         </div>
       </div>
     </div>
