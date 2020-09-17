@@ -136,10 +136,14 @@
         </div>
         <div class="cart__box">
           <div class="checkout__box">
+            <!-- if the step is passed successfully then on "checkout__step" add class "done"-->
             <div class="checkout__step active">
               <div class="checkout__step-head">
-                <div class="checkout__step-count">1.</div>
-                <div class="checkout__step-title">Shipping Information</div>
+                <div class="checkout__step-head-box">
+                  <div class="checkout__step-count">1.</div>
+                  <div class="checkout__step-title">Shipping Information</div>
+                </div>
+                <div class="checkout__edit">EDIT</div>
               </div>
               <form class="checkout__form">
                 <div class="checkout__form-row">
@@ -213,6 +217,118 @@
                 </div>
                 <button class="checkout__form-btn btn-1">CONTINUE</button>
               </form>
+              <div class="checkout__info">
+                <div class="checkout__info-row">
+                  <div class="checkout__info-cell">
+                    <div class="checkout__info-icon"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#man"></use></svg></div>
+                    <div class="checkout__info-text">Warner Heinsenberg</div>
+                  </div>
+                  <div class="checkout__info-cell">
+                    <div class="checkout__info-icon checkout__info-icon--contact"><svg width="16" height="17"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#tel"></use></svg></div>
+                    <div class="checkout__info-contact">078 5033 4575</div>
+                  </div>
+                  <div class="checkout__info-cell">
+                    <div class="checkout__info-icon checkout__info-icon--contact"><svg width="16" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mail"></use></svg></div>
+                    <div class="checkout__info-contact">wheisen@gmail.com</div>
+                  </div>
+                </div>
+                <div class="checkout__info-row">
+                  <div class="checkout__info-cell">
+                    <div class="checkout__info-icon"><svg width="13" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#pin"></use></svg></div>
+                    <address class="checkout__info-text">114  Kendell Street, NR15 3PL Shelton, Fairfield United Kingdom</address>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- to show the step you need to "checkout__step" add class "active" -->
+            <!-- in order to hide the step, you need to remove the class "active"-->
+            <div class="checkout__step active">
+              <div class="checkout__step-head">
+                <div class="checkout__step-head-box">
+                  <div class="checkout__step-count">2.</div>
+                  <div class="checkout__step-title">Payment & Billing</div>
+                </div>
+              </div>
+              <form class="checkout__form-2">
+                <!-- <div class="checkout__address">
+                  <div class="checkout__address-title">Billing Address</div>
+                  <div class="checkout__address-box">
+                    <div class="checkout__address-value">Warner Heisenberg <br> 114  Kendell Street, NR15 3PL <br>Shelton, Fairfield <br> United Kingdom <br> 078 5033 4575</div>
+                    <div class="checkout__address-btns">
+                      <div class="cart__promo-remove cart__promo-remove--mr30">
+                        <svg width="10" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg>
+                        Remove
+                      </div>
+                      <div class="checkout__edit">EDIT</div>
+                    </div>
+                  </div>
+                </div> -->
+                <div class="checkout__pay">
+                  <div class="checkout__pay-row">
+                    <div class="checkout__pay-title">Payment Options</div>
+                    <div class="checkout__pay-cell">
+                      <div class="checkout__pay-item">
+                        <label class="checkbox">
+                          <input type="radio" name="radio1" class="checkbox__input">
+                          <span class="checkbox__text checkbox__text--bold">Paypal</span>
+                        </label>
+                      </div>
+                      <div class="checkout__pay-item">
+                        <label class="checkbox">
+                          <input type="radio" name="radio1" checked class="checkbox__input">
+                          <span class="checkbox__text checkbox__text--bold">Visa / Mastercard</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkout__pay-box">
+                    <div class="checkout__pay-input checkout__pay-input--330">
+                      <div class="js-input-parent">
+                        <span class="input-label input-label--require">Card Number</span>
+                        <input type="number" class="input-style js-input">
+                      </div>
+                    </div>
+                    <div class="checkout__pay-input">
+                      <div class="js-input-parent">
+                        <span class="input-label input-label--require">MM / YY</span>
+                        <input type="text" class="input-style js-input">
+                      </div>
+                    </div>
+                    <div class="checkout__pay-input">
+                      <div class="js-input-parent">
+                        <span class="input-label input-label--require">CVV</span>
+                        <input type="text" class="input-style js-input">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkout__pay-box">
+                    <div class="checkout__pay-input">
+                      <div class="js-input-parent">
+                        <span class="input-label input-label--require">Name on Card</span>
+                        <input type="text" class="input-style js-input">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkout__pay-btn-box">
+                    <div class="checkout__pay-mobile">
+                      <div class="checkout__pay-mobile-all">6 PRODUCTS IN CART</div>
+                      <div class="checkout__pay-total">
+                        <div class="checkout__pay-total-text">Estimated Total:</div>
+                        <div class="checkout__pay-total-value">$78,73</div>
+                      </div>
+                    </div>
+                    <button type="submit" class="checkout__pay-btn btn-1">PAY & CONFIRM ORDER</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="checkout__step">
+              <div class="checkout__step-head">
+                <div class="checkout__step-head-box">
+                  <div class="checkout__step-count">3.</div>
+                  <div class="checkout__step-title">Order Details</div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="cart__aside">
@@ -256,94 +372,6 @@
         </div>
       </div>
     </div>
-    <div class="featured-products">
-      <div class="container">
-        <div class="featured-products__title title">Customers Also Purchased</div>
-        <div class="featured-products__slider">
-          <div class="featured-products__item">
-            <div class="product">
-              <div class="product__label product__label--sale">SALE</div>
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price-new">$15,99</div>
-                <div class="product__price-old">$26,99</div>
-              </div>
-              <div class="product__btn-box">
-                <div class="product__btn btn-4">
-                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-                  <span>Buy now</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="featured-products__item">
-            <div class="product">
-              <div class="product__label product__label--new">new</div>
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price">$15,99</div>
-              </div>
-              <div class="product__btn-box">
-                <div class="product__btn btn-4">
-                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-                  <span>Buy now</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="featured-products__item">
-            <div class="product">
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price-new">$15,99</div>
-                <div class="product__price-old">$26,99</div>
-              </div>
-              <div class="product__btn-box">
-                <div class="product__btn btn-4">
-                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-                  <span>Buy now</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="featured-products__item">
-            <div class="product">
-              <div class="product__label product__label--new">new</div>
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price">$15,99</div>
-              </div>
-              <div class="product__btn-box">
-                <div class="product__btn btn-4">
-                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-                  <span>Buy now</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="featured-products__item">
-            <div class="product">
-              <div class="product__label product__label--new">new</div>
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price">$15,99</div>
-              </div>
-              <div class="product__btn-box">
-                <div class="product__btn btn-4">
-                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-                  <span>Buy now</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>    
   </div>
   <footer class="footer">
   <div class="container">
