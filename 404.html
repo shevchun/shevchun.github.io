@@ -6,246 +6,176 @@
   <meta name="description" content="Kegglers">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>Kegglers</title>
+  <title>Fitness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
   <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
-  <link rel="preload" href="/fonts/GothamPro-Bold.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/GothamPro-Medium.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/GothamPro.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/GothamPro-Light.woff" as="font" type="font/woff" crossorigin>
   <link href="css/index.css" rel="stylesheet">
 </head>
 
 
 <body>
   <header class="header">
-  <div class="container">
-    <div class="header__container">
-      <div class="header__mobile-btn js-mobile-btn"></div>
-      <div class="header__logo">
-        <img src="images/logo.png" width="135" height="34" alt="logo">
-        <a href="#" class="header__logo-link"></a>
-      </div>
-      <div class="header__middle">
-        <div class="header__middle-overlay js-close-mobile-menu"></div>
-        <div class="header__middle-box">
-          <div class="header__middle-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-          <a href="#" class="header__catalog-btn">
-            <svg class="header__catalog-btn-icon" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
-            <span class="header__catalog-btn-text">Shop</span>
+  <div class="header__top">
+    <div class="header__top-cell">Zufriedenheitsgarantie</div>
+    <div class="header__top-cell">100% natürlich</div>
+    <div class="header__top-cell">Freie Lieferung ab €75,-</div>
+    <a href="tel:+490251/9811565132" class="header__top-cell header__top-cell--tel">24/7 Hotline: +49 (0)251/981 156 51 32</a>
+  </div>
+  <div class="header__bottom">
+    <div class="container">
+      <div class="header__bottom-box">
+        <div class="header__mobile-menu js-mobile-btn">
+          <div class="header__mobile-line"></div>
+          <div class="header__mobile-line"></div>
+          <div class="header__mobile-line"></div>
+        </div>
+        <nav class="header__nav">
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Inhalte</a></li>
+            <li><a href="#">Magazin</a></li>
+          </ul>
+        </nav>
+        <div class="header__logo">
+          <img src="images/logo.png" width="101" height="78" alt="logo">
+          <a href="#" class="header__logo-link"></a>
+        </div>
+        <div class="header__controls">
+          <div class="header__search">
+            <div class="header__btn header__btn--search">
+              <span class="header__btn-icon"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></span>
+              <span class="header__btn-text">Suche</span>
+            </div>
+
+          </div>
+          <a href="#" class="header__btn header__btn--account">
+            <span class="header__btn-icon"><svg width="20" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#user"></use></svg></span>
+            <span class="header__btn-text">Anmelden</span>
           </a>
-          <nav class="header__nav">
-            <ul>
-              <li><a href="#">Kegel balls and Weights</a></li>
-              <li class="menu-item-has-children">
-                <a href="#">Dilators</a>
-                <ul class="sub-menu">
-                  <li><a href="#">Dilators Dilators Dilators Dilators Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                </ul>
-              </li>
-              <li class="menu-item-has-children">
-                <a href="#">Yoni Care</a>
-                <ul class="sub-menu">
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="header__controls">
-        <div class="header__search">
-          <div class="header__search-btn"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></div>
-          <form class="header__search-form">
-            <input type="text" class="header__search-input">
-            <button type="submit" class="header__search-button"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
-          </form>
-        </div>
-        <div class="header__basket">
-          <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-          <span class="header__basket-count">3</span>
+          <div class="header__btn header__btn--basket">
+            <span class="header__btn-icon"><svg width="24" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg></span>
+            <span class="header__btn-text">0 Artikel</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="header__popup">
-    <div class="container">
-      <div class="header__popup-container">
-        <div class="header__popup-box">
-          <div class="header__popup-head">
-            <div class="header__popup-head-left">
-              <div class="header__popup-head-icon"></div>
-              <div class="header__popup-head-text">ITEM ADDED TO BAG</div>
-            </div>
-            <div class="header__popup-close"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-          </div>
-          <div class="header__popup-holder">
-            <div class="basket-list">
-              <div class="basket-item">
-                <a href="#" class="basket-item__img"><img src="data/basket.jpg" width="150" height="150" alt="basket"></a>
-                <div class="basket-item__box">
-                  <a href="#" class="basket-item__title">Lapis Lazuli Yoni Egg</a>
-                  <div class="basket-item__price">$18,99</div>
-                  <div class="basket-item__descriptions">+ 1 Extra Options</div>
-                </div>
-                <div class="basket-item__remove"><svg width="15" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#remove"></use></svg></div>
-              </div>
-            </div>
-            <div class="header__popup-controls">
-              <div class="header__btn-cart header__popup-btn btn-2">VIEW CART</div>
-              <div class="header__btn-checkout header__popup-btn btn-1">CHECKOUT</div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="header__mobile">
+    <div class="header__mobile-overlay js-close-mobile-menu"></div>
+    <div class="header__mobile-box">
+      <div class="header__mobile-close js-close-mobile-menu"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
     </div>
   </div>
 </header>
   <div class="wrapper">
-    <div class="error-page main">
-      <img class="error-page__decor1" src="data/error-decor2.png" alt="error-decor2">
-      <img class="error-page__decor2" src="data/error-decor1.png" alt="error-decor1">
+    <div class="first-screen">
+      <img src="data/first-screen.jpg" width="1920" height="491" alt="first-screen-img" class="first-screen__img">
       <div class="container">
-        <div class="error-page__title title title--fz40">404 Error</div>
-        <div class="error-page__box">
-          <div class="error-page__img">
-            <img src="data/error.svg" width="400" height="352" alt=".">
-          </div>
-          <div class="error-page__info">
-            <div class="error-page__head">
-              <div class="error-page__head-text">Oops!</div>
-              <div class="error-page__head-descriptions">Page not found.</div>
-            </div>
-            <div class="error-page__text">The page might be no longer available or was moved to another link, <a href="#">contact us</a> if you need assistance.</div>
-            <form class="error-page__form js-input-parent">
-              <span class="input-label">What are you looking for?</span>
-              <input type="text" class="error-page__form-input input-style js-input">
-              <button type="submit" class="error-page__form-btn"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
-            </form>
-            <div class="error-page__btns">
-              <a href="#" class="btn-1 error-page__btn">BROWSE SHOP</a>
-              <a href="#" class="btn-7 error-page__btn">HOME</a>
-            </div>
+        <div class="first-screen__holder">
+          <div class="first-screen__error">404</div>
+          <div class="first-screen__error-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </div>
+          <div class="first-screen__btn">
+            <a href="#" class="btn">Zu unseren Produkten</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="articles">
-      <div class="container">
-        <div class="articles__title title">Latest Articles</div>
-        <div class="articles__list">
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Benefits-of-Vaginal-Weightlifting.jpg" width="280" height="210" alt="Benefits-of-Vaginal-Weightlifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <a href="#" class="article__title" title="Benefits of Vaginal Weightlifting">Benefits of Vaginal Weightlifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-            <a href="#" class="article__btn btn-5 btn-5--purple">
-              Read more
-              <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-            </a>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/7-Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="280" height="210" alt="7-Reasons-to-try-Vaginal-Weight-Lifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-            <a href="#" class="article__btn btn-5 btn-5--purple">
-              Read more
-              <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-            </a>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Vaginal-Weightlifting.jpg" width="280" height="210" alt="Vaginal-Weightlifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <a href="#" class="article__title" title="Vaginal Weightlifting – The Ultimate Kegel Exercise">Vaginal Weightlifting – The Ultimate Kegel Exercise</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-            <a href="#" class="article__btn btn-5 btn-5--purple">
-              Read more
-              <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-            </a>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Vaginal-Weightlifting2.jpg" width="280" height="210" alt="Vaginal-Weightlifting2">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <a href="#" class="article__title" title="Vaginal Weightlifting – The Ultimate Kegel Exercise">Vaginal Weightlifting – The Ultimate Kegel Exercise</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-            <a href="#" class="article__btn btn-5 btn-5--purple">
-              Read more
-              <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>      
   </div>
   <footer class="footer">
   <div class="container">
-    <div class="footer__container">
-      <div class="footer__logo-box">
-        <div class="footer__logo">
-          <img src="images/logo.png" width="135" height="34" alt="logo">
-          <a href="#" class="footer__logo-link"></a>
-        </div>
-        <div class="footer__logo-descriptions">© MyKegelTools 2019. <br> All product names, logos, and brands are property of their respective owners.</div>
-      </div>
+    <div class="footer__top">
       <nav class="footer__nav">
-        <div class="footer__nav-cell">
-          <div class="footer__nav-title">Useful Pages</div>
-          <ul>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Shipping and Returns</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer__nav-cell">
-          <div class="footer__nav-title">Legal Pages</div>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms and Conditions</a></li>
-            <li><a href="#">Cookies Policy</a></li>
-          </ul>
-        </div>
+        <ul>
+          <li>
+            <a href="#">Shop</a>
+            <ul>
+              <li><a href="#">Tribulus Tereestris</a></li>
+              <li><a href="#">Roter Panax Ginseng</a></li>
+              <li><a href="#">Ashwagandha</a></li>
+              <li><a href="#">Nattokinase</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Support</a>
+            <ul>
+              <li><a href="#">Kontakt</a></li>
+              <li><a href="#">Zahlung & Versand</a></li>
+              <li><a href="#">Garantie</a></li>
+              <li><a href="#">Datenschutz</a></li>
+              <li><a href="#">Widerruf</a></li>
+              <li><a href="#">AGBs</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Brand</a>
+            <ul>
+              <li><a href="#">Über Fitness Vital</a></li>
+              <li><a href="#">Magazin</a></li>
+              <li><a href="#">Ashwagandha</a></li>
+              <li><a href="#">Unsere Partner</a></li>
+              <li><a href="#">Jobs</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Mehr</a>
+            <ul>
+              <li><a href="#">Impressum</a></li>
+              <li><a href="#">B2B/Affiliate</a></li>
+              <li><a href="#">Mikro Stipendium</a></li>
+              <li><a href="#">Datenschutz</a></li>
+            </ul>
+          </li>
+        </ul>
       </nav>
-      <div class="footer__subscribe">
-        <div class="footer__subscribe-title">Join our mailing list</div>
-        <form class="footer__subscribe-form">
-          <input type="email" class="footer__subscribe-input" placeholder="Enter email">
-          <button type="submit" class="footer__subscribe-btn"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#letter"></use></svg></button>
+      <div class="footer__contacts">
+        <div class="footer__contacts-title">Newsletter</div>
+        <div class="footer__contacts-descriptions">Für unseren Newsletter anmelden und 10% Rabatt auf deine erste Bestellung erhalten.</div>
+        <form class="footer__form">
+          <input type="email" class="footer__form-input" placeholder="Deine E-Mail-Adresse">
+          <button type="submit" class="footer__form-btn">Anmelden</button>
+          <p class="error">error</p>
         </form>
+        <div class="footer__social">
+          <div class="footer__social-title">Folge uns</div>
+          <ul class="footer__social-list">
+            <li><a href="#" target="_blank" rel="nofollow">Instagram</a></li>
+            <li><a href="#" target="_blank" rel="nofollow">Facebook</a></li>
+            <li><a href="#" target="_blank" rel="nofollow">Pinterest</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="btn-top js-top-scroll">
-    <svg class="btn-top__arrow" width="10" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#top"></use></svg>
-    <svg class="btn-top__bg" width="1920" height="40" viewBox="0 0 1920 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M933.5 11C943.1 1.4 953.5 -1.56795e-05 960 1.31701e-10C966.5 -1.56795e-05 976.9 1.4 986.5 11C987.677 12.1766 988.762 13.286 989.783 14.3299C999.167 23.9217 1003.15 27.9909 1022.93 28H1920V40H0V28H897.067C916.852 27.9909 920.833 23.9217 930.217 14.3299C931.238 13.286 932.323 12.1766 933.5 11Z" fill="url(#paint0_linear)"/>
-      <defs>
-      <linearGradient id="paint0_linear" x1="1920" y1="39.9902" x2="0" y2="39.9902" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#BA58E1"/>
-      <stop offset="1" stop-color="#6F49BC"/>
-      </linearGradient>
-      </defs>
-    </svg>
+    <div class="footer__bottom">
+      <div class="footer__bottom-cell">
+        <div class="footer__bottom-title">Schnelle Lieferung</div>
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/dhl.svg" width="94" height="30" alt="Schnelle Lieferung"></a></li>
+        </ul>
+      </div>
+      <div class="footer__bottom-cell">
+        <div class="footer__bottom-title">Sicher bezahlen mit</div>
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/visa.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/master.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/pp.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/sofort.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/rech.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/vorkasse.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+        </ul>
+      </div>
+      <div class="footer__bottom-cell">
+        <div class="footer__bottom-title">Zertifizierter Onlineshop</div>
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/ssl.jpg" width="45" height="45" alt="Zertifizierter Onlineshop"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/e.jpg" width="51" height="51" alt="Zertifizierter Onlineshop"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/tage.jpg" width="44" height="44" alt="Zertifizierter Onlineshop"></a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </footer>
   <script src="/js/app.js"></script>

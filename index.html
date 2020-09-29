@@ -6,133 +6,321 @@
   <meta name="description" content="Kegglers">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>Kegglers</title>
+  <title>Fitness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
   <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
-  <link rel="preload" href="/fonts/GothamPro-Bold.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/GothamPro-Medium.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/GothamPro.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/GothamPro-Light.woff" as="font" type="font/woff" crossorigin>
   <link href="css/index.css" rel="stylesheet">
 </head>
 
 
 <body>
   <header class="header">
-  <div class="container">
-    <div class="header__container">
-      <div class="header__mobile-btn js-mobile-btn"></div>
-      <div class="header__logo">
-        <img src="images/logo.png" width="135" height="34" alt="logo">
-        <a href="#" class="header__logo-link"></a>
-      </div>
-      <div class="header__middle">
-        <div class="header__middle-overlay js-close-mobile-menu"></div>
-        <div class="header__middle-box">
-          <div class="header__middle-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-          <a href="#" class="header__catalog-btn">
-            <svg class="header__catalog-btn-icon" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
-            <span class="header__catalog-btn-text">Shop</span>
+  <div class="header__top">
+    <div class="header__top-cell">Zufriedenheitsgarantie</div>
+    <div class="header__top-cell">100% natürlich</div>
+    <div class="header__top-cell">Freie Lieferung ab €75,-</div>
+    <a href="tel:+490251/9811565132" class="header__top-cell header__top-cell--tel">24/7 Hotline: +49 (0)251/981 156 51 32</a>
+  </div>
+  <div class="header__bottom">
+    <div class="container">
+      <div class="header__bottom-box">
+        <div class="header__mobile-menu js-mobile-btn">
+          <div class="header__mobile-line"></div>
+          <div class="header__mobile-line"></div>
+          <div class="header__mobile-line"></div>
+        </div>
+        <nav class="header__nav">
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Inhalte</a></li>
+            <li><a href="#">Magazin</a></li>
+          </ul>
+        </nav>
+        <div class="header__logo">
+          <img src="images/logo.png" width="101" height="78" alt="logo">
+          <a href="#" class="header__logo-link"></a>
+        </div>
+        <div class="header__controls">
+          <div class="header__search">
+            <div class="header__btn header__btn--search">
+              <span class="header__btn-icon"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></span>
+              <span class="header__btn-text">Suche</span>
+            </div>
+
+          </div>
+          <a href="#" class="header__btn header__btn--account">
+            <span class="header__btn-icon"><svg width="20" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#user"></use></svg></span>
+            <span class="header__btn-text">Anmelden</span>
           </a>
-          <nav class="header__nav">
-            <ul>
-              <li><a href="#">Kegel balls and Weights</a></li>
-              <li class="menu-item-has-children">
-                <a href="#">Dilators</a>
-                <ul class="sub-menu">
-                  <li><a href="#">Dilators Dilators Dilators Dilators Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                </ul>
-              </li>
-              <li class="menu-item-has-children">
-                <a href="#">Yoni Care</a>
-                <ul class="sub-menu">
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="header__controls">
-        <div class="header__search">
-          <div class="header__search-btn"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></div>
-          <form class="header__search-form">
-            <input type="text" class="header__search-input">
-            <button type="submit" class="header__search-button"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
-          </form>
-        </div>
-        <div class="header__basket">
-          <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-          <span class="header__basket-count">3</span>
+          <div class="header__btn header__btn--basket">
+            <span class="header__btn-icon"><svg width="24" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg></span>
+            <span class="header__btn-text">0 Artikel</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="header__popup">
-    <div class="container">
-      <div class="header__popup-container">
-        <div class="header__popup-box">
-          <div class="header__popup-head">
-            <div class="header__popup-head-left">
-              <div class="header__popup-head-icon"></div>
-              <div class="header__popup-head-text">ITEM ADDED TO BAG</div>
-            </div>
-            <div class="header__popup-close"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-          </div>
-          <div class="header__popup-holder">
-            <div class="basket-list">
-              <div class="basket-item">
-                <a href="#" class="basket-item__img"><img src="data/basket.jpg" width="150" height="150" alt="basket"></a>
-                <div class="basket-item__box">
-                  <a href="#" class="basket-item__title">Lapis Lazuli Yoni Egg</a>
-                  <div class="basket-item__price">$18,99</div>
-                  <div class="basket-item__descriptions">+ 1 Extra Options</div>
-                </div>
-                <div class="basket-item__remove"><svg width="15" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#remove"></use></svg></div>
-              </div>
-            </div>
-            <div class="header__popup-controls">
-              <div class="header__btn-cart header__popup-btn btn-2">VIEW CART</div>
-              <div class="header__btn-checkout header__popup-btn btn-1">CHECKOUT</div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="header__mobile">
+    <div class="header__mobile-overlay js-close-mobile-menu"></div>
+    <div class="header__mobile-box">
+      <div class="header__mobile-close js-close-mobile-menu"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
     </div>
   </div>
 </header>
   <div class="wrapper">
     <div class="first-screen">
-      <img src="data/first-screen.jpg" class="first-screen__img" width="1920" height="500" alt="first-screen-img">
+      <img src="data/first-screen.jpg" width="1920" height="491" alt="first-screen-img" class="first-screen__img">
       <div class="container">
-        <div class="first-screen__box">
-          <div class="first-screen__label">SALES</div>
-          <div class="first-screen__title">UP TO 70% OFF</div>
-          <div class="first-screen__descriptions">Limited time only. Selected styles marked down on site.</div>
-          <a href="#" class="first-screen__btn btn-3">12 HOURS LEFT</a>
+        <div class="first-screen__holder">
+          <div class="first-screen__title">Fitness Vital</div>
+          <div class="first-screen__descriptions">Der Shop für deine Fitness</div>
+          <div class="first-screen__btn">
+            <a href="#" class="btn">Zu unseren Produkten</a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="featured-products">
+    <div class="triggers">
+      <div class="triggers__item">
+        <div class="triggers__icon"><img src="data/triggers1.svg" alt="Kostenlose Lieferung"></div>
+        <div class="triggers__item-box">
+          <div class="triggers__item-title">Kostenlose Lieferung</div>
+          <div class="triggers__item-text">Ab einem Einkauf von 75€</div>
+        </div>
+      </div>
+      <div class="triggers__item">
+        <div class="triggers__icon"><img src="data/triggers2.svg" alt="Zufriedenheit"></div>
+        <div class="triggers__item-box">
+          <div class="triggers__item-title">Zufriedenheit</div>
+          <div class="triggers__item-text">Über 2.000 zufriedene Kunde</div>
+        </div>
+      </div>
+      <div class="triggers__item">
+        <div class="triggers__icon"><img src="data/triggers3.svg" alt="Schneller Versand"></div>
+        <div class="triggers__item-box">
+          <div class="triggers__item-title">Schneller Versand</div>
+          <div class="triggers__item-text">Versand innerhalb von 24h</div>
+        </div>
+      </div>
+    </div>
+    <div class="partners">
       <div class="container">
-        <div class="featured-products__title title">Featured Products</div>
-        <div class="featured-products__slider">
-          <div class="featured-products__item">
-            <div class="product">
-              <div class="product__label product__label--sale">SALE</div>
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+        <div class="partners__title">Bekannt aus</div>
+        <div class="partners__list">
+          <div class="partners__item"><img src="data/partners1.jpg" alt="partners1"></div>
+          <div class="partners__item"><img src="data/partners2.jpg" alt="partners2"></div>
+          <div class="partners__item"><img src="data/partners3.jpg" alt="partners3"></div>
+          <div class="partners__item"><img src="data/partners4.jpg" alt="partners4"></div>
+          <div class="partners__item"><img src="data/partners5.jpg" alt="partners5"></div>
+          <div class="partners__item"><img src="data/partners6.jpg" alt="partners6"></div>
+          <div class="partners__item"><img src="data/partners7.jpg" alt="partners7"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="mission">
+        <div class="mission__img"><img src="data/mission.jpg" width="587" height="533" alt="mission"></div>
+        <div class="mission__info">
+          <div class="mission__label">Fitness Vital</div>
+          <div class="mission__title">Unsere Mission</div>
+          <div class="mission__text text-content">
+            <p>Im alten Indien, sowie auch zur heutigen Zeit, werden der Wurzel der Schlafbeere noch viele andere Wirkungsweisen nachgesprochen. Die vielen unterschiedlichen Wirkstoffe sollen vielseitige Auswirkungen auf den Menschen haben.</p>
+            <p>In der ayurvedischen Medizin wird Ashwagandha unter anderem als Stärkungsmittel sowie zur Verbesserung des Schlafs eingesetzt.</p>
+            <p>Vor allem als Aphrodisiakum ist Ashwagandha bekannt. Aus den Wurzeln der Schlafbeere werden Liebestränke gebraut, die stimulierend und verführend wirken sollen und fester Bestandteil im Tantra sind.</p>
+          </div>
+          <div class="mission__btn-box">
+            <a href="#" class="mission__btn btn btn--revers">Über uns</a>
+          </div>
+        </div>
+      </div>
+      <div class="registration-box">
+        <div class="registration-box__title">Jetzt 15% Sparen! Jetzt eintragen.</div>
+        <ul class="registration-box__list">
+          <li class="registration-box__item">
+            <span class="registration-box__item-icon">👉</span>
+            <span class="registration-box__item-text">120 Kapseln a 500 mg = 60g</span>
+          </li>
+          <li class="registration-box__item">
+            <span class="registration-box__item-icon">👉</span>
+            <span class="registration-box__item-text">Höchste Qualität, mindestens 5% Withanolide</span>
+          </li>
+          <li class="registration-box__item">
+            <span class="registration-box__item-icon">👉</span>
+            <span class="registration-box__item-text">Reines Naturprodukt ohne Zusatzstoffe</span>
+          </li>
+        </ul>
+        <form class="registration-box__form">
+          <div class="registration-box__form-row">
+            <input type="email" class="registration-box__input" placeholder="Deine E-Mail-Adresse">
+            <button class="registration-box__btn btn btn--yellow" type="submit">Jetzt 15% Rabatt erhalten</button>
+            <p class="error">error</p>
+          </div>
+          <div class="registration-box__checkbox">
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input">
+              <span class="checkbox__text">Durch Klicken auf „Jetzt 15% Rabatt erhalten“ stimmen Sie der Nutzervereinbarung, der Datenschutzrichtlinie und der Cookie-Richtlinie von Fitness Vital zu.</span>
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="stock-list">
+        <div class="stock-list__item">
+          <img class="stock-list__item-img" src="data/product-stock.jpg" width="586" height="400" alt="product-stock">
+          <a href="#" class="stock-list__item-title">Ashwagandha Kapseln - für besseren Schlaf</a>
+          <div class="stock-list__item-holder">
+            <div class="stock-list__item-price">
+              <div class="price-new">€ 19,99</div>
+              <div class="price-old">€ 24,95</div>
+            </div>
+            <div class="stock-list__item-descriptions">Du sparst € 5,00</div>
+            <div class="stock-list__item-btn-box">
+              <div class="stock-list__item-btn btn btn--yellow">In den Warenkorb</div>
+            </div>
+          </div>
+        </div>
+        <div class="stock-list__item">
+          <img class="stock-list__item-img" src="data/product-stock.jpg" width="586" height="400" alt="product-stock">
+          <a href="#" class="stock-list__item-title">Ashwagandha Kapseln - für besseren Schlaf</a>
+          <div class="stock-list__item-holder">
+            <div class="stock-list__item-price">
+              <div class="price-new">€ 19,99</div>
+              <div class="price-old">€ 24,95</div>
+            </div>
+            <div class="stock-list__item-descriptions">Du sparst € 5,00</div>
+            <div class="stock-list__item-btn-box">
+              <div class="stock-list__item-btn btn btn--yellow">In den Warenkorb</div>
+            </div>
+          </div>
+        </div>
+        <div class="stock-list__item">
+          <img class="stock-list__item-img" src="data/product-stock.jpg" width="586" height="400" alt="product-stock">
+          <a href="#" class="stock-list__item-title">Ashwagandha Kapseln - für besseren Schlaf</a>
+          <div class="stock-list__item-holder">
+            <div class="stock-list__item-price">
+              <div class="price-new">€ 19,99</div>
+              <div class="price-old">€ 24,95</div>
+            </div>
+            <div class="stock-list__item-descriptions">Du sparst € 5,00</div>
+            <div class="stock-list__item-btn-box">
+              <div class="stock-list__item-btn btn btn--yellow">In den Warenkorb</div>
+            </div>
+          </div>
+        </div>
+        <div class="stock-list__item">
+          <img class="stock-list__item-img" src="data/product-stock.jpg" width="586" height="400" alt="product-stock">
+          <a href="#" class="stock-list__item-title">Ashwagandha Kapseln - für besseren Schlaf</a>
+          <div class="stock-list__item-holder">
+            <div class="stock-list__item-price">
+              <div class="price-new">€ 19,99</div>
+              <div class="price-old">€ 24,95</div>
+            </div>
+            <div class="stock-list__item-descriptions">Du sparst € 5,00</div>
+            <div class="stock-list__item-btn-box">
+              <div class="stock-list__item-btn btn btn--yellow">In den Warenkorb</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feedback">
+        <div class="feedback__title">Du hast Fragen zu einem Produkt oder uns?</div>
+        <div class="feedback__box">
+          <div class="feedback__img"><img src="data/feedback.jpg" width="180" height="180" alt="feedback"></div>
+          <div class="feedback__container">
+            <div class="feedback__info">Brauchen Sie Hilfe bei der Auswahl des richtigen Produkts oder bei der Bestellung? Lassen Sie sich kostenlos beraten.</div>
+            <div class="feedback__name">Max Mustermann</div>
+            <div class="feedback__position">Geschäftsführer FitnessVital</div>
+          </div>
+        </div>
+        <div class="feedback__sub-title">Lassen Sie sich kostenlos beraten</div>
+        <div class="feedback__btns">
+          <div class="feedback__btn">
+            <span class="feedback__icon"><svg width="26" height="26"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#tel"></use></svg></span>
+            <span class="feedback__btn-text">Telefon</span>
+          </div>
+          <div class="feedback__btn">
+            <span class="feedback__icon"><svg width="24" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mail"></use></svg></span>
+            <span class="feedback__btn-text">E-Mail</span>
+          </div>
+          <div class="feedback__btn">
+            <span class="feedback__icon"><svg width="24" height="24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#contact"></use></svg></span>
+            <span class="feedback__btn-text">Kontaktformular</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg">
+      <div class="container">
+        <div class="focus">
+          <div class="focus__title">Im Fokus</div>
+          <div class="focus__descriptions">Die heilige Schlafbeere als reines Wurzelextrakt</div>
+          <div class="focus__box">
+            <div class="focus__img"><img src="data/focus.jpg" width="643" height="558" alt="focus"></div>
+            <div class="focus__item">
+              <div class="focus__item-inner">
+                <div class="focus__icon"><img src="data/focus1.svg" alt="BIOACTIVE"></div>
+                <div class="focus__item-text">BIOACTIVE</div>
+              </div>
+            </div>
+            <div class="focus__item">
+              <div class="focus__item-inner">
+                <div class="focus__icon"><img src="data/focus2.svg" alt="Natürlich gewachsen"></div>
+                <div class="focus__item-text">Natürlich gewachsen</div>
+              </div>
+            </div>
+            <div class="focus__item">
+              <div class="focus__item-inner">
+                <div class="focus__icon"><img src="data/focus3.svg" alt="VEGAN"></div>
+                <div class="focus__item-text">VEGAN</div>
+              </div>
+            </div>
+            <div class="focus__item">
+              <div class="focus__item-inner">
+                <div class="focus__icon"><img src="data/focus4.svg" alt="Frei von Gentechnik"></div>
+                <div class="focus__item-text">Frei von Gentechnik</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="info__img"><img src="data/info.jpg" width="947" height="633" alt="Don’t let stress stress you out"></div>
+          <div class="info__text">
+            <div class="info__label">More energy and less stress</div>
+            <div class="info__title">Don’t let stress <br> stress you out</div>
+            <div class="info__text text-content">
+              <p>Im alten Indien, sowie auch zur heutigen Zeit, werden der Wurzel der Schlafbeere noch viele andere Wirkungsweisen nachgesprochen. Die vielen unterschiedlichen Wirkstoffe sollen vielseitige Auswirkungen auf den Menschen haben.</p>
+              <p>In der ayurvedischen Medizin wird Ashwagandha unter anderem als Stärkungsmittel sowie zur Verbesserung des Schlafs eingesetzt.</p>
+              <p>Vor allem als Aphrodisiakum ist Ashwagandha bekannt. Aus den Wurzeln der Schlafbeere werden Liebestränke gebraut, die stimulierend und verführend wirken sollen und fester Bestandteil im Tantra sind.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="reviews">
+        <div class="reviews__title">Kundenstimmen</div>
+        <div class="reviews__head">
+          <div class="reviews__rate">
+            <div class="reviews__rate-stars">
+              <div class="rate" data-rate="4">
+                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+              </div>
+            </div>
+            <div class="reviews__rate-text">(4,9) 50 Bewertungen</div>
+          </div>
+          <a href="#" class="reviews__btn btn">Produkt bewerten</a>
+        </div>
+        <div class="reviews__slider">
+          <div class="reviews__item">
+            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+            <div class="reviews__item-rate">
               <div class="rate" data-rate="4">
                 <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
                 <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
@@ -140,23 +328,15 @@
                 <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
                 <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
               </div>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price-new">$15,99</div>
-                <div class="product__price-old">$26,99</div>
-              </div>
-              <div class="product__btn-box">
-                <div class="product__btn btn-4">
-                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-                  <span>Buy now</span>
-                </div>
-              </div>
+            </div>
+            <div class="reviews__item-date">11.1.2020</div>
+            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
             </div>
           </div>
-          <div class="featured-products__item">
-            <div class="product">
-              <div class="product__label product__label--new">new</div>
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+          <div class="reviews__item">
+            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+            <div class="reviews__item-rate">
               <div class="rate" data-rate="4">
                 <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
                 <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
@@ -164,380 +344,178 @@
                 <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
                 <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
               </div>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price">$15,99</div>
-              </div>
-              <div class="product__btn-box">
-                <div class="product__btn btn-4">
-                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-                  <span>Buy now</span>
-                </div>
-              </div>
+            </div>
+            <div class="reviews__item-date">11.1.2020</div>
+            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
             </div>
           </div>
-          <div class="featured-products__item">
-            <div class="product">
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price-new">$15,99</div>
-                <div class="product__price-old">$26,99</div>
+          <div class="reviews__item">
+            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+            <div class="reviews__item-rate">
+              <div class="rate" data-rate="4">
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
               </div>
-              <div class="product__btn-box">
-                <div class="product__btn btn-4">
-                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-                  <span>Buy now</span>
-                </div>
-              </div>
+            </div>
+            <div class="reviews__item-date">11.1.2020</div>
+            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
             </div>
           </div>
-          <div class="featured-products__item">
-            <div class="product">
-              <div class="product__label product__label--new">new</div>
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price">$15,99</div>
+          <div class="reviews__item">
+            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+            <div class="reviews__item-rate">
+              <div class="rate" data-rate="4">
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
               </div>
-              <div class="product__btn-box">
-                <div class="product__btn btn-4">
-                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-                  <span>Buy now</span>
-                </div>
-              </div>
+            </div>
+            <div class="reviews__item-date">11.1.2020</div>
+            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
             </div>
           </div>
-          <div class="featured-products__item">
-            <div class="product">
-              <div class="product__label product__label--new">new</div>
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price">$15,99</div>
+          <div class="reviews__item">
+            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+            <div class="reviews__item-rate">
+              <div class="rate" data-rate="4">
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
               </div>
-              <div class="product__btn-box">
-                <div class="product__btn btn-4">
-                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-                  <span>Buy now</span>
-                </div>
-              </div>
+            </div>
+            <div class="reviews__item-date">11.1.2020</div>
+            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="main-products">
-      <div class="main-products__row">
-        <div class="container">
-          <img class="main-products__row-decor" src="data/Ben-Wa-Balls-Illustration.svg" alt="Ben-Wa-Balls-Illustration">
-          <div class="main-products__box">
-            <div class="main-products__info">
-              <a href="#" class="main-products__title-box">
-                <div class="main-products__title-img"><img src="data/Ben-Wa-Balls-icon.svg" width="75" height="75" alt="Ben-Wa-Balls-icon"></div>
-                <div class="main-products__title">Ben Wa Balls</div>
-              </a>
-              <div class="main-products__text text-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.</p>
-              </div>
-              <div class="main-products__decor">
-                <svg width="387" height="158"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor1"></use></svg>
+          <div class="reviews__item">
+            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+            <div class="reviews__item-rate">
+              <div class="rate" data-rate="4">
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
               </div>
             </div>
-            <div class="main-products__list-box">
-              <div class="main-products__list">
-                <div class="product">
-                  <div class="product__label product__label--new">new</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <div class="rate" data-rate="5">
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                  </div>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <div class="product__label product__label--sale">SALE</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <div class="rate" data-rate="3">
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                  </div>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price-new">$15,99</div>
-                    <div class="product__price-old">$26,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>           
-              </div>
+            <div class="reviews__item-date">11.1.2020</div>
+            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
             </div>
           </div>
         </div>
-      </div>
-      <div class="main-products__row">
-        <div class="container">
-          <img class="main-products__row-decor" src="data/Yoni-Eggs-Illustration.svg" alt="Yoni-Eggs-Illustration">
-          <div class="main-products__box">
-            <div class="main-products__info">
-              <a href="#" class="main-products__title-box">
-                <div class="main-products__title-img"><img src="data/Yoni-Eggs-icon.svg" width="75" height="75" alt="Yoni-Eggs-icon"></div>
-                <div class="main-products__title">Yoni Eggs</div>
-              </a>
-              <div class="main-products__text text-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.</p>
-              </div>
-              <div class="main-products__decor">
-                <svg width="357" height="155"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor2"></use></svg>
-              </div>
-            </div>
-            <div class="main-products__list-box">
-              <div class="main-products__list">
-                <div class="product">
-                  <div class="product__label product__label--new">new</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <div class="rate" data-rate="3">
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                  </div>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <div class="product__label product__label--sale">SALE</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price-new">$15,99</div>
-                    <div class="product__price-old">$26,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <div class="rate" data-rate="3">
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                  </div>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>           
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="main-products__row">
-        <div class="container">
-          <img class="main-products__row-decor" src="data/Yoni-Wands-Illustration.svg" alt="Yoni-Wands-Illustration">
-          <div class="main-products__box">
-            <div class="main-products__info">
-              <a href="#" class="main-products__title-box">
-                <div class="main-products__title-img"><img src="data/Yoni-Wands-icon.svg" width="75" height="75" alt="Yoni-Eggs-icon"></div>
-                <div class="main-products__title">Yoni Wands</div>
-              </a>
-              <div class="main-products__text text-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.</p>
-              </div>
-              <div class="main-products__decor">
-                <svg width="330" height="135"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor3"></use></svg>
-              </div>
-            </div>
-            <div class="main-products__list-box">
-              <div class="main-products__list">
-                <div class="product">
-                  <div class="product__label product__label--new">new</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <div class="product__label product__label--sale">SALE</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price-new">$15,99</div>
-                    <div class="product__price-old">$26,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>           
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="main-products__row">
-        <div class="container">
-          <img class="main-products__row-decor" src="data/Yoni-Care-Illustration.svg" alt="Yoni-Care-Illustration">
-          <div class="main-products__box">
-            <div class="main-products__info">
-              <a href="#" class="main-products__title-box">
-                <div class="main-products__title-img"><img src="data/Yoni-Care-icon.svg" width="75" height="75" alt="Yoni-Eggs-icon"></div>
-                <div class="main-products__title">Yoni Care</div>
-              </a>
-              <div class="main-products__text text-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.</p>
-              </div>
-              <div class="main-products__decor">
-                <svg width="288" height="159"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor4"></use></svg>
-              </div>
-            </div>
-            <div class="main-products__list-box">
-              <div class="main-products__list">
-                <div class="product">
-                  <div class="product__label product__label--new">new</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <div class="product__label product__label--sale">SALE</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <div class="rate" data-rate="3">
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                  </div>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price-new">$15,99</div>
-                    <div class="product__price-old">$26,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>           
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="resources">
-      <div class="container">
-        <div class="resources__title title">Resources</div>
-        <div class="resources__list">
-          <a href="#" class="resources__item">
-            <!-- <div class="resources__item-decor"><svg width="299" height="283"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor5"></use></svg></div> -->
-            <span class="resources__item-img"><img src="data/Pelvic-Floor-Muscles-Explained.jpg" width="260" height="320" alt="Pelvic Floor Muscles Explained"></span>
-            <span class="resources__item-box">
-              <span class="resources__item-title">Pelvic Floor Muscles Explained</span>
-              <span class="resources__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut.</span>
-              <span class="resources__item-btn">
-                <span class="btn-5">
-                  Read more
-                  <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-                </span>
-              </span>
-            </span>
+        <div class="reviews__slider-controls">
+          <a href="#" data-slide="1" class="reviews__slider-first">
+            <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+            <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
           </a>
-          <a href="#" class="resources__item">
-            <!-- <div class="resources__item-decor"><svg width="299" height="283"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor5"></use></svg></div> -->
-            <span class="resources__item-img"><img src="data/Discovering-Nurturing-Your-Yoni.jpg" width="260" height="320" alt="Discovering-Nurturing-Your-Yoni"></span>
-            <span class="resources__item-box">
-              <span class="resources__item-title">Discovering & Nurturing Your Yoni</span>
-              <span class="resources__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut.</span>
-              <span class="resources__item-btn">
-                <div class="btn-5">
-                  Read more
-                  <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-                </div>
-              </span>
-            </span>
+          <div class="reviews__slider-counter">
+            <span class="reviews__slider-counter-current">1</span>/
+            <span class="reviews__slider-counter-all"></span>
+          </div>
+          <a href="#" data-slide="6" class="reviews__slider-last">
+            <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+            <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
           </a>
         </div>
       </div>
+      <div class="news">
+        <div class="news__title">Journal</div>
+        <div class="news__list">
+          <div class="news__item">
+            <a href="#" class="news__item-img"><img src="data/news.jpg" width="383" height="215" alt="So erhältst du mehr Energie"></a>
+            <a href="#" class="news__item-title" title="So erhältst du mehr Energie">So erhältst du mehr Energie</a>
+            <div class="news__item-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</div>
+          </div>
+          <div class="news__item">
+            <a href="#" class="news__item-img"><img src="data/news.jpg" width="383" height="215" alt="So erhältst du mehr Energie"></a>
+            <a href="#" class="news__item-title" title="So erhältst du mehr Energie">So erhältst du mehr Energie</a>
+            <div class="news__item-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</div>
+          </div>
+          <div class="news__item">
+            <a href="#" class="news__item-img"><img src="data/news.jpg" width="383" height="215" alt="So erhältst du mehr Energie"></a>
+            <a href="#" class="news__item-title" title="So erhältst du mehr Energie">So erhältst du mehr Energie</a>
+            <div class="news__item-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="articles">
+    <div class="bg">
       <div class="container">
-        <div class="articles__title title">Latest Articles</div>
-        <div class="articles__list">
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Benefits-of-Vaginal-Weightlifting.jpg" width="280" height="210" alt="Benefits-of-Vaginal-Weightlifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <a href="#" class="article__title" title="Benefits of Vaginal Weightlifting">Benefits of Vaginal Weightlifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-            <a href="#" class="article__btn btn-5 btn-5--purple">
-              Read more
-              <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-            </a>
+        <div class="products-home">
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
           </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/7-Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="280" height="210" alt="7-Reasons-to-try-Vaginal-Weight-Lifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-            <a href="#" class="article__btn btn-5 btn-5--purple">
-              Read more
-              <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-            </a>
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
           </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Vaginal-Weightlifting.jpg" width="280" height="210" alt="Vaginal-Weightlifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <a href="#" class="article__title" title="Vaginal Weightlifting – The Ultimate Kegel Exercise">Vaginal Weightlifting – The Ultimate Kegel Exercise</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-            <a href="#" class="article__btn btn-5 btn-5--purple">
-              Read more
-              <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-            </a>
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
           </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Vaginal-Weightlifting2.jpg" width="280" height="210" alt="Vaginal-Weightlifting2">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <a href="#" class="article__title" title="Vaginal Weightlifting – The Ultimate Kegel Exercise">Vaginal Weightlifting – The Ultimate Kegel Exercise</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-            <a href="#" class="article__btn btn-5 btn-5--purple">
-              Read more
-              <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-            </a>
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
+          </div>
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
+          </div>
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
+          </div>
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
           </div>
         </div>
       </div>
@@ -545,52 +523,95 @@
   </div>
   <footer class="footer">
   <div class="container">
-    <div class="footer__container">
-      <div class="footer__logo-box">
-        <div class="footer__logo">
-          <img src="images/logo.png" width="135" height="34" alt="logo">
-          <a href="#" class="footer__logo-link"></a>
-        </div>
-        <div class="footer__logo-descriptions">© MyKegelTools 2019. <br> All product names, logos, and brands are property of their respective owners.</div>
-      </div>
+    <div class="footer__top">
       <nav class="footer__nav">
-        <div class="footer__nav-cell">
-          <div class="footer__nav-title">Useful Pages</div>
-          <ul>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Shipping and Returns</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer__nav-cell">
-          <div class="footer__nav-title">Legal Pages</div>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms and Conditions</a></li>
-            <li><a href="#">Cookies Policy</a></li>
-          </ul>
-        </div>
+        <ul>
+          <li>
+            <a href="#">Shop</a>
+            <ul>
+              <li><a href="#">Tribulus Tereestris</a></li>
+              <li><a href="#">Roter Panax Ginseng</a></li>
+              <li><a href="#">Ashwagandha</a></li>
+              <li><a href="#">Nattokinase</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Support</a>
+            <ul>
+              <li><a href="#">Kontakt</a></li>
+              <li><a href="#">Zahlung & Versand</a></li>
+              <li><a href="#">Garantie</a></li>
+              <li><a href="#">Datenschutz</a></li>
+              <li><a href="#">Widerruf</a></li>
+              <li><a href="#">AGBs</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Brand</a>
+            <ul>
+              <li><a href="#">Über Fitness Vital</a></li>
+              <li><a href="#">Magazin</a></li>
+              <li><a href="#">Ashwagandha</a></li>
+              <li><a href="#">Unsere Partner</a></li>
+              <li><a href="#">Jobs</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Mehr</a>
+            <ul>
+              <li><a href="#">Impressum</a></li>
+              <li><a href="#">B2B/Affiliate</a></li>
+              <li><a href="#">Mikro Stipendium</a></li>
+              <li><a href="#">Datenschutz</a></li>
+            </ul>
+          </li>
+        </ul>
       </nav>
-      <div class="footer__subscribe">
-        <div class="footer__subscribe-title">Join our mailing list</div>
-        <form class="footer__subscribe-form">
-          <input type="email" class="footer__subscribe-input" placeholder="Enter email">
-          <button type="submit" class="footer__subscribe-btn"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#letter"></use></svg></button>
+      <div class="footer__contacts">
+        <div class="footer__contacts-title">Newsletter</div>
+        <div class="footer__contacts-descriptions">Für unseren Newsletter anmelden und 10% Rabatt auf deine erste Bestellung erhalten.</div>
+        <form class="footer__form">
+          <input type="email" class="footer__form-input" placeholder="Deine E-Mail-Adresse">
+          <button type="submit" class="footer__form-btn">Anmelden</button>
+          <p class="error">error</p>
         </form>
+        <div class="footer__social">
+          <div class="footer__social-title">Folge uns</div>
+          <ul class="footer__social-list">
+            <li><a href="#" target="_blank" rel="nofollow">Instagram</a></li>
+            <li><a href="#" target="_blank" rel="nofollow">Facebook</a></li>
+            <li><a href="#" target="_blank" rel="nofollow">Pinterest</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="btn-top js-top-scroll">
-    <svg class="btn-top__arrow" width="10" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#top"></use></svg>
-    <svg class="btn-top__bg" width="1920" height="40" viewBox="0 0 1920 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M933.5 11C943.1 1.4 953.5 -1.56795e-05 960 1.31701e-10C966.5 -1.56795e-05 976.9 1.4 986.5 11C987.677 12.1766 988.762 13.286 989.783 14.3299C999.167 23.9217 1003.15 27.9909 1022.93 28H1920V40H0V28H897.067C916.852 27.9909 920.833 23.9217 930.217 14.3299C931.238 13.286 932.323 12.1766 933.5 11Z" fill="url(#paint0_linear)"/>
-      <defs>
-      <linearGradient id="paint0_linear" x1="1920" y1="39.9902" x2="0" y2="39.9902" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#BA58E1"/>
-      <stop offset="1" stop-color="#6F49BC"/>
-      </linearGradient>
-      </defs>
-    </svg>
+    <div class="footer__bottom">
+      <div class="footer__bottom-cell">
+        <div class="footer__bottom-title">Schnelle Lieferung</div>
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/dhl.svg" width="94" height="30" alt="Schnelle Lieferung"></a></li>
+        </ul>
+      </div>
+      <div class="footer__bottom-cell">
+        <div class="footer__bottom-title">Sicher bezahlen mit</div>
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/visa.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/master.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/pp.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/sofort.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/rech.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/vorkasse.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+        </ul>
+      </div>
+      <div class="footer__bottom-cell">
+        <div class="footer__bottom-title">Zertifizierter Onlineshop</div>
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/ssl.jpg" width="45" height="45" alt="Zertifizierter Onlineshop"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/e.jpg" width="51" height="51" alt="Zertifizierter Onlineshop"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/tage.jpg" width="44" height="44" alt="Zertifizierter Onlineshop"></a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </footer>
   <script src="/js/app.js"></script>
