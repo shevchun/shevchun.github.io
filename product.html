@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Kegglers">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>Fitness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
+  <link href="css/index.css" rel="stylesheet">
+</head>
+
+
+<body>
+  <header class="header">
+  <div class="header__top">
+    <div class="header__top-cell">Zufriedenheitsgarantie</div>
+    <div class="header__top-cell">100% natürlich</div>
+    <div class="header__top-cell">Freie Lieferung ab €75,-</div>
+    <a href="tel:+490251/9811565132" class="header__top-cell header__top-cell--tel">24/7 Hotline: +49 (0)251/981 156 51 32</a>
+  </div>
+  <div class="header__bottom">
+    <div class="container">
+      <div class="header__bottom-box">
+        <div class="header__mobile-menu js-mobile-btn">
+          <div class="header__mobile-line"></div>
+          <div class="header__mobile-line"></div>
+          <div class="header__mobile-line"></div>
+        </div>
+        <nav class="header__nav">
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Inhalte</a></li>
+            <li><a href="#">Magazin</a></li>
+          </ul>
+        </nav>
+        <div class="header__logo">
+          <img src="images/logo.png" width="101" height="78" alt="logo">
+          <a href="#" class="header__logo-link"></a>
+        </div>
+        <div class="header__controls">
+          <div class="header__search">
+            <div class="header__btn header__btn--search">
+              <span class="header__btn-icon"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></span>
+              <span class="header__btn-text">Suche</span>
+            </div>
+            <form class="header__search-form">
+              <input type="text" class="header__search-input" placeholder="Suche">
+              <button type="submit" class="header__search-button"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
+            </form>
+          </div>
+          <a href="#" class="header__btn header__btn--account">
+            <span class="header__btn-icon"><svg width="20" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#user"></use></svg></span>
+            <span class="header__btn-text">Anmelden</span>
+          </a>
+          <div class="header__btn header__btn--basket">
+            <span class="header__btn-icon"><svg width="24" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg></span>
+            <span class="header__btn-text">0 Artikel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__mobile">
+    <div class="header__mobile-overlay js-close-mobile-menu"></div>
+    <div class="header__mobile-box">
+      <div class="header__mobile-close js-close-mobile-menu"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+    </div>
+  </div>
+</header>
+
+<div class="basket-popup">
+  <div class="basket-popup__overlay js-close-basket"></div>
+  <div class="basket-popup__box">
+    <div class="basket-popup__head">
+      <div class="basket-popup__head-icon"><svg width="24" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg></div>
+      <div class="basket-popup__head-text">Dein Warenkorb (1)</div>
+      <div class="basket-popup__close js-close-basket"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+    </div>
+    <div class="basket-popup__body">
+      <div class="basket-popup__list">
+        <div class="basket-popup__item">
+          <a href="#" class="basket-popup__item-img"><img src="data/basket-popup.jpg" width="76" height="95" alt="Ashwagandha Kapseln"></a>
+          <div class="basket-popup__item-box">
+            <div class="basket-popup__item-holder">
+              <div class="basket-popup__item-cell">
+                <a href="#" class="basket-popup__item-title" title="Ashwagandha Kapseln">Ashwagandha Kapseln</a>
+                <div class="basket-popup__item-text">120 Kapseln a 500mg</div>
+              </div>
+              <div class="basket-popup__item-remove">Entfernen</div>
+            </div>
+            <div class="basket-popup__item-bottom">
+              <div class="basket-popup__item-counter">
+                <div class="counter">
+                  <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
+                  <input type="number" class="counter__input" min="1" value="1">
+                  <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
+                </div>
+              </div>
+              <div class="basket-popup__item-price">34,90 EUR</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="basket-popup__price-box">
+        <div class="basket-popup__price-row">
+          <div class="basket-popup__price-cell">Zwischensumme</div>
+          <div class="basket-popup__price-cell">34,90 EUR</div>
+        </div>
+        <div class="basket-popup__price-row">
+          <div class="basket-popup__price-cell">Versand</div>
+          <div class="basket-popup__price-cell">3,90 EUR</div>
+        </div>
+        <div class="basket-popup__price-row">
+          <div class="basket-popup__price-cell basket-popup__price-cell--total">Gesamtsumme</div>
+          <div class="basket-popup__price-cell basket-popup__price-cell--total">34,90 EUR</div>
+        </div>
+      </div>
+      <div class="basket-popup__caption">Versandkostenfrei innerhalb DE ab 60 EUR</div>
+      <div class="basket-popup__buy btn btn--green"><svg width="10" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#lock"></use></svg>Zur Kasse</div>
+      <div class="basket-popup__caption-decor">Oder Express-Kauf</div>
+      <div class="basket-popup__pp btn btn--yellow"><svg width="100" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2500" height="812" viewBox="-11.153 -13.144 326.05 105.914"><g transform="matrix(2.07675 0 0 -2.07675 -11.153 92.77)"><defs><path id="a" d="M-84.525-27.457h326.05V78.457h-326.05z"/></defs><clipPath id="b"><use xlink:href="#a" overflow="visible"/></clipPath><g clip-path="url(#b)"><path d="M32.419 40.982c-1.674 1.908-4.7 2.726-8.571 2.726H12.613a1.609 1.609 0 0 1-1.59-1.357L6.347 12.68a.964.964 0 0 1 .953-1.114h6.936l1.742 11.049-.054-.346a1.604 1.604 0 0 0 1.583 1.357h3.296c6.475 0 11.545 2.63 13.026 10.238.044.225.082.444.115.658.44 2.812-.003 4.726-1.524 6.459" fill="#003087"/><path d="M117.331 26.863c-.424-2.784-2.55-2.784-4.606-2.784h-1.17l.821 5.198c.05.314.32.545.638.545h.537c1.4 0 2.722 0 3.404-.797.407-.477.53-1.185.376-2.162m-.895 7.264h-7.756a1.08 1.08 0 0 1-1.066-.91L104.48 13.33a.647.647 0 0 1 .638-.747h3.98c.371 0 .687.27.745.636l.89 5.64c.082.523.534.91 1.064.91h2.454c5.11 0 8.058 2.471 8.828 7.372.347 2.142.014 3.826-.989 5.005-1.103 1.296-3.058 1.982-5.653 1.982" fill="#009cde"/><path d="M62.011 26.863c-.424-2.784-2.55-2.784-4.607-2.784h-1.17l.821 5.198c.05.314.32.545.638.545h.537c1.4 0 2.722 0 3.404-.797.408-.477.531-1.185.377-2.162m-.895 7.264H53.36c-.53 0-.982-.386-1.065-.91L49.16 13.33a.646.646 0 0 1 .638-.747h3.704c.53 0 .981.386 1.064.91l.847 5.365c.082.524.534.91 1.064.91h2.454c5.11 0 8.058 2.472 8.828 7.373.347 2.142.014 3.826-.989 5.005-1.103 1.296-3.058 1.982-5.653 1.982M79.123 19.723c-.36-2.122-2.043-3.547-4.192-3.547-1.077 0-1.94.347-2.494 1.003-.55.65-.756 1.577-.582 2.608.334 2.104 2.046 3.574 4.162 3.574 1.055 0 1.91-.35 2.476-1.012.569-.667.793-1.599.63-2.626m5.176 7.23h-3.714a.647.647 0 0 1-.64-.547l-.162-1.038-.26.376c-.804 1.167-2.597 1.558-4.387 1.558-4.103 0-7.608-3.11-8.29-7.47-.355-2.177.149-4.256 1.383-5.707 1.133-1.333 2.75-1.888 4.677-1.888 3.308 0 5.142 2.124 5.142 2.124l-.166-1.032a.646.646 0 0 1 .639-.747h3.344c.53 0 .982.385 1.065.91l2.008 12.713a.647.647 0 0 1-.64.747" fill="#003087"/><path d="M134.443 19.723c-.36-2.122-2.043-3.547-4.192-3.547-1.077 0-1.94.347-2.494 1.003-.55.65-.756 1.577-.582 2.608.334 2.104 2.045 3.574 4.162 3.574 1.055 0 1.91-.35 2.476-1.012.569-.667.793-1.599.63-2.626m5.176 7.23h-3.714a.647.647 0 0 1-.64-.547l-.162-1.038-.26.376c-.804 1.167-2.597 1.558-4.387 1.558-4.102 0-7.607-3.11-8.29-7.47-.355-2.177.15-4.256 1.384-5.707 1.133-1.333 2.75-1.888 4.677-1.888 3.309 0 5.143 2.124 5.143 2.124l-.166-1.032a.644.644 0 0 1 .637-.747h3.343c.53 0 .982.385 1.066.91l2.008 12.713a.647.647 0 0 1-.64.747" fill="#009cde"/><path d="M104.08 26.952h-3.734c-.357 0-.69-.177-.89-.473l-5.15-7.584-2.183 7.288a1.08 1.08 0 0 1-1.033.77h-3.669a.647.647 0 0 1-.612-.856l4.11-12.066-3.866-5.455a.647.647 0 0 1 .528-1.02h3.73c.352 0 .683.173.885.463l12.414 17.918a.646.646 0 0 1-.53 1.015" fill="#003087"/><path d="M143.996 33.58l-3.184-20.251a.647.647 0 0 1 .639-.747h3.201c.53 0 .982.386 1.065.91l3.139 19.888a.646.646 0 0 1-.639.747h-3.582a.645.645 0 0 1-.639-.546" fill="#009cde"/><path d="M32.419 40.982c-1.674 1.908-4.7 2.726-8.571 2.726H12.613a1.609 1.609 0 0 1-1.59-1.357L6.347 12.68a.964.964 0 0 1 .953-1.114h6.936l1.742 11.049-.054-.346a1.604 1.604 0 0 0 1.583 1.357h3.296c6.475 0 11.545 2.63 13.026 10.238.044.225.082.444.115.658.44 2.812-.003 4.726-1.524 6.459" fill="#003087"/><path d="M17.849 34.485a1.408 1.408 0 0 0 1.389 1.187h8.808c1.043 0 2.016-.068 2.905-.21a12.206 12.206 0 0 0 1.44-.322 7.957 7.957 0 0 0 1.551-.618c.442 2.813-.002 4.726-1.523 6.46-1.675 1.907-4.7 2.725-8.571 2.725H12.612a1.609 1.609 0 0 1-1.588-1.357L6.346 12.682a.964.964 0 0 1 .952-1.115h6.937l1.742 11.05 1.872 11.868z" fill="#003087"/><path d="M33.943 34.523a18.294 18.294 0 0 0-.115-.658c-1.481-7.607-6.551-10.238-13.026-10.238h-3.297a1.602 1.602 0 0 1-1.582-1.357l-1.688-10.702-.48-3.036a.844.844 0 0 1 .834-.976h5.847c.692 0 1.28.504 1.389 1.187l.057.298 1.102 6.984.07.386a1.407 1.407 0 0 0 1.39 1.187h.875c5.664 0 10.099 2.3 11.395 8.956.54 2.78.26 5.103-1.17 6.734a5.584 5.584 0 0 1-1.601 1.235" fill="#009cde"/><path d="M32.392 35.14c-.226.067-.459.127-.699.18-.24.053-.488.1-.742.14-.89.145-1.862.213-2.906.213h-8.807a1.404 1.404 0 0 1-1.389-1.188l-1.872-11.87-.054-.345a1.602 1.602 0 0 0 1.582 1.357h3.297c6.475 0 11.545 2.63 13.026 10.238.044.225.081.443.115.658a7.998 7.998 0 0 1-1.218.514c-.109.036-.22.07-.333.104" fill="#012169"/></g></g></svg></div>
+      <div class="basket-popup__caption-decor">Warum Du uns wählen solltest?</div>
+      <div class="basket-popup__pay-holder">
+        <div class="basket-popup__pay">
+          <div class="basket-popup__pay-icon"><svg width="50" height="57"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#pay1"></use></svg></div>
+          <div class="basket-popup__pay-box">
+            <div class="basket-popup__pay-title">Sicher bezahlen mit:</div>
+            <div class="basket-popup__pay-list">
+              <div class="basket-popup__pay-item"><img src="data/visa.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
+              <div class="basket-popup__pay-item"><img src="data/master.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
+              <div class="basket-popup__pay-item"><img src="data/pp.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
+              <div class="basket-popup__pay-item"><img src="data/sofort.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
+              <div class="basket-popup__pay-item"><img src="data/rech.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
+              <div class="basket-popup__pay-item"><img src="data/vorkasse.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
+            </div>
+          </div>
+        </div>
+        <div class="basket-popup__pay">
+          <div class="basket-popup__pay-icon"><svg width="54" height="48"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#pay2"></use></svg></div>
+          <div class="basket-popup__pay-box">
+            <div class="basket-popup__pay-title">Geld-zurück-Garantie:</div>
+            <div class="basket-popup__pay-text">Nur behalten, was auch wirklich gefällt!</div>
+          </div>
+        </div>
+      </div>
+      <div class="basket-popup__slider-title">Passend zu deinem Produkt:</div>
+      <div class="basket-popup__slider">
+        <div class="basket-popup__slider-item">
+          <a href="#" class="basket-popup__item-img"><img src="data/basket-popup.jpg" width="" height="" alt="Ashwagandha Kapseln"></a>
+          <div class="basket-popup__item-box">
+            <a href="#" class="basket-popup__item-title" title="Tribulus Terrestris Kapseln">Tribulus Terrestris Kapseln</a>
+            <div class="basket-popup__item-holder">
+              <div class="basket-popup__item-text">120 Kapseln a 500mg</div>
+              <div class="basket-popup__item-price">34,90 EUR</div>
+            </div>
+            <div class="basket-popup__item-bottom">
+              <div class="basket-popup__item-counter">
+                <div class="counter counter--bg">
+                  <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
+                  <input type="number" class="counter__input" min="1" value="1">
+                  <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
+                </div>
+              </div>
+              <div class="basket-popup__item-btn">hinzufügen</div>
+            </div>
+          </div>
+        </div>
+        <div class="basket-popup__slider-item">
+          <a href="#" class="basket-popup__item-img"><img src="data/basket-popup.jpg" width="" height="" alt="Ashwagandha Kapseln"></a>
+          <div class="basket-popup__item-box">
+            <a href="#" class="basket-popup__item-title" title="Tribulus Terrestris Kapseln">Tribulus Terrestris</a>
+            <div class="basket-popup__item-holder">
+              <div class="basket-popup__item-text">120 Kapseln a 500mg</div>
+              <div class="basket-popup__item-price">34,90 EUR</div>
+            </div>
+            <div class="basket-popup__item-bottom">
+              <div class="basket-popup__item-counter">
+                <div class="counter counter--bg">
+                  <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
+                  <input type="number" class="counter__input" min="1" value="1">
+                  <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
+                </div>
+              </div>
+              <div class="basket-popup__item-btn">hinzufügen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="wrapper">
+    <div class="product">
+      <div class="container">
+        <div class="product__top">
+          <div class="product__left">
+            <div class="product__sliders">
+              <div class="product__slider-nav">
+                <div class="product__slider-nav-item"><img src="data/product-nav.jpg" width="80" height="80" alt="."></div>
+                <div class="product__slider-nav-item"><img src="data/product-nav.jpg" width="80" height="80" alt="."></div>
+                <div class="product__slider-nav-item"><img src="data/product-nav.jpg" width="80" height="80" alt="."></div>
+                <div class="product__slider-nav-item"><img src="data/product-nav.jpg" width="80" height="80" alt="."></div>
+              </div>
+              <div class="product__slider-for">
+                <div class="product__slider-for-item"><img src="data/product-for.jpg" width="560" height="478" alt="."></div>
+                <div class="product__slider-for-item"><img src="data/product-for.jpg" width="560" height="478" alt="."></div>
+                <div class="product__slider-for-item"><img src="data/product-for.jpg" width="560" height="478" alt="."></div>
+                <div class="product__slider-for-item"><img src="data/product-for.jpg" width="560" height="478" alt="."></div>
+              </div>
+            </div>
+            <div class="product__descriptions">
+              <div class="product__info">
+                <div class="product__info-head">Mehr Produktinfos</div>
+                <div class="product__info-body">
+                  <div class="product__info-text text-content">
+                    <h2>Ashwagandha kaufen - Die heilige Schlafbeere als reines Wurzelextrakt</h2>
+                    <p>Ashwagandha ist heißt im Sanskrit (Alt-Indisch) Schlafbeere. Der botanische Namen lautet „Withania somnifera“. Die Pflanze ist weltweit verbreitet und wächst beispielsweise in Südastien, China, auf der arabischen Halbinsel, in Südeuropa und Afrika.</p>
+                    <p>Im alten Indien galt Ashwagandha als heilig und noch heute findet sie dort sehr großen Anklang. Vor allem in der ayurvedischen Medizin ist sie ein fester Bestandteil. Das ist vor allem aufgrund ihrer guten Verträglichkeit und den vielseitig einsetzbaren Wirkstoffen der Fall.</p>
+                    <img src="data/product.jpg" width="690" height="360" alt=".">
+                    <p><b>Ashwagandha Kapseln kaufen ist heutzutage auch in Deutschland ein Thema.</b></p>
+                    <p>Vor allem Menschen, die sich auf natürliche Heilpflanzen verlassen möchten greifen zu dem Pulver.</p>
+                    <p>Der am besten erforschte und bekannteste Wirkstoff in Ashwagandha sind die Withanolide. Sie wurden bereits von Wissenschaftlern isoliert und n Tierversuchen konnte gezeigt werden, dass sie Entzündungen hemmen können.</p>
+                    <ul class="list-column">
+                      <li><span>✓</span>Eifrei</li>
+                      <li><span>✓</span>Erdnussfrei</li>
+                      <li><span>✓</span>Fischfrei</li>
+                      <li><span>✓</span>Fruktosefrei</li>
+                      <li><span>✓</span>Gelatinefrei</li>
+                      <li><span>✓</span>Gentechnikfrei</li>
+                      <li><span>✓</span>Glutenfrei</li>
+                      <li><span>✓</span>Hefefrei</li>
+                      <li><span>✓</span>Hypoallergen</li>
+                      <li><span>✓</span>Laktosefrei</li>
+                      <li><span>✓</span>Magnesiumstearatfrei</li>
+                      <li><span>✓</span>Milchfrei</li>
+                      <li><span>✓</span>Nussfrei</li>
+                      <li><span>✓</span>Ohne Farbstoffe</li>
+                      <li><span>✓</span>Ohne Geschmackstoffe</li>
+                      <li><span>✓</span>Ohne Konservierung</li>
+                      <li><span>✓</span>Ohne künstl. Süßstoffe</li>
+                      <li><span>✓</span>Ohne Mikrokr. Cellulose</li>
+                      <li><span>✓</span>Ohne Zuckeraustausch</li>
+                      <li><span>✓</span>Schalentierfrei</li>
+                      <li><span>✓</span>Sojafrei</li>
+                      <li><span>✓</span>Vegan</li>
+                      <li><span>✓</span>Vegetarisch</li>
+                      <li><span>✓</span>Weizenfrei</li>
+                      <li><span>✓</span>Zuckerfrei</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="product__info">
+                <div class="product__info-head">Verzehrempfehlung</div>
+                <div class="product__info-body">
+                  <div class="product__info-text text-content">
+                    <h2>Ashwagandha kaufen - Die heilige Schlafbeere als reines Wurzelextrakt</h2>
+                    <p>Im alten Indien galt Ashwagandha als heilig und noch heute findet sie dort sehr großen Anklang. Vor allem in der ayurvedischen Medizin ist sie ein fester Bestandteil. Das ist vor allem aufgrund ihrer guten Verträglichkeit und den vielseitig einsetzbaren Wirkstoffen der Fall.</p>
+                    <img src="data/product.jpg" width="690" height="360" alt=".">
+                    <p><b>Ashwagandha Kapseln kaufen ist heutzutage auch in Deutschland ein Thema.</b></p>
+                    <p>Vor allem Menschen, die sich auf natürliche Heilpflanzen verlassen möchten greifen zu dem Pulver.</p>
+                    <p>Der am besten erforschte und bekannteste Wirkstoff in Ashwagandha sind die Withanolide. Sie wurden bereits von Wissenschaftlern isoliert und n Tierversuchen konnte gezeigt werden, dass sie Entzündungen hemmen können.</p>
+                    <ul class="list-column">
+                      <li><span>✓</span>Eifrei</li>
+                      <li><span>✓</span>Erdnussfrei</li>
+                      <li><span>✓</span>Fischfrei</li>
+                      <li><span>✓</span>Fruktosefrei</li>
+                      <li><span>✓</span>Gelatinefrei</li>
+                      <li><span>✓</span>Gentechnikfrei</li>
+                      <li><span>✓</span>Glutenfrei</li>
+                      <li><span>✓</span>Hefefrei</li>
+                      <li><span>✓</span>Hypoallergen</li>
+                      <li><span>✓</span>Laktosefrei</li>
+                      <li><span>✓</span>Magnesiumstearatfrei</li>
+                      <li><span>✓</span>Milchfrei</li>
+                      <li><span>✓</span>Nussfrei</li>
+                      <li><span>✓</span>Ohne Farbstoffe</li>
+                      <li><span>✓</span>Ohne Geschmackstoffe</li>
+                      <li><span>✓</span>Ohne Konservierung</li>
+                      <li><span>✓</span>Ohne künstl. Süßstoffe</li>
+                      <li><span>✓</span>Ohne Mikrokr. Cellulose</li>
+                      <li><span>✓</span>Ohne Zuckeraustausch</li>
+                      <li><span>✓</span>Schalentierfrei</li>
+                      <li><span>✓</span>Sojafrei</li>
+                      <li><span>✓</span>Vegan</li>
+                      <li><span>✓</span>Vegetarisch</li>
+                      <li><span>✓</span>Weizenfrei</li>
+                      <li><span>✓</span>Zuckerfrei</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="product__info">
+                <div class="product__info-head">Lagerung</div>
+                <div class="product__info-body">
+                  <div class="product__info-text text-content">
+                    <h2>Ashwagandha kaufen - Die heilige Schlafbeere als reines Wurzelextrakt</h2>
+                    <p>Ashwagandha ist heißt im Sanskrit (Alt-Indisch) Schlafbeere. Der botanische Namen lautet „Withania somnifera“. Die Pflanze ist weltweit verbreitet und wächst beispielsweise in Südastien, China, auf der arabischen Halbinsel, in Südeuropa und Afrika.</p>
+                    <p>Im alten Indien galt Ashwagandha als heilig und noch heute findet sie dort sehr großen Anklang. Vor allem in der ayurvedischen Medizin ist sie ein fester Bestandteil. Das ist vor allem aufgrund ihrer guten Verträglichkeit und den vielseitig einsetzbaren Wirkstoffen der Fall.</p>
+                    <img src="data/product.jpg" width="690" height="360" alt=".">
+                    <p><b>Ashwagandha Kapseln kaufen ist heutzutage auch in Deutschland ein Thema.</b></p>
+                    <p>Vor allem Menschen, die sich auf natürliche Heilpflanzen verlassen möchten greifen zu dem Pulver.</p>
+                    <p>Der am besten erforschte und bekannteste Wirkstoff in Ashwagandha sind die Withanolide. Sie wurden bereits von Wissenschaftlern isoliert und n Tierversuchen konnte gezeigt werden, dass sie Entzündungen hemmen können.</p>
+                    <ul class="list-column">
+                      <li><span>✓</span>Eifrei</li>
+                      <li><span>✓</span>Erdnussfrei</li>
+                      <li><span>✓</span>Fischfrei</li>
+                      <li><span>✓</span>Fruktosefrei</li>
+                      <li><span>✓</span>Gelatinefrei</li>
+                      <li><span>✓</span>Gentechnikfrei</li>
+                      <li><span>✓</span>Glutenfrei</li>
+                      <li><span>✓</span>Hefefrei</li>
+                      <li><span>✓</span>Hypoallergen</li>
+                      <li><span>✓</span>Laktosefrei</li>
+                      <li><span>✓</span>Magnesiumstearatfrei</li>
+                      <li><span>✓</span>Milchfrei</li>
+                      <li><span>✓</span>Nussfrei</li>
+                      <li><span>✓</span>Ohne Farbstoffe</li>
+                      <li><span>✓</span>Ohne Geschmackstoffe</li>
+                      <li><span>✓</span>Ohne Konservierung</li>
+                      <li><span>✓</span>Ohne künstl. Süßstoffe</li>
+                      <li><span>✓</span>Ohne Mikrokr. Cellulose</li>
+                      <li><span>✓</span>Ohne Zuckeraustausch</li>
+                      <li><span>✓</span>Schalentierfrei</li>
+                      <li><span>✓</span>Sojafrei</li>
+                      <li><span>✓</span>Vegan</li>
+                      <li><span>✓</span>Vegetarisch</li>
+                      <li><span>✓</span>Weizenfrei</li>
+                      <li><span>✓</span>Zuckerfrei</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="product__info">
+                <div class="product__info-head">Darreichungsform</div>
+                <div class="product__info-body">
+                  <div class="product__info-text text-content">
+                    <h2>Ashwagandha kaufen - Die heilige Schlafbeere als reines Wurzelextrakt</h2>
+                    <p>Ashwagandha ist heißt im Sanskrit (Alt-Indisch) Schlafbeere. Der botanische Namen lautet „Withania somnifera“. Die Pflanze ist weltweit verbreitet und wächst beispielsweise in Südastien, China, auf der arabischen Halbinsel, in Südeuropa und Afrika.</p>
+                    <p>Im alten Indien galt Ashwagandha als heilig und noch heute findet sie dort sehr großen Anklang. Vor allem in der ayurvedischen Medizin ist sie ein fester Bestandteil. Das ist vor allem aufgrund ihrer guten Verträglichkeit und den vielseitig einsetzbaren Wirkstoffen der Fall.</p>
+                    <img src="data/product.jpg" width="690" height="360" alt=".">
+                    <p><b>Ashwagandha Kapseln kaufen ist heutzutage auch in Deutschland ein Thema.</b></p>
+                    <p>Vor allem Menschen, die sich auf natürliche Heilpflanzen verlassen möchten greifen zu dem Pulver.</p>
+                    <p>Der am besten erforschte und bekannteste Wirkstoff in Ashwagandha sind die Withanolide. Sie wurden bereits von Wissenschaftlern isoliert und n Tierversuchen konnte gezeigt werden, dass sie Entzündungen hemmen können.</p>
+                    <ul class="list-column">
+                      <li><span>✓</span>Eifrei</li>
+                      <li><span>✓</span>Erdnussfrei</li>
+                      <li><span>✓</span>Fischfrei</li>
+                      <li><span>✓</span>Fruktosefrei</li>
+                      <li><span>✓</span>Gelatinefrei</li>
+                      <li><span>✓</span>Gentechnikfrei</li>
+                      <li><span>✓</span>Glutenfrei</li>
+                      <li><span>✓</span>Hefefrei</li>
+                      <li><span>✓</span>Hypoallergen</li>
+                      <li><span>✓</span>Laktosefrei</li>
+                      <li><span>✓</span>Magnesiumstearatfrei</li>
+                      <li><span>✓</span>Milchfrei</li>
+                      <li><span>✓</span>Nussfrei</li>
+                      <li><span>✓</span>Ohne Farbstoffe</li>
+                      <li><span>✓</span>Ohne Geschmackstoffe</li>
+                      <li><span>✓</span>Ohne Konservierung</li>
+                      <li><span>✓</span>Ohne künstl. Süßstoffe</li>
+                      <li><span>✓</span>Ohne Mikrokr. Cellulose</li>
+                      <li><span>✓</span>Ohne Zuckeraustausch</li>
+                      <li><span>✓</span>Schalentierfrei</li>
+                      <li><span>✓</span>Sojafrei</li>
+                      <li><span>✓</span>Vegan</li>
+                      <li><span>✓</span>Vegetarisch</li>
+                      <li><span>✓</span>Weizenfrei</li>
+                      <li><span>✓</span>Zuckerfrei</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="product__info">
+                <div class="product__info-head">Inhaltsstoffe</div>
+                <div class="product__info-body">
+                  <div class="product__info-text text-content">
+                    <h2>Ashwagandha kaufen - Die heilige Schlafbeere als reines Wurzelextrakt</h2>
+                    <p>Ashwagandha ist heißt im Sanskrit (Alt-Indisch) Schlafbeere. Der botanische Namen lautet „Withania somnifera“. Die Pflanze ist weltweit verbreitet und wächst beispielsweise in Südastien, China, auf der arabischen Halbinsel, in Südeuropa und Afrika.</p>
+                    <p>Im alten Indien galt Ashwagandha als heilig und noch heute findet sie dort sehr großen Anklang. Vor allem in der ayurvedischen Medizin ist sie ein fester Bestandteil. Das ist vor allem aufgrund ihrer guten Verträglichkeit und den vielseitig einsetzbaren Wirkstoffen der Fall.</p>
+                    <img src="data/product.jpg" width="690" height="360" alt=".">
+                    <p><b>Ashwagandha Kapseln kaufen ist heutzutage auch in Deutschland ein Thema.</b></p>
+                    <p>Vor allem Menschen, die sich auf natürliche Heilpflanzen verlassen möchten greifen zu dem Pulver.</p>
+                    <p>Der am besten erforschte und bekannteste Wirkstoff in Ashwagandha sind die Withanolide. Sie wurden bereits von Wissenschaftlern isoliert und n Tierversuchen konnte gezeigt werden, dass sie Entzündungen hemmen können.</p>
+                    <ul class="list-column">
+                      <li><span>✓</span>Eifrei</li>
+                      <li><span>✓</span>Erdnussfrei</li>
+                      <li><span>✓</span>Fischfrei</li>
+                      <li><span>✓</span>Fruktosefrei</li>
+                      <li><span>✓</span>Gelatinefrei</li>
+                      <li><span>✓</span>Gentechnikfrei</li>
+                      <li><span>✓</span>Glutenfrei</li>
+                      <li><span>✓</span>Hefefrei</li>
+                      <li><span>✓</span>Hypoallergen</li>
+                      <li><span>✓</span>Laktosefrei</li>
+                      <li><span>✓</span>Magnesiumstearatfrei</li>
+                      <li><span>✓</span>Milchfrei</li>
+                      <li><span>✓</span>Nussfrei</li>
+                      <li><span>✓</span>Ohne Farbstoffe</li>
+                      <li><span>✓</span>Ohne Geschmackstoffe</li>
+                      <li><span>✓</span>Ohne Konservierung</li>
+                      <li><span>✓</span>Ohne künstl. Süßstoffe</li>
+                      <li><span>✓</span>Ohne Mikrokr. Cellulose</li>
+                      <li><span>✓</span>Ohne Zuckeraustausch</li>
+                      <li><span>✓</span>Schalentierfrei</li>
+                      <li><span>✓</span>Sojafrei</li>
+                      <li><span>✓</span>Vegan</li>
+                      <li><span>✓</span>Vegetarisch</li>
+                      <li><span>✓</span>Weizenfrei</li>
+                      <li><span>✓</span>Zuckerfrei</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product__right js-sticky">
+          <div class="product__mobile">
+            <div class="product__label">Bestseller</div>
+            <div class="product__rate">
+              <div class="product__rate-stars">
+                <div class="rate" data-rate="4">
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                </div>
+              </div>
+              <div class="product__rate-text">50 Bewertungen</div>
+            </div>
+          </div>
+            <div class="product__title">Ashwagandha Kapseln – 120 Kapseln a 500mg</div>
+            <div class="product__text">Ashwagandha Pulver in Kapselform – Wurzelextrakt der Schlafbeere in höchster Qualität.</div>
+            <ul class="product__descriptions-list">
+              <li>✓<span>120 Kapseln a 500 mg = 60g</span></li>
+              <li>✓<span>Hohe Dosierung, mindestens 5% Withanolide</span></li>
+              <li>✓<span>Reines Ashwagandha Pulver, Naturprodukt, keine Zusatzstoffe</span></li>
+              <li>✓<span>Deutscher Händler, Qualität von deutschem Labor bestätigt</span></li>
+            </ul>
+            <form class="product__form">
+              <div class="product__table">
+                <div class="product__table-head">
+                  <div class="product__table-cell"></div>
+                  <div class="product__table-cell bold">Menge</div>
+                  <div class="product__table-cell bold">Dein Preis</div>
+                  <div class="product__table-cell bold">Sie sparen</div>
+                  <div class="product__table-cell bold">Versand</div>
+                </div>
+                <div class="product__table-row">
+                  <div class="product__table-cell">
+                    <label class="radio-style">
+                      <input type="radio" name="product" class="radio-style__input">
+                      <span class="radio-style__icon"></span>
+                    </label>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-text">1</div>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-text">€ 24,90</div>
+                  </div>
+                  <div class="product__table-cell">
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-text">Gratis</div>
+                  </div>
+                </div>
+                <div class="product__table-row">
+                  <div class="product__table-cell">
+                    <label class="radio-style">
+                      <input type="radio" name="product" class="radio-style__input">
+                      <span class="radio-style__icon"></span>
+                    </label>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-text">2</div>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-text">€ 23,66</div>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-stock">5%</div>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-text">Gratis</div>
+                  </div>
+                </div>
+                <div class="product__table-row">
+                  <div class="product__table-cell">
+                    <label class="radio-style">
+                      <input type="radio" name="product" class="radio-style__input">
+                      <span class="radio-style__icon"></span>
+                    </label>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-text">4</div>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-text">€ 22,41</div>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-stock">10%</div>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-text">Gratis</div>
+                  </div>
+                </div>
+                <div class="product__table-row">
+                  <div class="product__table-cell">
+                    <label class="radio-style">
+                      <input type="radio" name="product" class="radio-style__input">
+                      <span class="radio-style__icon"></span>
+                    </label>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="counter counter--w75">
+                      <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
+                      <input type="number" class="counter__input" min="1" value="6">
+                      <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
+                    </div>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-text bold">€ 49,90</div>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-stock product__table-stock--red">-15%</div>
+                  </div>
+                  <div class="product__table-cell">
+                    <div class="product__table-text product__table-text--green">Gratis</div>
+                  </div>
+                </div>
+              </div>
+              <div class="product__number">
+                <div class="product__number-title">Menge:</div>
+                <div class="product__number-list">
+                  <label class="product__number-item">
+                    <input type="radio" name="radio2" class="product__number-item-input">
+                    <span class="product__number-item-text">120 Kapseln</span>
+                  </label>
+                  <label class="product__number-item">
+                    <input type="radio" name="radio2" class="product__number-item-input">
+                    <span class="product__number-item-text">240 Kapseln</span>
+                  </label>
+                </div>
+              </div>
+              <div class="product__price">
+                <div class="product__price-availability">Auf Lager in 2 - 3 Tagen bei dir</div>
+                <div class="product__price-box">
+                  <div class="product__price-top">
+                    <div class="product__price-old">€ 49,90</div>
+                    <div class="product__price-new">€ 34,90</div>
+                  </div>
+                  <div class="product__price-text">inkl. MwSt (€53,69/kg)</div>
+                </div>
+              </div>
+              <div class="product__buy-box">
+                <div class="product__buy btn btn--yellow">In den Warenkorb</div>
+              </div>
+              <div class="product__triggers">
+                <div class="product__triggers-item">
+                  <div class="product__triggers-icon"><img src="data/product-trigger1.svg" alt="Best-Preis Garantie"></div>
+                  <div class="product__triggers-text">Best-Preis Garantie</div>
+                </div>
+                <div class="product__triggers-item">
+                  <div class="product__triggers-icon"><img src="data/product-trigger2.svg" alt="Sicherer Versand"></div>
+                  <div class="product__triggers-text">Sicherer Versand</div>
+                </div>
+                <div class="product__triggers-item">
+                  <div class="product__triggers-icon"><img src="data/product-trigger3.svg" alt="Zufriedenheits- garantie"></div>
+                  <div class="product__triggers-text">Zufriedenheits- garantie</div>
+                </div>
+              </div>
+              <div class="product__pay">
+                <div class="basket-popup__caption-decor">Sicher einkaufen</div>
+                <div class="product__pay-list">
+                  <div class="product__pay-item"><img src="data/apple.jpg" width="45" height="32" alt="Sicher bezahlen mit"></div>
+                  <div class="product__pay-item"><img src="data/visa.jpg" width="45" height="32" alt="Sicher bezahlen mit"></div>
+                  <div class="product__pay-item"><img src="data/master.jpg" width="45" height="32" alt="Sicher bezahlen mit"></div>
+                  <div class="product__pay-item"><img src="data/pp.jpg" width="45" height="32" alt="Sicher bezahlen mit"></div>
+                  <div class="product__pay-item"><img src="data/sofort.jpg" width="45" height="32" alt="Sicher bezahlen mit"></div>
+                  <div class="product__pay-item"><img src="data/rech.jpg" width="45" height="32" alt="Sicher bezahlen mit"></div>
+                  <div class="product__pay-item"><img src="data/vorkasse.jpg" width="45" height="32" alt="Sicher bezahlen mit"></div>
+                  <div class="product__pay-item"><img src="data/ae.jpg" width="45" height="32" alt="Sicher bezahlen mit"></div>
+                </div>
+              </div>
+              <div class="product__download">
+                <div class="product__download-box">
+                  <div class="product__download-icon"><svg width="34" height="34"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#download"></use></svg></div>
+                  <div class="product__download-text">Letzter Laborbericht</div>
+                </div>
+                <a href="#" download class="product__download-btn">Download PDF</a>
+              </div>
+              <div class="product__standard">
+                <div class="product__standard-item">
+                  <div class="product__standard-icon"><img src="data/standard.jpg" alt="HACCP zertifiziert"></div>
+                  <div class="product__standard-text">HACCP zertifiziert</div>
+                </div>
+                <div class="product__standard-item">
+                  <div class="product__standard-icon"><img src="data/standard2.jpg" alt="HACCP zertifiziert"></div>
+                  <div class="product__standard-text">GMP Zertifiziert</div>
+                </div>
+                <div class="product__standard-item">
+                  <div class="product__standard-icon"><img src="data/standard.jpg" alt="HACCP zertifiziert"></div>
+                  <div class="product__standard-text">ISO-zertifiziert DIN 20:98989</div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="bg">
+        <div class="container">
+          <div class="focus">
+            <div class="focus__title">Ashwagandha kaufen</div>
+            <div class="focus__descriptions">Die heilige Schlafbeere als reines Wurzelextrakt</div>
+            <div class="focus__box">
+              <div class="focus__img focus__img--product"><img src="data/focus11.jpg" width="600" height="600" alt="focus"></div>
+              <div class="focus__item">
+                <div class="focus__item-inner">
+                  <div class="focus__icon focus__icon--2"><img src="data/focus1.svg" alt="BIOACTIVE"></div>
+                  <div class="focus__item-text">BIOACTIVE</div>
+                </div>
+              </div>
+              <div class="focus__item">
+                <div class="focus__item-inner">
+                  <div class="focus__icon focus__icon--2"><img src="data/focus2.svg" alt="Natürlich gewachsen"></div>
+                  <div class="focus__item-text">Natürlich gewachsen</div>
+                </div>
+              </div>
+              <div class="focus__item">
+                <div class="focus__item-inner">
+                  <div class="focus__icon focus__icon--2"><img src="data/focus3.svg" alt="VEGAN"></div>
+                  <div class="focus__item-text">VEGAN</div>
+                </div>
+              </div>
+              <div class="focus__item">
+                <div class="focus__item-inner">
+                  <div class="focus__icon focus__icon--2"><img src="data/focus4.svg" alt="Frei von Gentechnik"></div>
+                  <div class="focus__item-text">Frei von Gentechnik</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="info__img"><img src="data/info2.jpg" width="947" height="533" alt="Don’t let stress stress you out"></div>
+            <div class="info__text">
+              <div class="info__label">Mix. Sip. Sleep</div>
+              <div class="info__title">Don’t let stress <br> stress you out</div>
+              <div class="info__text text-content">
+                <p>Im alten Indien, sowie auch zur heutigen Zeit, werden der Wurzel der Schlafbeere noch viele andere Wirkungsweisen nachgesprochen. Die vielen unterschiedlichen Wirkstoffe sollen vielseitige Auswirkungen auf den Menschen haben.</p>
+                <p>In der ayurvedischen Medizin wird Ashwagandha unter anderem als Stärkungsmittel sowie zur Verbesserung des Schlafs eingesetzt.</p>
+                <p>Vor allem als Aphrodisiakum ist Ashwagandha bekannt. Aus den Wurzeln der Schlafbeere werden Liebestränke gebraut, die stimulierend und verführend wirken sollen und fester Bestandteil im Tantra sind.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="product__additionally">
+          <div class="product__additionally-title">Wie startest du?</div>
+          <div class="product__list">
+            <div class="product__item">
+              <a href="#" class="product__item-img"><img src="data/product-item.jpg" width="280" height="349" alt="Tribulus Terrestris Kapseln mit 95% Saponinen"></a>
+              <a href="#" class="product__item-title" title="Tribulus Terrestris Kapseln mit 95% Saponinen">Tribulus Terrestris Kapseln mit 95% Saponinen</a>
+              <div class="product__item-price-box">
+                <div class="product__item-price">€ 34,90</div>
+              </div>
+            </div>
+            <div class="product__item">
+              <a href="#" class="product__item-img"><img src="data/product-item2.jpg" width="280" height="349" alt="Tribulus Terrestris Kapseln mit 95% Saponinen"></a>
+              <a href="#" class="product__item-title" title="Tribulus Terrestris Kapseln mit 95% Saponinen">Tribulus Terrestris Kapseln mit 95% Saponinen</a>
+              <div class="product__item-price-box">
+                <div class="product__item-price">€ 34,90</div>
+              </div>
+            </div>
+            <div class="product__item">
+              <a href="#" class="product__item-img"><img src="data/product-item2.jpg" width="280" height="349" alt="Tribulus Terrestris Kapseln mit 95% Saponinen"></a>
+              <a href="#" class="product__item-title" title="Nattokinase 120 Kapseln mit je 100mg">Nattokinase 120 Kapseln mit je 100mg</a>
+              <div class="product__item-price-box">
+                <div class="product__item-price-old">€ 34,90</div>
+                <div class="product__item-price">€ 34,90</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reviews">
+          <div class="reviews__title">Kundenstimmen</div>
+          <div class="reviews__head">
+            <div class="reviews__rate">
+              <div class="reviews__rate-stars">
+                <div class="rate" data-rate="4">
+                  <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                </div>
+              </div>
+              <div class="reviews__rate-text">(4,9) 50 Bewertungen</div>
+            </div>
+            <a href="#" class="reviews__btn btn">Produkt bewerten</a>
+          </div>
+          <div class="reviews__slider">
+            <div class="reviews__item">
+              <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+              <div class="reviews__item-rate">
+                <div class="rate" data-rate="4">
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                </div>
+              </div>
+              <div class="reviews__item-date">11.1.2020</div>
+              <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+              </div>
+            </div>
+            <div class="reviews__item">
+              <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+              <div class="reviews__item-rate">
+                <div class="rate" data-rate="4">
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                </div>
+              </div>
+              <div class="reviews__item-date">11.1.2020</div>
+              <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+              </div>
+            </div>
+            <div class="reviews__item">
+              <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+              <div class="reviews__item-rate">
+                <div class="rate" data-rate="4">
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                </div>
+              </div>
+              <div class="reviews__item-date">11.1.2020</div>
+              <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+              </div>
+            </div>
+            <div class="reviews__item">
+              <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+              <div class="reviews__item-rate">
+                <div class="rate" data-rate="4">
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                </div>
+              </div>
+              <div class="reviews__item-date">11.1.2020</div>
+              <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+              </div>
+            </div>
+            <div class="reviews__item">
+              <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+              <div class="reviews__item-rate">
+                <div class="rate" data-rate="4">
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                </div>
+              </div>
+              <div class="reviews__item-date">11.1.2020</div>
+              <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+              </div>
+            </div>
+            <div class="reviews__item">
+              <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+              <div class="reviews__item-rate">
+                <div class="rate" data-rate="4">
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                </div>
+              </div>
+              <div class="reviews__item-date">11.1.2020</div>
+              <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+              </div>
+            </div>
+          </div>
+          <div class="reviews__slider-controls">
+            <a href="#" data-slide="1" class="reviews__slider-first">
+              <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+              <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+            </a>
+            <div class="reviews__slider-counter">
+              <span class="reviews__slider-counter-current">1</span>/
+              <span class="reviews__slider-counter-all"></span>
+            </div>
+            <a href="#" data-slide="6" class="reviews__slider-last">
+              <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+              <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+            </a>
+          </div>
+        </div>
+        <div class="questions">
+          <div class="questions__title">Häufig gestellte Fragen</div>
+          <div class="questions__list">
+            <div class="questions__item">
+              <div class="questions__head">Gibt es einen Mindestbestellwert?</div>
+              <div class="questions__body">
+                <div class="questions__body-img"><img src="data/questions.jpg" width="168" height="168" alt="Gibt es einen Mindestbestellwert"></div>
+                <div class="questions__body-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+              </div>
+            </div>
+            <div class="questions__item">
+              <div class="questions__head">Muss ich ein Abonnement abschließen?</div>
+              <div class="questions__body">
+                <div class="questions__body-img"><img src="data/questions.jpg" width="168" height="168" alt="Gibt es einen Mindestbestellwert"></div>
+                <div class="questions__body-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+              </div>
+            </div>
+            <div class="questions__item">
+              <div class="questions__head">Was passiert, wenn ich mal mit einem Produkt unzufrieden bin?</div>
+              <div class="questions__body">
+                <div class="questions__body-img"><img src="data/questions.jpg" width="168" height="168" alt="Gibt es einen Mindestbestellwert"></div>
+                <div class="questions__body-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+              </div>
+            </div>
+            <div class="questions__item">
+              <div class="questions__head">Bis zu welcher Uhrzeit kann ich bestellen?</div>
+              <div class="questions__body">
+                <div class="questions__body-img"><img src="data/questions.jpg" width="168" height="168" alt="Gibt es einen Mindestbestellwert"></div>
+                <div class="questions__body-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+              </div>
+            </div>
+            <div class="questions__item">
+              <div class="questions__head">Lorem Ipsum Dolor Asemt?</div>
+              <div class="questions__body">
+                <div class="questions__body-img"><img src="data/questions.jpg" width="168" height="168" alt="Gibt es einen Mindestbestellwert"></div>
+                <div class="questions__body-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <nav class="footer__nav">
+        <ul>
+          <li>
+            <a href="#">Shop</a>
+            <ul>
+              <li><a href="#">Tribulus Tereestris</a></li>
+              <li><a href="#">Roter Panax Ginseng</a></li>
+              <li><a href="#">Ashwagandha</a></li>
+              <li><a href="#">Nattokinase</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Support</a>
+            <ul>
+              <li><a href="#">Kontakt</a></li>
+              <li><a href="#">Zahlung & Versand</a></li>
+              <li><a href="#">Garantie</a></li>
+              <li><a href="#">Datenschutz</a></li>
+              <li><a href="#">Widerruf</a></li>
+              <li><a href="#">AGBs</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Brand</a>
+            <ul>
+              <li><a href="#">Über Fitness Vital</a></li>
+              <li><a href="#">Magazin</a></li>
+              <li><a href="#">Ashwagandha</a></li>
+              <li><a href="#">Unsere Partner</a></li>
+              <li><a href="#">Jobs</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Mehr</a>
+            <ul>
+              <li><a href="#">Impressum</a></li>
+              <li><a href="#">B2B/Affiliate</a></li>
+              <li><a href="#">Mikro Stipendium</a></li>
+              <li><a href="#">Datenschutz</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="footer__contacts">
+        <div class="footer__contacts-title">Newsletter</div>
+        <div class="footer__contacts-descriptions">Für unseren Newsletter anmelden und 10% Rabatt auf deine erste Bestellung erhalten.</div>
+        <form class="footer__form">
+          <input type="email" class="footer__form-input" placeholder="Deine E-Mail-Adresse">
+          <button type="submit" class="footer__form-btn">Anmelden</button>
+          <p class="error">error</p>
+        </form>
+        <div class="footer__social">
+          <div class="footer__social-title">Folge uns</div>
+          <ul class="footer__social-list">
+            <li><a href="#" target="_blank" rel="nofollow">Instagram</a></li>
+            <li><a href="#" target="_blank" rel="nofollow">Facebook</a></li>
+            <li><a href="#" target="_blank" rel="nofollow">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__bottom-cell">
+        <div class="footer__bottom-title">Schnelle Lieferung</div>
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/dhl.svg" width="94" height="30" alt="Schnelle Lieferung"></a></li>
+        </ul>
+      </div>
+      <div class="footer__bottom-cell">
+        <div class="footer__bottom-title">Sicher bezahlen mit</div>
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/visa.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/master.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/pp.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/sofort.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/rech.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/vorkasse.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+        </ul>
+      </div>
+      <div class="footer__bottom-cell">
+        <div class="footer__bottom-title">Zertifizierter Onlineshop</div>
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/ssl.jpg" width="45" height="45" alt="Zertifizierter Onlineshop"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/e.jpg" width="51" height="51" alt="Zertifizierter Onlineshop"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/tage.jpg" width="44" height="44" alt="Zertifizierter Onlineshop"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="/js/app.js"></script>
+
+</body>
+
+</html>
