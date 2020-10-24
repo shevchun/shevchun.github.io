@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Kegglers">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>Kegglers</title>
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
+  <link rel="preload" href="/fonts/GothamPro-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Medium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Light.woff" as="font" type="font/woff" crossorigin>
+  <link href="css/index.css" rel="stylesheet">
+</head>
+
+
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="header__container">
+      <div class="header__mobile-btn js-mobile-btn"></div>
+      <div class="header__logo">
+        <img src="images/logo.png" width="135" height="34" alt="logo">
+        <a href="#" class="header__logo-link"></a>
+      </div>
+      <div class="header__middle">
+        <div class="header__middle-overlay js-close-mobile-menu"></div>
+        <div class="header__middle-box">
+          <div class="header__middle-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          <a href="#" class="header__catalog-btn">
+            <svg class="header__catalog-btn-icon" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
+            <span class="header__catalog-btn-text">Shop</span>
+          </a>
+          <nav class="header__nav">
+            <ul>
+              <li><a href="#">Kegel balls and Weights</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Dilators</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Dilators Dilators Dilators Dilators Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">Yoni Care</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header__controls">
+        <div class="header__search">
+          <div class="header__search-btn"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></div>
+          <form class="header__search-form">
+            <input type="text" class="header__search-input">
+            <button type="submit" class="header__search-button"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
+          </form>
+        </div>
+        <div class="header__basket">
+          <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+          <span class="header__basket-count">3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__popup">
+    <div class="container">
+      <div class="header__popup-container">
+        <div class="header__popup-box">
+          <div class="header__popup-head">
+            <div class="header__popup-head-left">
+              <div class="header__popup-head-icon"></div>
+              <div class="header__popup-head-text">ITEM ADDED TO BAG</div>
+            </div>
+            <div class="header__popup-close"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          </div>
+          <div class="header__popup-holder">
+            <div class="basket-list">
+              <div class="basket-item">
+                <a href="#" class="basket-item__img"><img src="data/basket.jpg" width="150" height="150" alt="basket"></a>
+                <div class="basket-item__box">
+                  <a href="#" class="basket-item__title">Lapis Lazuli Yoni Egg</a>
+                  <div class="basket-item__price">$18,99</div>
+                  <div class="basket-item__descriptions">+ 1 Extra Options</div>
+                </div>
+                <div class="basket-item__remove"><svg width="15" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#remove"></use></svg></div>
+              </div>
+            </div>
+            <div class="header__popup-controls">
+              <div class="header__btn-cart header__popup-btn btn-2">VIEW CART</div>
+              <div class="header__btn-checkout header__popup-btn btn-1">CHECKOUT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div class="wrapper">
+    <div class="product-page main">
+      <div class="container">
+        <div class="product-page__mobile-head"><div class="product-page__mobile-row"></div></div>
+        <div class="product-page__head">
+          <div class="product-page__sliders">
+            <div class="product-page__nav">
+              <div class="product-page__nav-item"><img src="data/product-page.jpg" width="75" height="75" alt="."></div>
+              <div class="product-page__nav-item"><img src="data/product-page.jpg" width="75" height="75" alt="."></div>
+              <div class="product-page__nav-item"><img src="data/product-page.jpg" width="75" height="75" alt="."></div>
+              <div class="product-page__nav-item"><img src="data/product-page.jpg" width="75" height="75" alt="."></div>
+              <div class="product-page__nav-item"><img src="data/product-page.jpg" width="75" height="75" alt="."></div>
+            </div>
+            <div class="product-page__for">
+              <div class="product-page__for-item"><img src="data/product-page2.jpg" width="400" height="400" alt="."></div>
+              <div class="product-page__for-item"><img src="data/product-page2.jpg" width="400" height="400" alt="."></div>
+              <div class="product-page__for-item"><img src="data/product-page2.jpg" width="400" height="400" alt="."></div>
+              <div class="product-page__for-item"><img src="data/product-page2.jpg" width="400" height="400" alt="."></div>
+              <div class="product-page__for-item"><img src="data/product-page2.jpg" width="400" height="400" alt="."></div>
+            </div>
+          </div>
+          <div class="product-page__info">
+            <div class="product-page__info-head">
+              <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><span>Amethyst Yoni Egg</span></li>
+              </ul>
+              <div class="product-page__info-rate">
+                <div class="rate rate--relative js-product-rate" data-rate="5">
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                </div>
+                <div class="rate-counter">84 Reviews</div>
+              </div>
+            </div>
+            <div class="product-page__title">Yoni Soap Bar</div>
+            <div class="product-page__descriptions">The yoni soap bar contains a mix of natural butters, oils and herbs. It maintains vaginal PH balance and cures yeast infections. Yoni soap is great for every skin type.</div>
+            <div class="product-page__add-btn">
+              <div class="product-page__add-btn-icon"><svg width="10" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#add"></use></svg></div>
+              <div class="product-page__add-btn-text">Add to your purchase</div>
+            </div>
+            <div class="product-page__checkbox">
+              <div class="product-page__checkbox-cell">
+                <label class="checkbox">
+                  <input type="radio" name="product-page" class="checkbox__input">
+                  <span class="checkbox__product">
+                    <span class="checkbox__product-title">Yoni Steam Gown</span>
+                    <span class="checkbox__product-price-box">
+                      <span class="checkbox__product-price-new">$11,99</span>
+                      <span class="checkbox__product-price-old">$17,99</span>
+                      <a href="#" target="_blank" rel="nofollow">See Product</a>
+                    </span>
+                  </span>
+                </label>
+              </div>
+              <div class="product-page__checkbox-cell">
+                <label class="checkbox">
+                  <input type="radio" name="product-page" class="checkbox__input">
+                  <span class="checkbox__product">
+                    <span class="checkbox__product-title">Yoni Steam Seat</span>
+                    <span class="checkbox__product-price-box">
+                      <span class="checkbox__product-price">$6,99</span>
+                      <a href="#" target="_blank" rel="nofollow">See Product</a>
+                    </span>
+                  </span>
+                </label>
+              </div>
+              <div class="product-page__checkbox-cell">
+                <div class="checkbox disabled">
+                  <input type="radio" name="product-page" class="checkbox__input">
+                  <span class="checkbox__product">
+                    <span class="checkbox__product-title">Yoni Steam Seat</span>
+                    <span class="checkbox__product-price-box">
+                      <span class="checkbox__product-price">$6,99</span>
+                      <a href="#" target="_blank" rel="nofollow">See Product</a>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="product-page__gift">
+              <div class="product-page__gift-icon">
+                <svg width="38" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#gift"></use></svg>
+              </div>
+              <div class="product-page__gift-text">
+                <b>First purchase gift!</b> Shop for $100 or more for 10% off.
+              </div>
+            </div>
+            <div class="product-page__controls">
+              <div class="product-page__controls-left">
+                <div class="product-page__price">
+                  <div class="product-page__price-new">$15,99</div>
+                  <div class="product-page__price-old">$26,99</div>
+                </div>
+                <div class="product-page__price-descriptions">You are saving 42% with this purchase</div>
+              </div>
+              <div class="product-page__controls-right">
+                <div class="select2-parent select2-style select2-style--2 js-select-label">
+                  <select class="init-select2">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+                <!-- if the product is out of stock then add a "disabled" class to the button -->
+                <div class="product-page__btn btn-1">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  ADD TO CART
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-page__content">
+          <div class="product-page__content-aside">
+            <div class="product-page__content-aside-title">Product Details</div>
+            <ul class="product-page__content-aside-list">
+              <li>100% Natural Product</li>
+              <li>Eco-Friendly Packaging</li>
+              <li>Anti-Bacterial Properties</li>
+            </ul>
+            <div class="product-page__content-aside-title">Available Fragrances</div>
+            <ul class="list-style">
+              <li>
+                <span class="list-style__row">
+                  <div class="list-style__count">1.</div>
+                  <div class="list-style__title">Aloe Vera</div>
+                </span>
+                <span class="list-style__descriptions"><a href="#" class="list-style__link">See more details</a></span>
+              </li>
+              <li>
+                <span class="list-style__row">
+                  <div class="list-style__count">2.</div>
+                  <div class="list-style__title">Matcha</div>
+                </span>
+                <span class="list-style__descriptions"><a href="#" class="list-style__link">See more details</a></span>
+              </li>
+            </ul>
+          </div>
+          <div class="product-page__content-box">
+            <ul class="tabs-list tabs-1">
+              <li><a href="#tab1">What Is Yoni Steaming?</a></li>
+              <li><a href="#tab2">Safety Practice for Vaginal Steaming</a></li>
+              <li><a href="#tab3">Benefits of Herbal Steam</a></li>
+            </ul>
+            <div class="product-page__options">
+              <div id="tab1" class="tab">
+                <div class="product-page__content-text text-content">
+                  <h3>Yoni Soap Benefits</h3>
+                  <p>The yoni soap bar is made from all-natural ingredients. It comes in four flavors: strawberry, aloe vera, ginseng and matcha. Creamy and <b>unscented</b>, it offers women a lavish self-care experience. Its formula <b>maintains the natural PH of the vagina</b>. Using the yoni soap bar regularly has many health and wellness benefits.</p>
+                  <p>Yoni soap is meant for <b>external use only</b>. Lather the pubic mound and the labia, then gently rinse with lukewarm water. This softens and nourishes the skin. While the soap is not synthetically scented, it can still have a subtle, yet pleasant, scent from the natural ingredients.</p>
+                  <p>You can also use yoni soap to <b>treat yeast infections</b>. Its formula eliminates bad bacteria and promotes vaginal health. It is vegan, cruelty-free, and does not contain parabens, artificial colorants or latex.</p>
+                  <p>Because of the soap’s all-natural formula, it is <b>suitable for all skin types</b>. It can also be used to sterilize yoni eggs, yoni wands and menstrual cups.</p>
+                </div>
+                <div class="product-page__content-bottom">
+                  <div class="product-page__content-title">Read our guide about </div>
+                  <a href="#" class="product-page__content-link">
+                    Yoni
+                    <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  </a>
+                </div>
+              </div>
+              <div id="tab2" class="tab">
+                <div class="product-page__content-text text-content">
+                  <h3>Yoni Soap Benefits</h3>
+                  <p>The yoni soap bar is made from all-natural ingredients. It comes in four flavors: strawberry, aloe vera, ginseng and matcha. Creamy and unscented, it offers women a lavish self-care experience. Its formula maintains the natural PH of the vagina. Using the yoni soap bar regularly has many health and wellness benefits.</p>
+                  <p>Yoni soap is meant for external use only. Lather the pubic mound and the labia, then gently rinse with lukewarm water. This softens and nourishes the skin. While the soap is not synthetically scented, it can still have a subtle, yet pleasant, scent from the natural ingredients.</p>
+                </div>
+                <div class="product-page__content-bottom">
+                  <div class="product-page__content-title">Read our guide about </div>
+                  <a href="#" class="product-page__content-link">
+                    Yoni
+                    <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  </a>
+                </div>
+              </div>
+              <div id="tab3" class="tab">
+                <div class="product-page__content-text text-content">
+                  <h3>Yoni Soap Benefits</h3>
+                  <p>The yoni soap bar is made from all-natural ingredients. It comes in four flavors: strawberry, aloe vera, ginseng and matcha. Creamy and <b>unscented</b>, it offers women a lavish self-care experience. Its formula <b>maintains the natural PH of the vagina</b>. Using the yoni soap bar regularly has many health and wellness benefits.</p>
+                  <p>Yoni soap is meant for <b>external use only</b>. Lather the pubic mound and the labia, then gently rinse with lukewarm water. This softens and nourishes the skin. While the soap is not synthetically scented, it can still have a subtle, yet pleasant, scent from the natural ingredients.</p>
+                  <p>You can also use yoni soap to <b>treat yeast infections</b>. Its formula eliminates bad bacteria and promotes vaginal health. It is vegan, cruelty-free, and does not contain parabens, artificial colorants or latex.</p>
+                  <p>Because of the soap’s all-natural formula, it is <b>suitable for all skin types</b>. It can also be used to sterilize yoni eggs, yoni wands and menstrual cups.</p>
+                </div>
+                <div class="product-page__content-bottom">
+                  <div class="product-page__content-title">Read our guide about </div>
+                  <a href="#" class="product-page__content-link">
+                    Yoni
+                    <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="review2">
+          <div class="review2__nav">
+            <ul class="tabs-list tabs-1 tabs-1--review2">
+              <li><a href="#review21">Reviews</a></li>
+              <li><a href="#review22">Questions</a></li>
+            </ul>
+          </div>
+          <div class="review2__options">
+            <div id="review21" class="tab">
+              <div class="review2__head">
+                <div class="review2__title title">Reviews from Buyers</div>
+                <div class="review2__head-rate">
+                  <div class="rate rate--relative" data-rate="4">
+                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                  </div>
+                  <div class="rate-counter">84 Reviews</div>
+                </div>
+              </div>
+              <div class="review2__list">
+                <div class="review2__item">
+                  <div class="review2__item-head">
+                    <div class="review2__item-title">Quality Products and Service</div>
+                    <div class="review2__item-rate">
+                      <div class="rate rate--relative" data-rate="4">
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review2__item-body">
+                    <div class="review2__item-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu.
+                    </div>
+                    <div class="review2__item-footer">
+                      <div class="review2__item-footer-left">
+                        <div class="review2__item-name">Walter H.</div>
+                        <div class="review2__item-verified">VERIFIED BUYER</div>
+                        <div class="review2__item-date">14 July 2020</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="review2__item">
+                  <div class="review2__item-head">
+                    <div class="review2__item-title">Quality Products and Service</div>
+                    <div class="review2__item-rate">
+                      <div class="rate rate--relative" data-rate="4">
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review2__item-body">
+                    <div class="review2__item-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu.
+                    </div>
+                    <div class="review2__item-footer">
+                      <div class="review2__item-footer-left">
+                        <div class="review2__item-name">Walter H.</div>
+                        <div class="review2__item-date">14 July 2020</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="review2__item">
+                  <div class="review2__item-head">
+                    <div class="review2__item-title">Quality Products and Service</div>
+                    <div class="review2__item-rate">
+                      <div class="rate rate--relative" data-rate="4">
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review2__item-body">
+                    <div class="review2__item-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu.
+                    </div>
+                    <div class="review2__item-footer">
+                      <div class="review2__item-footer-left">
+                        <div class="review2__item-name">Walter H.</div>
+                        <div class="review2__item-verified">VERIFIED BUYER</div>
+                        <div class="review2__item-date">14 July 2020</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="review2__item">
+                  <div class="review2__item-head">
+                    <div class="review2__item-title">Quality Products and Service</div>
+                    <div class="review2__item-rate">
+                      <div class="rate rate--relative" data-rate="4">
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review2__item-body">
+                    <div class="review2__item-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu.
+                    </div>
+                    <div class="review2__item-footer">
+                      <div class="review2__item-footer-left">
+                        <div class="review2__item-name">Walter H.</div>
+                        <div class="review2__item-date">14 July 2020</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="review2__item">
+                  <div class="review2__item-head">
+                    <div class="review2__item-title">Quality Products and Service</div>
+                    <div class="review2__item-rate">
+                      <div class="rate rate--relative" data-rate="4">
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review2__item-body">
+                    <div class="review2__item-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu.
+                    </div>
+                    <div class="review2__item-footer">
+                      <div class="review2__item-footer-left">
+                        <div class="review2__item-name">Walter H.</div>
+                        <div class="review2__item-verified">VERIFIED BUYER</div>
+                        <div class="review2__item-date">14 July 2020</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="review2__item">
+                  <div class="review2__item-head">
+                    <div class="review2__item-title">Quality Products and Service</div>
+                    <div class="review2__item-rate">
+                      <div class="rate rate--relative" data-rate="4">
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review2__item-body">
+                    <div class="review2__item-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu.
+                    </div>
+                    <div class="review2__item-footer">
+                      <div class="review2__item-name">Walter H.</div>
+                      <div class="review2__item-date">14 July 2020</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul class="pagination">
+                <li><a href="#"><svg width="7" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#left"></use></svg></a></li>
+                <li><a href="#">1</a></li>
+                <li><span>2</span></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#"><svg width="7" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#left"></use></svg></a></li>
+              </ul>
+              <form class="review-form">
+                <div class="review-form__head">
+                  <div class="review-form__head-title">Are you a customer?</div>
+                  <div class="review-form__head-checkbox">
+                    <div class="review-form__head-checkbox-item">
+                      <label class="checkbox">
+                        <input type="radio" name="radio1" class="checkbox__input">
+                        <span class="checkbox__text checkbox__text--bold checkbox__text--fz16">Yes</span>
+                      </label>
+                    </div>
+                    <div class="review-form__head-checkbox-item">
+                      <label class="checkbox">
+                        <input type="radio" name="radio1" class="checkbox__input">
+                        <span class="checkbox__text checkbox__text--bold checkbox__text--fz16">No</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="review-form__row">
+                  <div class="review-form__cell">
+                    <div class="review-form__rate">
+                      <div class="review-form__rate-title">Pick Rating</div>
+                      <div class="star-rating">
+                        <div class="star-rating__item" data-value="1">
+                          <svg width="25" height="24" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        </div>
+                        <div class="star-rating__item" data-value="2">
+                          <svg width="25" height="24" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        </div>
+                        <div class="star-rating__item" data-value="3">
+                          <svg width="25" height="24" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        </div>
+                        <div class="star-rating__item" data-value="4">
+                          <svg width="25" height="24" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        </div>
+                        <div class="star-rating__item" data-value="5">
+                          <svg width="25" height="24" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                        </div>
+                        <input type="text" class="star-rating__value">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-form__cell js-input-parent">
+                    <span class="input-label input-label--require">Name</span>
+                    <input type="text" class="input-style js-input">
+                  </div>
+                  <div class="review-form__cell js-input-parent">
+                    <span class="input-label input-label--require">Email Address</span>
+                    <input type="text" class="input-style js-input">
+                  </div>
+                </div>
+                <div class="review-form__write js-input-parent">
+                  <span class="input-label">Write your review here</span>
+                  <textarea class="input-style input-style--textarea js-input"></textarea>
+                </div>
+                <div class="review-form__footer">
+                  <div class="review-form__footer-checkbox">
+                    <label class="checkbox">
+                      <input type="checkbox" class="checkbox__input">
+                      <span class="checkbox__text">I agree to <a href="#" target="_blank" rel="nofollow">Terms & Conditions</a> and <a href="#" target="_blank" rel="nofollow">Privacy Policy</a></span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn-1">POST REVIEW</button>
+                </div>
+              </form>
+            </div>
+            <div id="review22" class="tab">
+              <div class="review2__head">
+                <div class="review2__title title">Questions</div>
+                <div class="review2__info">
+                  <a href="#" class="review2__info-item active">18 Questions</a>
+                  <a href="#" class="review2__info-item">8 Answered</a>
+                  <a href="#" class="review2__info-item">10 Not Answered</a>
+                </div>
+              </div>
+              <div class="review2__list">
+                <div class="review2__item">
+                  <div class="review2__item-body">
+                    <div class="review2__item-text">
+                      <span class="review2__item-first-letter">Q:</span>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu.
+                    </div>
+                    <div class="review2__item-footer">
+                      <div class="review2__item-footer-left">
+                        <div class="review2__item-name">Walter H.</div>
+                        <div class="review2__item-verified">VERIFIED BUYER</div>
+                        <div class="review2__item-date">14 July 2020</div>
+                      </div>
+                      <div class="review2__item-btn">
+                        <svg class="review2__item-btn-icon" width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#rev"></use></svg>
+                        <div class="review2__item-btn-text">2 Answers</div>
+                        <svg class="review2__item-btn-arrow" width="11" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review2__drop">
+                    <div class="review2__drop-inner">
+                      <div class="review2__drop-text">
+                        <span class="review2__item-first-letter review2__item-first-letter--color">A:</span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu.
+                      </div>
+                      <div class="review2__drop-bottom">
+                        <div class="review2__item-name">Karen A..</div>
+                        <div class="review2__item-date">14 July 2020</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="review2__item">
+                  <div class="review2__item-body">
+                    <div class="review2__item-text">
+                      <span class="review2__item-first-letter">Q:</span>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu.
+                    </div>
+                    <div class="review2__item-footer">
+                      <div class="review2__item-footer-left">
+                        <div class="review2__item-name">Walter H.</div>
+                        <div class="review2__item-verified">VERIFIED BUYER</div>
+                        <div class="review2__item-date">14 July 2020</div>
+                      </div>
+                      <div class="review2__item-btn">
+                        <svg class="review2__item-btn-icon" width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#rev"></use></svg>
+                        <div class="review2__item-btn-text">2 Answers</div>
+                        <svg class="review2__item-btn-arrow" width="11" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review2__drop">
+                    <div class="review2__drop-inner">
+                      <div class="review2__drop-text">
+                        <span class="review2__item-first-letter review2__item-first-letter--color">A:</span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu.
+                      </div>
+                      <div class="review2__drop-bottom">
+                        <div class="review2__item-name">Karen A..</div>
+                        <div class="review2__item-date">14 July 2020</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="review2__item">
+                  <div class="review2__item-body">
+                    <div class="review2__item-text">
+                      <span class="review2__item-first-letter">Q:</span>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu.
+                    </div>
+                    <div class="review2__item-footer">
+                      <div class="review2__item-footer-left">
+                        <div class="review2__item-name">Walter H.</div>
+                        <div class="review2__item-verified">VERIFIED BUYER</div>
+                        <div class="review2__item-date">14 July 2020</div>
+                      </div>
+                      <div class="review2__item-btn">
+                        <svg class="review2__item-btn-icon" width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#rev"></use></svg>
+                        <div class="review2__item-btn-text">2 Answers</div>
+                        <svg class="review2__item-btn-arrow" width="11" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review2__drop">
+                    <div class="review2__drop-inner">
+                      <div class="review2__drop-text">
+                        <span class="review2__item-first-letter review2__item-first-letter--color">A:</span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas egestas id et purus nulla dolor arcu.
+                      </div>
+                      <div class="review2__drop-bottom">
+                        <div class="review2__item-name">Karen A..</div>
+                        <div class="review2__item-date">14 July 2020</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul class="pagination">
+                <li><a href="#"><svg width="7" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#left"></use></svg></a></li>
+                <li><a href="#">1</a></li>
+                <li><span>2</span></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#"><svg width="7" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#left"></use></svg></a></li>
+              </ul>
+              <form class="review-form">
+                <div class="review-form__head">
+                  <div class="review-form__head-title">Are you a customer?</div>
+                  <div class="review-form__head-checkbox">
+                    <div class="review-form__head-checkbox-item">
+                      <label class="checkbox">
+                        <input type="radio" name="radio1" class="checkbox__input">
+                        <span class="checkbox__text checkbox__text--bold checkbox__text--fz16">Yes</span>
+                      </label>
+                    </div>
+                    <div class="review-form__head-checkbox-item">
+                      <label class="checkbox">
+                        <input type="radio" name="radio1" class="checkbox__input">
+                        <span class="checkbox__text checkbox__text--bold checkbox__text--fz16">No</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="review-form__row">
+                  <div class="review-form__cell js-input-parent">
+                    <span class="input-label input-label--require">Name</span>
+                    <input type="text" class="input-style js-input">
+                  </div>
+                  <div class="review-form__cell js-input-parent">
+                    <span class="input-label input-label--require">Email Address</span>
+                    <input type="text" class="input-style js-input">
+                  </div>
+                </div>
+                <div class="review-form__write js-input-parent">
+                  <span class="input-label">Write your review here</span>
+                  <textarea class="input-style input-style--textarea js-input"></textarea>
+                </div>
+                <div class="review-form__footer">
+                  <div class="review-form__footer-checkbox">
+                    <label class="checkbox">
+                      <input type="checkbox" class="checkbox__input">
+                      <span class="checkbox__text">I agree to <a href="#" target="_blank" rel="nofollow">Terms & Conditions</a> and <a href="#" target="_blank" rel="nofollow">Privacy Policy</a></span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn-1">POST QUESTION</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+    <div class="featured-products">
+      <div class="container">
+        <div class="featured-products__title title">Reviews from Buyers</div>
+        <div class="featured-products__slider">
+          <div class="featured-products__item">
+            <div class="product">
+              <div class="product__label product__label--sale">SALE</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price-new">$15,99</div>
+                <div class="product__price-old">$26,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-products__item">
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-products__item">
+            <div class="product">
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price-new">$15,99</div>
+                <div class="product__price-old">$26,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-products__item">
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-products__item">
+            <div class="product">
+              <div class="product__label product__label--new">new</div>
+              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
+              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
+              <div class="product__price-box">
+                <div class="product__price">$15,99</div>
+              </div>
+              <div class="product__btn-box">
+                <div class="product__btn btn-4">
+                  <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+                  <span>Buy now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__container">
+      <div class="footer__logo-box">
+        <div class="footer__logo">
+          <img src="images/logo.png" width="135" height="34" alt="logo">
+          <a href="#" class="footer__logo-link"></a>
+        </div>
+        <div class="footer__logo-descriptions">© MyKegelTools 2019. <br> All product names, logos, and brands are property of their respective owners.</div>
+      </div>
+      <nav class="footer__nav">
+        <div class="footer__nav-cell">
+          <div class="footer__nav-title">Useful Pages</div>
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Shipping and Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__nav-cell">
+          <div class="footer__nav-title">Legal Pages</div>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Cookies Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="footer__subscribe">
+        <div class="footer__subscribe-title">Join our mailing list</div>
+        <form class="footer__subscribe-form">
+          <input type="email" class="footer__subscribe-input" placeholder="Enter email">
+          <button type="submit" class="footer__subscribe-btn"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#letter"></use></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="btn-top js-top-scroll">
+    <svg class="btn-top__arrow" width="10" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#top"></use></svg>
+    <svg class="btn-top__bg" width="1920" height="40" viewBox="0 0 1920 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M933.5 11C943.1 1.4 953.5 -1.56795e-05 960 1.31701e-10C966.5 -1.56795e-05 976.9 1.4 986.5 11C987.677 12.1766 988.762 13.286 989.783 14.3299C999.167 23.9217 1003.15 27.9909 1022.93 28H1920V40H0V28H897.067C916.852 27.9909 920.833 23.9217 930.217 14.3299C931.238 13.286 932.323 12.1766 933.5 11Z" fill="url(#paint0_linear)"/>
+      <defs>
+      <linearGradient id="paint0_linear" x1="1920" y1="39.9902" x2="0" y2="39.9902" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BA58E1"/>
+      <stop offset="1" stop-color="#6F49BC"/>
+      </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</footer>
+  <script src="/js/app.js"></script>
+
+</body>
+
+</html>

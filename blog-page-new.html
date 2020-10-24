@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Kegglers">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>Kegglers</title>
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
+  <link rel="preload" href="/fonts/GothamPro-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Medium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Light.woff" as="font" type="font/woff" crossorigin>
+  <link href="css/index.css" rel="stylesheet">
+</head>
+
+
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="header__container">
+      <div class="header__mobile-btn js-mobile-btn"></div>
+      <div class="header__logo">
+        <img src="images/logo.png" width="135" height="34" alt="logo">
+        <a href="#" class="header__logo-link"></a>
+      </div>
+      <div class="header__middle">
+        <div class="header__middle-overlay js-close-mobile-menu"></div>
+        <div class="header__middle-box">
+          <div class="header__middle-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          <a href="#" class="header__catalog-btn">
+            <svg class="header__catalog-btn-icon" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
+            <span class="header__catalog-btn-text">Shop</span>
+          </a>
+          <nav class="header__nav">
+            <ul>
+              <li><a href="#">Kegel balls and Weights</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Dilators</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Dilators Dilators Dilators Dilators Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">Yoni Care</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header__controls">
+        <div class="header__search">
+          <div class="header__search-btn"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></div>
+          <form class="header__search-form">
+            <input type="text" class="header__search-input">
+            <button type="submit" class="header__search-button"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
+          </form>
+        </div>
+        <div class="header__basket">
+          <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+          <span class="header__basket-count">3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__popup">
+    <div class="container">
+      <div class="header__popup-container">
+        <div class="header__popup-box">
+          <div class="header__popup-head">
+            <div class="header__popup-head-left">
+              <div class="header__popup-head-icon"></div>
+              <div class="header__popup-head-text">ITEM ADDED TO BAG</div>
+            </div>
+            <div class="header__popup-close"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          </div>
+          <div class="header__popup-holder">
+            <div class="basket-list">
+              <div class="basket-item">
+                <a href="#" class="basket-item__img"><img src="data/basket.jpg" width="150" height="150" alt="basket"></a>
+                <div class="basket-item__box">
+                  <a href="#" class="basket-item__title">Lapis Lazuli Yoni Egg</a>
+                  <div class="basket-item__price">$18,99</div>
+                  <div class="basket-item__descriptions">+ 1 Extra Options</div>
+                </div>
+                <div class="basket-item__remove"><svg width="15" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#remove"></use></svg></div>
+              </div>
+            </div>
+            <div class="header__popup-controls">
+              <div class="header__btn-cart header__popup-btn btn-2">VIEW CART</div>
+              <div class="header__btn-checkout header__popup-btn btn-1">CHECKOUT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div class="wrapper">
+    <div class="blog-page main">
+      <div class="container">  
+        <div class="blog-page__box">
+          <div class="blog-page__bread">
+            <ul class="breadcrumb breadcrumb--new">
+              <li><a href="#">Women's Health</a></li>
+            </ul>
+          </div>
+          <div class="blog-page__title title title--fz40">Everything you need to know about Yoni Eggs</div>
+          <div class="blog-page__row">
+            <div class="blog-page__cell">
+              <div class="blog-page__icon"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#time2"></use></svg></div>
+              <div class="blog-page__cell-text">Updated on:</div>
+              <div class="blog-page__cell-text2">28 February, 2020</div>
+            </div>
+            <div class="blog-page__cell">
+              <div class="blog-page__icon"><svg width="15" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#user"></use></svg></div>
+              <div class="blog-page__cell-text3">Author:</div>
+              <div class="blog-page__cell-text2">Kelly Konia</div>
+            </div>
+            <div class="blog-page__cell">
+              <div class="blog-page__cell-text3">Reviewed by</div>
+              <div class="blog-page__cell-text4">Steven Krung</div>
+              <div class="blog-page__icon"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
+            </div>
+          </div>
+          <div class="blog-page__top-text">
+            <img src="data/Everything-you-need-to-know-about-Yoni-Eggs.svg" class="blog-page__top-text-decor" alt="Everything-you-need-to-know-about-Yoni-Eggs">
+            <div class="text-content">
+              <p>Yoni eggs can be essential helpers when it comes to Kegel exercises, better orgasms, and birth recovery. Choosing the set that is best suited for you might prove challenging because of the sheer variety of sizes and crystals available.</p>
+              <p>All stones have different properties that you should consider to maximize their beneficial effects. You can choose to use an entire set or a single piece.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chapters">
+        <img class="chapters__decor" src="data/decor9.svg" alt="Jump to Chapter">
+        <img class="chapters__decor chapters__decor--right" src="data/decor9.svg" alt="Jump to Chapter">
+        <div class="container">
+          <div class="chapters__box">
+            <div class="chapters__title">Jump to Chapter</div>
+            <div class="chapters__list">
+              <a href="#" class="chapters__item">
+                <svg class="chapters__item-decor" fill="#F29FA4" width="280" height="164"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#chapters"></use></svg>
+                <span class="chapters__item-number" style="background-color: #F29FA4;">#1</span>
+                <span class="chapters__item-img"><img src="data/chapter1.svg" alt="What Is a Yoni Egg?"></span>
+                <span class="chapters__item-title" title="What Is a Yoni Egg?">What Is a Yoni Egg?</span>
+                <span class="chapters__item-btn">
+                  Read Chapter
+                  <svg width="15" height="11">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use>
+                  </svg>
+                </span>
+              </a>
+              <a href="#" class="chapters__item">
+                <svg class="chapters__item-decor" fill="#F4BBB3" width="280" height="164"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#chapters"></use></svg>
+                <span class="chapters__item-number" style="background-color: #F4BBB3;">#2</span>
+                <span class="chapters__item-img"><img src="data/chapter2.svg" alt="How Does A Yoni Egg Work?"></span>
+                <span class="chapters__item-title" title="How Does A Yoni Egg Work?">How Does A Yoni Egg Work?</span>
+                <span class="chapters__item-btn">
+                  Read Chapter
+                  <svg width="15" height="11">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use>
+                  </svg>
+                </span>
+              </a>
+              <a href="#" class="chapters__item">
+                <svg class="chapters__item-decor" fill="#FADBC3" width="280" height="164"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#chapters"></use></svg>
+                <span class="chapters__item-number" style="background-color: #FADBC3;">#3</span>
+                <span class="chapters__item-img"><img src="data/chapter3.svg" alt="Yoni Egg Benefits"></span>
+                <span class="chapters__item-title" title="Yoni Egg Benefits">Yoni Egg Benefits</span>
+                <span class="chapters__item-btn">
+                  Read Chapter
+                  <svg width="15" height="11">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use>
+                  </svg>
+                </span>
+              </a>
+              <a href="#" class="chapters__item">
+                <svg class="chapters__item-decor" fill="#E5EFCF" width="280" height="164"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#chapters"></use></svg>
+                <span class="chapters__item-number" style="background-color: #E5EFCF;">#4</span>
+                <span class="chapters__item-img"><img src="data/chapter4.svg" alt="How to use Yoni Eggs"></span>
+                <span class="chapters__item-title" title="How to use Yoni Eggs">How to use Yoni Eggs</span>
+                <span class="chapters__item-btn">
+                  Read Chapter
+                  <svg width="15" height="11">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use>
+                  </svg>
+                </span>
+              </a>
+              <a href="#" class="chapters__item">
+                <svg class="chapters__item-decor" fill="#BFE8D7" width="280" height="164"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#chapters"></use></svg>
+                <span class="chapters__item-number" style="background-color: #BFE8D7;">#5</span>
+                <span class="chapters__item-img"><img src="data/chapter5.svg" alt="Types of Gemstones"></span>
+                <span class="chapters__item-title" title="Types of Gemstones">Types of Gemstones</span>
+                <span class="chapters__item-btn">
+                  Read Chapter
+                  <svg width="15" height="11">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blog-page__navigation-parent">
+        <div class="blog-page__navigation js-sticky">
+          <div class="blog-page__navigation-title">Table of Contents</div>
+          <ul class="blog-page__navigation-list js-nav">
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab1"><b>1.</b> Have you heard about vaginal kung fu?</a>
+            </li>
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab2"><b>2.</b> What is Vaginal Kung fu?</a>
+            </li>
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab3"><b>3.</b> Vaginal Weightlifting – The Ultimate Kegel Exercise</a>
+              <ul>
+                <li>
+                  <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  <a href="#tab4"><b>3.1.</b> Ben-Wa balls</a>
+                </li>
+                <li>
+                  <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  <a href="#tab5"><b>3.2.</b> Luna Beads</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab6"><b>4.</b> Health and Safety Tip for using Kegel Tools</a>
+            </li>
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab7"><b>5.</b> Advanced Kegel Weightlifting Tools</a>
+            </li>
+            <!-- <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab8"><b>6.</b> Reasons to try Vaginal Weight Lifting</a>
+              <ul>
+                <li>
+                  <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  <a href="#tab9"><b>6.1.</b> Elevate Orgasm Intensity</a>
+                </li>
+                <li>
+                  <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  <a href="#tab10"><b>6.2.</b> Recover Quickly from Childbirth</a>
+                </li>
+              </ul>
+            </li> -->
+          </ul>
+        </div>
+        <div class="container">
+          <div class="blog-page__box">
+            <div class="blog-page__holder">
+              <div class="blog-page__content">
+                <div id="tab1" class="blog-page__nav-title">
+                  <div class="blog-page__nav-title-counter">#1</div>
+                  What Is a Yoni Egg?
+                </div>
+                <div class="text-content mb50">
+                  <p>Have you ever heard of yoni eggs? Yoni eggs are also known as <b>jade eggs</b> or <b>love eggs</b>, names used to describe <b>semi-precious stones</b> that are crafted into egg-shaped weights which are inserted into the vagina. It may also be referred to as an energetic egg.</p>
+                  <p>Yoni eggs are sculpted from different stones. These stones each have their own unique lithotherapeutic properties - which stone you choose depends on your desires and needs. The eggs are polished until they shine with varying degrees of transparency.</p>
+                  <p>Yoni eggs have been around for a long time but it became popular when Gwyneth Paltrow started recommending it on her website.</p>
+                  &nbsp;
+                  <h2>What Does Yoni Mean?</h2>
+                  <p>The term “yoni” comes from a Sanskrit word which means “sacred space”. Physically, it describes the external part of the body including the:</p>
+                  <ul>
+                    <li><b>Mons pubis (pubic mound)</b></li>
+                    <li><b>Labia (lips)</b></li>
+                    <li><b>Urethral opening</b></li>
+                    <li><b>Clitoris</b></li>
+                  </ul>
+                  <p>It also includes the internal organs such as the:</p>
+                  <ul>
+                    <li><b>Vagina</b></li>
+                    <li><b>Pelvic floor</b></li>
+                    <li><b>Fallopian tube</b></li>
+                    <li><b>Uterus</b></li>
+                    <li><b>Ovaries</b></li>
+                  </ul>
+                  <p>This means that the term “yoni” is used to define the <b>entire region both external and internal parts as one</b>.</p>
+                  <p>Spiritually, the yoni is the <b>center of the female energy</b> and has been thought to <b>contribute to creative force and inner wisdom</b>.</p>
+                  <p>You should not think of the yoni as just another body part. It is an extraordinary space that you should explore to connect and have a deeper understanding of your own sexuality.</p>
+                </div>
+                <div id="tab2" class="blog-page__nav-title">
+                  <div class="blog-page__nav-title-counter">#2</div>
+                  How Does A Yoni Egg Work?
+                </div>
+                <div class="text-content mb50">
+                  <p>The <b>theory</b> is that a yoni egg inserted into the vagina helps to exercise the pelvic floor muscles. The pelvic muscles function to maintain urinary continence, bowel continence, and support the pelvic organs such as the uterus and bladder. </p>
+                  <p style="font-size: 20px;"><b>Pelvic floor muscles can become stretched and weakened due to factors such as:</b></p>
+                  <ul class="padding-left">
+                    <li><b>Pregnancy</b> – When pregnancy occurs, the pelvis stretches to accommodate the growing fetus. This means the pelvic floor muscles will also stretch and have to work more to support the extra weight in the pelvis.</li>
+                    <li><b>Childbirth</b> – When childbirth or labor occurs, the stretching of the pelvic floor muscles occurs to allow the passage of the baby. Procedures such as assisted birth using forceps or vacuum may also cause stretching of the pelvic floor muscles. </li>
+                    <li><b>Age</b> – The pelvic floor muscles like any other muscle in the body weaken with age.</li>
+                    <li><b>Obesity</b> – The pelvic floor muscles becomes stretched as it needs to support more weight in obese individuals compared to normal. </li>
+                  </ul>
+                  <p>In these cases, a yoni egg is believed to be a device that can help to strengthen the pelvic floor muscles resulting in an improvement of symptoms.</p>
+                  <p>Yoni egg practitioners also believe in the <b>healing and spiritual benefits of the gemstones</b> used.</p>
+                  <p>The yoni egg should be thought of as a treasure or jewel which you <b>weave a friendship</b> with. It is a tool that helps you form a deeper bond with your yoni.</p>
+                  &nbsp;
+                  <h2>The Symbolism of The Yoni Egg</h2>
+                  <p>The yoni egg is a <b>symbol of life, rebirth, fertility, and a new start</b>. It is also thought to evoke happiness, tenderness, intrauterine life, and the inner child.</p>
+                  <p>The egg represents <b>unity</b>, a reunion of yin and yang, the areas of shadow and light that exist in all of us.</p>
+                  <p>Wearing the yoni egg allows women the <b>feeling of being one</b> with it and finding their true place. It is a symbol of <b>creative energy</b> as well as the liberation of our vital energy that sometimes can become imprisoned in the body in response to trauma.</p>
+                  &nbsp;
+                  <h2>Do Yoni Eggs Really Work?</h2>
+                  <p>If you perform a simple search on the internet, you will find many <b>success stories</b> of how yoni eggs have helped or improved many lives.</p>
+                  <p>Many of these individuals share their experiences and claim that yoni eggs brought <b>stability, balance,</b> and improved their women's health in general.</p>
+                  <p>You can even <b>find online groups that support and help beginners learn more</b> about yoni egg practice and Kegel exercises using yoni eggs.</p>
+                  <p><b>Medical Advice:</b> Yoni eggs are not approved for the treatment of pelvic floor disorders but many women have shared how it has helped them in many ways.</p>
+                  <p>If you are interested in purchasing and using a yoni egg, try to do some research regarding which type suits you best, and make the purchase from a trusted source.</p>
+                </div>
+                <div id="tab3" class="blog-page__nav-title">
+                  <div class="blog-page__nav-title-counter">#3</div>
+                  Yoni Egg Benefits
+                </div>
+                <div class="text-content mb50">
+                  <p>Many women are so consumed in their role of daughter, wife, and mother – always living up to the expectation of others and struggling to fulfill so many roles that they often forget about self-care.</p>
+                  <p>With yoni egg practice, you nurture yourself and your energy. Women who use the yoni egg often report many advantages and health benefits such as:</p>
+                  &nbsp;
+                  <p style="font-size: 20px;"><b>With yoni egg practice, you nurture yourself and your energy. Women who use the yoni egg often report many advantages and health benefits such as:</b></p>
+                  <ul id="tab4" class="list-img">
+                    <li>
+                      <span><img src="data/icon1.svg" alt="."></span>
+                      <p>Finding <b>enthusiasm, harmony, and joy</b> – By practicing self-care, you find time to nurture yourself.</p>
+                    </li>
+                    <li>
+                      <span><img src="data/icon2.svg" alt="."></span>
+                      <p>Being kind to yourself helps you to be <b>more aware</b> – Through finding time to reconnect with yourself, you become more aware of your own emotions and feelings. Many women believe that the yoni egg helps to improve their sexual energy which in turn, is better for their sexual health. </p>
+                    </li>
+                    <li>
+                      <span><img src="data/icon3.svg" alt="."></span>
+                      <p>Develops <b>self-confidence</b> – The yoni egg practice helps you to move out of your comfort zone. Like meditation or yoga, it makes it possible to become more self-confident. </p>
+                    </li>
+                    <li>
+                      <span><img src="data/icon4.svg" alt="."></span>
+                      <p><b>Learning to love yourself</b> – Many women are uncomfortable with their own body. The yoni egg practice helps you to love yourself and accept yourself for who you are. Beauty is beyond one’s appearance and many women have said that the yoni egg acts as a centering object inside you. </p>
+                    </li>
+                    <li>
+                      <span><img src="data/icon5.svg" alt="."></span>
+                      <p><b>Strengthening the pelvic floor muscles</b> – The yoni egg can be used for pelvic floor exercises. This is especially useful for women who experience urinary incontinence or have any other pelvic floor issues due to a weakened pelvic floor. </p>
+                    </li>
+                  </ul>
+                  &nbsp;
+                  <p id="tab5" style="font-size: 20px;"><b>There are many different pelvic floor disorders that may benefit from yoni egg practice:</b></p>
+                  <ul class="list-img">
+                    <li>
+                      <span><img src="data/icon7.svg" alt="."></span>
+                      <p><b>Relaxing the pelvic floor muscles</b> – The yoni egg can also help to relax pelvic floor muscles that are too tight. When the muscles are too tight, it can cause issues such as chronic constipation or pain during sex. Through yoni egg practice, the pelvic floor can learn not to contract as much and improve your sex life. </p>
+                    </li>
+                    <li>
+                      <span><img src="data/icon8.svg" alt="."></span>
+                      <p><b>Regulating the menstrual cycle, helping with premenstrual syndrome</b> (PMS), and providing <b>relief from menstrual cramps</b> – Women with premenstrual syndrome have reported how the yoni egg practice have helped them regulate their cycle along with improvement with pain and PMS issues.</p>
+                    </li>
+                    <li>
+                      <span><img src="data/icon9.svg" alt="."></span>
+                      <p><b>Preparing for childbirth</b> – The yoni egg practice before conception helps build up the muscle tone and can make childbirth easier.</p>
+                    </li>
+                    <li>
+                      <span><img src="data/icon10.svg" alt="."></span>
+                      <p><b>Improves lubrication</b> – The yoni egg may help stimulate the Bartholin glands that increases lubrication in the vagina. Some women also use their egg as a sex toy. </p>
+                    </li>
+                    <li>
+                      <span><img src="data/icon6.svg" alt="."></span>
+                      <p><b>Meditation and healing</b> – If you regulate your breathing during your practice, this exercise can become a time for meditation and healing. Blood flow to the pelvic area will increase. This can help women who are struggling with issues related to intimacy and arousal.</p>
+                    </li>
+                  </ul>
+                </div>
+                <div id="tab6" class="blog-page__nav-title">
+                  <div class="blog-page__nav-title-counter">#4</div>
+                  How to use Yoni Eggs?
+                </div>
+                <div class="text-content mb50">
+                  <p>Yoni eggs are adaptable to all lifestyles regardless of age. It is suitable for women who are at their sexual prime to those who have lost all desire for sex. </p>
+                  <p>The reason each person seeks to use the yoni eggs will differ depending on their <b>circumstance, intentions, needs, and desires</b>. This makes the size and type of stone to differ for each woman. </p>
+                  &nbsp;
+                  <p style="font-size: 20px;"><b>Yoni eggs come in three different sizes with different lengths and width:</b></p>
+                  <ul class="img-list-2">
+                    <li>
+                      <span><img src="data/eggs1.svg" alt="."></span>
+                      <div>
+                        <b>Small</b>
+                        <span>Small yoni eggs measure about 1 inch wide and 1.6 inches long</span>
+                      </div>
+                    </li>
+                    <li>
+                      <span><img src="data/eggs2.svg" alt="."></span>
+                      <div>
+                        <b>Medium</b>
+                        <span>Medium yoni eggs are about 1.2 inches wide and 1.8 inches long</span>
+                      </div>
+                    </li>
+                    <li>
+                      <span><img src="data/eggs3.svg" alt="."></span>
+                      <div>
+                        <b>Large</b>
+                        <span>Large yoni eggs measure about 1.4 inches wide and almost 2 inches long</span>
+                      </div>
+                    </li>
+                  </ul>
+                  &nbsp;
+                  <p>When choosing the size of your yoni egg, remember that every woman is different. The yoni is incredibly elastic and although the large size may seem scary, it is suitable for beginners as well. If the yoni egg you choose is too small, it may not be able to stay in place.</p>
+                  <span class="bg">
+                    <h4>To choose your egg, take into consideration several factors:</h4>
+                    <ul>
+                      <li><b>Age</b></li>
+                      <li><b>Tone</b></li>
+                      <li><b>Virginity</b></li>
+                      <li><b>Advancement in the practice</b></li>
+                      <li><b>Athletic activity</b></li>
+                      <li><b>History of surgery and trauma</b></li>
+                    </ul>
+                  </span>
+                  &nbsp;
+                  <p>The <b>medium and large yoni eggs are ideal for most women</b>. For example, a young and active woman who has never given birth to children should choose a medium egg while a woman who has given birth vaginally should choose a large egg. It is not unusual to not be able to feel the egg inside you.</p>
+                  <p>The small sized yoni egg will not stay inside if you do not have the tone needed in your perineum. This is why the <b>small yoni egg is only recommended for women who have advanced in the yoni egg practice</b>.</p>
+                  <p>Small sized yoni eggs are also recommended for athletes or women who have difficulty inserting tampons. As a beginner, if you picked the right size, your yoni egg will stay inside you.</p>
+                  <p>Many women choose to have all three eggs so they can develop their practice. After choosing the size of your stone, you can proceed to choosing the type of stone. To choose the type of stone for your yoni egg, choose based on:</p>
+                  <span class="bg">
+                    <ul>
+                      <li><b>The intrinsic energy of the stone</b></li>
+                      <li><b>Your energy needs</b></li>
+                      <li><b>Your reaction to the stone’s energy</b></li>
+                    </ul>
+                  </span>
+                  &nbsp;
+                  <p>Gemstones played a crucial role in ancient civilizations. Through lithotherapy, these stones can help you to recover and regain balance. Those who learn how to use these stones find that the stones become their lifelong companions. </p>
+                  <h2>How to choose your stone:</h2>
+                  <div class="choose">
+                    <div class="choose__item">
+                      <div class="choose__head">
+                        <div class="choose__icon"><img src="data/choose1.svg" alt="choose1"></div>
+                        <div class="choose__head-text">Listen</div>
+                      </div>
+                      <div class="choose__item-body text-content">
+                        <p>You may think you choose the stone, but for many, it is the stone that chooses you. Try picking up the stone and feel for the energy in your fingers. </p>
+                      </div>
+                    </div>
+                    <div class="choose__item">
+                      <div class="choose__head">
+                        <div class="choose__icon"><img src="data/choose2.svg" alt="choose2"></div>
+                        <div class="choose__head-text">By the stone’s chemical composition</div>
+                      </div>
+                      <div class="choose__item-body text-content">
+                        <p>You can also choose a stone based on their color as different colors are associated with different chakras. For example, stones that are brown, red, or black are connected to the root chakra while the heart chakra is usually associated with stones that are pink or green.</p>
+                      </div>
+                    </div>
+                    <div class="choose__item">
+                      <div class="choose__head">
+                        <div class="choose__icon"><img src="data/choose3.svg" alt="choose3"></div>
+                        <div class="choose__head-text">By color</div>
+                      </div>
+                      <div class="choose__item-body text-content">
+                        <p>You can also choose the stone based on the chemical components present in the stone. For example, lepidolite yoni eggs may be a good choice for those with bipolar disorder as there is lithium present in lepidolite. The presence of lithium can help individuals with mood swings as it has a calming effect. </p>
+                      </div>
+                    </div>
+                    <div class="choose__item">
+                      <div class="choose__head">
+                        <div class="choose__icon"><img src="data/choose4.svg" alt="choose4"></div>
+                        <div class="choose__head-text">By properties of the stone</div>
+                      </div>
+                      <div class="choose__item-body text-content">
+                        <p>Each stone has its own property. These properties are further explained below.</p>
+                      </div>
+                    </div>
+                  </div>
+                  &nbsp;
+                  <h2>Chosen Your Yoni Egg? What Next?</h2>
+                  <p style="font-size: 20px;"><b>Once you have chosen your yoni egg, you will need to:</b></p>
+                  <ul class="padding-left">
+                    <li><b>Clear –</b> To clear your yoni egg, remove negative energy from the yoni egg by burning some sage. Smudge your yoni egg and allow it to cleanse the egg.</li>
+                    <li><b>Charge –</b> Charge your yoni egg by placing it under sunlight or moonlight for several hours or as long as you feel necessary. You can also charge it using sea salt. </li>
+                    <li><p><b>Bond –</b> After clearing and charging your yoni egg, you can start to bond with your yoni egg by holding it and letting it know your needs and desires.</p><p>This can be done by talking to it or conveying what you wish to tell it silently. Repeat it several times until you feel comfortable. </p></li>
+                  </ul>
+                  <p>You can then start <b>wearing your yoni egg</b> by inserting it in either direction. Inserting your yoni egg is similar to inserting a tampon without an applicator.</p>
+                  <p>Some yoni eggs are drilled while some are undrilled. You do not have to worry about retrieving it as it can only stay in the vaginal canal. You can tie unwaxed and unflavored dental floss to a drilled egg so it is easier to retrieve it when you are done.</p>
+                  &nbsp;
+                  <span class="bg">
+                    <h4>You can use your yoni egg to:</h4>
+                    <ul>
+                      <li><b>Meditate –</b> Hold the yoni egg inside or with your hands. Relax, feel the energy, and connect with your spiritual self. Let it flow. </li>
+                      <li><b>Exercise –</b> You can also use the yoni egg to exercise your pelvic floor muscles. Learn more about it through yoni egg exercises. </li>
+                      <li><b>Breathe –</b> Insert your yoni egg and focus on your breathing and yoni. Sync your breaths and vaginal muscles while focusing on yourself and your energy.</li>
+                      <li><b>Sex –</b> Some women enjoy having sex using the yoni egg. You can do this best with a smaller egg and have it positioned near the g-spot. Be careful so the yoni egg does not hit the cervix too much to cause pain and soreness. </li>
+                    </ul>
+                  </span>
+                  &nbsp;
+                  <p>Beginners should also learn the proper way to clean yoni eggs as yoni eggs that are unhygienic may cause conditions such as bacterial vaginosis. </p>
+                  <p>Depending on your experience with yoni eggs, you can start by wearing your yoni egg for a short duration and gradually increasing the time as you feel more comfortable. </p>
+                </div>
+                <div id="tab7" class="blog-page__nav-title">
+                  <div class="blog-page__nav-title-counter">#5</div>
+                  What Type of Gemstone
+                </div>
+                <div class="text-content mb50">
+                  <p>Whether you’re a beginner or a seasoned practitioner looking for a change, here is a list of yoni eggs and their properties. It’s up to you to find the one that is most attuned to your personal experiences.</p>
+                </div>
+                <div class="blog-product-list">
+                  <div class="blog-product">
+                    <div class="blog-product__head">
+                      <div class="blog-product__img"><img src="data/blog-product.jpg" width="348" height="348" alt="Jade Yoni Egg"></div>
+                      <div class="blog-product__head-box">
+                        <div class="blog-product__title">Jade Yoni Egg</div>
+                        <div class="blog-product__head-text text-content">
+                          <ul>
+                            <li>The stone encourages healing and shields the user from harm.</li>
+                            <li>Its colors can be therapeutic even while you’re not using it to practice Kegel exercises.</li>
+                            <li>With the appropriate care, a jade egg can last a lifetime.</li>
+                            <li>Many experienced practitioners suggest jade is the best stone to start with.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog-product__body">
+                      <div class="blog-product__body-info">
+                        <div class="blog-product__body-info-text">
+                          Main information
+                          <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#i"></use></svg>
+                        </div>
+                      </div>
+                      <div class="blog-product__text text-content">
+                        <p>The jade yoni egg is best suited for beginners. The crystal is very hard and will not break or chip if dropped by accident. Jade is less porous than other stones and has a high thermal conductivity, which means it will adjust its temperature to that of your body in record time.</p>
+                        <p>The stone can be creamy white, pale to emerald green, blue, mauve, or even pink. Nephrite jade is the commonest form of jade and can have green, grey, white, yellow, or red hues.</p>
+                        <p>Jade is said to be a stone that protects its wearer from negative energy and stimulates dreams and creativity. It helps stabilize its user’s emotions and aids the kidneys, adrenal glands, and reproductive organs.</p>
+                      </div>
+                      <div class="blog-product__mobile-btn"><span class="open">SHOW MORE</span><span class="close">hide</span></div>
+                    </div>
+                    <div class="blog-product__btn-box">
+                      <a href="#" class="btn-1 ttn revers">
+                        Check Jade Egg Prices
+                        <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="blog-product">
+                    <div class="blog-product__head">
+                      <div class="blog-product__img"><img src="data/blog-product.jpg" width="348" height="348" alt="Jade Yoni Egg"></div>
+                      <div class="blog-product__head-box">
+                        <div class="blog-product__title">Jade Yoni Egg</div>
+                        <div class="blog-product__head-text text-content">
+                          <ul>
+                            <li>The stone encourages healing and shields the user from harm.</li>
+                            <li>Its colors can be therapeutic even while you’re not using it to practice Kegel exercises.</li>
+                            <li>With the appropriate care, a jade egg can last a lifetime.</li>
+                            <li>Many experienced practitioners suggest jade is the best stone to start with.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog-product__body">
+                      <div class="blog-product__body-info">
+                        <div class="blog-product__body-info-text">
+                          Main information
+                          <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#i"></use></svg>
+                        </div>
+                      </div>
+                      <div class="blog-product__text text-content">
+                        <p>The jade yoni egg is best suited for beginners. The crystal is very hard and will not break or chip if dropped by accident. Jade is less porous than other stones and has a high thermal conductivity, which means it will adjust its temperature to that of your body in record time.</p>
+                        <p>The stone can be creamy white, pale to emerald green, blue, mauve, or even pink. Nephrite jade is the commonest form of jade and can have green, grey, white, yellow, or red hues.</p>
+                        <p>Jade is said to be a stone that protects its wearer from negative energy and stimulates dreams and creativity. It helps stabilize its user’s emotions and aids the kidneys, adrenal glands, and reproductive organs.</p>
+                      </div>
+                      <div class="blog-product__mobile-btn"><span class="open">SHOW MORE</span><span class="close">hide</span></div>
+                    </div>
+                    <div class="blog-product__btn-box">
+                      <a href="#" class="btn-1 ttn revers">
+                        Check Jade Egg Prices
+                        <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="blog-product">
+                    <div class="blog-product__head">
+                      <div class="blog-product__img"><img src="data/blog-product.jpg" width="348" height="348" alt="Jade Yoni Egg"></div>
+                      <div class="blog-product__head-box">
+                        <div class="blog-product__title">Jade Yoni Egg</div>
+                        <div class="blog-product__head-text text-content">
+                          <ul>
+                            <li>The stone encourages healing and shields the user from harm.</li>
+                            <li>Its colors can be therapeutic even while you’re not using it to practice Kegel exercises.</li>
+                            <li>With the appropriate care, a jade egg can last a lifetime.</li>
+                            <li>Many experienced practitioners suggest jade is the best stone to start with.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog-product__body">
+                      <div class="blog-product__body-info">
+                        <div class="blog-product__body-info-text">
+                          Main information
+                          <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#i"></use></svg>
+                        </div>
+                      </div>
+                      <div class="blog-product__text text-content">
+                        <p>The jade yoni egg is best suited for beginners. The crystal is very hard and will not break or chip if dropped by accident. Jade is less porous than other stones and has a high thermal conductivity, which means it will adjust its temperature to that of your body in record time.</p>
+                        <p>The stone can be creamy white, pale to emerald green, blue, mauve, or even pink. Nephrite jade is the commonest form of jade and can have green, grey, white, yellow, or red hues.</p>
+                        <p>Jade is said to be a stone that protects its wearer from negative energy and stimulates dreams and creativity. It helps stabilize its user’s emotions and aids the kidneys, adrenal glands, and reproductive organs.</p>
+                      </div>
+                      <div class="blog-product__mobile-btn"><span class="open">SHOW MORE</span><span class="close">hide</span></div>
+                    </div>
+                    <div class="blog-product__btn-box">
+                      <a href="#" class="btn-1 ttn revers">
+                        Check Jade Egg Prices
+                        <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="blog-product">
+                    <div class="blog-product__head">
+                      <div class="blog-product__img"><img src="data/blog-product.jpg" width="348" height="348" alt="Jade Yoni Egg"></div>
+                      <div class="blog-product__head-box">
+                        <div class="blog-product__title">Jade Yoni Egg</div>
+                        <div class="blog-product__head-text text-content">
+                          <ul>
+                            <li>The stone encourages healing and shields the user from harm.</li>
+                            <li>Its colors can be therapeutic even while you’re not using it to practice Kegel exercises.</li>
+                            <li>With the appropriate care, a jade egg can last a lifetime.</li>
+                            <li>Many experienced practitioners suggest jade is the best stone to start with.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog-product__body">
+                      <div class="blog-product__body-info">
+                        <div class="blog-product__body-info-text">
+                          Main information
+                          <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#i"></use></svg>
+                        </div>
+                      </div>
+                      <div class="blog-product__text text-content">
+                        <p>The jade yoni egg is best suited for beginners. The crystal is very hard and will not break or chip if dropped by accident. Jade is less porous than other stones and has a high thermal conductivity, which means it will adjust its temperature to that of your body in record time.</p>
+                        <p>The stone can be creamy white, pale to emerald green, blue, mauve, or even pink. Nephrite jade is the commonest form of jade and can have green, grey, white, yellow, or red hues.</p>
+                        <p>Jade is said to be a stone that protects its wearer from negative energy and stimulates dreams and creativity. It helps stabilize its user’s emotions and aids the kidneys, adrenal glands, and reproductive organs.</p>
+                      </div>
+                      <div class="blog-product__mobile-btn"><span class="open">SHOW MORE</span><span class="close">hide</span></div>
+                    </div>
+                    <div class="blog-product__btn-box">
+                      <a href="#" class="btn-1 ttn revers">
+                        Check Jade Egg Prices
+                        <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="blog-product">
+                    <div class="blog-product__head">
+                      <div class="blog-product__img"><img src="data/blog-product.jpg" width="348" height="348" alt="Jade Yoni Egg"></div>
+                      <div class="blog-product__head-box">
+                        <div class="blog-product__title">Jade Yoni Egg</div>
+                        <div class="blog-product__head-text text-content">
+                          <ul>
+                            <li>The stone encourages healing and shields the user from harm.</li>
+                            <li>Its colors can be therapeutic even while you’re not using it to practice Kegel exercises.</li>
+                            <li>With the appropriate care, a jade egg can last a lifetime.</li>
+                            <li>Many experienced practitioners suggest jade is the best stone to start with.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog-product__body">
+                      <div class="blog-product__body-info">
+                        <div class="blog-product__body-info-text">
+                          Main information
+                          <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#i"></use></svg>
+                        </div>
+                      </div>
+                      <div class="blog-product__text text-content">
+                        <p>The jade yoni egg is best suited for beginners. The crystal is very hard and will not break or chip if dropped by accident. Jade is less porous than other stones and has a high thermal conductivity, which means it will adjust its temperature to that of your body in record time.</p>
+                        <p>The stone can be creamy white, pale to emerald green, blue, mauve, or even pink. Nephrite jade is the commonest form of jade and can have green, grey, white, yellow, or red hues.</p>
+                        <p>Jade is said to be a stone that protects its wearer from negative energy and stimulates dreams and creativity. It helps stabilize its user’s emotions and aids the kidneys, adrenal glands, and reproductive organs.</p>
+                      </div>
+                      <div class="blog-product__mobile-btn"><span class="open">SHOW MORE</span><span class="close">hide</span></div>
+                    </div>
+                    <div class="blog-product__btn-box">
+                      <a href="#" class="btn-1 ttn revers">
+                        Check Jade Egg Prices
+                        <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="blog-product">
+                    <div class="blog-product__head">
+                      <div class="blog-product__img"><img src="data/blog-product.jpg" width="348" height="348" alt="Jade Yoni Egg"></div>
+                      <div class="blog-product__head-box">
+                        <div class="blog-product__title">Jade Yoni Egg</div>
+                        <div class="blog-product__head-text text-content">
+                          <ul>
+                            <li>The stone encourages healing and shields the user from harm.</li>
+                            <li>Its colors can be therapeutic even while you’re not using it to practice Kegel exercises.</li>
+                            <li>With the appropriate care, a jade egg can last a lifetime.</li>
+                            <li>Many experienced practitioners suggest jade is the best stone to start with.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog-product__body">
+                      <div class="blog-product__body-info">
+                        <div class="blog-product__body-info-text">
+                          Main information
+                          <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#i"></use></svg>
+                        </div>
+                      </div>
+                      <div class="blog-product__text text-content">
+                        <p>The jade yoni egg is best suited for beginners. The crystal is very hard and will not break or chip if dropped by accident. Jade is less porous than other stones and has a high thermal conductivity, which means it will adjust its temperature to that of your body in record time.</p>
+                        <p>The stone can be creamy white, pale to emerald green, blue, mauve, or even pink. Nephrite jade is the commonest form of jade and can have green, grey, white, yellow, or red hues.</p>
+                        <p>Jade is said to be a stone that protects its wearer from negative energy and stimulates dreams and creativity. It helps stabilize its user’s emotions and aids the kidneys, adrenal glands, and reproductive organs.</p>
+                      </div>
+                      <div class="blog-product__mobile-btn"><span class="open">SHOW MORE</span><span class="close">hide</span></div>
+                    </div>
+                    <div class="blog-product__btn-box">
+                      <a href="#" class="btn-1 ttn revers">
+                        Check Jade Egg Prices
+                        <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="blog-product">
+                    <div class="blog-product__head">
+                      <div class="blog-product__img"><img src="data/blog-product.jpg" width="348" height="348" alt="Jade Yoni Egg"></div>
+                      <div class="blog-product__head-box">
+                        <div class="blog-product__title">Jade Yoni Egg</div>
+                        <div class="blog-product__head-text text-content">
+                          <ul>
+                            <li>The stone encourages healing and shields the user from harm.</li>
+                            <li>Its colors can be therapeutic even while you’re not using it to practice Kegel exercises.</li>
+                            <li>With the appropriate care, a jade egg can last a lifetime.</li>
+                            <li>Many experienced practitioners suggest jade is the best stone to start with.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog-product__body">
+                      <div class="blog-product__body-info">
+                        <div class="blog-product__body-info-text">
+                          Main information
+                          <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#i"></use></svg>
+                        </div>
+                      </div>
+                      <div class="blog-product__text text-content">
+                        <p>The jade yoni egg is best suited for beginners. The crystal is very hard and will not break or chip if dropped by accident. Jade is less porous than other stones and has a high thermal conductivity, which means it will adjust its temperature to that of your body in record time.</p>
+                        <p>The stone can be creamy white, pale to emerald green, blue, mauve, or even pink. Nephrite jade is the commonest form of jade and can have green, grey, white, yellow, or red hues.</p>
+                        <p>Jade is said to be a stone that protects its wearer from negative energy and stimulates dreams and creativity. It helps stabilize its user’s emotions and aids the kidneys, adrenal glands, and reproductive organs.</p>
+                      </div>
+                      <div class="blog-product__mobile-btn"><span class="open">SHOW MORE</span><span class="close">hide</span></div>
+                    </div>
+                    <div class="blog-product__btn-box">
+                      <a href="#" class="btn-1 ttn revers">
+                        Check Jade Egg Prices
+                        <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="blog-product">
+                    <div class="blog-product__head">
+                      <div class="blog-product__img"><img src="data/blog-product.jpg" width="348" height="348" alt="Jade Yoni Egg"></div>
+                      <div class="blog-product__head-box">
+                        <div class="blog-product__title">Jade Yoni Egg</div>
+                        <div class="blog-product__head-text text-content">
+                          <ul>
+                            <li>The stone encourages healing and shields the user from harm.</li>
+                            <li>Its colors can be therapeutic even while you’re not using it to practice Kegel exercises.</li>
+                            <li>With the appropriate care, a jade egg can last a lifetime.</li>
+                            <li>Many experienced practitioners suggest jade is the best stone to start with.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog-product__body">
+                      <div class="blog-product__body-info">
+                        <div class="blog-product__body-info-text">
+                          Main information
+                          <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#i"></use></svg>
+                        </div>
+                      </div>
+                      <div class="blog-product__text text-content">
+                        <p>The jade yoni egg is best suited for beginners. The crystal is very hard and will not break or chip if dropped by accident. Jade is less porous than other stones and has a high thermal conductivity, which means it will adjust its temperature to that of your body in record time.</p>
+                        <p>The stone can be creamy white, pale to emerald green, blue, mauve, or even pink. Nephrite jade is the commonest form of jade and can have green, grey, white, yellow, or red hues.</p>
+                        <p>Jade is said to be a stone that protects its wearer from negative energy and stimulates dreams and creativity. It helps stabilize its user’s emotions and aids the kidneys, adrenal glands, and reproductive organs.</p>
+                      </div>
+                      <div class="blog-product__mobile-btn"><span class="open">SHOW MORE</span><span class="close">hide</span></div>
+                    </div>
+                    <div class="blog-product__btn-box">
+                      <a href="#" class="btn-1 ttn revers">
+                        Check Jade Egg Prices
+                        <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-content mb50">
+                  <h2>Conclusion</h2>
+                  <p>No matter if you are looking for spiritual healing, protection, improving general well-being, or more intense orgasms, remember to practice your Kegel exercises responsibly. Don’t use yoni eggs for long periods of time and sterilize them before each session. </p>
+                  <p>No two yoni eggs are alike the same way no two people are alike. All stone eggs are linked to a different natural element, chakra, and type of energy. Whether you’re seeking emotional balance or erotic liberation, there’s surely at least one crystal that can help you set out on your journey.</p>
+                </div>
+                
+                <div class="blog-page__author">
+                  <div class="blog-page__author-ava"><img src="data/author2.jpg" width="88" height="88" alt="author2"></div>
+                  <div class="blog-page__author-name">
+                    <div class="blog-page__author-title">Author</div>
+                    <div class="blog-page__author-value">Kelly Konia</div>
+                  </div>
+                  <div class="blog-page__author-text">What really knocks me out is a book that, when you're all done reading it, you wish the author that wrote it was a terrific friend of yours and you could call him up on the phone whenever you felt like it. That doesn't happen much, though.</div>
+                </div>
+                <div class="blog-page__bottom">
+                  <div class="blog-page__bottom-left">Informations and data in our articles is verified by experts.</div>
+                  <div class="blog-page__bottom-right">Reviewed by <span>Steven Krung</span> <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus2"></use></svg></div>
+                </div>
+              </div>
+              <div class="blog-page__share js-sticky">
+                <div class="social-likes">
+                  <div data-service="facebook" title="Share link on Facebook">
+                    <svg width="9" height="16" viewBox="0 0 9 16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.03945 2.65667H8.5V0.112667C8.24802 0.078 7.38143 0 6.37218 0C4.26635 0 2.82381 1.32467 2.82381 3.75933V6H0.5V8.844H2.82381V16H5.6729V8.84467H7.90272L8.25669 6.00067H5.67224V4.04133C5.6729 3.21933 5.89422 2.65667 7.03945 2.65667Z" />
+                    </svg>
+                    <div class="social-likes__hint">Share on Facebook</div>
+                  </div>
+                  <div data-service="twitter" title="Share link on Twitter">
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 1.89415C19.2563 2.21538 18.4637 2.42831 17.6375 2.53169C18.4875 2.032 19.1363 1.24677 19.4412 0.300308C18.6488 0.765538 17.7738 1.09415 16.8412 1.27754C16.0887 0.488616 15.0162 0 13.8462 0C11.5763 0 9.74875 1.81415 9.74875 4.03815C9.74875 4.35815 9.77625 4.66585 9.84375 4.95877C6.435 4.79508 3.41875 3.18646 1.3925 0.736C1.03875 1.34031 0.83125 2.032 0.83125 2.77662C0.83125 4.17477 1.5625 5.41415 2.6525 6.13169C1.99375 6.11938 1.3475 5.93108 0.8 5.63446C0.8 5.64677 0.8 5.66277 0.8 5.67877C0.8 7.64062 2.22125 9.27015 4.085 9.64554C3.75125 9.73538 3.3875 9.77846 3.01 9.77846C2.7475 9.77846 2.4825 9.76369 2.23375 9.70954C2.765 11.3083 4.2725 12.4837 6.065 12.5218C4.67 13.5963 2.89875 14.2437 0.98125 14.2437C0.645 14.2437 0.3225 14.2289 0 14.1883C1.81625 15.3415 3.96875 16 6.29 16C13.835 16 17.96 9.84615 17.96 4.512C17.96 4.33354 17.9538 4.16123 17.945 3.99015C18.7588 3.42154 19.4425 2.71138 20 1.89415Z" fill="white"/>
+                    </svg>
+                    <div class="social-likes__hint">Share on Twitter</div>
+                  </div>
+                  <div data-service="pinterest" title="Share link on Pinterest" data-media="image link, required">
+                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.3014 0C3.22817 0.000833345 0 3.51338 0 7.34344C0 9.1193 1.09944 11.3352 2.85984 12.0377C3.36202 12.2418 3.29555 11.9927 3.72758 10.501C3.76173 10.3768 3.74419 10.2693 3.63342 10.1535C1.11698 7.52594 3.14232 2.1242 8.9423 2.1242C17.3363 2.1242 15.7679 12.6093 10.4027 12.6093C9.01985 12.6093 7.98964 11.6293 8.3155 10.4168C8.7106 8.97263 9.48418 7.4201 9.48418 6.37926C9.48418 3.75589 5.15473 4.14506 5.15473 7.62094C5.15473 8.69512 5.57567 9.42013 5.57567 9.42013C5.57567 9.42013 4.18268 14.5002 3.9242 15.4494C3.48664 17.0561 3.98328 19.6569 4.02667 19.8811C4.05344 20.0044 4.20668 20.0436 4.29253 19.9419C4.43007 19.7794 6.11385 17.6111 6.58557 16.0436C6.75727 15.4727 7.46161 13.156 7.46161 13.156C7.92594 13.9127 9.26448 14.546 10.6907 14.546C14.9334 14.546 18 11.1793 18 7.00177C17.9852 2.99671 14.1884 0 9.3014 0V0Z" fill="white"/>
+                    </svg>
+                    <div class="social-likes__hint">Share on Pinterest</div>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="articles">
+      <div class="container">
+        <div class="articles__title title">Related Articles</div>
+        <div class="article-list">
+          <div class="article">
+            <a href="#" class="article__img">
+              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
+              <span class="article__date">04 Feb. 2020</span>
+            </a>
+            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
+            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
+            <a href="#" class="article__btn btn-5 btn-5--purple">
+              Read more
+              <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+            </a>
+          </div>
+          <div class="article">
+            <a href="#" class="article__img">
+              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
+            </a>
+            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
+            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
+            <a href="#" class="article__btn btn-5 btn-5--purple">
+              Read more
+              <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+            </a>
+          </div>
+          <div class="article">
+            <a href="#" class="article__img">
+              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
+            </a>
+            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
+            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
+            <a href="#" class="article__btn btn-5 btn-5--purple">
+              Read more
+              <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+            </a>
+          </div>
+        </div>
+        <div class="blog-page__all-articles">
+          <a href="#" class="btn-1">VIEW ALL</a>
+        </div>
+      </div>
+    </div>            
+  </div>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__container">
+      <div class="footer__logo-box">
+        <div class="footer__logo">
+          <img src="images/logo.png" width="135" height="34" alt="logo">
+          <a href="#" class="footer__logo-link"></a>
+        </div>
+        <div class="footer__logo-descriptions">© MyKegelTools 2019. <br> All product names, logos, and brands are property of their respective owners.</div>
+      </div>
+      <nav class="footer__nav">
+        <div class="footer__nav-cell">
+          <div class="footer__nav-title">Useful Pages</div>
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Shipping and Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__nav-cell">
+          <div class="footer__nav-title">Legal Pages</div>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Cookies Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="footer__subscribe">
+        <div class="footer__subscribe-title">Join our mailing list</div>
+        <form class="footer__subscribe-form">
+          <input type="email" class="footer__subscribe-input" placeholder="Enter email">
+          <button type="submit" class="footer__subscribe-btn"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#letter"></use></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="btn-top js-top-scroll">
+    <svg class="btn-top__arrow" width="10" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#top"></use></svg>
+    <svg class="btn-top__bg" width="1920" height="40" viewBox="0 0 1920 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M933.5 11C943.1 1.4 953.5 -1.56795e-05 960 1.31701e-10C966.5 -1.56795e-05 976.9 1.4 986.5 11C987.677 12.1766 988.762 13.286 989.783 14.3299C999.167 23.9217 1003.15 27.9909 1022.93 28H1920V40H0V28H897.067C916.852 27.9909 920.833 23.9217 930.217 14.3299C931.238 13.286 932.323 12.1766 933.5 11Z" fill="url(#paint0_linear)"/>
+      <defs>
+      <linearGradient id="paint0_linear" x1="1920" y1="39.9902" x2="0" y2="39.9902" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BA58E1"/>
+      <stop offset="1" stop-color="#6F49BC"/>
+      </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</footer>
+  <script src="/js/app.js"></script>
+
+</body>
+
+</html>
