@@ -21583,6 +21583,21 @@ exports.default = function () {
       $(this).parent().addClass('active');
       $('body,html').animate({ scrollTop: top }, 1000);
     });
+
+    $('.js-nav li').mouseover(function () {
+      var activeItem = $('.js-nav li.active').index();
+      var curentItem = $(this).index();
+      var allItem = $('.js-nav li');
+      console.log(allItem);
+      if (curentItem < activeItem) {
+        $(this).addClass('svg-top');
+      } else {
+        $(this).removeClass('svg-top');
+      }
+    });
+    $('.js-nav li').mouseleave(function () {
+      $('.js-nav li').removeClass('svg-top');
+    });
   }
 
   if ($('.js-blog').length) {
