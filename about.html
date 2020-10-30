@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Kegglers">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>Kegglers</title>
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
+  <link rel="preload" href="/fonts/GothamPro-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Medium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Light.woff" as="font" type="font/woff" crossorigin>
+  <link href="css/index.css" rel="stylesheet">
+</head>
+
+
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="header__container">
+      <div class="header__mobile-btn js-mobile-btn"></div>
+      <div class="header__logo">
+        <img src="images/logo.png" width="135" height="34" alt="logo">
+        <a href="#" class="header__logo-link"></a>
+      </div>
+      <div class="header__middle">
+        <div class="header__middle-overlay js-close-mobile-menu"></div>
+        <div class="header__middle-box">
+          <div class="header__middle-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          <a href="#" class="header__catalog-btn">
+            <svg class="header__catalog-btn-icon" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
+            <span class="header__catalog-btn-text">Shop</span>
+          </a>
+          <nav class="header__nav">
+            <ul>
+              <li><a href="#">Kegel balls and Weights</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Dilators</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Dilators Dilators Dilators Dilators Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">Yoni Care</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header__controls">
+        <div class="header__search">
+          <div class="header__search-btn"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></div>
+          <form class="header__search-form">
+            <input type="text" class="header__search-input">
+            <button type="submit" class="header__search-button"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
+          </form>
+        </div>
+        <div class="header__basket">
+          <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+          <span class="header__basket-count">3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__popup">
+    <div class="container">
+      <div class="header__popup-container">
+        <div class="header__popup-box">
+          <div class="header__popup-head">
+            <div class="header__popup-head-left">
+              <div class="header__popup-head-icon"></div>
+              <div class="header__popup-head-text">ITEM ADDED TO BAG</div>
+            </div>
+            <div class="header__popup-close"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          </div>
+          <div class="header__popup-holder">
+            <div class="basket-list">
+              <div class="basket-item">
+                <a href="#" class="basket-item__img"><img src="data/basket.jpg" width="150" height="150" alt="basket"></a>
+                <div class="basket-item__box">
+                  <a href="#" class="basket-item__title">Lapis Lazuli Yoni Egg</a>
+                  <div class="basket-item__price">$18,99</div>
+                  <div class="basket-item__descriptions">+ 1 Extra Options</div>
+                </div>
+                <div class="basket-item__remove"><svg width="15" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#remove"></use></svg></div>
+              </div>
+            </div>
+            <div class="header__popup-controls">
+              <div class="header__btn-cart header__popup-btn btn-2">VIEW CART</div>
+              <div class="header__btn-checkout header__popup-btn btn-1">CHECKOUT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div class="wrapper">
+    <div class="about">
+      <div class="container">
+        <div class="about__top"><img src="data/Keglers-about.png" width="981" height="220" alt="Keglers-about"></div>
+        <div class="about__content-small">
+          <div class="about__title">Who we are?</div>
+          <div class="about__descriptions">
+            <p>Kegglers is a company founded in late 2020. However, our endeavor began back in 2018 when the founder’s sister who is a psychotherapist encountered many women who experienced sexual trauma. We envisioned helping women across the world celebrate their femininity and to address sexual health. </p>
+          </div>
+          <div class="about__decor">
+            <div class="about__decor-text">
+              <p><b><i>We aim to break barriers as sexual issues often remain unaddressed in this day and age. Women should feel empowered, connected to each other, and comfortable voicing out their concerns or opinions on sexual health.</i></b></p>
+            </div>
+            <div class="about__decor-img"><img src="data/Who-we-are.png" width="524" height="452" alt="Who-we-are"></div>
+          </div>
+          <div class="about__text-content text-content mb50">
+            <p>We are here to support, guide, and inspire you through your journey of self-discovery no matter how different it is. With the belief that every individual is unique and beautiful, Kegglers aim to help women become more conscious of their value in the community and family. </p>
+            <p><b>Our goal</b> is to break taboos and patriarchal views through the power of education. We hope you tap into our resources – from our blog posts and information hubs so that by learning, you can help raise public awareness. We look forward to having you join our community of like-minded individuals who encourage and motivate each other!</p>
+          </div>
+          <div class="about__title">Our Approach</div>
+          <div class="about__text-content text-content mb50">
+            <p>At Kegglers, we believe in holistic medicine. With a whole-body approach, we believe that health consists of wellness of the mind, body and soul. We take into consideration the combination of traditional, complementary, and alternative medicine that has been around for hundreds if not thousands of years along with modern medicine when choosing our products. </p>
+          </div>
+        </div>
+        <div class="about__content">
+          <div class="about__products mb50">
+            <div class="about__products-img"><img src="data/our-product.jpg" width="491" height="636" alt="our-product"></div>
+            <div class="about__products-content">
+              <div class="about__products-title">Our <br> Products</div>
+              <div class="about__products-text text-content">
+                <p>We have a large variety of products designed specifically for women interested in physical, mental, emotional, and spiritual healing. <b>We carry more than 20 types of yoni eggs and wands made from genuine gemstones carefully crafted to suit your needs.</b></p>
+                <p>We also carry many different yoni care products such as yoni oil, yoni wash, and steaming herbs so you can pamper your yoni with these products.</p>
+              </div>
+              <a href="#" class="about__btn">Visit our shop</a>
+            </div>
+          </div>
+          <div class="about__educate mb50">
+            <div class="about__educate-content">
+              <div class="about__educate-title">We Educate</div>
+              <div class="about__educate-text text-content">
+                <p>At Kegglers, we believe that education is key and provides the knowledge needed to transform lives. We realize that there are many websites that sell sexual health related products without providing useful information on how to safely use them. By working closely with professionals in the field and our content writers, we strive to provide accurate information that is beneficial for our clients. </p>
+              </div>
+              <a href="#" class="about__btn">Visit our Blog</a>
+            </div>
+            <div class="about__educate-img"><img src="data/We-Educate.jpg" width="545" height="494" alt="We-Educate"></div>
+          </div>
+          <div class="about__content-small">
+            <div class="about__title">Editorial Team</div>
+            <div class="about__text-content text-content mb50">
+              <p>Our editorial team continuously strives to provide the most accurate and up to date content for our community. The team is open to opinions and suggestions from readers on what topics the community wants to read or learn about. </p>
+            </div>
+          </div>
+          <div class="team">
+            <div class="team__item">
+              <div class="team__img">
+                <div class="team__img-ava"><img src="data/Stephen-Krugel-2.png" alt="Stephen-Krugel"></div>
+                <div class="team__img-box">
+                  <ul class="team__item-social">
+                    <li><a href="#" target="_blank" rel="nofollow"></a></li>
+                    <li><a href="#" target="_blank" rel="nofollow"></a></li>
+                    <li><a href="#" target="_blank" rel="nofollow"></a></li>
+                  </ul>
+                  <div class="team__item-name">Stephen Krugel</div>
+                  <div class="team__item-position">Yoga Practitioner</div>
+                </div>
+              </div>
+              <div class="team__item-text text-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis. </p>
+              </div>
+            </div>
+            <div class="team__item">
+              <div class="team__img">
+                <div class="team__img-ava"><img src="data/Irene-Magdalena-Twist.png" alt="Irene-Magdalena-Twist"></div>
+                <div class="team__img-box">
+                  <ul class="team__item-social">
+                    <li><a href="#" target="_blank" rel="nofollow"></a></li>
+                    <li><a href="#" target="_blank" rel="nofollow"></a></li>
+                    <li><a href="#" target="_blank" rel="nofollow"></a></li>
+                  </ul>
+                  <div class="team__item-name">Irene Magdalena Twist</div>
+                  <div class="team__item-position">Author</div>
+                </div>
+              </div>
+              <div class="team__item-text text-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis. </p>
+              </div>
+            </div>
+            <div class="team__item">
+              <div class="team__img">
+                <div class="team__img-ava"><img src="data/Jessie-Claire.png" alt="Jessie Claire"></div>
+                <div class="team__img-box">
+                  <ul class="team__item-social">
+                    <li><a href="#" target="_blank" rel="nofollow"></a></li>
+                    <li><a href="#" target="_blank" rel="nofollow"></a></li>
+                  </ul>
+                  <div class="team__item-name">Jessie Claire</div>
+                  <div class="team__item-position">Author</div>
+                </div>
+              </div>
+              <div class="team__item-text text-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis. </p>
+              </div>
+            </div>
+            <div class="team__item">
+              <div class="team__img">
+                <div class="team__img-ava"><img src="data/Stephen-Krugel.png" alt="Stephen Krugel"></div>
+                <div class="team__img-box">
+                  <ul class="team__item-social">
+                    <li><a href="#" target="_blank" rel="nofollow"></a></li>
+                    <li><a href="#" target="_blank" rel="nofollow"></a></li>
+                    <li><a href="#" target="_blank" rel="nofollow"></a></li>
+                  </ul>
+                  <div class="team__item-name">Stephen Krugel</div>
+                  <div class="team__item-position">Doctor</div>
+                </div>
+              </div>
+              <div class="team__item-text text-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis. </p>
+              </div>
+            </div>
+          </div>
+          <div class="about__history">
+            <div class="about__title">Our history</div>
+            <div class="about__history-list">
+              <div class="about__item">
+                <div class="about__item-year"><span>20</span>18</div>
+                <div class="about__item-box">
+                  <div class="about__item-row">
+                    <div class="about__item-month">August</div>
+                    <div class="about__item-text text-content">
+                      <p>Our founder’s sister, a psychotherapist realized that many of her patients were women who experienced sexual trauma. She brought up the idea of increasing awareness regarding sexual health, mental health, and empowering women. </p>
+                    </div>
+                  </div>
+                  <div class="about__item-row">
+                    <div class="about__item-month">October</div>
+                    <div class="about__item-text text-content">
+                      <p>The research for products that can benefit women physically and spiritually began. Planning on how the project should be implemented also started. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="about__item">
+                <div class="about__item-year"><span>20</span>19</div>
+                <div class="about__item-box">
+                  <div class="about__item-row">
+                    <div class="about__item-month">March</div>
+                    <div class="about__item-text text-content">
+                      <p>We started connecting with yoga practitioners and physicians to gain insight on our products.</p>
+                    </div>
+                  </div>
+                  <div class="about__item-row">
+                    <div class="about__item-month">July</div>
+                    <div class="about__item-text text-content">
+                      <p>During our research, we realize the importance of education in helping women become more confident and self-assured.</p>
+                    </div>
+                  </div>
+                  <div class="about__item-row">
+                    <div class="about__item-month">November</div>
+                    <div class="about__item-text text-content">
+                      <p>We started planning for brand implementation.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="about__item">
+                <div class="about__item-year"><span>20</span>20</div>
+                <div class="about__item-box">
+                  <div class="about__item-row">
+                    <div class="about__item-month">January</div>
+                    <div class="about__item-text text-content">
+                      <p>The project has reached the stage where production of our items started. Our editorial team also began producing content for our community. </p>
+                    </div>
+                  </div>
+                  <div class="about__item-row">
+                    <div class="about__item-month">July</div>
+                    <div class="about__item-text text-content">
+                      <p>As we try to fit our final piece of the puzzle into the picture, we worked tirelessly for the launch of our website.</p>
+                    </div>
+                  </div>
+                  <div class="about__item-row">
+                    <div class="about__item-month">November</div>
+                    <div class="about__item-text text-content">
+                      <p>Our long-awaited moment, going live with <a href="#">Kegglers.com</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="about__item">
+                <div class="about__item-year"><span>on</span> going</div>
+                <div class="about__item-box">
+                  <div class="about__item-row">
+                    <div class="about__item-month"></div>
+                    <div class="about__item-text text-content">
+                      <p>We constantly collect feedback from our clients as an effort to improve our products and services. If you have any suggestions, we would be delighted to hear from you!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about__questions">
+        <div class="container">
+          <div class="about__questions-title">Have any questions?</div>
+          <div class="about__questions-text text-content">
+            <p>If you have any questions or want to collaborate with us, you can reach us out at <a href="#">support@mykegeltools.com</a> or through our contact page</p>
+          </div>
+          <div class="about__questions-btn">
+            <a href="#" class="btn-1">contact us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__container">
+      <div class="footer__logo-box">
+        <div class="footer__logo">
+          <img src="images/logo.png" width="135" height="34" alt="logo">
+          <a href="#" class="footer__logo-link"></a>
+        </div>
+        <div class="footer__logo-descriptions">© MyKegelTools 2019. <br> All product names, logos, and brands are property of their respective owners.</div>
+      </div>
+      <nav class="footer__nav">
+        <div class="footer__nav-cell">
+          <div class="footer__nav-title">Useful Pages</div>
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Shipping and Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__nav-cell">
+          <div class="footer__nav-title">Legal Pages</div>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Cookies Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="footer__subscribe">
+        <div class="footer__subscribe-title">Join our mailing list</div>
+        <form class="footer__subscribe-form">
+          <input type="email" class="footer__subscribe-input" placeholder="Enter email">
+          <button type="submit" class="footer__subscribe-btn"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#letter"></use></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="btn-top js-top-scroll">
+    <svg class="btn-top__arrow" width="10" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#top"></use></svg>
+    <svg class="btn-top__bg" width="1920" height="40" viewBox="0 0 1920 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M933.5 11C943.1 1.4 953.5 -1.56795e-05 960 1.31701e-10C966.5 -1.56795e-05 976.9 1.4 986.5 11C987.677 12.1766 988.762 13.286 989.783 14.3299C999.167 23.9217 1003.15 27.9909 1022.93 28H1920V40H0V28H897.067C916.852 27.9909 920.833 23.9217 930.217 14.3299C931.238 13.286 932.323 12.1766 933.5 11Z" fill="url(#paint0_linear)"/>
+      <defs>
+      <linearGradient id="paint0_linear" x1="1920" y1="39.9902" x2="0" y2="39.9902" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BA58E1"/>
+      <stop offset="1" stop-color="#6F49BC"/>
+      </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</footer>
+  <script src="/js/app.js"></script>
+
+</body>
+
+</html>

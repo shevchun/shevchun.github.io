@@ -11449,7 +11449,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = ["dev", "404.html", "author.html", "blog-page-new-hub.html", "blog-page-new.html", "blog-page.html", "blog.html", "cart-empty.html", "cart.html", "category-page.html", "checkout-success.html", "checkout.html", "contacts.html", "index.html", "product-page-2.html", "product-page-3.html", "product-page.html", "shop.html"];
+exports.default = ["dev", "404.html", "about.html", "author.html", "blog-page-new-hub.html", "blog-page-new.html", "blog-page.html", "blog.html", "cart-empty.html", "cart.html", "category-page.html", "checkout-success.html", "checkout.html", "contacts.html", "index.html", "product-page-2.html", "product-page-3.html", "product-page.html", "shop.html"];
 
 /***/ }),
 /* 12 */
