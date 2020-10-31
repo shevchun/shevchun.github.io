@@ -21833,6 +21833,16 @@ exports.default = function () {
     }]
   });
 
+  if ($('.about__products-img-slider').length) {
+    $('.about__products-img-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      fade: true
+    });
+  }
+
   $('.product-page__for').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
