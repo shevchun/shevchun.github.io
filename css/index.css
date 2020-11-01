@@ -10321,9 +10321,15 @@ select {
         z-index: 1;
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1); }
+      .team__item-social a svg {
+        fill: #000;
+        position: relative;
+        z-index: 1; }
       @media only screen and (min-width: 1025px) {
         .team__item-social a:hover {
           opacity: 1; }
+          .team__item-social a:hover svg {
+            fill: #fff; }
           .team__item-social a:hover::before {
             opacity: 1; } }
   .team__item-name {
