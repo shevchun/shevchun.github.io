@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Kegglers">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>Kegglers</title>
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
+  <link rel="preload" href="/fonts/GothamPro-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Medium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Light.woff" as="font" type="font/woff" crossorigin>
+  <link href="css/index.css" rel="stylesheet">
+</head>
+
+
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="header__container">
+      <div class="header__mobile-btn js-mobile-btn"></div>
+      <div class="header__logo">
+        <img src="images/logo.png" width="135" height="34" alt="logo">
+        <a href="#" class="header__logo-link"></a>
+      </div>
+      <div class="header__middle">
+        <div class="header__middle-overlay js-close-mobile-menu"></div>
+        <div class="header__middle-box">
+          <div class="header__middle-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          <a href="#" class="header__catalog-btn">
+            <svg class="header__catalog-btn-icon" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
+            <span class="header__catalog-btn-text">Shop</span>
+          </a>
+          <nav class="header__nav">
+            <ul>
+              <li><a href="#">Kegel balls and Weights</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Dilators</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Dilators Dilators Dilators Dilators Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">Yoni Care</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header__controls">
+        <div class="header__search">
+          <div class="header__search-btn"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></div>
+          <form class="header__search-form">
+            <input type="text" class="header__search-input">
+            <button type="submit" class="header__search-button"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
+          </form>
+        </div>
+        <div class="header__basket">
+          <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+          <span class="header__basket-count">3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__popup">
+    <div class="container">
+      <div class="header__popup-container">
+        <div class="header__popup-box">
+          <div class="header__popup-head">
+            <div class="header__popup-head-left">
+              <div class="header__popup-head-icon"></div>
+              <div class="header__popup-head-text">ITEM ADDED TO BAG</div>
+            </div>
+            <div class="header__popup-close"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          </div>
+          <div class="header__popup-holder">
+            <div class="basket-list">
+              <div class="basket-item">
+                <a href="#" class="basket-item__img"><img src="data/basket.jpg" width="150" height="150" alt="basket"></a>
+                <div class="basket-item__box">
+                  <a href="#" class="basket-item__title">Lapis Lazuli Yoni Egg</a>
+                  <div class="basket-item__price">$18,99</div>
+                  <div class="basket-item__descriptions">+ 1 Extra Options</div>
+                </div>
+                <div class="basket-item__remove"><svg width="15" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#remove"></use></svg></div>
+              </div>
+            </div>
+            <div class="header__popup-controls">
+              <div class="header__btn-cart header__popup-btn btn-2">VIEW CART</div>
+              <div class="header__btn-checkout header__popup-btn btn-1">CHECKOUT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div class="wrapper">
+    <div class="blog-page main">
+      <div class="container">  
+        <div class="blog-page__box">
+          <div class="blog-page__bread">
+            <ul class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><span>A Woman’s Guide To How To Use Kegel Weights</span></li>
+            </ul>
+          </div>
+          <div class="blog-page__title title title--fz40">A Woman’s Guide To How To Use Kegel Weights</div>
+        </div>
+      </div>
+      <div class="blog-page__navigation-parent">
+        <div class="blog-page__navigation js-sticky">
+          <div class="blog-page__navigation-title">Table of Contents</div>
+          <ul class="blog-page__navigation-list js-nav">
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab1"><b>1.</b> What are Kegel weights?</a>
+            </li>
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab2"><b>2.</b> How do they work?</a>
+            </li>
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab3"><b>3.</b> How do Kegel exercises help?</a>
+            </li>
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab4"><b>4</b> Why should I use vaginal weights?</a>
+            </li>
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab5"><b>5</b> How can Kegel weights help urinary symptoms?</a>
+            </li>
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab6"><b>6.</b> How do I get started?</a>
+            </li>
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab7"><b>7.</b> Are they safe?</a>
+            </li>
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab8"><b>8.</b> How do I care for Kegel weights?</a>
+            </li>
+            <li>
+              <svg width="12" height="8"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <a href="#tab9"><b>9.</b> Conclusion</a>
+            </li>
+          </ul>
+        </div>
+        <div class="container">
+          <div class="blog-page__box">
+            <div class="blog-page__holder">
+              <div class="blog-page__content">
+                <div class="text-content mb50">
+                  <p>Discussing pelvic exercises and Kegel weights can be embarrassing. However, it shouldn’t be. If you don’t flinch when chatting about biceps with your friends, you shouldn’t hesitate to flex your pelvic floor muscles. We have you covered in this tell-all about how to use Kegel weights to strengthen your vaginal muscles and improve your bladder control.</p>
+                  &nbsp;
+                  <p style="text-align: center;"><img src="data/Woman’s-Guide.jpg" alt="Woman’s-Guide"></p>
+                  &nbsp;
+                  <h2 id="tab1">What are Kegel weights?</h2>
+                  <p>Kegel weights are placed inside your vagina. You perform weightlifting exercises to increase your vaginal strength. These pelvic floor weights come in different sizes and shapes like oblong, teardrop, or spheres. </p>
+                  &nbsp;
+                  <h2 id="tab2">How do they work?</h2>
+                  <p>Kegel weights work because it is the equivalent of your pelvic floor muscles hitting the gym. When talking about your pelvic floor muscles, many women make the mistake of assuming that means your vaginal muscles. However, your pelvic floor is the hammock that supports your pelvic organs.</p>
+                  <p>Think about your bladder, rectum, and uterus. The pubococcygeus (PC) muscles support those organs. The PC muscles stretch from your pubic bone (the hard bone above your vulva) to your tailbone, forming the pelvic floor.</p>
+                  <p>Strengthening these muscles promotes your overall sexual pleasure and health. Performing pelvic floor exercises sounds harder than it is. Pelvic floor exercises, known as Kegels, are named after the gynecologist who discovered them, Dr. Arnold Kegel.1</p>
+                  <p>In 1948, Dr. Kegel created a device to measure the strength of voluntary vaginal muscle contractions and the exercise techniques we know today as Kegel exercises.</p>
+                  &nbsp;
+                  <h2 id="tab3">How do Kegel exercises help?</h2>
+                  <p><b>Kegel exercises are the techniques used to strengthen your pelvic floor.</b> One of the problematic parts is identifying the pelvic floor muscles. Try one of the following techniques:</p>
+                  <ul class="padding-left">
+                    <li>Tighten like you are attempting to avoid passing gas.</li>
+                    <li>Pretend to squeeze your vagina around a tampon</li>
+                  </ul>
+                  <p>As a last resort, you can stop your urine stream while using the restroom. However, this is risky as it may cause a bladder or urinary infection. Incomplete emptying of your bladder is more dangerous than the other recommendations.</p>
+                  <ul class="padding-left">
+                    <li>Once you’ve learned where your PC muscles are, you can stick fingers in the vagina and squeeze. You should feel the muscle tensing.</li>
+                    <li>Contract the muscles for five seconds and then relax for five.</li>
+                    <li>Repeat ten times.</li>
+                    <li>Try to do three to four sets throughout the day. Spreading them out may provide better results.</li>
+                  </ul>
+                  <p><b>Don’t hold your breath while performing Kegel exercises.</b> Focus on breathing out and only squeezing your PC muscles. Squeezing your thighs, stomach, or buttocks means you are not performing the exercise properly.</p>
+                  &nbsp;
+                  <h4>How long until my vagina feels stronger?</h4>
+                  <p>Just like any exercise program, <b>Kegel exercises require a commitment. You should notice an improvement within six weeks to three months.</b> Some women receive adequate relief from performing the strengthening exercises alone, while others look to accessories.</p>
+                  <p>There are Kegel exerciser devices like weights and Kegel balls that provide additional benefits. Every vagina is different, and so is its response to these additional tools. Some women benefit from vaginal weights, and others do best with standalone Kegels.</p>
+                  &nbsp;
+                  <h2 id="tab4">Why should I use vaginal weights?</h2>
+                  <p>There are a bunch of ways that Kegel vaginal weights improve your life and health. Examples include:</p>
+                  <ul class="padding-left">
+                    <li>Decrease urinary incontinence</li>
+                    <li>Decrease overactive bladder</li>
+                    <li>Prevent uterine or bladder prolapse</li>
+                    <li>Prevent incontinence of stool</li>
+                  </ul>
+                  <p>Beyond physical concerns, many women tout sexual benefits, such as:</p>
+                  <ul class="padding-left">
+                    <li>Boost sexual arousal</li>
+                    <li>Take charge during penetration</li>
+                    <li>Squeeze vaginal walls on penis during intercourse</li>
+                    <li>Enhances orgasm</li>
+                  </ul>
+                  &nbsp;
+                  <h2 id="tab5">How can Kegel weights help urinary symptoms?</h2>
+                  <p><b>When the pelvic muscles are weak, it can cause overactive bladder (OAB) or urinary incontinence.</b> But what’s incontinence, you ask? When coughing, sneezing, or laughing causes you to lose urine, you are experiencing a condition called stress incontinence. </p>
+                  <p>OAB is the frequent and sudden sensation of having to use the restroom immediately. These frequent urges to void may be difficult to control. But women who do Kegel exercises lessen these embarrassing symptoms.</p>
+                  <p>Kegel weights also strengthen the pelvis to keep the bladder and uterus where they belong. Prolapse is when they fall through the walls into the vagina.</p>
+                  &nbsp;
+                  <h2 id="tab6">How do I get started?</h2>
+                  <p>Kegel exercise weights are used to improve your pelvic floor once you have the simple exercises down.</p>
+                  <ol class="padding-left">
+                    <li>When choosing your first Kegel weight, <b>start with the lightest weight.</b></li>
+                    <li><b>Set one foot up on the toilet to aid in placing the weight inside.</b> Hold the weight at the base just above the string. Place it at your vaginal opening, just like you would put in a tampon. </li>
+                    <li>Go slowly and only move as far as you are comfortable.</li>
+                    <li>When it is completely and correctly in place, the weight will be in the vagina with the cord hanging outside. <b>When you perform a practice Kegel, you will notice that the weight moves away from your fingers into your vaginal canal.</b></li>
+                    <li><b>Use water-based lube to insert one of the pelvic floor weights smoothly.</b> Silicone lubricants can break down the weights.</li>
+                    <li><b>Leave the weight in for at least fifteen minutes each day.</b></li>
+                    <li>
+                      You have two choices:
+                      <ul>
+                        <li><b>Perform Kegel exercise repetitions</b></li>
+                        <li><b>Move around while performing light activities of daily living.</b> While walking around your house or finishing laundry, you may feel the weight slip. If this sensation starts to occur, perform a Kegel exercise to put it back in place. </li>
+                      </ul>
+                    </li>
+                    <li>If you can <b>easily complete the routine, move on to the next larger weight.</b></li>
+                    <li>Use a series of progressively heavier weights and proceed with Kegels.</li>
+                  </ol>
+                  <h4>Troubleshooting</h4>
+                  <b><span class="icon">?</span>What if the lightest weight keeps slipping out?</b>
+                  <p>Perform Kegel exercises while lying down. When you don’t have gravity working against you, your body may be able to hold it longer. </p>
+                  <b><span class="icon">?</span>Should inserting the vaginal weight be painful?</b>
+                  <p>Absolutely not. However, sometimes it’s just a case of nerves or too much friction. Increase the amount of water-based lubrication and focus on relaxing your pelvic floor. Breathe in and out and slowly insert.</p>
+                  <b><span class="icon">?</span>Why do I feel sore pelvic floor muscles the next day?</b>
+                  <p>It’s easy to do too much too soon. Like any workout, it’s important to start low and go slow. While the tightening exercises are fantastic for building strength, let your pelvic floor relax afterward to avoid overdoing it. Give yourself a break and perform Kegels without the weight for a day or decrease the size of weight</p>
+                  <b><span class="icon">?</span>What happens if my pelvic floor muscles are strong enough?</b>
+                  <p>Maintain your strength by performing Kegel exercises two or three times a week. Remember, use it or lose it!</p>
+                  <h4>Are there any risks to using Kegel vaginal weights?</h4>
+                  <ul class="padding-left">
+                    <li>Keep the weights clean with hot water and fragrance-free soap. <b>You don’t want to risk introducing any infection to your lady parts.</b></li>
+                    <li>If you have the signs or symptoms of a sexually transmitted infection (STI) or vaginal infection, you should avoid using Kegel weights until your treatment is complete. </li>
+                    <li>If you have a scarred vagina or you have an imperforate hymen, you will not be able to use these medical devices.</li>
+                    <li>Avoid using them at the same time as a tampon or diaphragm.</li>
+                  </ul>
+                  &nbsp;
+                  <h2 id="tab7">Are they safe?</h2>
+                  <p>As a Certified Nurse-Midwife, I spend a lot of time cautioning folks on what is safe to put in their vagina. Placing a weight inside your vagina may seem counterintuitive to your well-being. However, Kegel weights are made of body-safe materials. While you should never feel pressured to put anything into your vagina, Kegel weights are certainly safe.</p>
+                  <h2 id="tab8">How do I care for Kegel weights?</h2>
+                  <p>Kegel weights are made with nonporous, medical-grade silicone that is free from BPA. Before you begin, wash them with warm water and mild soap. In order to use them for a long time to come, clean them after each use and store them in a cool, dry place. Many women put them in a sex toy bag!</p>
+                  &nbsp;
+                  <h2 id="tab9">Conclusion</h2>
+                  <p>When strengthening your pelvic floor, it is crucial to know the available resources to get an effective workout. Using Kegel exercises and vaginal weights improve so many aspects of your pelvic floor function. If you are experiencing urinary symptoms or incontinence, using progressive Kegel weights can help solve your uncomfortable problems. Most importantly, <b>vaginal weights can improve your sex life.</b> </p>
+                  <p>However, sometimes even these incredible tools are not quite enough. <b>Your intuition is your body’s way of letting you know when something isn’t right, so trust it!</b> Seek help from a qualified pelvic floor physical therapist if your symptoms do not improve after six months or if you feel pain. <b>Pelvic floor physical therapy and biofeedback can provide personalized care plans.</b></p>
+                </div>
+                <div class="sources">
+                  <div class="sources__head">
+                    <div class="sources__head-left">4 Sources</div>
+                    <div class="sources__head-btn">Collapse</div>
+                  </div>
+                  <div class="sources__body">
+                    <div class="sources__row text-content">
+                      <p>Annie. (n.d.) Do the Kegel - the pelvic squeeze. Retrieved from <br> <a href="http://www.dothekegel.com/arnie/index.html" style="font-weight: bold;">http://www.dothekegel.com/arnie/index.html</a></p>
+                    </div>
+                    <div class="sources__row text-content">
+                      <p>Harvard Health Blog. (2019). Step-by-step guide to performing Kegel exercises. Retrieved from <br> <a href="https://www.health.harvard.edu/bladder-and-bowel/step-by-step-guide-to-performing-kegel-exercises" style="font-weight: bold;">https://www.health.harvard.edu/bladder-and-bowel/step-by-step-guide-to-performing-kegel-exercises</a></p>
+                    </div>
+                    <div class="sources__row text-content">
+                      <p>Cleveland Clinic. (2015). Kegel exercises. Retrieved from <br> <a href="https://my.clevelandclinic.org/health/articles/14611-kegel-exercises" style="font-weight: bold;">https://my.clevelandclinic.org/health/articles/14611-kegel-exercises</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="blog-page__author">
+                  <div class="blog-page__author-ava"><img src="data/author2.jpg" width="88" height="88" alt="author2"></div>
+                  <div class="blog-page__author-name">
+                    <div class="blog-page__author-title">Author</div>
+                    <div class="blog-page__author-value">Kelly Konia</div>
+                  </div>
+                  <div class="blog-page__author-text">What really knocks me out is a book that, when you're all done reading it, you wish the author that wrote it was a terrific friend of yours and you could call him up on the phone whenever you felt like it. That doesn't happen much, though.</div>
+                </div>
+                <div class="blog-page__bottom">
+                  <div class="blog-page__bottom-left">Informations and data in our articles is verified by experts.</div>
+                  <div class="blog-page__bottom-right">Reviewed by <span>Steven Krung</span> <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus2"></use></svg></div>
+                </div>
+              </div>
+              <div class="blog-page__share js-sticky">
+                <div class="social-likes">
+                  <div data-service="facebook" title="Share link on Facebook">
+                    <svg width="9" height="16" viewBox="0 0 9 16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.03945 2.65667H8.5V0.112667C8.24802 0.078 7.38143 0 6.37218 0C4.26635 0 2.82381 1.32467 2.82381 3.75933V6H0.5V8.844H2.82381V16H5.6729V8.84467H7.90272L8.25669 6.00067H5.67224V4.04133C5.6729 3.21933 5.89422 2.65667 7.03945 2.65667Z" />
+                    </svg>
+                    <div class="social-likes__hint">Share on Facebook</div>
+                  </div>
+                  <div data-service="twitter" title="Share link on Twitter">
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 1.89415C19.2563 2.21538 18.4637 2.42831 17.6375 2.53169C18.4875 2.032 19.1363 1.24677 19.4412 0.300308C18.6488 0.765538 17.7738 1.09415 16.8412 1.27754C16.0887 0.488616 15.0162 0 13.8462 0C11.5763 0 9.74875 1.81415 9.74875 4.03815C9.74875 4.35815 9.77625 4.66585 9.84375 4.95877C6.435 4.79508 3.41875 3.18646 1.3925 0.736C1.03875 1.34031 0.83125 2.032 0.83125 2.77662C0.83125 4.17477 1.5625 5.41415 2.6525 6.13169C1.99375 6.11938 1.3475 5.93108 0.8 5.63446C0.8 5.64677 0.8 5.66277 0.8 5.67877C0.8 7.64062 2.22125 9.27015 4.085 9.64554C3.75125 9.73538 3.3875 9.77846 3.01 9.77846C2.7475 9.77846 2.4825 9.76369 2.23375 9.70954C2.765 11.3083 4.2725 12.4837 6.065 12.5218C4.67 13.5963 2.89875 14.2437 0.98125 14.2437C0.645 14.2437 0.3225 14.2289 0 14.1883C1.81625 15.3415 3.96875 16 6.29 16C13.835 16 17.96 9.84615 17.96 4.512C17.96 4.33354 17.9538 4.16123 17.945 3.99015C18.7588 3.42154 19.4425 2.71138 20 1.89415Z" fill="white"/>
+                    </svg>
+                    <div class="social-likes__hint">Share on Twitter</div>
+                  </div>
+                  <div data-service="pinterest" title="Share link on Pinterest" data-media="image link, required">
+                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.3014 0C3.22817 0.000833345 0 3.51338 0 7.34344C0 9.1193 1.09944 11.3352 2.85984 12.0377C3.36202 12.2418 3.29555 11.9927 3.72758 10.501C3.76173 10.3768 3.74419 10.2693 3.63342 10.1535C1.11698 7.52594 3.14232 2.1242 8.9423 2.1242C17.3363 2.1242 15.7679 12.6093 10.4027 12.6093C9.01985 12.6093 7.98964 11.6293 8.3155 10.4168C8.7106 8.97263 9.48418 7.4201 9.48418 6.37926C9.48418 3.75589 5.15473 4.14506 5.15473 7.62094C5.15473 8.69512 5.57567 9.42013 5.57567 9.42013C5.57567 9.42013 4.18268 14.5002 3.9242 15.4494C3.48664 17.0561 3.98328 19.6569 4.02667 19.8811C4.05344 20.0044 4.20668 20.0436 4.29253 19.9419C4.43007 19.7794 6.11385 17.6111 6.58557 16.0436C6.75727 15.4727 7.46161 13.156 7.46161 13.156C7.92594 13.9127 9.26448 14.546 10.6907 14.546C14.9334 14.546 18 11.1793 18 7.00177C17.9852 2.99671 14.1884 0 9.3014 0V0Z" fill="white"/>
+                    </svg>
+                    <div class="social-likes__hint">Share on Pinterest</div>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="articles">
+      <div class="container">
+        <div class="articles__title title">Related Articles</div>
+        <div class="article-list">
+          <div class="article">
+            <a href="#" class="article__img">
+              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
+              <span class="article__date">04 Feb. 2020</span>
+            </a>
+            <div class="article__label"><svg width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#health"></use></svg></div>
+            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
+            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
+          </div>
+          <div class="article">
+            <a href="#" class="article__img">
+              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
+            </a>
+            <div class="article__label"><svg width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#sex"></use></svg></div>
+            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
+            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
+          </div>
+          <div class="article">
+            <a href="#" class="article__img">
+              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
+            </a>
+            <div class="article__label"><svg width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#yoga"></use></svg></div>
+            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
+            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
+          </div>
+        </div>
+        <div class="blog-page__all-articles">
+          <a href="#" class="btn-1">VIEW ALL</a>
+        </div>
+      </div>
+    </div>            
+  </div>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__container">
+      <div class="footer__logo-box">
+        <div class="footer__logo">
+          <img src="images/logo.png" width="135" height="34" alt="logo">
+          <a href="#" class="footer__logo-link"></a>
+        </div>
+        <div class="footer__logo-descriptions">© MyKegelTools 2019. <br> All product names, logos, and brands are property of their respective owners.</div>
+      </div>
+      <nav class="footer__nav">
+        <div class="footer__nav-cell">
+          <div class="footer__nav-title">Useful Pages</div>
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Shipping and Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__nav-cell">
+          <div class="footer__nav-title">Legal Pages</div>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Cookies Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="footer__subscribe">
+        <div class="footer__subscribe-title">Join our mailing list</div>
+        <form class="footer__subscribe-form">
+          <input type="email" class="footer__subscribe-input" placeholder="Enter email">
+          <button type="submit" class="footer__subscribe-btn"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#letter"></use></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="btn-top js-top-scroll">
+    <svg class="btn-top__arrow" width="10" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#top"></use></svg>
+    <svg class="btn-top__bg" width="1920" height="40" viewBox="0 0 1920 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M933.5 11C943.1 1.4 953.5 -1.56795e-05 960 1.31701e-10C966.5 -1.56795e-05 976.9 1.4 986.5 11C987.677 12.1766 988.762 13.286 989.783 14.3299C999.167 23.9217 1003.15 27.9909 1022.93 28H1920V40H0V28H897.067C916.852 27.9909 920.833 23.9217 930.217 14.3299C931.238 13.286 932.323 12.1766 933.5 11Z" fill="url(#paint0_linear)"/>
+      <defs>
+      <linearGradient id="paint0_linear" x1="1920" y1="39.9902" x2="0" y2="39.9902" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BA58E1"/>
+      <stop offset="1" stop-color="#6F49BC"/>
+      </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</footer>
+  <script src="/js/app.js"></script>
+
+</body>
+
+</html>
