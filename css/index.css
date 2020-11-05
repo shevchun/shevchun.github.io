@@ -10491,6 +10491,8 @@ select {
     margin: 10px 0 20px; }
     .text-content img:first-child {
       margin-top: 0; }
+    .text-content img:last-child {
+      margin-bottom: 0; }
   .text-content a {
     color: #6C41BF;
     font-weight: 500; }
