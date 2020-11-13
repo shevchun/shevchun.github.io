@@ -6,361 +6,394 @@
   <meta name="description" content="Kegglers">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>Kegglers</title>
-  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
-  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
-  <link rel="preload" href="/fonts/GothamPro-Bold.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/GothamPro-Medium.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/GothamPro.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/GothamPro-Light.woff" as="font" type="font/woff" crossorigin>
+  <title>Betadvisor</title>
+  <link rel="icon" type="image/png" sizes="72x72" href="images/favicon-72x72.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="images/favicon-144x144.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512x512.png">
+  <link href='https://fonts.gstatic.com' rel='preconnect' crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet" type='text/css' media="print" onload="this.onload=null;this.media='all'">
   <link href="css/index.css" rel="stylesheet">
 </head>
 
-
 <body>
   <header class="header">
-  <div class="container">
-    <div class="header__container">
-      <div class="header__mobile-btn js-mobile-btn"></div>
-      <div class="header__logo">
-        <img src="images/logo.png" width="135" height="34" alt="logo">
-        <a href="#" class="header__logo-link"></a>
-      </div>
-      <div class="header__middle">
-        <div class="header__middle-overlay js-close-mobile-menu"></div>
-        <div class="header__middle-box">
-          <div class="header__middle-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-          <a href="#" class="header__catalog-btn">
-            <svg class="header__catalog-btn-icon" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
-            <span class="header__catalog-btn-text">Shop</span>
-          </a>
-          <nav class="header__nav">
-            <ul>
-              <li><a href="#">Kegel balls and Weights</a></li>
-              <li class="menu-item-has-children">
-                <a href="#">Dilators</a>
-                <ul class="sub-menu">
-                  <li><a href="#">Dilators Dilators Dilators Dilators Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                </ul>
-              </li>
-              <li class="menu-item-has-children">
-                <a href="#">Yoni Care</a>
-                <ul class="sub-menu">
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="header__controls">
-        <div class="header__search">
-          <div class="header__search-btn"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></div>
-          <form class="header__search-form">
-            <input type="text" class="header__search-input">
-            <button type="submit" class="header__search-button"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
-          </form>
-        </div>
-        <div class="header__basket">
-          <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-          <span class="header__basket-count">3</span>
-        </div>
-      </div>
+  <div class="header__container container">
+    <div class="header__mobile-btn js-mobile-btn">
+      <svg width="24" height="22">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mobile"></use>
+      </svg>
     </div>
+    <div class="header__logo">
+      <img src="images/logo.svg" width="184" height="32" alt="bet-advisor">
+      <a href="#" class="header__logo-link"></a>
+    </div>
+    <nav class="header__nav js-nav">
+      <ul>
+        <li><a href="#">CASINO</a></li>
+        <li class="current_page_item"><a href="#">ONLINE BETTING</a></li>
+        <li><a href="#">CASINO GAMES</a></li>
+        <li><a href="#">LOTTERY RESULTS</a></li>
+        <li><a href="#">BLOG</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="header__contacts">
+      <svg class="header__contacts-mobile-btn" width="26" height="22">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#contacts"></use>
+      </svg>
+      Contact US
+    </a>
   </div>
-  <div class="header__popup">
-    <div class="container">
-      <div class="header__popup-container">
-        <div class="header__popup-box">
-          <div class="header__popup-head">
-            <div class="header__popup-head-left">
-              <div class="header__popup-head-icon"></div>
-              <div class="header__popup-head-text">ITEM ADDED TO BAG</div>
-            </div>
-            <div class="header__popup-close"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-          </div>
-          <div class="header__popup-holder">
-            <div class="basket-list">
-              <div class="basket-item">
-                <a href="#" class="basket-item__img"><img src="data/basket.jpg" width="150" height="150" alt="basket"></a>
-                <div class="basket-item__box">
-                  <a href="#" class="basket-item__title">Lapis Lazuli Yoni Egg</a>
-                  <div class="basket-item__price">$18,99</div>
-                  <div class="basket-item__descriptions">+ 1 Extra Options</div>
-                </div>
-                <div class="basket-item__remove"><svg width="15" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#remove"></use></svg></div>
-              </div>
-            </div>
-            <div class="header__popup-controls">
-              <div class="header__btn-cart header__popup-btn btn-2">VIEW CART</div>
-              <div class="header__btn-checkout header__popup-btn btn-1">CHECKOUT</div>
-            </div>
-          </div>
-        </div>
+  <div class="header__mobile">
+    <div class="header__mobile-box">
+      <div class="header__mobile-close js-close-mobile"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+      <div class="header__mobile-holder">
+        <div class="header__mobile-title">Menu</div>
       </div>
+      <a href="#" class="header__mobile-contacts">Contact US</a>
     </div>
   </div>
 </header>
   <div class="wrapper">
-    <div class="blog js-blog">
-      <div class="blog__category">
-        <div class="container">
-          <div class="blog__category-list">
-            <a href="#" class="blog__category-item">
-              <span class="blog__category-item-icon"><svg width="50" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#category1"></use></svg></span>
-              <span class="blog__category-item-text">Women's Health</span>
-            </a>
-            <a href="#" class="blog__category-item">
-              <span class="blog__category-item-icon"><svg width="50" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#category2"></use></svg></span>
-              <span class="blog__category-item-text">Sexual Wellbeing</span>
-            </a>
-            <a href="#" class="blog__category-item">
-              <span class="blog__category-item-icon"><svg width="50" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#category3"></use></svg></span>
-              <span class="blog__category-item-text">Yoga & Spirituality</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="blog__decor">
-        <img src="data/blog-decor1.png" alt="blog-decor1">
-        <img src="data/blog-decor2.png" alt="blog-decor2">
-      </div>
+    <div class="blog page-box">
       <div class="container">
-        <div class="blog__head">
-          <div class="blog__head-title">Kegglers Blog</div>
-          <div class="blog__head-btn">
-            <a href="#" class="btn-6">
-              <svg width="26" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#learning"></use></svg>
-              Learning Center
-            </a>
-          </div>
+        <div class="blog__title title title--big title--center">BetAdvisor's Blog</div>
+        <div class="blog__nav">
+          <ul class="blog__nav-list">
+            <li><a href="#" class="active">all articles</a></li>
+            <li><a href="#">Casino</a></li>
+            <li><a href="#">Sports Betting</a></li>
+            <li><a href="#">Legislations</a></li>
+            <li><a href="#">Lottery</a></li>
+          </ul>
         </div>
-      </div>
-    </div>
-    <div class="resources">
-      <div class="container">
-        <div class="resources__list">
-          <a href="#" class="resources__item">
-            <!-- <div class="resources__item-decor"><svg width="299" height="283"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor5"></use></svg></div> -->
-            <span class="resources__item-img"><img src="data/Pelvic-Floor-Muscles-Explained.jpg" width="260" height="320" alt="Pelvic Floor Muscles Explained"></span>
-            <span class="resources__item-box">
-              <span class="resources__item-title">Pelvic Floor Muscles Explained</span>
-              <span class="resources__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut.</span>
-              <span class="resources__item-btn">
-                <span class="btn-5">
-                  Read more
-                  <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+        <div class="sticky-parent">
+          <div class="sticky-parent__content">
+            <div class="blog__main">
+              <a href="#" class="blog__main-item">
+                <img class="blog__main-item-img" src="data/Sport-betting.jpg" width="250" height="360" alt="Sport-betting">
+                <span class="blog__main-item-info">
+                  <span class="blog__main-item-title">Sport betting</span>
+                  <span class="blog__main-item-text">Manchester United’s dream of winning by a goal was fulfilled</span>
+                  <span class="blog__main-item-date">
+                    <span class="blog__main-item-date-value">SEPTEMBER 20, 2020</span>
+                    <span class="blog__main-item-view">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </span>
+                  </span>
                 </span>
-              </span>
-            </span>
-          </a>
-          <a href="#" class="resources__item">
-            <!-- <div class="resources__item-decor"><svg width="299" height="283"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor5"></use></svg></div> -->
-            <span class="resources__item-img"><img src="data/Discovering-Nurturing-Your-Yoni.jpg" width="260" height="320" alt="Discovering-Nurturing-Your-Yoni"></span>
-            <span class="resources__item-box">
-              <span class="resources__item-title">Discovering & Nurturing Your Yoni</span>
-              <span class="resources__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut.</span>
-              <span class="resources__item-btn">
-                <div class="btn-5">
-                  Read more
-                  <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+              </a>
+              <a href="#" class="blog__main-item">
+                <img class="blog__main-item-img" src="data/Sport-betting.jpg" width="250" height="360" alt="Sport-betting">
+                <span class="blog__main-item-info">
+                  <span class="blog__main-item-title">Sport betting</span>
+                  <span class="blog__main-item-text">Manchester United’s dream of winning by a goal was fulfilled</span>
+                  <span class="blog__main-item-date">
+                    <span class="blog__main-item-date-value">SEPTEMBER 20, 2020</span>
+                    <span class="blog__main-item-view">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </span>
+                  </span>
+                </span>
+              </a>
+              <a href="#" class="blog__main-item">
+                <img class="blog__main-item-img" src="data/Sport-betting.jpg" width="250" height="360" alt="Sport-betting">
+                <span class="blog__main-item-info">
+                  <span class="blog__main-item-title">Sport betting</span>
+                  <span class="blog__main-item-text">Odds Long Feds Will Provide Gaming Industry Further COVID-19 Relief</span>
+                  <span class="blog__main-item-date">
+                    <span class="blog__main-item-date-value">SEPTEMBER 20, 2020</span>
+                    <span class="blog__main-item-view">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </span>
+                  </span>
+                </span>
+              </a>
+            </div>
+            <div class="blog__row js-news-parent">
+              <div class="news-row__head news-row__head--mb30 news-row__head--aife">
+                <div class="news-row__title title title--small"><span>Latest</span> Casino Articles</div>
+                <a href="#" class="news-row__btn">
+                  <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  <span class="news-row__btn-text"><span>See all</span> casino articless</span>
+                </a>
+              </div>
+              <div class="news-list news-list--small">
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
                 </div>
-              </span>
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>        
-    <div class="articles">
-      <div class="container">
-        <div class="articles__title title">Editor’s Pick</div>
-        <div class="articles__list">
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Benefits-of-Vaginal-Weightlifting.jpg" width="280" height="210" alt="Benefits-of-Vaginal-Weightlifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <div class="article__label"><svg width="28" height="28"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#health"></use></svg></div>
-            <a href="#" class="article__title" title="Benefits of Vaginal Weightlifting">Benefits of Vaginal Weightlifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
+                </div>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
+                </div>
+              </div>            
+            </div>
+            <div class="blog__row js-news-parent">
+              <div class="news-row__head news-row__head--mb30 news-row__head--aife">
+                <div class="news-row__title title title--small"><span>Latest</span> Sports Betting Articles</div>
+                <a href="#" class="news-row__btn">
+                  <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  <span class="news-row__btn-text"><span>See all</span> sport betting articless</span>
+                </a>
+              </div>
+              <div class="news-list news-list--small">
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+                </div>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
+                </div>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
+                </div>
+              </div>            
+            </div>
+            <div class="blog__row js-news-parent">
+              <div class="news-row__head news-row__head--mb30 news-row__head--aife">
+                <div class="news-row__title title title--small"><span>Latest</span> Lottery Articles</div>
+                <a href="#" class="news-row__btn">
+                  <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  <span class="news-row__btn-text"><span>See all</span> lottery articless</span>
+                </a>
+              </div>
+              <div class="news-list news-list--small">
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+                </div>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
+                </div>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
+                </div>
+              </div>            
+            </div>
+            <div class="blog__row js-news-parent">
+              <div class="news-row__head news-row__head--mb30 news-row__head--aife">
+                <div class="news-row__title title title--small"><span>Latest</span> Legislation Articles</div>
+                <a href="#" class="news-row__btn">
+                  <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  <span class="news-row__btn-text"><span>See all</span> Legislation articless</span>
+                </a>
+              </div>
+              <div class="news-list news-list--small">
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+                </div>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
+                </div>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
+                </div>
+              </div>            
+            </div>
           </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/7-Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="280" height="210" alt="7-Reasons-to-try-Vaginal-Weight-Lifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <div class="article__label"><svg width="28" height="28"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#sex"></use></svg></div>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Vaginal-Weightlifting.jpg" width="280" height="210" alt="Vaginal-Weightlifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <div class="article__label"><svg width="28" height="28"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#yoga"></use></svg></div>
-            <a href="#" class="article__title" title="Vaginal Weightlifting – The Ultimate Kegel Exercise">Vaginal Weightlifting – The Ultimate Kegel Exercise</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Vaginal-Weightlifting2.jpg" width="280" height="210" alt="Vaginal-Weightlifting2">
-            </a>
-            <div class="article__label"><svg width="28" height="28"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#health"></use></svg></div>
-            <a href="#" class="article__title" title="Vaginal Weightlifting – The Ultimate Kegel Exercise">Vaginal Weightlifting – The Ultimate Kegel Exercise</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="blog-box">
-      <div class="container">
-        <div class="article-list">
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <div class="article__label"><svg width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#health"></use></svg></div>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
-            </a>
-            <div class="article__label"><svg width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#yoga"></use></svg></div>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
-            </a>
-            <div class="article__label"><svg width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#sex"></use></svg></div>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <div class="article__label"><svg width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#sex"></use></svg></div>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
-            </a>
-            <div class="article__label"><svg width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#yoga"></use></svg></div>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
-            </a>
-            <div class="article__label"><svg width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#health"></use></svg></div>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <div class="article__label"><svg width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#health"></use></svg></div>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
-            </a>
-            <div class="article__label"><svg width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#health"></use></svg></div>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
-          </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="350" height="210" alt="Reasons-to-try-Vaginal-Weight-Lifting">
-            </a>
-            <div class="article__label"><svg width="36" height="36"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#health"></use></svg></div>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</div>
-          </div>
-        </div>
-        <div class="download-btn">
-          <div class="btn-1">
-            <svg width="18" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#load"></use></svg>
-            LOAD MORE
+          <div class="sticky-parent__aside js-sticky">
+            <div class="sticky-parent__aside-inner">
+              <a href="#" class="notice"><img src="data/notice.jpg" width="290" height="435" alt="notice"></a>
+              <div class="gambling-guides">
+                <div class="gambling-guides__title">Gambling Guides</div>
+                <div class="gambling-guides__title-list">
+                  <a href="#" class="gambling-guides__item">
+                    <span class="gambling-guides__item-img"><img src="data/Casino-Options.svg" alt="Casino Options"></span>
+                    <span class="gambling-guides__item-text" title="Casino Options">Casino Options</span>
+                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+                  </a>
+                  <a href="#" class="gambling-guides__item">
+                    <span class="gambling-guides__item-img"><img src="data/Casino-Options.svg" alt="Online Casinos"></span>
+                    <span class="gambling-guides__item-text" title="Online Casinos">Online Casinos</span>
+                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+                  </a>
+                  <a href="#" class="gambling-guides__item">
+                    <span class="gambling-guides__item-img"><img src="data/Casino-Games.svg" alt="Casino Games"></span>
+                    <span class="gambling-guides__item-text" title="Casino Games">Casino Games</span>
+                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+                  </a>
+                  <a href="#" class="gambling-guides__item">
+                    <span class="gambling-guides__item-img"><img src="data/Online-Betting.svg" alt="Online Betting"></span>
+                    <span class="gambling-guides__item-text" title="Online Betting">Online Betting</span>
+                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+                  </a>
+                  <a href="#" class="gambling-guides__item">
+                    <span class="gambling-guides__item-img"><img src="data/Football-Betting.svg" alt="Football Betting"></span>
+                    <span class="gambling-guides__item-text" title="Football Betting">Football Betting</span>
+                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+                  </a>
+                </div>
+              </div>
+              <div class="aside-links">
+                <a href="#" class="aside-links__item">
+                  <img src="data/Online-Casino.jpg" width="290" height="140" class="aside-links__item-img" alt="Online Casino">
+                  <span class="aside-links__item-inner">
+                    <span class="aside-links__item-title">Online Casino</span>
+                    <span class="aside-links__item-btn"><svg width="9" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg></span>
+                  </span>
+                </a>
+                <a href="#" class="aside-links__item">
+                  <img src="data/Online-Betting-link.jpg" width="290" height="140" class="aside-links__item-img" alt="Online Betting">
+                  <span class="aside-links__item-inner">
+                    <span class="aside-links__item-title">Online Betting</span>
+                    <span class="aside-links__item-btn"><svg width="9" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg></span>
+                  </span>
+                </a>
+                <a href="#" class="aside-links__item">
+                  <img src="data/Sportsbook-Agents.jpg" width="290" height="140" class="aside-links__item-img" alt="Sportsbook-Agents">
+                  <span class="aside-links__item-inner">
+                    <span class="aside-links__item-title">Sportsbook Agents</span>
+                    <span class="aside-links__item-btn"><svg width="9" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg></span>
+                  </span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
   <footer class="footer">
-  <div class="container">
-    <div class="footer__container">
-      <div class="footer__logo-box">
-        <div class="footer__logo">
-          <img src="images/logo.png" width="135" height="34" alt="logo">
-          <a href="#" class="footer__logo-link"></a>
-        </div>
-        <div class="footer__logo-descriptions">© MyKegelTools 2019. <br> All product names, logos, and brands are property of their respective owners.</div>
+  <div class="footer__container container">
+    <div class="footer__left">
+      <div class="footer__logo">
+        <img src="images/logo-white.svg" width="184" height="32" alt="bet-advisor">
+        <a href="#" class="footer__logo-link"></a>
       </div>
-      <nav class="footer__nav">
-        <div class="footer__nav-cell">
-          <div class="footer__nav-title">Useful Pages</div>
-          <ul>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Shipping and Returns</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer__nav-cell">
-          <div class="footer__nav-title">Legal Pages</div>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms and Conditions</a></li>
-            <li><a href="#">Cookies Policy</a></li>
-          </ul>
-        </div>
-      </nav>
-      <div class="footer__subscribe">
-        <div class="footer__subscribe-title">Join our mailing list</div>
-        <form class="footer__subscribe-form">
-          <input type="email" class="footer__subscribe-input" placeholder="Enter email">
-          <button type="submit" class="footer__subscribe-btn"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#letter"></use></svg></button>
-        </form>
-      </div>
+      <div class="footer__logo-description">BetAdvisor is the world’s leading independent online gaming authority, providing trusted online casino news, guides, reviews and information since 2020.</div>
     </div>
+    <nav class="footer__nav">
+      <div class="footer__nav-cell">
+        <div class="footer__nav-title">General Pages</div>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Terms and Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer__nav-cell">
+        <div class="footer__nav-title">Guides</div>
+        <ul>
+          <li><a href="#">Casino</a></li>
+          <li><a href="#">Online Betting</a></li>
+          <li><a href="#">Casino Games</a></li>
+        </ul>
+      </div>
+      <div class="footer__nav-cell">
+        <div class="footer__nav-title">Lottery Results</div>
+        <ul>
+          <li><a href="#">4D Results</a></li>
+          <li><a href="#">Toto Results</a></li>
+          <li><a href="#">Singapore Sweep Results</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
-  <div class="btn-top js-top-scroll">
-    <svg class="btn-top__arrow" width="10" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#top"></use></svg>
-    <svg class="btn-top__bg" width="1920" height="40" viewBox="0 0 1920 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M933.5 11C943.1 1.4 953.5 -1.56795e-05 960 1.31701e-10C966.5 -1.56795e-05 976.9 1.4 986.5 11C987.677 12.1766 988.762 13.286 989.783 14.3299C999.167 23.9217 1003.15 27.9909 1022.93 28H1920V40H0V28H897.067C916.852 27.9909 920.833 23.9217 930.217 14.3299C931.238 13.286 932.323 12.1766 933.5 11Z" fill="url(#paint0_linear)"/>
-      <defs>
-      <linearGradient id="paint0_linear" x1="1920" y1="39.9902" x2="0" y2="39.9902" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#BA58E1"/>
-      <stop offset="1" stop-color="#6F49BC"/>
-      </linearGradient>
-      </defs>
-    </svg>
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__copy">Copyright © 2020, BetAdvisor, All Rights Reserved</div>
+    </div>
   </div>
 </footer>
   <script src="/js/app.js"></script>

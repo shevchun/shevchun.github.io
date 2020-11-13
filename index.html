@@ -6,549 +6,398 @@
   <meta name="description" content="Kegglers">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>Kegglers</title>
-  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
-  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
-  <link rel="preload" href="/fonts/GothamPro-Bold.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/GothamPro-Medium.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/GothamPro.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/GothamPro-Light.woff" as="font" type="font/woff" crossorigin>
+  <title>Betadvisor</title>
+  <link rel="icon" type="image/png" sizes="72x72" href="images/favicon-72x72.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="images/favicon-144x144.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512x512.png">
+  <link href='https://fonts.gstatic.com' rel='preconnect' crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet" type='text/css' media="print" onload="this.onload=null;this.media='all'">
   <link href="css/index.css" rel="stylesheet">
 </head>
 
-
 <body>
   <header class="header">
-  <div class="container">
-    <div class="header__container">
-      <div class="header__mobile-btn js-mobile-btn"></div>
-      <div class="header__logo">
-        <img src="images/logo.png" width="135" height="34" alt="logo">
-        <a href="#" class="header__logo-link"></a>
-      </div>
-      <div class="header__middle">
-        <div class="header__middle-overlay js-close-mobile-menu"></div>
-        <div class="header__middle-box">
-          <div class="header__middle-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-          <a href="#" class="header__catalog-btn">
-            <svg class="header__catalog-btn-icon" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
-            <span class="header__catalog-btn-text">Shop</span>
-          </a>
-          <nav class="header__nav">
-            <ul>
-              <li><a href="#">Kegel balls and Weights</a></li>
-              <li class="menu-item-has-children">
-                <a href="#">Dilators</a>
-                <ul class="sub-menu">
-                  <li><a href="#">Dilators Dilators Dilators Dilators Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                  <li><a href="#">Dilators</a></li>
-                </ul>
-              </li>
-              <li class="menu-item-has-children">
-                <a href="#">Yoni Care</a>
-                <ul class="sub-menu">
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                  <li><a href="#">Yoni Care</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="header__controls">
-        <div class="header__search">
-          <div class="header__search-btn"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></div>
-          <form class="header__search-form">
-            <input type="text" class="header__search-input">
-            <button type="submit" class="header__search-button"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
-          </form>
-        </div>
-        <div class="header__basket">
-          <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
-          <span class="header__basket-count">3</span>
-        </div>
-      </div>
+  <div class="header__container container">
+    <div class="header__mobile-btn js-mobile-btn">
+      <svg width="24" height="22">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mobile"></use>
+      </svg>
     </div>
+    <div class="header__logo">
+      <img src="images/logo.svg" width="184" height="32" alt="bet-advisor">
+      <a href="#" class="header__logo-link"></a>
+    </div>
+    <nav class="header__nav js-nav">
+      <ul>
+        <li><a href="#">CASINO</a></li>
+        <li class="current_page_item"><a href="#">ONLINE BETTING</a></li>
+        <li><a href="#">CASINO GAMES</a></li>
+        <li><a href="#">LOTTERY RESULTS</a></li>
+        <li><a href="#">BLOG</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="header__contacts">
+      <svg class="header__contacts-mobile-btn" width="26" height="22">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#contacts"></use>
+      </svg>
+      Contact US
+    </a>
   </div>
-  <div class="header__popup">
-    <div class="container">
-      <div class="header__popup-container">
-        <div class="header__popup-box">
-          <div class="header__popup-head">
-            <div class="header__popup-head-left">
-              <div class="header__popup-head-icon"></div>
-              <div class="header__popup-head-text">ITEM ADDED TO BAG</div>
-            </div>
-            <div class="header__popup-close"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-          </div>
-          <div class="header__popup-holder">
-            <div class="basket-list">
-              <div class="basket-item">
-                <a href="#" class="basket-item__img"><img src="data/basket.jpg" width="150" height="150" alt="basket"></a>
-                <div class="basket-item__box">
-                  <a href="#" class="basket-item__title">Lapis Lazuli Yoni Egg</a>
-                  <div class="basket-item__price">$18,99</div>
-                  <div class="basket-item__descriptions">+ 1 Extra Options</div>
-                </div>
-                <div class="basket-item__remove"><svg width="15" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#remove"></use></svg></div>
-              </div>
-            </div>
-            <div class="header__popup-controls">
-              <div class="header__btn-cart header__popup-btn btn-2">VIEW CART</div>
-              <div class="header__btn-checkout header__popup-btn btn-1">CHECKOUT</div>
-            </div>
-          </div>
-        </div>
+  <div class="header__mobile">
+    <div class="header__mobile-box">
+      <div class="header__mobile-close js-close-mobile"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+      <div class="header__mobile-holder">
+        <div class="header__mobile-title">Menu</div>
       </div>
+      <a href="#" class="header__mobile-contacts">Contact US</a>
     </div>
   </div>
 </header>
   <div class="wrapper">
     <div class="first-screen">
-      <img src="data/first-screen.jpg" class="first-screen__img" width="1920" height="500" alt="first-screen-img">
+      <picture class="first-screen__img">
+        <source srcset="data/Turning-mobile.jpg" media="(max-width: 1200px)">
+        <img src="data/Turning.jpg" width="1920" height="600" alt="Turning">
+      </picture>
       <div class="container">
         <div class="first-screen__box">
-          <div class="first-screen__label">SALES</div>
-          <div class="first-screen__title">UP TO 70% OFF</div>
-          <div class="first-screen__descriptions">Limited time only. Selected styles marked down on site.</div>
-          <a href="#" class="first-screen__btn btn-3">12 HOURS LEFT</a>
-        </div>
-      </div>
-    </div>
-    <div class="featured-products">
-      <div class="container">
-        <div class="featured-products__title title">Featured Products</div>
-        <div class="featured-products__slider">
-          <div class="featured-products__item">
-            <div class="product">
-              <div class="product__label product__label--sale">SALE</div>
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <div class="rate" data-rate="4">
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-              </div>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price-new">$15,99</div>
-                <div class="product__price-old">$26,99</div>
-              </div>
-            </div>
-          </div>
-          <div class="featured-products__item">
-            <div class="product">
-              <div class="product__label product__label--new">new</div>
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <div class="rate" data-rate="4">
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-              </div>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price">$15,99</div>
-              </div>
-            </div>
-          </div>
-          <div class="featured-products__item">
-            <div class="product">
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price-new">$15,99</div>
-                <div class="product__price-old">$26,99</div>
-              </div>
-            </div>
-          </div>
-          <div class="featured-products__item">
-            <div class="product">
-              <div class="product__label product__label--new">new</div>
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price">$15,99</div>
-              </div>
-            </div>
-          </div>
-          <div class="featured-products__item">
-            <div class="product">
-              <div class="product__label product__label--new">new</div>
-              <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-              <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-              <div class="product__price-box">
-                <div class="product__price">$15,99</div>
-              </div>
-            </div>
+          <div class="first-screen__box-inner">
+            <div class="first-screen__title">Turning Players <span>into</span> Winners</div>
+            <div class="first-screen__descriptions"><p>With our independent reviews, latest news and in-depth game guides we've been keeping players worldwide safe and secure since 1995</p></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="main-products">
-      <div class="main-products__row">
-        <div class="container">
-          <img class="main-products__row-decor" src="data/Ben-Wa-Balls-Illustration.svg" alt="Ben-Wa-Balls-Illustration">
-          <div class="main-products__box">
-            <div class="main-products__info">
-              <a href="#" class="main-products__title-box">
-                <div class="main-products__title-img"><img src="data/Ben-Wa-Balls-icon.svg" width="75" height="75" alt="Ben-Wa-Balls-icon"></div>
-                <div class="main-products__title">Ben Wa Balls</div>
-              </a>
-              <div class="main-products__text text-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.</p>
+    <div class="container">
+      <div class="features section">
+        <div class="features__title title"><span>Our</span> Features</div>
+        <div class="features__list">
+          <div class="features__item">
+            <div class="features__item-title">Experience</div>
+            <div class="features__item-value">10 <span>years</span></div>
+            <div class="features__item-text">
+              <p>Bought your lottery tickets? Check your Singapore Lottery results here where we provide accurate results.</p>
+            </div>
+          </div>
+          <div class="features__item">
+            <div class="features__item-title">Available</div>
+            <div class="features__item-value">24/7</div>
+            <div class="features__item-text">
+              <p>Bought your lottery tickets? Check your Singapore Lottery results here where we provide accurate results.</p>
+            </div>
+          </div>
+          <div class="features__item">
+            <div class="features__item-title">Up to date</div>
+            <div class="features__item-value">Guides</div>
+            <div class="features__item-text">
+              <p>Bought your lottery tickets? Check your Singapore Lottery results here where we provide accurate results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info section">
+        <div class="info__img-box">
+          <div class="info__img"><img src="data/Your-Favorite-Gambling-Advisor.svg" width="432" height="466" alt="Your-Favorite-Gambling-Advisor"></div>
+          <div class="info__btn">
+            <a href="#" class="btn">Read our gambling guide</a>
+          </div>
+        </div>
+        <div class="info__content">
+          <div class="info__title title"><span>Your Favorite </span><br>Gambling Advisor</div>
+          <div class="info__descriptions">Players who go through our gambling advisor have a higher winning rate  compared to other players! Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+          <div class="info__list">
+            <div class="info__item">
+              <div class="info__item-head">
+                <div class="info__item-img"><img src="data/Gambling-History-in-Singapore.svg" alt="Gambling-History-in-Singapore"></div>
+                <div class="info__item-title">Gambling History in Singapore</div>
+                <div class="info__item-btn"><svg width="8" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg></div>
               </div>
-              <div class="main-products__decor">
-                <svg width="387" height="158"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor1"></use></svg>
+              <div class="info__item-body">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ... </p>
               </div>
             </div>
-            <div class="main-products__list-box">
-              <div class="main-products__list">
-                <div class="product">
-                  <div class="product__label product__label--new">new</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <div class="rate" data-rate="5">
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                  </div>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <div class="product__label product__label--sale">SALE</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <div class="rate" data-rate="3">
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                  </div>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price-new">$15,99</div>
-                    <div class="product__price-old">$26,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>           
+            <div class="info__item">
+              <div class="info__item-head">
+                <div class="info__item-img"><img src="data/AllGamblingOptions.svg" alt="All Gambling Options"></div>
+                <div class="info__item-title">All Gambling Options</div>
+                <div class="info__item-btn"><svg width="8" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg></div>
+              </div>
+              <div class="info__item-body">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ... </p>
+              </div>
+            </div>
+            <div class="info__item">
+              <div class="info__item-head">
+                <div class="info__item-img"><img src="data/ExpertsRecommandations.svg" alt="Experts Recommandations"></div>
+                <div class="info__item-title">Experts Recommandations</div>
+                <div class="info__item-btn"><svg width="8" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg></div>
+              </div>
+              <div class="info__item-body">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ... </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="main-products__row">
-        <div class="container">
-          <img class="main-products__row-decor" src="data/Yoni-Eggs-Illustration.svg" alt="Yoni-Eggs-Illustration">
-          <div class="main-products__box">
-            <div class="main-products__info">
-              <a href="#" class="main-products__title-box">
-                <div class="main-products__title-img"><img src="data/Yoni-Eggs-icon.svg" width="75" height="75" alt="Yoni-Eggs-icon"></div>
-                <div class="main-products__title">Yoni Eggs</div>
-              </a>
-              <div class="main-products__text text-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.</p>
+      <div class="guides section">
+        <div class="guides__title title title--center title--big"><span>Featured</span> Guides</div>
+        <div class="guides__list">
+          <div class="guides__item">
+            <div class="guides__item-inner">
+              <div class="guides__item-img"><img src="data/UltimateGuidetoTheBestCasinosinSingapore.svg" alt="Ultimate Guide to The Best Casinos in Singapore"></div>
+              <div class="guides__item-title">Ultimate Guide to The Best <br> Casinos in Singapore</div>
+              <div class="guides__item-description">
+                <p>Win more with our casino advisor who provides you with all the information you need to learn how to win at the casino.</p>
               </div>
-              <div class="main-products__decor">
-                <svg width="357" height="155"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor2"></use></svg>
+              <div class="guides__item-btn-box">
+                <a href="#" class="guides__item-btn btn-arrow">Check our Casino Guide</a>
               </div>
             </div>
-            <div class="main-products__list-box">
-              <div class="main-products__list">
-                <div class="product">
-                  <div class="product__label product__label--new">new</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <div class="rate" data-rate="3">
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                  </div>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <div class="product__label product__label--sale">SALE</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price-new">$15,99</div>
-                    <div class="product__price-old">$26,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <div class="rate" data-rate="3">
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                  </div>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>           
+          </div>
+          <div class="guides__item">
+            <div class="guides__item-inner">
+              <div class="guides__item-img"><img src="data/Ultimate-Guide-to-Online-Betting.svg" alt="Ultimate Guide to Online Betting in Singapore"></div>
+              <div class="guides__item-title">Ultimate Guide to The Best <br> Casinos in Singapore</div>
+              <div class="guides__item-description">
+                <p>Our casino advisor is an expert who helps you make informed choices based on the latest tips and news available.</p>
+              </div>
+              <div class="guides__item-btn-box">
+                <a href="#" class="guides__item-btn btn-arrow">Check our Casino Guide</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="main-products__row">
-        <div class="container">
-          <img class="main-products__row-decor" src="data/Yoni-Wands-Illustration.svg" alt="Yoni-Wands-Illustration">
-          <div class="main-products__box">
-            <div class="main-products__info">
-              <a href="#" class="main-products__title-box">
-                <div class="main-products__title-img"><img src="data/Yoni-Wands-icon.svg" width="75" height="75" alt="Yoni-Eggs-icon"></div>
-                <div class="main-products__title">Yoni Wands</div>
-              </a>
-              <div class="main-products__text text-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.</p>
-              </div>
-              <div class="main-products__decor">
-                <svg width="330" height="135"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor3"></use></svg>
-              </div>
-            </div>
-            <div class="main-products__list-box">
-              <div class="main-products__list">
-                <div class="product">
-                  <div class="product__label product__label--new">new</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <div class="product__label product__label--sale">SALE</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price-new">$15,99</div>
-                    <div class="product__price-old">$26,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>           
-              </div>
-            </div>
+      <div class="most-popular section">
+        <div class="most-popular__left">
+          <div class="most-popular__title title title--big"><span>Most Popular </span> <br>Casino Games</div>
+          <div class="most-popular__text">
+            <p>Players who go through our gambling advisor have a higher winning rate compared to other players! Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
           </div>
         </div>
-      </div>
-      <div class="main-products__row">
-        <div class="container">
-          <img class="main-products__row-decor" src="data/Yoni-Care-Illustration.svg" alt="Yoni-Care-Illustration">
-          <div class="main-products__box">
-            <div class="main-products__info">
-              <a href="#" class="main-products__title-box">
-                <div class="main-products__title-img"><img src="data/Yoni-Care-icon.svg" width="75" height="75" alt="Yoni-Eggs-icon"></div>
-                <div class="main-products__title">Yoni Care</div>
-              </a>
-              <div class="main-products__text text-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.</p>
-              </div>
-              <div class="main-products__decor">
-                <svg width="288" height="159"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor4"></use></svg>
-              </div>
-            </div>
-            <div class="main-products__list-box">
-              <div class="main-products__list">
-                <div class="product">
-                  <div class="product__label product__label--new">new</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <div class="product__label product__label--sale">SALE</div>
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <div class="rate" data-rate="3">
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                    <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                  </div>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price-new">$15,99</div>
-                    <div class="product__price-old">$26,99</div>
-                  </div>
-                </div>
-                <div class="product">
-                  <a href="#" class="product__img"><img src="data/product.jpg" width="250" height="220" alt="product-img"></a>
-                  <a href="#" class="product__title" title="Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg">Lapis Lazuli Yoni Egg Lapis Lazuli Yoni Egg</a>
-                  <div class="product__price-box">
-                    <div class="product__price">$15,99</div>
-                  </div>
-                </div>           
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="resources">
-      <div class="container">
-        <div class="resources__title title">Resources</div>
-        <div class="resources__list">
-          <a href="#" class="resources__item">
-            <!-- <div class="resources__item-decor"><svg width="299" height="283"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor5"></use></svg></div> -->
-            <span class="resources__item-img"><img src="data/Pelvic-Floor-Muscles-Explained.jpg" width="260" height="320" alt="Pelvic Floor Muscles Explained"></span>
-            <span class="resources__item-box">
-              <span class="resources__item-title">Pelvic Floor Muscles Explained</span>
-              <span class="resources__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut.</span>
-              <span class="resources__item-btn">
-                <span class="btn-5">
-                  Read more
-                  <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-                </span>
-              </span>
-            </span>
+        <div class="most-popular__list">
+          <a href="#" class="most-popular__item">
+            <span class="most-popular__item-img"><img src="data/Blackjack-advisor.svg" alt="Blackjack advisor"></span>
+            <div class="most-popular__item-title">Blackjack advisor</div>
           </a>
-          <a href="#" class="resources__item">
-            <!-- <div class="resources__item-decor"><svg width="299" height="283"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#decor5"></use></svg></div> -->
-            <span class="resources__item-img"><img src="data/Discovering-Nurturing-Your-Yoni.jpg" width="260" height="320" alt="Discovering-Nurturing-Your-Yoni"></span>
-            <span class="resources__item-box">
-              <span class="resources__item-title">Discovering & Nurturing Your Yoni</span>
-              <span class="resources__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut.</span>
-              <span class="resources__item-btn">
-                <div class="btn-5">
-                  Read more
-                  <svg width="36" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-                </div>
-              </span>
-            </span>
+          <a href="#" class="most-popular__item">
+            <span class="most-popular__item-img"><img src="data/Roulette-advisor.svg" alt="Roulette advisor"></span>
+            <div class="most-popular__item-title">Roulette advisor</div>
+          </a>
+          <a href="#" class="most-popular__item">
+            <span class="most-popular__item-img"><img src="data/Baccarat-advisor.svg" alt="Baccarat advisor"></span>
+            <div class="most-popular__item-title">Baccarat advisor</div>
+          </a>
+          <a href="#" class="most-popular__item">
+            <span class="most-popular__item-btn"><svg width="9" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg></span>
+            <div class="most-popular__item-title">More Casino Games</div>
           </a>
         </div>
       </div>
-    </div>
-    <div class="articles">
-      <div class="container">
-        <div class="articles__title title">Latest Articles</div>
-        <div class="articles__list">
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Benefits-of-Vaginal-Weightlifting.jpg" width="280" height="210" alt="Benefits-of-Vaginal-Weightlifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <div class="article__label"><svg width="28" height="28"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#health"></use></svg></div>
-            <a href="#" class="article__title" title="Benefits of Vaginal Weightlifting">Benefits of Vaginal Weightlifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+      <div class="results section">
+        <div class="results__title title title--center title--big"><span>Lottery</span> Results</div>
+        <div class="results__descriptions">Bought your lottery tickets? Check your Singapore Lottery results here where we provide accurate results.</div>
+        <div class="results__list">
+          <a href="#" class="results__item">
+            <span class="results__item-img"><img src="data/toto.svg" alt="toto"></span>
+            <span class="results__item-title">TOTO Results</span>
+          </a>
+          <a href="#" class="results__item">
+            <span class="results__item-img"><img src="data/Singapore-Sweep.svg" alt="Singapore Sweep Results"></span>
+            <span class="results__item-title">Singapore Sweep Results</span>
+          </a>
+          <a href="#" class="results__item">
+            <span class="results__item-img"><img src="data/4d-Results.svg" alt="4d Results"></span>
+            <span class="results__item-title">4d Results</span>
+          </a>
+        </div>
+      </div>
+      <div class="news-row section js-news-parent">
+        <div class="news-row__head">
+          <div class="news-row__title title title--big"><span>Latest</span> News</div>
+          <div class="news-row__descriptions">Get breaking news from our team as we work tirelessly to bring you the latest inside scoop and game releases.</div>
+          <a href="#" class="news-row__btn">
+            <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+            <span class="news-row__btn-text"><span>See all</span> News</span>
+          </a>
+        </div>
+        <div class="news-list">
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
           </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/7-Reasons-to-try-Vaginal-Weight-Lifting.jpg" width="280" height="210" alt="7-Reasons-to-try-Vaginal-Weight-Lifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <div class="article__label"><svg width="28" height="28"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#health"></use></svg></div>
-            <a href="#" class="article__title" title="7 Reasons to try Vaginal Weight Lifting">7 Reasons to try Vaginal Weight Lifting</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
           </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Vaginal-Weightlifting.jpg" width="280" height="210" alt="Vaginal-Weightlifting">
-              <span class="article__date">04 Feb. 2020</span>
-            </a>
-            <div class="article__label"><svg width="28" height="28"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#health"></use></svg></div>
-            <a href="#" class="article__title" title="Vaginal Weightlifting – The Ultimate Kegel Exercise">Vaginal Weightlifting – The Ultimate Kegel Exercise</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
           </div>
-          <div class="article">
-            <a href="#" class="article__img">
-              <img src="data/Vaginal-Weightlifting2.jpg" width="280" height="210" alt="Vaginal-Weightlifting2">
-              <span class="article__date">04 Feb. 2020</span>
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+          </div>
+        </div>
+      </div>
+      <div class="news-row section js-news-parent">
+        <div class="news-row__head">
+          <div class="news-row__title title title--big"><span>Topical</span> Guides</div>
+          <a href="#" class="news-row__btn">
+            <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+            <span class="news-row__btn-text"><span>See all</span> Guides</span>
+          </a>
+        </div>
+        <div class="news-list">
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+          </div>
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+          </div>
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+          </div>
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+          </div>
+        </div>
+      </div>
+      <div class="section section--bg">
+        <div class="news-row section js-news-parent">
+          <div class="news-row__head">
+            <div class="news-row__title title title--big"><span>Our</span> Reviews</div>
+            <div class="news-row__descriptions">Browse through our client’s reviews and learn more about why you should choose us.</div>
+            <a href="#" class="news-row__btn">
+              <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <span class="news-row__btn-text"><span>See all</span> Rewiews</span>
             </a>
-            <div class="article__label"><svg width="28" height="28"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#health"></use></svg></div>
-            <a href="#" class="article__title" title="Vaginal Weightlifting – The Ultimate Kegel Exercise">Vaginal Weightlifting – The Ultimate Kegel Exercise</a>
-            <div class="article__descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+          </div>
+          <div class="news-list">
+            <div class="news">
+              <a href="#" class="news__img news__img--2"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+              <a href="#" class="news__title news__title--bg" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+            </div>
+            <div class="news">
+              <a href="#" class="news__img news__img--2"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+              <a href="#" class="news__title news__title--bg" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+            </div>
+            <div class="news">
+              <a href="#" class="news__img news__img--2"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+              <a href="#" class="news__title news__title--bg" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+            </div>
+            <div class="news">
+              <a href="#" class="news__img news__img--2"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+              <a href="#" class="news__title news__title--bg" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
   <footer class="footer">
-  <div class="container">
-    <div class="footer__container">
-      <div class="footer__logo-box">
-        <div class="footer__logo">
-          <img src="images/logo.png" width="135" height="34" alt="logo">
-          <a href="#" class="footer__logo-link"></a>
-        </div>
-        <div class="footer__logo-descriptions">© MyKegelTools 2019. <br> All product names, logos, and brands are property of their respective owners.</div>
+  <div class="footer__container container">
+    <div class="footer__left">
+      <div class="footer__logo">
+        <img src="images/logo-white.svg" width="184" height="32" alt="bet-advisor">
+        <a href="#" class="footer__logo-link"></a>
       </div>
-      <nav class="footer__nav">
-        <div class="footer__nav-cell">
-          <div class="footer__nav-title">Useful Pages</div>
-          <ul>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Shipping and Returns</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer__nav-cell">
-          <div class="footer__nav-title">Legal Pages</div>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms and Conditions</a></li>
-            <li><a href="#">Cookies Policy</a></li>
-          </ul>
-        </div>
-      </nav>
-      <div class="footer__subscribe">
-        <div class="footer__subscribe-title">Join our mailing list</div>
-        <form class="footer__subscribe-form">
-          <input type="email" class="footer__subscribe-input" placeholder="Enter email">
-          <button type="submit" class="footer__subscribe-btn"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#letter"></use></svg></button>
-        </form>
-      </div>
+      <div class="footer__logo-description">BetAdvisor is the world’s leading independent online gaming authority, providing trusted online casino news, guides, reviews and information since 2020.</div>
     </div>
+    <nav class="footer__nav">
+      <div class="footer__nav-cell">
+        <div class="footer__nav-title">General Pages</div>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Terms and Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer__nav-cell">
+        <div class="footer__nav-title">Guides</div>
+        <ul>
+          <li><a href="#">Casino</a></li>
+          <li><a href="#">Online Betting</a></li>
+          <li><a href="#">Casino Games</a></li>
+        </ul>
+      </div>
+      <div class="footer__nav-cell">
+        <div class="footer__nav-title">Lottery Results</div>
+        <ul>
+          <li><a href="#">4D Results</a></li>
+          <li><a href="#">Toto Results</a></li>
+          <li><a href="#">Singapore Sweep Results</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
-  <div class="btn-top js-top-scroll">
-    <svg class="btn-top__arrow" width="10" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#top"></use></svg>
-    <svg class="btn-top__bg" width="1920" height="40" viewBox="0 0 1920 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M933.5 11C943.1 1.4 953.5 -1.56795e-05 960 1.31701e-10C966.5 -1.56795e-05 976.9 1.4 986.5 11C987.677 12.1766 988.762 13.286 989.783 14.3299C999.167 23.9217 1003.15 27.9909 1022.93 28H1920V40H0V28H897.067C916.852 27.9909 920.833 23.9217 930.217 14.3299C931.238 13.286 932.323 12.1766 933.5 11Z" fill="url(#paint0_linear)"/>
-      <defs>
-      <linearGradient id="paint0_linear" x1="1920" y1="39.9902" x2="0" y2="39.9902" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#BA58E1"/>
-      <stop offset="1" stop-color="#6F49BC"/>
-      </linearGradient>
-      </defs>
-    </svg>
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__copy">Copyright © 2020, BetAdvisor, All Rights Reserved</div>
+    </div>
   </div>
 </footer>
   <script src="/js/app.js"></script>
