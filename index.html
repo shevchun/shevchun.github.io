@@ -6,642 +6,351 @@
   <meta name="description" content="Kegglers">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>Fitness</title>
-  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-  <link rel='preload' as='style' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap'>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap'>
-  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
-  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
+  <title>Betadvisor</title>
+  <link rel="icon" type="image/png" sizes="72x72" href="images/favicon-72x72.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="images/favicon-144x144.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512x512.png">
+  <link href='https://fonts.gstatic.com' rel='preconnect' crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet" type='text/css' media="print" onload="this.onload=null;this.media='all'">
   <link href="css/index.css" rel="stylesheet">
 </head>
 
-
 <body>
   <header class="header">
-  <div class="header__top">
-    <div class="header__top-cell">Zufriedenheitsgarantie</div>
-    <div class="header__top-cell">100% natürlich</div>
-    <div class="header__top-cell">Freie Lieferung ab €75,-</div>
-    <a href="tel:+490251/9811565132" class="header__top-cell header__top-cell--tel">24/7 Hotline: +49 (0)251/981 156 51 32</a>
-  </div>
-  <div class="header__bottom">
-    <div class="container">
-      <div class="header__bottom-box">
-        <div class="header__mobile-menu js-mobile-btn">
-          <div class="header__mobile-line"></div>
-          <div class="header__mobile-line"></div>
-          <div class="header__mobile-line"></div>
-        </div>
-        <nav class="header__nav">
-          <ul>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Inhalte</a></li>
-            <li><a href="#">Magazin</a></li>
-          </ul>
-        </nav>
-        <div class="header__logo">
-          <img src="images/logo.png" width="101" height="78" alt="logo">
-          <a href="#" class="header__logo-link"></a>
-        </div>
-        <div class="header__controls">
-          <div class="header__search">
-            <div class="header__btn header__btn--search">
-              <span class="header__btn-icon"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></span>
-              <span class="header__btn-text">Suche</span>
-            </div>
-            <form class="header__search-form">
-              <input type="text" class="header__search-input" placeholder="Suche">
-              <button type="submit" class="header__search-button"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
-            </form>
-          </div>
-          <a href="#" class="header__btn header__btn--account">
-            <span class="header__btn-icon"><svg width="20" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#user"></use></svg></span>
-            <span class="header__btn-text">Anmelden</span>
-          </a>
-          <div class="header__btn header__btn--basket">
-            <span class="header__btn-icon"><svg width="24" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg></span>
-            <span class="header__btn-text">0 Artikel</span>
-          </div>
-        </div>
-      </div>
+  <div class="header__container container">
+    <div class="header__mobile-btn js-mobile-btn">
+      <svg width="24" height="22">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mobile"></use>
+      </svg>
     </div>
+    <div class="header__logo">
+      <img src="images/logo.svg" width="184" height="32" alt="bet-advisor">
+      <a href="#" class="header__logo-link"></a>
+    </div>
+    <nav class="header__nav js-nav">
+      <ul>
+        <li><a href="#">CASINO</a></li>
+        <li class="current_page_item"><a href="#">ONLINE BETTING</a></li>
+        <li><a href="#">CASINO GAMES</a></li>
+        <li><a href="#">LOTTERY RESULTS</a></li>
+        <li><a href="#">BLOG</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="header__contacts">
+      <svg class="header__contacts-mobile-btn" width="26" height="22">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#contacts"></use>
+      </svg>
+      Contact US
+    </a>
   </div>
   <div class="header__mobile">
-    <div class="header__mobile-overlay js-close-mobile-menu"></div>
     <div class="header__mobile-box">
-      <div class="header__mobile-close js-close-mobile-menu"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+      <div class="header__mobile-close js-close-mobile"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+      <div class="header__mobile-holder">
+        <div class="header__mobile-title">Menu</div>
+      </div>
+      <a href="#" class="header__mobile-contacts">Contact US</a>
     </div>
   </div>
 </header>
-
-<div class="basket-popup">
-  <div class="basket-popup__overlay js-close-basket"></div>
-  <div class="basket-popup__box">
-    <div class="basket-popup__head">
-      <div class="basket-popup__head-icon"><svg width="24" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg></div>
-      <div class="basket-popup__head-text">Dein Warenkorb (1)</div>
-      <div class="basket-popup__close js-close-basket"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-    </div>
-    <div class="basket-popup__body">
-      <div class="basket-popup__list">
-        <div class="basket-popup__item">
-          <a href="#" class="basket-popup__item-img"><img src="data/basket-popup.jpg" width="76" height="95" alt="Ashwagandha Kapseln"></a>
-          <div class="basket-popup__item-box">
-            <div class="basket-popup__item-holder">
-              <div class="basket-popup__item-cell">
-                <a href="#" class="basket-popup__item-title" title="Ashwagandha Kapseln">Ashwagandha Kapseln</a>
-                <div class="basket-popup__item-text">120 Kapseln a 500mg</div>
-              </div>
-              <div class="basket-popup__item-remove">Entfernen</div>
-            </div>
-            <div class="basket-popup__item-bottom">
-              <div class="basket-popup__item-counter">
-                <div class="counter">
-                  <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
-                  <input type="number" class="counter__input" min="1" value="1">
-                  <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
-                </div>
-              </div>
-              <div class="basket-popup__item-price">34,90 EUR</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="basket-popup__price-box">
-        <div class="basket-popup__price-row">
-          <div class="basket-popup__price-cell">Zwischensumme</div>
-          <div class="basket-popup__price-cell">34,90 EUR</div>
-        </div>
-        <div class="basket-popup__price-row">
-          <div class="basket-popup__price-cell">Versand</div>
-          <div class="basket-popup__price-cell">3,90 EUR</div>
-        </div>
-        <div class="basket-popup__price-row">
-          <div class="basket-popup__price-cell basket-popup__price-cell--total">Gesamtsumme</div>
-          <div class="basket-popup__price-cell basket-popup__price-cell--total">34,90 EUR</div>
-        </div>
-      </div>
-      <div class="basket-popup__caption">Versandkostenfrei innerhalb DE ab 60 EUR</div>
-      <div class="basket-popup__buy btn btn--green"><svg width="10" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#lock"></use></svg>Zur Kasse</div>
-      <div class="basket-popup__caption-decor">Oder Express-Kauf</div>
-      <div class="basket-popup__pp btn btn--yellow"><svg width="100" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2500" height="812" viewBox="-11.153 -13.144 326.05 105.914"><g transform="matrix(2.07675 0 0 -2.07675 -11.153 92.77)"><defs><path id="a" d="M-84.525-27.457h326.05V78.457h-326.05z"/></defs><clipPath id="b"><use xlink:href="#a" overflow="visible"/></clipPath><g clip-path="url(#b)"><path d="M32.419 40.982c-1.674 1.908-4.7 2.726-8.571 2.726H12.613a1.609 1.609 0 0 1-1.59-1.357L6.347 12.68a.964.964 0 0 1 .953-1.114h6.936l1.742 11.049-.054-.346a1.604 1.604 0 0 0 1.583 1.357h3.296c6.475 0 11.545 2.63 13.026 10.238.044.225.082.444.115.658.44 2.812-.003 4.726-1.524 6.459" fill="#003087"/><path d="M117.331 26.863c-.424-2.784-2.55-2.784-4.606-2.784h-1.17l.821 5.198c.05.314.32.545.638.545h.537c1.4 0 2.722 0 3.404-.797.407-.477.53-1.185.376-2.162m-.895 7.264h-7.756a1.08 1.08 0 0 1-1.066-.91L104.48 13.33a.647.647 0 0 1 .638-.747h3.98c.371 0 .687.27.745.636l.89 5.64c.082.523.534.91 1.064.91h2.454c5.11 0 8.058 2.471 8.828 7.372.347 2.142.014 3.826-.989 5.005-1.103 1.296-3.058 1.982-5.653 1.982" fill="#009cde"/><path d="M62.011 26.863c-.424-2.784-2.55-2.784-4.607-2.784h-1.17l.821 5.198c.05.314.32.545.638.545h.537c1.4 0 2.722 0 3.404-.797.408-.477.531-1.185.377-2.162m-.895 7.264H53.36c-.53 0-.982-.386-1.065-.91L49.16 13.33a.646.646 0 0 1 .638-.747h3.704c.53 0 .981.386 1.064.91l.847 5.365c.082.524.534.91 1.064.91h2.454c5.11 0 8.058 2.472 8.828 7.373.347 2.142.014 3.826-.989 5.005-1.103 1.296-3.058 1.982-5.653 1.982M79.123 19.723c-.36-2.122-2.043-3.547-4.192-3.547-1.077 0-1.94.347-2.494 1.003-.55.65-.756 1.577-.582 2.608.334 2.104 2.046 3.574 4.162 3.574 1.055 0 1.91-.35 2.476-1.012.569-.667.793-1.599.63-2.626m5.176 7.23h-3.714a.647.647 0 0 1-.64-.547l-.162-1.038-.26.376c-.804 1.167-2.597 1.558-4.387 1.558-4.103 0-7.608-3.11-8.29-7.47-.355-2.177.149-4.256 1.383-5.707 1.133-1.333 2.75-1.888 4.677-1.888 3.308 0 5.142 2.124 5.142 2.124l-.166-1.032a.646.646 0 0 1 .639-.747h3.344c.53 0 .982.385 1.065.91l2.008 12.713a.647.647 0 0 1-.64.747" fill="#003087"/><path d="M134.443 19.723c-.36-2.122-2.043-3.547-4.192-3.547-1.077 0-1.94.347-2.494 1.003-.55.65-.756 1.577-.582 2.608.334 2.104 2.045 3.574 4.162 3.574 1.055 0 1.91-.35 2.476-1.012.569-.667.793-1.599.63-2.626m5.176 7.23h-3.714a.647.647 0 0 1-.64-.547l-.162-1.038-.26.376c-.804 1.167-2.597 1.558-4.387 1.558-4.102 0-7.607-3.11-8.29-7.47-.355-2.177.15-4.256 1.384-5.707 1.133-1.333 2.75-1.888 4.677-1.888 3.309 0 5.143 2.124 5.143 2.124l-.166-1.032a.644.644 0 0 1 .637-.747h3.343c.53 0 .982.385 1.066.91l2.008 12.713a.647.647 0 0 1-.64.747" fill="#009cde"/><path d="M104.08 26.952h-3.734c-.357 0-.69-.177-.89-.473l-5.15-7.584-2.183 7.288a1.08 1.08 0 0 1-1.033.77h-3.669a.647.647 0 0 1-.612-.856l4.11-12.066-3.866-5.455a.647.647 0 0 1 .528-1.02h3.73c.352 0 .683.173.885.463l12.414 17.918a.646.646 0 0 1-.53 1.015" fill="#003087"/><path d="M143.996 33.58l-3.184-20.251a.647.647 0 0 1 .639-.747h3.201c.53 0 .982.386 1.065.91l3.139 19.888a.646.646 0 0 1-.639.747h-3.582a.645.645 0 0 1-.639-.546" fill="#009cde"/><path d="M32.419 40.982c-1.674 1.908-4.7 2.726-8.571 2.726H12.613a1.609 1.609 0 0 1-1.59-1.357L6.347 12.68a.964.964 0 0 1 .953-1.114h6.936l1.742 11.049-.054-.346a1.604 1.604 0 0 0 1.583 1.357h3.296c6.475 0 11.545 2.63 13.026 10.238.044.225.082.444.115.658.44 2.812-.003 4.726-1.524 6.459" fill="#003087"/><path d="M17.849 34.485a1.408 1.408 0 0 0 1.389 1.187h8.808c1.043 0 2.016-.068 2.905-.21a12.206 12.206 0 0 0 1.44-.322 7.957 7.957 0 0 0 1.551-.618c.442 2.813-.002 4.726-1.523 6.46-1.675 1.907-4.7 2.725-8.571 2.725H12.612a1.609 1.609 0 0 1-1.588-1.357L6.346 12.682a.964.964 0 0 1 .952-1.115h6.937l1.742 11.05 1.872 11.868z" fill="#003087"/><path d="M33.943 34.523a18.294 18.294 0 0 0-.115-.658c-1.481-7.607-6.551-10.238-13.026-10.238h-3.297a1.602 1.602 0 0 1-1.582-1.357l-1.688-10.702-.48-3.036a.844.844 0 0 1 .834-.976h5.847c.692 0 1.28.504 1.389 1.187l.057.298 1.102 6.984.07.386a1.407 1.407 0 0 0 1.39 1.187h.875c5.664 0 10.099 2.3 11.395 8.956.54 2.78.26 5.103-1.17 6.734a5.584 5.584 0 0 1-1.601 1.235" fill="#009cde"/><path d="M32.392 35.14c-.226.067-.459.127-.699.18-.24.053-.488.1-.742.14-.89.145-1.862.213-2.906.213h-8.807a1.404 1.404 0 0 1-1.389-1.188l-1.872-11.87-.054-.345a1.602 1.602 0 0 0 1.582 1.357h3.297c6.475 0 11.545 2.63 13.026 10.238.044.225.081.443.115.658a7.998 7.998 0 0 1-1.218.514c-.109.036-.22.07-.333.104" fill="#012169"/></g></g></svg></div>
-      <div class="basket-popup__caption-decor">Warum Du uns wählen solltest?</div>
-      <div class="basket-popup__pay-holder">
-        <div class="basket-popup__pay">
-          <div class="basket-popup__pay-icon"><svg width="50" height="57"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#pay1"></use></svg></div>
-          <div class="basket-popup__pay-box">
-            <div class="basket-popup__pay-title">Sicher bezahlen mit:</div>
-            <div class="basket-popup__pay-list">
-              <div class="basket-popup__pay-item"><img src="data/visa.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
-              <div class="basket-popup__pay-item"><img src="data/master.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
-              <div class="basket-popup__pay-item"><img src="data/pp.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
-              <div class="basket-popup__pay-item"><img src="data/sofort.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
-              <div class="basket-popup__pay-item"><img src="data/rech.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
-              <div class="basket-popup__pay-item"><img src="data/vorkasse.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
-            </div>
-          </div>
-        </div>
-        <div class="basket-popup__pay">
-          <div class="basket-popup__pay-icon"><svg width="54" height="48"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#pay2"></use></svg></div>
-          <div class="basket-popup__pay-box">
-            <div class="basket-popup__pay-title">Geld-zurück-Garantie:</div>
-            <div class="basket-popup__pay-text">Nur behalten, was auch wirklich gefällt!</div>
-          </div>
-        </div>
-      </div>
-      <div class="basket-popup__slider-title">Passend zu deinem Produkt:</div>
-      <div class="basket-popup__slider">
-        <div class="basket-popup__slider-item">
-          <a href="#" class="basket-popup__item-img"><img src="data/basket-popup.jpg" width="" height="" alt="Ashwagandha Kapseln"></a>
-          <div class="basket-popup__item-box">
-            <a href="#" class="basket-popup__item-title" title="Tribulus Terrestris Kapseln">Tribulus Terrestris Kapseln</a>
-            <div class="basket-popup__item-holder">
-              <div class="basket-popup__item-text">120 Kapseln a 500mg</div>
-              <div class="basket-popup__item-price">34,90 EUR</div>
-            </div>
-            <div class="basket-popup__item-bottom">
-              <div class="basket-popup__item-counter">
-                <div class="counter counter--bg">
-                  <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
-                  <input type="number" class="counter__input" min="1" value="1">
-                  <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
-                </div>
-              </div>
-              <div class="basket-popup__item-btn">hinzufügen</div>
-            </div>
-          </div>
-        </div>
-        <div class="basket-popup__slider-item">
-          <a href="#" class="basket-popup__item-img"><img src="data/basket-popup.jpg" width="" height="" alt="Ashwagandha Kapseln"></a>
-          <div class="basket-popup__item-box">
-            <a href="#" class="basket-popup__item-title" title="Tribulus Terrestris Kapseln">Tribulus Terrestris</a>
-            <div class="basket-popup__item-holder">
-              <div class="basket-popup__item-text">120 Kapseln a 500mg</div>
-              <div class="basket-popup__item-price">34,90 EUR</div>
-            </div>
-            <div class="basket-popup__item-bottom">
-              <div class="basket-popup__item-counter">
-                <div class="counter counter--bg">
-                  <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
-                  <input type="number" class="counter__input" min="1" value="1">
-                  <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
-                </div>
-              </div>
-              <div class="basket-popup__item-btn">hinzufügen</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
   <div class="wrapper">
     <div class="first-screen">
-      <img src="data/first-screen.jpg" width="1920" height="491" alt="first-screen-img" class="first-screen__img">
+      <picture class="first-screen__img">
+        <source srcset="data/Turning-mobile.jpg" media="(max-width: 1200px)">
+        <img src="data/Turning.jpg" width="1920" height="600" alt="Turning">
+      </picture>
       <div class="container">
-        <div class="first-screen__holder">
-          <div class="first-screen__title">Fitness Vital</div>
-          <div class="first-screen__descriptions">Der Shop für deine Fitness</div>
-          <div class="first-screen__btn">
-            <a href="#" class="btn">Zu unseren Produkten</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="triggers">
-      <div class="triggers__item">
-        <div class="triggers__icon"><img src="data/triggers1.svg" alt="Kostenlose Lieferung"></div>
-        <div class="triggers__item-box">
-          <div class="triggers__item-title">Kostenlose Lieferung</div>
-          <div class="triggers__item-text">Ab einem Einkauf von 75€</div>
-        </div>
-      </div>
-      <div class="triggers__item">
-        <div class="triggers__icon"><img src="data/triggers2.svg" alt="Zufriedenheit"></div>
-        <div class="triggers__item-box">
-          <div class="triggers__item-title">Zufriedenheit</div>
-          <div class="triggers__item-text">Über 2.000 zufriedene Kunde</div>
-        </div>
-      </div>
-      <div class="triggers__item">
-        <div class="triggers__icon"><img src="data/triggers3.svg" alt="Schneller Versand"></div>
-        <div class="triggers__item-box">
-          <div class="triggers__item-title">Schneller Versand</div>
-          <div class="triggers__item-text">Versand innerhalb von 24h</div>
-        </div>
-      </div>
-    </div>
-    <div class="partners">
-      <div class="container">
-        <div class="partners__title">Bekannt aus</div>
-        <div class="partners__list">
-          <div class="partners__item"><img src="data/partners1.jpg" alt="partners1"></div>
-          <div class="partners__item"><img src="data/partners2.jpg" alt="partners2"></div>
-          <div class="partners__item"><img src="data/partners3.jpg" alt="partners3"></div>
-          <div class="partners__item"><img src="data/partners4.jpg" alt="partners4"></div>
-          <div class="partners__item"><img src="data/partners5.jpg" alt="partners5"></div>
-          <div class="partners__item"><img src="data/partners6.jpg" alt="partners6"></div>
-          <div class="partners__item"><img src="data/partners7.jpg" alt="partners7"></div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="mission">
-        <div class="mission__img"><img src="data/mission.jpg" width="587" height="533" alt="mission"></div>
-        <div class="mission__info">
-          <div class="mission__label">Fitness Vital</div>
-          <div class="mission__title">Unsere Mission</div>
-          <div class="mission__text text-content">
-            <p>Im alten Indien, sowie auch zur heutigen Zeit, werden der Wurzel der Schlafbeere noch viele andere Wirkungsweisen nachgesprochen. Die vielen unterschiedlichen Wirkstoffe sollen vielseitige Auswirkungen auf den Menschen haben.</p>
-            <p>In der ayurvedischen Medizin wird Ashwagandha unter anderem als Stärkungsmittel sowie zur Verbesserung des Schlafs eingesetzt.</p>
-            <p>Vor allem als Aphrodisiakum ist Ashwagandha bekannt. Aus den Wurzeln der Schlafbeere werden Liebestränke gebraut, die stimulierend und verführend wirken sollen und fester Bestandteil im Tantra sind.</p>
-          </div>
-          <div class="mission__btn-box">
-            <a href="#" class="mission__btn btn btn--revers">Über uns</a>
-          </div>
-        </div>
-      </div>
-      <div class="registration-box">
-        <div class="registration-box__title">Jetzt 15% Sparen! Jetzt eintragen.</div>
-        <ul class="registration-box__list">
-          <li class="registration-box__item">
-            <span class="registration-box__item-icon"><span class="checkmark">✓</span></span>
-            <span class="registration-box__item-text">120 Kapseln a 500 mg = 60g</span>
-          </li>
-          <li class="registration-box__item">
-            <span class="registration-box__item-icon"><span class="checkmark">✓</span></span>
-            <span class="registration-box__item-text">Höchste Qualität, mindestens 5% Withanolide</span>
-          </li>
-          <li class="registration-box__item">
-            <span class="registration-box__item-icon"><span class="checkmark">✓</span></span>
-            <span class="registration-box__item-text">Reines Naturprodukt ohne Zusatzstoffe</span>
-          </li>
-        </ul>
-        <form class="registration-box__form">
-          <div class="registration-box__form-row">
-            <input type="email" class="registration-box__input" placeholder="Deine E-Mail-Adresse">
-            <button class="registration-box__btn btn btn--yellow" type="submit">Jetzt 15% Rabatt erhalten</button>
-            <p class="error">error</p>
-          </div>
-          <div class="registration-box__checkbox">
-            <label class="checkbox">
-              <input type="checkbox" class="checkbox__input">
-              <span class="checkbox__text">Durch Klicken auf „Jetzt 15% Rabatt erhalten“ stimmen Sie der Nutzervereinbarung, der Datenschutzrichtlinie und der Cookie-Richtlinie von Fitness Vital zu.</span>
-            </label>
-          </div>
-        </form>
-      </div>
-      <div class="stock-list">
-        <div class="stock-list__item">
-          <img class="stock-list__item-img" src="data/product-stock.jpg" width="586" height="400" alt="product-stock">
-          <a href="#" class="stock-list__item-title">Ashwagandha Kapseln - für besseren Schlaf</a>
-          <div class="stock-list__item-holder">
-            <div class="stock-list__item-price">
-              <div class="price-new">€ 19,99</div>
-              <div class="price-old">€ 24,95</div>
-            </div>
-            <div class="stock-list__item-descriptions">Du sparst € 5,00</div>
-            <div class="stock-list__item-btn-box">
-              <div class="stock-list__item-btn btn btn--yellow">In den Warenkorb</div>
-            </div>
-          </div>
-        </div>
-        <div class="stock-list__item">
-          <img class="stock-list__item-img" src="data/product-stock.jpg" width="586" height="400" alt="product-stock">
-          <a href="#" class="stock-list__item-title">Ashwagandha Kapseln - für besseren Schlaf</a>
-          <div class="stock-list__item-holder">
-            <div class="stock-list__item-price">
-              <div class="price-new">€ 19,99</div>
-              <div class="price-old">€ 24,95</div>
-            </div>
-            <div class="stock-list__item-descriptions">Du sparst € 5,00</div>
-            <div class="stock-list__item-btn-box">
-              <div class="stock-list__item-btn btn btn--yellow">In den Warenkorb</div>
-            </div>
-          </div>
-        </div>
-        <div class="stock-list__item">
-          <img class="stock-list__item-img" src="data/product-stock.jpg" width="586" height="400" alt="product-stock">
-          <a href="#" class="stock-list__item-title">Ashwagandha Kapseln - für besseren Schlaf</a>
-          <div class="stock-list__item-holder">
-            <div class="stock-list__item-price">
-              <div class="price-new">€ 19,99</div>
-              <div class="price-old">€ 24,95</div>
-            </div>
-            <div class="stock-list__item-descriptions">Du sparst € 5,00</div>
-            <div class="stock-list__item-btn-box">
-              <div class="stock-list__item-btn btn btn--yellow">In den Warenkorb</div>
-            </div>
-          </div>
-        </div>
-        <div class="stock-list__item">
-          <img class="stock-list__item-img" src="data/product-stock.jpg" width="586" height="400" alt="product-stock">
-          <a href="#" class="stock-list__item-title">Ashwagandha Kapseln - für besseren Schlaf</a>
-          <div class="stock-list__item-holder">
-            <div class="stock-list__item-price">
-              <div class="price-new">€ 19,99</div>
-              <div class="price-old">€ 24,95</div>
-            </div>
-            <div class="stock-list__item-descriptions">Du sparst € 5,00</div>
-            <div class="stock-list__item-btn-box">
-              <div class="stock-list__item-btn btn btn--yellow">In den Warenkorb</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="feedback">
-        <div class="feedback__title">Du hast Fragen zu einem Produkt oder uns?</div>
-        <div class="feedback__box">
-          <div class="feedback__img"><img src="data/feedback.jpg" width="180" height="180" alt="feedback"></div>
-          <div class="feedback__container">
-            <div class="feedback__info">Brauchen Sie Hilfe bei der Auswahl des richtigen Produkts oder bei der Bestellung? Lassen Sie sich kostenlos beraten.</div>
-            <div class="feedback__name">Max Mustermann</div>
-            <div class="feedback__position">Geschäftsführer FitnessVital</div>
-          </div>
-        </div>
-        <div class="feedback__sub-title">Lassen Sie sich kostenlos beraten</div>
-        <div class="feedback__btns">
-          <div class="feedback__btn">
-            <span class="feedback__icon"><svg width="26" height="26"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#tel"></use></svg></span>
-            <span class="feedback__btn-text">Telefon</span>
-          </div>
-          <div class="feedback__btn">
-            <span class="feedback__icon"><svg width="24" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mail"></use></svg></span>
-            <span class="feedback__btn-text">E-Mail</span>
-          </div>
-          <div class="feedback__btn">
-            <span class="feedback__icon"><svg width="24" height="24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#contact"></use></svg></span>
-            <span class="feedback__btn-text">Kontaktformular</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg">
-      <div class="container">
-        <div class="focus">
-          <div class="focus__title">Im Fokus</div>
-          <div class="focus__descriptions">Die heilige Schlafbeere als reines Wurzelextrakt</div>
-          <div class="focus__box">
-            <div class="focus__img"><img src="data/focus.jpg" width="643" height="558" alt="focus"></div>
-            <div class="focus__item">
-              <div class="focus__item-inner">
-                <div class="focus__icon"><img src="data/focus1.svg" alt="BIOACTIVE"></div>
-                <div class="focus__item-text">BIOACTIVE</div>
-              </div>
-            </div>
-            <div class="focus__item">
-              <div class="focus__item-inner">
-                <div class="focus__icon"><img src="data/focus2.svg" alt="Natürlich gewachsen"></div>
-                <div class="focus__item-text">Natürlich gewachsen</div>
-              </div>
-            </div>
-            <div class="focus__item">
-              <div class="focus__item-inner">
-                <div class="focus__icon"><img src="data/focus3.svg" alt="VEGAN"></div>
-                <div class="focus__item-text">VEGAN</div>
-              </div>
-            </div>
-            <div class="focus__item">
-              <div class="focus__item-inner">
-                <div class="focus__icon"><img src="data/focus4.svg" alt="Frei von Gentechnik"></div>
-                <div class="focus__item-text">Frei von Gentechnik</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="info">
-          <div class="info__img"><img src="data/info.jpg" width="947" height="633" alt="Don’t let stress stress you out"></div>
-          <div class="info__text">
-            <div class="info__label">More energy and less stress</div>
-            <div class="info__title">Don’t let stress <br> stress you out</div>
-            <div class="info__text text-content">
-              <p>Im alten Indien, sowie auch zur heutigen Zeit, werden der Wurzel der Schlafbeere noch viele andere Wirkungsweisen nachgesprochen. Die vielen unterschiedlichen Wirkstoffe sollen vielseitige Auswirkungen auf den Menschen haben.</p>
-              <p>In der ayurvedischen Medizin wird Ashwagandha unter anderem als Stärkungsmittel sowie zur Verbesserung des Schlafs eingesetzt.</p>
-              <p>Vor allem als Aphrodisiakum ist Ashwagandha bekannt. Aus den Wurzeln der Schlafbeere werden Liebestränke gebraut, die stimulierend und verführend wirken sollen und fester Bestandteil im Tantra sind.</p>
-            </div>
+        <div class="first-screen__box">
+          <div class="first-screen__box-inner">
+            <div class="first-screen__title">Turning Players <span>into</span> Winners</div>
+            <div class="first-screen__descriptions"><p>With our independent reviews, latest news and in-depth game guides we've been keeping players worldwide safe and secure since 1995</p></div>
           </div>
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="reviews">
-        <div class="reviews__title">Kundenstimmen</div>
-        <div class="reviews__head">
-          <div class="reviews__rate">
-            <div class="reviews__rate-stars">
-              <div class="rate" data-rate="4">
-                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-              </div>
-            </div>
-            <div class="reviews__rate-text">(4,9) 50 Bewertungen</div>
-          </div>
-          <a href="#" class="reviews__btn btn">Produkt bewerten</a>
-        </div>
-        <div class="reviews__slider">
-          <div class="reviews__item">
-            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
-            <div class="reviews__item-rate">
-              <div class="rate" data-rate="4">
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-              </div>
-            </div>
-            <div class="reviews__item-date">11.1.2020</div>
-            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+      <div class="features section">
+        <div class="features__title title"><span>Our</span> Features</div>
+        <div class="features__list">
+          <div class="features__item">
+            <div class="features__item-title">Experience</div>
+            <div class="features__item-value">10 <span>years</span></div>
+            <div class="features__item-text">
+              <p>Bought your lottery tickets? Check your Singapore Lottery results here where we provide accurate results.</p>
             </div>
           </div>
-          <div class="reviews__item">
-            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
-            <div class="reviews__item-rate">
-              <div class="rate" data-rate="4">
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-              </div>
-            </div>
-            <div class="reviews__item-date">11.1.2020</div>
-            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+          <div class="features__item">
+            <div class="features__item-title">Available</div>
+            <div class="features__item-value">24/7</div>
+            <div class="features__item-text">
+              <p>Bought your lottery tickets? Check your Singapore Lottery results here where we provide accurate results.</p>
             </div>
           </div>
-          <div class="reviews__item">
-            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
-            <div class="reviews__item-rate">
-              <div class="rate" data-rate="4">
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-              </div>
+          <div class="features__item">
+            <div class="features__item-title">Up to date</div>
+            <div class="features__item-value">Guides</div>
+            <div class="features__item-text">
+              <p>Bought your lottery tickets? Check your Singapore Lottery results here where we provide accurate results.</p>
             </div>
-            <div class="reviews__item-date">11.1.2020</div>
-            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-            </div>
-          </div>
-          <div class="reviews__item">
-            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
-            <div class="reviews__item-rate">
-              <div class="rate" data-rate="4">
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-              </div>
-            </div>
-            <div class="reviews__item-date">11.1.2020</div>
-            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-            </div>
-          </div>
-          <div class="reviews__item">
-            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
-            <div class="reviews__item-rate">
-              <div class="rate" data-rate="4">
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-              </div>
-            </div>
-            <div class="reviews__item-date">11.1.2020</div>
-            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-            </div>
-          </div>
-          <div class="reviews__item">
-            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
-            <div class="reviews__item-rate">
-              <div class="rate" data-rate="4">
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
-              </div>
-            </div>
-            <div class="reviews__item-date">11.1.2020</div>
-            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-            </div>
-          </div>
-        </div>
-        <div class="reviews__slider-controls">
-          <a href="#" data-slide="1" class="reviews__slider-first">
-            <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-            <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-          </a>
-          <div class="reviews__slider-counter">
-            <span class="reviews__slider-counter-current">1</span>/
-            <span class="reviews__slider-counter-all"></span>
-          </div>
-          <a href="#" data-slide="6" class="reviews__slider-last">
-            <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-            <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-          </a>
-        </div>
-      </div>
-      <div class="news">
-        <div class="news__title">Journal</div>
-        <div class="news__list">
-          <div class="news__item">
-            <a href="#" class="news__item-img"><img src="data/news.jpg" width="383" height="215" alt="So erhältst du mehr Energie"></a>
-            <a href="#" class="news__item-title" title="So erhältst du mehr Energie">So erhältst du mehr Energie</a>
-            <div class="news__item-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</div>
-          </div>
-          <div class="news__item">
-            <a href="#" class="news__item-img"><img src="data/news.jpg" width="383" height="215" alt="So erhältst du mehr Energie"></a>
-            <a href="#" class="news__item-title" title="So erhältst du mehr Energie">So erhältst du mehr Energie</a>
-            <div class="news__item-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</div>
-          </div>
-          <div class="news__item">
-            <a href="#" class="news__item-img"><img src="data/news.jpg" width="383" height="215" alt="So erhältst du mehr Energie"></a>
-            <a href="#" class="news__item-title" title="So erhältst du mehr Energie">So erhältst du mehr Energie</a>
-            <div class="news__item-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="bg">
-      <div class="container">
-        <div class="products-home">
-          <div class="products-home__item">
-            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
-            <div class="products-home__item-info">
-              <a href="#" class="products-home__item-title">NATTOKINASE</a>
-              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
-              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
-              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+      <div class="info section">
+        <div class="info__img-box">
+          <div class="info__img"><img src="data/Your-Favorite-Gambling-Advisor.svg" width="432" height="466" alt="Your-Favorite-Gambling-Advisor"></div>
+          <div class="info__btn">
+            <a href="#" class="btn">Read our gambling guide</a>
+          </div>
+        </div>
+        <div class="info__content">
+          <div class="info__title title"><span>Your Favorite </span><br>Gambling Advisor</div>
+          <div class="info__descriptions">Players who go through our gambling advisor have a higher winning rate  compared to other players! Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+          <div class="info__list">
+            <div class="info__item">
+              <div class="info__item-head">
+                <div class="info__item-img"><img src="data/Gambling-History-in-Singapore.svg" alt="Gambling-History-in-Singapore"></div>
+                <div class="info__item-title">Gambling History in Singapore</div>
+                <div class="info__item-btn"><svg width="8" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg></div>
+              </div>
+              <div class="info__item-body">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ... </p>
+              </div>
+            </div>
+            <div class="info__item">
+              <div class="info__item-head">
+                <div class="info__item-img"><img src="data/AllGamblingOptions.svg" alt="All Gambling Options"></div>
+                <div class="info__item-title">All Gambling Options</div>
+                <div class="info__item-btn"><svg width="8" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg></div>
+              </div>
+              <div class="info__item-body">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ... </p>
+              </div>
+            </div>
+            <div class="info__item">
+              <div class="info__item-head">
+                <div class="info__item-img"><img src="data/ExpertsRecommandations.svg" alt="Experts Recommandations"></div>
+                <div class="info__item-title">Experts Recommandations</div>
+                <div class="info__item-btn"><svg width="8" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg></div>
+              </div>
+              <div class="info__item-body">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ... </p>
+              </div>
             </div>
           </div>
-          <div class="products-home__item">
-            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
-            <div class="products-home__item-info">
-              <a href="#" class="products-home__item-title">NATTOKINASE</a>
-              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
-              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
-              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+        </div>
+      </div>
+      <div class="guides section">
+        <div class="guides__title title title--center title--big"><span>Featured</span> Guides</div>
+        <div class="guides__list">
+          <div class="guides__item">
+            <div class="guides__item-inner">
+              <div class="guides__item-img"><img src="data/UltimateGuidetoTheBestCasinosinSingapore.svg" alt="Ultimate Guide to The Best Casinos in Singapore"></div>
+              <div class="guides__item-title">Ultimate Guide to The Best <br> Casinos in Singapore</div>
+              <div class="guides__item-description">
+                <p>Win more with our casino advisor who provides you with all the information you need to learn how to win at the casino.</p>
+              </div>
+              <div class="guides__item-btn-box">
+                <a href="#" class="guides__item-btn btn-arrow">Check our Casino Guide</a>
+              </div>
             </div>
           </div>
-          <div class="products-home__item">
-            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
-            <div class="products-home__item-info">
-              <a href="#" class="products-home__item-title">NATTOKINASE</a>
-              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
-              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
-              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+          <div class="guides__item">
+            <div class="guides__item-inner">
+              <div class="guides__item-img"><img src="data/Ultimate-Guide-to-Online-Betting.svg" alt="Ultimate Guide to Online Betting in Singapore"></div>
+              <div class="guides__item-title">Ultimate Guide to The Best <br> Casinos in Singapore</div>
+              <div class="guides__item-description">
+                <p>Our casino advisor is an expert who helps you make informed choices based on the latest tips and news available.</p>
+              </div>
+              <div class="guides__item-btn-box">
+                <a href="#" class="guides__item-btn btn-arrow">Check our Casino Guide</a>
+              </div>
             </div>
           </div>
-          <div class="products-home__item">
-            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
-            <div class="products-home__item-info">
-              <a href="#" class="products-home__item-title">NATTOKINASE</a>
-              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
-              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
-              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
-            </div>
+        </div>
+      </div>
+      <div class="most-popular section">
+        <div class="most-popular__left">
+          <div class="most-popular__title title title--big"><span>Most Popular </span> <br>Casino Games</div>
+          <div class="most-popular__text">
+            <p>Players who go through our gambling advisor have a higher winning rate compared to other players! Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
           </div>
-          <div class="products-home__item">
-            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
-            <div class="products-home__item-info">
-              <a href="#" class="products-home__item-title">NATTOKINASE</a>
-              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
-              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
-              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+        </div>
+        <div class="most-popular__list">
+          <a href="#" class="most-popular__item">
+            <span class="most-popular__item-img"><img src="data/Blackjack-advisor.svg" alt="Blackjack advisor"></span>
+            <div class="most-popular__item-title">Blackjack advisor</div>
+          </a>
+          <a href="#" class="most-popular__item">
+            <span class="most-popular__item-img"><img src="data/Roulette-advisor.svg" alt="Roulette advisor"></span>
+            <div class="most-popular__item-title">Roulette advisor</div>
+          </a>
+          <a href="#" class="most-popular__item">
+            <span class="most-popular__item-img"><img src="data/Baccarat-advisor.svg" alt="Baccarat advisor"></span>
+            <div class="most-popular__item-title">Baccarat advisor</div>
+          </a>
+          <a href="#" class="most-popular__item">
+            <span class="most-popular__item-btn"><svg width="9" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg></span>
+            <div class="most-popular__item-title">More Casino Games</div>
+          </a>
+        </div>
+      </div>
+      <div class="results section">
+        <div class="results__title title title--center title--big"><span>Lottery</span> Results</div>
+        <div class="results__descriptions">Bought your lottery tickets? Check your Singapore Lottery results here where we provide accurate results.</div>
+        <div class="results__list">
+          <a href="#" class="results__item">
+            <span class="results__item-img"><img src="data/toto.svg" alt="toto"></span>
+            <span class="results__item-title">TOTO Results</span>
+          </a>
+          <a href="#" class="results__item">
+            <span class="results__item-img"><img src="data/Singapore-Sweep.svg" alt="Singapore Sweep Results"></span>
+            <span class="results__item-title">Singapore Sweep Results</span>
+          </a>
+          <a href="#" class="results__item">
+            <span class="results__item-img"><img src="data/4d-Results.svg" alt="4d Results"></span>
+            <span class="results__item-title">4d Results</span>
+          </a>
+        </div>
+      </div>
+      <div class="news-row section js-news-parent">
+        <div class="news-row__head">
+          <div class="news-row__title title title--big"><span>Latest</span> News</div>
+          <div class="news-row__descriptions">Get breaking news from our team as we work tirelessly to bring you the latest inside scoop and game releases.</div>
+          <a href="#" class="news-row__btn">
+            <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+            <span class="news-row__btn-text"><span>See all</span> News</span>
+          </a>
+        </div>
+        <div class="news-list">
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
             </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
           </div>
-          <div class="products-home__item">
-            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
-            <div class="products-home__item-info">
-              <a href="#" class="products-home__item-title">NATTOKINASE</a>
-              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
-              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
-              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
             </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
           </div>
-          <div class="products-home__item">
-            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
-            <div class="products-home__item-info">
-              <a href="#" class="products-home__item-title">NATTOKINASE</a>
-              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
-              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
-              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+          </div>
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+          </div>
+        </div>
+      </div>
+      <div class="news-row section js-news-parent">
+        <div class="news-row__head">
+          <div class="news-row__title title title--big"><span>Topical</span> Guides</div>
+          <a href="#" class="news-row__btn">
+            <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+            <span class="news-row__btn-text"><span>See all</span> Guides</span>
+          </a>
+        </div>
+        <div class="news-list">
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+          </div>
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+          </div>
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+          </div>
+          <div class="news">
+            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+            <div class="news__row">
+              <div class="news__date">SEPTEMBER 20, 2020</div>
+              <div class="news__see">
+                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                122
+              </div>
+            </div>
+            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+          </div>
+        </div>
+      </div>
+      <div class="section section--bg">
+        <div class="news-row section js-news-parent">
+          <div class="news-row__head">
+            <div class="news-row__title title title--big"><span>Our</span> Reviews</div>
+            <div class="news-row__descriptions">Browse through our client’s reviews and learn more about why you should choose us.</div>
+            <a href="#" class="news-row__btn">
+              <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+              <span class="news-row__btn-text"><span>See all</span> Rewiews</span>
+            </a>
+          </div>
+          <div class="news-list">
+            <div class="news">
+              <a href="#" class="news__img news__img--2"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+              <a href="#" class="news__title news__title--bg" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+            </div>
+            <div class="news">
+              <a href="#" class="news__img news__img--2"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+              <a href="#" class="news__title news__title--bg" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+            </div>
+            <div class="news">
+              <a href="#" class="news__img news__img--2"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+              <a href="#" class="news__title news__title--bg" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+            </div>
+            <div class="news">
+              <a href="#" class="news__img news__img--2"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+              <a href="#" class="news__title news__title--bg" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
             </div>
           </div>
         </div>
@@ -649,95 +358,45 @@
     </div>
   </div>
   <footer class="footer">
-  <div class="container">
-    <div class="footer__top">
-      <nav class="footer__nav">
-        <ul>
-          <li>
-            <span>Shop</span>
-            <ul>
-              <li><a href="#">Tribulus Tereestris</a></li>
-              <li><a href="#">Roter Panax Ginseng</a></li>
-              <li><a href="#">Ashwagandha</a></li>
-              <li><a href="#">Nattokinase</a></li>
-            </ul>
-          </li>
-          <li>
-            <span>Support</span>
-            <ul>
-              <li><a href="#">Kontakt</a></li>
-              <li><a href="#">Zahlung & Versand</a></li>
-              <li><a href="#">Garantie</a></li>
-              <li><a href="#">Datenschutz</a></li>
-              <li><a href="#">Widerruf</a></li>
-              <li><a href="#">AGBs</a></li>
-            </ul>
-          </li>
-          <li>
-            <span>Brand</span>
-            <ul>
-              <li><a href="#">Über Fitness Vital</a></li>
-              <li><a href="#">Magazin</a></li>
-              <li><a href="#">Ashwagandha</a></li>
-              <li><a href="#">Unsere Partner</a></li>
-              <li><a href="#">Jobs</a></li>
-            </ul>
-          </li>
-          <li>
-            <span>Mehr</span>
-            <ul>
-              <li><a href="#">Impressum</a></li>
-              <li><a href="#">B2B/Affiliate</a></li>
-              <li><a href="#">Mikro Stipendium</a></li>
-              <li><a href="#">Datenschutz</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <div class="footer__contacts">
-        <div class="footer__contacts-title">Newsletter</div>
-        <div class="footer__contacts-descriptions">Für unseren Newsletter anmelden und 10% Rabatt auf deine erste Bestellung erhalten.</div>
-        <form class="footer__form">
-          <input type="email" class="footer__form-input" placeholder="Deine E-Mail-Adresse">
-          <button type="submit" class="footer__form-btn">Anmelden</button>
-          <p class="error">error</p>
-        </form>
-        <div class="footer__social">
-          <div class="footer__social-title">Folge uns</div>
-          <ul class="footer__social-list">
-            <li><a href="#" target="_blank" rel="nofollow">Instagram</a></li>
-            <li><a href="#" target="_blank" rel="nofollow">Facebook</a></li>
-            <li><a href="#" target="_blank" rel="nofollow">Pinterest</a></li>
-          </ul>
-        </div>
+  <div class="footer__container container">
+    <div class="footer__left">
+      <div class="footer__logo">
+        <img src="images/logo-white.svg" width="184" height="32" alt="bet-advisor">
+        <a href="#" class="footer__logo-link"></a>
       </div>
+      <div class="footer__logo-description">BetAdvisor is the world’s leading independent online gaming authority, providing trusted online casino news, guides, reviews and information since 2020.</div>
     </div>
-    <div class="footer__bottom">
-      <div class="footer__bottom-cell">
-        <div class="footer__bottom-title">Schnelle Lieferung</div>
-        <ul class="footer__bottom-list">
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/dhl.svg" width="94" height="30" alt="Schnelle Lieferung"></a></li>
+    <nav class="footer__nav">
+      <div class="footer__nav-cell">
+        <div class="footer__nav-title">General Pages</div>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Terms and Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Blog</a></li>
         </ul>
       </div>
-      <div class="footer__bottom-cell">
-        <div class="footer__bottom-title">Sicher bezahlen mit</div>
-        <ul class="footer__bottom-list">
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/visa.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/master.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/pp.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/sofort.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/rech.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/vorkasse.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+      <div class="footer__nav-cell">
+        <div class="footer__nav-title">Guides</div>
+        <ul>
+          <li><a href="#">Casino</a></li>
+          <li><a href="#">Online Betting</a></li>
+          <li><a href="#">Casino Games</a></li>
         </ul>
       </div>
-      <div class="footer__bottom-cell">
-        <div class="footer__bottom-title">Zertifizierter Onlineshop</div>
-        <ul class="footer__bottom-list">
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/ssl.jpg" width="45" height="45" alt="Zertifizierter Onlineshop"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/e.jpg" width="51" height="51" alt="Zertifizierter Onlineshop"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/tage.jpg" width="44" height="44" alt="Zertifizierter Onlineshop"></a></li>
+      <div class="footer__nav-cell">
+        <div class="footer__nav-title">Lottery Results</div>
+        <ul>
+          <li><a href="#">4D Results</a></li>
+          <li><a href="#">Toto Results</a></li>
+          <li><a href="#">Singapore Sweep Results</a></li>
         </ul>
       </div>
+    </nav>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__copy">Copyright © 2020, BetAdvisor, All Rights Reserved</div>
     </div>
   </div>
 </footer>

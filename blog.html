@@ -6,693 +6,346 @@
   <meta name="description" content="Kegglers">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>Fitness</title>
-  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-  <link rel='preload' as='style' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap'>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap'>
-  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
-  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
+  <title>Betadvisor</title>
+  <link rel="icon" type="image/png" sizes="72x72" href="images/favicon-72x72.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="images/favicon-144x144.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512x512.png">
+  <link href='https://fonts.gstatic.com' rel='preconnect' crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet" type='text/css' media="print" onload="this.onload=null;this.media='all'">
   <link href="css/index.css" rel="stylesheet">
 </head>
 
-
 <body>
   <header class="header">
-  <div class="header__top">
-    <div class="header__top-cell">Zufriedenheitsgarantie</div>
-    <div class="header__top-cell">100% natürlich</div>
-    <div class="header__top-cell">Freie Lieferung ab €75,-</div>
-    <a href="tel:+490251/9811565132" class="header__top-cell header__top-cell--tel">24/7 Hotline: +49 (0)251/981 156 51 32</a>
-  </div>
-  <div class="header__bottom">
-    <div class="container">
-      <div class="header__bottom-box">
-        <div class="header__mobile-menu js-mobile-btn">
-          <div class="header__mobile-line"></div>
-          <div class="header__mobile-line"></div>
-          <div class="header__mobile-line"></div>
-        </div>
-        <nav class="header__nav">
-          <ul>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Inhalte</a></li>
-            <li><a href="#">Magazin</a></li>
-          </ul>
-        </nav>
-        <div class="header__logo">
-          <img src="images/logo.png" width="101" height="78" alt="logo">
-          <a href="#" class="header__logo-link"></a>
-        </div>
-        <div class="header__controls">
-          <div class="header__search">
-            <div class="header__btn header__btn--search">
-              <span class="header__btn-icon"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></span>
-              <span class="header__btn-text">Suche</span>
-            </div>
-            <form class="header__search-form">
-              <input type="text" class="header__search-input" placeholder="Suche">
-              <button type="submit" class="header__search-button"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
-            </form>
-          </div>
-          <a href="#" class="header__btn header__btn--account">
-            <span class="header__btn-icon"><svg width="20" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#user"></use></svg></span>
-            <span class="header__btn-text">Anmelden</span>
-          </a>
-          <div class="header__btn header__btn--basket">
-            <span class="header__btn-icon"><svg width="24" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg></span>
-            <span class="header__btn-text">0 Artikel</span>
-          </div>
-        </div>
-      </div>
+  <div class="header__container container">
+    <div class="header__mobile-btn js-mobile-btn">
+      <svg width="24" height="22">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mobile"></use>
+      </svg>
     </div>
+    <div class="header__logo">
+      <img src="images/logo.svg" width="184" height="32" alt="bet-advisor">
+      <a href="#" class="header__logo-link"></a>
+    </div>
+    <nav class="header__nav js-nav">
+      <ul>
+        <li><a href="#">CASINO</a></li>
+        <li class="current_page_item"><a href="#">ONLINE BETTING</a></li>
+        <li><a href="#">CASINO GAMES</a></li>
+        <li><a href="#">LOTTERY RESULTS</a></li>
+        <li><a href="#">BLOG</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="header__contacts">
+      <svg class="header__contacts-mobile-btn" width="26" height="22">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#contacts"></use>
+      </svg>
+      Contact US
+    </a>
   </div>
   <div class="header__mobile">
-    <div class="header__mobile-overlay js-close-mobile-menu"></div>
     <div class="header__mobile-box">
-      <div class="header__mobile-close js-close-mobile-menu"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+      <div class="header__mobile-close js-close-mobile"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+      <div class="header__mobile-holder">
+        <div class="header__mobile-title">Menu</div>
+      </div>
+      <a href="#" class="header__mobile-contacts">Contact US</a>
     </div>
   </div>
 </header>
-
-<div class="basket-popup">
-  <div class="basket-popup__overlay js-close-basket"></div>
-  <div class="basket-popup__box">
-    <div class="basket-popup__head">
-      <div class="basket-popup__head-icon"><svg width="24" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg></div>
-      <div class="basket-popup__head-text">Dein Warenkorb (1)</div>
-      <div class="basket-popup__close js-close-basket"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-    </div>
-    <div class="basket-popup__body">
-      <div class="basket-popup__list">
-        <div class="basket-popup__item">
-          <a href="#" class="basket-popup__item-img"><img src="data/basket-popup.jpg" width="76" height="95" alt="Ashwagandha Kapseln"></a>
-          <div class="basket-popup__item-box">
-            <div class="basket-popup__item-holder">
-              <div class="basket-popup__item-cell">
-                <a href="#" class="basket-popup__item-title" title="Ashwagandha Kapseln">Ashwagandha Kapseln</a>
-                <div class="basket-popup__item-text">120 Kapseln a 500mg</div>
-              </div>
-              <div class="basket-popup__item-remove">Entfernen</div>
-            </div>
-            <div class="basket-popup__item-bottom">
-              <div class="basket-popup__item-counter">
-                <div class="counter">
-                  <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
-                  <input type="number" class="counter__input" min="1" value="1">
-                  <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
-                </div>
-              </div>
-              <div class="basket-popup__item-price">34,90 EUR</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="basket-popup__price-box">
-        <div class="basket-popup__price-row">
-          <div class="basket-popup__price-cell">Zwischensumme</div>
-          <div class="basket-popup__price-cell">34,90 EUR</div>
-        </div>
-        <div class="basket-popup__price-row">
-          <div class="basket-popup__price-cell">Versand</div>
-          <div class="basket-popup__price-cell">3,90 EUR</div>
-        </div>
-        <div class="basket-popup__price-row">
-          <div class="basket-popup__price-cell basket-popup__price-cell--total">Gesamtsumme</div>
-          <div class="basket-popup__price-cell basket-popup__price-cell--total">34,90 EUR</div>
-        </div>
-      </div>
-      <div class="basket-popup__caption">Versandkostenfrei innerhalb DE ab 60 EUR</div>
-      <div class="basket-popup__buy btn btn--green"><svg width="10" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#lock"></use></svg>Zur Kasse</div>
-      <div class="basket-popup__caption-decor">Oder Express-Kauf</div>
-      <div class="basket-popup__pp btn btn--yellow"><svg width="100" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2500" height="812" viewBox="-11.153 -13.144 326.05 105.914"><g transform="matrix(2.07675 0 0 -2.07675 -11.153 92.77)"><defs><path id="a" d="M-84.525-27.457h326.05V78.457h-326.05z"/></defs><clipPath id="b"><use xlink:href="#a" overflow="visible"/></clipPath><g clip-path="url(#b)"><path d="M32.419 40.982c-1.674 1.908-4.7 2.726-8.571 2.726H12.613a1.609 1.609 0 0 1-1.59-1.357L6.347 12.68a.964.964 0 0 1 .953-1.114h6.936l1.742 11.049-.054-.346a1.604 1.604 0 0 0 1.583 1.357h3.296c6.475 0 11.545 2.63 13.026 10.238.044.225.082.444.115.658.44 2.812-.003 4.726-1.524 6.459" fill="#003087"/><path d="M117.331 26.863c-.424-2.784-2.55-2.784-4.606-2.784h-1.17l.821 5.198c.05.314.32.545.638.545h.537c1.4 0 2.722 0 3.404-.797.407-.477.53-1.185.376-2.162m-.895 7.264h-7.756a1.08 1.08 0 0 1-1.066-.91L104.48 13.33a.647.647 0 0 1 .638-.747h3.98c.371 0 .687.27.745.636l.89 5.64c.082.523.534.91 1.064.91h2.454c5.11 0 8.058 2.471 8.828 7.372.347 2.142.014 3.826-.989 5.005-1.103 1.296-3.058 1.982-5.653 1.982" fill="#009cde"/><path d="M62.011 26.863c-.424-2.784-2.55-2.784-4.607-2.784h-1.17l.821 5.198c.05.314.32.545.638.545h.537c1.4 0 2.722 0 3.404-.797.408-.477.531-1.185.377-2.162m-.895 7.264H53.36c-.53 0-.982-.386-1.065-.91L49.16 13.33a.646.646 0 0 1 .638-.747h3.704c.53 0 .981.386 1.064.91l.847 5.365c.082.524.534.91 1.064.91h2.454c5.11 0 8.058 2.472 8.828 7.373.347 2.142.014 3.826-.989 5.005-1.103 1.296-3.058 1.982-5.653 1.982M79.123 19.723c-.36-2.122-2.043-3.547-4.192-3.547-1.077 0-1.94.347-2.494 1.003-.55.65-.756 1.577-.582 2.608.334 2.104 2.046 3.574 4.162 3.574 1.055 0 1.91-.35 2.476-1.012.569-.667.793-1.599.63-2.626m5.176 7.23h-3.714a.647.647 0 0 1-.64-.547l-.162-1.038-.26.376c-.804 1.167-2.597 1.558-4.387 1.558-4.103 0-7.608-3.11-8.29-7.47-.355-2.177.149-4.256 1.383-5.707 1.133-1.333 2.75-1.888 4.677-1.888 3.308 0 5.142 2.124 5.142 2.124l-.166-1.032a.646.646 0 0 1 .639-.747h3.344c.53 0 .982.385 1.065.91l2.008 12.713a.647.647 0 0 1-.64.747" fill="#003087"/><path d="M134.443 19.723c-.36-2.122-2.043-3.547-4.192-3.547-1.077 0-1.94.347-2.494 1.003-.55.65-.756 1.577-.582 2.608.334 2.104 2.045 3.574 4.162 3.574 1.055 0 1.91-.35 2.476-1.012.569-.667.793-1.599.63-2.626m5.176 7.23h-3.714a.647.647 0 0 1-.64-.547l-.162-1.038-.26.376c-.804 1.167-2.597 1.558-4.387 1.558-4.102 0-7.607-3.11-8.29-7.47-.355-2.177.15-4.256 1.384-5.707 1.133-1.333 2.75-1.888 4.677-1.888 3.309 0 5.143 2.124 5.143 2.124l-.166-1.032a.644.644 0 0 1 .637-.747h3.343c.53 0 .982.385 1.066.91l2.008 12.713a.647.647 0 0 1-.64.747" fill="#009cde"/><path d="M104.08 26.952h-3.734c-.357 0-.69-.177-.89-.473l-5.15-7.584-2.183 7.288a1.08 1.08 0 0 1-1.033.77h-3.669a.647.647 0 0 1-.612-.856l4.11-12.066-3.866-5.455a.647.647 0 0 1 .528-1.02h3.73c.352 0 .683.173.885.463l12.414 17.918a.646.646 0 0 1-.53 1.015" fill="#003087"/><path d="M143.996 33.58l-3.184-20.251a.647.647 0 0 1 .639-.747h3.201c.53 0 .982.386 1.065.91l3.139 19.888a.646.646 0 0 1-.639.747h-3.582a.645.645 0 0 1-.639-.546" fill="#009cde"/><path d="M32.419 40.982c-1.674 1.908-4.7 2.726-8.571 2.726H12.613a1.609 1.609 0 0 1-1.59-1.357L6.347 12.68a.964.964 0 0 1 .953-1.114h6.936l1.742 11.049-.054-.346a1.604 1.604 0 0 0 1.583 1.357h3.296c6.475 0 11.545 2.63 13.026 10.238.044.225.082.444.115.658.44 2.812-.003 4.726-1.524 6.459" fill="#003087"/><path d="M17.849 34.485a1.408 1.408 0 0 0 1.389 1.187h8.808c1.043 0 2.016-.068 2.905-.21a12.206 12.206 0 0 0 1.44-.322 7.957 7.957 0 0 0 1.551-.618c.442 2.813-.002 4.726-1.523 6.46-1.675 1.907-4.7 2.725-8.571 2.725H12.612a1.609 1.609 0 0 1-1.588-1.357L6.346 12.682a.964.964 0 0 1 .952-1.115h6.937l1.742 11.05 1.872 11.868z" fill="#003087"/><path d="M33.943 34.523a18.294 18.294 0 0 0-.115-.658c-1.481-7.607-6.551-10.238-13.026-10.238h-3.297a1.602 1.602 0 0 1-1.582-1.357l-1.688-10.702-.48-3.036a.844.844 0 0 1 .834-.976h5.847c.692 0 1.28.504 1.389 1.187l.057.298 1.102 6.984.07.386a1.407 1.407 0 0 0 1.39 1.187h.875c5.664 0 10.099 2.3 11.395 8.956.54 2.78.26 5.103-1.17 6.734a5.584 5.584 0 0 1-1.601 1.235" fill="#009cde"/><path d="M32.392 35.14c-.226.067-.459.127-.699.18-.24.053-.488.1-.742.14-.89.145-1.862.213-2.906.213h-8.807a1.404 1.404 0 0 1-1.389-1.188l-1.872-11.87-.054-.345a1.602 1.602 0 0 0 1.582 1.357h3.297c6.475 0 11.545 2.63 13.026 10.238.044.225.081.443.115.658a7.998 7.998 0 0 1-1.218.514c-.109.036-.22.07-.333.104" fill="#012169"/></g></g></svg></div>
-      <div class="basket-popup__caption-decor">Warum Du uns wählen solltest?</div>
-      <div class="basket-popup__pay-holder">
-        <div class="basket-popup__pay">
-          <div class="basket-popup__pay-icon"><svg width="50" height="57"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#pay1"></use></svg></div>
-          <div class="basket-popup__pay-box">
-            <div class="basket-popup__pay-title">Sicher bezahlen mit:</div>
-            <div class="basket-popup__pay-list">
-              <div class="basket-popup__pay-item"><img src="data/visa.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
-              <div class="basket-popup__pay-item"><img src="data/master.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
-              <div class="basket-popup__pay-item"><img src="data/pp.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
-              <div class="basket-popup__pay-item"><img src="data/sofort.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
-              <div class="basket-popup__pay-item"><img src="data/rech.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
-              <div class="basket-popup__pay-item"><img src="data/vorkasse.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
-            </div>
-          </div>
-        </div>
-        <div class="basket-popup__pay">
-          <div class="basket-popup__pay-icon"><svg width="54" height="48"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#pay2"></use></svg></div>
-          <div class="basket-popup__pay-box">
-            <div class="basket-popup__pay-title">Geld-zurück-Garantie:</div>
-            <div class="basket-popup__pay-text">Nur behalten, was auch wirklich gefällt!</div>
-          </div>
-        </div>
-      </div>
-      <div class="basket-popup__slider-title">Passend zu deinem Produkt:</div>
-      <div class="basket-popup__slider">
-        <div class="basket-popup__slider-item">
-          <a href="#" class="basket-popup__item-img"><img src="data/basket-popup.jpg" width="" height="" alt="Ashwagandha Kapseln"></a>
-          <div class="basket-popup__item-box">
-            <a href="#" class="basket-popup__item-title" title="Tribulus Terrestris Kapseln">Tribulus Terrestris Kapseln</a>
-            <div class="basket-popup__item-holder">
-              <div class="basket-popup__item-text">120 Kapseln a 500mg</div>
-              <div class="basket-popup__item-price">34,90 EUR</div>
-            </div>
-            <div class="basket-popup__item-bottom">
-              <div class="basket-popup__item-counter">
-                <div class="counter counter--bg">
-                  <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
-                  <input type="number" class="counter__input" min="1" value="1">
-                  <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
-                </div>
-              </div>
-              <div class="basket-popup__item-btn">hinzufügen</div>
-            </div>
-          </div>
-        </div>
-        <div class="basket-popup__slider-item">
-          <a href="#" class="basket-popup__item-img"><img src="data/basket-popup.jpg" width="" height="" alt="Ashwagandha Kapseln"></a>
-          <div class="basket-popup__item-box">
-            <a href="#" class="basket-popup__item-title" title="Tribulus Terrestris Kapseln">Tribulus Terrestris</a>
-            <div class="basket-popup__item-holder">
-              <div class="basket-popup__item-text">120 Kapseln a 500mg</div>
-              <div class="basket-popup__item-price">34,90 EUR</div>
-            </div>
-            <div class="basket-popup__item-bottom">
-              <div class="basket-popup__item-counter">
-                <div class="counter counter--bg">
-                  <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
-                  <input type="number" class="counter__input" min="1" value="1">
-                  <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
-                </div>
-              </div>
-              <div class="basket-popup__item-btn">hinzufügen</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
   <div class="wrapper">
-    <div class="blog">
-      <div class="blog__section blog__section--first blog__section--bg blog__section--pt60">
-        <div class="blog__container">
-          <div class="blog__title">STUDIE: NEGATIVE FOLGEN FÜR BEWEGUNG UND GEWICHT DURCH DEN NOVEMBER-LOCKDOWN</div>
-          <div class="overview">
-            <div class="overview__title">Übersicht</div>
-            <div class="overview__list">
-              <a href="#" class="overview__item">
-                <span class="overview__item-counter">1</span>
-                <span class="overview__item-img"><img src="data/Ergebnisse-Bewegung.svg" alt="Ergebnisse-Bewegung"></span>
-                <span class="overview__item-title-box">
-                  <span class="overview__item-title">Ergebnisse Bewegung</span>
+    <div class="blog page-box">
+      <div class="container">
+        <div class="blog__title title title--big title--center">BetAdvisor's Blog</div>
+        <div class="blog__nav">
+          <ul class="blog__nav-list">
+            <li><a href="#" class="active">all articles</a></li>
+            <li><a href="#">Casino</a></li>
+            <li><a href="#">Sports Betting</a></li>
+            <li><a href="#">Legislations</a></li>
+            <li><a href="#">Lottery</a></li>
+          </ul>
+        </div>
+        <div class="sticky-parent">
+          <div class="sticky-parent__content">
+            <div class="blog__main">
+              <a href="#" class="blog__main-item">
+                <img class="blog__main-item-img" src="data/Sport-betting.jpg" width="250" height="360" alt="Sport-betting">
+                <span class="blog__main-item-info">
+                  <span class="blog__main-item-title">Sport betting</span>
+                  <span class="blog__main-item-text">Manchester United’s dream of winning by a goal was fulfilled</span>
+                  <span class="blog__main-item-date">
+                    <span class="blog__main-item-date-value">SEPTEMBER 20, 2020</span>
+                    <span class="blog__main-item-view">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </span>
+                  </span>
                 </span>
               </a>
-              <a href="#" class="overview__item">
-                <span class="overview__item-counter">2</span>
-                <span class="overview__item-img"><img src="data/Ergebnisse-Ernährung.svg" alt="Ergebnisse-Ernährung"></span>
-                <span class="overview__item-title-box">
-                  <span class="overview__item-title">Ergebnisse Ernährung</span>
+              <a href="#" class="blog__main-item">
+                <img class="blog__main-item-img" src="data/Sport-betting.jpg" width="250" height="360" alt="Sport-betting">
+                <span class="blog__main-item-info">
+                  <span class="blog__main-item-title">Sport betting</span>
+                  <span class="blog__main-item-text">Manchester United’s dream of winning by a goal was fulfilled</span>
+                  <span class="blog__main-item-date">
+                    <span class="blog__main-item-date-value">SEPTEMBER 20, 2020</span>
+                    <span class="blog__main-item-view">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </span>
+                  </span>
                 </span>
               </a>
-              <a href="#" class="overview__item">
-                <span class="overview__item-counter">3</span>
-                <span class="overview__item-img"><img src="data/Ergebnisse-Alkoholkonsum.svg" alt="Ergebnisse-Alkoholkonsum"></span>
-                <span class="overview__item-title-box">
-                  <span class="overview__item-title">Ergebnisse Alkoholkonsum</span>
-                </span>
-              </a>
-              <a href="#" class="overview__item">
-                <span class="overview__item-counter">4</span>
-                <span class="overview__item-img"><img src="data/Ergebnisse-Kurzarbeit-Effekte.svg" alt="Ergebnisse-Kurzarbeit-Effekte"></span>
-                <span class="overview__item-title-box">
-                  <span class="overview__item-title">Ergebnisse Kurzarbeit-Effekte</span>
-                </span>
-              </a>
-              <a href="#" class="overview__item">
-                <span class="overview__item-counter">5</span>
-                <span class="overview__item-img"><img src="data/Ergebnisse-Vergleich-erster-Lockdown.svg" alt="Ergebnisse-Vergleich-erster-Lockdown"></span>
-                <span class="overview__item-title-box">
-                  <span class="overview__item-title">Ergebnisse Vergleich erster Lockdown</span>
-                </span>
-              </a>
-              <a href="#" class="overview__item">
-                <span class="overview__item-counter">6</span>
-                <span class="overview__item-img"><img src="data/Ergebnisse-Eltern.svg" alt="Ergebnisse-Eltern"></span>
-                <span class="overview__item-title-box">
-                  <span class="overview__item-title">Ergebnisse Eltern</span>
-                </span>
-              </a>
-              <a href="#" class="overview__item">
-                <span class="overview__item-counter">7</span>
-                <span class="overview__item-img"><img src="data/Ergebnisse-Gemütszustände.svg" alt="Ergebnisse-Gemütszustände"></span>
-                <span class="overview__item-title-box">
-                  <span class="overview__item-title">Ergebnisse Gemütszustände</span>
-                </span>
-              </a>
-              <a href="#" class="overview__item">
-                <span class="overview__item-counter">8</span>
-                <span class="overview__item-img"><img src="data/Das-kann-man-gegen-die-negativen-Folgen-des-Lockdowns-tun.svg" alt="Das-kann-man-gegen-die-negativen-Folgen-des-Lockdowns-tun"></span>
-                <span class="overview__item-title-box">
-                  <span class="overview__item-title">Das kann man gegen die negativen Folgen des Lockdowns tun</span>
+              <a href="#" class="blog__main-item">
+                <img class="blog__main-item-img" src="data/Sport-betting.jpg" width="250" height="360" alt="Sport-betting">
+                <span class="blog__main-item-info">
+                  <span class="blog__main-item-title">Sport betting</span>
+                  <span class="blog__main-item-text">Odds Long Feds Will Provide Gaming Industry Further COVID-19 Relief</span>
+                  <span class="blog__main-item-date">
+                    <span class="blog__main-item-date-value">SEPTEMBER 20, 2020</span>
+                    <span class="blog__main-item-view">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </span>
+                  </span>
                 </span>
               </a>
             </div>
-          </div>
-        </div>
-      </div>
-      <svg class="blog__decor" width="1920" height="115" viewBox="0 0 1920 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path opacity="0.3" d="M0 -849H1920V60C1920 60 1378.5 34.5 998.5 90C627.233 144.225 0 60 0 60V-849Z" fill="#f5f1e6" />
-        <path opacity="0.4" d="M1947 -4C1719.75 42.9897 1284.72 115 931.988 115C579.257 115 277.004 35.6667 -10.6542 35.6667C-298.312 35.6667 -395.617 52.7538 -454 82.6564" stroke="#94B052" />
-      </svg>
-      <div class="blog__section blog__section--pt60 blog__section--pb100">
-        <div class="blog__container">
-          <div class="blog__info">
-            <div class="blog__info-content blog__info-content--pt60">
-              <div class="blog__info-title">Lockdown Light</div>
-              <div class="blog__info-text text-content text-content--lh-26">
-                <p>Der "Lockdown Light" hat im November begonnen und erneut sind wir mit Themen wie Social Distancing, Home Office und Kurzarbeit konfrontiert. Diese Ausnahmesituation hat den Alltag vieler Menschen enorm verändert und es gibt zahlreiche Auswirkungen auf unser Leben. </p>
-                <p>Wir haben eine Studie durchgeführt um in Erfahrung zu bringen, ob die sozialen Folgen von Covid-19 unser Körpergewicht beeinflussen und wenn ja, in welchem Ausmaße.</p>
-                <p>Diese Studie zeigt zudem auf, wie wir unser Leben neu gestalten müssen, um unsere Gesundheit weiterhin gewährleisten zu können und die Herausforderungen der Pandemie zu begegnen.</p>
+            <div class="blog__row js-news-parent">
+              <div class="news-row__head news-row__head--mb30 news-row__head--aife">
+                <div class="news-row__title title title--small"><span>Latest</span> Casino Articles</div>
+                <a href="#" class="news-row__btn">
+                  <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  <span class="news-row__btn-text"><span>See all</span> casino articless</span>
+                </a>
               </div>
-            </div>
-            <div class="blog__info-img"><img src="data/Lockdown-Light.svg" alt="Lockdown-Light"></div>
-          </div>
-          <div class="blog__illustration">
-            <div class="blog__illustration-title">Die Ergebnisse im Überblick</div>
-            <div class="blog__illustration-box">
-              <div class="blog__illustration-img"><img src="data/Die-Ergebnisse-im-Überblick.png" alt="Die-Ergebnisse-im-Überblick"></div>
-              <div class="blog__illustration-content">
-                <div class="text-content text-content--mb35 text-content--lh-28">
-                  <p>Im Gesundheitssektor gibt es kaum ein Problem, das so schwer wiegt wie Übergewicht. Immer mehr Menschen leiden darunter und tragen gesundheitliche Folgen. <b>Die Zahl der übergewichtigen und fettleibigen Personen steigt jedes Jahr und damit ist diese Entwicklung eine der größten Herausforderungen unserer Zeit.</b> </p>
-                  <p>Die Ergebnisse unserer Corona-Studie sind alarmierend und zeigen auf, dass die Gewichtszunahme in Deutschland durch die Covid-19 Krise weiter befeuert wird.</p>
+              <div class="news-list news-list--small">
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
                 </div>
-                <div class="blog__illustration-frame">
-                  <div class="blog__illustration-frame-title">Unsere Studienergebnisse:</div>
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>Die Einschränkungen im November (Lockdown-Light) haben deutliche Auswirkungen auf das Körpergewicht. Innerhalb der ersten zwei Wochen <b>beklagen 37% der Befragten eine Gewichtszunahme</b>. Etwa 50% der Betroffenen haben zwischen 1 kg und 3 kg zugenommen, etwa 30% zwischen 3 kg und 5 kg.</li>
-                    <li>Etwa 65% der Befragten gaben an sich im November bisher deutlich weniger Sport getrieben zu haben als vor den Lockdown-Light Beschränkungen.</li>
-                    <li>Frauen haben tendenziell mehr zugenommen als Männer.</li>
-                    <li>Gründe für die Gewichtszunahme: <b>Regelmäßige Snacks, Bewegungsmangel, Fastfood</b>.</li>
-                    <li>Personen im Homeoffice nehmen eher zu als Personen, die auswärts arbeiten.</li>
-                    <li>Eltern, vor allem Alleinerziehende, haben stärker zugenommen als der Durchschnitt.</li>
-                    <li>62% der Befragten war vor der Umfrage nicht bewusst, dass sie zugenommen haben.</li>
-                  </ul>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <svg class="blog__decor" width="1920" height="53" viewBox="0 0 1920 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path opacity="0.3" d="M0.5 428.743H1920.5V21.5891C1920.5 21.5891 1379 33.0108 999 8.15161C627.733 -16.1363 0.5 21.5891 0.5 21.5891V428.743Z" fill="#F5F1E6"/>
-        <path opacity="0.4" d="M1947 53.2988C1719.75 32.2515 1284.72 -0.00292259 931.988 -0.00292259C579.257 -0.00292259 277.004 35.5316 -10.6542 35.5316C-298.312 35.5316 -395.617 27.878 -454 14.4842" stroke="#94B052"/>
-      </svg>
-      <div class="blog__section blog__section--bg blog__section--pt60 blog__section--pb100">
-        <div class="blog__container">
-          <div class="blog__info">
-            <div class="blog__info-content blog__info-content--pt30">
-              <div class="blog__info-title">Bewegung</div>
-              <div class="blog__info-text text-content text-content--lh-26">
-                <ul class="small-list">
-                  <li>59% der Befragten gaben an, dass sie durch den <br> Lockdown-Light im November weniger Bewegung haben als zuvor.</li>
-                  <li>Wer im Homeoffice ist, hat häufiger weniger Bewegung als Personen mit auswärtigem Arbeitsort.</li>
-                  <li>Städter haben einen größeren Einbruch an Bewegung als Menschen die ländlich wohnen.</li>
-                  <li>17% der Befragten haben im November mehr Bewegung gehabt als zuvor. 72% von ihnen arbeiten im Homeoffice.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="blog__info-img"><img src="data/Bewegung.svg" alt="Bewegung"></div>
-          </div>
-          <div class="blog__text text-content text-content--lh-26">
-            <h2 style="text-align: left;">Die Ergebnisse im Überblick</h2>
-            <p>Der Lockdown-Light im November hat tiefe Einschnitte in unser Leben gebracht. Sportvereine sind geschlossen und wir sind angehalten Social Distancing zu betreiben. Hinzu kommt, dass sehr häufig aus dem Homeoffice gearbeitet wird, um Begegnungen im Büro zu vermeiden. Fehlender Sport, ein Wegfall des Arbeitsweges und geringe soziale Interaktion reduzieren die tägliche Bewegung. <b>Viele Freizeitaktivitäten wurden erheblich eingeschränkt</b> und ein Großteil der Befragten verbringt die Freizeit zu Hause, beispielsweise auf der Couch. </p>
-            <p>Wer im Homeoffice arbeitet, hat größere Bewegungseinbußen. Das hängt vor allem damit zusammen, dass keine Anreise ins Büro mehr anfällt, keine gemeinsamen Spaziergänge in der Mittagspause stattfinden und in der eigenen Wohnung die Wege zwischen Schreibtisch, Küche und Badezimmer kleiner sind als im Büro.</p>
-            <p>In ländlichen Regionen ist die Bevölkerungsdichte geringer und <b>Freizeitaktivitäten finden öfter unter freiem Himmel</b> statt als in der Stadt. Wanderungen und Spaziergänge werden seltener eingestellt als in der Stadt.</p>
-            <p>Ein Teil der Befragten gab an sich jetzt mehr zu bewegen. Das liegt vor allem daran, dass zu Hause Sport getrieben wird. Die beliebtesten Möglichkeiten sind hier <b>Video-Sportkurse</b> und <b>Hanteln</b>. Zahlreiche Befragte haben damit bereits im ersten Lockdown Erfahrungen sammeln können.</p>
-          </div>
-        </div>
-      </div>
-      <svg class="blog__decor" width="1920" height="89" viewBox="0 0 1920 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M1926.5 -1135H1927V27.3664C1927 27.3664 1297.48 135.067 924.86 65.7283C543.474 -5.24127 0 27.3664 0 27.3664V-1135H6.49994V-1221.37C6.49994 -1221.37 633.732 -1259.09 1005 -1234.8C1385 -1209.94 1926.5 -1221.37 1926.5 -1221.37V-1135Z" fill="#F5F1E6"/>
-        <path opacity="0.4" d="M1947 -0.211914C1719.75 20.8354 1284.72 53.0898 931.988 53.0898C579.257 53.0898 277.004 17.5553 -10.6542 17.5553C-298.312 17.5553 -395.617 25.2089 -454 38.6027" stroke="#94B052"/>
-      </svg>
-      <div class="blog__section blog__section--pt80 blog__section--pb80">
-        <div class="blog__container">
-          <div class="blog__illustration blog__illustration--mb80">
-            <div class="blog__illustration-title">Ernährung</div>
-            <div class="blog__illustration-box blog__illustration-box--revers">
-              <div class="blog__illustration-img blog__illustration-img--full"><img src="data/Ernährung.png" alt="Ernährung"></div>
-              <div class="blog__illustration-content">
-                <div class="blog__illustration-frame">
-                  <div class="blog__illustration-frame-title">Unsere Studienergebnisse:</div>
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>59% der Befragten gaben an, dass sie durch den <br> Lockdown-Light im November weniger Bewegung haben als zuvor.</li>
-                    <li>Wer im Homeoffice ist, hat häufiger weniger Bewegung als Personen mit auswärtigem Arbeitsort.</li>
-                    <li>Städter haben einen größeren Einbruch an Bewegung als Menschen die ländlich wohnen.</li>
-                    <li>17% der Befragten haben im November mehr Bewegung gehabt als zuvor. 72% von ihnen arbeiten im Homeoffice.</li>
-                  </ul>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
                 </div>
-              </div>
+              </div>            
             </div>
-          </div>
-          <div class="blog__text text-content text-content--lh-26">
-            <h2 style="text-align: left;">So kommt die Veränderung in der Ernährung zustande</h2>
-            <p>Der Lockdown-Light hat viele Menschen dazu bewegt häufiger zu Hause zu essen. Kantinen und die Gastronomie sind geschlossen und es gibt wenige Alternativen zu selbst zubereiteter Nahrung. Die Befragten die ihre Ernährung nun als gesünder einschätzen, kochen deutlich häufiger selbst mit frischen Zutaten. Befragte die ihre Ernährung ungesünder einschätzen bereiten ebenfalls ihr Essen häufiger selbst zu, greifen hier jedoch regelmäßig auf Fastfood zurück.</p>
-            <p>Während im Homeoffice öfter selbst gesund gekocht wird, sorgt der Stress des Arbeitsweges und des Arbeitsplatzes dafür, dass tendenziell eher Fastfood gegessen wird. Vor allem Alleinerziehende gaben häufig an, dass zum Kochen wenig Zeit bleibt.</p>
-            <p>Viele Menschen versuchen ihre sozialen Kontakte stark einzuschränken. Als Problem wird hier auch der Gang in den Supermarkt genannt. Zahlreiche Betroffene gehen nun seltener einkaufen und kaufen vermehrt haltbare Lebensmittel und weniger verderbliche Nahrung.</p>
-            <p>Die enorme Zunahme an Bestellungen bei Essenslieferanten ist durch die Schließung der Gastronomie zu erklären. Viele der Befragten gaben ab, dass sie auf diese Weise die Gastronomiebranche unterstützen wollen. Es fehlen zuvor übliche Möglichkeiten der Freizeitgestaltung. Menschen weichen auf Essen aus um sich für berufliche und soziale Erfolge zu belohnen und Gemeinschaft in der Familie zu verspüren.</p>
-          </div>
-        </div>
-      </div>
-      <svg class="blog__decor" width="1920" height="69" viewBox="0 0 1920 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M1926.5 1225H1927V61.684C1927 61.684 1297.48 -46.1046 924.86 23.2907C543.474 94.3183 0 61.684 0 61.684V1225H6.49983V1310.6C6.49983 1310.6 633.732 1348.32 1005 1324.03C1385 1299.17 1926.5 1310.6 1926.5 1310.6V1225Z" fill="#F5F1E6"/>
-        <path opacity="0.4" d="M1947 69.3018C1719.75 48.2544 1284.72 16 931.988 16C579.257 16 277.004 51.5345 -10.6542 51.5345C-298.312 51.5345 -395.617 43.8809 -454 30.4872" stroke="#94B052"/>
-      </svg>
-      <div class="blog__section blog__section--bg blog__section--pt100 blog__section--pb80">
-        <div class="blog__container">
-          <div class="blog__info">
-            <div class="blog__info-content blog__info-content--pt30">
-              <div class="blog__info-title">Alkohol während des Lockdown-Lights</div>
-              <div class="blog__info-text text-content text-content--lh-26">
-                <p>Unternehmen wie Payback haben in den erhobenen Daten festgestellt, dass der Absatz von Alkohol in der Zeit der Kontaktbeschränkung einen spürbaren Anstieg erlebt hat. Nach unserer Online-Umfrage ist dies auch im November erneut der Fall. </p>
-                <p>Wir haben in einer nachgeschobenen Umfrage unter den Alkoholkonsumenten folgende Begründung für den gesteigerten Konsum ermittelt</p>
+            <div class="blog__row js-news-parent">
+              <div class="news-row__head news-row__head--mb30 news-row__head--aife">
+                <div class="news-row__title title title--small"><span>Latest</span> Sports Betting Articles</div>
+                <a href="#" class="news-row__btn">
+                  <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  <span class="news-row__btn-text"><span>See all</span> sport betting articless</span>
+                </a>
               </div>
-            </div>
-            <div class="blog__info-img"><img src="data/Alkohol-während-des-Lockdown-Lights.svg" alt="Alkohol-während-des-Lockdown-Lights"></div>
-          </div>
-          <div class="blog__illustration">
-            <div class="blog__illustration-title">Die Ergebnisse im Überblick</div>
-            <div class="blog__illustration-box">
-              <div class="blog__illustration-img"><img src="data/Die-Ergebnisse-im-Überblick2.png" alt="Die-Ergebnisse-im-Überblick"></div>
-              <div class="blog__illustration-content">
-                <div class="blog__illustration-frame blog__illustration-frame--small">
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>33% der Befragten gaben an seit dem 1. November mehr Alkohol als üblich konsumiert zu haben. Bei nur 8% ist der Alkoholkonsum geringer ausgefallen als normal.</li>
-                    <li>Überwiegend wird der Alkohol in Form von Bier oder Wein am Abend getrunken.</li>
-                  </ul>
+              <div class="news-list news-list--small">
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
                 </div>
-                <div class="blog__illustration-frame blog__illustration-frame--small blog__illustration-frame--yellow">
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>Es werden größere Mengen getrunken, da es zu Hause günstiger ist als in einer Gastronomie.</li>
-                    <li>Langeweile verleitete viele zum Trinken.</li>
-                    <li>Ausfallende Geburtstage und andere Feiern verleiten zum Trinken.</li>
-                  </ul>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <svg class="blog__decor" width="1920" height="70" viewBox="0 0 1920 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path opacity="0.3" d="M0 -359H1920V48.1536C1920 48.1536 1378.5 36.7318 998.5 61.5911C627.233 85.879 0 48.1536 0 48.1536V-359Z" fill="#F5F1E6"/>
-        <path opacity="0.4" d="M1947 -0.208984C1719.75 20.8384 1284.72 53.0928 931.988 53.0928C579.257 53.0928 277.004 17.5583 -10.6542 17.5583C-298.312 17.5583 -395.617 25.2119 -454 38.6056" stroke="#94B052"/>
-      </svg>
-      <div class="blog__section blog__section--pt80 blog__section--pb100">
-        <div class="blog__container">
-          <div class="blog__info">
-            <div class="blog__info-content blog__info-content--pt30">
-              <div class="blog__info-title">Die Effekte der Kurzarbeit</div>
-              <div class="blog__info-text text-content text-content--lh-26">
-                <p>Zahlreiche Menschen in ganz Deutschland wurden in Kurzarbeit geschickt um weggebrochene Umsätze besser abfangen zu können. Für die Betroffenen bedeutet das nicht nur weniger Gehalt, sondern auch mehr Freizeit. Dies wirkt sich vielseitig auf die Befragten aus.</p>
-              </div>
-            </div>
-            <div class="blog__info-img"><img src="data/Die-Effekte-der-Kurzarbeit.svg" alt="Die-Effekte-der-Kurzarbeit"></div>
-          </div>
-          <div class="blog__illustration">
-            <div class="blog__illustration-title">Die Ergebnisse im Überblick</div>
-            <div class="blog__illustration-box">
-              <div class="blog__illustration-img"><img src="data/Wenig-Bewegung.png" alt="Wenig-Bewegung"></div>
-              <div class="blog__illustration-content">
-                <div class="blog__illustration-frame blog__illustration-frame--small">
-                  <div class="blog__illustration-frame-title">Wenig Bewegung, mehr Essen</div>
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>81% der Befragten verbringt die neugewonnene Freizeit überwiegend zu Hause.</li>
-                    <li>37% gibt an, dass durch Kurzarbeit öfters zu einem kleinen Snack gegriffen wird.</li>
-                    <li>Nur 6% nutzt die Zeit für Sport und Bewegung.</li>
-                    <li>Bei 39% der Befragten kommt regelmäßig Langeweile auf, die teilweise mit Essen bekämpft wird.</li>
-                  </ul>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
                 </div>
-              </div>
+              </div>            
             </div>
-          </div>
-        </div>
-      </div>
-      <svg class="blog__decor" width="1913" height="69" viewBox="0 0 1913 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path opacity="0.3" d="M1920 1174.79H0V59.1555C0 59.1555 541.5 90.4521 921.5 22.3361C1292.77 -44.2147 1920 59.1555 1920 59.1555V1174.79Z" fill="#F5F1E6"/>
-        <path opacity="0.4" d="M1940 69.3018C1712.75 48.2544 1277.72 16 924.988 16C572.257 16 270.004 51.5345 -17.6542 51.5345C-305.312 51.5345 -402.617 43.8809 -461 30.4872" stroke="#94B052"/>
-      </svg>
-      <div class="blog__section blog__section--bg blog__section--pt100 blog__section--pb80">
-        <div class="blog__container">
-          <div class="blog__info">
-            <div class="blog__info-content blog__info-content--pt30">
-              <div class="blog__info-title">Unterschiede zum ersten Lockdown</div>
-              <div class="blog__info-text text-content text-content--lh-26">
-                <p>Zum Ende des Monats März wurde der soziale Kontakt in Deutschland stark eingeschränkt, um die Auswirkungen der Covid-19 Pandemie abzuschwächen. Auch hier wurde bei verschiedenen Umfragen festgestellt, dass dies Auswirkungen auf den Körper der Betroffenen hat. Der Lockdown-Light im November unterscheidet sich allerdings in der Wahrnehmung der Befragten.</p>
+            <div class="blog__row js-news-parent">
+              <div class="news-row__head news-row__head--mb30 news-row__head--aife">
+                <div class="news-row__title title title--small"><span>Latest</span> Lottery Articles</div>
+                <a href="#" class="news-row__btn">
+                  <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  <span class="news-row__btn-text"><span>See all</span> lottery articless</span>
+                </a>
               </div>
-            </div>
-            <div class="blog__info-img"><img src="data/Unterschiede-zum-ersten-Lockdown.svg" alt="Unterschiede-zum-ersten-Lockdown"></div>
-          </div>
-          <div class="blog__illustration">
-            <div class="blog__illustration-title">Die Ergebnisse im Überblick</div>
-            <div class="blog__illustration-box">
-              <div class="blog__illustration-img"><img src="data/november-lockdown.png" alt="november-lockdown"></div>
-              <div class="blog__illustration-content">
-                <div class="blog__illustration-frame blog__illustration-frame--small">
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>41% gaben in der Umfrage an, dass sie die Einschränkungen im November im Vergleich zum ersten Lockdown schlimmer empfinden.</li>
-                    <li>Über die Hälfte (52%) der Befragten geht davon aus, dass der November-Lockdown nicht der letzte sein wird.</li>
-                    <li>Die kürzeren Tage führen dazu, dass die Befragten weniger Zeit an der frischen Luft und an der Sonne verbringen.</li>
-                    <li>Die kalten Temperaturen tragen dazu bei, dass Outdoor-Aktivitäten unattraktiver werden.</li>
-                  </ul>
+              <div class="news-list news-list--small">
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
                 </div>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
+                </div>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
+                </div>
+              </div>            
+            </div>
+            <div class="blog__row js-news-parent">
+              <div class="news-row__head news-row__head--mb30 news-row__head--aife">
+                <div class="news-row__title title title--small"><span>Latest</span> Legislation Articles</div>
+                <a href="#" class="news-row__btn">
+                  <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
+                  <span class="news-row__btn-text"><span>See all</span> Legislation articless</span>
+                </a>
               </div>
+              <div class="news-list news-list--small">
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
+                </div>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
+                </div>
+                <div class="news news--small">
+                  <a href="#" class="news__img"><img src="data/Kentucky-Lottery.jpg" width="250" height="180" alt="Kentucky Lottery Promotes Harville as Agency’s First President and CEO"></a>
+                  <div class="news__row">
+                    <div class="news__date">SEPTEMBER 20, 2020</div>
+                    <div class="news__see">
+                      <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
+                      122
+                    </div>
+                  </div>
+                  <a href="#" class="news__title" title="Kentucky Lottery Promotes Harville as Agency’s First President and CEO">Kentucky Lottery Promotes Harville as Agency’s First President and CEO</a>
+                </div>
+              </div>            
             </div>
           </div>
-        </div>
-      </div>
-      <svg class="blog__decor" width="1913" height="68" viewBox="0 0 1913 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M1919.5 -35.2129H1920V-1150.84C1920 -1150.84 1292.77 -1254.21 921.5 -1187.66C541.5 -1119.55 0 -1150.84 0 -1150.84V-343.305H-0.5V47.2885C-0.5 47.2885 626.733 83.4793 998 60.1793C1378 36.3313 1919.5 47.2885 1919.5 47.2885V-35.2129Z" fill="#F5F1E6"/>
-        <path opacity="0.4" d="M1940 0C1712.75 20.5333 1277.72 52 924.988 52C572.257 52 270.004 17.3333 -17.6542 17.3333C-305.312 17.3333 -402.617 24.8 -461 37.8667" stroke="#94B052"/>
-      </svg>
-      <div class="blog__section blog__section--pt80 blog__section--pb60">
-        <div class="blog__container">
-          <div class="blog__info">
-            <div class="blog__info-content blog__info-content--pt30">
-              <div class="blog__info-title">Eltern im <br> Lockdown-Light</div>
-              <div class="blog__info-text text-content text-content--lh-26">
-                <p>Eltern sind in der heutigen Zeit so oft wie noch nie zuvor einer Doppelbelastung aus Arbeit und Erziehung ausgesetzt. Da vor allem ältere Personengruppen durch die Covid-19 Pandemie gefährdet sind, fallen die Großeltern der Kinder regelmäßig als unterstützende Kraft aus. Die Kinder verbringen mehr Zeit zu Hause und die Eltern werden stärker belastet. Dies führt dazu, dass weniger Zeit für Bewegung bleibt und der Stresslevel steigt.</p>
-              </div>
-            </div>
-            <div class="blog__info-img"><img src="data/Eltern-im-Lockdown-Light.svg" alt="Eltern-im-Lockdown-Light"></div>
-          </div>
-          <div class="blog__illustration">
-            <div class="blog__illustration-box">
-              <div class="blog__illustration-img"><img src="data/Vor-allem-Eltern-scheinen.png" alt="Vor-allem-Eltern-scheinen"></div>
-              <div class="blog__illustration-content">
-                <div class="blog__illustration-frame blog__illustration-frame--small">
-                  <div class="blog__illustration-frame-title">Vor allem Eltern scheinen unter den Kontakteinschränkungen zu leiden:</div>
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>61% der Eltern scheuen sich davor ihre Kinder vorübergehend den Großeltern. anzuvertrauen, da diese zu einer Risikogruppe zählen.</li>
-                    <li>64% geben an, dass die Kinder eine zeitintensivere Betreuung im Haus benötigen.</li>
-                    <li>Nur 4% der Befragten vermeldeten, dass die zusätzliche Zeit mit den Kindern zu mehr Bewegung führt.</li>
-                  </ul>
+          <div class="sticky-parent__aside js-sticky">
+            <div class="sticky-parent__aside-inner">
+              <a href="#" class="notice"><img src="data/notice.jpg" width="290" height="435" alt="notice"></a>
+              <div class="gambling-guides">
+                <div class="gambling-guides__title">Gambling Guides</div>
+                <div class="gambling-guides__title-list">
+                  <a href="#" class="gambling-guides__item">
+                    <span class="gambling-guides__item-img"><img src="data/Casino-Options.svg" alt="Casino Options"></span>
+                    <span class="gambling-guides__item-text" title="Casino Options">Casino Options</span>
+                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+                  </a>
+                  <a href="#" class="gambling-guides__item">
+                    <span class="gambling-guides__item-img"><img src="data/Casino-Options.svg" alt="Online Casinos"></span>
+                    <span class="gambling-guides__item-text" title="Online Casinos">Online Casinos</span>
+                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+                  </a>
+                  <a href="#" class="gambling-guides__item">
+                    <span class="gambling-guides__item-img"><img src="data/Casino-Games.svg" alt="Casino Games"></span>
+                    <span class="gambling-guides__item-text" title="Casino Games">Casino Games</span>
+                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+                  </a>
+                  <a href="#" class="gambling-guides__item">
+                    <span class="gambling-guides__item-img"><img src="data/Online-Betting.svg" alt="Online Betting"></span>
+                    <span class="gambling-guides__item-text" title="Online Betting">Online Betting</span>
+                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+                  </a>
+                  <a href="#" class="gambling-guides__item">
+                    <span class="gambling-guides__item-img"><img src="data/Football-Betting.svg" alt="Football Betting"></span>
+                    <span class="gambling-guides__item-text" title="Football Betting">Football Betting</span>
+                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+                  </a>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <svg class="blog__decor" width="1920" height="52" viewBox="0 0 1920 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path opacity="0.4" d="M1947 52C1719.75 31.4667 1284.72 -2.71201e-06 931.988 -2.71201e-06C579.257 -2.71201e-06 277.004 34.6667 -10.6542 34.6667C-298.312 34.6667 -395.617 27.2 -454 14.1333" stroke="#94B052"/>
-      </svg>
-      <div class="blog__section blog__section--pt100 blog__section--pb100">
-        <div class="blog__container">
-          <div class="blog__illustration">
-            <div class="blog__illustration-box blog__illustration-box--revers">
-              <div class="blog__illustration-img blog__illustration-img--full"><img src="data/Die-Auswirkungen-auf-den-Gemütszustand.png" alt="Die-Auswirkungen-auf-den-Gemütszustand"></div>
-              <div class="blog__illustration-content">
-                <div class="text-content">
-                  <h2 style="text-align: left;">Die Auswirkungen auf den Gemütszustand</h2>
-                  <p><b>Der November-Lockdown hat überwiegend negative, aber auch einen positiven Effekt auf den Gemütszustand der Befragten.</b></p>
-                  <ul class="small-list">
-                    <li>Vor allem die Punkte "Einsamkeit" (36%) und "Trägheit" (27%)) sorgen für eine negative Entwicklung.</li>
-                    <li>Der gefühlte Stress hat dafür bei 39% abgenommen.</li>
-                    <li>Einsam fühlen sich mit 87% vor allem Menschen in Ein-Personen-Haushalten im Homeoffice.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <svg class="blog__decor" width="1913" height="217" viewBox="0 0 1913 217" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1919.5 1365.34H-0.5V116.232C-0.5 116.232 541 151.273 921 75.0079C1292.27 0.495117 1919.5 116.232 1919.5 116.232V1365.34Z" fill="#fcfbf7"/>
-        <path d="M1920 3756.93H0V189.178C0 189.178 541.5 289.263 921.5 71.4302C1292.77 -141.397 1920 189.178 1920 189.178V3756.93Z" fill="#fcfbf7"/>
-        <path opacity="0.4" d="M2263 233.605C2035.75 164.263 1600.72 57.9982 1247.99 57.9982C895.257 57.9982 593.004 175.07 305.346 175.07C17.688 175.07 -79.617 149.854 -138 105.727" stroke="#94B052"/>
-      </svg>
-      <div class="blog__section blog__section--bg blog__section--pt80">
-        <div class="blog__container">
-          <div class="blog-list-title">So kann man die negativen Effekte auf das Gewicht im Lockdown-Light bekämpfen</div>
-          <div class="blog-list">
-            <div class="blog-list__item">
-              <div class="blog-list__item-img"><img src="data/Mehr-Bewegung-im-Alltag-und-regelmäßiger-Sport.svg" alt="Mehr-Bewegung-im-Alltag-und-regelmäßiger-Sport"></div>
-              <div class="blog-list__item-info text-content text-content--lh-26">
-                <h3>Mehr Bewegung im Alltag und regelmäßiger Sport</h3>
-                <p>Unsere Studie hat gezeigt, dass viele Menschen sich nicht ausreichend bewegen. Das führt schnell zu einem Abbau von Muskelmasse und einem Kalorienüberschuss. Sich ausreichend zu bewegen ist zwar eine Herausforderung, doch sie ist mit den folgenden Tipps zu meistern:</p>
-              </div>
-              <div class="blog-list__item-list">
-                <div class="blog__illustration-frame blog__illustration-frame--yellow blog__illustration-frame--small">
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>Durch Homeoffice, kurze und kalte Tage, sowie Kontaktbeschränkungen und Schließung von Sportstätten entsteht ein Mangel an Bewegung.</li>
-                    <li>Mindestens 3x in der Woche sollte 50 Minuten Ausdauersport betrieben werden</li>
-                    <li>Die beste Möglichkeit bieten hier Joggen und Videosportkurse</li>
-                    <li>Jede Gelegenheit zur Bewegung sollte genutzt werden. Dazu zählt beispielsweise die Fortbewegung mit dem Fahrrad, das Meiden des Aufzugs und Spaziergänge in der Mittagspause.</li>
-                    <li>Das Sitzen am Schreibtisch sollte regelmäßig durch Stehen oder Gehen abgelöst werden.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="blog-list__item">
-              <div class="blog-list__item-img"><img src="data/Eine-gesunde-und-kalorienarme-Ernährung.svg" alt="Eine-gesunde-und-kalorienarme-Ernährung"></div>
-              <div class="blog-list__item-info text-content text-content--lh-26">
-                <h3>Eine gesunde und kalorienarme Ernährung</h3>
-                <p>Der Lockdown-Light führt für viele Betroffene unweigerlich zu einem reduzierten Kalorienverbrauch. Zahlreiche Aktivitäten sind nicht mehr durchführbar und führt dazu, dass ein Großteil der Freizeit zu Hause verbracht wird.</p>
-              </div>
-              <div class="blog-list__item-list">
-                <div class="blog__illustration-frame blog__illustration-frame--yellow blog__illustration-frame--small">
-                  <div class="blog__illustration-frame-title blog__illustration-frame-title--small">Die neue Realtität erfordert, dass auch die Ernährung auf sie angepasst wird.</div>
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>Jeder Mensch der Gewicht verlieren will sollte seinen Kalorienbedarf möglichst exakt ermitteln.</li>
-                    <li>Es ist ein tägliches Kaloriendefizit von 300 kcal anzustreben.</li>
-                    <li>Fastfood und industriell gefertigte Lebensmittel sollten vermieden werden.</li>
-                    <li>Frische und natürliche Lebensmittel sollten den überwiegenden Teil der Ernährung ausmachen.</li>
-                    <li>Ein (digitales) Ernährungstagebuch ermöglicht es eigenes Fehlverhalten schnell aufzudecken und Kalorien zu zählen.</li>
-                    <li>Alkohol stark reduzieren oder komplett vermeiden.</li>
-                    <li>Ausschließlich Wasser, Tee und Kaffee trinken.</li>
-                    <li>Kleine und gesunde Snacks planen und vorbereiten.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="blog-list__item">
-              <div class="blog-list__item-img"><img src="data/Den-neuen-Alltag-strukturieren-und-planen.svg" alt="Den-neuen-Alltag-strukturieren-und-planen"></div>
-              <div class="blog-list__item-info text-content text-content--lh-26">
-                <h3>Den neuen Alltag strukturieren und planen</h3>
-                <p>Die Covid-19 Pandemie hat dazu geführt, dass etablierte Abläufe hinfällig geworden sind und sich der Alltag vieler Menschen verändert hat. Soziale Isolation, mehr Freizeit und ein eingeschränkter Freiraum sind nur wenige der Änderungen, mit denen wir uns konfrontiert sehen. Um die entstandenen Lücken sinnvoll zu füllen, muss Struktur in den Tagesablauf gebracht werden.</p>
-              </div>
-              <div class="blog-list__item-list">
-                <div class="blog__illustration-frame blog__illustration-frame--yellow blog__illustration-frame--small">
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>Hilfreich sind Tages- und Wochenpläne.</li>
-                    <li>Neue Freizeit mit Sport oder einem neuen Hobby füllen.</li>
-                    <li>Einkäufe planen, Einkaufszettel schreiben, keine spontanen Einkäufe tätigen.</li>
-                    <li>Alkohol aus dem Haus verbannen, Abende lieber mit Bewegung, Büchern, Spielen, oder anderen Hobbys gestalten.</li>
-                    <li>Zeit für bewusste Erholung schaffen, Homeoffice nutzen um regelmäßige kleine Pausen in den Arbeitsalltag zu integrieren.</li>
-                    <li>Den Kontakt zur Familie und Freunden routinemäßig per Videotelefonie herstellen.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="blog-list__item">
-              <div class="blog-list__item-img"><img src="data/Soziales-Feedback-durch-Eigenmotivation-ersetzen.svg" alt="Soziales-Feedback-durch-Eigenmotivation-ersetzen"></div>
-              <div class="blog-list__item-info text-content text-content--lh-26">
-                <h3>Soziales Feedback durch Eigenmotivation ersetzen</h3>
-                <p>Aufgrund der Kontaktbeschränkungen bekommen wir nicht mehr in regelmäßigen Abständen Feedback der Gesellschaft und sind darauf angewiesen und selbst in die richtigen Bahnen zu lenken. Hier hilft es enorm sich Ziele zu stecken und diese ambitioniert zu verfolgen. Die folgenden Tipps sind dabei hilfreich:</p>
-              </div>
-              <div class="blog-list__item-list">
-                <div class="blog__illustration-frame blog__illustration-frame--yellow blog__illustration-frame--small">
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>Tages-, Wochen- und Monatsziele stecken und schriftlich festhalten</li>
-                    <li>Ziele visualisieren, Freude beim Verfolgen entwickeln</li>
-                    <li>Den Abnehmfortschritt dokumentieren</li>
-                    <li>Sich regelmäßig an das eigene Vorhaben erinnern</li>
-                    <li>Für jeden Zwischenerfolg mit einer Kleinigkeit belohnen</li>
-                    <li>Nutze diese Krise für dein persönliches Wachstum!</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="blog-list__item">
-              <div class="blog-list__item-img"><img src="data/Die-Familie-in-den-Prozess-einbinden.svg" alt="Die-Familie-in-den-Prozess-einbinden"></div>
-              <div class="blog-list__item-info text-content text-content--lh-26">
-                <h3>Die Familie in den Prozess einbinden</h3>
-                <p>Die Familie ist ein wichtiger Anker im Leben. Dieser Anker trägt allerdings häufig dazu bei, dass an alten Gewohnheiten festgehalten wird und Veränderungen schwerfallen. Benimmt man sich ungewohnt, fällt das im Kreise der Liebsten schnell auf. Aus diesem Grund sollte man Beobachtungen und Vorhaben stets miteinander besprechen. Zieht die Familie an einem Strang und teilt das selbe Ziel, ist das unglaublich motivierend und räumt Hindernisse aus dem Weg.</p>
-              </div>
-              <div class="blog-list__item-list">
-                <div class="blog__illustration-frame blog__illustration-frame--yellow blog__illustration-frame--small">
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>Kinder sind die perfekten Unterstützer um gemeinsam mehr Bewegung zu bekommen.</li>
-                    <li>Der Partner kann beim gesunden Kochen, Einkaufen und Sporttreiben helfen und ebenfalls abnehmen.</li>
-                    <li>Bei Rückfällen und Heißhungerattacken hat man einen Verbündeten, der an die Ziele erinnert.</li>
-                    <li>Gemeinsam erfolgreich zu sein stärkt den Zusammenhalt.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="blog-list__item">
-              <div class="blog-list__item-img"><img src="data/Ein-gesunder-Schlaf-und-weniger-Stress.svg" alt="Ein-gesunder-Schlaf-und-weniger-Stress"></div>
-              <div class="blog-list__item-info text-content text-content--lh-26">
-                <h3>Ein gesunder Schlaf und weniger Stress</h3>
-                <p>Für den Großteil der Berufstätigen hat die Covid-19 Pandemie und ihre Auswirkungen dazu geführt, dass der Stress im beruflichen Alltag gesunken ist. Dennoch werden zahlreiche Menschen regelmäßig von Sorgen und Ängsten geplagt. Sie führen zu Stress, irrationalem Verhalten und beeinflussen das Essverhalten. Aufgrund der fehlenden Strukturen leidet die Schlafqualität. Mit folgenden Maßnahmen bekommt man sie wieder in den Griff.</p>
-              </div>
-              <div class="blog-list__item-list">
-                <div class="blog__illustration-frame blog__illustration-frame--yellow blog__illustration-frame--small">
-                  <ul class="blog__illustration-frame-list small-list">
-                    <li>Tagespläne bringen Ruhe und Gelassenheit.</li>
-                    <li>Sinnvolle Freizeitaktivitäten</li>
-                    <li>Sport am Abend</li>
-                    <li>Regelmäßige Schlafenszeiten</li>
-                    <li>Absolute Dunkelheit im Schlafzimmer</li>
-                    <li>Keine digitalen Geräte 30 Minuten vor dem Schlafengehen.</li>
-                    <li>Gedanklich mit dem aktuellen Tag abschließen und den nächsten Tag planen</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <svg class="blog__decor" width="1913" height="127" viewBox="0 0 1913 127" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M1919.5 -203.07H1920V-3770.82C1920 -3770.82 1919.83 -3770.91 1919.5 -3771.08V-3843.77C1919.5 -3843.77 1806.28 -3864.66 1647.57 -3882.98C1432.77 -3953.72 1134.86 -4010.88 921.5 -3888.57C918.347 -3886.76 915.184 -3884.98 912.009 -3883.21C532.521 -3809.28 -0.5 -3843.77 -0.5 -3843.77V-2594.66H0V-1188.34H-0.5V60.7684C-0.5 60.7684 626.733 176.506 998 101.993C1378 25.7274 1919.5 60.7684 1919.5 60.7684V-203.07Z" fill="#FCFBF7"/>
-        <path opacity="0.4" d="M2321 -89C2021.63 -3.70769 1448.53 127 983.855 127C519.18 127 121 -17 -257.951 -17C-636.902 -17 -765.088 14.0154 -842 68.2922" stroke="#94B052"/>
-      </svg>
-      <div class="blog__section blog__section--pt100 blog__section--pb100">
-        <div class="blog__container">
-          <div class="fact">
-            <div class="fact__title">FAKTEN UND HINTERGRUNDWISSEN ZU DIESER STUDIE</div>
-            <div class="fact__list">
-              <div class="fact__item">
-                <div class="fact__item-title">
-                  <img src="data/man.svg" alt="man">
-                  Wer Ist Urheber Dieser Studie?
-                </div>
-                <div class="fact__item-text text-content text-content--lh-26">
-                  <p>Die Studie wurde von Fitness Vital durchgeführt, ausgewertet und interpretiert.</p>
-                </div>
-              </div>
-              <div class="fact__item">
-                <div class="fact__item-title">
-                  <img src="data/docs.svg" alt="docs">
-                  Wie Wurden Die Datensatze Erhoben?
-                </div>
-                <div class="fact__item-text text-content text-content--lh-26">
-                  <p>Besucher der Website www.fitness-vital.net sowie Bestandskunden wurden um eine freiwillige Teilnahme an einer Online-Umfrage gebeten. Insgesamt haben 3711 Personen teilgenommen, woraus 3515 qualifizierte Datensätze für diese Studie entstanden sind. Der Fragebogen umfasste 30 Fragen zu dem Verhalten der Befragten. Alle Daten wurden anonymisiert gespeichert.</p>
-                </div>
-              </div>
-              <div class="fact__item">
-                <div class="fact__item-title">
-                  <img src="data/question.svg" alt="question">
-                  Wieso Wurde Diese Studie Durchgefuhrt?
-                </div>
-                <div class="fact__item-text text-content text-content--lh-26">
-                  <p>Das Ziel der Studie war es, verlässliche Daten darüber zu gewinnen, wie der im November verhängte Lockdown-Light das Leben, die Gesundheit und das Gewicht der Befragten beeinflusst.</p>
-                </div>
+              <div class="aside-links">
+                <a href="#" class="aside-links__item">
+                  <img src="data/Online-Casino.jpg" width="290" height="140" class="aside-links__item-img" alt="Online Casino">
+                  <span class="aside-links__item-inner">
+                    <span class="aside-links__item-title">Online Casino</span>
+                    <span class="aside-links__item-btn"><svg width="9" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg></span>
+                  </span>
+                </a>
+                <a href="#" class="aside-links__item">
+                  <img src="data/Online-Betting-link.jpg" width="290" height="140" class="aside-links__item-img" alt="Online Betting">
+                  <span class="aside-links__item-inner">
+                    <span class="aside-links__item-title">Online Betting</span>
+                    <span class="aside-links__item-btn"><svg width="9" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg></span>
+                  </span>
+                </a>
+                <a href="#" class="aside-links__item">
+                  <img src="data/Sportsbook-Agents.jpg" width="290" height="140" class="aside-links__item-img" alt="Sportsbook-Agents">
+                  <span class="aside-links__item-inner">
+                    <span class="aside-links__item-title">Sportsbook Agents</span>
+                    <span class="aside-links__item-btn"><svg width="9" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg></span>
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -701,95 +354,45 @@
     </div>
   </div>
   <footer class="footer">
-  <div class="container">
-    <div class="footer__top">
-      <nav class="footer__nav">
-        <ul>
-          <li>
-            <span>Shop</span>
-            <ul>
-              <li><a href="#">Tribulus Tereestris</a></li>
-              <li><a href="#">Roter Panax Ginseng</a></li>
-              <li><a href="#">Ashwagandha</a></li>
-              <li><a href="#">Nattokinase</a></li>
-            </ul>
-          </li>
-          <li>
-            <span>Support</span>
-            <ul>
-              <li><a href="#">Kontakt</a></li>
-              <li><a href="#">Zahlung & Versand</a></li>
-              <li><a href="#">Garantie</a></li>
-              <li><a href="#">Datenschutz</a></li>
-              <li><a href="#">Widerruf</a></li>
-              <li><a href="#">AGBs</a></li>
-            </ul>
-          </li>
-          <li>
-            <span>Brand</span>
-            <ul>
-              <li><a href="#">Über Fitness Vital</a></li>
-              <li><a href="#">Magazin</a></li>
-              <li><a href="#">Ashwagandha</a></li>
-              <li><a href="#">Unsere Partner</a></li>
-              <li><a href="#">Jobs</a></li>
-            </ul>
-          </li>
-          <li>
-            <span>Mehr</span>
-            <ul>
-              <li><a href="#">Impressum</a></li>
-              <li><a href="#">B2B/Affiliate</a></li>
-              <li><a href="#">Mikro Stipendium</a></li>
-              <li><a href="#">Datenschutz</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <div class="footer__contacts">
-        <div class="footer__contacts-title">Newsletter</div>
-        <div class="footer__contacts-descriptions">Für unseren Newsletter anmelden und 10% Rabatt auf deine erste Bestellung erhalten.</div>
-        <form class="footer__form">
-          <input type="email" class="footer__form-input" placeholder="Deine E-Mail-Adresse">
-          <button type="submit" class="footer__form-btn">Anmelden</button>
-          <p class="error">error</p>
-        </form>
-        <div class="footer__social">
-          <div class="footer__social-title">Folge uns</div>
-          <ul class="footer__social-list">
-            <li><a href="#" target="_blank" rel="nofollow">Instagram</a></li>
-            <li><a href="#" target="_blank" rel="nofollow">Facebook</a></li>
-            <li><a href="#" target="_blank" rel="nofollow">Pinterest</a></li>
-          </ul>
-        </div>
+  <div class="footer__container container">
+    <div class="footer__left">
+      <div class="footer__logo">
+        <img src="images/logo-white.svg" width="184" height="32" alt="bet-advisor">
+        <a href="#" class="footer__logo-link"></a>
       </div>
+      <div class="footer__logo-description">BetAdvisor is the world’s leading independent online gaming authority, providing trusted online casino news, guides, reviews and information since 2020.</div>
     </div>
-    <div class="footer__bottom">
-      <div class="footer__bottom-cell">
-        <div class="footer__bottom-title">Schnelle Lieferung</div>
-        <ul class="footer__bottom-list">
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/dhl.svg" width="94" height="30" alt="Schnelle Lieferung"></a></li>
+    <nav class="footer__nav">
+      <div class="footer__nav-cell">
+        <div class="footer__nav-title">General Pages</div>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Terms and Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Blog</a></li>
         </ul>
       </div>
-      <div class="footer__bottom-cell">
-        <div class="footer__bottom-title">Sicher bezahlen mit</div>
-        <ul class="footer__bottom-list">
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/visa.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/master.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/pp.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/sofort.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/rech.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/vorkasse.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+      <div class="footer__nav-cell">
+        <div class="footer__nav-title">Guides</div>
+        <ul>
+          <li><a href="#">Casino</a></li>
+          <li><a href="#">Online Betting</a></li>
+          <li><a href="#">Casino Games</a></li>
         </ul>
       </div>
-      <div class="footer__bottom-cell">
-        <div class="footer__bottom-title">Zertifizierter Onlineshop</div>
-        <ul class="footer__bottom-list">
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/ssl.jpg" width="45" height="45" alt="Zertifizierter Onlineshop"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/e.jpg" width="51" height="51" alt="Zertifizierter Onlineshop"></a></li>
-          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/tage.jpg" width="44" height="44" alt="Zertifizierter Onlineshop"></a></li>
+      <div class="footer__nav-cell">
+        <div class="footer__nav-title">Lottery Results</div>
+        <ul>
+          <li><a href="#">4D Results</a></li>
+          <li><a href="#">Toto Results</a></li>
+          <li><a href="#">Singapore Sweep Results</a></li>
         </ul>
       </div>
+    </nav>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__copy">Copyright © 2020, BetAdvisor, All Rights Reserved</div>
     </div>
   </div>
 </footer>
