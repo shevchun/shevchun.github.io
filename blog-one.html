@@ -3,251 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="Kegglers">
+  <meta name="description" content="PhoneTrackerly">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>Betadvisor</title>
-  <link rel="icon" type="image/png" sizes="72x72" href="images/favicon-72x72.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="144x144" href="images/favicon-144x144.png">
+  <title>PhoneTrackerly</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512x512.png">
-  <link href='https://fonts.gstatic.com' rel='preconnect' crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet" type='text/css' media="print" onload="this.onload=null;this.media='all'">
+  <link rel="preload" href="/fonts/CircularStdBook.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/CircularStdMedium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/CircularStdBold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/CircularStdBook.woff2" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/CircularStdMedium.woff2" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/CircularStdBold.woff2" as="font" type="font/woff" crossorigin>
   <link href="css/index.css" rel="stylesheet">
 </head>
 
 <body>
   <header class="header">
-  <div class="header__container container">
-    <div class="header__mobile-btn js-mobile-btn">
-      <svg width="24" height="22">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mobile"></use>
-      </svg>
-    </div>
-    <div class="header__logo">
-      <img src="images/logo.svg" width="184" height="32" alt="bet-advisor">
-      <a href="#" class="header__logo-link"></a>
-    </div>
-    <nav class="header__nav js-nav">
-      <ul>
-        <li><a href="#">CASINO</a></li>
-        <li class="current_page_item"><a href="#">ONLINE BETTING</a></li>
-        <li><a href="#">CASINO GAMES</a></li>
-        <li><a href="#">LOTTERY RESULTS</a></li>
-        <li><a href="#">BLOG</a></li>
-      </ul>
-    </nav>
-    <a href="#" class="header__contacts">
-      <svg class="header__contacts-mobile-btn" width="26" height="22">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#contacts"></use>
-      </svg>
-      Contact US
-    </a>
-  </div>
-  <div class="header__mobile">
-    <div class="header__mobile-box">
-      <div class="header__mobile-close js-close-mobile"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-      <div class="header__mobile-holder">
-        <div class="header__mobile-title">Menu</div>
+    <div class="header__container">
+      <div class="header__mobile-btn js-mobile-menu"><svg width="20" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg></div>
+      <div class="header__cell header__cell--left">
+        <div class="header__logo">
+          <picture>
+            <source srcset="data/logo-small.svg" media="(max-width: 1200px)">
+            <img src="data/logo-main.svg" alt="logo-main">
+          </picture>
+          <a href="#" class="header__logo-link"></a>
+        </div>
       </div>
-      <a href="#" class="header__mobile-contacts">Contact US</a>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="#">Homepage</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
+      <div class="header__cell header__cell--right">
+        <div class="header__account">
+          <div class="header__account-box">
+            <div class="header__account-text">
+              My Account
+              <svg width="8" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#top"></use></svg>
+            </div>
+            <div class="header__account-btn">TL</div>
+          </div>
+          <ul class="header__account-list">
+            <li>
+              <a href="#">
+                <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#man"></use></svg>
+                View my account
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#logout"></use></svg>
+                Log out
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#unsubscribe"></use></svg>
+                Unsubscribe
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="header__phone">
+          <svg class="header__phone-decor" viewBox="0 0 171 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M171 0H0V50H171V0Z" fill="#3DCF8E"/>
+            <path opacity="0.08" fill-rule="evenodd" clip-rule="evenodd" d="M218.44 -121.906C335.71 -121.906 430.78 -83.7063 430.78 -36.5933C430.78 10.5197 335.71 48.7188 218.44 48.7188C101.17 48.7188 6.08984 10.5187 6.08984 -36.5933C6.08984 -83.7053 101.16 -121.906 218.44 -121.906Z" fill="white"/>
+            <path opacity="0.08" d="M208.37 27.8445C282.238 27.8445 342.12 -13.1846 342.12 -63.7965C342.12 -114.408 282.238 -155.438 208.37 -155.438C134.502 -155.438 74.6201 -114.408 74.6201 -63.7965C74.6201 -13.1846 134.502 27.8445 208.37 27.8445Z" fill="white"/>
+          </svg>
+          <svg class="header__phone-mobile" width="20" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#tel"></use></svg>
+          Locate Phone
+        </a>
+      </div>
     </div>
-  </div>
-</header>
+    <div class="header__mobile">
+      <div class="header__mobile-overlay js-close-mobile-menu"></div>
+      <div class="header__mobile-box">
+        <div class="header__mobile-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+      </div>
+    </div>
+  </header>
   <div class="wrapper">
-    <div class="blog-one page-box">
+    <div class="blog-one">
       <div class="container">
-        <div class="sticky-parent">
-          <div class="sticky-parent__content">
-            <ul class="breadcrumb">
-              <li><a href="#">Home page</a></li>
-              <li><a href="#">online betting</a></li>
-              <li><span>This article is a brief guide to help you learn more about gambling in Singapore.</span></li>
-            </ul>
-            <div class="blog-one__title title">What is Lorem Ipsum?</div>
-            <div class="blog-one__head">
-              <div class="blog-one__head-img"><img src="data/Maria-Bell.jpg" width="60" height="60" alt="Maria Bell"></div>
-              <div class="blog-one__head-box">
-                <div class="blog-one__head-title">Maria Bell</div>
-                <div class="blog-one__head-row">
-                  <div class="blog-one__head-date">SEPTEMBER 20, 2020</div>
-                  <div class="blog-one__head-see">
-                    <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                    122
-                  </div>
+        <div class="blog-one__title title-small">Use PhoneTrackerly for 0,50 EUR Today</div>
+        <ul class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><span>Use PhoneTrackerly for 0,50 EUR Today</span></li>
+        </ul>
+        <div class="blog-one__img">
+          <img src="data/blog-one.jpg" width="954" height="440" alt="blog-one">
+        </div>
+        <div class="blog-one__row">
+          <div class="blog-one__left">
+            <div class="blog-one__autor">Autor:</div>
+            <div class="blog-one__autor-name">Silvia Stalone</div>
+          </div>
+          <div class="blog-one__right">
+            <div class="blog-one__cell">Last updated: 27 December</div>
+            <div class="blog-one__cell"><svg width="14" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#time"></use></svg>5 min read</div>
+          </div>
+        </div>
+        <div class="blog-one__content text-content">
+          <h2>The process is as simple as it gets! Just follow the 4 steps and you’ll have your location results in no time.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <blockquote>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</blockquote>
+          &nbsp;
+          <h2>No need to search for other services, you got to the right place. We have thousands of satisfied customers</h2>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+          <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          <blockquote>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</blockquote>
+          &nbsp;
+          <ul>
+            <li><b>Step 1</b>. Input the phone number of the device you want to locate and your e-mail. You can also enter details about your own identity, but this is an optional step.</li>
+            <li><b>Step 2</b>. Use our encrypted connection to make a secure credit card payment.</li>
+            <li><b>Step 3</b>. Provide the telephone number of the device where you want the geolocation results to be sent.</li>
+            <li><b>Step 4</b>. Confirm the data provided.</li>
+            <li><b>Step 5</b>. Receive an SMS with the exact location of the mobile phone you want to track.</li>
+          </ul>
+          &nbsp;
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="blog-one__written">
+          <div class="blog-one__written-top">Written by</div>
+          <div class="blog-one__written-box">
+            <div class="blog-one__written-ava"><img src="data/Silvia-Stalone.jpg" width="105" height="105" alt="Silvia-Stalone"></div>
+            <div class="blog-one__written-info">
+              <div class="blog-one__written-head">
+                <div class="blog-one__written-name">Silvia Stalone</div>
+                <div class="blog-one__written-right">
+                  <div class="blog-one__written-labels">Blogger, Influencer, Coffee Maniac</div>
+                  <div class="blog-one__written-position">AUTHOR</div>
                 </div>
               </div>
-            </div>
-            <div class="blog-one__content text-content">
-              <img src="data/lorem.jpg" alt="lorem">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <span class="title-list">
-                <p>Show conects</p>
-                <ul>
-                  <li><a href="#anchor1">1. The standard Lorem Ipsum passage, used since the 1500s</a></li>
-                  <li><a href="#anchor2">2. When choosing an online casino, make sure to</a></li>
-                  <li><a href="#anchor3">3. Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</a></li>
-                </ul>
-              </span>
-              &nbsp;
-              <h2 id="anchor1">The standard Lorem Ipsum passage, used since the 1500s</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              &nbsp;
-              <h2 id="anchor2">When choosing an online casino, make sure to</h2>
-              <ol>
-                <li>Choose a site that has great exchange rates so you can get the most out of your money.</li>
-                <li>Pick a reputable site that clearly displays their credentials and who the operators are.</li>
-                <li>Use a site that has the games you want to play.</li>
-              </ol>
-              &nbsp;
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              &nbsp;
-              <blockquote>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </blockquote>
-              &nbsp;
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              &nbsp;
-              <ul>
-                <li><span class="blue-text">You can play without having to pay a daily entrance fee.</span></li>
-                <li><span class="blue-text">There are also vast options ranging from different table games such as poker and roulette. The gaming machines offer        slots, bingo, and more.</span></li>
-                <li><span class="blue-text">Online casinos also often offer exclusive promotions and bonuses to new members. This allows you to play with more credits than originally deposited.</span></li>
-                <li><span class="blue-text">Another main advantage would be the acceptance of those over the age of 18 years old.  Casinos in Singapore often require one to be at least 21 years old.</span></li>
-                <li><span class="blue-text">Most online casinos are also convenient. They offer hassle-free transfer and withdrawal of funds from local Singapore banks.</span></li>
-              </ul>
-              &nbsp;
-              <h2 id="anchor3">Section 1.10.33 of "de Finibus Bonorum et Malorum", <br> written by Cicero in 45 BC</h2>
-              <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
-            </div>
-            <div class="blog__row js-news-parent">
-              <div class="news-row__head news-row__head--mb30 news-row__head--aife">
-                <div class="news-row__title title title--small title--no-decor">Related Articles</div>
-                <a href="#" class="news-row__btn news-row__btn--no-icon">
-                  <span class="news-row__btn-text"><span>See all articless</span></span>
-                </a>
-              </div>
-              <div class="blog__main">
-                <a href="#" class="blog__main-item">
-                  <img class="blog__main-item-img" src="data/Sport-betting.jpg" width="250" height="360" alt="Sport-betting">
-                  <span class="blog__main-item-info">
-                    <span class="blog__main-item-title">Sport betting</span>
-                    <span class="blog__main-item-text">Manchester United’s dream of winning by a goal was fulfilled</span>
-                    <span class="blog__main-item-date">
-                      <span class="blog__main-item-date-value">SEPTEMBER 20, 2020</span>
-                      <span class="blog__main-item-view">
-                        <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                        122
-                      </span>
-                    </span>
-                  </span>
-                </a>
-                <a href="#" class="blog__main-item">
-                  <img class="blog__main-item-img" src="data/Sport-betting.jpg" width="250" height="360" alt="Sport-betting">
-                  <span class="blog__main-item-info">
-                    <span class="blog__main-item-title">Sport betting</span>
-                    <span class="blog__main-item-text">Manchester United’s dream of winning by a goal was fulfilled</span>
-                    <span class="blog__main-item-date">
-                      <span class="blog__main-item-date-value">SEPTEMBER 20, 2020</span>
-                      <span class="blog__main-item-view">
-                        <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                        122
-                      </span>
-                    </span>
-                  </span>
-                </a>
-                <a href="#" class="blog__main-item">
-                  <img class="blog__main-item-img" src="data/Sport-betting.jpg" width="250" height="360" alt="Sport-betting">
-                  <span class="blog__main-item-info">
-                    <span class="blog__main-item-title">Sport betting</span>
-                    <span class="blog__main-item-text">Odds Long Feds Will Provide Gaming Industry Further COVID-19 Relief</span>
-                    <span class="blog__main-item-date">
-                      <span class="blog__main-item-date-value">SEPTEMBER 20, 2020</span>
-                      <span class="blog__main-item-view">
-                        <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                        122
-                      </span>
-                    </span>
-                  </span>
-                </a>
-              </div>
+              <div class="blog-one__written-text">Silvia is a blogger and influencer for 9 years now. She has a lot of experience when it comes to innovative technology and ideas as she worked with several big development companies.</div>
             </div>
           </div>
-          <div class="sticky-parent__aside js-sticky">
-            <div class="sticky-parent__aside-inner">
-              <a href="#" class="notice"><img src="data/notice.jpg" width="290" height="435" alt="notice"></a>
-              <div class="gambling-guides">
-                <div class="gambling-guides__title">Gambling Guides</div>
-                <div class="gambling-guides__title-list">
-                  <a href="#" class="gambling-guides__item">
-                    <span class="gambling-guides__item-img"><img src="data/Casino-Options.svg" alt="Casino Options"></span>
-                    <span class="gambling-guides__item-text" title="Casino Options">Casino Options</span>
-                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-                  </a>
-                  <a href="#" class="gambling-guides__item">
-                    <span class="gambling-guides__item-img"><img src="data/Casino-Options.svg" alt="Online Casinos"></span>
-                    <span class="gambling-guides__item-text" title="Online Casinos">Online Casinos</span>
-                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-                  </a>
-                  <a href="#" class="gambling-guides__item">
-                    <span class="gambling-guides__item-img"><img src="data/Casino-Games.svg" alt="Casino Games"></span>
-                    <span class="gambling-guides__item-text" title="Casino Games">Casino Games</span>
-                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-                  </a>
-                  <a href="#" class="gambling-guides__item">
-                    <span class="gambling-guides__item-img"><img src="data/Online-Betting.svg" alt="Online Betting"></span>
-                    <span class="gambling-guides__item-text" title="Online Betting">Online Betting</span>
-                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-                  </a>
-                  <a href="#" class="gambling-guides__item">
-                    <span class="gambling-guides__item-img"><img src="data/Football-Betting.svg" alt="Football Betting"></span>
-                    <span class="gambling-guides__item-text" title="Football Betting">Football Betting</span>
-                    <svg width="9" height="15" class="gambling-guides__item-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
-                  </a>
-                </div>
-              </div>
-              <div class="related-articles">
-                <div class="related-articles__title">Related Articles</div>
-                <div class="related-articles__list">
-                  <div class="related-articles__item">
-                    <a href="#" class="related-articles__item-img"><img src="data/Matthew-Wolff.jpg" width="80" height="56" alt="Matthew-Wolff"></a>
-                    <div class="related-articles__item-box">
-                      <div class="blog-one__head-row">
-                        <div class="blog-one__head-date">SEPTEMBER 20, 2020</div>
-                        <div class="blog-one__head-see">
-                          <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                          122
-                        </div>
-                      </div>
-                      <a href="#" class="related-articles__item-title" title="Matthew Wolff, Former 80/1 Long Shot, Leads U.S. Open Entering Matthew Wolff, Former 80/1 Long Shot, Leads U.S. Open Entering">Matthew Wolff, Former 80/1 Long Shot, Leads U.S. Open Entering Matthew Wolff, Former 80/1 Long Shot, Leads U.S. Open Entering</a>
-                    </div>
-                  </div>
-                  <div class="related-articles__item">
-                    <a href="#" class="related-articles__item-img"><img src="data/Matthew-Wolff.jpg" width="80" height="56" alt="Matthew-Wolff"></a>
-                    <div class="related-articles__item-box">
-                      <div class="blog-one__head-row">
-                        <div class="blog-one__head-date">SEPTEMBER 20, 2020</div>
-                        <div class="blog-one__head-see">
-                          <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                          122
-                        </div>
-                      </div>
-                      <a href="#" class="related-articles__item-title" title="Matthew Wolff, Former 80/1 Long Shot, Leads U.S. Open Entering Matthew Wolff, Former 80/1 Long Shot, Leads U.S. Open Entering">Matthew Wolff, Former 80/1 Long Shot, Leads U.S. Open Entering Matthew Wolff, Former 80/1 Long Shot, Leads U.S. Open Entering</a>
-                    </div>
-                  </div>
-                  <div class="related-articles__item">
-                    <a href="#" class="related-articles__item-img"><img src="data/Matthew-Wolff.jpg" width="80" height="56" alt="Matthew-Wolff"></a>
-                    <div class="related-articles__item-box">
-                      <div class="blog-one__head-row">
-                        <div class="blog-one__head-date">SEPTEMBER 20, 2020</div>
-                        <div class="blog-one__head-see">
-                          <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                          122
-                        </div>
-                      </div>
-                      <a href="#" class="related-articles__item-title" title="Matthew Wolff, Former 80/1 Long Shot, Leads U.S. Open Entering Matthew Wolff, Former 80/1 Long Shot, Leads U.S. Open Entering">Matthew Wolff, Former 80/1 Long Shot, Leads U.S. Open Entering Matthew Wolff, Former 80/1 Long Shot, Leads U.S. Open Entering</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        </div>
+      </div>
+      <div class="latest-blog">
+        <div class="container">
+          <div class="latest-blog__title title-small">Latest Blog Posts</div>
+        </div>
+        <div class="container container--full">
+          <div class="blog__list">
+            <div class="blog__item">
+              <a href="#" class="blog__item-img">
+                <img src="data/Use-PhoneTrackerly-for.jpg" alt="Use-PhoneTrackerly-for">
+                <span class="blog__item-hover"><svg width="40" height="34"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg></span>
+              </a>
+              <a href="#" class="blog__item-title" title="Use PhoneTrackerly for 0,50 EUR today">Use PhoneTrackerly for 0,50 EUR today</a>
+              <div class="blog__item-descriptions"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p></div>
+            </div>
+            <div class="blog__item">
+              <a href="#" class="blog__item-img">
+                <img src="data/Use-PhoneTrackerly-for.jpg" alt="Use-PhoneTrackerly-for">
+                <span class="blog__item-hover"><svg width="40" height="34"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg></span>
+              </a>
+              <a href="#" class="blog__item-title" title="Use PhoneTrackerly for 0,50 EUR today">Use PhoneTrackerly for 0,50 EUR today</a>
+              <div class="blog__item-descriptions"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p></div>
+            </div>
+            <div class="blog__item">
+              <a href="#" class="blog__item-img">
+                <img src="data/Use-PhoneTrackerly-for.jpg" alt="Use-PhoneTrackerly-for">
+                <span class="blog__item-hover"><svg width="40" height="34"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg></span>
+              </a>
+              <a href="#" class="blog__item-title" title="Use PhoneTrackerly for 0,50 EUR today">Use PhoneTrackerly for 0,50 EUR today</a>
+              <div class="blog__item-descriptions"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p></div>
+            </div>
+            <div class="blog__item">
+              <a href="#" class="blog__item-img">
+                <img src="data/Use-PhoneTrackerly-for.jpg" alt="Use-PhoneTrackerly-for">
+                <span class="blog__item-hover"><svg width="40" height="34"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg></span>
+              </a>
+              <a href="#" class="blog__item-title" title="Use PhoneTrackerly for 0,50 EUR today">Use PhoneTrackerly for 0,50 EUR today</a>
+              <div class="blog__item-descriptions"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p></div>
             </div>
           </div>
         </div>
@@ -255,48 +193,303 @@
     </div>
   </div>
   <footer class="footer">
-  <div class="footer__container container">
+  <div class="footer__container">
     <div class="footer__left">
       <div class="footer__logo">
-        <img src="images/logo-white.svg" width="184" height="32" alt="bet-advisor">
+        <img src="data/logo-footer.svg" alt="logo-footer">
         <a href="#" class="footer__logo-link"></a>
       </div>
-      <div class="footer__logo-description">BetAdvisor is the world’s leading independent online gaming authority, providing trusted online casino news, guides, reviews and information since 2020.</div>
+      <div class="phone">
+        <div class="phone__title phone__title--small">Start using our services for <span>€0.50 / day</span></div>
+        <form class="phone__form">
+          <div class="phone__box">
+            <div class="phone__row">
+              <div class="select2-parent country-box">
+                <select class="init-select2" style="width: 100%;">
+                  <option value="+380" data-image="data/usa.svg">+380</option>
+                  <option value="+380" data-image="data/usa.svg">+380</option>
+                  <option value="+380" data-image="data/usa.svg">+380</option>
+                  <option value="+380" data-image="data/usa.svg">+380</option>
+                  <option value="+380" data-image="data/usa.svg">+380</option>
+                </select>
+              </div>
+              <div class="phone__tel">
+                <input type="tel" class="phone__tel-input js-input-tel">
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="phone__btn-footer">Start searching...</button>
+        </form>
+      </div>
     </div>
     <nav class="footer__nav">
-      <div class="footer__nav-cell">
-        <div class="footer__nav-title">General Pages</div>
-        <ul>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Terms and Conditions</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer__nav-cell">
-        <div class="footer__nav-title">Guides</div>
-        <ul>
-          <li><a href="#">Casino</a></li>
-          <li><a href="#">Online Betting</a></li>
-          <li><a href="#">Casino Games</a></li>
-        </ul>
-      </div>
-      <div class="footer__nav-cell">
-        <div class="footer__nav-title">Lottery Results</div>
-        <ul>
-          <li><a href="#">4D Results</a></li>
-          <li><a href="#">Toto Results</a></li>
-          <li><a href="#">Singapore Sweep Results</a></li>
-        </ul>
-      </div>
+      <div class="footer__nav-title">About & Services</div>
+      <ul>
+        <li><a href="#">Homepage</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Locate Phone</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
-  </div>
-  <div class="footer__bottom">
-    <div class="container">
-      <div class="footer__copy">Copyright © 2020, BetAdvisor, All Rights Reserved</div>
+    <nav class="footer__nav">
+      <div class="footer__nav-title">Account</div>
+      <ul>
+        <li><a href="#">Signup</a></li>
+        <li><a href="#">My Account</a></li>
+        <li><a href="#">Billing</a></li>
+        <li><a href="#">Order Record</a></li>
+      </ul>
+    </nav>
+    <div class="footer__info">
+      <div class="footer__info-row">
+        <div class="footer__info-title">142,923</div>
+        <div class="footer__info-value">Unique Users</div>
+      </div>
+      <div class="footer__info-row">
+        <div class="footer__info-title">14,329</div>
+        <div class="footer__info-value">Phones Located</div>
+      </div>
     </div>
   </div>
+  <div class="footer__line"></div>
+  <div class="footer__bottom">
+    <div class="footer__copy">© 2020 copyright all right reserved</div>
+    <ul class="footer__bottom-list">
+      <li><a href="#">Privacy & Policy.</a></li>
+      <li><a href="#">FAQ.</a></li>
+      <li><a href="#">Terms & Conditions.</a></li>
+    </ul>
+  </div>
 </footer>
+<!-- to show the popup add a class "active" to "popup" : example "popup popup--subscribe active"-->
+<div class="popup popup--subscribe">
+  <div class="popup__overlay js-close-popup"></div>
+  <div class="popup__box">
+    <div class="popup__close js-close-popup"><svg width="31" height="31"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg></div>
+    <div class="popup__head">
+      <img src="data/popup-bg.svg" alt="popup-bg" class="popup__head-bg">
+      <div class="popup__title">Cancel Subscription</div>
+    </div>
+    <div class="popup__subscribe">
+      <div class="popup__subscribe-title">Are you sure you want to cancelyour subscription?</div>
+      <div class="popup__subscribe-text">
+        <p>To unsubscribe from our location service, click on the link below. Your request will be taken into account straight away by our services. </p>
+        <p>You will no longer be charged and your subscription period shall no longer be renewed. A confirmation email will be sent to you (in case you don’t receive an email from us, please check your spam folder).</p>
+      </div>
+      <div class="popup__subscribe-btn btn about__top-btn">CONFIRM</div>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup--create-account">
+  <div class="popup__overlay js-close-popup"></div>
+  <div class="popup__box">
+    <div class="popup__close popup__close--mobile js-close-popup"><svg width="31" height="31"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg></div>
+    <div class="popup__head popup__head--locate">
+      <img src="data/popup-bg.svg" alt="popup-bg" class="popup__head-bg">
+      <div class="popup__locate">Locate “07231832923”</div>
+      <div class="popup__title-locate">Create Account</div>
+    </div>
+    <form class="popup__form">
+      <div class="popup__form-box">
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="input-box__icon input-box__icon--small"><svg width="10" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#man2"></use></svg></div>
+              <input type="text" class="input-box__input input-box__input--small input-box__input--icon" placeholder="First Name">
+            </div>
+          </div>
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <input type="text" class="input-box__input input-box__input--small" placeholder="Second Name">
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="input-box__icon input-box__icon--small"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#email"></use></svg></div>
+              <input type="email" class="input-box__input input-box__input--small input-box__input--icon" placeholder="example@company.com">
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <input type="email" class="input-box__input input-box__input--small" placeholder="Confirm Email">
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="input-box__icon input-box__icon--small"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#login"></use></svg></div>
+              <input type="password" class="input-box__input input-box__input--small input-box__input--icon" placeholder="Password (0-9) (a-z) (A-Z)">
+            </div>
+          </div>
+        </div>
+      </div>
+      <label class="popup__form-chechbox">
+        <input type="checkbox" class="input-checkbox" checked>
+        <span class="input-checkbox-text">I have read and accept the <a href="#">Terms of Use</a> and the <a href="#">Privacy Policy</a>.</span>
+      </label>
+      <div class="popup__form-btn-box">
+        <button type="submit" class="popup__form-btn btn btn--small">Continue</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup--trial-24">
+  <div class="popup__overlay js-close-popup"></div>
+  <div class="popup__box">
+    <div class="popup__close popup__close--mobile js-close-popup"><svg width="31" height="31"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg></div>
+    <div class="popup__head popup__head--locate">
+      <img src="data/popup-bg.svg" alt="popup-bg" class="popup__head-bg">
+      <div class="popup__locate">Locate “07231832923”</div>
+      <div class="popup__title-locate">Trial 24 Hours</div>
+    </div>
+    <form class="popup__form">
+      <div class="popup__form-text">Starting price of <span>€0.50</span> for a full day of usage</div>
+      <div class="popup__form-box">
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="input-box__icon input-box__icon--small"><svg width="13" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#card"></use></svg></div>
+              <input type="text" class="input-box__input input-box__input--small input-box__input--icon error" placeholder="Card Number">
+              <span class="error">Incorrect card number</span>
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell popup__form-cell--flex">
+            <div class="input-box">
+              <div class="input-box__icon input-box__icon--small"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#calendar"></use></svg></div>
+              <input type="text" class="input-box__input input-box__input--bdrsl input-box__input--small input-box__input--icon" placeholder="MM">
+            </div>
+            <div class="input-box">
+              <input type="text" class="input-box__input input-box__input--bdrsr input-box__input--small" placeholder="YY">
+            </div>
+          </div>
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="input-box__icon input-box__icon--small"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#login"></use></svg></div>
+              <input type="text" class="input-box__input input-box__input--small input-box__input--icon error" placeholder="CVV">
+              <span class="error">Insert CVC</span>
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <input type="text" class="input-box__input input-box__input--small" placeholder="Full name on card">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup__form-text-pay">Amount to pay: 0,99 EUR</div>
+      <div class="popup__form-btn-box">
+        <button type="submit" class="popup__form-btn btn btn--small btn--blue">
+          PAY NOW
+          <svg width="28" height="23" style="opacity: .3;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check"></use></svg>
+        </button>
+      </div>
+      <div class="pay-list">
+        <div class="pay-list__item"><img src="data/visa2.png" alt="visa2"></div>
+        <div class="pay-list__item"><img src="data/mastercard.svg" alt="mastercard"></div>
+        <div class="pay-list__item"><img src="data/stripe.png" alt="stripe"></div>
+        <div class="pay-list__item"><img src="data/secure.png" alt="secure"></div>
+      </div>
+    </form>
+    <!-- to show the preloader add the class "active" -->
+    <div class="popup__preloader">
+      <div class="popup__preloader-box">
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+      </div>
+    </div>
+    <div class="popup__attention">
+      <div class="popup__attention-icon">
+        <svg width="24" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#attention"></use></svg>
+      </div>
+      <div class="popup__attention-box">
+        <div class="popup__attention-text">We have encountered a problem while trying to process your payment.</div>
+        <div class="popup__attention-descriptions">Make sure all the information is correct. If you require assistance, <a href="#">contact us.</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup--billing">
+  <div class="popup__overlay js-close-popup"></div>
+  <div class="popup__box">
+    <div class="popup__close popup__close--mobile js-close-popup"><svg width="31" height="31"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg></div>
+    <div class="popup__head popup__head--locate">
+      <img src="data/popup-bg.svg" alt="popup-bg" class="popup__head-bg">
+      <div class="popup__locate">Locate “07231832923”</div>
+      <div class="popup__title-locate">Account Billing Info</div>
+    </div>
+    <form class="popup__form">
+      <div class="popup__form-text">Please complete the fields below in order to use our app.</div>
+      <div class="popup__form-box">
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="locate-phone__form-label locate-phone__form-label--small">ADDRESS</div>
+              <input type="text" class="input-box__input input-box__input--small" placeholder="Billing address">
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="locate-phone__form-label locate-phone__form-label--small">City</div>
+              <input type="text" class="input-box__input input-box__input--small" placeholder="Ex: Tokyo">
+            </div>
+          </div>
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="locate-phone__form-label locate-phone__form-label--small">POSTAL CODE</div>
+              <input type="text" class="input-box__input input-box__input--small" placeholder="(1-9) (A-Z)">
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="locate-phone__form-label locate-phone__form-label--small">country</div>
+              <div class="select2-parent">
+                <select class="init-select2" style="width: 100%;">
+                  <option value="Select">Select</option>
+                  <option value="Select">Select</option>
+                  <option value="Select">Select</option>
+                  <option value="Select">Select</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup__form-btn-box">
+        <button type="submit" class="popup__form-btn btn btn--small">Continue</button>
+      </div>
+    </form>
+  </div>
+</div>
   <script src="/js/app.js"></script>
 
 </body>

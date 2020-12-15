@@ -3,405 +3,669 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="Kegglers">
+  <meta name="description" content="PhoneTrackerly">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>Betadvisor</title>
-  <link rel="icon" type="image/png" sizes="72x72" href="images/favicon-72x72.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="144x144" href="images/favicon-144x144.png">
+  <title>PhoneTrackerly</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512x512.png">
-  <link href='https://fonts.gstatic.com' rel='preconnect' crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet" type='text/css' media="print" onload="this.onload=null;this.media='all'">
+  <link rel="preload" href="/fonts/CircularStdBook.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/CircularStdMedium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/CircularStdBold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/CircularStdBook.woff2" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/CircularStdMedium.woff2" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/CircularStdBold.woff2" as="font" type="font/woff" crossorigin>
   <link href="css/index.css" rel="stylesheet">
 </head>
 
 <body>
   <header class="header">
-  <div class="header__container container">
-    <div class="header__mobile-btn js-mobile-btn">
-      <svg width="24" height="22">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mobile"></use>
-      </svg>
-    </div>
-    <div class="header__logo">
-      <img src="images/logo.svg" width="184" height="32" alt="bet-advisor">
-      <a href="#" class="header__logo-link"></a>
-    </div>
-    <nav class="header__nav js-nav">
-      <ul>
-        <li><a href="#">CASINO</a></li>
-        <li class="current_page_item"><a href="#">ONLINE BETTING</a></li>
-        <li><a href="#">CASINO GAMES</a></li>
-        <li><a href="#">LOTTERY RESULTS</a></li>
-        <li><a href="#">BLOG</a></li>
-      </ul>
-    </nav>
-    <a href="#" class="header__contacts">
-      <svg class="header__contacts-mobile-btn" width="26" height="22">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#contacts"></use>
-      </svg>
-      Contact US
-    </a>
-  </div>
-  <div class="header__mobile">
-    <div class="header__mobile-box">
-      <div class="header__mobile-close js-close-mobile"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-      <div class="header__mobile-holder">
-        <div class="header__mobile-title">Menu</div>
+    <div class="header__container">
+      <div class="header__mobile-btn js-mobile-menu"><svg width="20" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg></div>
+      <div class="header__cell header__cell--left">
+        <div class="header__logo">
+          <picture>
+            <source srcset="data/logo-small.svg" media="(max-width: 1200px)">
+            <img src="data/logo-main.svg" alt="logo-main">
+          </picture>
+          <a href="#" class="header__logo-link"></a>
+        </div>
       </div>
-      <a href="#" class="header__mobile-contacts">Contact US</a>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="#">Homepage</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
+      <div class="header__cell header__cell--right">
+        <div class="header__login js-login">
+          <span class="header__login-text">Login</span>
+          <span class="header__login-btn">
+            <svg width="16" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#login"></use></svg>
+          </span>
+        </div>
+      </div>
     </div>
-  </div>
-</header>
+    <div class="header__mobile">
+      <div class="header__mobile-overlay js-close-mobile-menu"></div>
+      <div class="header__mobile-box">
+        <div class="header__mobile-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+      </div>
+    </div>
+  </header>
   <div class="wrapper">
     <div class="first-screen">
-      <picture class="first-screen__img">
-        <source srcset="data/Turning-mobile.jpg" media="(max-width: 1200px)">
-        <img src="data/Turning.jpg" width="1920" height="600" alt="Turning">
-      </picture>
       <div class="container">
         <div class="first-screen__box">
-          <div class="first-screen__box-inner">
-            <div class="first-screen__title">Turning Players <span>into</span> Winners</div>
-            <div class="first-screen__descriptions"><p>With our independent reviews, latest news and in-depth game guides we've been keeping players worldwide safe and secure since 1995</p></div>
+          <div class="first-screen__info">
+            <div class="first-screen__title title">Smart and Simple Phone Tracker Solution</div>
+            <div class="phone">
+              <div class="phone__title">Enter your phone number to start searching...</div>
+              <form class="phone__form">
+                <div class="phone__box">
+                  <div class="phone__row">
+                    <div class="select2-parent country-box">
+                      <select class="init-select2" style="width: 100%;">
+                        <option value="+380" data-image="data/usa.svg">+380</option>
+                        <option value="+380" data-image="data/usa.svg">+380</option>
+                        <option value="+380" data-image="data/usa.svg">+380</option>
+                        <option value="+380" data-image="data/usa.svg">+380</option>
+                        <option value="+380" data-image="data/usa.svg">+380</option>
+                      </select>
+                    </div>
+                    <div class="phone__tel">
+                      <input type="tel" class="phone__tel-input js-input-tel">
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="phone__btn btn">
+                  SEARCH
+                  <svg width="33" height="33"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg>
+                </button>
+              </form>
+            </div>
           </div>
+          <div class="first-screen__img"><img src="data/Smart-and-Simple-Phone-Tracker-Solution.png" width="993" height="714" alt="Smart-and-Simple-Phone-Tracker-Solution"></div>
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="features section">
-        <div class="features__title title"><span>Our</span> Features</div>
-        <div class="features__list">
-          <div class="features__item">
-            <div class="features__item-title">Experience</div>
-            <div class="features__item-value">10 <span>years</span></div>
-            <div class="features__item-text">
-              <p>Bought your lottery tickets? Check your Singapore Lottery results here where we provide accurate results.</p>
+      <svg class="decor-element" width="1920" height="1208" viewBox="0 0 1920 1208" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 507.967L1920 0.0546875V699.886L0 1207.79V507.967Z" fill="#F5FAFF"/></svg>
+      <div class="we-do">
+        <div class="we-do__img"><img src="data/What-we-do.png" width="588" height="694" alt="What-we-do"></div>
+        <div class="we-do__info">
+          <div class="we-do__title-box">
+            <span class="we-do__title-decor" style="background-color: #425BFF"></span>
+            <div class="we-do__title title-small">What we do</div>
+            <div class="we-do__title-img" style="background-color: #425BFF; box-shadow: 0px 0px 80px rgba(66, 91, 255, 0.6);"><img src="data/pin.svg" alt="pin"></div>
+          </div>
+          <div class="we-do__text">
+            <p>We’ve all worried, at one point or another, about being unable to reach someone we cared about for an extended period of time. Our easy-to-use phone tracker helps you locate a mobile device when all other options have failed.</p>
+            <span class="dots"></span>
+            <p>Whether for safety or emergency reasons, our mobile number locator tells you the exact location of a person whenever you need it the most. </p>
+          </div>
+        </div>
+      </div>
+      <div class="triggers">
+        <div class="triggers__head">
+          <div class="we-do__title-box">
+            <span class="we-do__title-decor we-do__title-decor--white" style="background-color: #FFCD62"></span>
+            <div class="we-do__title title-small">PhoneTrackerly <br> Features</div>
+            <div class="we-do__title-img" style="background-color: #FFCD62; box-shadow: 0px 0px 80px rgba(255, 205, 98, 0.6);"><img src="data/PhoneTrackerly-Features.png" alt="PhoneTrackerly-Features"></div>
+          </div>
+        </div>
+        <div class="triggers__list">
+          <a href="#" class="triggers__item">
+            <img src="data/decor.jpg" alt="decor" class="triggers__item-bg">
+            <span class="triggers__item-img"><img src="data/International-Coverage.svg" alt="International-Coverage"></span>
+            <span class="triggers__item-title">International Coverage</span>
+            <span class="triggers__item-text">
+              <p>Going overseas? No problem. Phone Trackerly will locate your mobile device anywhere on Earth. All that’s needed is for the phone to connect to the Internet for a brief moment and you’ll know where to look for it.</p>
+            </span>
+          </a>
+          <a href="#" class="triggers__item">
+            <img src="data/decor.jpg" alt="decor" class="triggers__item-bg">
+            <span class="triggers__item-img"><img src="data/Operator.svg" alt="Operator"></span>
+            <span class="triggers__item-title">Operator</span>
+            <span class="triggers__item-text">
+              <p>Our application is compatible with all phone operators. So long as a SIM card is in the device, the mobile number locator will help you pin-point the exact location of a smartphone. </p>
+            </span>
+          </a>
+          <a href="#" class="triggers__item">
+            <img src="data/decor.jpg" alt="decor" class="triggers__item-bg">
+            <span class="triggers__item-img"><img src="data/Fully-Complaint.svg" alt="Fully-Complaint"></span>
+            <span class="triggers__item-title">Fully Complaint</span>
+            <span class="triggers__item-text">
+              <p>The software’s geolocation services are designed in compliance with current information technology legislation. You will not be able to track a mobile device without the consent of the owner.</p>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="prices">
+        <div class="prices__left">
+          <div class="prices__left-inner">
+            <div class="prices__info">
+              <div class="prices__info-title">You can try out our geolocation software for a mere €0.50 a day.</div>
+              <div class="prices__info-box">
+                <div class="prices__info-row">
+                  <svg width="18" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check"></use></svg>
+                  Full access to our software
+                </div>
+                <div class="prices__info-row">
+                  <svg width="18" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check"></use></svg>
+                  Easy-to-use 4 steps process
+                </div>
+                <div class="prices__info-row">
+                  <svg width="18" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check"></use></svg>
+                  24 hours to locate anyone
+                </div>
+              </div>
+            </div>
+            <div class="prices__btn btn btn--blue">
+              TRY NOW
+              <svg width="34" height="28" style="opacity: .3;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check"></use></svg>
+            </div>
+            <div class="prices__descriptions">Please note that, if you do not cancel your subscription, it will be automatically renewed for €39.99 a month.</div>
+          </div>
+        </div>
+        <div class="prices__right">
+          <div class="prices__head">
+            <div class="we-do__title-box">
+              <span class="we-do__title-decor" style="background-color: #3DCF8E"></span>
+              <div class="we-do__title title-small">Prices</div>
+              <div class="we-do__title-img" style="background-color: #3DCF8E; box-shadow: 0px 0px 80px rgba(61, 207, 142, 0.6);"><img src="data/Prices.svg" alt="Prices"></div>
             </div>
           </div>
-          <div class="features__item">
-            <div class="features__item-title">Available</div>
-            <div class="features__item-value">24/7</div>
-            <div class="features__item-text">
-              <p>Bought your lottery tickets? Check your Singapore Lottery results here where we provide accurate results.</p>
+          <div class="prices__title">Just <span>€0.50</span> to Trial Our <br> Services for 24 hours</div>
+          <div class="prices__img">
+            <img src="data/Services-for-24-hours.jpg" width="950" height="495" alt="Services-for-24-hours">
+          </div>
+        </div>
+      </div>
+      <div class="prices prices--revers">
+        <div class="prices__left">
+          <div class="prices__title">Intuitive Mobile Phone Tracker</div>
+          <div class="prices__text">
+            <p>Phone Trackerly is extremely convenient to use. When you want to find out the exact location of a mobile phone number, the app will send out an SMS with a link to the device. The latter must be connected to the Internet, as well as have geolocation services enabled.</p>
+            <p>When the mobile’s consent is obtained, we retrieve its exact geographic location, which you then receive via SMS.  To increase the accuracy of the results, our application uses a satellite system with a margin of error of no more than a few meters.  The entire process takes no longer than a few minutes to complete and your results are presented in the form of a map that can be zoomed in and that features discernable street names.</p>
+          </div>
+        </div>
+        <div class="prices__right">
+          <div class="prices__img">
+            <img src="data/Intuitive-Mobile-Phone-Tracker.png" width="851" height="549" alt="Intuitive-Mobile-Phone-Tracker">
+          </div>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="steps__head">Here’s a step-by-step breakdown of how our phone tracker works:</div>
+        <div class="steps__list">
+          <div class="steps__item">
+            <div class="steps__item-dot" style="background: #425BFF;"></div>
+            <div class="steps__item-title">Step 1</div>
+            <div class="steps__item-box">
+              <span class="steps__item-img"><img src="data/Step-1.svg" alt="Step-1"></span>
+              <div class="steps__item-text">
+                <p>Input the phone number of the device you want to locate and your e-mail. You can also enter details about your own identity, but this is an optional step.</p>
+              </div>
             </div>
           </div>
-          <div class="features__item">
-            <div class="features__item-title">Up to date</div>
-            <div class="features__item-value">Guides</div>
-            <div class="features__item-text">
-              <p>Bought your lottery tickets? Check your Singapore Lottery results here where we provide accurate results.</p>
+          <div class="steps__item">
+            <div class="steps__item-dot" style="background: #0CB3FF;"></div>
+            <div class="steps__item-title">Step 2</div>
+            <div class="steps__item-box">
+              <span class="steps__item-img"><img src="data/Step-2.svg" alt="Step-2"></span>
+              <div class="steps__item-text">
+                <p>Use our encrypted connection to make a secure credit card payment.</p>
+              </div>
+            </div>
+          </div>
+          <div class="steps__item">
+            <div class="steps__item-dot" style="background: #3FE7EB;"></div>
+            <div class="steps__item-title">Step 3</div>
+            <div class="steps__item-box">
+              <span class="steps__item-img"><img src="data/Step-3.svg" alt="Step-3"></span>
+              <div class="steps__item-text">
+                <p>Provide the telephone number of the device where you want the geolocation results to be sent.</p>
+              </div>
+            </div>
+          </div>
+          <div class="steps__item">
+            <div class="steps__item-dot" style="background: #2A89FF;"></div>
+            <div class="steps__item-title">Step 4</div>
+            <div class="steps__item-box">
+              <span class="steps__item-img"><img src="data/Step-4.svg" alt="Step-4"></span>
+              <div class="steps__item-text">
+                <p>Confirm the data provided.</p>
+              </div>
+            </div>
+          </div>
+          <div class="steps__item">
+            <div class="steps__item-dot" style="background: #08D2FE;"></div>
+            <div class="steps__item-title">Step 5</div>
+            <div class="steps__item-box">
+              <span class="steps__item-img"><img src="data/Step-5.svg" alt="Step-5"></span>
+              <div class="steps__item-text">
+                <p>Receive an SMS with the exact location of the mobile phone you want to track.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text">
+          <div class="text__cell">
+            <img src="data/decor2.png" alt="decor2" class="text__decor">
+            <span class="text__icon">*</span>
+            <div class="text__cell-content">
+              <p>completed. Once you initiate a location request, the owner receives it as soon as the device is powered back on. The party you’re trying to locate will also receive the geolocation feedback, as well as the precise time when it was collected.</p>
+            </div>
+          </div>
+          <div class="text__cell">
+            <img src="data/decor2.png" alt="decor2" class="text__decor">
+            <span class="text__icon">*</span>
+            <div class="text__cell-content">
+              <p>According to the regulations put forward by the Information Commissioner’s Office, as well as by the laws applicable to the services provided by our software, geotagging is subject to legislation concerning the protection of individual privacy. We respect and uphold the right to personal privacy, as well as the legal confinements defined by the latter. As such, the users’ consent must be obtained prior to sending out any information regarding their location.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="info section">
-        <div class="info__img-box">
-          <div class="info__img"><img src="data/Your-Favorite-Gambling-Advisor.svg" width="432" height="466" alt="Your-Favorite-Gambling-Advisor"></div>
-          <div class="info__btn">
-            <a href="#" class="btn">Read our gambling guide</a>
+      <div class="choose">
+        <div class="choose__title">Why Choose Phone Trackerly</div>
+        <div class="choose__text">
+          <img class="choose__text-decor" src="data/logo.svg" alt="logo">
+          <p>Our goal was to design an application that would be useful particularly in those situations where direct communication is either not possible or not trustworthy. </p>
+          <p>Whether you’re a concerned family member trying to look out for a child or a business owner who wants to keep track of their company’s assets, Phone Trackerly can put your mind at ease. </p>
+        </div>
+        <div class="choose__sub-title">Our geolocation software is:</div>
+        <div class="choose__list">
+          <div class="choose__item">
+            <span class="choose__item-img"><img src="data/Intuitive-img.svg" alt="Intuitive-img"></span>
+            <div class="choose__item-title">Intuitive</div>
+            <div class="choose__item-text">
+              <p>We designed our mobile number locator in the most natural way possible. You don’t need to be a software engineer or app enthusiast to successfully navigate it.</p>
+              <p>The entire process can easily be completed by any person without specialized knowledge.</p>
+            </div>
+            <div class="choose__item-bottom"><img src="data/Intuitive.svg" alt="Intuitive"></div>
+          </div>
+          <div class="choose__item">
+            <span class="choose__item-img"><img src="data/Expedient-and-precise-img.svg" alt="Expedient-and-precise-img"></span>
+            <div class="choose__item-title">Expedient and precise</div>
+            <div class="choose__item-text">
+              <p>Once you’ve gone through all the steps to enable our phone tracker, the information should be sent to you in a matter of minutes. The encrypted communications of our geolocation services guarantee the safety of your private data. </p>
+              <p>The geotagging itself is accomplished via satellite, which means that the data you receive is extremely precise. The margin of error for the location provided is less than a few meters.</p>
+            </div>
+            <div class="choose__item-bottom"><img src="data/Expedient-and-precise.svg" alt="Expedient-and-precise"></div>
+          </div>
+          <div class="choose__item">
+            <span class="choose__item-img"><img src="data/Compliant-img.svg" alt="Compliant-img"></span>
+            <div class="choose__item-title">Compliant</div>
+            <div class="choose__item-text">
+              <p>We understand how important personal privacy is in an age of unwarranted data collection. Phone Trackerly abides by the guidelines of the Information Commissioner’s Office, as well as those of personal privacy laws. </p>
+            </div>
+            <div class="choose__item-bottom"><img src="data/Compliant.svg" alt="Compliant"></div>
+          </div>
+          
+        </div>
+        <div class="choose__info">
+          <div class="choose__cell">
+            <svg class="choose__cell-icon" width="38" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check2"></use></svg>
+            <div class="choose__cell-info">
+              <div class="choose__cell-title">Using our services, parents will be able to keep an eye on their young ones.</div>
+              <div class="choose__cell-text">It rarely happens that children leave their smartphones unattended. When they do, there’s a chance that something is amiss and they might require your help.</div>
+            </div>
+          </div>
+          <div class="choose__cell">
+            <svg class="choose__cell-icon" width="38" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check2"></use></svg>
+            <div class="choose__cell-info">
+              <div class="choose__cell-title">As an employer, you will no longer have to suffer losses associated with missing, misplaced, or stolen equipment.</div>
+              <div class="choose__cell-text">With one simple application, you can access the location of any of your smartphones or tablets within minutes.</div>
+            </div>
           </div>
         </div>
-        <div class="info__content">
-          <div class="info__title title"><span>Your Favorite </span><br>Gambling Advisor</div>
-          <div class="info__descriptions">Players who go through our gambling advisor have a higher winning rate  compared to other players! Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-          <div class="info__list">
-            <div class="info__item">
-              <div class="info__item-head">
-                <div class="info__item-img"><img src="data/Gambling-History-in-Singapore.svg" alt="Gambling-History-in-Singapore"></div>
-                <div class="info__item-title">Gambling History in Singapore</div>
-                <div class="info__item-btn"><svg width="8" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg></div>
-              </div>
-              <div class="info__item-body">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ... </p>
-              </div>
-            </div>
-            <div class="info__item">
-              <div class="info__item-head">
-                <div class="info__item-img"><img src="data/AllGamblingOptions.svg" alt="All Gambling Options"></div>
-                <div class="info__item-title">All Gambling Options</div>
-                <div class="info__item-btn"><svg width="8" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg></div>
-              </div>
-              <div class="info__item-body">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ... </p>
-              </div>
-            </div>
-            <div class="info__item">
-              <div class="info__item-head">
-                <div class="info__item-img"><img src="data/ExpertsRecommandations.svg" alt="Experts Recommandations"></div>
-                <div class="info__item-title">Experts Recommandations</div>
-                <div class="info__item-btn"><svg width="8" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg></div>
-              </div>
-              <div class="info__item-body">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ... </p>
-              </div>
-            </div>
-          </div>
+        <div class="choose__bottom">
+          <img class="choose__bottom-decor" src="data/decor3.jpg" alt="decor3">
+          <p>Accurate and easy to use, Phone Trackerly is a great way to leverage 21st century technology to increase your safety.</p>
         </div>
-      </div>
-      <div class="guides section">
-        <div class="guides__title title title--center title--big"><span>Featured</span> Guides</div>
-        <div class="guides__list">
-          <a href="#" class="guides__item">
-            <div class="guides__item-inner">
-              <div class="guides__item-img"><img src="data/UltimateGuidetoTheBestCasinosinSingapore.svg" alt="Ultimate Guide to The Best Casinos in Singapore"></div>
-              <div class="guides__item-title">Ultimate Guide to The Best <br> Casinos in Singapore</div>
-              <div class="guides__item-description">
-                <p>Win more with our casino advisor who provides you with all the information you need to learn how to win at the casino.</p>
-              </div>
-              <span class="guides__article-btn">Read more</span>
-              <!-- <div class="guides__item-btn-box">
-                <a href="#" class="guides__item-btn btn-arrow">Check our Casino Guide</a>
-              </div> -->
-            </div>
-          </a>
-          <a href="#" class="guides__item">
-            <div class="guides__item-inner">
-              <div class="guides__item-img"><img src="data/Ultimate-Guide-to-Online-Betting.svg" alt="Ultimate Guide to Online Betting in Singapore"></div>
-              <div class="guides__item-title">Ultimate Guide to The Best <br> Casinos in Singapore</div>
-              <div class="guides__item-description">
-                <p>Our casino advisor is an expert who helps you make informed choices based on the latest tips and news available.</p>
-              </div>
-              <span class="guides__article-btn">Read more</span>
-              <!-- <div class="guides__item-btn-box">
-                <a href="#" class="guides__item-btn btn-arrow">Check our Casino Guide</a>
-              </div> -->
-            </div>
+        <div class="choose__btn-box">
+          <a href="#" class="choose__btn">
+            Try Phone Trackerly now for €0.50
+            <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
           </a>
         </div>
       </div>
-      <div class="most-popular section">
-        <div class="most-popular__left">
-          <div class="most-popular__title title title--big"><span>Most Popular </span> <br>Casino Games</div>
-          <div class="most-popular__text">
-            <p>Players who go through our gambling advisor have a higher winning rate compared to other players! Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <div class="mobile-tracking">
+        <div class="mobile-tracking__title title-small">Is Mobile Phone Tracking Safe or Legal?</div>
+        <div class="mobile-tracking__box">
+          <div class="mobile-tracking__left">
+            <div class="we-do__text">
+              <p>You’re right to be concerned about the safety and legality of mobile number tracking. In the wrong hands, such information can do more harm than good. You’ve undoubtedly heard many news stories about various individuals using people’s personal data for underhand means.</p>
+              <p>The short answer is that, given several <br> precautions, the process is entirely <b>legal</b> and <br> even <b>recommended</b>. </p>
+              <span class="dots"></span>
+              <p>Using geolocation, you can improve the safety of your family members and employees. Since these services operate with personal data, you have to ensure that any legislation pertaining to the topic is followed to the letter, without exception. </p>
+              <p>Phone Trackerly helps you do just that by providing a smart and easy solution for your mobile phone locater needs. We have designed our software to be compliant with the latest ICO guidelines, as well as the legal statute concerning the privacy of personal information.</p>
+            </div>
           </div>
-        </div>
-        <div class="most-popular__list">
-          <a href="#" class="most-popular__item">
-            <span class="most-popular__item-img"><img src="data/Blackjack-advisor.svg" alt="Blackjack advisor"></span>
-            <div class="most-popular__item-title">Blackjack advisor</div>
-          </a>
-          <a href="#" class="most-popular__item">
-            <span class="most-popular__item-img"><img src="data/Roulette-advisor.svg" alt="Roulette advisor"></span>
-            <div class="most-popular__item-title">Roulette advisor</div>
-          </a>
-          <a href="#" class="most-popular__item">
-            <span class="most-popular__item-img"><img src="data/Baccarat-advisor.svg" alt="Baccarat advisor"></span>
-            <div class="most-popular__item-title">Baccarat advisor</div>
-          </a>
-          <a href="#" class="most-popular__item">
-            <span class="most-popular__item-btn"><svg width="9" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg></span>
-            <div class="most-popular__item-title">More Casino Games</div>
-          </a>
+          <div class="mobile-tracking__img"><img src="data/Is-Mobile-Phone-Tracking-Safe-or-Legal.png" width="729" height="569" alt="Is-Mobile-Phone-Tracking-Safe-or-Legal"></div>
         </div>
       </div>
-      <div class="results section">
-        <div class="results__title title title--center title--big"><span>Lottery</span> Results</div>
-        <div class="results__descriptions">Bought your lottery tickets? Check your Singapore Lottery results here where we provide accurate results.</div>
-        <div class="results__list">
-          <a href="#" class="results__item">
-            <span class="results__item-img"><img src="data/toto.svg" alt="toto"></span>
-            <span class="results__item-title">TOTO Results</span>
-          </a>
-          <a href="#" class="results__item">
-            <span class="results__item-img"><img src="data/Singapore-Sweep.svg" alt="Singapore Sweep Results"></span>
-            <span class="results__item-title">Singapore Sweep Results</span>
-          </a>
-          <a href="#" class="results__item">
-            <span class="results__item-img"><img src="data/4d-Results.svg" alt="4d Results"></span>
-            <span class="results__item-title">4d Results</span>
-          </a>
+    </div>
+    <div class="info">
+      <img src="data/info.jpg" alt="info" class="info__bg">
+      <div class="container">
+        <div class="info__top">
+          <img src="data/Encrypted.svg" alt="Encrypted">
+          <img src="data/Secured.svg" alt="Secured">
+          <img src="data/Fast.svg" alt="Fast">
         </div>
-      </div>
-      <div class="news-row section js-news-parent">
-        <div class="news-row__head">
-          <div class="news-row__title title title--big"><span>Latest</span> News</div>
-          <div class="news-row__descriptions">Get breaking news from our team as we work tirelessly to bring you the latest inside scoop and game releases.</div>
-          <a href="#" class="news-row__btn">
-            <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
-            <span class="news-row__btn-text"><span>See all</span> News</span>
-          </a>
-        </div>
-        <div class="news-list">
-          <div class="news">
-            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
-            <div class="news__row">
-              <div class="news__date">SEPTEMBER 20, 2020</div>
-              <div class="news__see">
-                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                122
-              </div>
-            </div>
-            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
-          </div>
-          <div class="news">
-            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
-            <div class="news__row">
-              <div class="news__date">SEPTEMBER 20, 2020</div>
-              <div class="news__see">
-                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                122
-              </div>
-            </div>
-            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
-          </div>
-          <div class="news">
-            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
-            <div class="news__row">
-              <div class="news__date">SEPTEMBER 20, 2020</div>
-              <div class="news__see">
-                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                122
-              </div>
-            </div>
-            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
-          </div>
-          <div class="news">
-            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
-            <div class="news__row">
-              <div class="news__date">SEPTEMBER 20, 2020</div>
-              <div class="news__see">
-                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                122
-              </div>
-            </div>
-            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
-          </div>
-        </div>
-      </div>
-      <div class="news-row section js-news-parent">
-        <div class="news-row__head">
-          <div class="news-row__title title title--big"><span>Topical</span> Guides</div>
-          <a href="#" class="news-row__btn">
-            <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
-            <span class="news-row__btn-text"><span>See all</span> Guides</span>
-          </a>
-        </div>
-        <div class="news-list">
-          <div class="news">
-            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
-            <div class="news__row">
-              <div class="news__date">SEPTEMBER 20, 2020</div>
-              <div class="news__see">
-                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                122
-              </div>
-            </div>
-            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
-          </div>
-          <div class="news">
-            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
-            <div class="news__row">
-              <div class="news__date">SEPTEMBER 20, 2020</div>
-              <div class="news__see">
-                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                122
-              </div>
-            </div>
-            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
-          </div>
-          <div class="news">
-            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
-            <div class="news__row">
-              <div class="news__date">SEPTEMBER 20, 2020</div>
-              <div class="news__see">
-                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                122
-              </div>
-            </div>
-            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
-          </div>
-          <div class="news">
-            <a href="#" class="news__img"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
-            <div class="news__row">
-              <div class="news__date">SEPTEMBER 20, 2020</div>
-              <div class="news__see">
-                <svg width="18" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#see"></use></svg>
-                122
-              </div>
-            </div>
-            <a href="#" class="news__title" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
-          </div>
-        </div>
-      </div>
-      <div class="section section--bg">
-        <div class="news-row section js-news-parent">
-          <div class="news-row__head">
-            <div class="news-row__title title title--big"><span>Our</span> Reviews</div>
-            <div class="news-row__descriptions">Browse through our client’s reviews and learn more about why you should choose us.</div>
-            <a href="#" class="news-row__btn">
-              <svg width="61" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
-              <span class="news-row__btn-text"><span>See all</span> Rewiews</span>
-            </a>
-          </div>
-          <div class="news-list">
-            <div class="news">
-              <a href="#" class="news__img news__img--2"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
-              <a href="#" class="news__title news__title--bg" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
-            </div>
-            <div class="news">
-              <a href="#" class="news__img news__img--2"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
-              <a href="#" class="news__title news__title--bg" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
-            </div>
-            <div class="news">
-              <a href="#" class="news__img news__img--2"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
-              <a href="#" class="news__title news__title--bg" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
-            </div>
-            <div class="news">
-              <a href="#" class="news__img news__img--2"><img src="data/news.jpg" width="260" height="200" alt="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch"></a>
-              <a href="#" class="news__title news__title--bg" title="Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch">Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch Seattle Seahawks Favored Over New England Patriots in Super Bowl Rematch</a>
-            </div>
-          </div>
+        <div class="info__title title-small">Encrypted. Secured. Fast.</div>
+        <div class="info__text">
+          <p>Our encrypted connections ensure the safety of any data relayed from one party to another, while the application’sgeotagging process requires the approval of the device’s owner prior to sending out any geolocation feedback. </p>
+          <p>Within a matter of minutes, Phone Trackerly gives you precise location information on any device that consents to the query.</p>
         </div>
       </div>
     </div>
   </div>
   <footer class="footer">
-  <div class="footer__container container">
+  <div class="footer__container">
     <div class="footer__left">
       <div class="footer__logo">
-        <img src="images/logo-white.svg" width="184" height="32" alt="bet-advisor">
+        <img src="data/logo-footer.svg" alt="logo-footer">
         <a href="#" class="footer__logo-link"></a>
       </div>
-      <div class="footer__logo-description">BetAdvisor is the world’s leading independent online gaming authority, providing trusted online casino news, guides, reviews and information since 2020.</div>
+      <div class="phone">
+        <div class="phone__title phone__title--small">Start using our services for <span>€0.50 / day</span></div>
+        <form class="phone__form">
+          <div class="phone__box">
+            <div class="phone__row">
+              <div class="select2-parent country-box">
+                <select class="init-select2" style="width: 100%;">
+                  <option value="+380" data-image="data/usa.svg">+380</option>
+                  <option value="+380" data-image="data/usa.svg">+380</option>
+                  <option value="+380" data-image="data/usa.svg">+380</option>
+                  <option value="+380" data-image="data/usa.svg">+380</option>
+                  <option value="+380" data-image="data/usa.svg">+380</option>
+                </select>
+              </div>
+              <div class="phone__tel">
+                <input type="tel" class="phone__tel-input js-input-tel">
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="phone__btn-footer">Start searching...</button>
+        </form>
+      </div>
     </div>
     <nav class="footer__nav">
-      <div class="footer__nav-cell">
-        <div class="footer__nav-title">General Pages</div>
-        <ul>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Terms and Conditions</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer__nav-cell">
-        <div class="footer__nav-title">Guides</div>
-        <ul>
-          <li><a href="#">Casino</a></li>
-          <li><a href="#">Online Betting</a></li>
-          <li><a href="#">Casino Games</a></li>
-        </ul>
-      </div>
-      <div class="footer__nav-cell">
-        <div class="footer__nav-title">Lottery Results</div>
-        <ul>
-          <li><a href="#">4D Results</a></li>
-          <li><a href="#">Toto Results</a></li>
-          <li><a href="#">Singapore Sweep Results</a></li>
-        </ul>
-      </div>
+      <div class="footer__nav-title">About & Services</div>
+      <ul>
+        <li><a href="#">Homepage</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Locate Phone</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
-  </div>
-  <div class="footer__bottom">
-    <div class="container">
-      <div class="footer__copy">Copyright © 2020, BetAdvisor, All Rights Reserved</div>
+    <nav class="footer__nav">
+      <div class="footer__nav-title">Account</div>
+      <ul>
+        <li><a href="#">Signup</a></li>
+        <li><a href="#">My Account</a></li>
+        <li><a href="#">Billing</a></li>
+        <li><a href="#">Order Record</a></li>
+      </ul>
+    </nav>
+    <div class="footer__info">
+      <div class="footer__info-row">
+        <div class="footer__info-title">142,923</div>
+        <div class="footer__info-value">Unique Users</div>
+      </div>
+      <div class="footer__info-row">
+        <div class="footer__info-title">14,329</div>
+        <div class="footer__info-value">Phones Located</div>
+      </div>
     </div>
   </div>
+  <div class="footer__line"></div>
+  <div class="footer__bottom">
+    <div class="footer__copy">© 2020 copyright all right reserved</div>
+    <ul class="footer__bottom-list">
+      <li><a href="#">Privacy & Policy.</a></li>
+      <li><a href="#">FAQ.</a></li>
+      <li><a href="#">Terms & Conditions.</a></li>
+    </ul>
+  </div>
 </footer>
+<!-- to show the popup add a class "active" to "popup" : example "popup popup--subscribe active"-->
+<div class="popup popup--subscribe">
+  <div class="popup__overlay js-close-popup"></div>
+  <div class="popup__box">
+    <div class="popup__close js-close-popup"><svg width="31" height="31"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg></div>
+    <div class="popup__head">
+      <img src="data/popup-bg.svg" alt="popup-bg" class="popup__head-bg">
+      <div class="popup__title">Cancel Subscription</div>
+    </div>
+    <div class="popup__subscribe">
+      <div class="popup__subscribe-title">Are you sure you want to cancelyour subscription?</div>
+      <div class="popup__subscribe-text">
+        <p>To unsubscribe from our location service, click on the link below. Your request will be taken into account straight away by our services. </p>
+        <p>You will no longer be charged and your subscription period shall no longer be renewed. A confirmation email will be sent to you (in case you don’t receive an email from us, please check your spam folder).</p>
+      </div>
+      <div class="popup__subscribe-btn btn about__top-btn">CONFIRM</div>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup--create-account">
+  <div class="popup__overlay js-close-popup"></div>
+  <div class="popup__box">
+    <div class="popup__close popup__close--mobile js-close-popup"><svg width="31" height="31"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg></div>
+    <div class="popup__head popup__head--locate">
+      <img src="data/popup-bg.svg" alt="popup-bg" class="popup__head-bg">
+      <div class="popup__locate">Locate “07231832923”</div>
+      <div class="popup__title-locate">Create Account</div>
+    </div>
+    <form class="popup__form">
+      <div class="popup__form-box">
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="input-box__icon input-box__icon--small"><svg width="10" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#man2"></use></svg></div>
+              <input type="text" class="input-box__input input-box__input--small input-box__input--icon" placeholder="First Name">
+            </div>
+          </div>
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <input type="text" class="input-box__input input-box__input--small" placeholder="Second Name">
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="input-box__icon input-box__icon--small"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#email"></use></svg></div>
+              <input type="email" class="input-box__input input-box__input--small input-box__input--icon" placeholder="example@company.com">
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <input type="email" class="input-box__input input-box__input--small" placeholder="Confirm Email">
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="input-box__icon input-box__icon--small"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#login"></use></svg></div>
+              <input type="password" class="input-box__input input-box__input--small input-box__input--icon" placeholder="Password (0-9) (a-z) (A-Z)">
+            </div>
+          </div>
+        </div>
+      </div>
+      <label class="popup__form-chechbox">
+        <input type="checkbox" class="input-checkbox" checked>
+        <span class="input-checkbox-text">I have read and accept the <a href="#">Terms of Use</a> and the <a href="#">Privacy Policy</a>.</span>
+      </label>
+      <div class="popup__form-btn-box">
+        <button type="submit" class="popup__form-btn btn btn--small">Continue</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup--trial-24">
+  <div class="popup__overlay js-close-popup"></div>
+  <div class="popup__box">
+    <div class="popup__close popup__close--mobile js-close-popup"><svg width="31" height="31"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg></div>
+    <div class="popup__head popup__head--locate">
+      <img src="data/popup-bg.svg" alt="popup-bg" class="popup__head-bg">
+      <div class="popup__locate">Locate “07231832923”</div>
+      <div class="popup__title-locate">Trial 24 Hours</div>
+    </div>
+    <form class="popup__form">
+      <div class="popup__form-text">Starting price of <span>€0.50</span> for a full day of usage</div>
+      <div class="popup__form-box">
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="input-box__icon input-box__icon--small"><svg width="13" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#card"></use></svg></div>
+              <input type="text" class="input-box__input input-box__input--small input-box__input--icon error" placeholder="Card Number">
+              <span class="error">Incorrect card number</span>
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell popup__form-cell--flex">
+            <div class="input-box">
+              <div class="input-box__icon input-box__icon--small"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#calendar"></use></svg></div>
+              <input type="text" class="input-box__input input-box__input--bdrsl input-box__input--small input-box__input--icon" placeholder="MM">
+            </div>
+            <div class="input-box">
+              <input type="text" class="input-box__input input-box__input--bdrsr input-box__input--small" placeholder="YY">
+            </div>
+          </div>
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="input-box__icon input-box__icon--small"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#login"></use></svg></div>
+              <input type="text" class="input-box__input input-box__input--small input-box__input--icon error" placeholder="CVV">
+              <span class="error">Insert CVC</span>
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <input type="text" class="input-box__input input-box__input--small" placeholder="Full name on card">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup__form-text-pay">Amount to pay: 0,99 EUR</div>
+      <div class="popup__form-btn-box">
+        <button type="submit" class="popup__form-btn btn btn--small btn--blue">
+          PAY NOW
+          <svg width="28" height="23" style="opacity: .3;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check"></use></svg>
+        </button>
+      </div>
+      <div class="pay-list">
+        <div class="pay-list__item"><img src="data/visa2.png" alt="visa2"></div>
+        <div class="pay-list__item"><img src="data/mastercard.svg" alt="mastercard"></div>
+        <div class="pay-list__item"><img src="data/stripe.png" alt="stripe"></div>
+        <div class="pay-list__item"><img src="data/secure.png" alt="secure"></div>
+      </div>
+    </form>
+    <!-- to show the preloader add the class "active" -->
+    <div class="popup__preloader">
+      <div class="popup__preloader-box">
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+        <div class="popup__preloader-dot"></div>
+      </div>
+    </div>
+    <div class="popup__attention">
+      <div class="popup__attention-icon">
+        <svg width="24" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#attention"></use></svg>
+      </div>
+      <div class="popup__attention-box">
+        <div class="popup__attention-text">We have encountered a problem while trying to process your payment.</div>
+        <div class="popup__attention-descriptions">Make sure all the information is correct. If you require assistance, <a href="#">contact us.</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup--billing">
+  <div class="popup__overlay js-close-popup"></div>
+  <div class="popup__box">
+    <div class="popup__close popup__close--mobile js-close-popup"><svg width="31" height="31"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg></div>
+    <div class="popup__head popup__head--locate">
+      <img src="data/popup-bg.svg" alt="popup-bg" class="popup__head-bg">
+      <div class="popup__locate">Locate “07231832923”</div>
+      <div class="popup__title-locate">Account Billing Info</div>
+    </div>
+    <form class="popup__form">
+      <div class="popup__form-text">Please complete the fields below in order to use our app.</div>
+      <div class="popup__form-box">
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="locate-phone__form-label locate-phone__form-label--small">ADDRESS</div>
+              <input type="text" class="input-box__input input-box__input--small" placeholder="Billing address">
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="locate-phone__form-label locate-phone__form-label--small">City</div>
+              <input type="text" class="input-box__input input-box__input--small" placeholder="Ex: Tokyo">
+            </div>
+          </div>
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="locate-phone__form-label locate-phone__form-label--small">POSTAL CODE</div>
+              <input type="text" class="input-box__input input-box__input--small" placeholder="(1-9) (A-Z)">
+            </div>
+          </div>
+        </div>
+        <div class="popup__form-row">
+          <div class="popup__form-cell">
+            <div class="input-box">
+              <div class="locate-phone__form-label locate-phone__form-label--small">country</div>
+              <div class="select2-parent">
+                <select class="init-select2" style="width: 100%;">
+                  <option value="Select">Select</option>
+                  <option value="Select">Select</option>
+                  <option value="Select">Select</option>
+                  <option value="Select">Select</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup__form-btn-box">
+        <button type="submit" class="popup__form-btn btn btn--small">Continue</button>
+      </div>
+    </form>
+  </div>
+</div>
   <script src="/js/app.js"></script>
 
 </body>
