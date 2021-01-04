@@ -3,669 +3,744 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="PhoneTrackerly">
+  <meta name="description" content="Kegglers">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>PhoneTrackerly</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <title>Fitness</title>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link rel='preload' as='style' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap'>
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
   <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
-  <link rel="preload" href="/fonts/CircularStdBook.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/CircularStdMedium.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/CircularStdBold.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/CircularStdBook.woff2" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/CircularStdMedium.woff2" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="/fonts/CircularStdBold.woff2" as="font" type="font/woff" crossorigin>
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
   <link href="css/index.css" rel="stylesheet">
 </head>
 
+
 <body>
   <header class="header">
-    <div class="header__container">
-      <div class="header__mobile-btn js-mobile-menu"><svg width="20" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg></div>
-      <div class="header__cell header__cell--left">
+  <div class="header__top">
+    <div class="header__top-cell">Zufriedenheitsgarantie</div>
+    <div class="header__top-cell">100% natürlich</div>
+    <div class="header__top-cell">Freie Lieferung ab €75,-</div>
+    <a href="tel:+490251/9811565132" class="header__top-cell header__top-cell--tel">24/7 Hotline: +49 (0)251/981 156 51 32</a>
+  </div>
+  <div class="header__bottom">
+    <div class="container">
+      <div class="header__bottom-box">
+        <div class="header__mobile-menu js-mobile-btn">
+          <div class="header__mobile-line"></div>
+          <div class="header__mobile-line"></div>
+          <div class="header__mobile-line"></div>
+        </div>
+        <nav class="header__nav">
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Inhalte</a></li>
+            <li><a href="#">Magazin</a></li>
+          </ul>
+        </nav>
         <div class="header__logo">
-          <picture>
-            <source srcset="data/logo-small.svg" media="(max-width: 1200px)">
-            <img src="data/logo-main.svg" alt="logo-main">
-          </picture>
+          <img src="images/logo.png" width="101" height="78" alt="logo">
           <a href="#" class="header__logo-link"></a>
         </div>
-      </div>
-      <nav class="header__nav">
-        <ul>
-          <li><a href="#">Homepage</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </nav>
-      <div class="header__cell header__cell--right">
-        <div class="header__login js-login">
-          <span class="header__login-text">Login</span>
-          <span class="header__login-btn">
-            <svg width="16" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#login"></use></svg>
-          </span>
+        <div class="header__controls">
+          <div class="header__search">
+            <div class="header__btn header__btn--search">
+              <span class="header__btn-icon"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></span>
+              <span class="header__btn-text">Suche</span>
+            </div>
+            <form class="header__search-form">
+              <input type="text" class="header__search-input" placeholder="Suche">
+              <button type="submit" class="header__search-button"><svg width="22" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
+            </form>
+          </div>
+          <a href="#" class="header__btn header__btn--account">
+            <span class="header__btn-icon"><svg width="20" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#user"></use></svg></span>
+            <span class="header__btn-text">Anmelden</span>
+          </a>
+          <div class="header__btn header__btn--basket">
+            <span class="header__btn-icon"><svg width="24" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg></span>
+            <span class="header__btn-text">0 Artikel</span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="header__mobile">
-      <div class="header__mobile-overlay js-close-mobile-menu"></div>
-      <div class="header__mobile-box">
-        <div class="header__mobile-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-      </div>
+  </div>
+  <div class="header__mobile">
+    <div class="header__mobile-overlay js-close-mobile-menu"></div>
+    <div class="header__mobile-box">
+      <div class="header__mobile-close js-close-mobile-menu"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
     </div>
-  </header>
-  <div class="wrapper">
-    <div class="first-screen">
-      <div class="container">
-        <div class="first-screen__box">
-          <div class="first-screen__info">
-            <div class="first-screen__title title">Smart and Simple Phone Tracker Solution</div>
-            <div class="phone">
-              <div class="phone__title">Enter your phone number to start searching...</div>
-              <form class="phone__form">
-                <div class="phone__box">
-                  <div class="phone__row">
-                    <div class="select2-parent country-box">
-                      <select class="init-select2" style="width: 100%;">
-                        <option value="+380" data-image="data/usa.svg">+380</option>
-                        <option value="+380" data-image="data/usa.svg">+380</option>
-                        <option value="+380" data-image="data/usa.svg">+380</option>
-                        <option value="+380" data-image="data/usa.svg">+380</option>
-                        <option value="+380" data-image="data/usa.svg">+380</option>
-                      </select>
-                    </div>
-                    <div class="phone__tel">
-                      <input type="tel" class="phone__tel-input js-input-tel">
-                    </div>
-                  </div>
+  </div>
+</header>
+
+<div class="basket-popup">
+  <div class="basket-popup__overlay js-close-basket"></div>
+  <div class="basket-popup__box">
+    <div class="basket-popup__head">
+      <div class="basket-popup__head-icon"><svg width="24" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg></div>
+      <div class="basket-popup__head-text">Dein Warenkorb (1)</div>
+      <div class="basket-popup__close js-close-basket"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+    </div>
+    <div class="basket-popup__body">
+      <div class="basket-popup__list">
+        <div class="basket-popup__item">
+          <a href="#" class="basket-popup__item-img"><img src="data/basket-popup.jpg" width="76" height="95" alt="Ashwagandha Kapseln"></a>
+          <div class="basket-popup__item-box">
+            <div class="basket-popup__item-holder">
+              <div class="basket-popup__item-cell">
+                <a href="#" class="basket-popup__item-title" title="Ashwagandha Kapseln">Ashwagandha Kapseln</a>
+                <div class="basket-popup__item-text">120 Kapseln a 500mg</div>
+              </div>
+              <div class="basket-popup__item-remove">Entfernen</div>
+            </div>
+            <div class="basket-popup__item-bottom">
+              <div class="basket-popup__item-counter">
+                <div class="counter">
+                  <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
+                  <input type="number" class="counter__input" min="1" value="1">
+                  <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
                 </div>
-                <button type="submit" class="phone__btn btn">
-                  SEARCH
-                  <svg width="33" height="33"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg>
-                </button>
-              </form>
+              </div>
+              <div class="basket-popup__item-price">34,90 EUR</div>
             </div>
           </div>
-          <div class="first-screen__img"><img src="data/Smart-and-Simple-Phone-Tracker-Solution.png" width="993" height="714" alt="Smart-and-Simple-Phone-Tracker-Solution"></div>
+        </div>
+      </div>
+      <div class="basket-popup__price-box">
+        <div class="basket-popup__price-row">
+          <div class="basket-popup__price-cell">Zwischensumme</div>
+          <div class="basket-popup__price-cell">34,90 EUR</div>
+        </div>
+        <div class="basket-popup__price-row">
+          <div class="basket-popup__price-cell">Versand</div>
+          <div class="basket-popup__price-cell">3,90 EUR</div>
+        </div>
+        <div class="basket-popup__price-row">
+          <div class="basket-popup__price-cell basket-popup__price-cell--total">Gesamtsumme</div>
+          <div class="basket-popup__price-cell basket-popup__price-cell--total">34,90 EUR</div>
+        </div>
+      </div>
+      <div class="basket-popup__caption">Versandkostenfrei innerhalb DE ab 60 EUR</div>
+      <div class="basket-popup__buy btn btn--green"><svg width="10" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#lock"></use></svg>Zur Kasse</div>
+      <div class="basket-popup__caption-decor">Oder Express-Kauf</div>
+      <div class="basket-popup__pp btn btn--yellow"><svg width="100" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2500" height="812" viewBox="-11.153 -13.144 326.05 105.914"><g transform="matrix(2.07675 0 0 -2.07675 -11.153 92.77)"><defs><path id="a" d="M-84.525-27.457h326.05V78.457h-326.05z"/></defs><clipPath id="b"><use xlink:href="#a" overflow="visible"/></clipPath><g clip-path="url(#b)"><path d="M32.419 40.982c-1.674 1.908-4.7 2.726-8.571 2.726H12.613a1.609 1.609 0 0 1-1.59-1.357L6.347 12.68a.964.964 0 0 1 .953-1.114h6.936l1.742 11.049-.054-.346a1.604 1.604 0 0 0 1.583 1.357h3.296c6.475 0 11.545 2.63 13.026 10.238.044.225.082.444.115.658.44 2.812-.003 4.726-1.524 6.459" fill="#003087"/><path d="M117.331 26.863c-.424-2.784-2.55-2.784-4.606-2.784h-1.17l.821 5.198c.05.314.32.545.638.545h.537c1.4 0 2.722 0 3.404-.797.407-.477.53-1.185.376-2.162m-.895 7.264h-7.756a1.08 1.08 0 0 1-1.066-.91L104.48 13.33a.647.647 0 0 1 .638-.747h3.98c.371 0 .687.27.745.636l.89 5.64c.082.523.534.91 1.064.91h2.454c5.11 0 8.058 2.471 8.828 7.372.347 2.142.014 3.826-.989 5.005-1.103 1.296-3.058 1.982-5.653 1.982" fill="#009cde"/><path d="M62.011 26.863c-.424-2.784-2.55-2.784-4.607-2.784h-1.17l.821 5.198c.05.314.32.545.638.545h.537c1.4 0 2.722 0 3.404-.797.408-.477.531-1.185.377-2.162m-.895 7.264H53.36c-.53 0-.982-.386-1.065-.91L49.16 13.33a.646.646 0 0 1 .638-.747h3.704c.53 0 .981.386 1.064.91l.847 5.365c.082.524.534.91 1.064.91h2.454c5.11 0 8.058 2.472 8.828 7.373.347 2.142.014 3.826-.989 5.005-1.103 1.296-3.058 1.982-5.653 1.982M79.123 19.723c-.36-2.122-2.043-3.547-4.192-3.547-1.077 0-1.94.347-2.494 1.003-.55.65-.756 1.577-.582 2.608.334 2.104 2.046 3.574 4.162 3.574 1.055 0 1.91-.35 2.476-1.012.569-.667.793-1.599.63-2.626m5.176 7.23h-3.714a.647.647 0 0 1-.64-.547l-.162-1.038-.26.376c-.804 1.167-2.597 1.558-4.387 1.558-4.103 0-7.608-3.11-8.29-7.47-.355-2.177.149-4.256 1.383-5.707 1.133-1.333 2.75-1.888 4.677-1.888 3.308 0 5.142 2.124 5.142 2.124l-.166-1.032a.646.646 0 0 1 .639-.747h3.344c.53 0 .982.385 1.065.91l2.008 12.713a.647.647 0 0 1-.64.747" fill="#003087"/><path d="M134.443 19.723c-.36-2.122-2.043-3.547-4.192-3.547-1.077 0-1.94.347-2.494 1.003-.55.65-.756 1.577-.582 2.608.334 2.104 2.045 3.574 4.162 3.574 1.055 0 1.91-.35 2.476-1.012.569-.667.793-1.599.63-2.626m5.176 7.23h-3.714a.647.647 0 0 1-.64-.547l-.162-1.038-.26.376c-.804 1.167-2.597 1.558-4.387 1.558-4.102 0-7.607-3.11-8.29-7.47-.355-2.177.15-4.256 1.384-5.707 1.133-1.333 2.75-1.888 4.677-1.888 3.309 0 5.143 2.124 5.143 2.124l-.166-1.032a.644.644 0 0 1 .637-.747h3.343c.53 0 .982.385 1.066.91l2.008 12.713a.647.647 0 0 1-.64.747" fill="#009cde"/><path d="M104.08 26.952h-3.734c-.357 0-.69-.177-.89-.473l-5.15-7.584-2.183 7.288a1.08 1.08 0 0 1-1.033.77h-3.669a.647.647 0 0 1-.612-.856l4.11-12.066-3.866-5.455a.647.647 0 0 1 .528-1.02h3.73c.352 0 .683.173.885.463l12.414 17.918a.646.646 0 0 1-.53 1.015" fill="#003087"/><path d="M143.996 33.58l-3.184-20.251a.647.647 0 0 1 .639-.747h3.201c.53 0 .982.386 1.065.91l3.139 19.888a.646.646 0 0 1-.639.747h-3.582a.645.645 0 0 1-.639-.546" fill="#009cde"/><path d="M32.419 40.982c-1.674 1.908-4.7 2.726-8.571 2.726H12.613a1.609 1.609 0 0 1-1.59-1.357L6.347 12.68a.964.964 0 0 1 .953-1.114h6.936l1.742 11.049-.054-.346a1.604 1.604 0 0 0 1.583 1.357h3.296c6.475 0 11.545 2.63 13.026 10.238.044.225.082.444.115.658.44 2.812-.003 4.726-1.524 6.459" fill="#003087"/><path d="M17.849 34.485a1.408 1.408 0 0 0 1.389 1.187h8.808c1.043 0 2.016-.068 2.905-.21a12.206 12.206 0 0 0 1.44-.322 7.957 7.957 0 0 0 1.551-.618c.442 2.813-.002 4.726-1.523 6.46-1.675 1.907-4.7 2.725-8.571 2.725H12.612a1.609 1.609 0 0 1-1.588-1.357L6.346 12.682a.964.964 0 0 1 .952-1.115h6.937l1.742 11.05 1.872 11.868z" fill="#003087"/><path d="M33.943 34.523a18.294 18.294 0 0 0-.115-.658c-1.481-7.607-6.551-10.238-13.026-10.238h-3.297a1.602 1.602 0 0 1-1.582-1.357l-1.688-10.702-.48-3.036a.844.844 0 0 1 .834-.976h5.847c.692 0 1.28.504 1.389 1.187l.057.298 1.102 6.984.07.386a1.407 1.407 0 0 0 1.39 1.187h.875c5.664 0 10.099 2.3 11.395 8.956.54 2.78.26 5.103-1.17 6.734a5.584 5.584 0 0 1-1.601 1.235" fill="#009cde"/><path d="M32.392 35.14c-.226.067-.459.127-.699.18-.24.053-.488.1-.742.14-.89.145-1.862.213-2.906.213h-8.807a1.404 1.404 0 0 1-1.389-1.188l-1.872-11.87-.054-.345a1.602 1.602 0 0 0 1.582 1.357h3.297c6.475 0 11.545 2.63 13.026 10.238.044.225.081.443.115.658a7.998 7.998 0 0 1-1.218.514c-.109.036-.22.07-.333.104" fill="#012169"/></g></g></svg></div>
+      <div class="basket-popup__caption-decor">Warum Du uns wählen solltest?</div>
+      <div class="basket-popup__pay-holder">
+        <div class="basket-popup__pay">
+          <div class="basket-popup__pay-icon"><svg width="50" height="57"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#pay1"></use></svg></div>
+          <div class="basket-popup__pay-box">
+            <div class="basket-popup__pay-title">Sicher bezahlen mit:</div>
+            <div class="basket-popup__pay-list">
+              <div class="basket-popup__pay-item"><img src="data/visa.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
+              <div class="basket-popup__pay-item"><img src="data/master.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
+              <div class="basket-popup__pay-item"><img src="data/pp.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
+              <div class="basket-popup__pay-item"><img src="data/sofort.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
+              <div class="basket-popup__pay-item"><img src="data/rech.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
+              <div class="basket-popup__pay-item"><img src="data/vorkasse.jpg" width="40" height="28" alt="Sicher bezahlen mit"></div>
+            </div>
+          </div>
+        </div>
+        <div class="basket-popup__pay">
+          <div class="basket-popup__pay-icon"><svg width="54" height="48"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#pay2"></use></svg></div>
+          <div class="basket-popup__pay-box">
+            <div class="basket-popup__pay-title">Geld-zurück-Garantie:</div>
+            <div class="basket-popup__pay-text">Nur behalten, was auch wirklich gefällt!</div>
+          </div>
+        </div>
+      </div>
+      <div class="basket-popup__slider-title">Passend zu deinem Produkt:</div>
+      <div class="basket-popup__slider">
+        <div class="basket-popup__slider-item">
+          <a href="#" class="basket-popup__item-img"><img src="data/basket-popup.jpg" width="" height="" alt="Ashwagandha Kapseln"></a>
+          <div class="basket-popup__item-box">
+            <a href="#" class="basket-popup__item-title" title="Tribulus Terrestris Kapseln">Tribulus Terrestris Kapseln</a>
+            <div class="basket-popup__item-holder">
+              <div class="basket-popup__item-text">120 Kapseln a 500mg</div>
+              <div class="basket-popup__item-price">34,90 EUR</div>
+            </div>
+            <div class="basket-popup__item-bottom">
+              <div class="basket-popup__item-counter">
+                <div class="counter counter--bg">
+                  <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
+                  <input type="number" class="counter__input" min="1" value="1">
+                  <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
+                </div>
+              </div>
+              <div class="basket-popup__item-btn">hinzufügen</div>
+            </div>
+          </div>
+        </div>
+        <div class="basket-popup__slider-item">
+          <a href="#" class="basket-popup__item-img"><img src="data/basket-popup.jpg" width="" height="" alt="Ashwagandha Kapseln"></a>
+          <div class="basket-popup__item-box">
+            <a href="#" class="basket-popup__item-title" title="Tribulus Terrestris Kapseln">Tribulus Terrestris</a>
+            <div class="basket-popup__item-holder">
+              <div class="basket-popup__item-text">120 Kapseln a 500mg</div>
+              <div class="basket-popup__item-price">34,90 EUR</div>
+            </div>
+            <div class="basket-popup__item-bottom">
+              <div class="basket-popup__item-counter">
+                <div class="counter counter--bg">
+                  <div class="counter__btn counter__btn--minus"><svg width="12" height="2"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#minus"></use></svg></div>
+                  <input type="number" class="counter__input" min="1" value="1">
+                  <div class="counter__btn counter__btn--plus"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#plus"></use></svg></div>
+                </div>
+              </div>
+              <div class="basket-popup__item-btn">hinzufügen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="wrapper">
+    <div class="first-screen">
+      <img src="data/first-screen.jpg" width="1920" height="491" alt="first-screen-img" class="first-screen__img">
+      <div class="container">
+        <div class="first-screen__holder">
+          <div class="first-screen__title">Fitness Vital</div>
+          <div class="first-screen__descriptions">Der Shop für deine Fitness</div>
+          <div class="first-screen__btn">
+            <a href="#" class="btn">Zu unseren Produkten</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="triggers">
+      <div class="triggers__item">
+        <div class="triggers__icon"><img src="data/triggers1.svg" alt="Kostenlose Lieferung"></div>
+        <div class="triggers__item-box">
+          <div class="triggers__item-title">Kostenlose Lieferung</div>
+          <div class="triggers__item-text">Ab einem Einkauf von 75€</div>
+        </div>
+      </div>
+      <div class="triggers__item">
+        <div class="triggers__icon"><img src="data/triggers2.svg" alt="Zufriedenheit"></div>
+        <div class="triggers__item-box">
+          <div class="triggers__item-title">Zufriedenheit</div>
+          <div class="triggers__item-text">Über 2.000 zufriedene Kunde</div>
+        </div>
+      </div>
+      <div class="triggers__item">
+        <div class="triggers__icon"><img src="data/triggers3.svg" alt="Schneller Versand"></div>
+        <div class="triggers__item-box">
+          <div class="triggers__item-title">Schneller Versand</div>
+          <div class="triggers__item-text">Versand innerhalb von 24h</div>
+        </div>
+      </div>
+    </div>
+    <div class="partners">
+      <div class="container">
+        <div class="partners__title">Bekannt aus</div>
+        <div class="partners__list">
+          <div class="partners__item"><img src="data/partners1.jpg" alt="partners1"></div>
+          <div class="partners__item"><img src="data/partners2.jpg" alt="partners2"></div>
+          <div class="partners__item"><img src="data/partners3.jpg" alt="partners3"></div>
+          <div class="partners__item"><img src="data/partners4.jpg" alt="partners4"></div>
+          <div class="partners__item"><img src="data/partners5.jpg" alt="partners5"></div>
+          <div class="partners__item"><img src="data/partners6.jpg" alt="partners6"></div>
+          <div class="partners__item"><img src="data/partners7.jpg" alt="partners7"></div>
         </div>
       </div>
     </div>
     <div class="container">
-      <svg class="decor-element" width="1920" height="1208" viewBox="0 0 1920 1208" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 507.967L1920 0.0546875V699.886L0 1207.79V507.967Z" fill="#F5FAFF"/></svg>
-      <div class="we-do">
-        <div class="we-do__img"><img src="data/What-we-do.png" width="588" height="694" alt="What-we-do"></div>
-        <div class="we-do__info">
-          <div class="we-do__title-box">
-            <span class="we-do__title-decor" style="background-color: #425BFF"></span>
-            <div class="we-do__title title-small">What we do</div>
-            <div class="we-do__title-img" style="background-color: #425BFF; box-shadow: 0px 0px 80px rgba(66, 91, 255, 0.6);"><img src="data/pin.svg" alt="pin"></div>
+      <div class="mission">
+        <div class="mission__img"><img src="data/mission.jpg" width="587" height="533" alt="mission"></div>
+        <div class="mission__info">
+          <div class="mission__label">Fitness Vital</div>
+          <div class="mission__title">Unsere Mission</div>
+          <div class="mission__text text-content">
+            <p>Im alten Indien, sowie auch zur heutigen Zeit, werden der Wurzel der Schlafbeere noch viele andere Wirkungsweisen nachgesprochen. Die vielen unterschiedlichen Wirkstoffe sollen vielseitige Auswirkungen auf den Menschen haben.</p>
+            <p>In der ayurvedischen Medizin wird Ashwagandha unter anderem als Stärkungsmittel sowie zur Verbesserung des Schlafs eingesetzt.</p>
+            <p>Vor allem als Aphrodisiakum ist Ashwagandha bekannt. Aus den Wurzeln der Schlafbeere werden Liebestränke gebraut, die stimulierend und verführend wirken sollen und fester Bestandteil im Tantra sind.</p>
           </div>
-          <div class="we-do__text">
-            <p>We’ve all worried, at one point or another, about being unable to reach someone we cared about for an extended period of time. Our easy-to-use phone tracker helps you locate a mobile device when all other options have failed.</p>
-            <span class="dots"></span>
-            <p>Whether for safety or emergency reasons, our mobile number locator tells you the exact location of a person whenever you need it the most. </p>
-          </div>
-        </div>
-      </div>
-      <div class="triggers">
-        <div class="triggers__head">
-          <div class="we-do__title-box">
-            <span class="we-do__title-decor we-do__title-decor--white" style="background-color: #FFCD62"></span>
-            <div class="we-do__title title-small">PhoneTrackerly <br> Features</div>
-            <div class="we-do__title-img" style="background-color: #FFCD62; box-shadow: 0px 0px 80px rgba(255, 205, 98, 0.6);"><img src="data/PhoneTrackerly-Features.png" alt="PhoneTrackerly-Features"></div>
-          </div>
-        </div>
-        <div class="triggers__list">
-          <a href="#" class="triggers__item">
-            <img src="data/decor.jpg" alt="decor" class="triggers__item-bg">
-            <span class="triggers__item-img"><img src="data/International-Coverage.svg" alt="International-Coverage"></span>
-            <span class="triggers__item-title">International Coverage</span>
-            <span class="triggers__item-text">
-              <p>Going overseas? No problem. Phone Trackerly will locate your mobile device anywhere on Earth. All that’s needed is for the phone to connect to the Internet for a brief moment and you’ll know where to look for it.</p>
-            </span>
-          </a>
-          <a href="#" class="triggers__item">
-            <img src="data/decor.jpg" alt="decor" class="triggers__item-bg">
-            <span class="triggers__item-img"><img src="data/Operator.svg" alt="Operator"></span>
-            <span class="triggers__item-title">Operator</span>
-            <span class="triggers__item-text">
-              <p>Our application is compatible with all phone operators. So long as a SIM card is in the device, the mobile number locator will help you pin-point the exact location of a smartphone. </p>
-            </span>
-          </a>
-          <a href="#" class="triggers__item">
-            <img src="data/decor.jpg" alt="decor" class="triggers__item-bg">
-            <span class="triggers__item-img"><img src="data/Fully-Complaint.svg" alt="Fully-Complaint"></span>
-            <span class="triggers__item-title">Fully Complaint</span>
-            <span class="triggers__item-text">
-              <p>The software’s geolocation services are designed in compliance with current information technology legislation. You will not be able to track a mobile device without the consent of the owner.</p>
-            </span>
-          </a>
-        </div>
-      </div>
-      <div class="prices">
-        <div class="prices__left">
-          <div class="prices__left-inner">
-            <div class="prices__info">
-              <div class="prices__info-title">You can try out our geolocation software for a mere €0.50 a day.</div>
-              <div class="prices__info-box">
-                <div class="prices__info-row">
-                  <svg width="18" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check"></use></svg>
-                  Full access to our software
-                </div>
-                <div class="prices__info-row">
-                  <svg width="18" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check"></use></svg>
-                  Easy-to-use 4 steps process
-                </div>
-                <div class="prices__info-row">
-                  <svg width="18" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check"></use></svg>
-                  24 hours to locate anyone
-                </div>
-              </div>
-            </div>
-            <div class="prices__btn btn btn--blue">
-              TRY NOW
-              <svg width="34" height="28" style="opacity: .3;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check"></use></svg>
-            </div>
-            <div class="prices__descriptions">Please note that, if you do not cancel your subscription, it will be automatically renewed for €39.99 a month.</div>
-          </div>
-        </div>
-        <div class="prices__right">
-          <div class="prices__head">
-            <div class="we-do__title-box">
-              <span class="we-do__title-decor" style="background-color: #3DCF8E"></span>
-              <div class="we-do__title title-small">Prices</div>
-              <div class="we-do__title-img" style="background-color: #3DCF8E; box-shadow: 0px 0px 80px rgba(61, 207, 142, 0.6);"><img src="data/Prices.svg" alt="Prices"></div>
-            </div>
-          </div>
-          <div class="prices__title">Just <span>€0.50</span> to Trial Our <br> Services for 24 hours</div>
-          <div class="prices__img">
-            <img src="data/Services-for-24-hours.jpg" width="950" height="495" alt="Services-for-24-hours">
+          <div class="mission__btn-box">
+            <a href="#" class="mission__btn btn btn--revers">Über uns</a>
           </div>
         </div>
       </div>
-      <div class="prices prices--revers">
-        <div class="prices__left">
-          <div class="prices__title">Intuitive Mobile Phone Tracker</div>
-          <div class="prices__text">
-            <p>Phone Trackerly is extremely convenient to use. When you want to find out the exact location of a mobile phone number, the app will send out an SMS with a link to the device. The latter must be connected to the Internet, as well as have geolocation services enabled.</p>
-            <p>When the mobile’s consent is obtained, we retrieve its exact geographic location, which you then receive via SMS.  To increase the accuracy of the results, our application uses a satellite system with a margin of error of no more than a few meters.  The entire process takes no longer than a few minutes to complete and your results are presented in the form of a map that can be zoomed in and that features discernable street names.</p>
+      <div class="registration-box">
+        <div class="registration-box__title">Jetzt 15% Sparen! Jetzt eintragen.</div>
+        <ul class="registration-box__list">
+          <li class="registration-box__item">
+            <span class="registration-box__item-icon"><span class="checkmark">✓</span></span>
+            <span class="registration-box__item-text">120 Kapseln a 500 mg = 60g</span>
+          </li>
+          <li class="registration-box__item">
+            <span class="registration-box__item-icon"><span class="checkmark">✓</span></span>
+            <span class="registration-box__item-text">Höchste Qualität, mindestens 5% Withanolide</span>
+          </li>
+          <li class="registration-box__item">
+            <span class="registration-box__item-icon"><span class="checkmark">✓</span></span>
+            <span class="registration-box__item-text">Reines Naturprodukt ohne Zusatzstoffe</span>
+          </li>
+        </ul>
+        <form class="registration-box__form">
+          <div class="registration-box__form-row">
+            <input type="email" class="registration-box__input" placeholder="Deine E-Mail-Adresse">
+            <button class="registration-box__btn btn btn--yellow" type="submit">Jetzt 15% Rabatt erhalten</button>
+            <p class="error">error</p>
           </div>
-        </div>
-        <div class="prices__right">
-          <div class="prices__img">
-            <img src="data/Intuitive-Mobile-Phone-Tracker.png" width="851" height="549" alt="Intuitive-Mobile-Phone-Tracker">
+          <div class="registration-box__checkbox">
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input">
+              <span class="checkbox__text">Durch Klicken auf „Jetzt 15% Rabatt erhalten“ stimmen Sie der Nutzervereinbarung, der Datenschutzrichtlinie und der Cookie-Richtlinie von Fitness Vital zu.</span>
+            </label>
           </div>
-        </div>
+        </form>
       </div>
-      <div class="steps">
-        <div class="steps__head">Here’s a step-by-step breakdown of how our phone tracker works:</div>
-        <div class="steps__list">
-          <div class="steps__item">
-            <div class="steps__item-dot" style="background: #425BFF;"></div>
-            <div class="steps__item-title">Step 1</div>
-            <div class="steps__item-box">
-              <span class="steps__item-img"><img src="data/Step-1.svg" alt="Step-1"></span>
-              <div class="steps__item-text">
-                <p>Input the phone number of the device you want to locate and your e-mail. You can also enter details about your own identity, but this is an optional step.</p>
-              </div>
+      <div class="stock-list">
+        <div class="stock-list__item">
+          <img class="stock-list__item-img" src="data/product-stock.jpg" width="586" height="400" alt="product-stock">
+          <a href="#" class="stock-list__item-title">Ashwagandha Kapseln - für besseren Schlaf</a>
+          <div class="stock-list__item-holder">
+            <div class="stock-list__item-price">
+              <div class="price-new">€ 19,99</div>
+              <div class="price-old">€ 24,95</div>
             </div>
-          </div>
-          <div class="steps__item">
-            <div class="steps__item-dot" style="background: #0CB3FF;"></div>
-            <div class="steps__item-title">Step 2</div>
-            <div class="steps__item-box">
-              <span class="steps__item-img"><img src="data/Step-2.svg" alt="Step-2"></span>
-              <div class="steps__item-text">
-                <p>Use our encrypted connection to make a secure credit card payment.</p>
-              </div>
-            </div>
-          </div>
-          <div class="steps__item">
-            <div class="steps__item-dot" style="background: #3FE7EB;"></div>
-            <div class="steps__item-title">Step 3</div>
-            <div class="steps__item-box">
-              <span class="steps__item-img"><img src="data/Step-3.svg" alt="Step-3"></span>
-              <div class="steps__item-text">
-                <p>Provide the telephone number of the device where you want the geolocation results to be sent.</p>
-              </div>
-            </div>
-          </div>
-          <div class="steps__item">
-            <div class="steps__item-dot" style="background: #2A89FF;"></div>
-            <div class="steps__item-title">Step 4</div>
-            <div class="steps__item-box">
-              <span class="steps__item-img"><img src="data/Step-4.svg" alt="Step-4"></span>
-              <div class="steps__item-text">
-                <p>Confirm the data provided.</p>
-              </div>
-            </div>
-          </div>
-          <div class="steps__item">
-            <div class="steps__item-dot" style="background: #08D2FE;"></div>
-            <div class="steps__item-title">Step 5</div>
-            <div class="steps__item-box">
-              <span class="steps__item-img"><img src="data/Step-5.svg" alt="Step-5"></span>
-              <div class="steps__item-text">
-                <p>Receive an SMS with the exact location of the mobile phone you want to track.</p>
-              </div>
+            <div class="stock-list__item-descriptions">Du sparst € 5,00</div>
+            <div class="stock-list__item-btn-box">
+              <div class="stock-list__item-btn btn btn--yellow">In den Warenkorb</div>
             </div>
           </div>
         </div>
-        <div class="text">
-          <div class="text__cell">
-            <img src="data/decor2.png" alt="decor2" class="text__decor">
-            <span class="text__icon">*</span>
-            <div class="text__cell-content">
-              <p>completed. Once you initiate a location request, the owner receives it as soon as the device is powered back on. The party you’re trying to locate will also receive the geolocation feedback, as well as the precise time when it was collected.</p>
+        <div class="stock-list__item">
+          <img class="stock-list__item-img" src="data/product-stock.jpg" width="586" height="400" alt="product-stock">
+          <a href="#" class="stock-list__item-title">Ashwagandha Kapseln - für besseren Schlaf</a>
+          <div class="stock-list__item-holder">
+            <div class="stock-list__item-price">
+              <div class="price-new">€ 19,99</div>
+              <div class="price-old">€ 24,95</div>
+            </div>
+            <div class="stock-list__item-descriptions">Du sparst € 5,00</div>
+            <div class="stock-list__item-btn-box">
+              <div class="stock-list__item-btn btn btn--yellow">In den Warenkorb</div>
             </div>
           </div>
-          <div class="text__cell">
-            <img src="data/decor2.png" alt="decor2" class="text__decor">
-            <span class="text__icon">*</span>
-            <div class="text__cell-content">
-              <p>According to the regulations put forward by the Information Commissioner’s Office, as well as by the laws applicable to the services provided by our software, geotagging is subject to legislation concerning the protection of individual privacy. We respect and uphold the right to personal privacy, as well as the legal confinements defined by the latter. As such, the users’ consent must be obtained prior to sending out any information regarding their location.</p>
+        </div>
+        <div class="stock-list__item">
+          <img class="stock-list__item-img" src="data/product-stock.jpg" width="586" height="400" alt="product-stock">
+          <a href="#" class="stock-list__item-title">Ashwagandha Kapseln - für besseren Schlaf</a>
+          <div class="stock-list__item-holder">
+            <div class="stock-list__item-price">
+              <div class="price-new">€ 19,99</div>
+              <div class="price-old">€ 24,95</div>
+            </div>
+            <div class="stock-list__item-descriptions">Du sparst € 5,00</div>
+            <div class="stock-list__item-btn-box">
+              <div class="stock-list__item-btn btn btn--yellow">In den Warenkorb</div>
+            </div>
+          </div>
+        </div>
+        <div class="stock-list__item">
+          <img class="stock-list__item-img" src="data/product-stock.jpg" width="586" height="400" alt="product-stock">
+          <a href="#" class="stock-list__item-title">Ashwagandha Kapseln - für besseren Schlaf</a>
+          <div class="stock-list__item-holder">
+            <div class="stock-list__item-price">
+              <div class="price-new">€ 19,99</div>
+              <div class="price-old">€ 24,95</div>
+            </div>
+            <div class="stock-list__item-descriptions">Du sparst € 5,00</div>
+            <div class="stock-list__item-btn-box">
+              <div class="stock-list__item-btn btn btn--yellow">In den Warenkorb</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="choose">
-        <div class="choose__title">Why Choose Phone Trackerly</div>
-        <div class="choose__text">
-          <img class="choose__text-decor" src="data/logo.svg" alt="logo">
-          <p>Our goal was to design an application that would be useful particularly in those situations where direct communication is either not possible or not trustworthy. </p>
-          <p>Whether you’re a concerned family member trying to look out for a child or a business owner who wants to keep track of their company’s assets, Phone Trackerly can put your mind at ease. </p>
-        </div>
-        <div class="choose__sub-title">Our geolocation software is:</div>
-        <div class="choose__list">
-          <div class="choose__item">
-            <span class="choose__item-img"><img src="data/Intuitive-img.svg" alt="Intuitive-img"></span>
-            <div class="choose__item-title">Intuitive</div>
-            <div class="choose__item-text">
-              <p>We designed our mobile number locator in the most natural way possible. You don’t need to be a software engineer or app enthusiast to successfully navigate it.</p>
-              <p>The entire process can easily be completed by any person without specialized knowledge.</p>
-            </div>
-            <div class="choose__item-bottom"><img src="data/Intuitive.svg" alt="Intuitive"></div>
-          </div>
-          <div class="choose__item">
-            <span class="choose__item-img"><img src="data/Expedient-and-precise-img.svg" alt="Expedient-and-precise-img"></span>
-            <div class="choose__item-title">Expedient and precise</div>
-            <div class="choose__item-text">
-              <p>Once you’ve gone through all the steps to enable our phone tracker, the information should be sent to you in a matter of minutes. The encrypted communications of our geolocation services guarantee the safety of your private data. </p>
-              <p>The geotagging itself is accomplished via satellite, which means that the data you receive is extremely precise. The margin of error for the location provided is less than a few meters.</p>
-            </div>
-            <div class="choose__item-bottom"><img src="data/Expedient-and-precise.svg" alt="Expedient-and-precise"></div>
-          </div>
-          <div class="choose__item">
-            <span class="choose__item-img"><img src="data/Compliant-img.svg" alt="Compliant-img"></span>
-            <div class="choose__item-title">Compliant</div>
-            <div class="choose__item-text">
-              <p>We understand how important personal privacy is in an age of unwarranted data collection. Phone Trackerly abides by the guidelines of the Information Commissioner’s Office, as well as those of personal privacy laws. </p>
-            </div>
-            <div class="choose__item-bottom"><img src="data/Compliant.svg" alt="Compliant"></div>
-          </div>
-          
-        </div>
-        <div class="choose__info">
-          <div class="choose__cell">
-            <svg class="choose__cell-icon" width="38" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check2"></use></svg>
-            <div class="choose__cell-info">
-              <div class="choose__cell-title">Using our services, parents will be able to keep an eye on their young ones.</div>
-              <div class="choose__cell-text">It rarely happens that children leave their smartphones unattended. When they do, there’s a chance that something is amiss and they might require your help.</div>
-            </div>
-          </div>
-          <div class="choose__cell">
-            <svg class="choose__cell-icon" width="38" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check2"></use></svg>
-            <div class="choose__cell-info">
-              <div class="choose__cell-title">As an employer, you will no longer have to suffer losses associated with missing, misplaced, or stolen equipment.</div>
-              <div class="choose__cell-text">With one simple application, you can access the location of any of your smartphones or tablets within minutes.</div>
-            </div>
+      <div class="feedback">
+        <div class="feedback__title">Du hast Fragen zu einem Produkt oder uns?</div>
+        <div class="feedback__box">
+          <div class="feedback__img"><img src="data/feedback.jpg" width="180" height="180" alt="feedback"></div>
+          <div class="feedback__container">
+            <div class="feedback__info">Brauchen Sie Hilfe bei der Auswahl des richtigen Produkts oder bei der Bestellung? Lassen Sie sich kostenlos beraten.</div>
+            <div class="feedback__name">Max Mustermann</div>
+            <div class="feedback__position">Geschäftsführer FitnessVital</div>
           </div>
         </div>
-        <div class="choose__bottom">
-          <img class="choose__bottom-decor" src="data/decor3.jpg" alt="decor3">
-          <p>Accurate and easy to use, Phone Trackerly is a great way to leverage 21st century technology to increase your safety.</p>
-        </div>
-        <div class="choose__btn-box">
-          <a href="#" class="choose__btn">
-            Try Phone Trackerly now for €0.50
-            <svg width="15" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right2"></use></svg>
-          </a>
-        </div>
-      </div>
-      <div class="mobile-tracking">
-        <div class="mobile-tracking__title title-small">Is Mobile Phone Tracking Safe or Legal?</div>
-        <div class="mobile-tracking__box">
-          <div class="mobile-tracking__left">
-            <div class="we-do__text">
-              <p>You’re right to be concerned about the safety and legality of mobile number tracking. In the wrong hands, such information can do more harm than good. You’ve undoubtedly heard many news stories about various individuals using people’s personal data for underhand means.</p>
-              <p>The short answer is that, given several <br> precautions, the process is entirely <b>legal</b> and <br> even <b>recommended</b>. </p>
-              <span class="dots"></span>
-              <p>Using geolocation, you can improve the safety of your family members and employees. Since these services operate with personal data, you have to ensure that any legislation pertaining to the topic is followed to the letter, without exception. </p>
-              <p>Phone Trackerly helps you do just that by providing a smart and easy solution for your mobile phone locater needs. We have designed our software to be compliant with the latest ICO guidelines, as well as the legal statute concerning the privacy of personal information.</p>
-            </div>
+        <div class="feedback__sub-title">Lassen Sie sich kostenlos beraten</div>
+        <div class="feedback__btns">
+          <div class="feedback__btn">
+            <span class="feedback__icon"><svg width="26" height="26"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#tel"></use></svg></span>
+            <span class="feedback__btn-text">Telefon</span>
           </div>
-          <div class="mobile-tracking__img"><img src="data/Is-Mobile-Phone-Tracking-Safe-or-Legal.png" width="729" height="569" alt="Is-Mobile-Phone-Tracking-Safe-or-Legal"></div>
+          <div class="feedback__btn">
+            <span class="feedback__icon"><svg width="24" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mail"></use></svg></span>
+            <span class="feedback__btn-text">E-Mail</span>
+          </div>
+          <div class="feedback__btn">
+            <span class="feedback__icon"><svg width="24" height="24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#contact"></use></svg></span>
+            <span class="feedback__btn-text">Kontaktformular</span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="info">
-      <img src="data/info.jpg" alt="info" class="info__bg">
+    <div class="bg">
       <div class="container">
-        <div class="info__top">
-          <img src="data/Encrypted.svg" alt="Encrypted">
-          <img src="data/Secured.svg" alt="Secured">
-          <img src="data/Fast.svg" alt="Fast">
+        <div class="focus">
+          <div class="focus__title">Im Fokus</div>
+          <div class="focus__descriptions">Die heilige Schlafbeere als reines Wurzelextrakt</div>
+          <div class="focus__box">
+            <div class="focus__img"><img src="data/focus.jpg" width="643" height="558" alt="focus"></div>
+            <div class="focus__item">
+              <div class="focus__item-inner">
+                <div class="focus__icon"><img src="data/focus1.svg" alt="BIOACTIVE"></div>
+                <div class="focus__item-text">BIOACTIVE</div>
+              </div>
+            </div>
+            <div class="focus__item">
+              <div class="focus__item-inner">
+                <div class="focus__icon"><img src="data/focus2.svg" alt="Natürlich gewachsen"></div>
+                <div class="focus__item-text">Natürlich gewachsen</div>
+              </div>
+            </div>
+            <div class="focus__item">
+              <div class="focus__item-inner">
+                <div class="focus__icon"><img src="data/focus3.svg" alt="VEGAN"></div>
+                <div class="focus__item-text">VEGAN</div>
+              </div>
+            </div>
+            <div class="focus__item">
+              <div class="focus__item-inner">
+                <div class="focus__icon"><img src="data/focus4.svg" alt="Frei von Gentechnik"></div>
+                <div class="focus__item-text">Frei von Gentechnik</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="info__title title-small">Encrypted. Secured. Fast.</div>
-        <div class="info__text">
-          <p>Our encrypted connections ensure the safety of any data relayed from one party to another, while the application’sgeotagging process requires the approval of the device’s owner prior to sending out any geolocation feedback. </p>
-          <p>Within a matter of minutes, Phone Trackerly gives you precise location information on any device that consents to the query.</p>
+        <div class="info">
+          <div class="info__img"><img src="data/info.jpg" width="947" height="633" alt="Don’t let stress stress you out"></div>
+          <div class="info__text">
+            <div class="info__label">More energy and less stress</div>
+            <div class="info__title">Don’t let stress <br> stress you out</div>
+            <div class="info__text text-content">
+              <p>Im alten Indien, sowie auch zur heutigen Zeit, werden der Wurzel der Schlafbeere noch viele andere Wirkungsweisen nachgesprochen. Die vielen unterschiedlichen Wirkstoffe sollen vielseitige Auswirkungen auf den Menschen haben.</p>
+              <p>In der ayurvedischen Medizin wird Ashwagandha unter anderem als Stärkungsmittel sowie zur Verbesserung des Schlafs eingesetzt.</p>
+              <p>Vor allem als Aphrodisiakum ist Ashwagandha bekannt. Aus den Wurzeln der Schlafbeere werden Liebestränke gebraut, die stimulierend und verführend wirken sollen und fester Bestandteil im Tantra sind.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="reviews">
+        <div class="reviews__title">Kundenstimmen</div>
+        <div class="reviews__head">
+          <div class="reviews__rate">
+            <div class="reviews__rate-stars">
+              <div class="rate" data-rate="4">
+                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item rate__item--big" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+              </div>
+            </div>
+            <div class="reviews__rate-text">(4,9) 50 Bewertungen</div>
+          </div>
+          <a href="#" class="reviews__btn btn">Produkt bewerten</a>
+        </div>
+        <div class="reviews__slider">
+          <div class="reviews__item">
+            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+            <div class="reviews__item-rate">
+              <div class="rate" data-rate="4">
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+              </div>
+            </div>
+            <div class="reviews__item-date">11.1.2020</div>
+            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+            </div>
+          </div>
+          <div class="reviews__item">
+            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+            <div class="reviews__item-rate">
+              <div class="rate" data-rate="4">
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+              </div>
+            </div>
+            <div class="reviews__item-date">11.1.2020</div>
+            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+            </div>
+          </div>
+          <div class="reviews__item">
+            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+            <div class="reviews__item-rate">
+              <div class="rate" data-rate="4">
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+              </div>
+            </div>
+            <div class="reviews__item-date">11.1.2020</div>
+            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+            </div>
+          </div>
+          <div class="reviews__item">
+            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+            <div class="reviews__item-rate">
+              <div class="rate" data-rate="4">
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+              </div>
+            </div>
+            <div class="reviews__item-date">11.1.2020</div>
+            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+            </div>
+          </div>
+          <div class="reviews__item">
+            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+            <div class="reviews__item-rate">
+              <div class="rate" data-rate="4">
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+              </div>
+            </div>
+            <div class="reviews__item-date">11.1.2020</div>
+            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+            </div>
+          </div>
+          <div class="reviews__item">
+            <div class="reviews__item-name" title="Philipp B.">Philipp B.</div>
+            <div class="reviews__item-rate">
+              <div class="rate" data-rate="4">
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+                <svg class="rate__item" width="19" height="18" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg"><path d="M10.1333 1.14099L12.3625 6.41694L18.0693 6.90721C18.4651 6.94139 18.6261 7.43525 18.3257 7.69523L13.997 11.4455L15.2941 17.0246C15.3841 17.4123 14.964 17.7173 14.624 17.5113L9.71953 14.5535L4.8151 17.5113C4.47416 17.7164 4.05496 17.4114 4.14492 17.0246L5.44209 11.4455L1.11248 7.69433C0.812027 7.43435 0.97215 6.94049 1.36886 6.90631L7.0757 6.41604L9.30483 1.14099C9.45955 0.773967 9.9786 0.773967 10.1333 1.14099Z" /></svg>
+              </div>
+            </div>
+            <div class="reviews__item-date">11.1.2020</div>
+            <div class="reviews__item-text text-content text-content--fz14 js-scroll">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="reviews__slider-controls">
+          <a href="#" data-slide="1" class="reviews__slider-first">
+            <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+            <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+          </a>
+          <div class="reviews__slider-counter">
+            <span class="reviews__slider-counter-current">1</span>/
+            <span class="reviews__slider-counter-all"></span>
+          </div>
+          <a href="#" data-slide="6" class="reviews__slider-last">
+            <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+            <svg width="11" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#right"></use></svg>
+          </a>
+        </div>
+      </div>
+      <div class="news">
+        <div class="news__title">Journal</div>
+        <div class="news__list">
+          <div class="news__item">
+            <a href="#" class="news__item-img"><img src="data/news.jpg" width="383" height="215" alt="So erhältst du mehr Energie"></a>
+            <a href="#" class="news__item-title" title="So erhältst du mehr Energie">So erhältst du mehr Energie</a>
+            <div class="news__item-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</div>
+          </div>
+          <div class="news__item">
+            <a href="#" class="news__item-img"><img src="data/news.jpg" width="383" height="215" alt="So erhältst du mehr Energie"></a>
+            <a href="#" class="news__item-title" title="So erhältst du mehr Energie">So erhältst du mehr Energie</a>
+            <div class="news__item-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</div>
+          </div>
+          <div class="news__item">
+            <a href="#" class="news__item-img"><img src="data/news.jpg" width="383" height="215" alt="So erhältst du mehr Energie"></a>
+            <a href="#" class="news__item-title" title="So erhältst du mehr Energie">So erhältst du mehr Energie</a>
+            <div class="news__item-text text-content text-content--fz14">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg">
+      <div class="container">
+        <div class="products-home">
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
+          </div>
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
+          </div>
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
+          </div>
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
+          </div>
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
+          </div>
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
+          </div>
+          <div class="products-home__item">
+            <a href="#" class="products-home__item-img"><img src="data/products-home.jpg" width="146" height="200" alt="TRIBULUS TERRESTRIS"></a>
+            <div class="products-home__item-info">
+              <a href="#" class="products-home__item-title">NATTOKINASE</a>
+              <div class="products-home__item-text">Ganz neu in unserem Shop und mit 80% Saponinen. Profitieren Sie jetzt vom Einführungspreis!</div>
+              <div class="products-home__item-buy btn btn--yellow">Jetzt einkaufen</div>
+              <a href="#" class="products-home__item-btn">Mehr erfahren</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <footer class="footer">
-  <div class="footer__container">
-    <div class="footer__left">
-      <div class="footer__logo">
-        <img src="data/logo-footer.svg" alt="logo-footer">
-        <a href="#" class="footer__logo-link"></a>
-      </div>
-      <div class="phone">
-        <div class="phone__title phone__title--small">Start using our services for <span>€0.50 / day</span></div>
-        <form class="phone__form">
-          <div class="phone__box">
-            <div class="phone__row">
-              <div class="select2-parent country-box">
-                <select class="init-select2" style="width: 100%;">
-                  <option value="+380" data-image="data/usa.svg">+380</option>
-                  <option value="+380" data-image="data/usa.svg">+380</option>
-                  <option value="+380" data-image="data/usa.svg">+380</option>
-                  <option value="+380" data-image="data/usa.svg">+380</option>
-                  <option value="+380" data-image="data/usa.svg">+380</option>
-                </select>
-              </div>
-              <div class="phone__tel">
-                <input type="tel" class="phone__tel-input js-input-tel">
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="phone__btn-footer">Start searching...</button>
+  <div class="container">
+    <div class="footer__top">
+      <nav class="footer__nav">
+        <ul>
+          <li>
+            <span>Shop</span>
+            <ul>
+              <li><a href="#">Tribulus Tereestris</a></li>
+              <li><a href="#">Roter Panax Ginseng</a></li>
+              <li><a href="#">Ashwagandha</a></li>
+              <li><a href="#">Nattokinase</a></li>
+            </ul>
+          </li>
+          <li>
+            <span>Support</span>
+            <ul>
+              <li><a href="#">Kontakt</a></li>
+              <li><a href="#">Zahlung & Versand</a></li>
+              <li><a href="#">Garantie</a></li>
+              <li><a href="#">Datenschutz</a></li>
+              <li><a href="#">Widerruf</a></li>
+              <li><a href="#">AGBs</a></li>
+            </ul>
+          </li>
+          <li>
+            <span>Brand</span>
+            <ul>
+              <li><a href="#">Über Fitness Vital</a></li>
+              <li><a href="#">Magazin</a></li>
+              <li><a href="#">Ashwagandha</a></li>
+              <li><a href="#">Unsere Partner</a></li>
+              <li><a href="#">Jobs</a></li>
+            </ul>
+          </li>
+          <li>
+            <span>Mehr</span>
+            <ul>
+              <li><a href="#">Impressum</a></li>
+              <li><a href="#">B2B/Affiliate</a></li>
+              <li><a href="#">Mikro Stipendium</a></li>
+              <li><a href="#">Datenschutz</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="footer__contacts">
+        <div class="footer__contacts-title">Newsletter</div>
+        <div class="footer__contacts-descriptions">Für unseren Newsletter anmelden und 10% Rabatt auf deine erste Bestellung erhalten.</div>
+        <form class="footer__form">
+          <input type="email" class="footer__form-input" placeholder="Deine E-Mail-Adresse">
+          <button type="submit" class="footer__form-btn">Anmelden</button>
+          <p class="error">error</p>
         </form>
+        <div class="footer__social">
+          <div class="footer__social-title">Folge uns</div>
+          <ul class="footer__social-list">
+            <li><a href="#" target="_blank" rel="nofollow">Instagram</a></li>
+            <li><a href="#" target="_blank" rel="nofollow">Facebook</a></li>
+            <li><a href="#" target="_blank" rel="nofollow">Pinterest</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-    <nav class="footer__nav">
-      <div class="footer__nav-title">About & Services</div>
-      <ul>
-        <li><a href="#">Homepage</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Locate Phone</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-    <nav class="footer__nav">
-      <div class="footer__nav-title">Account</div>
-      <ul>
-        <li><a href="#">Signup</a></li>
-        <li><a href="#">My Account</a></li>
-        <li><a href="#">Billing</a></li>
-        <li><a href="#">Order Record</a></li>
-      </ul>
-    </nav>
-    <div class="footer__info">
-      <div class="footer__info-row">
-        <div class="footer__info-title">142,923</div>
-        <div class="footer__info-value">Unique Users</div>
+    <div class="footer__bottom">
+      <div class="footer__bottom-cell">
+        <div class="footer__bottom-title">Schnelle Lieferung</div>
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/dhl.svg" width="94" height="30" alt="Schnelle Lieferung"></a></li>
+        </ul>
       </div>
-      <div class="footer__info-row">
-        <div class="footer__info-title">14,329</div>
-        <div class="footer__info-value">Phones Located</div>
+      <div class="footer__bottom-cell">
+        <div class="footer__bottom-title">Sicher bezahlen mit</div>
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/visa.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/master.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/pp.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/sofort.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/rech.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/vorkasse.jpg" width="45" height="32" alt="Sicher bezahlen mit"></a></li>
+        </ul>
+      </div>
+      <div class="footer__bottom-cell">
+        <div class="footer__bottom-title">Zertifizierter Onlineshop</div>
+        <ul class="footer__bottom-list">
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/ssl.jpg" width="45" height="45" alt="Zertifizierter Onlineshop"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/e.jpg" width="51" height="51" alt="Zertifizierter Onlineshop"></a></li>
+          <li class="footer__bottom-item"><a href="#" target="_blank" rel="nofollow"><img src="data/tage.jpg" width="44" height="44" alt="Zertifizierter Onlineshop"></a></li>
+        </ul>
       </div>
     </div>
-  </div>
-  <div class="footer__line"></div>
-  <div class="footer__bottom">
-    <div class="footer__copy">© 2020 copyright all right reserved</div>
-    <ul class="footer__bottom-list">
-      <li><a href="#">Privacy & Policy.</a></li>
-      <li><a href="#">FAQ.</a></li>
-      <li><a href="#">Terms & Conditions.</a></li>
-    </ul>
   </div>
 </footer>
-<!-- to show the popup add a class "active" to "popup" : example "popup popup--subscribe active"-->
-<div class="popup popup--subscribe">
-  <div class="popup__overlay js-close-popup"></div>
-  <div class="popup__box">
-    <div class="popup__close js-close-popup"><svg width="31" height="31"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg></div>
-    <div class="popup__head">
-      <img src="data/popup-bg.svg" alt="popup-bg" class="popup__head-bg">
-      <div class="popup__title">Cancel Subscription</div>
-    </div>
-    <div class="popup__subscribe">
-      <div class="popup__subscribe-title">Are you sure you want to cancelyour subscription?</div>
-      <div class="popup__subscribe-text">
-        <p>To unsubscribe from our location service, click on the link below. Your request will be taken into account straight away by our services. </p>
-        <p>You will no longer be charged and your subscription period shall no longer be renewed. A confirmation email will be sent to you (in case you don’t receive an email from us, please check your spam folder).</p>
-      </div>
-      <div class="popup__subscribe-btn btn about__top-btn">CONFIRM</div>
-    </div>
-  </div>
-</div>
-
-<div class="popup popup--create-account">
-  <div class="popup__overlay js-close-popup"></div>
-  <div class="popup__box">
-    <div class="popup__close popup__close--mobile js-close-popup"><svg width="31" height="31"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg></div>
-    <div class="popup__head popup__head--locate">
-      <img src="data/popup-bg.svg" alt="popup-bg" class="popup__head-bg">
-      <div class="popup__locate">Locate “07231832923”</div>
-      <div class="popup__title-locate">Create Account</div>
-    </div>
-    <form class="popup__form">
-      <div class="popup__form-box">
-        <div class="popup__form-row">
-          <div class="popup__form-cell">
-            <div class="input-box">
-              <div class="input-box__icon input-box__icon--small"><svg width="10" height="11"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#man2"></use></svg></div>
-              <input type="text" class="input-box__input input-box__input--small input-box__input--icon" placeholder="First Name">
-            </div>
-          </div>
-          <div class="popup__form-cell">
-            <div class="input-box">
-              <input type="text" class="input-box__input input-box__input--small" placeholder="Second Name">
-            </div>
-          </div>
-        </div>
-        <div class="popup__form-row">
-          <div class="popup__form-cell">
-            <div class="input-box">
-              <div class="input-box__icon input-box__icon--small"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#email"></use></svg></div>
-              <input type="email" class="input-box__input input-box__input--small input-box__input--icon" placeholder="example@company.com">
-            </div>
-          </div>
-        </div>
-        <div class="popup__form-row">
-          <div class="popup__form-cell">
-            <div class="input-box">
-              <input type="email" class="input-box__input input-box__input--small" placeholder="Confirm Email">
-            </div>
-          </div>
-        </div>
-        <div class="popup__form-row">
-          <div class="popup__form-cell">
-            <div class="input-box">
-              <div class="input-box__icon input-box__icon--small"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#login"></use></svg></div>
-              <input type="password" class="input-box__input input-box__input--small input-box__input--icon" placeholder="Password (0-9) (a-z) (A-Z)">
-            </div>
-          </div>
-        </div>
-      </div>
-      <label class="popup__form-chechbox">
-        <input type="checkbox" class="input-checkbox" checked>
-        <span class="input-checkbox-text">I have read and accept the <a href="#">Terms of Use</a> and the <a href="#">Privacy Policy</a>.</span>
-      </label>
-      <div class="popup__form-btn-box">
-        <button type="submit" class="popup__form-btn btn btn--small">Continue</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="popup popup--trial-24">
-  <div class="popup__overlay js-close-popup"></div>
-  <div class="popup__box">
-    <div class="popup__close popup__close--mobile js-close-popup"><svg width="31" height="31"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg></div>
-    <div class="popup__head popup__head--locate">
-      <img src="data/popup-bg.svg" alt="popup-bg" class="popup__head-bg">
-      <div class="popup__locate">Locate “07231832923”</div>
-      <div class="popup__title-locate">Trial 24 Hours</div>
-    </div>
-    <form class="popup__form">
-      <div class="popup__form-text">Starting price of <span>€0.50</span> for a full day of usage</div>
-      <div class="popup__form-box">
-        <div class="popup__form-row">
-          <div class="popup__form-cell">
-            <div class="input-box">
-              <div class="input-box__icon input-box__icon--small"><svg width="13" height="10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#card"></use></svg></div>
-              <input type="text" class="input-box__input input-box__input--small input-box__input--icon error" placeholder="Card Number">
-              <span class="error">Incorrect card number</span>
-            </div>
-          </div>
-        </div>
-        <div class="popup__form-row">
-          <div class="popup__form-cell popup__form-cell--flex">
-            <div class="input-box">
-              <div class="input-box__icon input-box__icon--small"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#calendar"></use></svg></div>
-              <input type="text" class="input-box__input input-box__input--bdrsl input-box__input--small input-box__input--icon" placeholder="MM">
-            </div>
-            <div class="input-box">
-              <input type="text" class="input-box__input input-box__input--bdrsr input-box__input--small" placeholder="YY">
-            </div>
-          </div>
-          <div class="popup__form-cell">
-            <div class="input-box">
-              <div class="input-box__icon input-box__icon--small"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#login"></use></svg></div>
-              <input type="text" class="input-box__input input-box__input--small input-box__input--icon error" placeholder="CVV">
-              <span class="error">Insert CVC</span>
-            </div>
-          </div>
-        </div>
-        <div class="popup__form-row">
-          <div class="popup__form-cell">
-            <div class="input-box">
-              <input type="text" class="input-box__input input-box__input--small" placeholder="Full name on card">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="popup__form-text-pay">Amount to pay: 0,99 EUR</div>
-      <div class="popup__form-btn-box">
-        <button type="submit" class="popup__form-btn btn btn--small btn--blue">
-          PAY NOW
-          <svg width="28" height="23" style="opacity: .3;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#check"></use></svg>
-        </button>
-      </div>
-      <div class="pay-list">
-        <div class="pay-list__item"><img src="data/visa2.png" alt="visa2"></div>
-        <div class="pay-list__item"><img src="data/mastercard.svg" alt="mastercard"></div>
-        <div class="pay-list__item"><img src="data/stripe.png" alt="stripe"></div>
-        <div class="pay-list__item"><img src="data/secure.png" alt="secure"></div>
-      </div>
-    </form>
-    <!-- to show the preloader add the class "active" -->
-    <div class="popup__preloader">
-      <div class="popup__preloader-box">
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-        <div class="popup__preloader-dot"></div>
-      </div>
-    </div>
-    <div class="popup__attention">
-      <div class="popup__attention-icon">
-        <svg width="24" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#attention"></use></svg>
-      </div>
-      <div class="popup__attention-box">
-        <div class="popup__attention-text">We have encountered a problem while trying to process your payment.</div>
-        <div class="popup__attention-descriptions">Make sure all the information is correct. If you require assistance, <a href="#">contact us.</a></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="popup popup--billing">
-  <div class="popup__overlay js-close-popup"></div>
-  <div class="popup__box">
-    <div class="popup__close popup__close--mobile js-close-popup"><svg width="31" height="31"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg></div>
-    <div class="popup__head popup__head--locate">
-      <img src="data/popup-bg.svg" alt="popup-bg" class="popup__head-bg">
-      <div class="popup__locate">Locate “07231832923”</div>
-      <div class="popup__title-locate">Account Billing Info</div>
-    </div>
-    <form class="popup__form">
-      <div class="popup__form-text">Please complete the fields below in order to use our app.</div>
-      <div class="popup__form-box">
-        <div class="popup__form-row">
-          <div class="popup__form-cell">
-            <div class="input-box">
-              <div class="locate-phone__form-label locate-phone__form-label--small">ADDRESS</div>
-              <input type="text" class="input-box__input input-box__input--small" placeholder="Billing address">
-            </div>
-          </div>
-        </div>
-        <div class="popup__form-row">
-          <div class="popup__form-cell">
-            <div class="input-box">
-              <div class="locate-phone__form-label locate-phone__form-label--small">City</div>
-              <input type="text" class="input-box__input input-box__input--small" placeholder="Ex: Tokyo">
-            </div>
-          </div>
-          <div class="popup__form-cell">
-            <div class="input-box">
-              <div class="locate-phone__form-label locate-phone__form-label--small">POSTAL CODE</div>
-              <input type="text" class="input-box__input input-box__input--small" placeholder="(1-9) (A-Z)">
-            </div>
-          </div>
-        </div>
-        <div class="popup__form-row">
-          <div class="popup__form-cell">
-            <div class="input-box">
-              <div class="locate-phone__form-label locate-phone__form-label--small">country</div>
-              <div class="select2-parent">
-                <select class="init-select2" style="width: 100%;">
-                  <option value="Select">Select</option>
-                  <option value="Select">Select</option>
-                  <option value="Select">Select</option>
-                  <option value="Select">Select</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="popup__form-btn-box">
-        <button type="submit" class="popup__form-btn btn btn--small">Continue</button>
-      </div>
-    </form>
-  </div>
-</div>
   <script src="/js/app.js"></script>
 
 </body>
