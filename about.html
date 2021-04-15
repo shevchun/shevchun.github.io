@@ -3,227 +3,360 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="Paragraph">
+  <meta name="description" content="AceBet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>Paragraph</title>
-  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <title>AceBet</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
   <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
-  <link rel="preload" href="/fonts/SuisseIntlRegular.woff2" as="font" type="font/woff" crossorigin>
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="preloader">
-  <div class="lds-ellipsis">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
-<header class="header">
-  <div class="container">
-    <div class="header__box">
-      <div class="header__left">
-        <div class="header__logo">
-          <img src="images/logo.svg" width="150" height="20" alt="img">
-          <a href="#" class="header__logo-link"></a>
+  <header class="header">
+  <div class="header__box">
+    <div class="header__mobile-btn">
+      <svg class="header__mobile-open" width="24" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
+      <svg class="header__mobile-close" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg>
+    </div>
+    <div class="header__logo">
+      <img src="data/logo.png" width="180" height="50" alt="logo-img">
+      <a href="#" class="header__logo-link"></a>
+    </div>
+    <div class="header__holder">
+      <div class="header__top">
+        <form class="header__form">
+          <input type="text" placeholder="Search" class="header__form-input">
+          <button class="header__form-btn"><svg width="14" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
+        </form>
+        <div class="header__country js-country-parent">
+          <div class="header__country-head js-country">
+            <div class="header__country-title">Country</div>
+            <div class="header__country-current">
+              <img src="data/country.png" width="16" height="16" alt="img">
+              <span class="header__country-name">Singapore</span>
+              <svg width="10" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg>
+            </div>
+          </div>
+          <ul class="header__country-list js-country-list">
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                Afghanistan
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                Albania
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                Algeria
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                American Samoa
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="currency">
-          <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8.66935 8.19606C8.66935 7.21506 8.32393 6.45513 7.64344 5.93872C7.13786 5.59504 6.56801 5.35711 5.96814 5.23924L4.48109 4.89382C3.48973 4.6572 2.84379 4.45858 2.56572 4.30142C2.36376 4.1894 2.19749 4.0227 2.08598 3.82046C1.97447 3.61822 1.92225 3.38864 1.93532 3.15807C1.93479 2.92284 1.9823 2.68998 2.07497 2.47377C2.16763 2.25756 2.30348 2.06256 2.47418 1.90073C2.8317 1.54321 3.42928 1.36187 4.25311 1.36187C5.27384 1.36187 6.00441 1.64511 6.42928 2.20297C6.68953 2.60091 6.84408 3.0586 6.87833 3.53285V3.56567H8.34465V3.52767C8.34465 2.30314 7.94569 1.39986 7.15812 0.840277C6.31565 0.266267 5.31361 -0.0274538 4.29456 0.000898973C3.08558 0.000898973 2.12185 0.322142 1.45519 0.957721C1.1251 1.2725 0.865007 1.65326 0.69182 2.07521C0.518634 2.49717 0.436241 2.95086 0.450003 3.40677C0.449796 3.58562 0.464818 3.76415 0.494909 3.94045C0.149124 4.49764 -0.0228402 5.14522 0.000953243 5.80055C0.000953243 6.78156 0.346377 7.54149 1.02341 8.05962C1.52842 8.4039 2.09759 8.64296 2.69698 8.76256L4.18403 9.10798C5.1823 9.3515 5.82134 9.55185 6.0994 9.70901C6.30264 9.82009 6.47033 9.98639 6.5831 10.1887C6.69587 10.391 6.74912 10.6211 6.73671 10.8524C6.73632 11.0868 6.68819 11.3188 6.59525 11.5341C6.50231 11.7493 6.36651 11.9434 6.19612 12.1045C5.83861 12.462 5.24275 12.6434 4.4241 12.6434C3.4051 12.6434 2.6728 12.3567 2.24966 11.7988C1.99002 11.4007 1.83607 10.943 1.80234 10.4689V10.4344H0.315288V10.4724C0.315288 11.6969 0.710798 12.6019 1.49836 13.1615C2.34129 13.7375 3.34488 14.0319 4.36538 14.0026H4.37401C5.58299 14.0026 6.53982 13.6831 7.20476 13.051C7.53529 12.7364 7.79591 12.3557 7.96969 11.9338C8.14346 11.5119 8.22649 11.0581 8.21339 10.6019C8.21353 10.4242 8.19851 10.2469 8.16849 10.0717C8.5203 9.5111 8.69485 8.85742 8.66935 8.19606ZM7.14431 8.48967C6.74707 8.23579 6.08904 7.99917 5.18576 7.78846L3.75052 7.44304C2.98023 7.25997 2.40683 7.04235 2.04759 6.79883C1.83764 6.6645 1.67487 6.46798 1.58198 6.23669C1.4891 6.00541 1.47073 5.7509 1.52945 5.50867C2.1495 5.82309 2.8079 6.05533 3.488 6.19952L4.92496 6.53458C5.69526 6.70729 6.26866 6.93354 6.6279 7.17706C6.98714 7.42059 7.14603 7.84028 7.14603 8.41886C7.14603 8.4534 7.14603 8.4724 7.14431 8.48967Z" fill="black"/>
-          </svg>
+        <div class="header__contacts">
+          <div class="header__contacts-item">
+            <div class="header__contacts-icon"><svg width="15" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#tel"></use></svg></div>
+            <ul class="header__contacts-list">
+              <li><a href="tel:+6581369998">+65 8136 9998</a></li>
+            </ul>
+          </div>
+          <div class="header__contacts-item">
+            <div class="header__contacts-icon"><svg width="14" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mail"></use></svg></div>
+            <ul class="header__contacts-list">
+              <li><a href="mailto:acebet@gmail.com">acebet@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="header__btn js-create-account">
+          <svg width="20" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#account"></use></svg>
+          Create Account
         </div>
       </div>
-      <div class="header__right">
-        <nav class="header__nav">
-          <ul>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="lang">
-          <svg class="lang__arrow" width="6" height="4"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg>
-          <div class="lang__current">En</div>
-          <ul class="lang__list">
-            <li class="lang__item"><a href="#" class="lang__link">DE</a></li>
-            <li class="lang__item"><a href="#" class="lang__link">FR</a></li>
-          </ul>
-        </div>
-        <div class="header__search">
-          <div class="header__search-btn"><svg width="15" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></div>
-          <form class="header__search-form">
-            <input type="text" class="header__search-input" placeholder="Enter keyword">
-          </form>
-        </div>
-        <div class="header__mobile-btn"><svg width="24" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg></div>
-      </div>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="#">Online Betting</a></li>
+          <li><a href="#">SportsBook +</a></li>
+          <li><a href="#">Promotion +</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
     </div>
   </div>
   <div class="header__mobile">
-    <div class="header__mobile-box">
-      <div class="header__mobile-head">
-        <div class="header__mobile-logo">
-          <img src="images/logo-white.svg" width="150" height="20" alt="img">
-          <a href="#" class="header__logo-link"></a>
-        </div>
-        <div class="header__mobile-close js-close-menu"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-      </div>
-      <div class="header__mobile-contacts">
-        <div class="header__mobile-contacts-title">Contact us</div>
-        <ul class="header__mobile-contacts-list">
-          <li><a href="mailto:">ofﬁce@paragraph.com</a></li>
-        </ul>
-      </div>
-    </div>
+    <div class="header__mobile-overlay"></div>
+    <div class="header__mobile-box"></div>
   </div>
 </header>
   <div class="wrapper">
-    <div class="container">
-      <div class="projects-title title">About</div>
-      <div class="projects-nav">
-        <ul class="tabs-style">
-          <li><a href="#" class="active">About home</a></li>
-          <li><a href="#">History</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Press</a></li>
-        </ul>
-      </div>
-      <div class="title-description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-    </div>
-    <div class="about">
+    <div class="main">
       <div class="container">
-        <div class="about__top-img">
-          <img src="data/about.jpg" width="1156" height="681" alt="img">
-        </div>
-        <div class="about__nav">
-          <div class="about__nav-item">
-            <div class="about__nav-title">History</div>
-            <div class="about__nav-box text-box">
-              <div class="text-content">
-                <h2>The architectural office “Drozdov&Partners” was founded in Kharkiv in 1997. The initial projects of the office emerged as a result of the first wave of private investment in Ukraine after the collapse of the Soviet Union.</h2>
-                <p>Due to a radical rupture of relations in the professional discourse, we had to draft a new agenda for ourselves. Our major focus was openness and a search for new relations between urban space and architecture, architecture and nature. Gradually our interests have shifted from visual-spatial communication towards events and processes and their integration into the urban environment. A balance between the public and the private, the commercial and the public has become our key topic. During the last decade, the office has expanded its agenda with programme-based design, adaptability and a search for new ways of interpreting tectonics in the age of “wraps”.</p>
+        <ul class="breadcrumb">
+          <li><a href="#">Main</a></li>
+          <li><a href="#">sportbook</a></li>
+          <li><span>Trusted Sportsbook Agent in Singapore</span></li>
+        </ul>
+        <div class="about">
+          <div class="about__top"><img src="data/acebet99.jpg" width="1074" height="255" alt="acebet99"></div>
+          <div class="about__head">
+            <div class="about__head-left">
+              <div class="about__head-title title">About us</div>
+            </div>
+            <div class="about__head-right">
+              <div class="about__head-text text-content">
+                <p><b>Acebet99 is your ultimate one stop destination for all your online sportsbook and casino needs.</b> We have catered to Singaporeans for well over a decade with great reviews.</p>
               </div>
-              <a href="#" class="about__read-more">read more</a>
             </div>
           </div>
-          <div class="about__nav-item">
-            <div class="about__nav-title">Team</div>
-            <div class="about__nav-box text-box">
-              <div class="team-list">
-                <div class="team">
-                  <div class="team__img"><img src="data/team1.jpg" width="311" height="389" alt="img"></div>
-                  <div class="team__name">Anton Bozhko</div>
-                  <div class="team__position">architect</div>
+          <div class="about__list">
+            <div class="about__item">
+              <div class="about__item-img"><img src="data/team.png" width="300" height="461" alt="team"></div>
+              <div class="about__item-box">
+                <div class="about__item-title">
+                  <div class="label-2 title title--white">Dedicated</div>
+                  <div class="title">Team</div>
                 </div>
-                <div class="team">
-                  <div class="team__img"><img src="data/team2.jpg" width="311" height="389" alt="img"></div>
-                  <div class="team__name">Oleg Drozdov</div>
-                  <div class="team__position">founder, leading architect</div>
-                </div>
-                <div class="team">
-                  <div class="team__img"><img src="data/team3.jpg" width="311" height="389" alt="img"></div>
-                  <div class="team__name">Lika Chagunava</div>
-                  <div class="team__position">director</div>
-                </div>
-                <div class="team">
-                  <div class="team__img"><img src="data/team4.jpg" width="311" height="389" alt="img"></div>
-                  <div class="team__name">Vyacheslav Zhemir</div>
-                  <div class="team__position">leading architect</div>
+                <div class="about__item-text text-content">
+                  <p>Our dedicated team always delivers the best and fastest service to all our clients. Years of experience enables them to support you in all your queries. This includes everything from fund deposits and withdrawals, account enquiries as well as providing sportsbook guidance and assistance.</p>
                 </div>
               </div>
-              <a href="#" class="about__read-more">read more about team</a>
             </div>
-          </div>
-          <div class="about__nav-item">
-            <div class="about__nav-title">Vacancies</div>
-            <div class="about__nav-box text-box">
-              <div class="text-content">
-                <p><b>Architect</b> <br>Requirements: <br> 
-                  - degree in architecture and related fields (graduate students can also apply);<br>
-                  - advanced skills in ArchiCAD, mastery with SketchUp;<br>
-                  - ability to work in a team;<br>
-                  - English (pre-intermediate and higher).
-                </p>
-                <p>
-                  Your competitive advantages:<br>
-                  - awards at international architectural competitions;<br>
-                  - aegree from a foreign university or internship experience abroad.
-                </p>
-                <p>
-                  What we offer:<br>
-                  - opportunities for professional growth;<br>
-                  - a vast collection of modern professional books;<br>
-                  - competitive salary.
-                </p>
-                <p>
-                  We're always interested in new talented architects. <br>
-                  We are waiting for your portfolio (in pdf) and CV: hr@drozdov-partners.com
-                </p>
-              </div>
-              <a href="#" class="about__read-more">learn more</a>
-            </div>
-          </div>
-          <div class="about__nav-item">
-            <div class="about__nav-title">Latest publications</div>
-            <div class="about__nav-box text-box">
-              <div class="press-list">
-                <div class="press">
-                  <div class="press__img"><img src="data/press.jpg" width="423" alt="549"></div>
-                  <div class="press__title">ID Interior Design Magazine, № 05-06 (110) / VG Horse Club and Face2Face</div>
-                  <a href="#" download class="press__download">pdf (934.15 KB)</a>
+            <div class="about__item">
+              <div class="about__item-img"><img src="data/Services.png" width="300" height="461" alt="Services"></div>
+              <div class="about__item-box">
+                <div class="about__item-title">
+                  <div class="label-2 title title--white">High End</div>
+                  <div class="title">Services</div>
+                </div>
+                <div class="about__item-text text-content">
+                  <p>Our services cater to all levels, from a newbie to the high roller. We deliver your payouts daily via local banks to ensure fast and secure transactions. Access our services on any device, from anywhere.</p>
                 </div>
               </div>
-              <a href="#" class="about__read-more">read more</a>
             </div>
           </div>
         </div>
+        <div class="partners-about">
+          <div class="partners-about__head">
+            <div class="label-2 title title--white">Trusted</div>
+            <div class="title">Partners</div>
+          </div>
+          <div class="partners-about__descriptions">Acebet acts as an agent to all <span>the biggest bookmakers and online casinos in the industry.</span> This includes reputable names like</div>
+          <div class="partners-about__list">
+            <div class="partners-about__item">
+              <div class="partners-about__item-img"><img src="data/2BCBet.png" width="180" height="62" alt="2BCBet"></div>
+              <div class="partners-about__item-title">2BCBet</div>
+            </div>
+            <div class="partners-about__item">
+              <div class="partners-about__item-img"><img src="data/TBSbet2.png" width="180" height="62" alt="TBSbet"></div>
+              <div class="partners-about__item-title">TBSbet</div>
+            </div>
+            <div class="partners-about__item">
+              <div class="partners-about__item-img"><img src="data/Maxbet2.png" width="180" height="62" alt="Maxbet2"></div>
+              <div class="partners-about__item-title">Maxbet</div>
+            </div>
+            <div class="partners-about__item">
+              <div class="partners-about__item-img"><img src="data/AMDBet.png" width="180" height="62" alt="AMDBet"></div>
+              <div class="partners-about__item-title">AMDBet</div>
+            </div>
+          </div>
+        </div>
+        <form class="form">
+          <picture class="form__img">
+            <source srcset="data/form-img-small.png" media="(max-width: 1200px)">
+            <img src="data/form-img.png" width="1080" height="394" alt="form-img">
+          </picture>
+          <div class="form__head">
+            <div class="form__head-label label">
+              Register
+            </div>
+            <div class="form__head-title">with US</div>
+          </div>
+          <div class="form__row">
+            <div class="form__row-cell">
+              <input type="text" placeholder="NAME" class="form__input error">
+              <p class="error">Error text here</p>
+            </div>
+            <div class="form__row-cell">
+              <input type="email" placeholder="E-MAIL" class="form__input">
+            </div>
+            <div class="form__row-cell">
+              <input type="tel" placeholder="PHONE NUMBER" class="form__input">
+            </div>
+            <div class="form__row-cell country">
+              <div class="country__label">COUNTRY</div>
+              <div class="select2-parent country__box">
+                <select class="init-select2" style="width: 100%;">
+                  <option value="SINGAPORE" data-image="data/country.png">SINGAPORE</option>
+                  <option value="Ukraine" data-image="data/country.png">Ukraine</option>
+                  <option value="SINGAPORE" data-image="data/country.png">SINGAPORE</option>
+                  <option value="SINGAPORE" data-image="data/country.png">SINGAPORE</option>
+                  <option value="SINGAPORE" data-image="data/country.png">SINGAPORE</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form__btn-box">
+            <button type="submit" class="form__btn btn-3">REGISTER</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
   <footer class="footer">
-  <div class="footer__container container">
-    <div class="footer__left">
-      <div class="footer__copy">© 2020, PARAGRAPH. All Rights Reserved.</div>
-    </div>
-    <div class="footer__right">
-      <div class="footer__cell">
-        <nav class="footer__nav">
-          <ul>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Contacts</a></li>
-          </ul>
-        </nav>
-        <a href="#" target="_blank" rel="nofollow" class="footer__link">Terms & Conditions</a>
+  <div class="footer__top">
+    <div class="footer__container">
+      <div class="footer__row">
+        <div class="footer__cell footer__cell--attention">
+          <div class="attention">
+            <div class="attention__icon">
+              <img src="data/attention.svg" width="34" height="34" alt="img">
+            </div>
+            <div class="attention__text">PLEASE PAY RESPONSIBLY</div>
+          </div>
+        </div>
+        <div class="footer__cell"><img src="data/dbs.png" width="200" height="30" alt="dbs"></div>
+        <div class="footer__cell"><img src="data/ocbc.png" width="200" height="30" alt="ocbc"></div>
+        <div class="footer__cell"><img src="data/posb.png" width="200" height="30" alt="posb"></div>
+        <div class="footer__cell"><img src="data/uob.png" width="200" height="30" alt="uob"></div>
       </div>
-      <div class="footer__cell">
+    </div>
+  </div>
+  <div class="footer__middle">
+    <div class="footer__container">
+      <div class="footer__row">
+        <div class="footer__logo">
+          <img src="data/logo.png" width="150" height="40" alt="logo-img">
+          <a href="#" class="footer__logo-link"></a>
+        </div>
         <nav class="footer__nav">
           <ul>
-            <li><a href="#" target="_blank" rel="nofollow">Facebook</a></li>
-            <li><a href="#" target="_blank" rel="nofollow">Instagram</a></li>
-            <li><a href="#" target="_blank" rel="nofollow">Telegram</a></li>
-            <li><a href="#" target="_blank" rel="nofollow">Twitter</a></li>
-            <li><a href="#" target="_blank" rel="nofollow">Youtube</a></li>
+            <li><a href="#">Online Betting</a></li>
+            <li><a href="#">SportsBook +</a></li>
+            <li><a href="#">Promotion +</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Search Icon</a></li>
           </ul>
         </nav>
-        <a href="#" target="_blank" rel="nofollow" class="footer__link">Privacy Policy</a>
+        <div class="footer__country js-country-parent">
+          <div class="footer__country-head js-country">
+            <div class="footer__country-title">Country</div>
+            <div class="footer__country-current">
+              <img src="data/country.png" width="16" height="16" alt="img">
+              <span class="footer__country-name">Singapore</span>
+              <svg width="10" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg>
+            </div>
+          </div>
+          <ul class="footer__country-list js-country-list">
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                Afghanistan
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                Albania
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                Algeria
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                American Samoa
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__contacts">
+          <div class="footer__contacts-item">
+            <div class="footer__contacts-icon"><svg width="15" height="15">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#tel"></use>
+              </svg></div>
+            <ul class="footer__contacts-list">
+              <li><a href="tel:+6581369998">+65 8136 9998</a></li>
+            </ul>
+          </div>
+          <div class="footer__contacts-item">
+            <div class="footer__contacts-icon"><svg width="14" height="12">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mail"></use>
+              </svg></div>
+            <ul class="footer__contacts-list">
+              <li><a href="mailto:acebet@gmail.com">acebet@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="footer__container">
+      <div class="footer__bottom-box">
+        <div class="footer__bottom-left">
+          <div class="footer__copy">COPYRIGHT @ 2018. ACEBET99. ALL RIGHTS RESERVED</div>
+        </div>
+        <div class="footer__bottom-right">
+          <ul class="footer__policy">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </footer>
-
+<div class="popup popup--review">
+  <div class="popup__overlay js-close-popup"></div>
+  <div class="popup__box">
+    <div class="popup__close js-close-popup"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+    <div class="popup__title-box">
+      <div class="popup__label label-2 label-2--small title-small title-small--white">Post</div>
+      <div class="popup__title title-small">Testimonials</div>
+    </div>
+    <form class="popup__form">
+      <div class="popup__form-row">
+        <div class="popup__form-cell">
+          <input type="text" class="input-style" placeholder="Title:">
+          <p class="error">Error text here</p>
+        </div>
+        <div class="popup__form-cell">
+          <input type="text" class="input-style" placeholder="Name:">
+        </div>
+      </div>
+      <div class="popup__form-row">
+        <div class="popup__form-cell popup__form-cell--100">
+          <textarea class="popup__textarea textarea-style" placeholder="Post:"></textarea>
+        </div>
+      </div>
+      <div class="popup__form-btn-box">
+        <button class="popup__form-btn btn-3 btn-3--bg" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
   <script src="/js/app.js"></script>
 
 </body>

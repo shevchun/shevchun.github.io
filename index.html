@@ -3,214 +3,528 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="Paragraph">
+  <meta name="description" content="AceBet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>Paragraph</title>
-  <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <title>AceBet</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
   <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png"> -->
-  <link rel="preload" href="/fonts/SuisseIntlRegular.woff2" as="font" type="font/woff" crossorigin>
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="preloader">
-  <div class="lds-ellipsis">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
-<header class="header">
-  <div class="container">
-    <div class="header__box">
-      <div class="header__left">
-        <div class="header__logo">
-          <img src="images/logo.svg" width="150" height="20" alt="img">
-          <a href="#" class="header__logo-link"></a>
+  <header class="header">
+  <div class="header__box">
+    <div class="header__mobile-btn">
+      <svg class="header__mobile-open" width="24" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
+      <svg class="header__mobile-close" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close2"></use></svg>
+    </div>
+    <div class="header__logo">
+      <img src="data/logo.png" width="180" height="50" alt="logo-img">
+      <a href="#" class="header__logo-link"></a>
+    </div>
+    <div class="header__holder">
+      <div class="header__top">
+        <form class="header__form">
+          <input type="text" placeholder="Search" class="header__form-input">
+          <button class="header__form-btn"><svg width="14" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
+        </form>
+        <div class="header__country js-country-parent">
+          <div class="header__country-head js-country">
+            <div class="header__country-title">Country</div>
+            <div class="header__country-current">
+              <img src="data/country.png" width="16" height="16" alt="img">
+              <span class="header__country-name">Singapore</span>
+              <svg width="10" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg>
+            </div>
+          </div>
+          <ul class="header__country-list js-country-list">
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                Afghanistan
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                Albania
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                Algeria
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                American Samoa
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="currency">
-          <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8.66935 8.19606C8.66935 7.21506 8.32393 6.45513 7.64344 5.93872C7.13786 5.59504 6.56801 5.35711 5.96814 5.23924L4.48109 4.89382C3.48973 4.6572 2.84379 4.45858 2.56572 4.30142C2.36376 4.1894 2.19749 4.0227 2.08598 3.82046C1.97447 3.61822 1.92225 3.38864 1.93532 3.15807C1.93479 2.92284 1.9823 2.68998 2.07497 2.47377C2.16763 2.25756 2.30348 2.06256 2.47418 1.90073C2.8317 1.54321 3.42928 1.36187 4.25311 1.36187C5.27384 1.36187 6.00441 1.64511 6.42928 2.20297C6.68953 2.60091 6.84408 3.0586 6.87833 3.53285V3.56567H8.34465V3.52767C8.34465 2.30314 7.94569 1.39986 7.15812 0.840277C6.31565 0.266267 5.31361 -0.0274538 4.29456 0.000898973C3.08558 0.000898973 2.12185 0.322142 1.45519 0.957721C1.1251 1.2725 0.865007 1.65326 0.69182 2.07521C0.518634 2.49717 0.436241 2.95086 0.450003 3.40677C0.449796 3.58562 0.464818 3.76415 0.494909 3.94045C0.149124 4.49764 -0.0228402 5.14522 0.000953243 5.80055C0.000953243 6.78156 0.346377 7.54149 1.02341 8.05962C1.52842 8.4039 2.09759 8.64296 2.69698 8.76256L4.18403 9.10798C5.1823 9.3515 5.82134 9.55185 6.0994 9.70901C6.30264 9.82009 6.47033 9.98639 6.5831 10.1887C6.69587 10.391 6.74912 10.6211 6.73671 10.8524C6.73632 11.0868 6.68819 11.3188 6.59525 11.5341C6.50231 11.7493 6.36651 11.9434 6.19612 12.1045C5.83861 12.462 5.24275 12.6434 4.4241 12.6434C3.4051 12.6434 2.6728 12.3567 2.24966 11.7988C1.99002 11.4007 1.83607 10.943 1.80234 10.4689V10.4344H0.315288V10.4724C0.315288 11.6969 0.710798 12.6019 1.49836 13.1615C2.34129 13.7375 3.34488 14.0319 4.36538 14.0026H4.37401C5.58299 14.0026 6.53982 13.6831 7.20476 13.051C7.53529 12.7364 7.79591 12.3557 7.96969 11.9338C8.14346 11.5119 8.22649 11.0581 8.21339 10.6019C8.21353 10.4242 8.19851 10.2469 8.16849 10.0717C8.5203 9.5111 8.69485 8.85742 8.66935 8.19606ZM7.14431 8.48967C6.74707 8.23579 6.08904 7.99917 5.18576 7.78846L3.75052 7.44304C2.98023 7.25997 2.40683 7.04235 2.04759 6.79883C1.83764 6.6645 1.67487 6.46798 1.58198 6.23669C1.4891 6.00541 1.47073 5.7509 1.52945 5.50867C2.1495 5.82309 2.8079 6.05533 3.488 6.19952L4.92496 6.53458C5.69526 6.70729 6.26866 6.93354 6.6279 7.17706C6.98714 7.42059 7.14603 7.84028 7.14603 8.41886C7.14603 8.4534 7.14603 8.4724 7.14431 8.48967Z" fill="black"/>
-          </svg>
+        <div class="header__contacts">
+          <div class="header__contacts-item">
+            <div class="header__contacts-icon"><svg width="15" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#tel"></use></svg></div>
+            <ul class="header__contacts-list">
+              <li><a href="tel:+6581369998">+65 8136 9998</a></li>
+            </ul>
+          </div>
+          <div class="header__contacts-item">
+            <div class="header__contacts-icon"><svg width="14" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mail"></use></svg></div>
+            <ul class="header__contacts-list">
+              <li><a href="mailto:acebet@gmail.com">acebet@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="header__btn js-create-account">
+          <svg width="20" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#account"></use></svg>
+          Create Account
         </div>
       </div>
-      <div class="header__right">
-        <nav class="header__nav">
-          <ul>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="lang">
-          <svg class="lang__arrow" width="6" height="4"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg>
-          <div class="lang__current">En</div>
-          <ul class="lang__list">
-            <li class="lang__item"><a href="#" class="lang__link">DE</a></li>
-            <li class="lang__item"><a href="#" class="lang__link">FR</a></li>
-          </ul>
-        </div>
-        <div class="header__search">
-          <div class="header__search-btn"><svg width="15" height="15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></div>
-          <form class="header__search-form">
-            <input type="text" class="header__search-input" placeholder="Enter keyword">
-          </form>
-        </div>
-        <div class="header__mobile-btn"><svg width="24" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg></div>
-      </div>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="#">Online Betting</a></li>
+          <li><a href="#">SportsBook +</a></li>
+          <li><a href="#">Promotion +</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
     </div>
   </div>
   <div class="header__mobile">
-    <div class="header__mobile-box">
-      <div class="header__mobile-head">
-        <div class="header__mobile-logo">
-          <img src="images/logo-white.svg" width="150" height="20" alt="img">
-          <a href="#" class="header__logo-link"></a>
-        </div>
-        <div class="header__mobile-close js-close-menu"><svg width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
-      </div>
-      <div class="header__mobile-contacts">
-        <div class="header__mobile-contacts-title">Contact us</div>
-        <ul class="header__mobile-contacts-list">
-          <li><a href="mailto:">ofﬁce@paragraph.com</a></li>
-        </ul>
-      </div>
-    </div>
+    <div class="header__mobile-overlay"></div>
+    <div class="header__mobile-box"></div>
   </div>
 </header>
   <div class="wrapper">
+    <div class="first-screen">
+      <picture class="first-screen__img">
+        <source srcset="data/Online-Betting-in-Singapore.jpg" media="(max-width: 1200px)">
+        <img src="data/Online-Betting-in-Singapore.jpg" width="1920" height="680" alt="Online-Betting-in-Singapore">
+      </picture>
+      <div class="container">
+        <div class="first-screen__box">
+          <div class="first-screen__label label">
+            Best agent
+          </div>
+          <div class="first-screen__title title title--white">Online Betting in <br> Singapore</div>
+          <div class="first-screen__btn-box">
+            <div class="first-screen__btn btn js-create-account">Create Account</div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container">
-      <div class="projects-title title js-fade-title">Projects</div>
-      <div class="projects-nav js-fade-description">
-        <ul class="tabs-style">
-          <li><a href="#" class="active">View All</a></li>
-          <li><a href="#">Completed</a></li>
-          <li><a href="#">Family Houses</a></li>
-          <li><a href="#">Hospitality</a></li>
-          <li><a href="#">Urbanism</a></li>
-          <li><a href="#">Culture</a></li>
-          <li><a href="#">Health</a></li>
-          <li><a href="#">Education</a></li>
-          <li><a href="#">Sport</a></li>
-          <li><a href="#">Research</a></li>
-          <li><a href="#">Interior</a></li>
-        </ul>
-      </div>
-      <div class="projects js-fade-items">
-        <div class="projects__item">
-          <a href="#" class="projects__img"><img src="data/projects1.jpg" width="424" height="230" alt="img"></a>
-          <a href="#" class="projects__item-title" title="Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps">Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps Be-Camps</a>
-          <div class="projects__item-place">Ollon, Switzerland</div>
+      <div class="info">
+        <div class="info__left">
+          <div class="info__label label-2 label-2--small title-small title-small--white">
+            Acebet99
+          </div>
+          <div class="info__title title">Features</div>
         </div>
-        <div class="projects__item">
-          <a href="#" class="projects__img"><img src="data/projects2.jpg" width="424" height="230" alt="img"></a>
-          <a href="#" class="projects__item-title" title="Under the Cap">Under the Cap</a>
-          <div class="projects__item-place">Kharkiv, Ukraine</div>
-        </div>
-        <div class="projects__item">
-          <a href="#" class="projects__img"><img src="data/projects3.jpg" width="424" height="230" alt="img"></a>
-          <a href="#" class="projects__item-title" title="3 Courtyards">3 Courtyards</a>
-          <div class="projects__item-place">Prague, Czech Republic</div>
-        </div>
-        <div class="projects__item">
-          <a href="#" class="projects__img"><img src="data/projects1.jpg" width="424" height="230" alt="img"></a>
-          <a href="#" class="projects__item-title" title="Be-Camps">Be-Camps</a>
-          <div class="projects__item-place">Ollon, Switzerland</div>
-        </div>
-        <div class="projects__item">
-          <a href="#" class="projects__img"><img src="data/projects2.jpg" width="424" height="230" alt="img"></a>
-          <a href="#" class="projects__item-title" title="Under the Cap">Under the Cap</a>
-          <div class="projects__item-place">Kharkiv, Ukraine</div>
-        </div>
-        <div class="projects__item">
-          <a href="#" class="projects__img"><img src="data/projects3.jpg" width="424" height="230" alt="img"></a>
-          <a href="#" class="projects__item-title" title="3 Courtyards">3 Courtyards</a>
-          <div class="projects__item-place">Prague, Czech Republic</div>
-        </div>
-        <div class="projects__item">
-          <a href="#" class="projects__img"><img src="data/projects1.jpg" width="424" height="230" alt="img"></a>
-          <a href="#" class="projects__item-title" title="Be-Camps">Be-Camps</a>
-          <div class="projects__item-place">Ollon, Switzerland</div>
-        </div>
-        <div class="projects__item">
-          <a href="#" class="projects__img"><img src="data/projects2.jpg" width="424" height="230" alt="img"></a>
-          <a href="#" class="projects__item-title" title="Under the Cap">Under the Cap</a>
-          <div class="projects__item-place">Kharkiv, Ukraine</div>
-        </div>
-        <div class="projects__item">
-          <a href="#" class="projects__img"><img src="data/projects3.jpg" width="424" height="230" alt="img"></a>
-          <a href="#" class="projects__item-title" title="3 Courtyards">3 Courtyards</a>
-          <div class="projects__item-place">Prague, Czech Republic</div>
-        </div>
-        <div class="projects__item">
-          <a href="#" class="projects__img"><img src="data/projects1.jpg" width="424" height="230" alt="img"></a>
-          <a href="#" class="projects__item-title" title="Be-Camps">Be-Camps</a>
-          <div class="projects__item-place">Ollon, Switzerland</div>
-        </div>
-        <div class="projects__item">
-          <a href="#" class="projects__img"><img src="data/projects2.jpg" width="424" height="230" alt="img"></a>
-          <a href="#" class="projects__item-title" title="Under the Cap">Under the Cap</a>
-          <div class="projects__item-place">Kharkiv, Ukraine</div>
-        </div>
-        <div class="projects__item">
-          <a href="#" class="projects__img"><img src="data/projects3.jpg" width="424" height="230" alt="img"></a>
-          <a href="#" class="projects__item-title" title="3 Courtyards">3 Courtyards</a>
-          <div class="projects__item-place">Prague, Czech Republic</div>
+        <div class="info__holder">
+          <div class="info__line"></div>
+          <div class="info__years">
+            <div class="info__years-value">10</div>
+            <div class="info__years-text text-content">
+              <p><b>Is a well-known casino and sports betting agent that is well-known in Singapore.</b> We have been a trusted and reputable company for many years. With more than 10 years of experience in the country, we have hundreds of customer reviews that are excellent.</p>
+            </div>
+            <div class="info__years-title">Years <br> of experience</div>
+          </div>
         </div>
       </div>
-      <ul class="paginations">
-        <li class="disabled"><a href="#"><svg width="8" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#left"></use></svg></a></li>
-        <li class="paginations__current"><span>1</span></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li class="paginations__dots"><span>...</span></li>
-        <li><a href="#">10</a></li>
-        <li><a href="#"><svg width="8" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#left"></use></svg></a></li>
-      </ul>
+      <div class="triggers">
+        <div class="triggers__item">
+          <div class="triggers__item-img"><img src="data/CLIENT-PRIVACY.svg" width="80" height="80" alt="CLIENT-PRIVACY"></div>
+          <div class="triggers__item-text">CLIENT PRIVACY</div>
+        </div>
+        <div class="triggers__item">
+          <div class="triggers__item-img"><img src="data/DAILY-PAYMENTS.svg" width="80" height="80" alt="DAILY-PAYMENTS"></div>
+          <div class="triggers__item-text">DAILY PAYMENTS</div>
+        </div>
+        <div class="triggers__item">
+          <div class="triggers__item-img"><img src="data/WEEKLY-BONUSES.svg" width="80" height="80" alt="WEEKLY-BONUSES"></div>
+          <div class="triggers__item-text">WEEKLY BONUSES</div>
+        </div>
+        <div class="triggers__item">
+          <div class="triggers__item-img"><img src="data/PROMPT-CUSTOMER-SERVICE.svg" width="80" height="80" alt="PROMPT-CUSTOMER-SERVICE"></div>
+          <div class="triggers__item-text">PROMPT CUSTOMER SERVICE</div>
+        </div>
+        <div class="triggers__item">
+          <div class="triggers__item-img"><img src="data/WORK-FROM-9AM-TO-5AM-EVERY-DAY.svg" width="80" height="80" alt="WORK-FROM-9AM-TO-5AM-EVERY-DAY"></div>
+          <div class="triggers__item-text">WORK FROM 9AM TO 5AM EVERY DAY</div>
+        </div>
+      </div>
+      <div class="info-list">
+        <div class="info-list__item">
+          <div class="info-list__item-img"><img src="data/Sports-Betting.png" width="420" height="520" alt="Sports-Betting"></div>
+          <div class="info-list__item-box">
+            <div class="info-list__item-label label-2 label-2--small title-small title-small--white">
+              Options
+            </div>
+            <div class="info-list__item-title title">Sports Betting</div>
+            <div class="info-list__item-text text-content">
+              <p>Acebet99 is a well-known and reputable online sportsbook agent in Asia. We offer our services to Singaporeans, Thailand, and also punters from Malaysia. Although there may be many different esports and sports betting options available, we are confident that we offer the best payouts and odds for the top games. </p>
+            </div>
+            <div class="info-list__item-btn-box">
+              <a href="#" class="info-list__item-btn btn-2">Weekly Bonuses</a>
+              <div class="btn-line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="deposit">
+          <div class="deposit__row">
+            <div class="deposit__cell">
+              <div class="deposit__cell-title">15%</div>
+              <div class="deposit__cell-text">Extra Credits</div>
+            </div>
+            <div class="deposit__cell">
+              <div class="deposit__cell-title">5%</div>
+              <div class="deposit__cell-text">Weekly Loss Rebate</div>
+            </div>
+          </div>
+          <div class="deposit__title title-small"><span>Deposit</span> and <span>Withdrawals</span> with Singapore Bank</div>
+        </div>
+        <div class="info-list__item info-list__item--revers">
+          <div class="info-list__item-img"><img src="data/Online-Casino.png" width="420" height="520" alt="Online-Casino"></div>
+          <div class="info-list__item-box">
+            <div class="info-list__item-label label-2 label-2--small title-small title-small--white">
+              An as Alternative
+            </div>
+            <div class="info-list__item-title title">Online Casino</div>
+            <div class="info-list__item-text text-content">
+              <p><b>As more sports betting and casino games become available online, another good alternative would be the online casinos. Online casinos have many advantages such as:</b></p>
+              <p>At Acebet99, we know the best gambling sites. We are proud to be working with our casino partners.</p>
+            </div>
+            <div class="info-list__item-btn-box">
+              <a href="#" class="info-list__item-btn btn-2">Online Casino Partners in Singapore</a>
+              <div class="btn-line"></div>
+            </div>
+          </div>
+        </div>        
+      </div>
+      <div class="partners">
+        <div class="partners__head">
+          <div class="title-box">
+            <div class="label-2 title title--white">Online Betting</div>
+            <div class="title">Partners</div>
+          </div>
+        </div>
+        <div class="partners__text text-content">
+          <p><b>Acebet99 partners with only the very best in the <a href="#">online betting</a> industry. With more than 10 years of experience in the field, we know who to trust and who you can place your money with.  Our partners are reputable and have many years of experience in the <a href="#">online gambling</a> business. This is why we are proud to partner with the following</b></p>
+        </div>
+        <div class="partners__list">
+          <div class="partners__item">
+            <div class="partners__item-img"><img src="data/SBObet.png" width="180" height="63" alt="SBObet"></div>
+            <div class="partners__item-title">SBObet</div>
+            <div class="partners__item-text text-content text-content--small">
+              <p>SBObet is one of the world’s leading online betting sites that has won awards such as “Asian Operator of the Year”. In 2011, this company also ranked 11th on the list of Power 50 companies in an eGaming review. </p>
+            </div>
+          </div>
+          <div class="partners__item">
+            <div class="partners__item-img"><img src="data/TBSbet.png" width="180" height="63" alt="TBSbet"></div>
+            <div class="partners__item-title">TBSbet</div>
+            <div class="partners__item-text text-content text-content--small">
+              <p>TBSbet is an integrated sports betting and online casino site. They offer a wide range of casino games, sports, and Lotto games to bet on.  </p>
+            </div>
+          </div>
+          <div class="partners__item">
+            <div class="partners__item-img"><img src="data/Maxbet.png" width="180" height="63" alt="Maxbet"></div>
+            <div class="partners__item-title">Maxbet</div>
+            <div class="partners__item-text text-content text-content--small">
+              <p>As the largest sports betting operator in Asia and one of the biggest bookies in the world, Maxbet is recognized worldwide</p>
+            </div>
+          </div>
+          <div class="partners__item">
+            <div class="partners__item-img"><img src="data/CMD368.png" width="180" height="63" alt="CMD368"></div>
+            <div class="partners__item-title">CMD368</div>
+            <div class="partners__item-text text-content text-content--small">
+              <p>CMD is an international bookmaker company that offers live betting for a wide variety of sports and games such as soccer, basketball, badminton, tennis, and more. Casino games and Keno are also available.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="latest-reviews">
+        <div class="info">
+          <div class="info__left">
+            <div class="info__label label-2 label-2--small title-small title-small--white">
+              Latest
+            </div>
+            <div class="info__title title">Testimonials</div>
+          </div>
+          <div class="info__holder">
+            <div class="info__btn-row">
+              <div class="info__line"></div>
+              <a href="#" class="info__btn btn-2">View All Reviews</a>
+            </div>
+          </div>
+        </div>
+        <div class="latest-reviews__list">
+          <div class="reviews-item">
+            <svg class="reviews-item__decor" width="84" height="70"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#quote"></use></svg>
+            <div class="reviews-item__head">
+              <div class="reviews-item__name">XinG</div>
+              <div class="reviews-item__date">14, Feb, 2021</div>
+            </div>
+            <div class="reviews-item__text reviews-item__text--preview">
+              <p>To review ace, very good service always provided by him 🙂 thanks so much</p>
+            </div>
+          </div>
+          <div class="reviews-item">
+            <svg class="reviews-item__decor" width="84" height="70"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#quote"></use></svg>
+            <div class="reviews-item__head">
+              <div class="reviews-item__name">Alex</div>
+              <div class="reviews-item__date">14, Feb, 2021</div>
+            </div>
+            <div class="reviews-item__text reviews-item__text--preview">
+              <p>Recently there are quite a number of upset results in football matches Recently there are quite a number of upset results in football matches…</p>
+            </div>
+          </div>
+          <div class="reviews-item">
+            <svg class="reviews-item__decor" width="84" height="70"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#quote"></use></svg>
+            <div class="reviews-item__head">
+              <div class="reviews-item__name">Chan</div>
+              <div class="reviews-item__date">14, Feb, 2021</div>
+            </div>
+            <div class="reviews-item__text reviews-item__text--preview">
+              <p>Ace steady and fast. Not shady one.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="form">
+        <picture class="form__img">
+          <source srcset="data/form-img-small.png" media="(max-width: 1200px)">
+          <img src="data/form-img.png" width="1080" height="394" alt="form-img">
+        </picture>
+        <div class="form__head">
+          <div class="form__head-label label">
+            Register
+          </div>
+          <div class="form__head-title">with US</div>
+        </div>
+        <div class="form__row">
+          <div class="form__row-cell">
+            <input type="text" placeholder="NAME" class="form__input error">
+            <p class="error">Error text here</p>
+          </div>
+          <div class="form__row-cell">
+            <input type="email" placeholder="E-MAIL" class="form__input">
+          </div>
+          <div class="form__row-cell">
+            <input type="tel" placeholder="PHONE NUMBER" class="form__input">
+          </div>
+          <div class="form__row-cell country">
+            <div class="country__label">COUNTRY</div>
+            <div class="select2-parent country__box">
+              <select class="init-select2" style="width: 100%;">
+                <option value="SINGAPORE" data-image="data/country.png">SINGAPORE</option>
+                <option value="Ukraine" data-image="data/country.png">Ukraine</option>
+                <option value="SINGAPORE" data-image="data/country.png">SINGAPORE</option>
+                <option value="SINGAPORE" data-image="data/country.png">SINGAPORE</option>
+                <option value="SINGAPORE" data-image="data/country.png">SINGAPORE</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form__btn-box">
+          <button type="submit" class="form__btn btn-3">REGISTER</button>
+        </div>
+      </form>
+      <div class="latest-news">
+        <div class="latest-news__head">
+          <div class="title-box">
+            <div class="label-2 title title--white">Latest</div>
+            <div class="title">News</div>
+          </div>
+        </div>
+        <div class="latest-news__list">
+          <div class="latest-news__item">
+            <a href="#" class="latest-news__item-img"><img src="data/Wolverhampton-Wanderers.jpg" width="240" height="140" alt="Wolverhampton-Wanderers"></a>
+            <div class="latest-news__item-date">14, Feb, 2021</div>
+            <a href="#" class="latest-news__item-title" title="Wolverhampton Wanderers vs. Leeds United 20/02/21">Wolverhampton Wanderers vs. Leeds United 20/02/21</a>
+            <div class="latest-news__item-text">
+              <p>Fast and prompt responses. Hassle free withdrawals! Received my withdrawal of 9k within 1.5 hours! Thank you bro Alex!</p>
+            </div>
+          </div>
+          <div class="latest-news__item">
+            <a href="#" class="latest-news__item-img"><img src="data/Wolverhampton-Wanderers.jpg" width="240" height="140" alt="Wolverhampton-Wanderers"></a>
+            <div class="latest-news__item-date">14, Feb, 2021</div>
+            <a href="#" class="latest-news__item-title" title="Wolverhampton Wanderers vs. Leeds United 20/02/21">Wolverhampton Wanderers vs. Leeds United 20/02/21</a>
+            <div class="latest-news__item-text">
+              <p>Fast and prompt responses. Hassle free withdrawals! Received my withdrawal of 9k within 1.5 hours! Thank you bro Alex!</p>
+            </div>
+          </div>
+          <div class="latest-news__item">
+            <a href="#" class="latest-news__item-img"><img src="data/Wolverhampton-Wanderers.jpg" width="240" height="140" alt="Wolverhampton-Wanderers"></a>
+            <div class="latest-news__item-date">14, Feb, 2021</div>
+            <a href="#" class="latest-news__item-title" title="Wolverhampton Wanderers vs. Leeds United 20/02/21">Wolverhampton Wanderers vs. Leeds United 20/02/21</a>
+            <div class="latest-news__item-text">
+              <p>Fast and prompt responses. Hassle free withdrawals! Received my withdrawal of 9k within 1.5 hours! Thank you bro Alex!</p>
+            </div>
+          </div>
+          <div class="latest-news__item">
+            <a href="#" class="latest-news__item-img"><img src="data/Wolverhampton-Wanderers.jpg" width="240" height="140" alt="Wolverhampton-Wanderers"></a>
+            <div class="latest-news__item-date">14, Feb, 2021</div>
+            <a href="#" class="latest-news__item-title" title="Wolverhampton Wanderers vs. Leeds United 20/02/21 Wolverhampton Wanderers vs. Leeds United 20/02/21">Wolverhampton Wanderers vs. Leeds United 20/02/21 Wolverhampton Wanderers vs. Leeds United 20/02/21</a>
+            <div class="latest-news__item-text">
+              <p>Fast and prompt responses. Hassle free withdrawals! Received my withdrawal of 9k within 1.5 hours! Thank you bro Alex!</p>
+            </div>
+          </div>
+        </div>
+        <div class="latest-news__btn-box">
+          <a href="#" class="latest-news__btn btn-3 btn-3--bg">view all news</a>
+        </div>
+      </div>
     </div>
   </div>
   <footer class="footer">
-  <div class="footer__container container">
-    <div class="footer__left">
-      <div class="footer__copy">© 2020, PARAGRAPH. All Rights Reserved.</div>
-    </div>
-    <div class="footer__right">
-      <div class="footer__cell">
-        <nav class="footer__nav">
-          <ul>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Contacts</a></li>
-          </ul>
-        </nav>
-        <a href="#" target="_blank" rel="nofollow" class="footer__link">Terms & Conditions</a>
+  <div class="footer__top">
+    <div class="footer__container">
+      <div class="footer__row">
+        <div class="footer__cell footer__cell--attention">
+          <div class="attention">
+            <div class="attention__icon">
+              <img src="data/attention.svg" width="34" height="34" alt="img">
+            </div>
+            <div class="attention__text">PLEASE PAY RESPONSIBLY</div>
+          </div>
+        </div>
+        <div class="footer__cell"><img src="data/dbs.png" width="200" height="30" alt="dbs"></div>
+        <div class="footer__cell"><img src="data/ocbc.png" width="200" height="30" alt="ocbc"></div>
+        <div class="footer__cell"><img src="data/posb.png" width="200" height="30" alt="posb"></div>
+        <div class="footer__cell"><img src="data/uob.png" width="200" height="30" alt="uob"></div>
       </div>
-      <div class="footer__cell">
+    </div>
+  </div>
+  <div class="footer__middle">
+    <div class="footer__container">
+      <div class="footer__row">
+        <div class="footer__logo">
+          <img src="data/logo.png" width="150" height="40" alt="logo-img">
+          <a href="#" class="footer__logo-link"></a>
+        </div>
         <nav class="footer__nav">
           <ul>
-            <li><a href="#" target="_blank" rel="nofollow">Facebook</a></li>
-            <li><a href="#" target="_blank" rel="nofollow">Instagram</a></li>
-            <li><a href="#" target="_blank" rel="nofollow">Telegram</a></li>
-            <li><a href="#" target="_blank" rel="nofollow">Twitter</a></li>
-            <li><a href="#" target="_blank" rel="nofollow">Youtube</a></li>
+            <li><a href="#">Online Betting</a></li>
+            <li><a href="#">SportsBook +</a></li>
+            <li><a href="#">Promotion +</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Search Icon</a></li>
           </ul>
         </nav>
-        <a href="#" target="_blank" rel="nofollow" class="footer__link">Privacy Policy</a>
+        <div class="footer__country js-country-parent">
+          <div class="footer__country-head js-country">
+            <div class="footer__country-title">Country</div>
+            <div class="footer__country-current">
+              <img src="data/country.png" width="16" height="16" alt="img">
+              <span class="footer__country-name">Singapore</span>
+              <svg width="10" height="6"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#down"></use></svg>
+            </div>
+          </div>
+          <ul class="footer__country-list js-country-list">
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                Afghanistan
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                Albania
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                Algeria
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="data/country.png" width="16" height="16" alt="img">
+                American Samoa
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__contacts">
+          <div class="footer__contacts-item">
+            <div class="footer__contacts-icon"><svg width="15" height="15">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#tel"></use>
+              </svg></div>
+            <ul class="footer__contacts-list">
+              <li><a href="tel:+6581369998">+65 8136 9998</a></li>
+            </ul>
+          </div>
+          <div class="footer__contacts-item">
+            <div class="footer__contacts-icon"><svg width="14" height="12">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#mail"></use>
+              </svg></div>
+            <ul class="footer__contacts-list">
+              <li><a href="mailto:acebet@gmail.com">acebet@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="footer__container">
+      <div class="footer__bottom-box">
+        <div class="footer__bottom-left">
+          <div class="footer__copy">COPYRIGHT @ 2018. ACEBET99. ALL RIGHTS RESERVED</div>
+        </div>
+        <div class="footer__bottom-right">
+          <ul class="footer__policy">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </footer>
-
+<div class="popup popup--review">
+  <div class="popup__overlay js-close-popup"></div>
+  <div class="popup__box">
+    <div class="popup__close js-close-popup"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+    <div class="popup__title-box">
+      <div class="popup__label label-2 label-2--small title-small title-small--white">Post</div>
+      <div class="popup__title title-small">Testimonials</div>
+    </div>
+    <form class="popup__form">
+      <div class="popup__form-row">
+        <div class="popup__form-cell">
+          <input type="text" class="input-style" placeholder="Title:">
+          <p class="error">Error text here</p>
+        </div>
+        <div class="popup__form-cell">
+          <input type="text" class="input-style" placeholder="Name:">
+        </div>
+      </div>
+      <div class="popup__form-row">
+        <div class="popup__form-cell popup__form-cell--100">
+          <textarea class="popup__textarea textarea-style" placeholder="Post:"></textarea>
+        </div>
+      </div>
+      <div class="popup__form-btn-box">
+        <button class="popup__form-btn btn-3 btn-3--bg" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
   <script src="/js/app.js"></script>
 
 </body>
