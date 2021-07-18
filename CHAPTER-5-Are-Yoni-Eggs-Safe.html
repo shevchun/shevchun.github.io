@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Kegglers">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>Kegglers</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+  <link rel="preload" href="/fonts/GothamPro-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Medium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/GothamPro-Light.woff" as="font" type="font/woff" crossorigin>
+  <link href="css/index.css" rel="stylesheet">
+</head>
+
+
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="header__container">
+      <div class="header__mobile-btn js-mobile-btn"></div>
+      <div class="header__logo">
+        <img src="images/logo.png" width="135" height="34" alt="logo">
+        <a href="#" class="header__logo-link"></a>
+      </div>
+      <div class="header__middle">
+        <div class="header__middle-overlay js-close-mobile-menu"></div>
+        <div class="header__middle-box">
+          <div class="header__middle-close js-close-mobile-menu"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          <a href="#" class="header__catalog-btn">
+            <svg class="header__catalog-btn-icon" width="19" height="19"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#menu"></use></svg>
+            <span class="header__catalog-btn-text">Shop</span>
+          </a>
+          <nav class="header__nav">
+            <ul>
+              <li><a href="#">Kegel balls and Weights</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Dilators</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Dilators Dilators Dilators Dilators Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                  <li><a href="#">Dilators</a></li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">Yoni Care</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                  <li><a href="#">Yoni Care</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header__controls">
+        <div class="header__search">
+          <div class="header__search-btn"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></div>
+          <form class="header__search-form">
+            <input type="text" class="header__search-input">
+            <button type="submit" class="header__search-button"><svg width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#search"></use></svg></button>
+          </form>
+        </div>
+        <div class="header__basket">
+          <svg width="19" height="22"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#basket"></use></svg>
+          <span class="header__basket-count">3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__popup">
+    <div class="container">
+      <div class="header__popup-container">
+        <div class="header__popup-box">
+          <div class="header__popup-head">
+            <div class="header__popup-head-left">
+              <div class="header__popup-head-icon"></div>
+              <div class="header__popup-head-text">ITEM ADDED TO BAG</div>
+            </div>
+            <div class="header__popup-close"><svg width="12" height="12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#close"></use></svg></div>
+          </div>
+          <div class="header__popup-holder">
+            <div class="basket-list">
+              <div class="basket-item">
+                <a href="#" class="basket-item__img"><img src="data/basket.jpg" width="150" height="150" alt="basket"></a>
+                <div class="basket-item__box">
+                  <a href="#" class="basket-item__title">Lapis Lazuli Yoni Egg</a>
+                  <div class="basket-item__price">$18,99</div>
+                  <div class="basket-item__descriptions">+ 1 Extra Options</div>
+                </div>
+                <div class="basket-item__remove"><svg width="15" height="21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#remove"></use></svg></div>
+              </div>
+            </div>
+            <div class="header__popup-controls">
+              <div class="header__btn-cart header__popup-btn btn-2">VIEW CART</div>
+              <div class="header__btn-checkout header__popup-btn btn-1">CHECKOUT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div class="wrapper">
+    <div class="blog-page">
+      <div class="blog-page__section">
+        <picture class="blog-page__section-img">
+          <source srcset="data/chapter5-decor-mobile.svg" media="(max-width: 767px)">
+          <img src="data/chapter5-decor.svg" width="1920" height="281" alt="img">
+        </picture>
+        <div class="blog-page__section-container">
+          <div class="blog-page__section-holder">
+            <div class="blog-page__section-box">
+              <div class="blog-page__section-row">
+                <a href="#" class="blog-page__section-back">
+                  <svg class="blog-page__section-back-icon" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.4142 4.66666L9.70711 5.37377L10.4142 4.66666ZM6.70711 2.37377L9.70711 5.37377L11.1213 3.95955L8.12132 0.959552L6.70711 2.37377ZM2.29289 5.37377L5.29289 2.37376L3.87868 0.95955L0.87868 3.95955L2.29289 5.37377ZM2 9.91911V6.08087H0V9.91911H2ZM9 10.9191H3V12.9191H9V10.9191ZM10 6.08087V9.91911H12V6.08087H10ZM9 12.9191C10.6569 12.9191 12 11.576 12 9.91911H10C10 10.4714 9.55229 10.9191 9 10.9191V12.9191ZM0 9.91911C0 11.576 1.34315 12.9191 3 12.9191V10.9191C2.44772 10.9191 2 10.4714 2 9.91911H0ZM0.87868 3.95955C0.316071 4.52216 0 5.28522 0 6.08087H2C2 5.81566 2.10536 5.5613 2.29289 5.37377L0.87868 3.95955ZM9.70711 5.37377C9.89464 5.5613 10 5.81566 10 6.08087H12C12 5.28522 11.6839 4.52216 11.1213 3.95955L9.70711 5.37377ZM8.12132 0.959552C6.94975 -0.21202 5.05026 -0.212023 3.87868 0.95955L5.29289 2.37376C5.68342 1.98324 6.31658 1.98324 6.70711 2.37377L8.12132 0.959552Z" fill="#6C41BF"/>
+                  </svg>
+                  <span class="blog-page__section-back-text">Back to:</span>
+                  <span class="blog-page__section-back-link">Yoni Eggs Introduction</span>
+                </a>
+              </div>
+              <div class="blog-page__section-chapter">Chapter 5</div>
+              <div class="blog-page__section-title">Are Yoni Eggs Safe?</div>
+              <div class="blog-page__section-info">
+                <div class="blog-page__section-cell">
+                  <div class="blog-page__section-cell-title">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2001 1.97152C13.4093 2.15457 13.7277 2.15331 13.9215 1.95414L15.1417 0.700511C15.4547 0.378956 16 0.600531 16 1.04925V5.65026C16 5.9264 15.7761 6.15026 15.5 6.15026H11.155C10.7128 6.15026 10.4883 5.61838 10.7968 5.30151L12.0642 3.99942C12.2556 3.80279 12.2537 3.48667 12.0445 3.30909C9.60429 1.23783 5.9378 1.26896 3.63015 3.55545C1.20417 5.95919 1.20417 9.85143 3.63015 12.2552C6.05614 14.659 9.9839 14.659 12.4099 12.2552C13.5014 11.1717 14.1 9.93241 14.2024 8.40632C14.2209 8.1303 14.4429 7.90531 14.7195 7.90531H15.5C15.7761 7.90531 16.0015 8.12943 15.98 8.40474C15.849 10.08 15.0737 12.0917 13.654 13.4993C10.5348 16.5873 5.46959 16.5873 2.35047 13.4993C-0.76865 10.4113 -0.790852 5.40376 2.32827 2.31576C5.32258 -0.652884 10.0703 -0.767632 13.2001 1.97152ZM7.35835 8.85064C7.20657 8.76057 7.11353 8.59715 7.11353 8.42066V4.76215C7.11353 4.486 7.33738 4.26215 7.61353 4.26215H7.94648C8.22263 4.26215 8.44648 4.486 8.44648 4.76215V7.75438C8.44648 7.93077 8.53942 8.0941 8.69105 8.18421L11.1267 9.63164C11.3641 9.77278 11.4422 10.0798 11.3009 10.3172L11.1723 10.5333C11.0312 10.7704 10.7247 10.8484 10.4874 10.7076L7.35835 8.85064Z" fill="#333333"/>
+                    </svg>
+                    Reading time:
+                  </div>
+                  <div class="blog-page__section-cell-val">8 Minutes</div>
+                </div>
+                <div class="blog-page__section-cell">
+                  <div class="blog-page__section-cell-title">
+                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <mask id="path-1-inside-1" fill="white">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M2.8125 4.21875C2.8125 1.89241 4.70491 0 7.03125 0C9.35759 0 11.25 1.89241 11.25 4.21875C11.25 6.54509 9.35759 8.4375 7.03125 8.4375C4.70491 8.4375 2.8125 6.54509 2.8125 4.21875ZM8.33863 9.4375C10.6119 9.4375 12.7227 10.5668 13.9838 12.4587L14.0625 12.5768V16H14.0625H0V12.5768L0.07875 12.4587C1.33988 10.5668 3.45063 9.4375 5.72388 9.4375H8.33863Z"/>
+                      </mask>
+                      <path d="M13.9838 12.4587L12.7357 13.2907L12.7358 13.2909L13.9838 12.4587ZM14.0625 12.5768H15.5625V12.1226L15.3105 11.7446L14.0625 12.5768ZM14.0625 16V17.5H15.5625V16H14.0625ZM0 16H-1.5V17.5H0V16ZM0 12.5768L-1.24798 11.7446L-1.5 12.1226V12.5768H0ZM0.07875 12.4587L1.32673 13.2909L1.32688 13.2907L0.07875 12.4587ZM7.03125 -1.5C3.87648 -1.5 1.3125 1.06398 1.3125 4.21875H4.3125C4.3125 2.72083 5.53333 1.5 7.03125 1.5V-1.5ZM12.75 4.21875C12.75 1.06398 10.186 -1.5 7.03125 -1.5V1.5C8.52917 1.5 9.75 2.72083 9.75 4.21875H12.75ZM7.03125 9.9375C10.186 9.9375 12.75 7.37352 12.75 4.21875H9.75C9.75 5.71667 8.52917 6.9375 7.03125 6.9375V9.9375ZM1.3125 4.21875C1.3125 7.37352 3.87648 9.9375 7.03125 9.9375V6.9375C5.53333 6.9375 4.3125 5.71667 4.3125 4.21875H1.3125ZM15.2319 11.6268C13.6925 9.31738 11.1133 7.9375 8.33863 7.9375V10.9375C10.1104 10.9375 11.7528 11.8162 12.7357 13.2907L15.2319 11.6268ZM15.3105 11.7446L15.2318 11.6266L12.7358 13.2909L12.8146 13.409L15.3105 11.7446ZM15.5625 16V12.5768H12.5625V16H15.5625ZM14.0625 17.5H14.0625V14.5H14.0625V17.5ZM0 17.5H14.0625V14.5H0V17.5ZM-1.5 12.5768V16H1.5V12.5768H-1.5ZM-1.16923 11.6266L-1.24798 11.7446L1.24798 13.409L1.32673 13.2909L-1.16923 11.6266ZM5.72388 7.9375C2.94919 7.9375 0.370011 9.31739 -1.16938 11.6268L1.32688 13.2907C2.30974 11.8162 3.95206 10.9375 5.72388 10.9375V7.9375ZM8.33863 7.9375H5.72388V10.9375H8.33863V7.9375Z" fill="#333333" mask="url(#path-1-inside-1)"/>
+                    </svg>
+                    Written by
+                  </div>
+                  <div class="blog-page__section-cell-val">Author Section</div>
+                </div>
+              </div>
+              <div class="blog-page__section-btns">
+                <a href="#" class="blog-page__section-prev">
+                  <span class="blog-page__section-next-title">Previous Chapter</span>
+                  <span class="blog-page__section-next-row">
+                    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 6L15 6M15 6L10 1M15 6L10 11" stroke="#F29FA4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="blog-page__section-next-text">Types of Yoni Eggs</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="blog-page__section-img-main">
+              <img src="data/Are-Yoni-Eggs-Safe2.svg" width="296" height="300" alt="Are-Yoni-Eggs-Safe2">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blog-page__navigation-parent">
+        <div class="container">
+          <div class="blog-page__box">
+            <div class="blog-page__holder">
+              <div class="blog-page__content">
+                <div class="text-content">
+                  <p>Many beginners ask, “Are yoni eggs safe?” The first thing to remember is that our bodies are a sacred and pure temple. Since we watch what we eat, we should also be concerned about what we put into our bodies. </p>
+                  <p>Yoni eggs play the same role as Kegel weights or vaginal cones. All these items help enhance Kegel exercises that strengthen pelvic floor muscles and improve general sexual health.</p>
+                  <p>Ultimately, yoni eggs are an all-natural option made from gemstones. These stones have unique properties that can improve general women’s health and wellness. It can stand up to cleansing and is made without any chemicals. Depending on the different crystals, these gemstones can provide extra support for your general well-being. </p>
+                  &nbsp;
+                  <div class="article2">
+                    <div class="article2__title">What’s in this article?</div>
+                    <div class="article2__list">
+                      <a href="#article1" class="article2__link js-btn-down">Health Experts Feedback</a>
+                      <a href="#article2" class="article2__link js-btn-down">Can Yoni Eggs Get Lost?</a>
+                      <a href="#article3" class="article2__link js-btn-down">Can Yoni Eggs Get Stuck?</a>
+                      <a href="#article4" class="article2__link js-btn-down">When can I use Yoni Eggs?</a>
+                      <a href="#article5" class="article2__link js-btn-down">Are Yoni Eggs Really Safe?</a>
+                    </div>
+                  </div>
+                  &nbsp;
+                  <h2 id="article1">Why Do Health Experts Disagree with Using Yoni Eggs?</h2>
+                  <p>Many gynecologists disagree with using yoni eggs as there hasn’t been much <br>research about the risks and benefits of using these eggs. In addition, yoni eggs also have a bad reputation after Gwyneth Paltrow’s Goop debacle. Besides that, there are two main factors that have led to much debate about the use of yoni eggs. </p>
+                  &nbsp;
+                  <img src="data/Health-Experts.png" width="825" height="350" alt="Health-Experts">
+                  &nbsp;
+                  <h3 style="font-size: 24px;">Excessive Use</h3>
+                  <p>Proper pelvic floor therapy requires both contraction and relaxation of the pelvic floor muscles. Excessive use of yoni eggs can cause more tension in the pelvic floor. </p>
+                  <p>This is because the vaginal muscles need to contract to hold the egg in. This can lead to excessive pelvic floor tension leading to:</p>
+                  &nbsp;
+                  <div class="list">
+                    <div class="list__item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#FFA9B8"/>
+                        <path d="M10.9515 14.0319H13.2715L13.5915 6.36792H10.6315L10.9515 14.0319ZM13.7675 16.6559C13.7675 15.8079 13.1115 15.1519 12.1515 15.1519C11.1755 15.1519 10.5195 15.8079 10.5195 16.6559C10.5195 17.4719 11.1755 18.1279 12.1515 18.1279C13.1115 18.1279 13.7675 17.4719 13.7675 16.6559Z" fill="#FFA9B8"/>
+                      </svg>
+                      Constipation
+                    </div>
+                    <div class="list__item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#FFA9B8"/>
+                        <path d="M10.9515 14.0319H13.2715L13.5915 6.36792H10.6315L10.9515 14.0319ZM13.7675 16.6559C13.7675 15.8079 13.1115 15.1519 12.1515 15.1519C11.1755 15.1519 10.5195 15.8079 10.5195 16.6559C10.5195 17.4719 11.1755 18.1279 12.1515 18.1279C13.1115 18.1279 13.7675 17.4719 13.7675 16.6559Z" fill="#FFA9B8"/>
+                      </svg>
+                      Pelvic pain
+                    </div>
+                    <div class="list__item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#FFA9B8"/>
+                        <path d="M10.9515 14.0319H13.2715L13.5915 6.36792H10.6315L10.9515 14.0319ZM13.7675 16.6559C13.7675 15.8079 13.1115 15.1519 12.1515 15.1519C11.1755 15.1519 10.5195 15.8079 10.5195 16.6559C10.5195 17.4719 11.1755 18.1279 12.1515 18.1279C13.1115 18.1279 13.7675 17.4719 13.7675 16.6559Z" fill="#FFA9B8"/>
+                      </svg>
+                      Pain during sex
+                    </div>
+                    <div class="list__item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#FFA9B8"/>
+                        <path d="M10.9515 14.0319H13.2715L13.5915 6.36792H10.6315L10.9515 14.0319ZM13.7675 16.6559C13.7675 15.8079 13.1115 15.1519 12.1515 15.1519C11.1755 15.1519 10.5195 15.8079 10.5195 16.6559C10.5195 17.4719 11.1755 18.1279 12.1515 18.1279C13.1115 18.1279 13.7675 17.4719 13.7675 16.6559Z" fill="#FFA9B8"/>
+                      </svg>
+                      Pelvic floor muscle spasms
+                    </div>
+                    <div class="list__item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#FFA9B8"/>
+                        <path d="M10.9515 14.0319H13.2715L13.5915 6.36792H10.6315L10.9515 14.0319ZM13.7675 16.6559C13.7675 15.8079 13.1115 15.1519 12.1515 15.1519C11.1755 15.1519 10.5195 15.8079 10.5195 16.6559C10.5195 17.4719 11.1755 18.1279 12.1515 18.1279C13.1115 18.1279 13.7675 17.4719 13.7675 16.6559Z" fill="#FFA9B8"/>
+                      </svg>
+                      Back or abdominal pain
+                    </div>
+                  </div>
+                  &nbsp;
+                  <p>This issue can be remedied by following the recommendations when using yoni eggs. Try to stick to a routine of not more than 15 to 20 minutes per practice session. This avoids prolonged continuous contractions and decreases the risk of infection. </p>
+                  &nbsp;
+                  <h3 style="font-size: 24px;">Infection</h3>
+                  <p>Another major factor contributing to the debate of yoni eggs is the risk of infection. Yes, there is a risk of infection with the use of yoni eggs. However, this can easily be remedied by following the basic steps to cleaning and sanitizing your yoni eggs. </p>
+                  &nbsp;
+                  <ul>
+                    <li><b>Gemstones</b></li>
+                  </ul>
+                  <p>Infection is a major factor contributing to the debate of yoni eggs. Some gemstones are semi-porous. This means that bacteria can enter and stay in the egg resulting in infection such as bacterial vaginosis. Some gemstones are also unsuitable for use inside the body as they break down easily.</p>
+                  &nbsp;
+                  <ul>
+                    <li><b>Defects</b></li>
+                  </ul>
+                  <p>Made from natural stones, the yoni eggs can also crack and chip. These sites can harbor bacteria that may cause infection. </p>
+                  &nbsp;
+                  <ul>
+                    <li><b>Hygiene</b></li>
+                  </ul>
+                  <p>Hygiene is also very important. Yoni egg users must learn how to cleanse and sterilize the eggs between each practice session. </p>
+                  &nbsp;
+                  <h4>The issue of infection can be remedied with the following steps:</h4>
+                  &nbsp;
+                  <div class="list2">
+                    <div class="list2__item">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 0C4.48622 0 0 4.48622 0 10C0 15.5138 4.48622 20 10 20C15.5138 20 20 15.5138 20 10C20 4.48622 15.5138 0 10 0ZM15.589 7.36842L9.198 13.7093C8.82206 14.0852 8.22055 14.1103 7.81955 13.7343L4.43609 10.6516C4.03509 10.2757 4.01003 9.64912 4.3609 9.24812C4.73684 8.84712 5.36341 8.82206 5.76441 9.198L8.44612 11.6541L14.1604 5.93985C14.5614 5.53885 15.188 5.53885 15.589 5.93985C15.99 6.34085 15.99 6.96742 15.589 7.36842Z" fill="#6C41BF"/>
+                      </svg>
+                      <span>Start by researching the best type of gemstone for you. Avoid precious stones that are porous or semi-porous. If unsure, it is best to stick to well-known gemstones such as obsidian.</span>
+                    </div>
+                    <div class="list2__item">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10 0C4.48622 0 0 4.48622 0 10C0 15.5138 4.48622 20 10 20C15.5138 20 20 15.5138 20 10C20 4.48622 15.5138 0 10 0ZM15.589 7.36842L9.198 13.7093C8.82206 14.0852 8.22055 14.1103 7.81955 13.7343L4.43609 10.6516C4.03509 10.2757 4.01003 9.64912 4.3609 9.24812C4.73684 8.84712 5.36341 8.82206 5.76441 9.198L8.44612 11.6541L14.1604 5.93985C14.5614 5.53885 15.188 5.53885 15.589 5.93985C15.99 6.34085 15.99 6.96742 15.589 7.36842Z"
+                          fill="#6C41BF" />
+                      </svg>
+                      <span>Take care of your yoni egg like it is a jewel. Check the egg for cracks and chips before using.</span>
+                    </div>
+                    <div class="list2__item">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10 0C4.48622 0 0 4.48622 0 10C0 15.5138 4.48622 20 10 20C15.5138 20 20 15.5138 20 10C20 4.48622 15.5138 0 10 0ZM15.589 7.36842L9.198 13.7093C8.82206 14.0852 8.22055 14.1103 7.81955 13.7343L4.43609 10.6516C4.03509 10.2757 4.01003 9.64912 4.3609 9.24812C4.73684 8.84712 5.36341 8.82206 5.76441 9.198L8.44612 11.6541L14.1604 5.93985C14.5614 5.53885 15.188 5.53885 15.589 5.93985C15.99 6.34085 15.99 6.96742 15.589 7.36842Z"
+                          fill="#6C41BF" />
+                      </svg>
+                      <span>Always sterilize the yoni egg before using it by boiling it.</span>
+                    </div>
+                    <div class="list2__item">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10 0C4.48622 0 0 4.48622 0 10C0 15.5138 4.48622 20 10 20C15.5138 20 20 15.5138 20 10C20 4.48622 15.5138 0 10 0ZM15.589 7.36842L9.198 13.7093C8.82206 14.0852 8.22055 14.1103 7.81955 13.7343L4.43609 10.6516C4.03509 10.2757 4.01003 9.64912 4.3609 9.24812C4.73684 8.84712 5.36341 8.82206 5.76441 9.198L8.44612 11.6541L14.1604 5.93985C14.5614 5.53885 15.188 5.53885 15.589 5.93985C15.99 6.34085 15.99 6.96742 15.589 7.36842Z"
+                          fill="#6C41BF" />
+                      </svg>
+                      <span>Avoid using the yoni egg for more than 15 to 20 minutes.</span>
+                    </div>
+                  </div>
+                  &nbsp;
+                  <div class="bg3">
+                    &nbsp;
+                    <h2 id="article2">Can Yoni Eggs Get Lost in The Body?</h2>
+                    <p>This question is a common worry for beginners to the yoni egg practice. If you look at the female anatomy, yoni eggs will not be lost if inserted vaginally. Once inserted in the vagina, it stays in the vaginal canal. It is unable to move upwards due to the location of the cervix. At the sides, the yoni egg is limited by the vaginal walls.</p>
+                    <p>However, the yoni egg should not be inserted into the anus. There is no upper border to the rectum and with time, the yoni egg can move deeper into the body. This is why anal toys have flared bases to prevent it from moving deeper into the body. </p>
+                    &nbsp;
+                    <h2 id="article3">Can Yoni Eggs Get Stuck?</h2>
+                    <p>Now that we have concluded yoni eggs cannot be lost in the vagina, some may ask if it can get stuck. Many beginners find the yoni egg practice daunting as there are horror stories where some women are unable to remove their eggs. Thankfully, there are some fool-proof methods to removing the yoni egg:</p>
+                    <div class="list3">
+                      <div class="list3__item">
+                        <span>1</span>
+                        The most important thing to remember is to relax. Do not panic as this causes your body to tense up and makes removal harder. 
+                      </div>
+                      <div class="list3__item">
+                        <span>2</span>
+                        Bear down and push hard. This is similar to straining when you are having a bowel movement.
+                      </div>
+                      <div class="list3__item">
+                        <span>3</span>
+                        You can also squat and bear down as this helps relax your pelvic floor muscles.
+                      </div>
+                      <div class="list3__item">
+                        <span>4</span>
+                        If you are unable to relax, take a break and try again later.
+                      </div>
+                    </div>
+                    <p>For women who are still worried, you can opt for a yoni egg with a drilled hole. This allows you to attach a disposable string such as unwaxed dental floss at the hole. When removing, gently pull on the string to help the egg come out, just like removing a tampon. </p>
+                  </div>
+                  &nbsp;
+                  <div id="article4" class="questions">
+                    <div class="questions__title">Can I Use My Yoni Egg…</div>
+                    <div class="questions__list">
+                      <div class="questions__item">
+                        <div class="questions__head">
+                          <div class="questions__head-icon">Q.</div>
+                          <div class="questions__head-title">When I Sleep?</div>
+                        </div>
+                        <div class="questions__body">
+                          <div class="questions__body-icon">A.</div>
+                          <div class="questions__answer">
+                            <svg class="questions__answer-arrow" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 10.7321C-0.333333 9.96225 -0.333333 8.03775 1 7.26795L13 0.339746C14.3333 -0.430054 16 0.532197 16 2.0718L16 15.9282C16 17.4678 14.3333 18.4301 13 17.6603L1 10.7321Z" fill="#F7EDFF"/>
+                            </svg>
+                            <p>Avoid sleeping with your yoni egg as it is very likely to exceed the recommended time limit for wearing the egg. Many pain receptors also turn off during sleep. Although many yoni egg users have done this, it can result in pain and a tense pelvic floor. </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="questions__item">
+                        <div class="questions__head">
+                          <div class="questions__head-icon">Q.</div>
+                          <div class="questions__head-title">During My Period?</div>
+                        </div>
+                        <div class="questions__body">
+                          <div class="questions__body-icon">A.</div>
+                          <div class="questions__answer">
+                            <svg class="questions__answer-arrow" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 10.7321C-0.333333 9.96225 -0.333333 8.03775 1 7.26795L13 0.339746C14.3333 -0.430054 16 0.532197 16 2.0718L16 15.9282C16 17.4678 14.3333 18.4301 13 17.6603L1 10.7321Z" fill="#F7EDFF"/>
+                            </svg>
+                            <p>This depends on each woman. Although using the yoni egg during your period is not harmful, it is not generally recommended especially if you are using a menstrual cup. Allow your uterus to release your monthly flow without additional stimulation from the yoni egg. </p>
+                            <p>However, some women find that wearing the yoni egg helps them during their periods. Enjoy the calming and healing energy from the yoni egg. Make sure to clean the yoni egg thoroughly before and after using the egg. Avoid wearing it more than the recommended duration.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="questions__item">
+                        <div class="questions__head">
+                          <div class="questions__head-icon">Q.</div>
+                          <div class="questions__head-title">During My Pregnancy?</div>
+                        </div>
+                        <div class="questions__body">
+                          <div class="questions__body-icon">A.</div>
+                          <div class="questions__answer">
+                            <svg class="questions__answer-arrow" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 10.7321C-0.333333 9.96225 -0.333333 8.03775 1 7.26795L13 0.339746C14.3333 -0.430054 16 0.532197 16 2.0718L16 15.9282C16 17.4678 14.3333 18.4301 13 17.6603L1 10.7321Z" fill="#F7EDFF"/>
+                            </svg>
+                            <p>Avoid using your yoni egg during pregnancy unless your doctor recommends it. The insertion of the yoni egg can push the uterus. This may lead to contractions that lead to premature birth. </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="questions__item">
+                        <div class="questions__head">
+                          <div class="questions__head-icon">Q.</div>
+                          <div class="questions__head-title">After Childbirth?</div>
+                        </div>
+                        <div class="questions__body">
+                          <div class="questions__body-icon">A.</div>
+                          <div class="questions__answer">
+                            <svg class="questions__answer-arrow" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 10.7321C-0.333333 9.96225 -0.333333 8.03775 1 7.26795L13 0.339746C14.3333 -0.430054 16 0.532197 16 2.0718L16 15.9282C16 17.4678 14.3333 18.4301 13 17.6603L1 10.7321Z" fill="#F7EDFF"/>
+                            </svg>
+                            <p>Yes! Using your yoni egg after childbirth for pelvic floor training can help strengthen your pelvic floor muscles. Depending on the type of gemstone you choose, the energy emitted by the stone can also provide additional support during a trying time. </p>
+                            <p>However, it is recommended that you only start using your yoni egg after 6 to 8 weeks after birth. This tallies with the recommendation where most doctors say to wait a minimum of 6 weeks after childbirth before having sex. If in doubt, ask your healthcare team for medical advice.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="questions__item">
+                        <div class="questions__head">
+                          <div class="questions__head-icon">Q.</div>
+                          <div class="questions__head-title">With an IUD?</div>
+                        </div>
+                        <div class="questions__body">
+                          <div class="questions__body-icon">A.</div>
+                          <div class="questions__answer">
+                            <svg class="questions__answer-arrow" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 10.7321C-0.333333 9.96225 -0.333333 8.03775 1 7.26795L13 0.339746C14.3333 -0.430054 16 0.532197 16 2.0718L16 15.9282C16 17.4678 14.3333 18.4301 13 17.6603L1 10.7321Z" fill="#F7EDFF"/>
+                            </svg>
+                            <p>Women who have an intrauterine device (IUD) should not be using a yoni egg. This is because the yoni egg may displace the IUD. </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="questions__item">
+                        <div class="questions__head">
+                          <div class="questions__head-icon">Q.</div>
+                          <div class="questions__head-title">After Surgery?</div>
+                        </div>
+                        <div class="questions__body">
+                          <div class="questions__body-icon">A.</div>
+                          <div class="questions__answer">
+                            <svg class="questions__answer-arrow" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 10.7321C-0.333333 9.96225 -0.333333 8.03775 1 7.26795L13 0.339746C14.3333 -0.430054 16 0.532197 16 2.0718L16 15.9282C16 17.4678 14.3333 18.4301 13 17.6603L1 10.7321Z" fill="#F7EDFF"/>
+                            </svg>
+                            <p>Women who have had recent surgery around the uterus or vagina should avoid inserting yoni eggs into the vagina until the incision or wound has completely healed. This is to avoid introducing any form of infection that can compromise your healing after surgery. You can still hold the yoni egg in your hands for meditation or healing after surgery. </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="questions__item">
+                        <div class="questions__head">
+                          <div class="questions__head-icon">Q.</div>
+                          <div class="questions__head-title">With Infection?</div>
+                        </div>
+                        <div class="questions__body">
+                          <div class="questions__body-icon">A.</div>
+                          <div class="questions__answer">
+                            <svg class="questions__answer-arrow" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 10.7321C-0.333333 9.96225 -0.333333 8.03775 1 7.26795L13 0.339746C14.3333 -0.430054 16 0.532197 16 2.0718L16 15.9282C16 17.4678 14.3333 18.4301 13 17.6603L1 10.7321Z" fill="#F7EDFF"/>
+                            </svg>
+                            <p>If there is an infection around the genital area, it is best to wait until one is fully healed. This allows your yoni time to heal. Instead, connect with your yoni and listen for what she requires. </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  &nbsp;
+                  <hr>
+                  &nbsp;
+                  <div id="article5" class="conclusion-box__head">
+                    <img src="data/conclusion.svg" width="54" height="54" alt="The Bottom Line">
+                    In Conclusion: Are Yoni Eggs Really Safe?
+                  </div>
+                  <p>Yes! Yoni eggs are definitely safe if used accordingly. Remember to always clean and sanitize your yoni eggs before each session. Compared to other modern alternatives such as ben wa balls, yoni eggs not only enhance pelvic floor exercises, but also honors the feminine energy. It is an exercise of empowerment, self-love, and empowerment. </p>
+                  <p>Yoni eggs are especially recommended for women who are looking to heal from emotional trauma. Use it for healing and to dispel negative energy. The yoni egg practice helps users to connect mindfully to your inner self and become in-tune with your true self. </p>
+                  &nbsp;
+                  <div class="sources sources--bdb0">
+                    <div class="sources__head">
+                      <div class="sources__head-left">8 Sources</div>
+                      <div class="sources__head-btn">Collapse</div>
+                    </div>
+                    <div class="sources__body">
+                      <div class="sources__row text-content">
+                        <p>Simone, D. Everything You Need To Know About The Transformative Power Of Yoni Eggs. 2020. <br> <a href="#"
+                            style="font-weight: bold;">Xonecole.</a></p>
+                      </div>
+                      <div class="sources__row text-content">
+                        <p>Yoni Egg Magick. 2019. <a href="Minx + Muse." style="font-weight: bold;">Minx + Muse.</a></p>
+                      </div>
+                      <div class="sources__row text-content">
+                        <p>What Should You Believe About Yoni Eggs? Part 2. <a href="#" style="font-weight: bold;">Bridget’s
+                            Botanicals.</a></p>
+                      </div>
+                      <div class="sources__row text-content">
+                        <p>Coughlin, S. Where Did The Whole “Yoni” Thing Start? 2017. <a href="#"
+                            style="font-weight: bold;">Refinery29.</a></p>
+                      </div>
+                      <div class="sources__row text-content">
+                        <p>Singh-Kurtz, S. Researchers Have Debunked Goop’s “Ancient Chinese” Jade Vaginal Eggs. 2018. <a href="#"
+                            style="font-weight: bold;">Quartz.</a></p>
+                      </div>
+                      <div class="sources__row text-content">
+                        <p>Butler, N. A Beginner’s Guide To The 7 Chakras And Their Meanings. 2016. <a href="#"
+                            style="font-weight: bold;">Healthline.</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="browse-chapters">
+                  <div class="browse-chapters__title">Browse Chapters</div>
+                  <div class="browse-chapters__text">Currently reading <b>chapter 5 out of 5</b></div>
+                  <div class="browse-chapters__box">
+                    <div class="browse-chapters__holder">
+                      <div class="browse-chapters__head">
+                        <div class="browse-chapters__cell">Previous Chapters</div>
+                      </div>
+                      <div class="browse-chapters__body">
+                        <div class="browse-chapters__cell">
+                          <div class="browse-chapters__list">
+                            <a href="#" class="browse-chapters__item">
+                              <div class="browse-chapters__item-title">What is Jade Egg?</div>
+                              <div class="browse-chapters__item-number" style="background: #F29FA4;">Ch. 1</div>
+                            </a>
+                            <a href="#" class="browse-chapters__item">
+                              <div class="browse-chapters__item-title">Yoni Egg Benefits</div>
+                              <div class="browse-chapters__item-number" style="background: #F4BBB3;">Ch. 2</div>
+                            </a>
+                            <a href="#" class="browse-chapters__item">
+                              <div class="browse-chapters__item-title">How to Use Yoni Eggs</div>
+                              <div class="browse-chapters__item-number" style="background: #FADBC3;">Ch. 3</div>
+                            </a>
+                            <a href="#" class="browse-chapters__item">
+                              <div class="browse-chapters__item-title">Types of Yoni Eggs</div>
+                              <div class="browse-chapters__item-number" style="background: #E5EFCF;">Ch. 4</div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="browse-chapters__holder">
+                      <div class="browse-chapters__head">
+                        <div class="browse-chapters__cell">Next Chapters</div>
+                      </div>
+                      <div class="browse-chapters__body">
+                        <div class="browse-chapters__cell">
+                          <div class="browse-chapters__end">
+                            <p><b style="color: #F15A89;">All done!</b> We hope you gained some more knowledge about Yoni Eggs and all their qualities and secrets.</p>
+                            <p>Ready to have your first Yoni Egg Experience?</p>
+                          </div>
+                          <a href="#" class="browse-chapters__link">
+                            <span>Check our Collection of 17 Yoni Eggs</span>
+                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#6C41BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="blog-page__share js-sticky">
+                <div class="social-likes">
+                  <div data-service="facebook" title="Share link on Facebook">
+                    <svg width="9" height="16" viewBox="0 0 9 16" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M7.03945 2.65667H8.5V0.112667C8.24802 0.078 7.38143 0 6.37218 0C4.26635 0 2.82381 1.32467 2.82381 3.75933V6H0.5V8.844H2.82381V16H5.6729V8.84467H7.90272L8.25669 6.00067H5.67224V4.04133C5.6729 3.21933 5.89422 2.65667 7.03945 2.65667Z" />
+                    </svg>
+                    <div class="social-likes__hint">Share on Facebook</div>
+                  </div>
+                  <div data-service="twitter" title="Share link on Twitter">
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M20 1.89415C19.2563 2.21538 18.4637 2.42831 17.6375 2.53169C18.4875 2.032 19.1363 1.24677 19.4412 0.300308C18.6488 0.765538 17.7738 1.09415 16.8412 1.27754C16.0887 0.488616 15.0162 0 13.8462 0C11.5763 0 9.74875 1.81415 9.74875 4.03815C9.74875 4.35815 9.77625 4.66585 9.84375 4.95877C6.435 4.79508 3.41875 3.18646 1.3925 0.736C1.03875 1.34031 0.83125 2.032 0.83125 2.77662C0.83125 4.17477 1.5625 5.41415 2.6525 6.13169C1.99375 6.11938 1.3475 5.93108 0.8 5.63446C0.8 5.64677 0.8 5.66277 0.8 5.67877C0.8 7.64062 2.22125 9.27015 4.085 9.64554C3.75125 9.73538 3.3875 9.77846 3.01 9.77846C2.7475 9.77846 2.4825 9.76369 2.23375 9.70954C2.765 11.3083 4.2725 12.4837 6.065 12.5218C4.67 13.5963 2.89875 14.2437 0.98125 14.2437C0.645 14.2437 0.3225 14.2289 0 14.1883C1.81625 15.3415 3.96875 16 6.29 16C13.835 16 17.96 9.84615 17.96 4.512C17.96 4.33354 17.9538 4.16123 17.945 3.99015C18.7588 3.42154 19.4425 2.71138 20 1.89415Z"
+                        fill="white" />
+                    </svg>
+                    <div class="social-likes__hint">Share on Twitter</div>
+                  </div>
+                  <div data-service="pinterest" title="Share link on Pinterest" data-media="image link, required">
+                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M9.3014 0C3.22817 0.000833345 0 3.51338 0 7.34344C0 9.1193 1.09944 11.3352 2.85984 12.0377C3.36202 12.2418 3.29555 11.9927 3.72758 10.501C3.76173 10.3768 3.74419 10.2693 3.63342 10.1535C1.11698 7.52594 3.14232 2.1242 8.9423 2.1242C17.3363 2.1242 15.7679 12.6093 10.4027 12.6093C9.01985 12.6093 7.98964 11.6293 8.3155 10.4168C8.7106 8.97263 9.48418 7.4201 9.48418 6.37926C9.48418 3.75589 5.15473 4.14506 5.15473 7.62094C5.15473 8.69512 5.57567 9.42013 5.57567 9.42013C5.57567 9.42013 4.18268 14.5002 3.9242 15.4494C3.48664 17.0561 3.98328 19.6569 4.02667 19.8811C4.05344 20.0044 4.20668 20.0436 4.29253 19.9419C4.43007 19.7794 6.11385 17.6111 6.58557 16.0436C6.75727 15.4727 7.46161 13.156 7.46161 13.156C7.92594 13.9127 9.26448 14.546 10.6907 14.546C14.9334 14.546 18 11.1793 18 7.00177C17.9852 2.99671 14.1884 0 9.3014 0V0Z"
+                        fill="white" />
+                    </svg>
+                    <div class="social-likes__hint">Share on Pinterest</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__container">
+      <div class="footer__logo-box">
+        <div class="footer__logo">
+          <img src="images/logo.png" width="135" height="34" alt="logo">
+          <a href="#" class="footer__logo-link"></a>
+        </div>
+        <div class="footer__logo-descriptions">© MyKegelTools 2019. <br> All product names, logos, and brands are property of their respective owners.</div>
+      </div>
+      <nav class="footer__nav">
+        <div class="footer__nav-cell">
+          <div class="footer__nav-title">Useful Pages</div>
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Shipping and Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__nav-cell">
+          <div class="footer__nav-title">Legal Pages</div>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Cookies Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="footer__subscribe">
+        <div class="footer__subscribe-title">Join our mailing list</div>
+        <form class="footer__subscribe-form">
+          <input type="email" class="footer__subscribe-input" placeholder="Enter email">
+          <button type="submit" class="footer__subscribe-btn"><svg width="18" height="18"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#letter"></use></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="btn-top js-top-scroll">
+    <svg class="btn-top__arrow" width="10" height="7"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.svg#top"></use></svg>
+    <svg class="btn-top__bg" width="1920" height="40" viewBox="0 0 1920 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M933.5 11C943.1 1.4 953.5 -1.56795e-05 960 1.31701e-10C966.5 -1.56795e-05 976.9 1.4 986.5 11C987.677 12.1766 988.762 13.286 989.783 14.3299C999.167 23.9217 1003.15 27.9909 1022.93 28H1920V40H0V28H897.067C916.852 27.9909 920.833 23.9217 930.217 14.3299C931.238 13.286 932.323 12.1766 933.5 11Z" fill="url(#paint0_linear)"/>
+      <defs>
+      <linearGradient id="paint0_linear" x1="1920" y1="39.9902" x2="0" y2="39.9902" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BA58E1"/>
+      <stop offset="1" stop-color="#6F49BC"/>
+      </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</footer>
+  <script src="/js/app.js"></script>
+
+</body>
+
+</html>
