@@ -18523,8 +18523,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = function () {
 
+  (0, _jquery2.default)(document).on('click ', '.buy-with__checkbox-input', function buyItWith() {
+    var dataId = (0, _jquery2.default)(this).attr('id');
+    (0, _jquery2.default)('[data-id="' + dataId + '"]').toggleClass('hide');
+  });
+
   (0, _jquery2.default)('.product-page__size-new-current').on('click', function customSelect(event) {
     event.stopPropagation();
+    (0, _jquery2.default)(this).parents('.product-page__size-new').siblings('.product-page__size-new').removeClass('active');
     (0, _jquery2.default)(this).parents('.product-page__size-new').toggleClass('active');
   });
   (0, _jquery2.default)('.product-page__size-new-item').on('click', function customSelectChoice(event) {
@@ -18552,11 +18558,19 @@ exports.default = function () {
     (0, _jquery2.default)(".landing__nav").removeClass('active');
   });
 
+  var firstLandingItem = (0, _jquery2.default)('.landing__nav-list li').first().find('a').attr('href');
   (0, _jquery2.default)(window).on('scroll', function headerScroll() {
-    if ((0, _jquery2.default)(this).scrollTop() >= 2) {
-      (0, _jquery2.default)('.landing__nav').addClass('landing__nav--scroll');
+    if ((0, _jquery2.default)('.landing__nav-list').length) {
+      if ((0, _jquery2.default)(this).scrollTop() >= (0, _jquery2.default)(firstLandingItem).offset().top) {
+        (0, _jquery2.default)('.landing__nav').addClass('landing__nav--scroll');
+      } else {
+        (0, _jquery2.default)('.landing__nav').removeClass('landing__nav--scroll');
+      }
+    }
+    if ((0, _jquery2.default)(this).scrollTop() >= 10) {
+      (0, _jquery2.default)('.header').addClass('header--scroll');
     } else {
-      (0, _jquery2.default)('.landing__nav').removeClass('landing__nav--scroll');
+      (0, _jquery2.default)('.header').removeClass('header--scroll');
     }
   });
 
@@ -18565,7 +18579,7 @@ exports.default = function () {
     var topMenu = (0, _jquery2.default)(".landing__nav");
     var topMenuHeight = topMenu.outerHeight() + 10;
     var menuItems = (0, _jquery2.default)(".landing__nav-list a");
-    var scrollItems = menuItems.map(function scrollItems() {
+    var scrollItems = menuItems.map(function scrollItemsFunction() {
       var item = (0, _jquery2.default)((0, _jquery2.default)(this).attr("href"));
       if (item.length) {
         return item;
@@ -18573,7 +18587,7 @@ exports.default = function () {
     });
     (0, _jquery2.default)(window).on('scroll', function scrollWind() {
       var fromTop = (0, _jquery2.default)(this).scrollTop() + topMenuHeight;
-      var cur = scrollItems.map(function curFunc() {
+      var cur = scrollItems.map(function curFunction() {
         if ((0, _jquery2.default)(this).offset().top < fromTop) return this;
       });
       cur = cur[cur.length - 1];
@@ -18613,11 +18627,30 @@ exports.default = function () {
   _ui.Fancybox.defaults.Thumbs = { autoStart: false };
 
   (0, _jquery2.default)('.product-info__item-head').on('click', function productInfo() {
-    (0, _jquery2.default)(this).parent('.product-info__item').toggleClass('active');
+    var _this = this;
+
+    var offsetTopScroll = (0, _jquery2.default)(window).width() < 1200 ? 52 : 0;
+    (0, _jquery2.default)(this).parents('.product-info__item').siblings().removeClass('active');
+    (0, _jquery2.default)(this).parents('.product-info__item').siblings().find('.product-info__item-body').removeClass('active');
+    if ((0, _jquery2.default)(this).parents('.product-info__item').hasClass('active')) {
+      (0, _jquery2.default)(this).parents('.product-info__item').removeClass('active');
+      (0, _jquery2.default)(this).parents('.product-info__item').find('.product-info__item-body').removeClass('active');
+    } else {
+      (0, _jquery2.default)(this).parents('.product-info__item').addClass('active');
+      setTimeout(function () {
+        (0, _jquery2.default)('html, body').animate({
+          scrollTop: (0, _jquery2.default)(_this).offset().top - offsetTopScroll
+        }, 500);
+      }, 100);
+    }
   });
 
   (0, _jquery2.default)('.product-info__show-more').on('click', function showMoreFunc() {
     (0, _jquery2.default)(this).parent('.product-info__item-body').toggleClass('active');
+  });
+
+  (0, _jquery2.default)('.types__show-more').on('click', function showMoreFunc2() {
+    (0, _jquery2.default)(this).parent('.types__item').toggleClass('active');
   });
 
   (0, _jquery2.default)('.js-btn-down').on("click", function clickDownScroll() {
@@ -18745,10 +18778,14 @@ exports.default = function () {
 
   (0, _jquery2.default)(window).on('load resize', function () {
     if ((0, _jquery2.default)(window).width() < 767) {
+      (0, _jquery2.default)('.new-list__item').each(function (index, element) {
+        (0, _jquery2.default)(element).find('.new-list__item-title').insertBefore((0, _jquery2.default)(element).find('.new-list__item-img'));
+      });
+
       (0, _jquery2.default)('.landing__team-text').insertAfter((0, _jquery2.default)('.landing__team-triggers'));
 
-      (0, _jquery2.default)('.chapters-new__item-holder').each(function (index, element) {
-        (0, _jquery2.default)(element).find('.chapters-new__item-btn').insertAfter((0, _jquery2.default)(element).find('.chapters-new__item-descriptions'));
+      (0, _jquery2.default)('.chapters-new__item').each(function (index, element) {
+        (0, _jquery2.default)(element).find('.chapters-new__item-img').append((0, _jquery2.default)(element).find('.chapters-new__item-btn'));
       });
       (0, _jquery2.default)('.blog-product').each(function (index, element) {
         (0, _jquery2.default)(element).find('.blog-product__title').insertBefore((0, _jquery2.default)(element).find('.blog-product__head'));
@@ -18764,9 +18801,13 @@ exports.default = function () {
         (0, _jquery2.default)('body').addClass('pb2');
       }
     } else {
+      (0, _jquery2.default)('.new-list__item').each(function (index, element) {
+        (0, _jquery2.default)(element).find('.new-list__item-title').insertBefore((0, _jquery2.default)(element).find('.new-list__item-text'));
+      });
+
       (0, _jquery2.default)('.landing__team-head').append((0, _jquery2.default)('.landing__team-text'));
 
-      (0, _jquery2.default)('.chapters-new__item-holder').each(function (index, element) {
+      (0, _jquery2.default)('.chapters-new__item').each(function (index, element) {
         (0, _jquery2.default)(element).find('.chapters-new__item-btn').insertAfter((0, _jquery2.default)(element).find('.chapters-new__item-title'));
       });
       (0, _jquery2.default)('.blog-product').each(function (index, element) {
