@@ -11699,6 +11699,9 @@ h4 {
           line-height: 42px; } }
     .product-page__controls--mb30 {
       margin-bottom: 20px; }
+      @media only screen and (max-width: 1200px) {
+        .product-page__controls--mb30 {
+          margin-bottom: 0; } }
   .product-page__controls-left {
     position: relative;
     -webkit-box-flex: 1;
