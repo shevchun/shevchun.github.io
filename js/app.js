@@ -11455,7 +11455,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = ["dev", "404.html", "about.html", "author.html", "blog-page-new-A-Woman’s-Guide.html", "blog-page-new-hub.html", "blog-page-new.html", "blog-page.html", "blog.html", "cart-empty.html", "cart.html", "category-page.html", "CHAPTER-1-What-is-Jade-Egg.html", "CHAPTER-2-Yoni-Egg-Benefits.html", "CHAPTER-3-How-to-Use-Yoni-Eggs.html", "CHAPTER-4-Types-of-Yoni-Eggs-Gemstones-and-Chakras.html", "CHAPTER-5-Are-Yoni-Eggs-Safe.html", "checkout-success.html", "checkout.html", "contacts.html", "index-new.html", "index.html", "landing.html", "MAIN-The-Beginner’s-Guide-to-Yoni-Eggs.html", "product-page-2.html", "product-page-3.html", "product-page-NEW-1-sizes.html", "product-page-NEW-2-sizes.html", "product-page.html", "shop-Yoni-Wand.html", "shop.html"];
+exports.default = ["dev", "404.html", "about.html", "author.html", "blog-page-new-A-Woman’s-Guide.html", "blog-page-new-hub.html", "blog-page-new.html", "blog-page.html", "blog.html", "cart-empty.html", "cart.html", "category-page.html", "CHAPTER-1-What-is-Jade-Egg.html", "CHAPTER-2-Yoni-Egg-Benefits.html", "CHAPTER-3-How-to-Use-Yoni-Eggs.html", "CHAPTER-4-Types-of-Yoni-Eggs-Gemstones-and-Chakras.html", "CHAPTER-5-Are-Yoni-Eggs-Safe.html", "checkout-success.html", "checkout.html", "contacts.html", "index-new.html", "index.html", "landing.html", "MAIN-The-Beginner’s-Guide-to-Yoni-Eggs.html", "product-page-2.html", "product-page-3.html", "product-page-NEW-1-sizes.html", "product-page-NEW-2-sizes.html", "product-page-NEW-3-sizes.html", "product-page.html", "shop-Yoni-Wand.html", "shop.html"];
 
 /***/ }),
 /* 12 */
@@ -18522,6 +18522,23 @@ var _ui = __webpack_require__(28);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function () {
+  (0, _jquery2.default)('.js-sizes-btn').on('click', function () {
+    (0, _jquery2.default)('.popup--sizes').addClass('active');
+  });
+
+  (0, _jquery2.default)('.js-close-popup').on('click', function () {
+    (0, _jquery2.default)('.popup').removeClass('active');
+  });
+
+  if ((0, _jquery2.default)('#3in1').length) {
+    (0, _jquery2.default)(document).on('click', function () {
+      if ((0, _jquery2.default)('#3in1').prop('checked')) {
+        (0, _jquery2.default)('.product-page__size-3-info').addClass('show');
+      } else {
+        (0, _jquery2.default)('.product-page__size-3-info').removeClass('show');
+      }
+    });
+  }
 
   (0, _jquery2.default)(document).on('click ', '.buy-with__checkbox-input', function buyItWith() {
     var dataId = (0, _jquery2.default)(this).attr('id');
@@ -18537,13 +18554,13 @@ exports.default = function () {
     event.stopPropagation();
     var innerInfo = (0, _jquery2.default)(this).html();
     (0, _jquery2.default)(this).parents('.product-page__size-new').find('.product-page__size-new-current-inner').html(innerInfo);
-    (0, _jquery2.default)(".product-page__size-new").removeClass('active');
+    (0, _jquery2.default)('.product-page__size-new').removeClass('active');
   });
 
-  (0, _jquery2.default)(document).on("click touchend", function (event) {
+  (0, _jquery2.default)(document).on('click touchend', function (event) {
     event.stopPropagation();
-    if ((0, _jquery2.default)(event.target).closest(".product-page__size-new").length) return;
-    (0, _jquery2.default)(".product-page__size-new").removeClass('active');
+    if ((0, _jquery2.default)(event.target).closest('.product-page__size-new').length) return;
+    (0, _jquery2.default)('.product-page__size-new').removeClass('active');
   });
 
   (0, _jquery2.default)('.landing__nav-mobile-dots').on('click', function customSelect(event) {
@@ -18551,11 +18568,11 @@ exports.default = function () {
     (0, _jquery2.default)(this).parents('.landing__nav').toggleClass('active');
   });
 
-  (0, _jquery2.default)(document).on("click touchend", function (event) {
+  (0, _jquery2.default)(document).on('click touchend', function (event) {
     event.stopPropagation();
-    if ((0, _jquery2.default)(event.target).closest(".landing__nav a").length) (0, _jquery2.default)(".landing__nav").removeClass('active');
-    if ((0, _jquery2.default)(event.target).closest(".landing__nav").length) return;
-    (0, _jquery2.default)(".landing__nav").removeClass('active');
+    if ((0, _jquery2.default)(event.target).closest('.landing__nav a').length) (0, _jquery2.default)('.landing__nav').removeClass('active');
+    if ((0, _jquery2.default)(event.target).closest('.landing__nav').length) return;
+    (0, _jquery2.default)('.landing__nav').removeClass('active');
   });
 
   var firstLandingItem = (0, _jquery2.default)('.landing__nav-list li').first().find('a').attr('href');
@@ -18576,11 +18593,11 @@ exports.default = function () {
 
   if ((0, _jquery2.default)('.landing__nav-mobile').length) {
     var lastId = void 0;
-    var topMenu = (0, _jquery2.default)(".landing__nav");
+    var topMenu = (0, _jquery2.default)('.landing__nav');
     var topMenuHeight = topMenu.outerHeight() + 10;
-    var menuItems = (0, _jquery2.default)(".landing__nav-list a");
+    var menuItems = (0, _jquery2.default)('.landing__nav-list a');
     var scrollItems = menuItems.map(function scrollItemsFunction() {
-      var item = (0, _jquery2.default)((0, _jquery2.default)(this).attr("href"));
+      var item = (0, _jquery2.default)((0, _jquery2.default)(this).attr('href'));
       if (item.length) {
         return item;
       }
@@ -18591,10 +18608,10 @@ exports.default = function () {
         if ((0, _jquery2.default)(this).offset().top < fromTop) return this;
       });
       cur = cur[cur.length - 1];
-      var id = cur && cur.length ? cur[0].id : "";
+      var id = cur && cur.length ? cur[0].id : '';
       if (lastId !== id) {
         lastId = id;
-        menuItems.parent().removeClass("active").end().filter('[href=\'#' + id + '\']').parent().addClass("active");
+        menuItems.parent().removeClass('active').end().filter('[href=\'#' + id + '\']').parent().addClass('active');
         (0, _jquery2.default)('.landing__nav-mobile-number').text((0, _jquery2.default)('[href=\'#' + id + '\']').find('.landing__nav-number').text());
         (0, _jquery2.default)('.landing__nav-mobile-title').text((0, _jquery2.default)('[href=\'#' + id + '\']').find('.landing__nav-name').text());
       }
@@ -18609,16 +18626,16 @@ exports.default = function () {
     event.stopPropagation();
     var innerInfo = (0, _jquery2.default)(this).html();
     (0, _jquery2.default)(this).parents('.recommended__drop').find('.recommended__drop-current-inner').html(innerInfo);
-    (0, _jquery2.default)(".recommended__drop").removeClass('active');
+    (0, _jquery2.default)('.recommended__drop').removeClass('active');
   });
 
-  (0, _jquery2.default)(document).on("click touchend", function (event) {
+  (0, _jquery2.default)(document).on('click touchend', function (event) {
     event.stopPropagation();
-    if ((0, _jquery2.default)(event.target).closest(".recommended__drop").length) return;
-    (0, _jquery2.default)(".recommended__drop").removeClass('active');
+    if ((0, _jquery2.default)(event.target).closest('.recommended__drop').length) return;
+    (0, _jquery2.default)('.recommended__drop').removeClass('active');
   });
 
-  _ui.Fancybox.bind(".product-page__for-zoom", {
+  _ui.Fancybox.bind('.product-page__for-zoom', {
     Thumbnails: {
       autoStart: false
     }
@@ -18653,7 +18670,7 @@ exports.default = function () {
     (0, _jquery2.default)(this).parent('.types__item').toggleClass('active');
   });
 
-  (0, _jquery2.default)('.js-btn-down').on("click", function clickDownScroll() {
+  (0, _jquery2.default)('.js-btn-down').on('click', function clickDownScroll() {
     var marginTop = 10;
     var scrollEl = (0, _jquery2.default)(this).attr('href');
     if ((0, _jquery2.default)(scrollEl).length !== 0) {
@@ -18687,11 +18704,11 @@ exports.default = function () {
 
   if ((0, _jquery2.default)('.js-nav').length) {
     var _lastId = void 0;
-    var _topMenu = (0, _jquery2.default)(".js-nav");
+    var _topMenu = (0, _jquery2.default)('.js-nav');
     var _topMenuHeight = _topMenu.outerHeight() + 10;
-    var _menuItems = _topMenu.find("a");
+    var _menuItems = _topMenu.find('a');
     var _scrollItems = _menuItems.map(function scrollItems() {
-      var item = (0, _jquery2.default)((0, _jquery2.default)(this).attr("href"));
+      var item = (0, _jquery2.default)((0, _jquery2.default)(this).attr('href'));
       if (item.length) {
         return item;
       }
@@ -18703,10 +18720,10 @@ exports.default = function () {
           if ((0, _jquery2.default)(this).offset().top < fromTop) return this;
         });
         cur = cur[cur.length - 1];
-        var id = cur && cur.length ? cur[0].id : "";
+        var id = cur && cur.length ? cur[0].id : '';
         if (_lastId !== id) {
           _lastId = id;
-          _menuItems.parent().removeClass("active").end().filter('[href=\'#' + id + '\']').parent().addClass("active");
+          _menuItems.parent().removeClass('active').end().filter('[href=\'#' + id + '\']').parent().addClass('active');
         }
       });
     }
@@ -18752,7 +18769,7 @@ exports.default = function () {
       (0, _jquery2.default)(this).nextAll('.star-rating__item').removeClass('active');
       valueHolder.val(rating).change();
       valueHolder.attr('value', rating);
-    };
+    }
   });
   (0, _jquery2.default)('.star-rating__value').on('change', function rateFunc() {
     var parent = (0, _jquery2.default)(this).parents('.star-rating');
@@ -18762,17 +18779,17 @@ exports.default = function () {
     }, 150);
   });
 
-  (0, _jquery2.default)(".js-input").each(function (index, element) {
-    if ((0, _jquery2.default)(element).val() !== "") {
-      (0, _jquery2.default)(element).parents(".js-input-parent").addClass('active');
+  (0, _jquery2.default)('.js-input').each(function (index, element) {
+    if ((0, _jquery2.default)(element).val() !== '') {
+      (0, _jquery2.default)(element).parents('.js-input-parent').addClass('active');
     }
   });
   (0, _jquery2.default)(document).on('focus load', '.js-input', function focesFunc() {
-    (0, _jquery2.default)(this).parents(".js-input-parent").addClass('active');
+    (0, _jquery2.default)(this).parents('.js-input-parent').addClass('active');
   });
   (0, _jquery2.default)(document).on('blur', '.js-input', function blurFunc() {
-    if ((0, _jquery2.default)(this).val() == '') {
-      (0, _jquery2.default)(this).parents(".js-input-parent").removeClass('active');
+    if ((0, _jquery2.default)(this).val() === '') {
+      (0, _jquery2.default)(this).parents('.js-input-parent').removeClass('active');
     }
   });
 
@@ -18832,10 +18849,14 @@ exports.default = function () {
       (0, _jquery2.default)('.product-page__mobile-head').append((0, _jquery2.default)('.product-page__price-descriptions'));
       (0, _jquery2.default)('.buy-with').insertAfter((0, _jquery2.default)('.product-info'));
       (0, _jquery2.default)('.product-page__price--new').insertAfter((0, _jquery2.default)('.product-page__size'));
+      (0, _jquery2.default)('.product-page__price--3').insertAfter((0, _jquery2.default)('.product-page__size-3'));
       (0, _jquery2.default)('.product-page__price--new').append((0, _jquery2.default)('.product-page__info-rate--new'));
+      (0, _jquery2.default)('.product-page__price--3').append((0, _jquery2.default)('.product-page__info-rate--new'));
       (0, _jquery2.default)('.product-page__descriptions--new').insertAfter((0, _jquery2.default)('.product-page__gift--new'));
+      (0, _jquery2.default)('.product-page__descriptions--3').insertAfter((0, _jquery2.default)('.product-page__price--3'));
       (0, _jquery2.default)('.buy-with__btn').insertAfter((0, _jquery2.default)('.buy-with__descriptions'));
     } else {
+      (0, _jquery2.default)('.product-page__descriptions--3').insertBefore((0, _jquery2.default)('.product-page__size-3'));
       (0, _jquery2.default)('.product-page__title').insertAfter((0, _jquery2.default)('.product-page__info-head'));
       (0, _jquery2.default)('.product-page__controls-left').append((0, _jquery2.default)('.product-page__price'));
       (0, _jquery2.default)('.product-page__controls-left').append((0, _jquery2.default)('.product-page__price-descriptions'));
@@ -18896,10 +18917,10 @@ exports.default = function () {
     (0, _jquery2.default)('.header__popup').removeClass('active');
   });
 
-  (0, _jquery2.default)(document).on("click touchend", function (event) {
+  (0, _jquery2.default)(document).on('click touchend', function (event) {
     event.stopPropagation();
-    if ((0, _jquery2.default)(event.target).closest(".header__popup-box").length) return;
-    (0, _jquery2.default)(".header__popup").removeClass('active');
+    if ((0, _jquery2.default)(event.target).closest('.header__popup-box').length) return;
+    (0, _jquery2.default)('.header__popup').removeClass('active');
   });
 
   (0, _jquery2.default)('.header__search-btn').on('click', function headerSearch(event) {
@@ -18907,10 +18928,10 @@ exports.default = function () {
     (0, _jquery2.default)(this).parents('.header__search').toggleClass('active');
   });
 
-  (0, _jquery2.default)(document).on("click touchend", function (event) {
+  (0, _jquery2.default)(document).on('click touchend', function (event) {
     event.stopPropagation();
-    if ((0, _jquery2.default)(event.target).closest(".header__search-form").length) return;
-    (0, _jquery2.default)(".header__search").removeClass('active');
+    if ((0, _jquery2.default)(event.target).closest('.header__search-form').length) return;
+    (0, _jquery2.default)('.header__search').removeClass('active');
   });
 };
 
