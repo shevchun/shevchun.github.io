@@ -18854,8 +18854,10 @@ exports.default = function () {
       (0, _jquery2.default)('.product-page__price--3').append((0, _jquery2.default)('.product-page__info-rate--new'));
       (0, _jquery2.default)('.product-page__descriptions--new').insertAfter((0, _jquery2.default)('.product-page__gift--new'));
       (0, _jquery2.default)('.product-page__descriptions--3').insertAfter((0, _jquery2.default)('.product-page__price--3'));
+      (0, _jquery2.default)('.product-page__size-3-bottom').insertAfter((0, _jquery2.default)('.product-page__price--3'));
       (0, _jquery2.default)('.buy-with__btn').insertAfter((0, _jquery2.default)('.buy-with__descriptions'));
     } else {
+      (0, _jquery2.default)('.product-page__controls-right--relative').append((0, _jquery2.default)('.product-page__size-3-bottom'));
       (0, _jquery2.default)('.product-page__descriptions--3').insertBefore((0, _jquery2.default)('.product-page__size-3'));
       (0, _jquery2.default)('.product-page__title').insertAfter((0, _jquery2.default)('.product-page__info-head'));
       (0, _jquery2.default)('.product-page__controls-left').append((0, _jquery2.default)('.product-page__price'));
