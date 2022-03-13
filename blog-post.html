@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="Halfway">
+  <meta name="description" content="Sword">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>Halfway</title>
+  <title>Sword</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
@@ -18,573 +18,426 @@
   <link href="css/index.css" rel="stylesheet">
 </head>
   <body>
-    <div class="preloader">
-  <div class="lds-ellipsis">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <header class="header">
+  <div class="header__container container">
+    <div class="header__left">
+      <div class="header__logo">
+        <img src="data/logo.svg" width="157" height="68" alt="logo">
+        <a href="#" class="header__logo-link"></a>
+      </div>
+    </div>
+    <div class="header__center">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="menu-item-has-children">
+            <a href="#">Real Swords</a>
+            <ul>
+              <li>
+                <a href="#">Asian & Oriental</a>
+              </li>
+              <li>
+                <a href="#">European</a>
+              </li>
+              <li>
+                <a href="#">Arabic & Middle Eastern</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item-has-children">
+            <a href="#">Fantasy Swords</a>
+            <ul>
+              <li>
+                <a href="#">Anime Swords</a>
+              </li>
+              <li>
+                <a href="#">Movie Swords</a>
+              </li>
+              <li>
+                <a href="#">Game Swords</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Editorial</a>
+          </li>
+          <li>
+            <a href="#">Get in Touch</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__right">
+      <div class="header__search">
+        <div class="header__search-btn js-search-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.7043 16.2848L14.3054 12.8958C15.402 11.4988 15.9971 9.77351 15.9948 7.99743C15.9948 6.41569 15.5258 4.86947 14.647 3.5543C13.7683 2.23913 12.5192 1.21408 11.0579 0.608771C9.59657 0.00346513 7.98855 -0.15491 6.43721 0.153672C4.88586 0.462254 3.46085 1.22393 2.34239 2.34239C1.22393 3.46085 0.462254 4.88586 0.153672 6.43721C-0.15491 7.98855 0.00346513 9.59657 0.608771 11.0579C1.21408 12.5192 2.23913 13.7683 3.5543 14.647C4.86947 15.5258 6.41569 15.9948 7.99743 15.9948C9.77351 15.9971 11.4988 15.402 12.8958 14.3054L16.2848 17.7043C16.3777 17.798 16.4883 17.8724 16.6101 17.9231C16.7319 17.9739 16.8626 18 16.9945 18C17.1265 18 17.2572 17.9739 17.379 17.9231C17.5008 17.8724 17.6114 17.798 17.7043 17.7043C17.798 17.6114 17.8724 17.5008 17.9231 17.379C17.9739 17.2572 18 17.1265 18 16.9945C18 16.8626 17.9739 16.7319 17.9231 16.6101C17.8724 16.4883 17.798 16.3777 17.7043 16.2848V16.2848ZM1.99936 7.99743C1.99936 6.81112 2.35114 5.65146 3.01022 4.66508C3.66929 3.6787 4.60606 2.90991 5.70207 2.45593C6.79807 2.00196 8.00408 1.88317 9.16759 2.11461C10.3311 2.34605 11.3999 2.91731 12.2387 3.75615C13.0775 4.595 13.6488 5.66375 13.8802 6.82726C14.1117 7.99077 13.9929 9.19678 13.5389 10.2928C13.0849 11.3888 12.3162 12.3256 11.3298 12.9846C10.3434 13.6437 9.18373 13.9955 7.99743 13.9955C6.40664 13.9955 4.88101 13.3636 3.75615 12.2387C2.6313 11.1138 1.99936 9.58821 1.99936 7.99743Z" />
+          </svg>
+        </div>
+        <form class="header__search-box">
+          <input type="text" class="header__search-input" placeholder="Search by keyword">
+          <button class="header__search-button" type="submit">search</button>
+        </form>
+      </div>
+      <div class="header__menu-btn">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.05 0H0.95C0.42533 0 0 0.425329 0 0.95V1.05C0 1.57467 0.42533 2 0.95 2H17.05C17.5747 2 18 1.57467 18 1.05V0.95C18 0.425329 17.5747 0 17.05 0Z" fill="#F7D39F"/>
+          <path d="M17.05 5H0.95C0.42533 5 0 5.42533 0 5.95V6.05C0 6.57467 0.42533 7 0.95 7H17.05C17.5747 7 18 6.57467 18 6.05V5.95C18 5.42533 17.5747 5 17.05 5Z" fill="#F7D39F"/>
+          <path d="M17.05 10H0.95C0.42533 10 0 10.4253 0 10.95V11.05C0 11.5747 0.42533 12 0.95 12H17.05C17.5747 12 18 11.5747 18 11.05V10.95C18 10.4253 17.5747 10 17.05 10Z" fill="#F7D39F"/>
+        </svg>
+      </div>
+    </div>
   </div>
-</div>
-<header class="header">
-  <div class="container container--full">
-    <div class="header__container">
-      <div class="header__left">
-        <div class="header__logo">
-          <picture>
-            <source srcset="data/logo-small.svg" media="(max-width: 1200px)">
-            <img src="data/logo.svg" width="159" height="64" alt="logo">
-          </picture>
-          <a href="#" class="header__logo-link"></a>
-        </div>
+  <div class="header__mobile">
+    <div class="header__mobile-overlay js-close-mobile"></div>
+    <div class="header__mobile-box">
+      <div class="header__mobile-close js-close-mobile">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.113 8.99744L17.5567 2.56866C17.8389 2.28647 17.9974 1.90375 17.9974 1.50468C17.9974 1.10562 17.8389 0.722895 17.5567 0.440712C17.2745 0.158529 16.8918 0 16.4928 0C16.0937 0 15.711 0.158529 15.4288 0.440712L9 6.88448L2.57121 0.440712C2.28903 0.158529 1.90631 -2.97328e-09 1.50724 0C1.10817 2.97328e-09 0.725452 0.158529 0.443269 0.440712C0.161086 0.722895 0.00255743 1.10562 0.00255743 1.50468C0.00255743 1.90375 0.161086 2.28647 0.443269 2.56866L6.88704 8.99744L0.443269 15.4262C0.302812 15.5655 0.191329 15.7313 0.115249 15.9139C0.0391699 16.0965 0 16.2924 0 16.4902C0 16.688 0.0391699 16.8839 0.115249 17.0665C0.191329 17.2491 0.302812 17.4149 0.443269 17.5542C0.582579 17.6946 0.74832 17.8061 0.930933 17.8822C1.11355 17.9583 1.30941 17.9974 1.50724 17.9974C1.70507 17.9974 1.90094 17.9583 2.08355 17.8822C2.26616 17.8061 2.4319 17.6946 2.57121 17.5542L9 11.1104L15.4288 17.5542C15.5681 17.6946 15.7338 17.8061 15.9165 17.8822C16.0991 17.9583 16.2949 17.9974 16.4928 17.9974C16.6906 17.9974 16.8865 17.9583 17.0691 17.8822C17.2517 17.8061 17.4174 17.6946 17.5567 17.5542C17.6972 17.4149 17.8087 17.2491 17.8848 17.0665C17.9608 16.8839 18 16.688 18 16.4902C18 16.2924 17.9608 16.0965 17.8848 15.9139C17.8087 15.7313 17.6972 15.5655 17.5567 15.4262L11.113 8.99744Z" fill="#F7D39F"/>
+        </svg>
       </div>
-      <div class="header__right">
-        <div class="header__btn btn">GET A pROPOSAL</div>
-        <div class="header__menu-btn">
-          <div class="header__menu-btn-box">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-      <div class="header__menu">
-        <div class="header__menu-holder">
-          <div class="header__menu-box">
-            <div class="header__menu-left">
-              <div class="header__menu-row">
-                <div class="header__menu-logo">
-                  <img src="data/logo-menu.svg" width="305" height="109" alt="logo">
-                </div>
-                <div class="header__menu-text">Uplift your business to new heights with our results-oriented digital marketing services.</div>
-              </div>
-              <div class="header__menu-contacts">
-                <div class="header__menu-contacts-item">
-                  <div class="header__menu-contacts-title">P:</div>
-                  <div class="header__menu-contacts-box">
-                    <a href="tel:+12025550188" class="header__menu-contacts-link">+1-202-555-0188</a>
-                  </div>
-                </div>
-                <div class="header__menu-contacts-item">
-                  <div class="header__menu-contacts-title">E:</div>
-                  <div class="header__menu-contacts-box">
-                    <a href="mailto:contact@halfwayup.com" class="header__menu-contacts-link">contact@halfwayup.com</a>
-                  </div>
-                </div>
-                <div class="header__menu-contacts-item">
-                  <div class="header__menu-contacts-title">A:</div>
-                  <div class="header__menu-contacts-box">
-                    <address class="header__menu-contacts-address">(541) 536-1859 52790 <br> Oak Dr La Pine, Oregon(OR), <br> 97739</address>
-                  </div>
-                </div>
-              </div>
-              <ul class="social social--menu">
-                <li class="social__item">
-                  <a href="#" class="social__link" target="_blank" rel="nofollow">
-                    <span>
-                      <svg width="14" height="12" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13.6321 1.88811C13.2083 2.06639 12.7647 2.19315 12.3107 2.26568C12.5159 2.26568 12.836 1.83886 12.9591 1.68291C13.1539 1.43874 13.3014 1.16039 13.3941 0.86212C13.3941 0.86212 13.3941 0.804667 13.3941 0.788251C13.3703 0.779456 13.3441 0.779456 13.3202 0.788251C12.8247 1.05268 12.2981 1.25397 11.7525 1.38743C11.7363 1.39679 11.7179 1.40172 11.6992 1.40172C11.6804 1.40172 11.662 1.39679 11.6458 1.38743L11.5063 1.24789C11.2814 1.05228 11.0264 0.894292 10.7512 0.780041C10.3813 0.63191 9.9833 0.567438 9.58562 0.591256C9.19848 0.616367 8.82094 0.722639 8.47754 0.903162C8.13256 1.083 7.82808 1.33162 7.58288 1.63367C7.32999 1.94659 7.14797 2.31063 7.04937 2.7007C6.97551 3.07189 6.97551 3.45399 7.04937 3.82518C7.04937 3.89085 7.04936 3.89906 6.99191 3.89085C4.91642 3.67802 2.99426 2.70085 1.59929 1.1494C1.53363 1.07552 1.5008 1.07552 1.45155 1.1494C1.17213 1.66727 1.06677 2.2613 1.15102 2.84368C1.23527 3.42606 1.50468 3.96588 1.91941 4.38332C2.02611 4.48182 2.13281 4.58031 2.24772 4.6706C1.88517 4.64188 1.53141 4.54439 1.20533 4.38332C1.14787 4.38332 1.11504 4.38332 1.10683 4.43257C1.09863 4.48182 1.10683 4.63777 1.10683 4.74448C1.17175 5.23025 1.3638 5.69027 1.66359 6.07798C1.96338 6.46569 2.36026 6.76734 2.81407 6.95241C2.92614 6.99659 3.04139 7.03226 3.15882 7.05911C2.82174 7.11353 2.4781 7.11353 2.14102 7.05911C2.06715 7.05911 2.03432 7.05911 2.06715 7.1576C2.23719 7.62462 2.52548 8.03953 2.90385 8.36179C3.28222 8.68405 3.73772 8.90264 4.22584 8.99619C4.32433 8.99619 4.42283 8.99619 4.51312 8.99619C4.60341 8.99619 4.51312 8.99619 4.51312 8.99619C4.09721 9.36993 3.5953 9.63498 3.05211 9.76773C2.33999 10.0225 1.58123 10.1205 0.827742 10.055C0.704623 10.055 0.680023 10.055 0.647192 10.055C0.61436 10.055 0.647182 10.1043 0.688221 10.1371C0.836689 10.2352 0.990104 10.3256 1.14786 10.4079C1.62027 10.6601 2.11832 10.861 2.6335 11.0071C3.94963 11.4033 5.34592 11.452 6.68647 11.1485C8.02701 10.8451 9.26615 10.1997 10.2833 9.27525C11.0177 8.48504 11.5864 7.55571 11.9557 6.54212C12.3251 5.52852 12.4876 4.4512 12.4338 3.37375C12.4338 3.29167 12.5323 3.24242 12.5897 3.20138C12.9941 2.89387 13.3485 2.52562 13.6403 2.10972C13.6847 2.05066 13.7078 1.97836 13.706 1.90452C13.6814 1.88811 13.6814 1.88811 13.6321 1.88811Z"/>
-                      </svg>
-                    </span>
-                    TWITTER
-                  </a>
-                </li>
-                <li class="social__item">
-                  <a href="#" class="social__link" target="_blank" rel="nofollow">
-                    <span>
-                      <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.968577 3.76711H3.29141V11.2363H0.968577V3.76711ZM2.1259 0.0571289C2.39213 0.0571289 2.65239 0.136077 2.87375 0.283988C3.09512 0.4319 3.26765 0.642131 3.36954 0.888098C3.47142 1.13407 3.49808 1.40472 3.44614 1.66584C3.3942 1.92696 3.26598 2.16681 3.07772 2.35507C2.88947 2.54332 2.64963 2.67153 2.38851 2.72347C2.12739 2.77541 1.85672 2.74875 1.61075 2.64686C1.36478 2.54498 1.15456 2.37245 1.00665 2.15108C0.858739 1.92972 0.779785 1.66946 0.779785 1.40323C0.779785 1.04622 0.921608 0.703837 1.17405 0.451394C1.42649 0.198951 1.76889 0.0571289 2.1259 0.0571289Z"/>
-                        <path d="M4.78516 3.76784H7.00952V4.79383C7.23439 4.41402 7.5572 4.10164 7.94419 3.88938C8.33118 3.67711 8.7681 3.57277 9.20925 3.58727C11.5567 3.58727 11.9917 5.13035 11.9917 7.1413V11.2453H9.66889V7.65019C9.66889 6.78015 9.66886 5.67208 8.4623 5.67208C7.25573 5.67208 7.07515 6.60778 7.07515 7.58453V11.2781H4.78516V3.76784Z"/>
-                      </svg>
-                    </span>
-                    LINKEDIN
-                  </a>
-                </li>
-                <li class="social__item">
-                  <a href="#" class="social__link" target="_blank" rel="nofollow">
-                    <span>
-                      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.7182 3.46924C11.5559 3.46924 11.3972 3.51738 11.2623 3.60757C11.1273 3.69776 11.0221 3.82595 10.9599 3.97593C10.8978 4.12591 10.8816 4.29094 10.9132 4.45016C10.9449 4.60938 11.0231 4.75563 11.1379 4.87042C11.2527 4.98521 11.3989 5.06339 11.5581 5.09506C11.7174 5.12673 11.8824 5.11047 12.0324 5.04835C12.1823 4.98622 12.3105 4.88102 12.4007 4.74604C12.4909 4.61106 12.539 4.45237 12.539 4.29003C12.539 4.07234 12.4526 3.86357 12.2986 3.70964C12.1447 3.55571 11.9359 3.46924 11.7182 3.46924Z"/>
-                        <path d="M8.05734 4.51954C7.37031 4.51792 6.69823 4.72017 6.12619 5.10068C5.55415 5.4812 5.10785 6.02287 4.8438 6.65714C4.57976 7.29141 4.50983 7.98976 4.64286 8.6638C4.7759 9.33783 5.10592 9.95724 5.59115 10.4436C6.07639 10.93 6.69504 11.2615 7.36875 11.3961C8.04247 11.5308 8.74096 11.4625 9.37585 11.1999C10.0107 10.9374 10.5535 10.4924 10.9354 9.92126C11.3172 9.35013 11.5211 8.67854 11.5211 7.9915C11.5189 7.07276 11.1536 6.19215 10.5047 5.54174C9.85581 4.89132 8.97607 4.52387 8.05734 4.51954ZM8.05734 10.2076C7.61671 10.2093 7.18548 10.08 6.81844 9.83619C6.45139 9.5924 6.16506 9.24509 5.99569 8.83831C5.82632 8.43153 5.78157 7.98361 5.86714 7.55136C5.95271 7.11912 6.1647 6.72203 6.47627 6.41046C6.78785 6.09888 7.18494 5.88686 7.61719 5.8013C8.04943 5.71573 8.49735 5.76048 8.90413 5.92985C9.31091 6.09922 9.65823 6.38559 9.90202 6.75264C10.1458 7.11969 10.2751 7.55087 10.2734 7.9915C10.2713 8.57859 10.0371 9.14102 9.62198 9.55616C9.20684 9.9713 8.64443 10.2055 8.05734 10.2076Z"/>
-                        <path d="M10.807 15.0263H5.18463C4.0642 15.0241 2.99024 14.5781 2.19798 13.7858C1.40571 12.9936 0.959689 11.9197 0.95752 10.7992V5.17679C0.959689 4.05637 1.40571 2.98245 2.19798 2.19019C2.99024 1.39793 4.0642 0.951876 5.18463 0.949707H10.807C11.9275 0.951876 13.0014 1.39793 13.7936 2.19019C14.5859 2.98245 15.032 4.05637 15.0341 5.17679V10.7992C15.032 11.9197 14.5859 12.9936 13.7936 13.7858C13.0014 14.5781 11.9275 15.0241 10.807 15.0263ZM5.18463 2.24656C4.41619 2.24656 3.67922 2.55182 3.13585 3.09519C2.59248 3.63856 2.2872 4.37552 2.2872 5.14396V10.7664C2.27847 11.1528 2.3469 11.537 2.48849 11.8966C2.63008 12.2562 2.84199 12.5839 3.1118 12.8606C3.38161 13.1373 3.70392 13.3574 4.05984 13.508C4.41576 13.6586 4.79816 13.7367 5.18463 13.7377H10.807C11.5762 13.7355 12.3132 13.4284 12.8563 12.8837C13.3995 12.3391 13.7045 11.6013 13.7045 10.8321V5.17679C13.7088 4.79355 13.6371 4.41325 13.4934 4.05792C13.3497 3.70259 13.137 3.3793 12.8675 3.10676C12.598 2.83423 12.2771 2.61787 11.9235 2.47021C11.5698 2.32255 11.1903 2.24654 10.807 2.24656H5.18463Z"/>
-                      </svg>
-                    </span>
-                    INSTAGRAM
-                  </a>
-                </li>
-                <li class="social__item">
-                  <a href="#" class="social__link" target="_blank" rel="nofollow">
-                    <span>
-                      <svg width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 14.0448L2.00956 10.3101C1.19713 8.85126 0.938322 7.14824 1.28064 5.51387C1.62297 3.87949 2.54344 2.42349 3.87303 1.41326C5.20261 0.403026 6.85202 -0.0936023 8.51835 0.0145784C10.1847 0.122759 11.7561 0.828486 12.9439 2.00215C14.1317 3.17581 14.8562 4.73862 14.9843 6.40353C15.1124 8.06845 14.6356 9.7237 13.6413 11.0653C12.6471 12.4069 11.2023 13.3447 9.57209 13.7066C7.94194 14.0685 6.23592 13.8301 4.76741 13.0352L1 14.0448ZM4.9398 11.6398L5.17781 11.7794C6.3469 12.4707 7.72849 12.7106 9.0622 12.4539C10.3959 12.1972 11.5897 11.4616 12.4187 10.3857C13.2476 9.30981 13.6545 7.96791 13.5626 6.61283C13.4708 5.25774 12.8865 3.98303 11.92 3.02886C10.9534 2.07468 9.67126 1.50693 8.3151 1.43256C6.95895 1.3582 5.62241 1.78236 4.55731 2.62512C3.49221 3.46789 2.77205 4.67107 2.53258 6.00799C2.2931 7.34491 2.55084 8.72325 3.25718 9.88333L3.40492 10.1214L2.83035 12.198L4.9398 11.6398Z"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5954 7.93764C10.4587 7.82869 10.299 7.75215 10.1284 7.71377C9.95779 7.67538 9.78073 7.67616 9.61048 7.71603C9.35603 7.82273 9.19186 8.22491 9.0277 8.43011C8.9916 8.4783 8.9391 8.5116 8.88011 8.52369C8.82113 8.53579 8.75973 8.52586 8.70758 8.49578C7.76643 8.12002 6.97977 7.43746 6.47504 6.5587C6.42831 6.50856 6.4023 6.44257 6.4023 6.37403C6.4023 6.30548 6.42831 6.23949 6.47504 6.18935C6.66571 6.00914 6.807 5.78307 6.88544 5.53271C6.90367 5.24757 6.84105 4.96308 6.70484 4.71192C6.59903 4.37155 6.39659 4.06927 6.12211 3.84188C5.98599 3.78872 5.83812 3.77287 5.69382 3.79595C5.54953 3.81904 5.41405 3.88023 5.30131 3.9732C5.10394 4.14121 4.94739 4.35195 4.84357 4.58944C4.73976 4.82694 4.69142 5.08495 4.70215 5.34393C4.70186 5.49034 4.71838 5.63631 4.75139 5.77895C4.8447 6.11987 4.98558 6.44593 5.16996 6.74749C5.30676 6.97731 5.45453 7.19892 5.61322 7.41233C6.12671 8.11627 6.77032 8.71531 7.50925 9.17704C7.88072 9.40744 8.27726 9.5947 8.69119 9.73518C9.12277 9.93097 9.59893 10.0075 10.0701 9.95679C10.3385 9.91732 10.5929 9.81194 10.8107 9.65009C11.0284 9.48823 11.2026 9.27495 11.3177 9.02929C11.3811 8.87912 11.401 8.71417 11.3752 8.55323C11.3013 8.29058 10.8581 8.09359 10.5954 7.93764Z"/>
-                      </svg>
-                    </span>
-                    WHATSAPP
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="header__menu-right">
-              <nav class="header__nav">
-                <ul class="header__nav-list">
-                  <li><a href="#">Services & Pricing</a></li>
-                  <li><a href="#">Case Studies</a></li>
-                  <li><a href="#">About our team</a></li>
-                  <li><a href="#">Blog & Insights</a></li>
-                  <li><a href="#">Get in touch</a></li>
-                </ul>
-              </nav>
-              <div class="header__menu-get-box">
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="header__mobile-title">Menu</div>
+      <div class="header__mobile-logo">
+        <img src="data/logo.svg" width="218" height="95" alt="logo">
       </div>
     </div>
   </div>
 </header>
     <div class="wrapper">
-      <div class="blog-post">
-        <div class="blog-post__top">
-          <div class="container">
-            <div class="blog-post__top-box">
-              <div class="blog-post__info">
-                <div class="blog-post__title title-small">Story of a Self-Taught Designer, from Novice to Expert</div>
-                <div class="blog-post__top-row">
-                  <div class="blog-post__date">
-                    <div class="blog-post__date-icon">
-                      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.34375 7.1875C9.68893 7.1875 9.96875 6.90768 9.96875 6.5625C9.96875 6.21732 9.68893 5.9375 9.34375 5.9375C8.99857 5.9375 8.71875 6.21732 8.71875 6.5625C8.71875 6.90768 8.99857 7.1875 9.34375 7.1875Z"/>
-                        <path d="M9.34375 9.90625C9.68893 9.90625 9.96875 9.62643 9.96875 9.28125C9.96875 8.93607 9.68893 8.65625 9.34375 8.65625C8.99857 8.65625 8.71875 8.93607 8.71875 9.28125C8.71875 9.62643 8.99857 9.90625 9.34375 9.90625Z"/>
-                        <path d="M12.0625 7.1875C12.4077 7.1875 12.6875 6.90768 12.6875 6.5625C12.6875 6.21732 12.4077 5.9375 12.0625 5.9375C11.7173 5.9375 11.4375 6.21732 11.4375 6.5625C11.4375 6.90768 11.7173 7.1875 12.0625 7.1875Z"/>
-                        <path d="M15.375 7.81249C15.7202 7.81249 16 7.53267 16 7.18749V3.74999C16 2.3715 14.8785 1.25 13.5 1.25H12.6875V0.624999C12.6875 0.279812 12.4077 0 12.0625 0C11.7173 0 11.4375 0.279812 11.4375 0.624999V1.25H8.59373V0.624999C8.59373 0.279812 8.31392 0 7.96873 0C7.62355 0 7.34374 0.279812 7.34374 0.624999V1.25H4.53124V0.624999C4.53124 0.279812 4.25143 0 3.90624 0C3.56106 0 3.28124 0.279812 3.28124 0.624999V1.25H2.5C1.1215 1.25 0 2.3715 0 3.74999V13.5C0 14.8785 1.1215 16 2.5 16H10.375C10.3963 16 10.4173 15.9989 10.438 15.9968C10.4586 15.9988 10.4792 16 10.4998 16C10.6665 16 10.83 15.9333 10.9502 15.8085L15.8252 10.746C15.999 10.5654 16.0482 10.2985 15.9501 10.0679C15.852 9.83723 15.6256 9.68748 15.375 9.68748H12.375C10.9965 9.68748 9.87498 10.809 9.87498 12.1875V14.75H2.5C1.81075 14.75 1.25 14.1892 1.25 13.5V3.74999C1.25 3.06074 1.81075 2.5 2.5 2.5H3.28124V3.12499C3.28124 3.47018 3.56106 3.74999 3.90624 3.74999C4.25143 3.74999 4.53124 3.47018 4.53124 3.12499V2.5H7.34374V3.12499C7.34374 3.47018 7.62355 3.74999 7.96873 3.74999C8.31392 3.74999 8.59373 3.47018 8.59373 3.12499V2.5H11.4375V3.12499C11.4375 3.47018 11.7173 3.74999 12.0625 3.74999C12.4077 3.74999 12.6875 3.47018 12.6875 3.12499V2.5H13.5C14.1892 2.5 14.75 3.06074 14.75 3.74999V7.18749C14.75 7.53267 15.0298 7.81249 15.375 7.81249ZM11.125 12.1875C11.125 11.4982 11.6857 10.9375 12.375 10.9375H13.9054L11.125 13.8249V12.1875Z"/>
-                        <path d="M3.90625 7.1875C4.25143 7.1875 4.53125 6.90768 4.53125 6.5625C4.53125 6.21732 4.25143 5.9375 3.90625 5.9375C3.56107 5.9375 3.28125 6.21732 3.28125 6.5625C3.28125 6.90768 3.56107 7.1875 3.90625 7.1875Z"/>
-                        <path d="M6.625 9.90625C6.97018 9.90625 7.25 9.62643 7.25 9.28125C7.25 8.93607 6.97018 8.65625 6.625 8.65625C6.27982 8.65625 6 8.93607 6 9.28125C6 9.62643 6.27982 9.90625 6.625 9.90625Z"/>
-                        <path d="M3.90625 12.6249C4.25143 12.6249 4.53125 12.3451 4.53125 11.9999C4.53125 11.6548 4.25143 11.3749 3.90625 11.3749C3.56107 11.3749 3.28125 11.6548 3.28125 11.9999C3.28125 12.3451 3.56107 12.6249 3.90625 12.6249Z"/>
-                        <path d="M3.90625 9.90625C4.25143 9.90625 4.53125 9.62643 4.53125 9.28125C4.53125 8.93607 4.25143 8.65625 3.90625 8.65625C3.56107 8.65625 3.28125 8.93607 3.28125 9.28125C3.28125 9.62643 3.56107 9.90625 3.90625 9.90625Z"/>
-                        <path d="M6.625 12.6249C6.97018 12.6249 7.25 12.3451 7.25 11.9999C7.25 11.6548 6.97018 11.3749 6.625 11.3749C6.27982 11.3749 6 11.6548 6 11.9999C6 12.3451 6.27982 12.6249 6.625 12.6249Z"/>
-                        <path d="M6.625 7.1875C6.97018 7.1875 7.25 6.90768 7.25 6.5625C7.25 6.21732 6.97018 5.9375 6.625 5.9375C6.27982 5.9375 6 6.21732 6 6.5625C6 6.90768 6.27982 7.1875 6.625 7.1875Z"/>
-                      </svg>
+      <div class="container">
+        <ul class="breadcrumb">
+          <li><a href="#">Fantasy Swords</a></li>
+          <li><span>Game Swords</span></li>
+        </ul>
+      </div>
+      <div class="post">
+        <div class="post__holder">
+          <div class="post__info">
+            <div class="post__title">The 10 Most Legendary Swords in Online PVP/PVE Gaming from 2004 to 2022</div>
+            <div class="post__descriptions text-content">
+              <p>The gaming world has seen many swords over the years, but some of them have become almost as legendary as the games that gave them to us.</p>
+            </div>
+            <div class="post__controls">
+              <div class="post__controls-left">
+                <div class="post__author-main">BY BRANDON ZACHARY</div>
+                <div class="post__date">updated  4 days ago</div>
+              </div>
+              <div class="post__controls-right">
+                <ul class="share">
+                  <li>
+                    <button data-sharer="facebook" data-url="https://Lorem">
+                      <img src="data/facebook.svg" width="36" height="36" alt="Facebook">
+                    </button>
+                  </li>
+                  <li>
+                    <button class="button" data-sharer="twitter" data-title="Lorem" data-hashtags="Lorem, Lorem" data-url="https://Lorem">
+                      <img src="data/twitter.svg" width="36" height="36" alt="twitter">
+                    </button>
+                  </li>
+                  <li>
+                    <button class="button" data-sharer="pinterest" data-url="https://Lorem">
+                      <img src="data/pinterest.svg" width="36" height="36" alt="pinterest">
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="post__content text-content">
+              <img src="data/post.jpg" width="750" height="390" alt="img">
+              <p><small>Small description about image. © by Joshua Brian Smith</small> <br> <a href="www.artstation.com/artwork/QrKeXx">www.artstation.com/artwork/QrKeXx</a></p>
+              <p>Skyrim's Dragonbane is given to the player as a reward during the main quest. With an enchantment that deals extra damage to dragons, it quickly becomes an essential tool for players traversing Skyrim's dangerous wilderness, where Dragons could pop out of the woodwork at any time to attack you.</p>
+              <div class="title-section">
+                <div class="title-section__head">RELATED:</div>
+                <div class="title-section__text">Love Goddesses In Video Games That Make Us Believe In Love</div>
+              </div>
+              <h3>Swords compare</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <td>Sword type</td>
+                    <td>Lenght</td>
+                    <td>Attack TN</td>
+                    <td>Defense TN</td>
+                    <td>Hilt</td>
+                    <td>Blade type</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bastard longsword</td>
+                    <td>2H, L</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>2-4</td>
+                    <td>AP</td>
+                  </tr>
+                  <tr>
+                    <td>Bastard one handed</td>
+                    <td>2H, L</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Bohemian longsword</td>
+                    <td>1H, L</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>2-4</td>
+                    <td>AE</td>
+                  </tr>
+                  <tr>
+                    <td>Bohemian one handed</td>
+                    <td>1H, L</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div id="Best-Overall" class="anchor-box">
+                <div class="anchor-box__header">
+                  <a href="#Best-Overall" class="anchor-box__item js-btn-down active">
+                    <img src="data/Best-Overall.svg" width="16" height="16" alt="Best Overall">
+                    Best Overall
+                  </a>
+                  <a href="#Best-Affordable" class="anchor-box__item js-btn-down">
+                    <img src="data/Best-Affordable.svg" width="16" height="16" alt="Best Affordable">
+                    Best Affordable
+                  </a>
+                </div>
+                <div class="anchor-box__body">
+                  <div class="anchor-box__left">
+                    <div class="anchor-box__img">
+                      <img src="data/anchor-box.jpg" width="140" height="120" alt="anchor-box">
                     </div>
-                    <div class="blog-post__date-val">24 Nov. 2021</div>
+                    <div class="anchor-box__content">
+                      <div class="anchor-box__title">Title title title title title title title title.</div>
+                      <div class="anchor-box__text">For that reason, it's among the strongest unique and beautifull very rare swords.</div>
+                    </div>
                   </div>
-                  <div class="blog-post__by">
-                    <div class="blog-post__by-title">by</div>
-                    <a href="#" class="blog-post__by-val" title="Halfwayden">Halfwayden</a>
+                  <div class="anchor-box__right">
+                    <div class="anchor-box__logo">
+                      <img src="data/amazonLogo.svg" width="79" height="24" alt="amazonLogo">
+                    </div>
+                    <a href="#" class="anchor-box__btn btn-2">CHECK PRICE</a>
                   </div>
                 </div>
               </div>
-              <div class="blog-post__top-img">
-                <img src="data/blog-post.jpg" width="940" height="500" alt="blog-post">
+              <p>Swords seem to be a fascination of humanity — they are found throughout history, throughout our popular culture, and throughout our video games. It's undoubtedly worth taking a look at which swords are the most well-known, most powerful, and most iconic in gaming!</p>
+              <h3>Dragonbane</h3>
+              <img src="data/Dragonbane.jpg" width="750" height="390" alt="Dragonbane">
+              <p><small>Small description about image. © by Joshua Brian Smith</small> <br> <a href="www.artstation.com/artwork/QrKeXx">www.artstation.com/artwork/QrKeXx</a></p>
+              <p>Skyrim's Dragonbane is given to the player as a reward during the main quest. With an enchantment that deals extra damage to dragons, it quickly becomes an essential tool for players traversing Skyrim's dangerous wilderness, where Dragons could pop out of the woodwork at any time to attack you.</p>
+              <blockquote>
+                <img src="data/blockquote.svg" width="38" height="36" alt="blockquote">
+                Swords seem to be a fascination of humanity — they are found throughout history, throughout our popular culture, and throughout our video games. It's undoubtedly worth taking a look at which swords are the most well-known, most powerful, and most iconic in gaming!
+              </blockquote>
+              <ul>
+                <li>The classic Blades sword look never goes out of style and your Dragonborn.</li>
+                <li>For that reason, it's among the strongest unique swords.</li>
+                <li>Swords seem to be a fascination of humanity — they are found throughout history, throughout our popular culture and throughout our video games.</li>
+              </ul>
+              <div id="Best-Affordable" class="anchor-box">
+                <div class="anchor-box__header">
+                  <a href="#Best-Overall" class="anchor-box__item js-btn-down">
+                    <img src="data/Best-Overall.svg" width="16" height="16" alt="Best Overall">
+                    Best Overall
+                  </a>
+                  <a href="#Best-Affordable" class="anchor-box__item js-btn-down active">
+                    <img src="data/Best-Affordable.svg" width="16" height="16" alt="Best Affordable">
+                    Best Affordable
+                  </a>
+                </div>
+                <div class="anchor-box__body">
+                  <div class="anchor-box__left">
+                    <div class="anchor-box__img">
+                      <img src="data/anchor-box.jpg" width="140" height="120" alt="anchor-box">
+                    </div>
+                    <div class="anchor-box__content">
+                      <div class="anchor-box__title">Title title title title title title title title.</div>
+                      <div class="anchor-box__text">For that reason, it's among the strongest unique and beautifull very rare swords.</div>
+                    </div>
+                  </div>
+                  <div class="anchor-box__right">
+                    <div class="anchor-box__logo">
+                      <img src="data/amazonLogo.svg" width="79" height="24" alt="amazonLogo">
+                    </div>
+                    <a href="#" class="anchor-box__btn btn-2">CHECK PRICE</a>
+                  </div>
+                </div>
+              </div>
+              <p>Swords seem to be a fascination of humanity — they are found throughout history, throughout our popular culture, and throughout our video games. It's undoubtedly worth taking a look at which swords are the most well-known, most powerful, and most iconic in gaming!</p>
+            </div>
+            <div class="post__author">
+              <a href="#" class="post__author-ava">
+                <img src="data/Belle-Huston.jpg" width="64" height="64" alt="img">
+              </a>
+              <div class="post__author-box">
+                <div class="post__author-head">
+                  <a href="#" class="post__author-name">Belle Huston</a>
+                  <div class="post__author-total">(393 Articles Published)</div>
+                </div>
+                <div class="post__author-text text-content">
+                  <p>Gabrielle "Belle" Huston is a writer and long-time gamer based in Ottawa, Canada. Reach her on Twitter (@TheYavril) or by email (gabrielle.h@thegamer.com). She's played video games for at least as long as</p>
+                </div>
+                <a href="#" class="post__author-btn">
+                  More from Bele Huston
+                  <svg width="12" height="10" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.0999 5.7001H9.4019L6.8609 8.7521C6.80207 8.82288 6.75776 8.90456 6.73049 8.99247C6.70322 9.08037 6.69354 9.17279 6.70199 9.26445C6.71905 9.44954 6.80895 9.62028 6.9519 9.7391C7.09485 9.85791 7.27915 9.91508 7.46425 9.89801C7.64935 9.88095 7.82009 9.79105 7.9389 9.6481L11.4389 5.4481C11.4625 5.41469 11.4835 5.3796 11.5019 5.3431C11.5019 5.3081 11.5369 5.2871 11.5509 5.2521C11.5826 5.17184 11.5992 5.0864 11.5999 5.0001C11.5992 4.9138 11.5826 4.82836 11.5509 4.7481C11.5509 4.7131 11.5159 4.6921 11.5019 4.6571C11.4835 4.6206 11.4625 4.58551 11.4389 4.5521L7.9389 0.352099C7.87309 0.273081 7.79067 0.209535 7.69751 0.16598C7.60435 0.122426 7.50274 0.099932 7.3999 0.100099C7.23635 0.0997794 7.07784 0.156742 6.9519 0.261099C6.88102 0.319863 6.82243 0.392034 6.77948 0.473477C6.73654 0.55492 6.71008 0.644035 6.70163 0.735719C6.69317 0.827403 6.70289 0.919853 6.73022 1.00778C6.75755 1.0957 6.80196 1.17736 6.8609 1.2481L9.4019 4.3001H1.0999C0.914251 4.3001 0.736203 4.37385 0.604928 4.50512C0.473652 4.6364 0.399902 4.81445 0.399902 5.0001C0.399902 5.18575 0.473652 5.3638 0.604928 5.49507C0.736203 5.62635 0.914251 5.7001 1.0999 5.7001Z"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
-        </div>
-        <div class="container">
-          <div class="blog-post__body">
-            <div class="blog-post__nav">
-              <div class="blog-post__nav-btn">
-                <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M6.75 5.375C6.75 4.75368 7.25368 4.25 7.875 4.25H14.625C15.2463 4.25 15.75 4.75368 15.75 5.375C15.75 5.99632 15.2463 6.5 14.625 6.5H7.875C7.25368 6.5 6.75 5.99632 6.75 5.375ZM6.75 9.125C6.75 8.50368 7.25368 8 7.875 8H14.625C15.2463 8 15.75 8.50368 15.75 9.125C15.75 9.74632 15.2463 10.25 14.625 10.25H7.875C7.25368 10.25 6.75 9.74632 6.75 9.125ZM7.875 11.75C7.25368 11.75 6.75 12.2537 6.75 12.875C6.75 13.4963 7.25368 14 7.875 14H14.625C15.2463 14 15.75 13.4963 15.75 12.875C15.75 12.2537 15.2463 11.75 14.625 11.75H7.875Z" fill="white"/>
-                  <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M4.125 6.5C4.74632 6.5 5.25 5.99632 5.25 5.375C5.25 4.75368 4.74632 4.25 4.125 4.25C3.50368 4.25 3 4.75368 3 5.375C3 5.99632 3.50368 6.5 4.125 6.5ZM4.125 10.25C4.74632 10.25 5.25 9.74632 5.25 9.125C5.25 8.50368 4.74632 8 4.125 8C3.50368 8 3 8.50368 3 9.125C3 9.74632 3.50368 10.25 4.125 10.25ZM5.25 12.875C5.25 13.4963 4.74632 14 4.125 14C3.50368 14 3 13.4963 3 12.875C3 12.2537 3.50368 11.75 4.125 11.75C4.74632 11.75 5.25 12.2537 5.25 12.875Z" fill="white"/>
-                </svg>
-                TOC
-              </div>
-              <div class="blog-post__nav-list">
-                <div><a href="#" class="active">Aritcle Intro</a></div>
-                <div><a href="#">Monthly SEO Campaign</a></div>
-                <div><a href="#">Business Website Design</a></div>
-                <div><a href="#">Custom Website Development</a></div>
-                <div><a href="#">Branding & Identity Design</a></div>
-                <div><a href="#">Copywriting & Article Writing for Blogs</a></div>
-                <div><a href="#">Monthly SEO Campaign</a></div>
-                <div><a href="#">Business Website Design</a></div>
-                <div><a href="#">Custom Website Development</a></div>
-                <div><a href="#">Branding & Identity Design</a></div>
-                <div><a href="#">Copywriting & Article Writing for Blogs</a></div>
+          <div class="post__aside">
+            <div class="title">TRENDING ARTICLES</div>
+            <div class="aside-item">
+              <a href="#" class="aside-item__img">
+                <img src="data/Some-awesome.jpg" width="140" height="100" alt="Some-awesome">
+              </a>
+              <div class="aside-item__box">
+                <div class="aside-item__label">ORIENTAL</div>
+                <a href="#" class="aside-item__title" title="Some awesome things you don’t know about swords.">Some awesome things you don’t know about swords.</a>
               </div>
             </div>
-            <div class="blog-post__content-box">
-              <div class="blog-post__content text-content">
-                <h1>How it all Started (H1)</h1>
-                <p>In today’s digital age of marketing, <b>many businesses worldwide</b> have taken to the internet to market their products and services. This is because the internet has a widespread, global presence, and content can reach millions of users in real-time. As a result, businesses dedicate significant time and money to digital marketing and content marketing strategies for their brand. </p>
-                <p>One of the best strategies to grow your business through online marketing is to create a well-rounded, functional website. A website for your business is an excellent way to diversify and expand your audience, market content, and add credibility to your website. Here’s a few primary reasons why every business needs a website. </p>
-                <h2>The Road to Fame (H2)</h2>
-                <p>We are a fully remote marketing agency focused on <b style="color: #3800d8;">SEO, Content Marketing</b>, and Web Design. Our team of marketing specialists spans across six continents, including Europe, Asia, North and South America, Australia, and Africa. We have successfully collaborated with companies from all over the world.</p>
-                <ul>
-                  <li>Full-Stack Developer</li>
-                  <li>Graphic Designer & Illustrator</li>
-                  <li>User Interface and User Experience Expert</li>
-                  <li>Blog Content Writer and Copywriter</li>
-                  <li>SEO and Marketing Expert</li>
-                </ul>
-                <p class="color-box"><b>(Colored Box)</b> Our foremost aim is to provide only the highest standard of quality in web design and development, SEO, and branding. For this reason, we customize all of our designs to fit the specific requirements of our clients. We stay away from existing templates as a matter of principle.</p>
-                <h3>What the Process Taught Me (H3)</h3>
-                <p>In fact, this is one of the reasons why Halfwayup was founded to begin with. Now that our team has the possibility to interact with the client directly, we are able to form an even better idea of each company’s values and messages so that we may represent them more accurately in our work.</p>
-                <ol>
-                  <li>Full-Stack Developer</li>
-                  <li>Graphic Designer & Illustrator</li>
-                  <li>User Interface and User Experience Expert</li>
-                  <li>Blog Content Writer and Copywriter</li>
-                  <li>SEO and Marketing Expert</li>
-                </ol>
-                <table>
-                  <thead>
-                    <tr>
-                      <td>Custom Branding</td>
-                      <td>Low-Cost Branding</td>
-                      <td>Overall Guidelines</td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <span>
-                          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.3035 0.764251C10.5718 0.448646 11.0451 0.410268 11.3607 0.678533C11.6763 0.946798 11.7147 1.42012 11.4464 1.73572L5.07144 9.23572C4.79896 9.55628 4.31616 9.59005 4.00171 9.31055L0.626712 6.31054C0.317125 6.03536 0.289239 5.5613 0.564428 5.25171C0.839616 4.94213 1.31367 4.91424 1.62326 5.18943L4.42515 7.68L10.3035 0.764251Z" fill="#3800D8"/>
-                          </svg>
-                          Increases Clients Trust in your Product
-                        </span>
-                      </td>
-                      <td>
-                        <span>
-                          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.3035 0.764251C10.5718 0.448646 11.0451 0.410268 11.3607 0.678533C11.6763 0.946798 11.7147 1.42012 11.4464 1.73572L5.07144 9.23572C4.79896 9.55628 4.31616 9.59005 4.00171 9.31055L0.626712 6.31054C0.317125 6.03536 0.289239 5.5613 0.564428 5.25171C0.839616 4.94213 1.31367 4.91424 1.62326 5.18943L4.42515 7.68L10.3035 0.764251Z" fill="#3800D8"/>
-                          </svg>
-                          Quick turnaround time
-                        </span>
-                      </td>
-                      <td rowspan="2">
-                        <span style="color: #EC4B37;">
-                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M9.89443 3.71361C9.49497 3.05996 8.53902 3.07977 8.16699 3.74942L2.32536 14.2644C1.95506 14.9309 2.43703 15.75 3.19951 15.75H15.4669C16.2479 15.75 16.7274 14.8949 16.3202 14.2285L9.89443 3.71361Z" fill="#EC4B37"/>
-                            <rect x="8.25" y="6.75" width="1.5" height="5.25" rx="0.75" fill="#EC4B37"/>
-                            <rect x="8.25" y="12.75" width="1.5" height="1.5" rx="0.75" fill="#EC4B37"/>
-                          </svg>
-                          Quality Branding is a requirement in any business and it should not be overlooked.
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span>
-                          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.3035 0.764251C10.5718 0.448646 11.0451 0.410268 11.3607 0.678533C11.6763 0.946798 11.7147 1.42012 11.4464 1.73572L5.07144 9.23572C4.79896 9.55628 4.31616 9.59005 4.00171 9.31055L0.626712 6.31054C0.317125 6.03536 0.289239 5.5613 0.564428 5.25171C0.839616 4.94213 1.31367 4.91424 1.62326 5.18943L4.42515 7.68L10.3035 0.764251Z" fill="#3800D8"/>
-                          </svg>
-                          Easier to remember
-                        </span>
-                      </td>
-                      <td>
-                        <span>
-                          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.3035 0.764251C10.5718 0.448646 11.0451 0.410268 11.3607 0.678533C11.6763 0.946798 11.7147 1.42012 11.4464 1.73572L5.07144 9.23572C4.79896 9.55628 4.31616 9.59005 4.00171 9.31055L0.626712 6.31054C0.317125 6.03536 0.289239 5.5613 0.564428 5.25171C0.839616 4.94213 1.31367 4.91424 1.62326 5.18943L4.42515 7.68L10.3035 0.764251Z" fill="#3800D8"/>
-                          </svg>
-                          Low overall cost
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span>
-                          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.3035 0.764251C10.5718 0.448646 11.0451 0.410268 11.3607 0.678533C11.6763 0.946798 11.7147 1.42012 11.4464 1.73572L5.07144 9.23572C4.79896 9.55628 4.31616 9.59005 4.00171 9.31055L0.626712 6.31054C0.317125 6.03536 0.289239 5.5613 0.564428 5.25171C0.839616 4.94213 1.31367 4.91424 1.62326 5.18943L4.42515 7.68L10.3035 0.764251Z" fill="#3800D8"/>
-                          </svg>
-                          Fits your Brand and Niche
-                        </span>
-                      </td>
-                      <td>
-                        <span>
-                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4.22852" y="12.7124" width="12" height="1.5" rx="0.75" transform="rotate(-45 4.22852 12.7124)" fill="#EC4B37"/>
-                            <rect opacity="0.3" x="5.28906" y="4.22705" width="12" height="1.5" rx="0.75" transform="rotate(45 5.28906 4.22705)" fill="#EC4B37"/>
-                          </svg>
-                          Low Quality
-                        </span>
-                      </td>
-                      <td>
-                        <span>
-                          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.3035 0.764251C10.5718 0.448646 11.0451 0.410268 11.3607 0.678533C11.6763 0.946798 11.7147 1.42012 11.4464 1.73572L5.07144 9.23572C4.79896 9.55628 4.31616 9.59005 4.00171 9.31055L0.626712 6.31054C0.317125 6.03536 0.289239 5.5613 0.564428 5.25171C0.839616 4.94213 1.31367 4.91424 1.62326 5.18943L4.42515 7.68L10.3035 0.764251Z" fill="#3800D8"/>
-                          </svg>
-                          Lorem ipsum dolor
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span>
-                          Higher overall cost
-                        </span>
-                      </td>
-                      <td>
-                        <span>
-                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4.22852" y="12.7124" width="12" height="1.5" rx="0.75" transform="rotate(-45 4.22852 12.7124)" fill="#EC4B37"/>
-                            <rect opacity="0.3" x="5.28906" y="4.22705" width="12" height="1.5" rx="0.75" transform="rotate(45 5.28906 4.22705)" fill="#EC4B37"/>
-                          </svg>
-                          Decreases clients trust in your brand
-                        </span>
-                      </td>
-                      <td>
-                        <span>
-                          Dolor sit amet, consectetur adispicing
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span>Takes more time</span>
-                      </td>
-                      <td>
-                        <span>
-                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4.22852" y="12.7124" width="12" height="1.5" rx="0.75" transform="rotate(-45 4.22852 12.7124)" fill="#EC4B37"/>
-                            <rect opacity="0.3" x="5.28906" y="4.22705" width="12" height="1.5" rx="0.75" transform="rotate(45 5.28906 4.22705)" fill="#EC4B37"/>
-                          </svg>
-                          Might not fit the niche properly
-                        </span>
-                      </td>
-                      <td>
-                        <span>Nec nunc tristique eu</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span>
-                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4.22852" y="12.7124" width="12" height="1.5" rx="0.75" transform="rotate(-45 4.22852 12.7124)" fill="#EC4B37"/>
-                            <rect opacity="0.3" x="5.28906" y="4.22705" width="12" height="1.5" rx="0.75" transform="rotate(45 5.28906 4.22705)" fill="#EC4B37"/>
-                          </svg>
-                          Guaranteed Quality
-                        </span>
-                      </td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="text-cell">
-                  <div>
-                    <h4>Modesty (H4)</h4>
-                    <p>Furthermore, while most companies test their SEO strategies directly on their clients’ websites without having a clear understanding of search engine algorithms, we run personal affiliate websites that give us the opportunity to pilot new strategies prior to implementation.</p>
-                  </div>
-                  <div>
-                    <h4>Trust</h4>
-                    <p>We believe that this gives us a significant advantage over our competition, primarily because we are able to guarantee that our search engine optimization will visibly improve organic traffic to your website given sufficient time.</p>
-                  </div>
-                </div>
-                <img src="data/post-img.jpg" width="640" height="350" alt="post-img">
-                <ul class="tags">
-                  <li>
-                    <a href="#">
-                      <img src="data/tag.svg" width="18" height="18" alt="tag">
-                      An amazing 3D image with Icon and Tag
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">Tag without Icon</a>
-                  </li>
-                </ul>
-                <p>In today’s digital age of marketing, <b>many businesses worldwide</b> have taken to the internet to market their products and services. This is because the internet has a widespread, global presence, and content can reach millions of users in real-time. As a result, businesses dedicate significant time and money to digital marketing and content marketing strategies for their brand. </p>
-                <p class="color-box-icon">
-                  <img src="data/icon.svg" width="32" height="32" alt="icon">
-                  <span>
-                    <b>(Colored Box with Icon)</b> One of the best strategies to grow your business through online marketing is to create a well-rounded, functional website. A website for your business is an excellent way to diversify and expand your audience, market content, and add credibility to your website. Here’s a few primary reasons why every business needs a website. 
-                  </span>
-                </p>
-                <p>We are a fully remote marketing agency focused on <b style="color: #3800d8;">SEO, Content Marketing</b>, and Web Design. Our team of marketing specialists spans across six continents, including Europe, Asia, North and South America, Australia, and Africa. We have successfully collaborated with companies from all over the world.</p>
-              </div>
-              <div class="blog-post__share js-sticky">
-                <ul class="blog-post__share-list">
-                  <li>
-                    <button data-sharer="facebook" data-url="https://halfwayup.com">
-                      <img src="data/Facebook.svg" width="48" height="48" alt="Facebook">
-                    </button>
-                  </li>
-                  <li>
-                    <button class="button" data-sharer="twitter" data-title="Lorem" data-hashtags="Lorem, Lorem" data-url="https://halfwayup.com">
-                      <img src="data/twitter.svg" width="48" height="48" alt="twitter">
-                    </button>
-                  </li>
-                  <li>
-                    <button class="button" data-sharer="linkedin" data-url="https://halfwayup.com">
-                      <img src="data/linkedin.svg" width="48" height="48" alt="linkedin">
-                    </button>
-                  </li>
-                  <li>
-                    <button class="button" data-sharer="email" data-title="Lorem" data-url="https://halfwayup.com" data-subject="Hey! Check out that URL" data-to="some@email.com">
-                      <img src="data/email.svg" width="48" height="48" alt="email">
-                    </button>
-                  </li>
-                </ul>
+            <div class="aside-item">
+              <a href="#" class="aside-item__img">
+                <img src="data/Best-Modern.jpg" width="140" height="100" alt="Best-Modern">
+              </a>
+              <div class="aside-item__box">
+                <div class="aside-item__label">ARABIC</div>
+                <a href="#" class="aside-item__title" title="Best Modern Swords: Guide to the Best Type of Sword.">Best Modern Swords: Guide to the Best Type of Sword.</a>
               </div>
             </div>
+            <div class="aside-item">
+              <a href="#" class="aside-item__img">
+                <img src="data/Types-of-Swords.jpg" width="140" height="100" alt="Types-of-Swords">
+              </a>
+              <div class="aside-item__box">
+                <div class="aside-item__label">ORIENTAL</div>
+                <a href="#" class="aside-item__title" title="Types of Swords and Where You can Buy Them.">Types of Swords and Where You can Buy Them.</a>
+              </div>
+            </div>
+            <a href="#" class="post__aside-link">
+              <img src="data/aside-link.jpg" width="400" height="600" alt="img">
+            </a>
           </div>
         </div>
-        <div class="author">
-          <div class="container">
-            <div class="author__box">
-              <div class="author__ava">
-                <img src="data/ava.jpg" width="100" height="100" alt="ava">
-              </div>
-              <div class="author__holder">
-                <div class="author__title">Written By</div>
-                <div class="author__name">Andreea Williams</div>
-                <div class="author__text text-content">
-                  <p>Full-time article writer focused on digital services and the benefits these bring to a developing company. Cat lover😺🐈 with a constant urge to drink coffee while walking on sunny beaches in California. ☀🏖️</p>
-                </div>
-              </div>
+        <div class="box__top-btn js-sticky-btn js-scroll-top">
+          <span class="box__top-btn-icon">
+            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.99951 15.0006L7.99951 3.14062L12.3595 6.77063C12.4606 6.85467 12.5773 6.91798 12.7029 6.95693C12.8285 6.99588 12.9605 7.00972 13.0914 6.99765C13.3559 6.97327 13.5998 6.84484 13.7695 6.64063C13.9393 6.43641 14.0209 6.17313 13.9965 5.9087C13.9722 5.64428 13.8437 5.40036 13.6395 5.23063L7.63951 0.230625C7.59179 0.196986 7.54165 0.166904 7.48951 0.140625C7.43951 0.140625 7.40951 0.0906254 7.35951 0.0706253C7.24486 0.0252988 7.1228 0.00156675 6.99951 0.00062561C6.87623 0.00156672 6.75417 0.0252988 6.63951 0.0706253C6.58951 0.0706253 6.55951 0.120625 6.50951 0.140625C6.45737 0.166904 6.40724 0.196986 6.35951 0.230625L0.359514 5.23062C0.246631 5.32465 0.155851 5.44239 0.0936299 5.57547C0.0314088 5.70855 -0.000724934 5.85371 -0.000486371 6.00062C-0.000942914 6.23428 0.080432 6.46071 0.229513 6.64062C0.313462 6.74188 0.416563 6.82559 0.53291 6.88694C0.649257 6.94829 0.776565 6.98609 0.907542 6.99816C1.03852 7.01024 1.17059 6.99636 1.2962 6.95731C1.4218 6.91827 1.53846 6.85483 1.63951 6.77063L5.99951 3.14062L5.99951 15.0006C5.99951 15.2658 6.10487 15.5202 6.29241 15.7077C6.47994 15.8953 6.7343 16.0006 6.99951 16.0006C7.26473 16.0006 7.51908 15.8953 7.70662 15.7077C7.89416 15.5202 7.99951 15.2658 7.99951 15.0006Z" fill="#0B1014"/>
+            </svg>
+          </span>
+          Back to the Top
+        </div>
+      </div>
+      <div class="container">
+        <div class="title">READ NEXT</div>
+        <div class="post-list">
+          <div class="main-articles__item main-articles__item--small">
+            <a href="#" class="main-articles__item-img">
+              <img src="data/legendary.jpg" width="300" height="194" alt="legendary">
+            </a>
+            <a href="#" class="main-articles__item-title main-articles__item-title--small" title="Crafting legendary Estoc Thrusting Sword">Crafting legendary Estoc Thrusting Sword</a>
+            <div class="main-articles__item-descriptions text-content">
+              <p>The Estoc Thrusting Sword are almost as powerful as the unforgettable protagonist of the God of War series, Kratos is.</p>
             </div>
           </div>
-        </div>
-        <div class="what-next">
-          <div class="container">
-            <div class="what-next__title">What’s next on your Curiosity Schedule?</div>
-            <div class="article-list">
-              <div class="article-item">
-                <a href="#" class="article-item__img">
-                  <img src="data/article.jpg" width="300" height="189" alt="article">
-                </a>
-                <a href="#" class="article-item__title" title="Inspiring Stories of Web Designers">Inspiring Stories of Web Designers</a>
-                <div class="blog__item-bottom">
-                  <div class="blog__item-date">09 Nov. 2021</div>
-                  <a href="#" class="blog__item-btn">
-                    <svg width="41" height="13" viewBox="0 0 41 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 6.5H39.5M39.5 6.5L34 1M39.5 6.5L34 12" stroke-width="1.5"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="article-item">
-                <a href="#" class="article-item__img">
-                  <img src="data/article2.jpg" width="300" height="189" alt="article">
-                </a>
-                <a href="#" class="article-item__title" title="Inspiring Stories of Web Designers">Inspiring Stories of Web Designers</a>
-                <div class="blog__item-bottom">
-                  <div class="blog__item-date">09 Nov. 2021</div>
-                  <a href="#" class="blog__item-btn">
-                    <svg width="41" height="13" viewBox="0 0 41 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 6.5H39.5M39.5 6.5L34 1M39.5 6.5L34 12" stroke-width="1.5"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="article-item">
-                <a href="#" class="article-item__img">
-                  <img src="data/article3.jpg" width="300" height="189" alt="article">
-                </a>
-                <a href="#" class="article-item__title" title="Inspiring Stories of Web Designers">Inspiring Stories of Web Designers</a>
-                <div class="blog__item-bottom">
-                  <div class="blog__item-date">09 Nov. 2021</div>
-                  <a href="#" class="blog__item-btn">
-                    <svg width="41" height="13" viewBox="0 0 41 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 6.5H39.5M39.5 6.5L34 1M39.5 6.5L34 12" stroke-width="1.5"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
+          <div class="main-articles__item main-articles__item--small">
+            <a href="#" class="main-articles__item-img">
+              <img src="data/legendary.jpg" width="300" height="194" alt="legendary">
+            </a>
+            <a href="#" class="main-articles__item-title main-articles__item-title--small" title="Crafting legendary Estoc Thrusting Sword">Crafting legendary Estoc Thrusting Sword</a>
+            <div class="main-articles__item-descriptions text-content">
+              <p>The Estoc Thrusting Sword are almost as powerful as the unforgettable protagonist of the God of War series, Kratos is.</p>
+            </div>
+          </div>
+          <div class="main-articles__item main-articles__item--small">
+            <a href="#" class="main-articles__item-img">
+              <img src="data/legendary.jpg" width="300" height="194" alt="legendary">
+            </a>
+            <a href="#" class="main-articles__item-title main-articles__item-title--small" title="Crafting legendary Estoc Thrusting Sword">Crafting legendary Estoc Thrusting Sword</a>
+            <div class="main-articles__item-descriptions text-content">
+              <p>The Estoc Thrusting Sword are almost as powerful as the unforgettable protagonist of the God of War series, Kratos is.</p>
+            </div>
+          </div>
+          <div class="main-articles__item main-articles__item--small">
+            <a href="#" class="main-articles__item-img">
+              <img src="data/legendary.jpg" width="300" height="194" alt="legendary">
+            </a>
+            <a href="#" class="main-articles__item-title main-articles__item-title--small" title="Crafting legendary Estoc Thrusting Sword">Crafting legendary Estoc Thrusting Sword</a>
+            <div class="main-articles__item-descriptions text-content">
+              <p>The Estoc Thrusting Sword are almost as powerful as the unforgettable protagonist of the God of War series, Kratos is.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
     <footer class="footer">
-  <div class="container">
-    <div class="footer__top">
-      <div class="footer__cell">
-        <div class="footer__logo">
-          <img src="data/logo-small.svg" width="90" height="33" alt="logo">
-          <a href="#" class="footer__logo-link"></a>
-        </div>
-        <div class="footer__text">Uplift your business to new heights with our results-oriented digital marketing services.</div>
+  <div class="btn-top js-scroll-top">
+    <span class="btn-top__icon">
+      <svg width="14" height="16" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.99951 15.0006L7.99951 3.14061L12.3595 6.77061C12.4606 6.85466 12.5773 6.91796 12.7029 6.95692C12.8285 6.99587 12.9605 7.0097 13.0914 6.99763C13.3559 6.97325 13.5998 6.84483 13.7695 6.64061C13.9393 6.4364 14.0209 6.17311 13.9965 5.90869C13.9722 5.64426 13.8437 5.40035 13.6395 5.23061L7.63951 0.23061C7.59179 0.196971 7.54165 0.166889 7.48951 0.14061C7.43951 0.14061 7.40951 0.0906101 7.35951 0.0706101C7.24486 0.0252836 7.1228 0.00155149 6.99951 0.000610352C6.87623 0.00155146 6.75417 0.0252835 6.63951 0.07061C6.58951 0.07061 6.55951 0.12061 6.50951 0.14061C6.45737 0.166889 6.40724 0.19697 6.35951 0.23061L0.359514 5.23061C0.246631 5.32463 0.155851 5.44237 0.0936299 5.57546C0.0314088 5.70854 -0.000724934 5.8537 -0.000486371 6.00061C-0.000942914 6.23426 0.080432 6.4607 0.229513 6.64061C0.313462 6.74187 0.416563 6.82557 0.53291 6.88692C0.649257 6.94827 0.776565 6.98607 0.907542 6.99815C1.03852 7.01022 1.17059 6.99634 1.2962 6.9573C1.4218 6.91825 1.53846 6.85481 1.63951 6.77061L5.99951 3.14061L5.99951 15.0006C5.99951 15.2658 6.10487 15.5202 6.29241 15.7077C6.47994 15.8953 6.7343 16.0006 6.99951 16.0006C7.26473 16.0006 7.51908 15.8953 7.70662 15.7077C7.89416 15.5202 7.99951 15.2658 7.99951 15.0006Z" />
+      </svg>
+    </span>
+    BACK TO TOP
+  </div>
+  <div class="footer__container container">
+    <div class="footer__left">
+      <div class="footer__logo">
+        <img src="data/logo-footer.svg" width="156" height="68" alt="logo">
+        <a href="#" class="footer__logo-link"></a>
       </div>
-      <div class="footer__cell">
-        <div class="footer__cell-title">DISCOVER</div>
-        <nav class="footer__nav">
-          <ul class="footer__nav-list">
-            <li><a href="#">Services & Pricing</a></li>
-            <li><a href="#">Case Studies</a></li>
-            <li><a href="#">About our team</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer__cell">
-        <div class="footer__cell-title">QUICK LINKS</div>
-        <nav class="footer__nav">
-          <ul class="footer__nav-list">
-            <li><a href="#">Insights</a></li>
-            <li><a href="#">Advertising</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer__cell">
-        <div class="footer__cell-title">WANT TO WORK WITH US?</div>
-        <div class="footer__btn">Get a Proposal</div>
-        <ul class="footer__contacts">
-          <li><a href="mailto:contact@halfwayup.com">contact@halfwayup.com</a></li>
-          <li><a href="tel:+1-202-555-0141">+1-202-555-0141</a></li>
-        </ul>
-      </div>
+      <ul class="footer__info">
+        <li><a href="#" target="_blank">Terms and Conditions</a></li>
+        <li><a href="#" target="_blank">Privacy Policy</a></li>
+      </ul>
+      <div class="footer__copy">© MezcalPro 2022 - All Rights Reserved</div>
     </div>
-    <div class="footer__bottom">
-      <div class="footer__left">
-        <ul class="social">
-          <li class="social__item">
-            <a href="#" class="social__link" target="_blank" rel="nofollow">
-              <span>
-                <svg width="14" height="12" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.6321 1.88811C13.2083 2.06639 12.7647 2.19315 12.3107 2.26568C12.5159 2.26568 12.836 1.83886 12.9591 1.68291C13.1539 1.43874 13.3014 1.16039 13.3941 0.86212C13.3941 0.86212 13.3941 0.804667 13.3941 0.788251C13.3703 0.779456 13.3441 0.779456 13.3202 0.788251C12.8247 1.05268 12.2981 1.25397 11.7525 1.38743C11.7363 1.39679 11.7179 1.40172 11.6992 1.40172C11.6804 1.40172 11.662 1.39679 11.6458 1.38743L11.5063 1.24789C11.2814 1.05228 11.0264 0.894292 10.7512 0.780041C10.3813 0.63191 9.9833 0.567438 9.58562 0.591256C9.19848 0.616367 8.82094 0.722639 8.47754 0.903162C8.13256 1.083 7.82808 1.33162 7.58288 1.63367C7.32999 1.94659 7.14797 2.31063 7.04937 2.7007C6.97551 3.07189 6.97551 3.45399 7.04937 3.82518C7.04937 3.89085 7.04936 3.89906 6.99191 3.89085C4.91642 3.67802 2.99426 2.70085 1.59929 1.1494C1.53363 1.07552 1.5008 1.07552 1.45155 1.1494C1.17213 1.66727 1.06677 2.2613 1.15102 2.84368C1.23527 3.42606 1.50468 3.96588 1.91941 4.38332C2.02611 4.48182 2.13281 4.58031 2.24772 4.6706C1.88517 4.64188 1.53141 4.54439 1.20533 4.38332C1.14787 4.38332 1.11504 4.38332 1.10683 4.43257C1.09863 4.48182 1.10683 4.63777 1.10683 4.74448C1.17175 5.23025 1.3638 5.69027 1.66359 6.07798C1.96338 6.46569 2.36026 6.76734 2.81407 6.95241C2.92614 6.99659 3.04139 7.03226 3.15882 7.05911C2.82174 7.11353 2.4781 7.11353 2.14102 7.05911C2.06715 7.05911 2.03432 7.05911 2.06715 7.1576C2.23719 7.62462 2.52548 8.03953 2.90385 8.36179C3.28222 8.68405 3.73772 8.90264 4.22584 8.99619C4.32433 8.99619 4.42283 8.99619 4.51312 8.99619C4.60341 8.99619 4.51312 8.99619 4.51312 8.99619C4.09721 9.36993 3.5953 9.63498 3.05211 9.76773C2.33999 10.0225 1.58123 10.1205 0.827742 10.055C0.704623 10.055 0.680023 10.055 0.647192 10.055C0.61436 10.055 0.647182 10.1043 0.688221 10.1371C0.836689 10.2352 0.990104 10.3256 1.14786 10.4079C1.62027 10.6601 2.11832 10.861 2.6335 11.0071C3.94963 11.4033 5.34592 11.452 6.68647 11.1485C8.02701 10.8451 9.26615 10.1997 10.2833 9.27525C11.0177 8.48504 11.5864 7.55571 11.9557 6.54212C12.3251 5.52852 12.4876 4.4512 12.4338 3.37375C12.4338 3.29167 12.5323 3.24242 12.5897 3.20138C12.9941 2.89387 13.3485 2.52562 13.6403 2.10972C13.6847 2.05066 13.7078 1.97836 13.706 1.90452C13.6814 1.88811 13.6814 1.88811 13.6321 1.88811Z"/>
-                </svg>
-              </span>
-              TWITTER
-            </a>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link" target="_blank" rel="nofollow">
-              <span>
-                <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.968577 3.76711H3.29141V11.2363H0.968577V3.76711ZM2.1259 0.0571289C2.39213 0.0571289 2.65239 0.136077 2.87375 0.283988C3.09512 0.4319 3.26765 0.642131 3.36954 0.888098C3.47142 1.13407 3.49808 1.40472 3.44614 1.66584C3.3942 1.92696 3.26598 2.16681 3.07772 2.35507C2.88947 2.54332 2.64963 2.67153 2.38851 2.72347C2.12739 2.77541 1.85672 2.74875 1.61075 2.64686C1.36478 2.54498 1.15456 2.37245 1.00665 2.15108C0.858739 1.92972 0.779785 1.66946 0.779785 1.40323C0.779785 1.04622 0.921608 0.703837 1.17405 0.451394C1.42649 0.198951 1.76889 0.0571289 2.1259 0.0571289Z"/>
-                  <path d="M4.78516 3.76784H7.00952V4.79383C7.23439 4.41402 7.5572 4.10164 7.94419 3.88938C8.33118 3.67711 8.7681 3.57277 9.20925 3.58727C11.5567 3.58727 11.9917 5.13035 11.9917 7.1413V11.2453H9.66889V7.65019C9.66889 6.78015 9.66886 5.67208 8.4623 5.67208C7.25573 5.67208 7.07515 6.60778 7.07515 7.58453V11.2781H4.78516V3.76784Z"/>
-                </svg>
-              </span>
-              LINKEDIN
-            </a>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link" target="_blank" rel="nofollow">
-              <span>
-                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.7182 3.46924C11.5559 3.46924 11.3972 3.51738 11.2623 3.60757C11.1273 3.69776 11.0221 3.82595 10.9599 3.97593C10.8978 4.12591 10.8816 4.29094 10.9132 4.45016C10.9449 4.60938 11.0231 4.75563 11.1379 4.87042C11.2527 4.98521 11.3989 5.06339 11.5581 5.09506C11.7174 5.12673 11.8824 5.11047 12.0324 5.04835C12.1823 4.98622 12.3105 4.88102 12.4007 4.74604C12.4909 4.61106 12.539 4.45237 12.539 4.29003C12.539 4.07234 12.4526 3.86357 12.2986 3.70964C12.1447 3.55571 11.9359 3.46924 11.7182 3.46924Z"/>
-                  <path d="M8.05734 4.51954C7.37031 4.51792 6.69823 4.72017 6.12619 5.10068C5.55415 5.4812 5.10785 6.02287 4.8438 6.65714C4.57976 7.29141 4.50983 7.98976 4.64286 8.6638C4.7759 9.33783 5.10592 9.95724 5.59115 10.4436C6.07639 10.93 6.69504 11.2615 7.36875 11.3961C8.04247 11.5308 8.74096 11.4625 9.37585 11.1999C10.0107 10.9374 10.5535 10.4924 10.9354 9.92126C11.3172 9.35013 11.5211 8.67854 11.5211 7.9915C11.5189 7.07276 11.1536 6.19215 10.5047 5.54174C9.85581 4.89132 8.97607 4.52387 8.05734 4.51954ZM8.05734 10.2076C7.61671 10.2093 7.18548 10.08 6.81844 9.83619C6.45139 9.5924 6.16506 9.24509 5.99569 8.83831C5.82632 8.43153 5.78157 7.98361 5.86714 7.55136C5.95271 7.11912 6.1647 6.72203 6.47627 6.41046C6.78785 6.09888 7.18494 5.88686 7.61719 5.8013C8.04943 5.71573 8.49735 5.76048 8.90413 5.92985C9.31091 6.09922 9.65823 6.38559 9.90202 6.75264C10.1458 7.11969 10.2751 7.55087 10.2734 7.9915C10.2713 8.57859 10.0371 9.14102 9.62198 9.55616C9.20684 9.9713 8.64443 10.2055 8.05734 10.2076Z"/>
-                  <path d="M10.807 15.0263H5.18463C4.0642 15.0241 2.99024 14.5781 2.19798 13.7858C1.40571 12.9936 0.959689 11.9197 0.95752 10.7992V5.17679C0.959689 4.05637 1.40571 2.98245 2.19798 2.19019C2.99024 1.39793 4.0642 0.951876 5.18463 0.949707H10.807C11.9275 0.951876 13.0014 1.39793 13.7936 2.19019C14.5859 2.98245 15.032 4.05637 15.0341 5.17679V10.7992C15.032 11.9197 14.5859 12.9936 13.7936 13.7858C13.0014 14.5781 11.9275 15.0241 10.807 15.0263ZM5.18463 2.24656C4.41619 2.24656 3.67922 2.55182 3.13585 3.09519C2.59248 3.63856 2.2872 4.37552 2.2872 5.14396V10.7664C2.27847 11.1528 2.3469 11.537 2.48849 11.8966C2.63008 12.2562 2.84199 12.5839 3.1118 12.8606C3.38161 13.1373 3.70392 13.3574 4.05984 13.508C4.41576 13.6586 4.79816 13.7367 5.18463 13.7377H10.807C11.5762 13.7355 12.3132 13.4284 12.8563 12.8837C13.3995 12.3391 13.7045 11.6013 13.7045 10.8321V5.17679C13.7088 4.79355 13.6371 4.41325 13.4934 4.05792C13.3497 3.70259 13.137 3.3793 12.8675 3.10676C12.598 2.83423 12.2771 2.61787 11.9235 2.47021C11.5698 2.32255 11.1903 2.24654 10.807 2.24656H5.18463Z"/>
-                </svg>
-              </span>
-              INSTAGRAM
-            </a>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link" target="_blank" rel="nofollow">
-              <span>
-                <svg width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 14.0448L2.00956 10.3101C1.19713 8.85126 0.938322 7.14824 1.28064 5.51387C1.62297 3.87949 2.54344 2.42349 3.87303 1.41326C5.20261 0.403026 6.85202 -0.0936023 8.51835 0.0145784C10.1847 0.122759 11.7561 0.828486 12.9439 2.00215C14.1317 3.17581 14.8562 4.73862 14.9843 6.40353C15.1124 8.06845 14.6356 9.7237 13.6413 11.0653C12.6471 12.4069 11.2023 13.3447 9.57209 13.7066C7.94194 14.0685 6.23592 13.8301 4.76741 13.0352L1 14.0448ZM4.9398 11.6398L5.17781 11.7794C6.3469 12.4707 7.72849 12.7106 9.0622 12.4539C10.3959 12.1972 11.5897 11.4616 12.4187 10.3857C13.2476 9.30981 13.6545 7.96791 13.5626 6.61283C13.4708 5.25774 12.8865 3.98303 11.92 3.02886C10.9534 2.07468 9.67126 1.50693 8.3151 1.43256C6.95895 1.3582 5.62241 1.78236 4.55731 2.62512C3.49221 3.46789 2.77205 4.67107 2.53258 6.00799C2.2931 7.34491 2.55084 8.72325 3.25718 9.88333L3.40492 10.1214L2.83035 12.198L4.9398 11.6398Z"/>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5954 7.93764C10.4587 7.82869 10.299 7.75215 10.1284 7.71377C9.95779 7.67538 9.78073 7.67616 9.61048 7.71603C9.35603 7.82273 9.19186 8.22491 9.0277 8.43011C8.9916 8.4783 8.9391 8.5116 8.88011 8.52369C8.82113 8.53579 8.75973 8.52586 8.70758 8.49578C7.76643 8.12002 6.97977 7.43746 6.47504 6.5587C6.42831 6.50856 6.4023 6.44257 6.4023 6.37403C6.4023 6.30548 6.42831 6.23949 6.47504 6.18935C6.66571 6.00914 6.807 5.78307 6.88544 5.53271C6.90367 5.24757 6.84105 4.96308 6.70484 4.71192C6.59903 4.37155 6.39659 4.06927 6.12211 3.84188C5.98599 3.78872 5.83812 3.77287 5.69382 3.79595C5.54953 3.81904 5.41405 3.88023 5.30131 3.9732C5.10394 4.14121 4.94739 4.35195 4.84357 4.58944C4.73976 4.82694 4.69142 5.08495 4.70215 5.34393C4.70186 5.49034 4.71838 5.63631 4.75139 5.77895C4.8447 6.11987 4.98558 6.44593 5.16996 6.74749C5.30676 6.97731 5.45453 7.19892 5.61322 7.41233C6.12671 8.11627 6.77032 8.71531 7.50925 9.17704C7.88072 9.40744 8.27726 9.5947 8.69119 9.73518C9.12277 9.93097 9.59893 10.0075 10.0701 9.95679C10.3385 9.91732 10.5929 9.81194 10.8107 9.65009C11.0284 9.48823 11.2026 9.27495 11.3177 9.02929C11.3811 8.87912 11.401 8.71417 11.3752 8.55323C11.3013 8.29058 10.8581 8.09359 10.5954 7.93764Z"/>
-                </svg>
-              </span>
-              WHATSAPP
-            </a>
-          </li>
+    <div class="footer__right">
+      <div class="footer__cell">
+        <div class="footer__cell-title">Real Swords</div>
+        <ul class="footer__cell-list">
+          <li><a href="#">Asian & Oriental</a></li>
+          <li><a href="#">European</a></li>
+          <li><a href="#">Arabic & Middle Eastern</a></li>
         </ul>
       </div>
-      <div class="footer__right">
-        <div class="footer__copy">Copyright © 2021 Halfwayup - All Rights Reserved.</div>
+      <div class="footer__cell">
+        <div class="footer__cell-title">Fantasy Swords</div>
+        <ul class="footer__cell-list">
+          <li><a href="#">Anime Swords</a></li>
+          <li><a href="#">Movie Swords</a></li>
+          <li><a href="#">Game Swords</a></li>
+        </ul>
+      </div>
+      <div class="footer__cell">
+        <div class="footer__cell-title">Information</div>
+        <ul class="footer__cell-list">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Get in Touch</a></li>
+        </ul>
       </div>
     </div>
   </div>
 </footer>
-    
+
+<!-- to show the popup you need to add a class "active" => class="popup-succes js-popup active"  -->
+<div class="popup-succes js-popup">
+  <div class="popup-succes__overlay js-close-popup"></div>
+  <div class="popup-succes__box">
+    <div class="popup-succes__close js-close-popup">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.5216 14.9957L29.2612 4.28109C29.7315 3.81079 29.9957 3.17292 29.9957 2.50781C29.9957 1.84269 29.7315 1.20482 29.2612 0.734519C28.7909 0.264215 28.153 0 27.4879 0C26.8228 0 26.185 0.264215 25.7146 0.734519L15 11.4741L4.28535 0.734519C3.81505 0.264215 3.17718 -4.95546e-09 2.51207 0C1.84696 4.95547e-09 1.20909 0.264215 0.738782 0.734519C0.268477 1.20482 0.00426239 1.84269 0.00426238 2.50781C0.00426238 3.17292 0.268477 3.81079 0.738782 4.28109L11.4784 14.9957L0.738782 25.7104C0.504687 25.9426 0.318881 26.2188 0.192082 26.5232C0.0652831 26.8275 0 27.154 0 27.4837C0 27.8134 0.0652831 28.1398 0.192082 28.4442C0.318881 28.7485 0.504687 29.0248 0.738782 29.257C0.970965 29.491 1.2472 29.6769 1.55155 29.8037C1.85591 29.9305 2.18236 29.9957 2.51207 29.9957C2.84178 29.9957 3.16823 29.9305 3.47258 29.8037C3.77694 29.6769 4.05317 29.491 4.28535 29.257L15 18.5173L25.7146 29.257C25.9468 29.491 26.2231 29.6769 26.5274 29.8037C26.8318 29.9305 27.1582 29.9957 27.4879 29.9957C27.8176 29.9957 28.1441 29.9305 28.4484 29.8037C28.7528 29.6769 29.029 29.491 29.2612 29.257C29.4953 29.0248 29.6811 28.7485 29.8079 28.4442C29.9347 28.1398 30 27.8134 30 27.4837C30 27.154 29.9347 26.8275 29.8079 26.5232C29.6811 26.2188 29.4953 25.9426 29.2612 25.7104L18.5216 14.9957Z" fill="white"/>
+      </svg>
+    </div>
+    <div class="popup-succes__title">Thank your for your message!</div>
+    <div class="popup-succes__text">We will get back to you within 48 Hours</div>
+  </div>
+</div>
     <script src="js/app.js"></script>
   </body>
 </html>

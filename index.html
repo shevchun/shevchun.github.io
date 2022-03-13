@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="Halfway">
+  <meta name="description" content="Sword">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
-  <title>Halfway</title>
+  <title>Sword</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
@@ -18,579 +18,401 @@
   <link href="css/index.css" rel="stylesheet">
 </head>
   <body>
-    <div class="preloader">
-  <div class="lds-ellipsis">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <header class="header">
+  <div class="header__container container">
+    <div class="header__left">
+      <div class="header__logo">
+        <img src="data/logo.svg" width="157" height="68" alt="logo">
+        <a href="#" class="header__logo-link"></a>
+      </div>
+    </div>
+    <div class="header__center">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="menu-item-has-children">
+            <a href="#">Real Swords</a>
+            <ul>
+              <li>
+                <a href="#">Asian & Oriental</a>
+              </li>
+              <li>
+                <a href="#">European</a>
+              </li>
+              <li>
+                <a href="#">Arabic & Middle Eastern</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item-has-children">
+            <a href="#">Fantasy Swords</a>
+            <ul>
+              <li>
+                <a href="#">Anime Swords</a>
+              </li>
+              <li>
+                <a href="#">Movie Swords</a>
+              </li>
+              <li>
+                <a href="#">Game Swords</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Editorial</a>
+          </li>
+          <li>
+            <a href="#">Get in Touch</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__right">
+      <div class="header__search">
+        <div class="header__search-btn js-search-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.7043 16.2848L14.3054 12.8958C15.402 11.4988 15.9971 9.77351 15.9948 7.99743C15.9948 6.41569 15.5258 4.86947 14.647 3.5543C13.7683 2.23913 12.5192 1.21408 11.0579 0.608771C9.59657 0.00346513 7.98855 -0.15491 6.43721 0.153672C4.88586 0.462254 3.46085 1.22393 2.34239 2.34239C1.22393 3.46085 0.462254 4.88586 0.153672 6.43721C-0.15491 7.98855 0.00346513 9.59657 0.608771 11.0579C1.21408 12.5192 2.23913 13.7683 3.5543 14.647C4.86947 15.5258 6.41569 15.9948 7.99743 15.9948C9.77351 15.9971 11.4988 15.402 12.8958 14.3054L16.2848 17.7043C16.3777 17.798 16.4883 17.8724 16.6101 17.9231C16.7319 17.9739 16.8626 18 16.9945 18C17.1265 18 17.2572 17.9739 17.379 17.9231C17.5008 17.8724 17.6114 17.798 17.7043 17.7043C17.798 17.6114 17.8724 17.5008 17.9231 17.379C17.9739 17.2572 18 17.1265 18 16.9945C18 16.8626 17.9739 16.7319 17.9231 16.6101C17.8724 16.4883 17.798 16.3777 17.7043 16.2848V16.2848ZM1.99936 7.99743C1.99936 6.81112 2.35114 5.65146 3.01022 4.66508C3.66929 3.6787 4.60606 2.90991 5.70207 2.45593C6.79807 2.00196 8.00408 1.88317 9.16759 2.11461C10.3311 2.34605 11.3999 2.91731 12.2387 3.75615C13.0775 4.595 13.6488 5.66375 13.8802 6.82726C14.1117 7.99077 13.9929 9.19678 13.5389 10.2928C13.0849 11.3888 12.3162 12.3256 11.3298 12.9846C10.3434 13.6437 9.18373 13.9955 7.99743 13.9955C6.40664 13.9955 4.88101 13.3636 3.75615 12.2387C2.6313 11.1138 1.99936 9.58821 1.99936 7.99743Z" />
+          </svg>
+        </div>
+        <form class="header__search-box">
+          <input type="text" class="header__search-input" placeholder="Search by keyword">
+          <button class="header__search-button" type="submit">search</button>
+        </form>
+      </div>
+      <div class="header__menu-btn">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.05 0H0.95C0.42533 0 0 0.425329 0 0.95V1.05C0 1.57467 0.42533 2 0.95 2H17.05C17.5747 2 18 1.57467 18 1.05V0.95C18 0.425329 17.5747 0 17.05 0Z" fill="#F7D39F"/>
+          <path d="M17.05 5H0.95C0.42533 5 0 5.42533 0 5.95V6.05C0 6.57467 0.42533 7 0.95 7H17.05C17.5747 7 18 6.57467 18 6.05V5.95C18 5.42533 17.5747 5 17.05 5Z" fill="#F7D39F"/>
+          <path d="M17.05 10H0.95C0.42533 10 0 10.4253 0 10.95V11.05C0 11.5747 0.42533 12 0.95 12H17.05C17.5747 12 18 11.5747 18 11.05V10.95C18 10.4253 17.5747 10 17.05 10Z" fill="#F7D39F"/>
+        </svg>
+      </div>
+    </div>
   </div>
-</div>
-<header class="header">
-  <div class="container container--full">
-    <div class="header__container">
-      <div class="header__left">
-        <div class="header__logo">
-          <picture>
-            <source srcset="data/logo-small.svg" media="(max-width: 1200px)">
-            <img src="data/logo.svg" width="159" height="64" alt="logo">
-          </picture>
-          <a href="#" class="header__logo-link"></a>
-        </div>
+  <div class="header__mobile">
+    <div class="header__mobile-overlay js-close-mobile"></div>
+    <div class="header__mobile-box">
+      <div class="header__mobile-close js-close-mobile">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.113 8.99744L17.5567 2.56866C17.8389 2.28647 17.9974 1.90375 17.9974 1.50468C17.9974 1.10562 17.8389 0.722895 17.5567 0.440712C17.2745 0.158529 16.8918 0 16.4928 0C16.0937 0 15.711 0.158529 15.4288 0.440712L9 6.88448L2.57121 0.440712C2.28903 0.158529 1.90631 -2.97328e-09 1.50724 0C1.10817 2.97328e-09 0.725452 0.158529 0.443269 0.440712C0.161086 0.722895 0.00255743 1.10562 0.00255743 1.50468C0.00255743 1.90375 0.161086 2.28647 0.443269 2.56866L6.88704 8.99744L0.443269 15.4262C0.302812 15.5655 0.191329 15.7313 0.115249 15.9139C0.0391699 16.0965 0 16.2924 0 16.4902C0 16.688 0.0391699 16.8839 0.115249 17.0665C0.191329 17.2491 0.302812 17.4149 0.443269 17.5542C0.582579 17.6946 0.74832 17.8061 0.930933 17.8822C1.11355 17.9583 1.30941 17.9974 1.50724 17.9974C1.70507 17.9974 1.90094 17.9583 2.08355 17.8822C2.26616 17.8061 2.4319 17.6946 2.57121 17.5542L9 11.1104L15.4288 17.5542C15.5681 17.6946 15.7338 17.8061 15.9165 17.8822C16.0991 17.9583 16.2949 17.9974 16.4928 17.9974C16.6906 17.9974 16.8865 17.9583 17.0691 17.8822C17.2517 17.8061 17.4174 17.6946 17.5567 17.5542C17.6972 17.4149 17.8087 17.2491 17.8848 17.0665C17.9608 16.8839 18 16.688 18 16.4902C18 16.2924 17.9608 16.0965 17.8848 15.9139C17.8087 15.7313 17.6972 15.5655 17.5567 15.4262L11.113 8.99744Z" fill="#F7D39F"/>
+        </svg>
       </div>
-      <div class="header__right">
-        <div class="header__btn btn">GET A pROPOSAL</div>
-        <div class="header__menu-btn">
-          <div class="header__menu-btn-box">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-      <div class="header__menu">
-        <div class="header__menu-holder">
-          <div class="header__menu-box">
-            <div class="header__menu-left">
-              <div class="header__menu-row">
-                <div class="header__menu-logo">
-                  <img src="data/logo-menu.svg" width="305" height="109" alt="logo">
-                </div>
-                <div class="header__menu-text">Uplift your business to new heights with our results-oriented digital marketing services.</div>
-              </div>
-              <div class="header__menu-contacts">
-                <div class="header__menu-contacts-item">
-                  <div class="header__menu-contacts-title">P:</div>
-                  <div class="header__menu-contacts-box">
-                    <a href="tel:+12025550188" class="header__menu-contacts-link">+1-202-555-0188</a>
-                  </div>
-                </div>
-                <div class="header__menu-contacts-item">
-                  <div class="header__menu-contacts-title">E:</div>
-                  <div class="header__menu-contacts-box">
-                    <a href="mailto:contact@halfwayup.com" class="header__menu-contacts-link">contact@halfwayup.com</a>
-                  </div>
-                </div>
-                <div class="header__menu-contacts-item">
-                  <div class="header__menu-contacts-title">A:</div>
-                  <div class="header__menu-contacts-box">
-                    <address class="header__menu-contacts-address">(541) 536-1859 52790 <br> Oak Dr La Pine, Oregon(OR), <br> 97739</address>
-                  </div>
-                </div>
-              </div>
-              <ul class="social social--menu">
-                <li class="social__item">
-                  <a href="#" class="social__link" target="_blank" rel="nofollow">
-                    <span>
-                      <svg width="14" height="12" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13.6321 1.88811C13.2083 2.06639 12.7647 2.19315 12.3107 2.26568C12.5159 2.26568 12.836 1.83886 12.9591 1.68291C13.1539 1.43874 13.3014 1.16039 13.3941 0.86212C13.3941 0.86212 13.3941 0.804667 13.3941 0.788251C13.3703 0.779456 13.3441 0.779456 13.3202 0.788251C12.8247 1.05268 12.2981 1.25397 11.7525 1.38743C11.7363 1.39679 11.7179 1.40172 11.6992 1.40172C11.6804 1.40172 11.662 1.39679 11.6458 1.38743L11.5063 1.24789C11.2814 1.05228 11.0264 0.894292 10.7512 0.780041C10.3813 0.63191 9.9833 0.567438 9.58562 0.591256C9.19848 0.616367 8.82094 0.722639 8.47754 0.903162C8.13256 1.083 7.82808 1.33162 7.58288 1.63367C7.32999 1.94659 7.14797 2.31063 7.04937 2.7007C6.97551 3.07189 6.97551 3.45399 7.04937 3.82518C7.04937 3.89085 7.04936 3.89906 6.99191 3.89085C4.91642 3.67802 2.99426 2.70085 1.59929 1.1494C1.53363 1.07552 1.5008 1.07552 1.45155 1.1494C1.17213 1.66727 1.06677 2.2613 1.15102 2.84368C1.23527 3.42606 1.50468 3.96588 1.91941 4.38332C2.02611 4.48182 2.13281 4.58031 2.24772 4.6706C1.88517 4.64188 1.53141 4.54439 1.20533 4.38332C1.14787 4.38332 1.11504 4.38332 1.10683 4.43257C1.09863 4.48182 1.10683 4.63777 1.10683 4.74448C1.17175 5.23025 1.3638 5.69027 1.66359 6.07798C1.96338 6.46569 2.36026 6.76734 2.81407 6.95241C2.92614 6.99659 3.04139 7.03226 3.15882 7.05911C2.82174 7.11353 2.4781 7.11353 2.14102 7.05911C2.06715 7.05911 2.03432 7.05911 2.06715 7.1576C2.23719 7.62462 2.52548 8.03953 2.90385 8.36179C3.28222 8.68405 3.73772 8.90264 4.22584 8.99619C4.32433 8.99619 4.42283 8.99619 4.51312 8.99619C4.60341 8.99619 4.51312 8.99619 4.51312 8.99619C4.09721 9.36993 3.5953 9.63498 3.05211 9.76773C2.33999 10.0225 1.58123 10.1205 0.827742 10.055C0.704623 10.055 0.680023 10.055 0.647192 10.055C0.61436 10.055 0.647182 10.1043 0.688221 10.1371C0.836689 10.2352 0.990104 10.3256 1.14786 10.4079C1.62027 10.6601 2.11832 10.861 2.6335 11.0071C3.94963 11.4033 5.34592 11.452 6.68647 11.1485C8.02701 10.8451 9.26615 10.1997 10.2833 9.27525C11.0177 8.48504 11.5864 7.55571 11.9557 6.54212C12.3251 5.52852 12.4876 4.4512 12.4338 3.37375C12.4338 3.29167 12.5323 3.24242 12.5897 3.20138C12.9941 2.89387 13.3485 2.52562 13.6403 2.10972C13.6847 2.05066 13.7078 1.97836 13.706 1.90452C13.6814 1.88811 13.6814 1.88811 13.6321 1.88811Z"/>
-                      </svg>
-                    </span>
-                    TWITTER
-                  </a>
-                </li>
-                <li class="social__item">
-                  <a href="#" class="social__link" target="_blank" rel="nofollow">
-                    <span>
-                      <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.968577 3.76711H3.29141V11.2363H0.968577V3.76711ZM2.1259 0.0571289C2.39213 0.0571289 2.65239 0.136077 2.87375 0.283988C3.09512 0.4319 3.26765 0.642131 3.36954 0.888098C3.47142 1.13407 3.49808 1.40472 3.44614 1.66584C3.3942 1.92696 3.26598 2.16681 3.07772 2.35507C2.88947 2.54332 2.64963 2.67153 2.38851 2.72347C2.12739 2.77541 1.85672 2.74875 1.61075 2.64686C1.36478 2.54498 1.15456 2.37245 1.00665 2.15108C0.858739 1.92972 0.779785 1.66946 0.779785 1.40323C0.779785 1.04622 0.921608 0.703837 1.17405 0.451394C1.42649 0.198951 1.76889 0.0571289 2.1259 0.0571289Z"/>
-                        <path d="M4.78516 3.76784H7.00952V4.79383C7.23439 4.41402 7.5572 4.10164 7.94419 3.88938C8.33118 3.67711 8.7681 3.57277 9.20925 3.58727C11.5567 3.58727 11.9917 5.13035 11.9917 7.1413V11.2453H9.66889V7.65019C9.66889 6.78015 9.66886 5.67208 8.4623 5.67208C7.25573 5.67208 7.07515 6.60778 7.07515 7.58453V11.2781H4.78516V3.76784Z"/>
-                      </svg>
-                    </span>
-                    LINKEDIN
-                  </a>
-                </li>
-                <li class="social__item">
-                  <a href="#" class="social__link" target="_blank" rel="nofollow">
-                    <span>
-                      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.7182 3.46924C11.5559 3.46924 11.3972 3.51738 11.2623 3.60757C11.1273 3.69776 11.0221 3.82595 10.9599 3.97593C10.8978 4.12591 10.8816 4.29094 10.9132 4.45016C10.9449 4.60938 11.0231 4.75563 11.1379 4.87042C11.2527 4.98521 11.3989 5.06339 11.5581 5.09506C11.7174 5.12673 11.8824 5.11047 12.0324 5.04835C12.1823 4.98622 12.3105 4.88102 12.4007 4.74604C12.4909 4.61106 12.539 4.45237 12.539 4.29003C12.539 4.07234 12.4526 3.86357 12.2986 3.70964C12.1447 3.55571 11.9359 3.46924 11.7182 3.46924Z"/>
-                        <path d="M8.05734 4.51954C7.37031 4.51792 6.69823 4.72017 6.12619 5.10068C5.55415 5.4812 5.10785 6.02287 4.8438 6.65714C4.57976 7.29141 4.50983 7.98976 4.64286 8.6638C4.7759 9.33783 5.10592 9.95724 5.59115 10.4436C6.07639 10.93 6.69504 11.2615 7.36875 11.3961C8.04247 11.5308 8.74096 11.4625 9.37585 11.1999C10.0107 10.9374 10.5535 10.4924 10.9354 9.92126C11.3172 9.35013 11.5211 8.67854 11.5211 7.9915C11.5189 7.07276 11.1536 6.19215 10.5047 5.54174C9.85581 4.89132 8.97607 4.52387 8.05734 4.51954ZM8.05734 10.2076C7.61671 10.2093 7.18548 10.08 6.81844 9.83619C6.45139 9.5924 6.16506 9.24509 5.99569 8.83831C5.82632 8.43153 5.78157 7.98361 5.86714 7.55136C5.95271 7.11912 6.1647 6.72203 6.47627 6.41046C6.78785 6.09888 7.18494 5.88686 7.61719 5.8013C8.04943 5.71573 8.49735 5.76048 8.90413 5.92985C9.31091 6.09922 9.65823 6.38559 9.90202 6.75264C10.1458 7.11969 10.2751 7.55087 10.2734 7.9915C10.2713 8.57859 10.0371 9.14102 9.62198 9.55616C9.20684 9.9713 8.64443 10.2055 8.05734 10.2076Z"/>
-                        <path d="M10.807 15.0263H5.18463C4.0642 15.0241 2.99024 14.5781 2.19798 13.7858C1.40571 12.9936 0.959689 11.9197 0.95752 10.7992V5.17679C0.959689 4.05637 1.40571 2.98245 2.19798 2.19019C2.99024 1.39793 4.0642 0.951876 5.18463 0.949707H10.807C11.9275 0.951876 13.0014 1.39793 13.7936 2.19019C14.5859 2.98245 15.032 4.05637 15.0341 5.17679V10.7992C15.032 11.9197 14.5859 12.9936 13.7936 13.7858C13.0014 14.5781 11.9275 15.0241 10.807 15.0263ZM5.18463 2.24656C4.41619 2.24656 3.67922 2.55182 3.13585 3.09519C2.59248 3.63856 2.2872 4.37552 2.2872 5.14396V10.7664C2.27847 11.1528 2.3469 11.537 2.48849 11.8966C2.63008 12.2562 2.84199 12.5839 3.1118 12.8606C3.38161 13.1373 3.70392 13.3574 4.05984 13.508C4.41576 13.6586 4.79816 13.7367 5.18463 13.7377H10.807C11.5762 13.7355 12.3132 13.4284 12.8563 12.8837C13.3995 12.3391 13.7045 11.6013 13.7045 10.8321V5.17679C13.7088 4.79355 13.6371 4.41325 13.4934 4.05792C13.3497 3.70259 13.137 3.3793 12.8675 3.10676C12.598 2.83423 12.2771 2.61787 11.9235 2.47021C11.5698 2.32255 11.1903 2.24654 10.807 2.24656H5.18463Z"/>
-                      </svg>
-                    </span>
-                    INSTAGRAM
-                  </a>
-                </li>
-                <li class="social__item">
-                  <a href="#" class="social__link" target="_blank" rel="nofollow">
-                    <span>
-                      <svg width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 14.0448L2.00956 10.3101C1.19713 8.85126 0.938322 7.14824 1.28064 5.51387C1.62297 3.87949 2.54344 2.42349 3.87303 1.41326C5.20261 0.403026 6.85202 -0.0936023 8.51835 0.0145784C10.1847 0.122759 11.7561 0.828486 12.9439 2.00215C14.1317 3.17581 14.8562 4.73862 14.9843 6.40353C15.1124 8.06845 14.6356 9.7237 13.6413 11.0653C12.6471 12.4069 11.2023 13.3447 9.57209 13.7066C7.94194 14.0685 6.23592 13.8301 4.76741 13.0352L1 14.0448ZM4.9398 11.6398L5.17781 11.7794C6.3469 12.4707 7.72849 12.7106 9.0622 12.4539C10.3959 12.1972 11.5897 11.4616 12.4187 10.3857C13.2476 9.30981 13.6545 7.96791 13.5626 6.61283C13.4708 5.25774 12.8865 3.98303 11.92 3.02886C10.9534 2.07468 9.67126 1.50693 8.3151 1.43256C6.95895 1.3582 5.62241 1.78236 4.55731 2.62512C3.49221 3.46789 2.77205 4.67107 2.53258 6.00799C2.2931 7.34491 2.55084 8.72325 3.25718 9.88333L3.40492 10.1214L2.83035 12.198L4.9398 11.6398Z"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5954 7.93764C10.4587 7.82869 10.299 7.75215 10.1284 7.71377C9.95779 7.67538 9.78073 7.67616 9.61048 7.71603C9.35603 7.82273 9.19186 8.22491 9.0277 8.43011C8.9916 8.4783 8.9391 8.5116 8.88011 8.52369C8.82113 8.53579 8.75973 8.52586 8.70758 8.49578C7.76643 8.12002 6.97977 7.43746 6.47504 6.5587C6.42831 6.50856 6.4023 6.44257 6.4023 6.37403C6.4023 6.30548 6.42831 6.23949 6.47504 6.18935C6.66571 6.00914 6.807 5.78307 6.88544 5.53271C6.90367 5.24757 6.84105 4.96308 6.70484 4.71192C6.59903 4.37155 6.39659 4.06927 6.12211 3.84188C5.98599 3.78872 5.83812 3.77287 5.69382 3.79595C5.54953 3.81904 5.41405 3.88023 5.30131 3.9732C5.10394 4.14121 4.94739 4.35195 4.84357 4.58944C4.73976 4.82694 4.69142 5.08495 4.70215 5.34393C4.70186 5.49034 4.71838 5.63631 4.75139 5.77895C4.8447 6.11987 4.98558 6.44593 5.16996 6.74749C5.30676 6.97731 5.45453 7.19892 5.61322 7.41233C6.12671 8.11627 6.77032 8.71531 7.50925 9.17704C7.88072 9.40744 8.27726 9.5947 8.69119 9.73518C9.12277 9.93097 9.59893 10.0075 10.0701 9.95679C10.3385 9.91732 10.5929 9.81194 10.8107 9.65009C11.0284 9.48823 11.2026 9.27495 11.3177 9.02929C11.3811 8.87912 11.401 8.71417 11.3752 8.55323C11.3013 8.29058 10.8581 8.09359 10.5954 7.93764Z"/>
-                      </svg>
-                    </span>
-                    WHATSAPP
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="header__menu-right">
-              <nav class="header__nav">
-                <ul class="header__nav-list">
-                  <li><a href="#">Services & Pricing</a></li>
-                  <li><a href="#">Case Studies</a></li>
-                  <li><a href="#">About our team</a></li>
-                  <li><a href="#">Blog & Insights</a></li>
-                  <li><a href="#">Get in touch</a></li>
-                </ul>
-              </nav>
-              <div class="header__menu-get-box">
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="header__mobile-title">Menu</div>
+      <div class="header__mobile-logo">
+        <img src="data/logo.svg" width="218" height="95" alt="logo">
       </div>
     </div>
   </div>
 </header>
     <div class="wrapper">
-      <div class="first-screen">
-        <div class="first-screen__box">
-          <div class="first-screen__info">
-            <div class="first-screen__info-box">
-              <div class="first-screen__title title">The View is Better Up Here</div>
-              <div class="first-screen__text text-content">Uplift your business to new heights with our results-oriented digital marketing services.</div>
-            </div>
-            <div class="first-screen__row">
-              <div class="first-screen__cell">
-                <a href="#" class="first-screen__cell-btn btn-2 btn-2--circle">
-                  <span>Services</span>
-                  <span></span>
-                </a>
-                <div class="first-screen__cell-text">Sky-high quality digital services</div>
-              </div>
-              <div class="first-screen__cell">
-                <a href="#" class="first-screen__cell-btn btn-2 btn-2--circle">
-                  <span>Portfolio</span>
-                  <span></span>
-                </a>
-                <div class="first-screen__cell-text">We strive for persistent results</div>
+      <div class="main-articles">
+        <div class="container">
+          <div class="main-articles__list">
+            <div class="main-articles__item">
+              <a href="#" class="main-articles__item-img">
+                <img src="data/The10MostLegendarySwordsinOnlineGaming.jpg" width="400" height="258" alt="The10MostLegendarySwordsinOnlineGaming">
+                <div class="main-articles__item-label">GAME</div>
+              </a>
+              <a href="#" class="main-articles__item-title" title="The 10 Most Legendary Swords in Online Gaming ">The 10 Most Legendary Swords in Online Gaming </a>
+              <div class="main-articles__item-descriptions text-content">
+                <p>The Estoc Thrusting Sword are almost as powerful as the unforgettable protagonist of the God of War series, Kratos is.</p>
               </div>
             </div>
-          </div>
-          <div class="first-screen__animation">
-            <video class="first-screen__video" muted autoplay playsinline>
-              <source src="data/animation.mp4" type="video/mp4">
-            </video>
-            <img class="first-screen__img" src="data/first-screen.png" width="1100" height="949" alt="first-screen">
+            <div class="main-articles__item">
+              <a href="#" class="main-articles__item-img">
+                <img src="data/About-polishing.jpg" width="400" height="258" alt="About polishing">
+                <div class="main-articles__item-label">ORIENTAL</div>
+              </a>
+              <a href="#" class="main-articles__item-title" title="About polishing the Japanese samurai sword ">About polishing the Japanese samurai sword </a>
+              <div class="main-articles__item-descriptions text-content">
+                <p>A traditional Japanese sword is not complete because the blade has been forged, the metal has cooled, and the soil has been removed.</p>
+              </div>
+            </div>
+            <div class="main-articles__item">
+              <a href="#" class="main-articles__item-img">
+                <img src="data/10-Mysterious-Swords.jpg" width="400" height="258" alt="10 Mysterious Swords">
+                <div class="main-articles__item-label">EUROPEAN</div>
+              </a>
+              <a href="#" class="main-articles__item-title" title="10 Mysterious Swords From Legend And History ">10 Mysterious Swords From Legend And History </a>
+              <div class="main-articles__item-descriptions text-content">
+                <p>Swords of renown are the seeds of legend. Fueled by tales of bloodshed and conquest, there have been swords throughout history that have grown to</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="approach">
-        <div class="container">
-          <div class="approach__head">
-            <div class="approach__head-left">
-              <div class="approach__title title-small">360° Approach to SEO</div>
-              <div class="approach__description title-description">Roadmap with Our Core Offering</div>
+      <div class="box">
+        <div class="box__holder">
+          <div class="box__content">
+            <div class="title">LATEST ARTICLES</div>
+            <div class="articles-list">
+              <div class="articles-item">
+                <div class="articles-item__info">
+                  <div class="articles-item__label">ORIENTAL</div>
+                  <a href="#" class="articles-item__title" title="How the shape and form of Japanese swords evolved">How the shape and form of Japanese swords evolved</a>
+                  <div class="articles-item__text text-content">
+                    <p>The katana is one of the most popular and recognized swords in the world. Regardless of your expertise in historical swords, you probably know that it has a curved blade.</p>
+                  </div>
+                  <div class="articles-item__footer">
+                    <div class="articles-item__footer-by">by Adam_Edward &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; 2 hour ago</div>
+                    <div class="articles-item__footer-favorites">
+                      <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.00058 18C0.828791 17.9995 0.660036 17.9547 0.51058 17.87C0.356114 17.7832 0.227492 17.6569 0.13788 17.504C0.0482686 17.3511 0.000885124 17.1772 0.000579768 17V2.33C-0.0129385 1.73032 0.210407 1.14946 0.622213 0.713324C1.03402 0.277184 1.60111 0.0208945 2.20058 0H11.8006C12.4001 0.0208945 12.9671 0.277184 13.3789 0.713324C13.7908 1.14946 14.0141 1.73032 14.0006 2.33V17C13.9995 17.1745 13.9528 17.3457 13.8651 17.4966C13.7774 17.6475 13.6517 17.7727 13.5006 17.86C13.3486 17.9478 13.1761 17.994 13.0006 17.994C12.825 17.994 12.6526 17.9478 12.5006 17.86L6.83058 14.65L1.50058 17.85C1.35013 17.9434 1.17759 17.9951 1.00058 18Z" fill="#E28B60"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="articles-item__img">
+                  <img src="data/How-the-shape.jpg" width="340" height="220" alt="How-the-shape">
+                </a>
+              </div>
+              <div class="articles-item">
+                <div class="articles-item__info">
+                  <div class="articles-item__label">EUROPEAN</div>
+                  <a href="#" class="articles-item__title" title="Bronze VS Iron VS Steel">Bronze VS Iron VS Steel</a>
+                  <div class="articles-item__text text-content">
+                    <p>The sword is one of the most iconic weapons in history. It is classified as a long-bladed weapon used for logging and/or thrust, and its history can be traced back to 1600 BC. Although swords are made of many metals, the most  common ones include bronze, iron, and steel.</p>
+                  </div>
+                  <div class="articles-item__footer">
+                    <div class="articles-item__footer-by">by Adam_Edward &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; 2 hour ago</div>
+                    <div class="articles-item__footer-favorites">
+                      <svg width="14" height="18" viewBox="0 0 14 18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.14029 18C0.877735 18 0.625932 17.895 0.440278 17.7081C0.254623 17.5212 0.150324 17.2677 0.150324 17.0033L0.00182858 2.39203C-0.010092 2.09536 0.0363616 1.79925 0.138518 1.52072C0.240674 1.24219 0.396516 0.986749 0.597082 0.769077C0.797648 0.551405 1.03898 0.375801 1.3072 0.252366C1.57541 0.128932 1.86522 0.0601012 2.15996 0.0498338L11.6537 0C11.9489 0.00518952 12.2401 0.0688629 12.5107 0.187383C12.7814 0.305903 13.0263 0.476948 13.2313 0.690748C13.4363 0.904548 13.5974 1.15691 13.7055 1.43343C13.8137 1.70995 13.8666 2.0052 13.8614 2.30233L14 16.9136C14.0017 17.0883 13.9577 17.2603 13.8726 17.4125C13.7875 17.5647 13.6641 17.6917 13.5149 17.7807C13.3644 17.8682 13.1937 17.9143 13.0199 17.9143C12.8461 17.9143 12.6754 17.8682 12.5249 17.7807L6.88209 14.6312L1.64517 17.8505C1.4901 17.9377 1.31757 17.9888 1.14029 18ZM6.8425 12.4684C7.01451 12.4688 7.18406 12.5097 7.33748 12.588L12.0002 15.1894L11.8814 2.28239C11.8814 2.08306 11.7527 1.94352 11.6735 1.95349L2.16985 2.04319C2.09066 2.04319 1.98176 2.17276 1.98176 2.37209L2.10056 15.2292L6.33761 12.608C6.49149 12.5193 6.6652 12.4713 6.8425 12.4684Z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="articles-item__img">
+                  <img src="data/Bronze-VS-Iron.jpg" width="340" height="220" alt="Bronze VS Iron">
+                </a>
+              </div>
+              <div class="articles-item">
+                <div class="articles-item__info">
+                  <div class="articles-item__label">ARABIC</div>
+                  <a href="#" class="articles-item__title" title="900-year-old Crusader sword discovered off coast of Israel">900-year-old Crusader sword discovered off coast of Israel</a>
+                  <div class="articles-item__text text-content">
+                    <p>First I will acknowledge who wrote this particular story them at the end of it I will add some of my own personal input.</p>
+                  </div>
+                  <div class="articles-item__footer">
+                    <div class="articles-item__footer-by">by Adam_Edward &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; 2 hour ago</div>
+                    <div class="articles-item__footer-favorites">
+                      <svg width="14" height="18" viewBox="0 0 14 18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.14029 18C0.877735 18 0.625932 17.895 0.440278 17.7081C0.254623 17.5212 0.150324 17.2677 0.150324 17.0033L0.00182858 2.39203C-0.010092 2.09536 0.0363616 1.79925 0.138518 1.52072C0.240674 1.24219 0.396516 0.986749 0.597082 0.769077C0.797648 0.551405 1.03898 0.375801 1.3072 0.252366C1.57541 0.128932 1.86522 0.0601012 2.15996 0.0498338L11.6537 0C11.9489 0.00518952 12.2401 0.0688629 12.5107 0.187383C12.7814 0.305903 13.0263 0.476948 13.2313 0.690748C13.4363 0.904548 13.5974 1.15691 13.7055 1.43343C13.8137 1.70995 13.8666 2.0052 13.8614 2.30233L14 16.9136C14.0017 17.0883 13.9577 17.2603 13.8726 17.4125C13.7875 17.5647 13.6641 17.6917 13.5149 17.7807C13.3644 17.8682 13.1937 17.9143 13.0199 17.9143C12.8461 17.9143 12.6754 17.8682 12.5249 17.7807L6.88209 14.6312L1.64517 17.8505C1.4901 17.9377 1.31757 17.9888 1.14029 18ZM6.8425 12.4684C7.01451 12.4688 7.18406 12.5097 7.33748 12.588L12.0002 15.1894L11.8814 2.28239C11.8814 2.08306 11.7527 1.94352 11.6735 1.95349L2.16985 2.04319C2.09066 2.04319 1.98176 2.17276 1.98176 2.37209L2.10056 15.2292L6.33761 12.608C6.49149 12.5193 6.6652 12.4713 6.8425 12.4684Z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="articles-item__img">
+                  <img src="data/900-year-old.jpg" width="340" height="220" alt="900-year-old">
+                </a>
+              </div>
+              <div class="articles-item">
+                <div class="articles-item__info">
+                  <div class="articles-item__label">GAME</div>
+                  <a href="#" class="articles-item__title" title="New sword for Witcher">New sword for Witcher</a>
+                  <div class="articles-item__text text-content">
+                    <p>The katana is one of the most popular and recognized swords in the world. Regardless of your expertise in historical swords, you probably know that it has a curved blade.</p>
+                  </div>
+                  <div class="articles-item__footer">
+                    <div class="articles-item__footer-by">by Adam_Edward &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; 2 hour ago</div>
+                    <div class="articles-item__footer-favorites">
+                      <svg width="14" height="18" viewBox="0 0 14 18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.14029 18C0.877735 18 0.625932 17.895 0.440278 17.7081C0.254623 17.5212 0.150324 17.2677 0.150324 17.0033L0.00182858 2.39203C-0.010092 2.09536 0.0363616 1.79925 0.138518 1.52072C0.240674 1.24219 0.396516 0.986749 0.597082 0.769077C0.797648 0.551405 1.03898 0.375801 1.3072 0.252366C1.57541 0.128932 1.86522 0.0601012 2.15996 0.0498338L11.6537 0C11.9489 0.00518952 12.2401 0.0688629 12.5107 0.187383C12.7814 0.305903 13.0263 0.476948 13.2313 0.690748C13.4363 0.904548 13.5974 1.15691 13.7055 1.43343C13.8137 1.70995 13.8666 2.0052 13.8614 2.30233L14 16.9136C14.0017 17.0883 13.9577 17.2603 13.8726 17.4125C13.7875 17.5647 13.6641 17.6917 13.5149 17.7807C13.3644 17.8682 13.1937 17.9143 13.0199 17.9143C12.8461 17.9143 12.6754 17.8682 12.5249 17.7807L6.88209 14.6312L1.64517 17.8505C1.4901 17.9377 1.31757 17.9888 1.14029 18ZM6.8425 12.4684C7.01451 12.4688 7.18406 12.5097 7.33748 12.588L12.0002 15.1894L11.8814 2.28239C11.8814 2.08306 11.7527 1.94352 11.6735 1.95349L2.16985 2.04319C2.09066 2.04319 1.98176 2.17276 1.98176 2.37209L2.10056 15.2292L6.33761 12.608C6.49149 12.5193 6.6652 12.4713 6.8425 12.4684Z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="articles-item__img">
+                  <img src="data/New-sword.jpg" width="340" height="220" alt="New sword">
+                </a>
+              </div>
+              <div class="articles-item articles-item--big">
+                <div class="articles-item__info">
+                  <div class="articles-item__label">ANIME</div>
+                  <a href="#" class="articles-item__title" title="The 15 Greatest Anime Swords">The 15 Greatest Anime Swords</a>
+                  <div class="articles-item__text text-content">
+                    <p>Swordplay can add some serious visual panache to any anime. Though the medium allows for a wide variety of mythical and imaginative weapons, swords seem to be the tried-and-true instruments of animated mayhem.</p>
+                  </div>
+                  <div class="articles-item__footer">
+                    <div class="articles-item__footer-by">by Adam_Edward &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; 2 hour ago</div>
+                    <div class="articles-item__footer-favorites">
+                      <svg width="14" height="18" viewBox="0 0 14 18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.14029 18C0.877735 18 0.625932 17.895 0.440278 17.7081C0.254623 17.5212 0.150324 17.2677 0.150324 17.0033L0.00182858 2.39203C-0.010092 2.09536 0.0363616 1.79925 0.138518 1.52072C0.240674 1.24219 0.396516 0.986749 0.597082 0.769077C0.797648 0.551405 1.03898 0.375801 1.3072 0.252366C1.57541 0.128932 1.86522 0.0601012 2.15996 0.0498338L11.6537 0C11.9489 0.00518952 12.2401 0.0688629 12.5107 0.187383C12.7814 0.305903 13.0263 0.476948 13.2313 0.690748C13.4363 0.904548 13.5974 1.15691 13.7055 1.43343C13.8137 1.70995 13.8666 2.0052 13.8614 2.30233L14 16.9136C14.0017 17.0883 13.9577 17.2603 13.8726 17.4125C13.7875 17.5647 13.6641 17.6917 13.5149 17.7807C13.3644 17.8682 13.1937 17.9143 13.0199 17.9143C12.8461 17.9143 12.6754 17.8682 12.5249 17.7807L6.88209 14.6312L1.64517 17.8505C1.4901 17.9377 1.31757 17.9888 1.14029 18ZM6.8425 12.4684C7.01451 12.4688 7.18406 12.5097 7.33748 12.588L12.0002 15.1894L11.8814 2.28239C11.8814 2.08306 11.7527 1.94352 11.6735 1.95349L2.16985 2.04319C2.09066 2.04319 1.98176 2.17276 1.98176 2.37209L2.10056 15.2292L6.33761 12.608C6.49149 12.5193 6.6652 12.4713 6.8425 12.4684Z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="articles-item__img">
+                  <img src="data/Swordplay.jpg" width="340" height="220" alt="Swordplay">
+                </a>
+              </div>
             </div>
-            <div class="approach__head-right">
-              <div class="approach__head-text text-content">Our capabilities encompass everything in the SEO space including UX/UI Design, Web Development, and Content Marketing.</div>
+            <div class="articles-load-box">
+              <div class="articles-btn btn">load more 15 articles</div>
+            </div>
+          </div>
+          <div class="box__aside">
+            <div class="title">TRENDING ARTICLES</div>
+            <div class="aside-list">
+              <div class="aside-item">
+                <a href="#" class="aside-item__img">
+                  <img src="data/Marto-Swords.jpg" width="140" height="100" alt="Marto Swords">
+                </a>
+                <div class="aside-item__box">
+                  <div class="aside-item__label">ARABIC</div>
+                  <a href="#" class="aside-item__title" title="Marto Swords from Toledo in Spain – sword manufacturer.">Marto Swords from Toledo in Spain – sword manufacturer.</a>
+                </div>
+              </div>
+              <div class="aside-item">
+                <a href="#" class="aside-item__img">
+                  <img src="data/Two-Handed-Sword.jpg" width="140" height="100" alt="Two Handed Sword">
+                </a>
+                <div class="aside-item__box">
+                  <div class="aside-item__label">EUROPEAN</div>
+                  <a href="#" class="aside-item__title" title="Two Handed Sword vs Hand and Half Sword fight.">Two Handed Sword vs Hand and Half Sword fight.</a>
+                </div>
+              </div>
+              <div class="aside-item">
+                <a href="#" class="aside-item__img">
+                  <img src="data/Medieval-execution.jpg" width="140" height="100" alt="Medieval execution">
+                </a>
+                <div class="aside-item__box">
+                  <div class="aside-item__label">ORIENTAL</div>
+                  <a href="#" class="aside-item__title" title="Medieval execution methods and medieval executioners.">Medieval execution methods and medieval executioners.</a>
+                </div>
+              </div>
+              <div class="aside-item">
+                <a href="#" class="aside-item__img">
+                  <img src="data/The-Lord-of-the-Rings.jpg" width="140" height="100" alt="The Lord of the Rings">
+                </a>
+                <div class="aside-item__box">
+                  <div class="aside-item__label">ORIENTAL &nbsp;ARABIC &nbsp;EUROPEAN</div>
+                  <a href="#" class="aside-item__title" title="Which 'The Lord of the Rings' Weapon Should You Carry?">Which "The Lord of the <br>Rings" Weapon Should You Carry?</a>
+                </div>
+              </div>
+              <div class="aside-item aside-item--revers">
+                <a href="#" class="aside-item__img">
+                  <img src="data/Epic-List.jpg" width="112" height="112" alt="Epic List">
+                </a>
+                <div class="aside-item__box">
+                  <a href="#" class="aside-item__title" title="the Epic List of 250 Legendary Swords From Mythology, Folklore, and Fiction">the Epic List of 250 Legendary Swords From Mythology, Folklore, and Fiction</a>
+                </div>
+              </div>
+              <div class="aside-item">
+                <a href="#" class="aside-item__img">
+                  <img src="data/Some-awesome.jpg" width="140" height="100" alt="Some-awesome">
+                </a>
+                <div class="aside-item__box">
+                  <div class="aside-item__label">ORIENTAL</div>
+                  <a href="#" class="aside-item__title" title="Some awesome things you don’t know about swords.">Some awesome things you don’t know about swords.</a>
+                </div>
+              </div>
+              <div class="aside-item">
+                <a href="#" class="aside-item__img">
+                  <img src="data/Best-Modern.jpg" width="140" height="100" alt="Best-Modern">
+                </a>
+                <div class="aside-item__box">
+                  <div class="aside-item__label">ARABIC</div>
+                  <a href="#" class="aside-item__title" title="Best Modern Swords: Guide to the Best Type of Sword.">Best Modern Swords: Guide to the Best Type of Sword.</a>
+                </div>
+              </div>
+              <div class="aside-item">
+                <a href="#" class="aside-item__img">
+                  <img src="data/Types-of-Swords.jpg" width="140" height="100" alt="Types-of-Swords">
+                </a>
+                <div class="aside-item__box">
+                  <div class="aside-item__label">ORIENTAL</div>
+                  <a href="#" class="aside-item__title" title="Types of Swords and Where You can Buy Them.">Types of Swords and Where You can Buy Them.</a>
+                </div>
+              </div>
+              <div class="aside-item">
+                <a href="#" class="aside-item__img">
+                  <img src="data/ANIME.jpg" width="140" height="100" alt="ANIME">
+                </a>
+                <div class="aside-item__box">
+                  <div class="aside-item__label">ANIME</div>
+                  <a href="#" class="aside-item__title" title="Which 'The Lord of the Rings' Weapon Should You Carry?">Which "The Lord of the Rings" Weapon Should You Carry?</a>
+                </div>
+              </div>
+              <div class="aside-item aside-item--big">
+                <a href="#" class="aside-item__img">
+                  <img src="data/Meet-Collection.jpg" width="400" height="400" alt="Meet-Collection">
+                </a>
+                <a href="#" class="aside-item__title" title="Meet Collection of Ten Biggest and Rare Swords in Whole Gaming History">Meet Collection of Ten Biggest and Rare Swords in Whole Gaming History</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="approach__list">
-          <div class="approach__item" data-text="The purpose of SEO planning is to help us understand what words and phrases your clients use in search engines. In addition, keyword research gives us the chance to assess the users’ intentions. This, in turn, allows us to create better targeted and more meaningful content for your website.">
-            <div class="approach__item-img">
-              <img src="data/Planning.png" width="260" height="290" alt="Planning">
-            </div>
-            <div class="approach__item-title"><span title="Planning">Planning</span></div>
-            <div class="approach__item-count">1</div>
-          </div>
-          <div class="approach__item">
-            <div class="approach__item-img">
-              <img src="data/Writing.png" width="260" height="290" alt="Writing">
-            </div>
-            <div class="approach__item-title"><span title="Writing">Writing</span></div>
-            <div class="approach__item-count">2</div>
-          </div>
-          <div class="approach__item">
-            <div class="approach__item-img">
-              <img src="data/Design.png" width="260" height="290" alt="Design">
-            </div>
-            <div class="approach__item-title"><span title="Design">Design</span></div>
-            <div class="approach__item-count">3</div>
-          </div>
-          <div class="approach__item">
-            <div class="approach__item-img">
-              <img src="data/Development.png" width="260" height="290" alt="Development">
-            </div>
-            <div class="approach__item-title"><span title="Development">Development</span></div>
-            <div class="approach__item-count">4</div>
-          </div>
-          <div class="approach__item">
-            <div class="approach__item-img">
-              <img src="data/Optimization.png" width="260" height="290" alt="Optimization">
-            </div>
-            <div class="approach__item-title"><span title="Optimization">Optimization</span></div>
-            <div class="approach__item-count">5</div>
-          </div>
-          <div class="approach__item">
-            <div class="approach__item-img">
-              <img src="data/Marketing.png" width="260" height="290" alt="Marketing">
-            </div>
-            <div class="approach__item-title"><span title="Content Marketing">Content Marketing</span></div>
-            <div class="approach__item-count">6</div>
-          </div>
-        </div>
-        <div class="approach__info">
-          <div class="approach__info-icon">
-            <div class="approach__info-line approach__info-line--left"></div>
-            <div class="approach__info-line approach__info-line--right"></div>
-            <svg width="2" height="10" viewBox="0 0 2 10" xmlns="http://www.w3.org/2000/svg">
-              <rect y="3" width="2" height="7" rx="1" />
-              <rect width="2" height="2" rx="1" />
+        <div class="box__top-btn js-sticky-btn js-scroll-top">
+          <span class="box__top-btn-icon">
+            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.99951 15.0006L7.99951 3.14062L12.3595 6.77063C12.4606 6.85467 12.5773 6.91798 12.7029 6.95693C12.8285 6.99588 12.9605 7.00972 13.0914 6.99765C13.3559 6.97327 13.5998 6.84484 13.7695 6.64063C13.9393 6.43641 14.0209 6.17313 13.9965 5.9087C13.9722 5.64428 13.8437 5.40036 13.6395 5.23063L7.63951 0.230625C7.59179 0.196986 7.54165 0.166904 7.48951 0.140625C7.43951 0.140625 7.40951 0.0906254 7.35951 0.0706253C7.24486 0.0252988 7.1228 0.00156675 6.99951 0.00062561C6.87623 0.00156672 6.75417 0.0252988 6.63951 0.0706253C6.58951 0.0706253 6.55951 0.120625 6.50951 0.140625C6.45737 0.166904 6.40724 0.196986 6.35951 0.230625L0.359514 5.23062C0.246631 5.32465 0.155851 5.44239 0.0936299 5.57547C0.0314088 5.70855 -0.000724934 5.85371 -0.000486371 6.00062C-0.000942914 6.23428 0.080432 6.46071 0.229513 6.64062C0.313462 6.74188 0.416563 6.82559 0.53291 6.88694C0.649257 6.94829 0.776565 6.98609 0.907542 6.99816C1.03852 7.01024 1.17059 6.99636 1.2962 6.95731C1.4218 6.91827 1.53846 6.85483 1.63951 6.77063L5.99951 3.14062L5.99951 15.0006C5.99951 15.2658 6.10487 15.5202 6.29241 15.7077C6.47994 15.8953 6.7343 16.0006 6.99951 16.0006C7.26473 16.0006 7.51908 15.8953 7.70662 15.7077C7.89416 15.5202 7.99951 15.2658 7.99951 15.0006Z" fill="#0B1014"/>
             </svg>
-          </div>
-        </div>
-        <div class="container">
-          <div class="approach__text text-content">
-            <div class="approach__text-item"><div class="approach__text-item-inner">The purpose of SEO planning is to help us understand what words and phrases your clients use in search engines. In addition, keyword research gives us the chance to assess the users’ intentions. This, in turn, allows us to create better targeted and more meaningful content for your website.</div></div>
-            <div class="approach__text-item"><div class="approach__text-item-inner">The purpose of SEO planning is to help us understand what words and phrases your clients use in search engines. In addition, keyword research gives us the chance to assess the users’ intentions. This, in turn, allows us to create better targeted and more meaningful content for your website.</div></div>
-            <div class="approach__text-item"><div class="approach__text-item-inner">The purpose of SEO planning is to help us understand what words and phrases your clients use in search engines. In addition, keyword research gives us the chance to assess the users’ intentions. This, in turn, allows us to create better targeted and more meaningful content for your website.</div></div>
-            <div class="approach__text-item"><div class="approach__text-item-inner">The purpose of SEO planning is to help us understand what words and phrases your clients use in search engines. In addition, keyword research gives us the chance to assess the users’ intentions. This, in turn, allows us to create better targeted and more meaningful content for your website.</div></div>
-            <div class="approach__text-item"><div class="approach__text-item-inner">The purpose of SEO planning is to help us understand what words and phrases your clients use in search engines. In addition, keyword research gives us the chance to assess the users’ intentions. This, in turn, allows us to create better targeted and more meaningful content for your website.</div></div>
-            <div class="approach__text-item"><div class="approach__text-item-inner">The purpose of SEO planning is to help us understand what words and phrases your clients use in search engines. In addition, keyword research gives us the chance to assess the users’ intentions. This, in turn, allows us to create better targeted and more meaningful content for your website.</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="results">
-        <div class="container">
-          <img class="results__decor" src="data/results.jpg" width="620" height="384" alt="results">
-          <div class="results__title title-small">Results</div>
-          <div class="studies__list studies__list--margin-top-0">
-            <div class="studies__item studies__item--small">
-              <div class="studies__item-left">
-                <div class="studies__item-title title-small">Tiny Rituals</div>
-                <div class="studies__item-labels">
-                  <div class="studies__item-label">Website Design</div>
-                  <div class="studies__item-label">UI/UX</div>
-                  <div class="studies__item-label">Branding</div>
-                </div>
-                <div class="studies__item-text text-content">
-                  Custom Web design is important because it impacts how your audience perceives your brand. The impression you make on them...
-                </div>
-                <div class="studies__item-search">
-                  <div class="studies__item-search-title">SEARCH ENGINE</div>
-                  <div class="studies__item-search-row">
-                    <svg class="studies__item-search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path opacity="0.3" d="M14.2929 16.7071C13.9024 16.3166 13.9024 15.6834 14.2929 15.2929C14.6834 14.9024 15.3166 14.9024 15.7071 15.2929L19.7071 19.2929C20.0976 19.6834 20.0976 20.3166 19.7071 20.7071C19.3166 21.0976 18.6834 21.0976 18.2929 20.7071L14.2929 16.7071Z" fill="#3800D8"/>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4 11C4 14.866 7.13401 18 11 18C14.866 18 18 14.866 18 11C18 7.13401 14.866 4 11 4C7.13401 4 4 7.13401 4 11ZM16 11C16 13.7614 13.7614 16 11 16C8.23858 16 6 13.7614 6 11C6 8.23858 8.23858 6 11 6C13.7614 6 16 8.23858 16 11Z" fill="#3800D8"/>
-                    </svg>
-                    <div class="studies__item-search-name">google.com</div>
-                    <div class="studies__item-search-value">UNITED STATES</div>
-                  </div>
-                  <a href="#" class="results__btn btn-2 btn-2--bg btn-2--circle">
-                    <span>View Case Study</span>
-                    <span></span>
-                  </a>
-                </div>
-              </div>
-              <div class="studies__item-right">
-                <img src="data/Anchor-Community2.jpg" width="560" height="514" alt="Anchor-Community">
-              </div>
-            </div>
-            <div class="studies__item studies__item--small">
-              <div class="studies__item-left">
-                <div class="studies__item-title title-small">Best in Singapore</div>
-                <div class="studies__item-labels">
-                  <div class="studies__item-label">Branding</div>
-                  <div class="studies__item-label">Identity</div>
-                </div>
-                <div class="studies__item-text text-content">
-                  A custom theme will adapt and style in whatever way the client chooses, which allows for much more flexibility when building it out.
-                </div>
-                <div class="studies__item-search">
-                  <div class="studies__item-search-title">SEARCH ENGINE</div>
-                  <div class="studies__item-search-row">
-                    <svg class="studies__item-search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path opacity="0.3" d="M14.2929 16.7071C13.9024 16.3166 13.9024 15.6834 14.2929 15.2929C14.6834 14.9024 15.3166 14.9024 15.7071 15.2929L19.7071 19.2929C20.0976 19.6834 20.0976 20.3166 19.7071 20.7071C19.3166 21.0976 18.6834 21.0976 18.2929 20.7071L14.2929 16.7071Z" fill="#3800D8"/>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4 11C4 14.866 7.13401 18 11 18C14.866 18 18 14.866 18 11C18 7.13401 14.866 4 11 4C7.13401 4 4 7.13401 4 11ZM16 11C16 13.7614 13.7614 16 11 16C8.23858 16 6 13.7614 6 11C6 8.23858 8.23858 6 11 6C13.7614 6 16 8.23858 16 11Z" fill="#3800D8"/>
-                    </svg>
-                    <div class="studies__item-search-name">google.com.sg</div>
-                    <div class="studies__item-search-value">SINGAPORE</div>
-                  </div>
-                  <a href="#" class="results__btn btn-2 btn-2--bg btn-2--circle">
-                    <span>View Case Study</span>
-                    <span></span>
-                  </a>
-                </div>
-              </div>
-              <div class="studies__item-right">
-                <img src="data/Best-in-Singapore.jpg" width="560" height="514" alt="Best-in-Singapore">
-              </div>
-            </div>
-          </div>
-          <div class="results__btn-box">
-            <a href="#" class="results__btn btn-2 btn-2--bg btn-2--circle">
-              <span>READ OUR CASE STUDIES</span>
-              <span></span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="reviews">
-        <div class="container">
-          <div class="reviews__title title">Reviews</div>
-          <div class="reviews__list">
-            <div class="reviews__item">
-              <div class="reviews__item-box">
-                <div class="reviews__item-img">
-                  <img src="data/Avatar.jpg" width="84" height="84" alt="Avatar">
-                </div>
-                <div class="reviews__item-text text-content">
-                  <p>Halfway UP is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.</p>
-                </div>
-              </div>
-              <div class="reviews__item-bottom">
-                <div class="reviews__item-name">Ryan Lee</div>
-                <div class="reviews__item-position">Real Estate Agent in Singapore</div>
-              </div>
-            </div>
-            <div class="reviews__item">
-              <div class="reviews__item-box">
-                <div class="reviews__item-img">
-                  <img src="data/Toews.jpg" width="84" height="84" alt="Avatar">
-                </div>
-                <div class="reviews__item-text text-content">
-                  <p>Working with the Halfway UP team on our new website and our SEO campaigns have been nothing but seamless, informative and the depth that they go to ensure the very best results for our website have been priceless. From the first month our website produced results and it just keeps getting better. I would highly, highly, highly recommend them!</p>
-                </div>
-              </div>
-              <div class="reviews__item-bottom">
-                <div class="reviews__item-name">Steve Toews</div>
-                <div class="reviews__item-position">Property Manager and Business Owner</div>
-              </div>
-            </div>
-            <div class="reviews__item">
-              <div class="reviews__item-box">
-                <div class="reviews__item-img">
-                  <img src="data/Clark.jpg" width="84" height="84" alt="Avatar">
-                </div>
-                <div class="reviews__item-text text-content">
-                  <p>We’ve seen a massive improvement in organic traffic. The team behind Halfway UP is transparent, open to sharing knowledge, and understand our business. They deliver amazing results and I recommend them to anyone who wants to take their SEO to the next level!</p>
-                </div>
-              </div>
-              <div class="reviews__item-bottom">
-                <div class="reviews__item-name">Olivia Clark</div>
-                <div class="reviews__item-position">Founder of Tiny Rituals</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="blog-home">
-        <div class="container">
-          <div class="blog-home__box">
-            <div class="blog-home__left">
-              <div class="blog-home__title">Insights for Curious Minds</div>
-              <div class="blog-home__btn-box">
-                <a href="#" class="first-screen__cell-btn btn-2 btn-2--bg btn-2--circle">
-                  <span>VISIT OUR BLOG</span>
-                  <span></span>
-                </a>
-              </div>
-            </div>
-            <div class="blog-home__right">
-              <div class="blog-home__list">
-                <div class="blog__item blog__item--small">
-                  <a href="#" class="blog__item-img">
-                    <img src="data/Story-of-a-Self-Taught-Designer-becoming-an-Expert.jpg" width="300" height="189" alt="Story-of-a-Self-Taught-Designer-becoming-an-Expert">
-                  </a>
-                  <div class="blog__item-box">
-                    <a href="#" class="blog__item-title">Inspiring Stories of Web Designers</a>
-                    <div class="blog__item-bottom">
-                      <div class="blog__item-date">09 Nov. 2021</div>
-                      <a href="#" class="blog__item-btn">
-                        <svg width="41" height="13" viewBox="0 0 41 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0 6.5H39.5M39.5 6.5L34 1M39.5 6.5L34 12" stroke-width="1.5"/>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="blog__item blog__item--small">
-                  <a href="#" class="blog__item-img">
-                    <img src="data/Identity-Design.jpg" width="430" height="271" alt="Identity-Design">
-                  </a>
-                  <div class="blog__item-box">
-                    <a href="#" class="blog__item-title">Identity Design for a New Crusader, Tips & Tricks</a>
-                    <div class="blog__item-bottom">
-                      <div class="blog__item-date">16 Nov. 2021</div>
-                      <a href="#" class="blog__item-btn">
-                        <svg width="41" height="13" viewBox="0 0 41 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0 6.5H39.5M39.5 6.5L34 1M39.5 6.5L34 12" stroke-width="1.5"/>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="blog__item blog__item--small">
-                  <a href="#" class="blog__item-img">
-                    <img src="data/Inspiring-Stories.jpg" width="430" height="271" alt="Inspiring-Stories">
-                  </a>
-                  <div class="blog__item-box">
-                    <a href="#" class="blog__item-title">Story of a Self-Taught Designer, from Novice to Expert</a>
-                    <div class="blog__item-bottom">
-                      <div class="blog__item-date">09 Nov. 2021</div>
-                      <a href="#" class="blog__item-btn">
-                        <svg width="41" height="13" viewBox="0 0 41 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0 6.5H39.5M39.5 6.5L34 1M39.5 6.5L34 12" stroke-width="1.5"/>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="form-main">
-        <div class="form-main__img">
-          <picture>
-            <source srcset="data/form-main-mobile.jpg" media="(max-width: 1200px)">
-            <img src="data/form-main.jpg" width="640" height="768" alt="form-main">
-          </picture>
-        </div>
-        <div class="form-main__box">
-          <form class="form">
-            <div class="form__title">Get in Touch with Us</div>
-            <div class="form__text form__text--small">Let's have a chat about how Halfway UP Agency can help you.</div>
-            <div class="form__box">
-              <div class="form__box-left">
-                <div class="form__row">
-                  <div class="form__input-box">
-                    <div class="form__input-label">FULL NAME</div>
-                    <input type="text" class="form__input">
-                  </div>
-                </div>
-                <div class="form__row">
-                  <div class="form__input-box">
-                    <div class="form__input-label">EMAIL ADDRESS</div>
-                    <input type="email" class="form__input">
-                  </div>
-                </div>
-                <div class="form__row">
-                  <div class="form__input-box">
-                    <div class="form__input-label">WEBSITE (OPTIONAL)</div>
-                    <input type="text" class="form__input">
-                  </div>
-                </div>
-              </div>
-              <div class="form__box-right">
-                <div class="form__input-box form__input-box--textarea">
-                  <div class="form__input-label">MESSAGE</div>
-                  <textarea class="form__textarea js-textarea-count" maxlength="200"></textarea>
-                </div>
-                <div class="form__count">
-                  <span class="form__count-current">0</span>
-                  <span class="form__count-maximum">/ 200</span>
-                </div>
-              </div>
-            </div>
-            <div class="form__controls">
-              <button class="form__btn btn" type="submit">SEND MESSAGE</button>
-            </div>
-          </form>
+          </span>
+          Back to the Top
         </div>
       </div>
     </div>
     <footer class="footer">
-  <div class="container">
-    <div class="footer__top">
-      <div class="footer__cell">
-        <div class="footer__logo">
-          <img src="data/logo-small.svg" width="90" height="33" alt="logo">
-          <a href="#" class="footer__logo-link"></a>
-        </div>
-        <div class="footer__text">Uplift your business to new heights with our results-oriented digital marketing services.</div>
+  <div class="btn-top js-scroll-top">
+    <span class="btn-top__icon">
+      <svg width="14" height="16" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.99951 15.0006L7.99951 3.14061L12.3595 6.77061C12.4606 6.85466 12.5773 6.91796 12.7029 6.95692C12.8285 6.99587 12.9605 7.0097 13.0914 6.99763C13.3559 6.97325 13.5998 6.84483 13.7695 6.64061C13.9393 6.4364 14.0209 6.17311 13.9965 5.90869C13.9722 5.64426 13.8437 5.40035 13.6395 5.23061L7.63951 0.23061C7.59179 0.196971 7.54165 0.166889 7.48951 0.14061C7.43951 0.14061 7.40951 0.0906101 7.35951 0.0706101C7.24486 0.0252836 7.1228 0.00155149 6.99951 0.000610352C6.87623 0.00155146 6.75417 0.0252835 6.63951 0.07061C6.58951 0.07061 6.55951 0.12061 6.50951 0.14061C6.45737 0.166889 6.40724 0.19697 6.35951 0.23061L0.359514 5.23061C0.246631 5.32463 0.155851 5.44237 0.0936299 5.57546C0.0314088 5.70854 -0.000724934 5.8537 -0.000486371 6.00061C-0.000942914 6.23426 0.080432 6.4607 0.229513 6.64061C0.313462 6.74187 0.416563 6.82557 0.53291 6.88692C0.649257 6.94827 0.776565 6.98607 0.907542 6.99815C1.03852 7.01022 1.17059 6.99634 1.2962 6.9573C1.4218 6.91825 1.53846 6.85481 1.63951 6.77061L5.99951 3.14061L5.99951 15.0006C5.99951 15.2658 6.10487 15.5202 6.29241 15.7077C6.47994 15.8953 6.7343 16.0006 6.99951 16.0006C7.26473 16.0006 7.51908 15.8953 7.70662 15.7077C7.89416 15.5202 7.99951 15.2658 7.99951 15.0006Z" />
+      </svg>
+    </span>
+    BACK TO TOP
+  </div>
+  <div class="footer__container container">
+    <div class="footer__left">
+      <div class="footer__logo">
+        <img src="data/logo-footer.svg" width="156" height="68" alt="logo">
+        <a href="#" class="footer__logo-link"></a>
       </div>
-      <div class="footer__cell">
-        <div class="footer__cell-title">DISCOVER</div>
-        <nav class="footer__nav">
-          <ul class="footer__nav-list">
-            <li><a href="#">Services & Pricing</a></li>
-            <li><a href="#">Case Studies</a></li>
-            <li><a href="#">About our team</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer__cell">
-        <div class="footer__cell-title">QUICK LINKS</div>
-        <nav class="footer__nav">
-          <ul class="footer__nav-list">
-            <li><a href="#">Insights</a></li>
-            <li><a href="#">Advertising</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer__cell">
-        <div class="footer__cell-title">WANT TO WORK WITH US?</div>
-        <div class="footer__btn">Get a Proposal</div>
-        <ul class="footer__contacts">
-          <li><a href="mailto:contact@halfwayup.com">contact@halfwayup.com</a></li>
-          <li><a href="tel:+1-202-555-0141">+1-202-555-0141</a></li>
-        </ul>
-      </div>
+      <ul class="footer__info">
+        <li><a href="#" target="_blank">Terms and Conditions</a></li>
+        <li><a href="#" target="_blank">Privacy Policy</a></li>
+      </ul>
+      <div class="footer__copy">© MezcalPro 2022 - All Rights Reserved</div>
     </div>
-    <div class="footer__bottom">
-      <div class="footer__left">
-        <ul class="social">
-          <li class="social__item">
-            <a href="#" class="social__link" target="_blank" rel="nofollow">
-              <span>
-                <svg width="14" height="12" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.6321 1.88811C13.2083 2.06639 12.7647 2.19315 12.3107 2.26568C12.5159 2.26568 12.836 1.83886 12.9591 1.68291C13.1539 1.43874 13.3014 1.16039 13.3941 0.86212C13.3941 0.86212 13.3941 0.804667 13.3941 0.788251C13.3703 0.779456 13.3441 0.779456 13.3202 0.788251C12.8247 1.05268 12.2981 1.25397 11.7525 1.38743C11.7363 1.39679 11.7179 1.40172 11.6992 1.40172C11.6804 1.40172 11.662 1.39679 11.6458 1.38743L11.5063 1.24789C11.2814 1.05228 11.0264 0.894292 10.7512 0.780041C10.3813 0.63191 9.9833 0.567438 9.58562 0.591256C9.19848 0.616367 8.82094 0.722639 8.47754 0.903162C8.13256 1.083 7.82808 1.33162 7.58288 1.63367C7.32999 1.94659 7.14797 2.31063 7.04937 2.7007C6.97551 3.07189 6.97551 3.45399 7.04937 3.82518C7.04937 3.89085 7.04936 3.89906 6.99191 3.89085C4.91642 3.67802 2.99426 2.70085 1.59929 1.1494C1.53363 1.07552 1.5008 1.07552 1.45155 1.1494C1.17213 1.66727 1.06677 2.2613 1.15102 2.84368C1.23527 3.42606 1.50468 3.96588 1.91941 4.38332C2.02611 4.48182 2.13281 4.58031 2.24772 4.6706C1.88517 4.64188 1.53141 4.54439 1.20533 4.38332C1.14787 4.38332 1.11504 4.38332 1.10683 4.43257C1.09863 4.48182 1.10683 4.63777 1.10683 4.74448C1.17175 5.23025 1.3638 5.69027 1.66359 6.07798C1.96338 6.46569 2.36026 6.76734 2.81407 6.95241C2.92614 6.99659 3.04139 7.03226 3.15882 7.05911C2.82174 7.11353 2.4781 7.11353 2.14102 7.05911C2.06715 7.05911 2.03432 7.05911 2.06715 7.1576C2.23719 7.62462 2.52548 8.03953 2.90385 8.36179C3.28222 8.68405 3.73772 8.90264 4.22584 8.99619C4.32433 8.99619 4.42283 8.99619 4.51312 8.99619C4.60341 8.99619 4.51312 8.99619 4.51312 8.99619C4.09721 9.36993 3.5953 9.63498 3.05211 9.76773C2.33999 10.0225 1.58123 10.1205 0.827742 10.055C0.704623 10.055 0.680023 10.055 0.647192 10.055C0.61436 10.055 0.647182 10.1043 0.688221 10.1371C0.836689 10.2352 0.990104 10.3256 1.14786 10.4079C1.62027 10.6601 2.11832 10.861 2.6335 11.0071C3.94963 11.4033 5.34592 11.452 6.68647 11.1485C8.02701 10.8451 9.26615 10.1997 10.2833 9.27525C11.0177 8.48504 11.5864 7.55571 11.9557 6.54212C12.3251 5.52852 12.4876 4.4512 12.4338 3.37375C12.4338 3.29167 12.5323 3.24242 12.5897 3.20138C12.9941 2.89387 13.3485 2.52562 13.6403 2.10972C13.6847 2.05066 13.7078 1.97836 13.706 1.90452C13.6814 1.88811 13.6814 1.88811 13.6321 1.88811Z"/>
-                </svg>
-              </span>
-              TWITTER
-            </a>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link" target="_blank" rel="nofollow">
-              <span>
-                <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.968577 3.76711H3.29141V11.2363H0.968577V3.76711ZM2.1259 0.0571289C2.39213 0.0571289 2.65239 0.136077 2.87375 0.283988C3.09512 0.4319 3.26765 0.642131 3.36954 0.888098C3.47142 1.13407 3.49808 1.40472 3.44614 1.66584C3.3942 1.92696 3.26598 2.16681 3.07772 2.35507C2.88947 2.54332 2.64963 2.67153 2.38851 2.72347C2.12739 2.77541 1.85672 2.74875 1.61075 2.64686C1.36478 2.54498 1.15456 2.37245 1.00665 2.15108C0.858739 1.92972 0.779785 1.66946 0.779785 1.40323C0.779785 1.04622 0.921608 0.703837 1.17405 0.451394C1.42649 0.198951 1.76889 0.0571289 2.1259 0.0571289Z"/>
-                  <path d="M4.78516 3.76784H7.00952V4.79383C7.23439 4.41402 7.5572 4.10164 7.94419 3.88938C8.33118 3.67711 8.7681 3.57277 9.20925 3.58727C11.5567 3.58727 11.9917 5.13035 11.9917 7.1413V11.2453H9.66889V7.65019C9.66889 6.78015 9.66886 5.67208 8.4623 5.67208C7.25573 5.67208 7.07515 6.60778 7.07515 7.58453V11.2781H4.78516V3.76784Z"/>
-                </svg>
-              </span>
-              LINKEDIN
-            </a>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link" target="_blank" rel="nofollow">
-              <span>
-                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.7182 3.46924C11.5559 3.46924 11.3972 3.51738 11.2623 3.60757C11.1273 3.69776 11.0221 3.82595 10.9599 3.97593C10.8978 4.12591 10.8816 4.29094 10.9132 4.45016C10.9449 4.60938 11.0231 4.75563 11.1379 4.87042C11.2527 4.98521 11.3989 5.06339 11.5581 5.09506C11.7174 5.12673 11.8824 5.11047 12.0324 5.04835C12.1823 4.98622 12.3105 4.88102 12.4007 4.74604C12.4909 4.61106 12.539 4.45237 12.539 4.29003C12.539 4.07234 12.4526 3.86357 12.2986 3.70964C12.1447 3.55571 11.9359 3.46924 11.7182 3.46924Z"/>
-                  <path d="M8.05734 4.51954C7.37031 4.51792 6.69823 4.72017 6.12619 5.10068C5.55415 5.4812 5.10785 6.02287 4.8438 6.65714C4.57976 7.29141 4.50983 7.98976 4.64286 8.6638C4.7759 9.33783 5.10592 9.95724 5.59115 10.4436C6.07639 10.93 6.69504 11.2615 7.36875 11.3961C8.04247 11.5308 8.74096 11.4625 9.37585 11.1999C10.0107 10.9374 10.5535 10.4924 10.9354 9.92126C11.3172 9.35013 11.5211 8.67854 11.5211 7.9915C11.5189 7.07276 11.1536 6.19215 10.5047 5.54174C9.85581 4.89132 8.97607 4.52387 8.05734 4.51954ZM8.05734 10.2076C7.61671 10.2093 7.18548 10.08 6.81844 9.83619C6.45139 9.5924 6.16506 9.24509 5.99569 8.83831C5.82632 8.43153 5.78157 7.98361 5.86714 7.55136C5.95271 7.11912 6.1647 6.72203 6.47627 6.41046C6.78785 6.09888 7.18494 5.88686 7.61719 5.8013C8.04943 5.71573 8.49735 5.76048 8.90413 5.92985C9.31091 6.09922 9.65823 6.38559 9.90202 6.75264C10.1458 7.11969 10.2751 7.55087 10.2734 7.9915C10.2713 8.57859 10.0371 9.14102 9.62198 9.55616C9.20684 9.9713 8.64443 10.2055 8.05734 10.2076Z"/>
-                  <path d="M10.807 15.0263H5.18463C4.0642 15.0241 2.99024 14.5781 2.19798 13.7858C1.40571 12.9936 0.959689 11.9197 0.95752 10.7992V5.17679C0.959689 4.05637 1.40571 2.98245 2.19798 2.19019C2.99024 1.39793 4.0642 0.951876 5.18463 0.949707H10.807C11.9275 0.951876 13.0014 1.39793 13.7936 2.19019C14.5859 2.98245 15.032 4.05637 15.0341 5.17679V10.7992C15.032 11.9197 14.5859 12.9936 13.7936 13.7858C13.0014 14.5781 11.9275 15.0241 10.807 15.0263ZM5.18463 2.24656C4.41619 2.24656 3.67922 2.55182 3.13585 3.09519C2.59248 3.63856 2.2872 4.37552 2.2872 5.14396V10.7664C2.27847 11.1528 2.3469 11.537 2.48849 11.8966C2.63008 12.2562 2.84199 12.5839 3.1118 12.8606C3.38161 13.1373 3.70392 13.3574 4.05984 13.508C4.41576 13.6586 4.79816 13.7367 5.18463 13.7377H10.807C11.5762 13.7355 12.3132 13.4284 12.8563 12.8837C13.3995 12.3391 13.7045 11.6013 13.7045 10.8321V5.17679C13.7088 4.79355 13.6371 4.41325 13.4934 4.05792C13.3497 3.70259 13.137 3.3793 12.8675 3.10676C12.598 2.83423 12.2771 2.61787 11.9235 2.47021C11.5698 2.32255 11.1903 2.24654 10.807 2.24656H5.18463Z"/>
-                </svg>
-              </span>
-              INSTAGRAM
-            </a>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link" target="_blank" rel="nofollow">
-              <span>
-                <svg width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 14.0448L2.00956 10.3101C1.19713 8.85126 0.938322 7.14824 1.28064 5.51387C1.62297 3.87949 2.54344 2.42349 3.87303 1.41326C5.20261 0.403026 6.85202 -0.0936023 8.51835 0.0145784C10.1847 0.122759 11.7561 0.828486 12.9439 2.00215C14.1317 3.17581 14.8562 4.73862 14.9843 6.40353C15.1124 8.06845 14.6356 9.7237 13.6413 11.0653C12.6471 12.4069 11.2023 13.3447 9.57209 13.7066C7.94194 14.0685 6.23592 13.8301 4.76741 13.0352L1 14.0448ZM4.9398 11.6398L5.17781 11.7794C6.3469 12.4707 7.72849 12.7106 9.0622 12.4539C10.3959 12.1972 11.5897 11.4616 12.4187 10.3857C13.2476 9.30981 13.6545 7.96791 13.5626 6.61283C13.4708 5.25774 12.8865 3.98303 11.92 3.02886C10.9534 2.07468 9.67126 1.50693 8.3151 1.43256C6.95895 1.3582 5.62241 1.78236 4.55731 2.62512C3.49221 3.46789 2.77205 4.67107 2.53258 6.00799C2.2931 7.34491 2.55084 8.72325 3.25718 9.88333L3.40492 10.1214L2.83035 12.198L4.9398 11.6398Z"/>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5954 7.93764C10.4587 7.82869 10.299 7.75215 10.1284 7.71377C9.95779 7.67538 9.78073 7.67616 9.61048 7.71603C9.35603 7.82273 9.19186 8.22491 9.0277 8.43011C8.9916 8.4783 8.9391 8.5116 8.88011 8.52369C8.82113 8.53579 8.75973 8.52586 8.70758 8.49578C7.76643 8.12002 6.97977 7.43746 6.47504 6.5587C6.42831 6.50856 6.4023 6.44257 6.4023 6.37403C6.4023 6.30548 6.42831 6.23949 6.47504 6.18935C6.66571 6.00914 6.807 5.78307 6.88544 5.53271C6.90367 5.24757 6.84105 4.96308 6.70484 4.71192C6.59903 4.37155 6.39659 4.06927 6.12211 3.84188C5.98599 3.78872 5.83812 3.77287 5.69382 3.79595C5.54953 3.81904 5.41405 3.88023 5.30131 3.9732C5.10394 4.14121 4.94739 4.35195 4.84357 4.58944C4.73976 4.82694 4.69142 5.08495 4.70215 5.34393C4.70186 5.49034 4.71838 5.63631 4.75139 5.77895C4.8447 6.11987 4.98558 6.44593 5.16996 6.74749C5.30676 6.97731 5.45453 7.19892 5.61322 7.41233C6.12671 8.11627 6.77032 8.71531 7.50925 9.17704C7.88072 9.40744 8.27726 9.5947 8.69119 9.73518C9.12277 9.93097 9.59893 10.0075 10.0701 9.95679C10.3385 9.91732 10.5929 9.81194 10.8107 9.65009C11.0284 9.48823 11.2026 9.27495 11.3177 9.02929C11.3811 8.87912 11.401 8.71417 11.3752 8.55323C11.3013 8.29058 10.8581 8.09359 10.5954 7.93764Z"/>
-                </svg>
-              </span>
-              WHATSAPP
-            </a>
-          </li>
+    <div class="footer__right">
+      <div class="footer__cell">
+        <div class="footer__cell-title">Real Swords</div>
+        <ul class="footer__cell-list">
+          <li><a href="#">Asian & Oriental</a></li>
+          <li><a href="#">European</a></li>
+          <li><a href="#">Arabic & Middle Eastern</a></li>
         </ul>
       </div>
-      <div class="footer__right">
-        <div class="footer__copy">Copyright © 2021 Halfwayup - All Rights Reserved.</div>
+      <div class="footer__cell">
+        <div class="footer__cell-title">Fantasy Swords</div>
+        <ul class="footer__cell-list">
+          <li><a href="#">Anime Swords</a></li>
+          <li><a href="#">Movie Swords</a></li>
+          <li><a href="#">Game Swords</a></li>
+        </ul>
+      </div>
+      <div class="footer__cell">
+        <div class="footer__cell-title">Information</div>
+        <ul class="footer__cell-list">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Get in Touch</a></li>
+        </ul>
       </div>
     </div>
   </div>
 </footer>
-    
+
+<!-- to show the popup you need to add a class "active" => class="popup-succes js-popup active"  -->
+<div class="popup-succes js-popup">
+  <div class="popup-succes__overlay js-close-popup"></div>
+  <div class="popup-succes__box">
+    <div class="popup-succes__close js-close-popup">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.5216 14.9957L29.2612 4.28109C29.7315 3.81079 29.9957 3.17292 29.9957 2.50781C29.9957 1.84269 29.7315 1.20482 29.2612 0.734519C28.7909 0.264215 28.153 0 27.4879 0C26.8228 0 26.185 0.264215 25.7146 0.734519L15 11.4741L4.28535 0.734519C3.81505 0.264215 3.17718 -4.95546e-09 2.51207 0C1.84696 4.95547e-09 1.20909 0.264215 0.738782 0.734519C0.268477 1.20482 0.00426239 1.84269 0.00426238 2.50781C0.00426238 3.17292 0.268477 3.81079 0.738782 4.28109L11.4784 14.9957L0.738782 25.7104C0.504687 25.9426 0.318881 26.2188 0.192082 26.5232C0.0652831 26.8275 0 27.154 0 27.4837C0 27.8134 0.0652831 28.1398 0.192082 28.4442C0.318881 28.7485 0.504687 29.0248 0.738782 29.257C0.970965 29.491 1.2472 29.6769 1.55155 29.8037C1.85591 29.9305 2.18236 29.9957 2.51207 29.9957C2.84178 29.9957 3.16823 29.9305 3.47258 29.8037C3.77694 29.6769 4.05317 29.491 4.28535 29.257L15 18.5173L25.7146 29.257C25.9468 29.491 26.2231 29.6769 26.5274 29.8037C26.8318 29.9305 27.1582 29.9957 27.4879 29.9957C27.8176 29.9957 28.1441 29.9305 28.4484 29.8037C28.7528 29.6769 29.029 29.491 29.2612 29.257C29.4953 29.0248 29.6811 28.7485 29.8079 28.4442C29.9347 28.1398 30 27.8134 30 27.4837C30 27.154 29.9347 26.8275 29.8079 26.5232C29.6811 26.2188 29.4953 25.9426 29.2612 25.7104L18.5216 14.9957Z" fill="white"/>
+      </svg>
+    </div>
+    <div class="popup-succes__title">Thank your for your message!</div>
+    <div class="popup-succes__text">We will get back to you within 48 Hours</div>
+  </div>
+</div>
     <script src="js/app.js"></script>
   </body>
 </html>
