@@ -206,6 +206,21 @@
             </li>
           </ul>
         </nav>
+        <div class="header__search">
+          <div class="header__search-btn js-search-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.5881 13.5881C13.8156 13.3607 13.8156 12.9919 13.5881 12.7644L10.9918 10.1681C10.6286 9.80489 10.6087 9.22957 10.869 8.78682C12.3025 6.34913 11.7858 3.16367 9.52836 1.31791C7.03365 -0.72189 3.3577 -0.3531 1.31791 2.14164C-0.721888 4.63639 -0.353098 8.3123 2.14162 10.3521C4.05373 11.9155 6.71035 12.0878 8.78648 10.8688C9.2294 10.6087 9.80486 10.6286 10.1681 10.9918L12.7644 13.5882C12.9919 13.8156 13.3607 13.8156 13.5881 13.5881ZM5.84432 10.5047C3.27045 10.5047 1.18392 8.41819 1.18392 5.84432C1.18392 3.27045 3.27045 1.18392 5.84432 1.18392C8.41819 1.18392 10.5047 3.27045 10.5047 5.84432C10.5018 8.41698 8.41699 10.5018 5.84432 10.5047Z" />
+            </svg>
+          </div>
+          <form class="header__search-box">
+            <input type="text" class="header__search-input" placeholder="Caută pe med.ro...">
+            <button class="header__search-button" type="submit">
+              <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.5881 13.5881C13.8156 13.3607 13.8156 12.9919 13.5881 12.7644L10.9918 10.1681C10.6286 9.80489 10.6087 9.22957 10.869 8.78682C12.3025 6.34913 11.7858 3.16367 9.52836 1.31791C7.03365 -0.72189 3.3577 -0.3531 1.31791 2.14164C-0.721888 4.63639 -0.353098 8.3123 2.14162 10.3521C4.05373 11.9155 6.71035 12.0878 8.78648 10.8688C9.2294 10.6087 9.80486 10.6286 10.1681 10.9918L12.7644 13.5882C12.9919 13.8156 13.3607 13.8156 13.5881 13.5881ZM5.84432 10.5047C3.27045 10.5047 1.18392 8.41819 1.18392 5.84432C1.18392 3.27045 3.27045 1.18392 5.84432 1.18392C8.41819 1.18392 10.5047 3.27045 10.5047 5.84432C10.5018 8.41698 8.41699 10.5018 5.84432 10.5047Z" />
+              </svg>
+            </button>
+          </form>
+        </div>
         <div class="header__menu js-menu-btn">
           <div class="header__menu-line"></div>
           <div class="header__menu-line"></div>
@@ -441,17 +456,82 @@
     </div>
     <footer class="footer">
   <div class="container">
+    <div class="footer__logo">
+      <img src="images/logo-white.svg" width="75" height="26" alt="logo">
+      <a href="#" class="footer__logo-link"></a>
+    </div>
     <div class="footer__top">
       <div class="footer__top-left">
-        <div class="footer__logo">
-          <img src="images/logo-white.svg" width="75" height="26" alt="logo">
-          <a href="#" class="footer__logo-link"></a>
+        <div class="footer__form-title">Portalul Clinicilor Medicale</div>
+        <div class="footer__text">Med.ro este cel mai de încredere portal pentru articole medicale și liste cu top clinici din fiecare oraș din România cu o echipă formată din persoane calificate.</div>
+        <div class="footer__contacts-list">
+          <div class="footer__contacts-list-item">
+            <div class="footer__contacts-list-item-icon">
+              <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.75 3.5L8.75 7.875L1.75 3.5V1.75L8.75 6.125L15.75 1.75V3.5ZM15.75 0H1.75C0.77875 0 0 0.77875 0 1.75V12.25C0 12.7141 0.184374 13.1592 0.512563 13.4874C0.840752 13.8156 1.28587 14 1.75 14H15.75C16.2141 14 16.6592 13.8156 16.9874 13.4874C17.3156 13.1592 17.5 12.7141 17.5 12.25V1.75C17.5 0.77875 16.7125 0 15.75 0Z" fill="#359D9E"/>
+              </svg>
+            </div>
+            <div class="footer__contacts-list-item-value">
+              <span>Email</span>
+              <a href="mailto:contact@med.ro">contact@med.ro</a>
+            </div>
+          </div>
+          <div class="footer__contacts-list-item">
+            <div class="footer__contacts-list-item-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.6667 9H13.6111C13.6111 7.71075 13.099 6.47431 12.1873 5.56268C11.2757 4.65104 10.0392 4.13889 8.75 4.13889V6.08333C9.52355 6.08333 10.2654 6.39062 10.8124 6.9376C11.3594 7.48459 11.6667 8.22645 11.6667 9ZM15.5556 9H17.5C17.5 4.13889 13.5819 0.25 8.75 0.25V2.19444C12.5028 2.19444 15.5556 5.2375 15.5556 9ZM16.5278 12.4028C15.3125 12.4028 14.1458 12.2083 13.0569 11.8486C12.7167 11.7417 12.3375 11.8194 12.0653 12.0917L9.92639 14.2306C7.175 12.8306 4.91944 10.575 3.51944 7.82361L5.65833 5.68472C5.93056 5.4125 6.00833 5.03333 5.90139 4.69306C5.54167 3.60417 5.34722 2.4375 5.34722 1.22222C5.34722 0.964373 5.24479 0.717084 5.06246 0.534757C4.88014 0.35243 4.63285 0.25 4.375 0.25H0.972222C0.714373 0.25 0.467084 0.35243 0.284757 0.534757C0.10243 0.717084 0 0.964373 0 1.22222C0 5.60566 1.74131 9.80957 4.84087 12.9091C7.94043 16.0087 12.1443 17.75 16.5278 17.75C16.7856 17.75 17.0329 17.6476 17.2152 17.4652C17.3976 17.2829 17.5 17.0356 17.5 16.7778V13.375C17.5 13.1172 17.3976 12.8699 17.2152 12.6875C17.0329 12.5052 16.7856 12.4028 16.5278 12.4028Z" fill="#359D9E"/>
+              </svg>
+            </div>
+            <div class="footer__contacts-list-item-value">
+              <span>Telefon</span>
+              <a href="tel:+40728394439">+40728 394 439</a>
+            </div>
+          </div>
+          <div class="footer__contacts-list-item">
+            <div class="footer__contacts-list-item-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.75 6.81821C8.02883 6.81807 7.32381 7.03181 6.72413 7.43239C6.12445 7.83297 5.65705 8.40239 5.38105 9.06862C5.10505 9.73486 5.03285 10.468 5.17358 11.1753C5.31432 11.8825 5.66166 12.5322 6.17167 13.042L8.75 15.7084L11.3334 13.0333C11.8408 12.5227 12.1856 11.8733 12.3244 11.1671C12.4633 10.4608 12.3899 9.72924 12.1137 9.06459C11.8374 8.39994 11.3705 7.83194 10.7719 7.43218C10.1734 7.03242 9.46982 6.81879 8.75 6.81821ZM8.75 11.9126C8.46157 11.9126 8.17962 11.8271 7.9398 11.6669C7.69998 11.5066 7.51306 11.2789 7.40268 11.0124C7.2923 10.7459 7.26342 10.4527 7.31969 10.1699C7.37596 9.887 7.51485 9.62716 7.71881 9.42322C7.92276 9.21928 8.18261 9.0804 8.4655 9.02413C8.74838 8.96786 9.04161 8.99674 9.30808 9.10711C9.57456 9.21748 9.80232 9.40439 9.96256 9.6442C10.1228 9.88401 10.2083 10.1659 10.2083 10.4544C10.2083 10.8411 10.0547 11.212 9.7812 11.4855C9.50771 11.759 9.13678 11.9126 8.75 11.9126ZM16.6607 5.85139L10.0982 0.715421C9.71325 0.413863 9.23831 0.25 8.74927 0.25C8.26023 0.25 7.7853 0.413863 7.40032 0.715421L0.837824 5.84993C0.575912 6.05444 0.364253 6.31614 0.219039 6.61502C0.0738258 6.9139 -0.00109394 7.24203 1.20698e-05 7.57431V17.75H17.5V7.57431C17.5009 7.24213 17.4257 6.91415 17.2802 6.61551C17.1347 6.31686 16.9228 6.05548 16.6607 5.85139ZM12.3586 14.073L8.82656 17.6771L5.14646 14.0788C4.43129 13.3659 3.94366 12.4569 3.74529 11.4668C3.54691 10.4767 3.64671 9.45001 4.03205 8.51664C4.41739 7.58326 5.07096 6.78516 5.91004 6.22332C6.74913 5.66148 7.73603 5.36115 8.74587 5.36033C9.75571 5.35951 10.7431 5.65825 11.5831 6.21873C12.4231 6.77922 13.0779 7.57626 13.4648 8.50901C13.8516 9.44176 13.9531 10.4683 13.7563 11.4587C13.5596 12.4492 13.0734 13.359 12.3594 14.073H12.3586Z" fill="#359D9E"/>
+              </svg>
+            </div>
+            <div class="footer__contacts-list-item-value">
+              <span>Ne găsești pe</span>
+              <address>Bulevardul 21 Decembrie 1989 137, Cluj-Napoca 400394</address>
+            </div>
+          </div>
         </div>
+        <div class="messenger">
+          <div class="messenger__title">Sau ne poți scrie pe Whatsapp și Messenger</div>
+          <div class="messenger__list">
+            <a href="https://api.whatsapp.com/send?phone=7777777777" class="messenger__item" style="background-color: #359D9E;">
+              <img src="data/Whatsapp.svg" width="18" height="18" alt="Whatsapp">
+              Whatsapp
+            </a>
+            <a href="http://m.me/<FACEBOOK_PAGE_USERNAME>" class="messenger__item" style="background-color: #2279B4;">
+              <img src="data/Messenger.svg" width="18" height="18" alt="Messenger">
+              Messenger
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__top-center">
+        <nav class="footer__nav">
+          <div class="footer__nav-title">Link-uri Utile</div>
+          <ul class="footer__nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Articole Medicale</a></li>
+            <li><a href="#">Clinici Romania</a></li>
+            <li><a href="#">Termeni și Condiții</a></li>
+            <li><a href="#">Politica de Confidențialitate</a></li>
+            <li><a href="#">Politica Cookies</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__top-right">
         <form action="#" class="footer__form">
           <div class="footer__form-title">Updates on Latest Medical News</div>
           <div class="footer__form-descriptions">We’ll never send unrelated or promotional emails.</div>
           <div class="footer__form-row">
-            <input type="text" class="footer__form-input" placeholder="Enter your email">
+            <input type="text" class="footer__form-input" placeholder="Adresa ta de email">
             <button class="footer__form-btn" type="submit">
               <svg width="4" height="6" viewBox="0 0 4 6" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.558058 4.43159C0.313981 4.67567 0.313981 5.0714 0.558058 5.31548C0.802136 5.55955 1.19786 5.55955 1.44194 5.31548L0.558058 4.43159ZM3 2.87354L3.44194 3.31548L3.88388 2.87354L3.44194 2.43159L3 2.87354ZM1.44194 0.431593C1.19786 0.187516 0.802136 0.187516 0.558058 0.431593C0.31398 0.675671 0.31398 1.0714 0.558058 1.31548L1.44194 0.431593ZM1.44194 5.31548L3.44194 3.31548L2.55806 2.43159L0.558058 4.43159L1.44194 5.31548ZM3.44194 2.43159L1.44194 0.431593L0.558058 1.31548L2.55806 3.31548L3.44194 2.43159Z" />
@@ -460,104 +540,17 @@
           </div>
         </form>
         <div class="footer__contacts">
-          <div class="footer__contacts-title">Have a question or suggestion?</div>
+          <div class="footer__contacts-title">Ai o întrebare sau o sugestie?</div>
           <a href="#" class="footer__contacts-btn btn">
-            <span>CONTACT US</span>
+            <span>CONTACTEAZĂ-NE</span>
             <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
               <path d="M5.55806 8.55806C5.31398 8.80214 5.31398 9.19786 5.55806 9.44194C5.80214 9.68602 6.19786 9.68602 6.44194 9.44194L5.55806 8.55806ZM8 7L8.44194 7.44194L8.88388 7L8.44194 6.55806L8 7ZM6.44194 4.55806C6.19786 4.31398 5.80214 4.31398 5.55806 4.55806C5.31398 4.80214 5.31398 5.19786 5.55806 5.44194L6.44194 4.55806ZM6.44194 9.44194L8.44194 7.44194L7.55806 6.55806L5.55806 8.55806L6.44194 9.44194ZM8.44194 6.55806L6.44194 4.55806L5.55806 5.44194L7.55806 7.44194L8.44194 6.55806Z" />
               <rect x="0.625" y="13.375" width="12.75" height="12.75" rx="6.375" transform="rotate(-90 0.625 13.375)" stroke="white" stroke-width="1.25"/>
             </svg>
           </a>
         </div>
+        <div class="footer__copy">Copyright © Med 2022 - All Rights Reserved  </div>
       </div>
-      <div class="footer__top-right">
-        <div class="footer__top-row">
-          <div class="footer__top-cell">
-            <div class="footer__top-cell-title">156 Domenii Medicale</div>
-            <nav class="footer__nav">
-              <div class="footer__nav-main">
-                <a href="#" class="footer__nav-main-link">
-                  <img src="data/Articole-Medicale.svg" width="32" height="23" alt="Articole-Medicale">
-                  Articole Medicale
-                </a>
-              </div>
-              <ul class="footer__nav-list">
-                <li><a href="#">Chrurgie Plastică</a></li>
-                <li><a href="#">Labioplastie</a></li>
-                <li><a href="#">Dermatologie</a></li>
-                <li><a href="#">Peeling Chimic</a></li>
-                <li><a href="#">Implant Păr</a></li>
-                <li><a href="#">Microneedling</a></li>
-                <li><a href="#">Nutriție</a></li>
-                <li><a href="#">Microdermabraziune</a></li>
-                <li><a href="#">Augumentare</a></li>
-                <li><a href="#">Criolipoliză</a></li>
-                <li><a href="#">Otoplastie</a></li>
-                <li><a href="#">Oftalmologie</a></li>
-                <li><a href="#">Operații Lifting</a></li>
-                <li><a href="#">Micropigmentare</a></li>
-                <li><a href="#">Lipsucție</a></li>
-                <li>
-                  <a href="#">
-                    <b>See More</b>
-                    <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 4H10M10 4L7 1M10 4L7 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="footer__top-cell">
-            <div class="footer__top-cell-title">48 Orașe</div>
-            <nav class="footer__nav">
-              <div class="footer__nav-main">
-                <a href="#" class="footer__nav-main-link">
-                  <img src="data/Clinici-Romania.svg" width="32" height="23" alt="Clinici-Romania">
-                  Clinici Romania
-                </a>
-              </div>
-              <ul class="footer__nav-list">
-                <li><a href="#">București</a></li>
-                <li><a href="#">Galați</a></li>
-                <li><a href="#">Cluj-Napoca</a></li>
-                <li><a href="#">Ploiești</a></li>
-                <li><a href="#">Timișoara</a></li>
-                <li><a href="#">Brăila</a></li>
-                <li><a href="#">Oradea</a></li>
-                <li><a href="#">Arad</a></li>
-                <li><a href="#">Iași</a></li>
-                <li><a href="#">Pitești</a></li>
-                <li><a href="#">Constanța</a></li>
-                <li><a href="#">Sibiu</a></li>
-                <li><a href="#">Craiova</a></li>
-                <li><a href="#">Bacău</a></li>
-                <li><a href="#">Brașov</a></li>
-                <li>
-                  <a href="#">
-                    <b>See More</b>
-                    <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 4H10M10 4L7 1M10 4L7 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <div class="footer__copy">Copyright © Med 2022 - All Rights Reserved </div>
-      <nav class="footer__nav-bottom">
-        <ul class="footer__nav-bottom-list">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Copyright Policy</a></li>
-        </ul>
-      </nav>
     </div>
   </div>
 </footer>
