@@ -18,9 +18,17 @@
     <header class="header">
   <div class="container">
     <div class="header__box">
+      <div class="header__menu header__menu--mobile js-mobile-menu-btn">
+        <div class="header__menu-line"></div>
+        <div class="header__menu-line"></div>
+        <div class="header__menu-line"></div>
+      </div>
       <div class="header__left">
         <div class="header__logo">
-          <img src="images/logo.svg" width="75" height="26" alt="logo">
+          <picture>
+            <source srcset="images/logo-mobile.svg" media="(max-width: 1200px)">
+            <img src="images/logo.svg" width="75" height="26" alt="logo">
+          </picture>
           <a href="#" class="header__logo-link"></a>
         </div>
       </div>
@@ -226,11 +234,6 @@
           <div class="header__menu-line"></div>
           <div class="header__menu-line"></div>
         </div>
-        <div class="header__menu header__menu--mobile js-mobile-menu-btn">
-          <div class="header__menu-line"></div>
-          <div class="header__menu-line"></div>
-          <div class="header__menu-line"></div>
-        </div>
       </div>
     </div>
     <ul class="header__menu-dropdown">
@@ -351,7 +354,7 @@
                             <div class="clinic-info__text clinic-info__text--center">999€</div>
                           </div>
                           <div class="clinic-info__cell clinic-info__cell--200">
-                            <div class="rate" data-rate="4.5">
+                            <div class="rate" data-rate="0.3">
                               <div class="rate__default">
                                 <svg class="rate__item" width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M7.56794 1.2418C7.76081 0.910661 8.23919 0.910661 8.43206 1.24179L10.4754 4.74993C10.546 4.87123 10.6644 4.95725 10.8016 4.98696L14.7695 5.84618C15.144 5.92728 15.2918 6.38225 15.0365 6.668L12.3315 9.69537C12.2379 9.80005 12.1927 9.93922 12.2068 10.0789L12.6158 14.1181C12.6544 14.4993 12.2674 14.7805 11.9167 14.626L8.20162 12.9888C8.07317 12.9322 7.92683 12.9322 7.79838 12.9888L4.08327 14.626C3.73261 14.7805 3.34559 14.4993 3.38419 14.1181L3.79316 10.0789C3.8073 9.93923 3.76208 9.80005 3.66855 9.69537L0.963524 6.668C0.708197 6.38225 0.856022 5.92728 1.23055 5.84618L5.1984 4.98696C5.3356 4.95725 5.45399 4.87123 5.52464 4.74993L7.56794 1.2418Z" />
@@ -431,7 +434,7 @@
                             <div class="clinic-info__text clinic-info__text--center">1499€</div>
                           </div>
                           <div class="clinic-info__cell clinic-info__cell--200">
-                            <div class="rate" data-rate="4">
+                            <div class="rate" data-rate="0.5">
                               <div class="rate__default">
                                 <svg class="rate__item" width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M7.56794 1.2418C7.76081 0.910661 8.23919 0.910661 8.43206 1.24179L10.4754 4.74993C10.546 4.87123 10.6644 4.95725 10.8016 4.98696L14.7695 5.84618C15.144 5.92728 15.2918 6.38225 15.0365 6.668L12.3315 9.69537C12.2379 9.80005 12.1927 9.93922 12.2068 10.0789L12.6158 14.1181C12.6544 14.4993 12.2674 14.7805 11.9167 14.626L8.20162 12.9888C8.07317 12.9322 7.92683 12.9322 7.79838 12.9888L4.08327 14.626C3.73261 14.7805 3.34559 14.4993 3.38419 14.1181L3.79316 10.0789C3.8073 9.93923 3.76208 9.80005 3.66855 9.69537L0.963524 6.668C0.708197 6.38225 0.856022 5.92728 1.23055 5.84618L5.1984 4.98696C5.3356 4.95725 5.45399 4.87123 5.52464 4.74993L7.56794 1.2418Z" />
@@ -511,7 +514,7 @@
                             <div class="clinic-info__text clinic-info__text--center">1700€</div>
                           </div>
                           <div class="clinic-info__cell clinic-info__cell--200">
-                            <div class="rate" data-rate="3.5">
+                            <div class="rate" data-rate="0.8">
                               <div class="rate__default">
                                 <svg class="rate__item" width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M7.56794 1.2418C7.76081 0.910661 8.23919 0.910661 8.43206 1.24179L10.4754 4.74993C10.546 4.87123 10.6644 4.95725 10.8016 4.98696L14.7695 5.84618C15.144 5.92728 15.2918 6.38225 15.0365 6.668L12.3315 9.69537C12.2379 9.80005 12.1927 9.93922 12.2068 10.0789L12.6158 14.1181C12.6544 14.4993 12.2674 14.7805 11.9167 14.626L8.20162 12.9888C8.07317 12.9322 7.92683 12.9322 7.79838 12.9888L4.08327 14.626C3.73261 14.7805 3.34559 14.4993 3.38419 14.1181L3.79316 10.0789C3.8073 9.93923 3.76208 9.80005 3.66855 9.69537L0.963524 6.668C0.708197 6.38225 0.856022 5.92728 1.23055 5.84618L5.1984 4.98696C5.3356 4.95725 5.45399 4.87123 5.52464 4.74993L7.56794 1.2418Z" />
@@ -667,7 +670,7 @@
                             <div class="clinic-info__text clinic-info__text--center">1199€</div>
                           </div>
                           <div class="clinic-info__cell clinic-info__cell--200">
-                            <div class="rate" data-rate="3.5">
+                            <div class="rate" data-rate="4.7">
                               <div class="rate__default">
                                 <svg class="rate__item" width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M7.56794 1.2418C7.76081 0.910661 8.23919 0.910661 8.43206 1.24179L10.4754 4.74993C10.546 4.87123 10.6644 4.95725 10.8016 4.98696L14.7695 5.84618C15.144 5.92728 15.2918 6.38225 15.0365 6.668L12.3315 9.69537C12.2379 9.80005 12.1927 9.93922 12.2068 10.0789L12.6158 14.1181C12.6544 14.4993 12.2674 14.7805 11.9167 14.626L8.20162 12.9888C8.07317 12.9322 7.92683 12.9322 7.79838 12.9888L4.08327 14.626C3.73261 14.7805 3.34559 14.4993 3.38419 14.1181L3.79316 10.0789C3.8073 9.93923 3.76208 9.80005 3.66855 9.69537L0.963524 6.668C0.708197 6.38225 0.856022 5.92728 1.23055 5.84618L5.1984 4.98696C5.3356 4.95725 5.45399 4.87123 5.52464 4.74993L7.56794 1.2418Z" />
@@ -747,7 +750,7 @@
                             <div class="clinic-info__text clinic-info__text--center">1100€</div>
                           </div>
                           <div class="clinic-info__cell clinic-info__cell--200">
-                            <div class="rate" data-rate="3.5">
+                            <div class="rate" data-rate="2.2">
                               <div class="rate__default">
                                 <svg class="rate__item" width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M7.56794 1.2418C7.76081 0.910661 8.23919 0.910661 8.43206 1.24179L10.4754 4.74993C10.546 4.87123 10.6644 4.95725 10.8016 4.98696L14.7695 5.84618C15.144 5.92728 15.2918 6.38225 15.0365 6.668L12.3315 9.69537C12.2379 9.80005 12.1927 9.93922 12.2068 10.0789L12.6158 14.1181C12.6544 14.4993 12.2674 14.7805 11.9167 14.626L8.20162 12.9888C8.07317 12.9322 7.92683 12.9322 7.79838 12.9888L4.08327 14.626C3.73261 14.7805 3.34559 14.4993 3.38419 14.1181L3.79316 10.0789C3.8073 9.93923 3.76208 9.80005 3.66855 9.69537L0.963524 6.668C0.708197 6.38225 0.856022 5.92728 1.23055 5.84618L5.1984 4.98696C5.3356 4.95725 5.45399 4.87123 5.52464 4.74993L7.56794 1.2418Z" />

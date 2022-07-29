@@ -18,9 +18,17 @@
     <header class="header">
   <div class="container">
     <div class="header__box">
+      <div class="header__menu header__menu--mobile js-mobile-menu-btn">
+        <div class="header__menu-line"></div>
+        <div class="header__menu-line"></div>
+        <div class="header__menu-line"></div>
+      </div>
       <div class="header__left">
         <div class="header__logo">
-          <img src="images/logo.svg" width="75" height="26" alt="logo">
+          <picture>
+            <source srcset="images/logo-mobile.svg" media="(max-width: 1200px)">
+            <img src="images/logo.svg" width="75" height="26" alt="logo">
+          </picture>
           <a href="#" class="header__logo-link"></a>
         </div>
       </div>
@@ -222,11 +230,6 @@
           </form>
         </div>
         <div class="header__menu js-menu-btn">
-          <div class="header__menu-line"></div>
-          <div class="header__menu-line"></div>
-          <div class="header__menu-line"></div>
-        </div>
-        <div class="header__menu header__menu--mobile js-mobile-menu-btn">
           <div class="header__menu-line"></div>
           <div class="header__menu-line"></div>
           <div class="header__menu-line"></div>
