@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Advisor">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>Advisor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+  <link href="css/index.css" rel="stylesheet">
+</head>
+  <body>
+    <header class="header">
+  <div class="header__container container">
+    <div class="header__left">
+      <div class="header__logo">
+        <picture>
+          <source srcset="images/logo-mobile.svg" media="(max-width: 1200px)">
+          <img src="images/logo.svg" width="129" height="16" alt="logo">
+        </picture>        
+        <a href="#" class="header__logo-link"></a>
+      </div>
+    </div>
+    <div class="header__center">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="menu-item-has-children">
+            <a href="#">
+              <svg width="16" height="17" viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.00008 0.5C3.58884 0.5 0 4.08884 0 8.50008C0 12.9113 3.58884 16.5002 8.00001 16.5002C12.4112 16.5002 16.0001 12.9113 16.0001 8.50008C16.0001 4.08884 12.4113 0.5 8.00008 0.5ZM7.3566 1.12286H8.59763V2.36389H7.3566V1.12286ZM13.5872 8.50008C13.5872 11.5809 11.0808 14.0872 8.00008 14.0872C4.91936 14.0872 2.41304 11.5808 2.41304 8.50008C2.41304 5.41936 4.91943 2.91297 8.00008 2.91297C11.0808 2.91297 13.5872 5.41936 13.5872 8.50008ZM3.2224 2.84485L4.09994 3.7224L3.2224 4.59994L2.34485 3.7224L3.2224 2.84485ZM1.84093 9.12059H0.599899V7.87956H1.84093V9.12059ZM3.2224 14.1554L2.34485 13.2778L3.2224 12.4003L4.09994 13.2778L3.2224 14.1554ZM8.59763 15.8773H7.3566V14.6363H8.59763V15.8773ZM12.7778 14.1554L11.9002 13.2778L12.7778 12.4003L13.6553 13.2778L12.7778 14.1554ZM12.7778 4.59994L11.9002 3.7224L12.7778 2.84485L13.6553 3.7224L12.7778 4.59994ZM14.1133 9.12059V7.87956H15.3543V9.12059H14.1133Z" />
+                <path d="M3.44922 8.50018C3.44922 11.0106 5.49161 13.0531 8.00207 13.0531C10.5125 13.0531 12.555 11.0106 12.555 8.50018C12.555 5.98972 10.5125 3.94727 8.00207 3.94727C5.49161 3.94727 3.44922 5.98972 3.44922 8.50018ZM10.1791 8.11422C10.3939 8.4635 10.4631 8.77417 10.4631 9.14324C10.4631 10.0554 9.81941 10.5458 9.08762 10.5458C8.58845 10.5458 8.30419 10.3099 8.14913 10.1137L8.41374 11.0512H7.58198L7.84073 10.1352C7.68085 10.3255 7.40093 10.5641 6.91996 10.5641C6.18817 10.5641 5.54097 10.0646 5.54097 9.15241C5.54097 8.78327 5.60847 8.46343 5.82317 8.11415C6.15797 7.56941 8.00689 6.00144 8.00689 6.00144C8.00689 6.00144 9.8443 7.56948 10.1791 8.11422Z" />
+              </svg>
+              Online Casino
+            </a>
+            <ul>
+              <li class="menu-item-has-children">
+                <a href="#">Text 1</a>
+                <ul>
+                  <li><a href="#">Menu</a></li>
+                  <li><a href="#">Menu</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Long Menu</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Menu</a></li>
+            </ul>
+          </li>
+          <li class="menu-item-has-children">
+            <a href="#">
+              <svg width="18" height="17" viewBox="0 0 18 17" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 0.375C4.51316 0.375 0.875 4.01312 0.875 8.5C0.875 12.9869 4.51316 16.625 9 16.625C13.4872 16.625 17.125 12.9868 17.125 8.5C17.125 4.0132 13.4871 0.375 9 0.375ZM10.6075 15.7726C10.0796 15.8764 9.42281 15.9362 8.88871 15.9464C8.38275 15.9392 7.87884 15.8804 7.3848 15.7709C7.29611 15.7481 7.20751 15.725 7.11898 15.7015L6.1652 13.1455L6.93258 11.625H11.0675L11.0898 11.667L11.8452 13.1847L10.9227 15.6957C10.8182 15.7236 10.7131 15.7493 10.6075 15.7726ZM6.40539 1.51875L8.64844 3.05375V5.32512L5.87512 7.67148L3.94531 6.79219L3.78254 6.71801L2.9102 4.21727C3.76992 2.99836 4.9859 2.04805 6.40539 1.51875ZM15.0767 4.20574L14.2005 6.72461L12.0914 7.67727L9.3125 5.32512V3.05375L11.5623 1.5141C12.9827 2.04078 14.2149 2.98879 15.0767 4.20574ZM1.58375 9.18023L3.68359 7.36312L5.61871 8.2459L5.64055 8.25586L6.41078 11.2749L5.61262 12.7799L2.88371 12.7442C2.16699 11.7145 1.70348 10.4963 1.58375 9.18023ZM12.3875 12.7799L11.5893 11.2748L12.3608 8.25078L14.3138 7.3609L16.4162 9.18023C16.2965 10.4963 15.833 11.7145 15.1164 12.7441L12.3875 12.7799Z" />
+              </svg>
+              Online Sports Betting
+            </a>
+            <ul>
+              <li class="menu-item-has-children">
+                <a href="#">Text 1</a>
+                <ul>
+                  <li><a href="#">Menu</a></li>
+                  <li><a href="#">Menu</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Long Menu</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Menu</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li class="menu-item-has-children">
+            <a href="#">Resources</a>
+            <ul>
+              <li class="menu-item-has-children">
+                <a href="#">Text 1</a>
+                <ul>
+                  <li><a href="#">Menu</a></li>
+                  <li><a href="#">Menu</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Long Menu</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Menu</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__right">
+      <a href="#" class="header__btn">Contact Us</a>
+      <div class="header__mobile-menu-btn">
+        <div class="header__mobile-menu-btn-line"></div>
+        <div class="header__mobile-menu-btn-line"></div>
+        <div class="header__mobile-menu-btn-line"></div>
+      </div>
+    </div>
+  </div>
+  <div class="header__mobile"></div>
+</header>
+    <div class="wrapper">
+      <div class="first-screen first-screen--pb220">
+        <picture class="first-screen__img">
+          <source srcset="data/first-screen-mobile.jpg" media="(max-width: 1200px)">
+          <img src="data/first-screen.jpg" width="1440" height="648" alt="first-screen">
+        </picture> 
+        <div class="container">
+          <div class="first-screen__title">Our Newsroom</div>
+          <div class="first-screen__title-descriptions">In this digital generation where information can be easily obtained within seconds, business cards</div>
+          <div class="first-screen__nav-news">
+            <ul class="first-screen__nav-news-list">
+              <li><a href="#" class="active">All</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Casino</a></li>
+              <li><a href="#">Sports</a></li>
+              <li><a href="#">Betting</a></li>
+              <li><a href="#">Proviers</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="news">
+        <div class="container">
+          <div class="news__main">
+            <a href="#" class="news__main-img">
+              <img src="data/Cheap-Airline.jpg" width="570" height="315" alt="Cheap-Airline">
+            </a>
+            <div class="news__main-box">
+              <div class="news__main-labels">
+                <div class="news__main-label" style="background: rgba(54, 179, 126, 0.12); color: #50B975; border: 1px solid #50B975;">Featured</div>
+              </div>
+              <a href="#" class="news__main-title">Cheap Airline Tickets Great Ways To Save</a>
+              <div class="news__main-text">In this digital generation where information can be easily obtained within seconds, business cards ...</div>
+              <div class="news__main-bottom">
+                <a href="#" class="news__main-author">
+                  <div class="news__main-author-img">
+                    <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                  </div>
+                  <div class="news__main-author-name">Johanna Murray</div>
+                </a>
+                <div class="news__main-author-date">08 Sept</div>
+              </div>
+            </div>
+          </div>
+          <div class="news-list">
+            <div class="news-item">
+              <a href="#" class="news-item__img">
+                <img src="data/news.jpg" width="392" height="249" alt="news">
+              </a>
+              <div class="news-item__box">
+                <div class="news-item__box-top">
+                  <a href="#" class="news-item__title" title="Future of Work">Future of Work</a>
+                  <div class="news-item__text">Majority of peole will work in jobs that don’t exist today.</div>
+                </div>
+                <div class="news-item__box-bottom">
+                  <a href="#" class="news-item__author">
+                    <div class="news-item__author-img">
+                      <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                    </div>
+                    <div class="news-item__author-box">
+                      <div class="news-item__author-name">Johanna Murray</div>
+                      <div class="news-item__date">02 May</div>
+                    </div>
+                  </a>
+                  <div class="news-item__right">
+                    <div class="news-item__type" style="border: 1px solid #CCA300; color:#CCA300; background: rgba(159, 128, 0, 0.12);">Casino</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <a href="#" class="news-item__img">
+                <img src="data/news.jpg" width="392" height="249" alt="news">
+              </a>
+              <div class="news-item__box">
+                <div class="news-item__box-top">
+                  <a href="#" class="news-item__title" title="Future of Work">Future of Work</a>
+                  <div class="news-item__text">Majority of peole will work in jobs that don’t exist today.</div>
+                </div>
+                <div class="news-item__box-bottom">
+                  <a href="#" class="news-item__author">
+                    <div class="news-item__author-img">
+                      <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                    </div>
+                    <div class="news-item__author-box">
+                      <div class="news-item__author-name">Johanna Murray</div>
+                      <div class="news-item__date">02 May</div>
+                    </div>
+                  </a>
+                  <div class="news-item__right">
+                    <div class="news-item__type" style="border: 1px solid #000066; color:#000066; background: rgba(0, 0, 102, 0.12);">Betting</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <a href="#" class="news-item__img">
+                <img src="data/news.jpg" width="392" height="249" alt="news">
+              </a>
+              <div class="news-item__box">
+                <div class="news-item__box-top">
+                  <a href="#" class="news-item__title" title="Future of Work">Future of Work</a>
+                  <div class="news-item__text">Majority of peole will work in jobs that don’t exist today.</div>
+                </div>
+                <div class="news-item__box-bottom">
+                  <a href="#" class="news-item__author">
+                    <div class="news-item__author-img">
+                      <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                    </div>
+                    <div class="news-item__author-box">
+                      <div class="news-item__author-name">Johanna Murray</div>
+                      <div class="news-item__date">02 May</div>
+                    </div>
+                  </a>
+                  <div class="news-item__right">
+                    <div class="news-item__type">Provider</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <a href="#" class="news-item__img">
+                <img src="data/news.jpg" width="392" height="249" alt="news">
+              </a>
+              <div class="news-item__box">
+                <div class="news-item__box-top">
+                  <a href="#" class="news-item__title" title="Future of Work">Future of Work</a>
+                  <div class="news-item__text">Majority of peole will work in jobs that don’t exist today.</div>
+                </div>
+                <div class="news-item__box-bottom">
+                  <a href="#" class="news-item__author">
+                    <div class="news-item__author-img">
+                      <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                    </div>
+                    <div class="news-item__author-box">
+                      <div class="news-item__author-name">Johanna Murray</div>
+                      <div class="news-item__date">02 May</div>
+                    </div>
+                  </a>
+                  <div class="news-item__right">
+                    <div class="news-item__type" style="border: 1px solid #CC0000; color:#CC0000; background: rgba(204, 0, 0, 0.12);">Provider</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <a href="#" class="news-item__img">
+                <img src="data/news.jpg" width="392" height="249" alt="news">
+              </a>
+              <div class="news-item__box">
+                <div class="news-item__box-top">
+                  <a href="#" class="news-item__title" title="Future of Work">Future of Work</a>
+                  <div class="news-item__text">Majority of peole will work in jobs that don’t exist today.</div>
+                </div>
+                <div class="news-item__box-bottom">
+                  <a href="#" class="news-item__author">
+                    <div class="news-item__author-img">
+                      <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                    </div>
+                    <div class="news-item__author-box">
+                      <div class="news-item__author-name">Johanna Murray</div>
+                      <div class="news-item__date">02 May</div>
+                    </div>
+                  </a>
+                  <div class="news-item__right">
+                    <div class="news-item__type" style="border: 1px solid #CCA300; color:#CCA300; background: rgba(159, 128, 0, 0.12);">Casino</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <a href="#" class="news-item__img">
+                <img src="data/news.jpg" width="392" height="249" alt="news">
+              </a>
+              <div class="news-item__box">
+                <div class="news-item__box-top">
+                  <a href="#" class="news-item__title" title="Future of Work">Future of Work</a>
+                  <div class="news-item__text">Majority of peole will work in jobs that don’t exist today.</div>
+                </div>
+                <div class="news-item__box-bottom">
+                  <a href="#" class="news-item__author">
+                    <div class="news-item__author-img">
+                      <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                    </div>
+                    <div class="news-item__author-box">
+                      <div class="news-item__author-name">Johanna Murray</div>
+                      <div class="news-item__date">02 May</div>
+                    </div>
+                  </a>
+                  <div class="news-item__right">
+                    <div class="news-item__type" style="border: 1px solid #000066; color:#000066; background: rgba(0, 0, 102, 0.12);">Betting</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <a href="#" class="news-item__img">
+                <img src="data/news.jpg" width="392" height="249" alt="news">
+              </a>
+              <div class="news-item__box">
+                <div class="news-item__box-top">
+                  <a href="#" class="news-item__title" title="Future of Work">Future of Work</a>
+                  <div class="news-item__text">Majority of peole will work in jobs that don’t exist today.</div>
+                </div>
+                <div class="news-item__box-bottom">
+                  <a href="#" class="news-item__author">
+                    <div class="news-item__author-img">
+                      <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                    </div>
+                    <div class="news-item__author-box">
+                      <div class="news-item__author-name">Johanna Murray</div>
+                      <div class="news-item__date">02 May</div>
+                    </div>
+                  </a>
+                  <div class="news-item__right">
+                    <div class="news-item__type">Provider</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <a href="#" class="news-item__img">
+                <img src="data/news.jpg" width="392" height="249" alt="news">
+              </a>
+              <div class="news-item__box">
+                <div class="news-item__box-top">
+                  <a href="#" class="news-item__title" title="Future of Work">Future of Work</a>
+                  <div class="news-item__text">Majority of peole will work in jobs that don’t exist today.</div>
+                </div>
+                <div class="news-item__box-bottom">
+                  <a href="#" class="news-item__author">
+                    <div class="news-item__author-img">
+                      <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                    </div>
+                    <div class="news-item__author-box">
+                      <div class="news-item__author-name">Johanna Murray</div>
+                      <div class="news-item__date">02 May</div>
+                    </div>
+                  </a>
+                  <div class="news-item__right">
+                    <div class="news-item__type">Provider</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <a href="#" class="news-item__img">
+                <img src="data/news.jpg" width="392" height="249" alt="news">
+              </a>
+              <div class="news-item__box">
+                <div class="news-item__box-top">
+                  <a href="#" class="news-item__title" title="Future of Work">Future of Work</a>
+                  <div class="news-item__text">Majority of peole will work in jobs that don’t exist today.</div>
+                </div>
+                <div class="news-item__box-bottom">
+                  <a href="#" class="news-item__author">
+                    <div class="news-item__author-img">
+                      <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                    </div>
+                    <div class="news-item__author-box">
+                      <div class="news-item__author-name">Johanna Murray</div>
+                      <div class="news-item__date">02 May</div>
+                    </div>
+                  </a>
+                  <div class="news-item__right">
+                    <div class="news-item__type">Provider</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bonus">
+            <div class="bonus__left">
+              <div class="bonus__title">Get Exclusive Bonus Offer & Tips</div>
+              <div class="bonus__text">Enter your email, and get latest bonus offer</div>
+            </div>
+            <div class="bonus__right">
+              <div class="bonus__form">
+                <div class="bonus__form-cell">
+                  <div class="bonus__form-row">
+                    <input type="text" placeholder="Name">
+                  </div>
+                  <div class="bonus__form-row">
+                    <input type="email" placeholder="Email">
+                  </div>
+                </div>
+                <div class="bonus__form-cell">
+                  <div class="bonus__form-checkbox">
+                    <div class="bonus__form-checkbox-title">Select a topic of your interest :</div>
+                    <div class="bonus__form-checkbo-list">
+                      <label class="bonus__form-checkbox-item">
+                        <input type="checkbox">
+                        <span>Bonuses</span>
+                      </label>
+                      <label class="bonus__form-checkbox-item">
+                        <input type="checkbox">
+                        <span>Games</span>
+                      </label>
+                      <label class="bonus__form-checkbox-item">
+                        <input type="checkbox">
+                        <span>Casinos</span>
+                      </label>
+                    </div>
+                  </div>
+                  <button class="bonus__form-btn" type="submit">Claim Bonus</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news-list">
+            <div class="news-item-row">
+              <a href="#" class="news-item-row__img">
+                <img src="data/news-row.jpg" width="269" height="260" alt="news">
+              </a>
+              <div class="news-item-row__box">
+                <div class="news-item-row__top">
+                  <div class="news-item-row__type" style="border: 1px solid #CC0000; color:#CC0000; background: rgba(204, 0, 0, 0.12);">Provider</div>
+                  <div class="news-item-row__date-mobile">02 May</div>
+                </div>
+                <a href="#" class="news-item-row__title" title="Cheap Airline Tickets Great Ways To Save">Cheap Airline Tickets Great Ways To Save</a>
+                <div class="news-item-row__text">Majority of peole will work in jobs that don’t exist today.</div>
+                <a href="#" class="news-item-row__author">
+                  <div class="news-item-row__author-img">
+                    <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                  </div>
+                  <div class="news-item-row__author-box">
+                    <div class="news-item-row__author-name">Johanna Murray</div>
+                    <div class="news-item-row__date">02 May</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="news-item-row">
+              <a href="#" class="news-item-row__img">
+                <img src="data/news-row.jpg" width="269" height="260" alt="news">
+              </a>
+              <div class="news-item-row__box">
+                <div class="news-item-row__top">
+                  <div class="news-item-row__type" style="border: 1px solid #CCA300; color:#CCA300; background: rgba(159, 128, 0, 0.12);">Provider</div>
+                  <div class="news-item-row__date-mobile">02 May</div>
+                </div>
+                <a href="#" class="news-item-row__title" title="Cheap Airline Tickets Great Ways To Save">Cheap Airline Tickets Great Ways To Save</a>
+                <div class="news-item-row__text">Majority of peole will work in jobs that don’t exist today.</div>
+                <a href="#" class="news-item-row__author">
+                  <div class="news-item-row__author-img">
+                    <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                  </div>
+                  <div class="news-item-row__author-box">
+                    <div class="news-item-row__author-name">Johanna Murray</div>
+                    <div class="news-item-row__date">02 May</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="news-item-row">
+              <a href="#" class="news-item-row__img">
+                <img src="data/news-row.jpg" width="269" height="260" alt="news">
+              </a>
+              <div class="news-item-row__box">
+                <div class="news-item-row__top">
+                  <div class="news-item-row__type" style="border: 1px solid #CC0000; color:#CC0000; background: rgba(204, 0, 0, 0.12);">Provider</div>
+                  <div class="news-item-row__date-mobile">02 May</div>
+                </div>
+                <a href="#" class="news-item-row__title" title="Cheap Airline Tickets Great Ways To Save">Cheap Airline Tickets Great Ways To Save</a>
+                <div class="news-item-row__text">Majority of peole will work in jobs that don’t exist today.</div>
+                <a href="#" class="news-item-row__author">
+                  <div class="news-item-row__author-img">
+                    <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                  </div>
+                  <div class="news-item-row__author-box">
+                    <div class="news-item-row__author-name">Johanna Murray</div>
+                    <div class="news-item-row__date">02 May</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="news-item-row">
+              <a href="#" class="news-item-row__img">
+                <img src="data/news-row.jpg" width="269" height="260" alt="news">
+              </a>
+              <div class="news-item-row__box">
+                <div class="news-item-row__top">
+                  <div class="news-item-row__type" style="border: 1px solid #000066; color:#000066; background: rgba(0, 0, 102, 0.12);">Provider</div>
+                  <div class="news-item-row__date-mobile">02 May</div>
+                </div>
+                <a href="#" class="news-item-row__title" title="Cheap Airline Tickets Great Ways To Save">Cheap Airline Tickets Great Ways To Save</a>
+                <div class="news-item-row__text">Majority of peole will work in jobs that don’t exist today.</div>
+                <a href="#" class="news-item-row__author">
+                  <div class="news-item-row__author-img">
+                    <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                  </div>
+                  <div class="news-item-row__author-box">
+                    <div class="news-item-row__author-name">Johanna Murray</div>
+                    <div class="news-item-row__date">02 May</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="news-item-row">
+              <a href="#" class="news-item-row__img">
+                <img src="data/news-row.jpg" width="269" height="260" alt="news">
+              </a>
+              <div class="news-item-row__box">
+                <div class="news-item-row__top">
+                  <div class="news-item-row__type">Provider</div>
+                  <div class="news-item-row__date-mobile">02 May</div>
+                </div>
+                <a href="#" class="news-item-row__title" title="Cheap Airline Tickets Great Ways To Save">Cheap Airline Tickets Great Ways To Save</a>
+                <div class="news-item-row__text">Majority of peole will work in jobs that don’t exist today.</div>
+                <a href="#" class="news-item-row__author">
+                  <div class="news-item-row__author-img">
+                    <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                  </div>
+                  <div class="news-item-row__author-box">
+                    <div class="news-item-row__author-name">Johanna Murray</div>
+                    <div class="news-item-row__date">02 May</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="news-item-row">
+              <a href="#" class="news-item-row__img">
+                <img src="data/news-row.jpg" width="269" height="260" alt="news">
+              </a>
+              <div class="news-item-row__box">
+                <div class="news-item-row__top">
+                  <div class="news-item-row__type" style="border: 1px solid #CCA300; color:#CCA300; background: rgba(159, 128, 0, 0.12);">Provider</div>
+                  <div class="news-item-row__date-mobile">02 May</div>
+                </div>
+                <a href="#" class="news-item-row__title" title="Cheap Airline Tickets Great Ways To Save">Cheap Airline Tickets Great Ways To Save</a>
+                <div class="news-item-row__text">Majority of peole will work in jobs that don’t exist today.</div>
+                <a href="#" class="news-item-row__author">
+                  <div class="news-item-row__author-img">
+                    <img src="data/Johanna-Murray.jpg" width="40" height="40" alt="Johanna-Murray">
+                  </div>
+                  <div class="news-item-row__author-box">
+                    <div class="news-item-row__author-name">Johanna Murray</div>
+                    <div class="news-item-row__date">02 May</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <ul class="pagination">
+            <li class="disabled">
+              <a href="#">
+                <svg width="6" height="10" viewBox="0 0 6 10" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5.25742 0.59165C4.93242 0.26665 4.40742 0.26665 4.08242 0.59165L0.257422 4.41665C-0.0675781 4.74165 -0.0675781 5.26665 0.257422 5.59165L4.08242 9.41665C4.40742 9.74165 4.93242 9.74165 5.25742 9.41665C5.58242 9.09165 5.58242 8.56665 5.25742 8.24165L2.02409 4.99998L5.25742 1.76665C5.58242 1.44165 5.57409 0.908317 5.25742 0.59165Z" />
+                </svg>
+              </a>
+            </li>
+            <li><span>1</span></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li>
+              <a href="#">
+                <svg width="6" height="10" viewBox="0 0 6 10" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.74375 0.244802C0.41875 0.569802 0.41875 1.0948 0.74375 1.4198L3.97708 4.65314L0.74375 7.88647C0.41875 8.21147 0.41875 8.73647 0.74375 9.06147C1.06875 9.38647 1.59375 9.38647 1.91875 9.06147L5.74375 5.23647C6.06875 4.91147 6.06875 4.38647 5.74375 4.06147L1.91875 0.236468C1.60208 -0.0801982 1.06875 -0.0801982 0.74375 0.244802Z" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+  <div class="footer__btn-top js-scroll-top">
+    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 7L7 1L1 7" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="footer__top">
+    <div class="container">
+      <div class="footer__top-box">
+        <div class="footer__info">
+          <div class="footer__logo">
+            <img src="data/logo-footer.svg" width="152" height="31" alt="img">
+            <a href="#" class="footer__logo-link"></a>
+          </div>
+          <div class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </div>
+          <div class="footer__safe">
+            <div class="footer__safe-title">Is it Safe?</div>
+            <div class="footer__safe-list">
+              <div class="footer__safe-item"><img src="data/safe-1.png" width="120" height="48" alt="img"></div>
+              <div class="footer__safe-item"><img src="data/safe-2.png" width="120" height="48" alt="img"></div>
+              <div class="footer__safe-item"><img src="data/safe-3.png" width="120" height="48" alt="img"></div>
+              <div class="footer__safe-item"><img src="data/safe-4.png" width="120" height="48" alt="img"></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__cell">
+          <div class="footer__cell-title">Game Guides</div>
+          <nav class="footer__nav">
+            <ul class="footer__nav-list">
+              <li><a href="#">Trusted Online Casinos</a></li>
+              <li><a href="#">Live Casinos</a></li>
+              <li><a href="#">Free Credit Casinos</a></li>
+              <li><a href="#">Mobile Casinos</a></li>
+              <li><a href="#">Free Credit Casinos</a></li>
+              <li><a href="#">Sports Betting Websites</a></li>
+              <li><a href="#">Football Betting</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__cell">
+          <div class="footer__cell-title">Casino Games</div>
+          <nav class="footer__nav">
+            <ul class="footer__nav-list">
+              <li><a href="#">Baccarat</a></li>
+              <li><a href="#">Roulette</a></li>
+              <li><a href="#">Online Slots</a></li>
+              <li><a href="#">Blackjack</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__cell">
+          <div class="footer__cell-title">About</div>
+          <nav class="footer__nav">
+            <ul class="footer__nav-list">
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Editorial Guidelines</a></li>
+              <li><a href="#">How we Rate</a></li>
+              <li><a href="#">Responsible Gambling</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__cell">
+          <div class="footer__cell-title">Legal</div>
+          <nav class="footer__nav">
+            <ul class="footer__nav-list">
+              <li><a href="#">Terms and Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Gambling Legislations</a></li>
+            </ul>
+          </nav>
+          <ul class="social">
+            <li>
+              <a href="#" target="_blank" rel="nofollow">
+                <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.25 0H3.75C1.67925 0 0 1.67925 0 3.75V8.25C0 10.3208 1.67925 12 3.75 12H8.25C10.3208 12 12 10.3208 12 8.25V3.75C12 1.67925 10.3208 0 8.25 0ZM10.875 8.25C10.875 9.6975 9.6975 10.875 8.25 10.875H3.75C2.3025 10.875 1.125 9.6975 1.125 8.25V3.75C1.125 2.3025 2.3025 1.125 3.75 1.125H8.25C9.6975 1.125 10.875 2.3025 10.875 3.75V8.25Z" />
+                  <path d="M6 3C4.34325 3 3 4.34325 3 6C3 7.65675 4.34325 9 6 9C7.65675 9 9 7.65675 9 6C9 4.34325 7.65675 3 6 3ZM6 7.875C4.9665 7.875 4.125 7.0335 4.125 6C4.125 4.96575 4.9665 4.125 6 4.125C7.0335 4.125 7.875 4.96575 7.875 6C7.875 7.0335 7.0335 7.875 6 7.875Z" />
+                  <path d="M9.22481 3.17464C9.44558 3.17464 9.62456 2.99567 9.62456 2.77489C9.62456 2.55411 9.44558 2.37514 9.22481 2.37514C9.00403 2.37514 8.82506 2.55411 8.82506 2.77489C8.82506 2.99567 9.00403 3.17464 9.22481 3.17464Z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank" rel="nofollow">
+                <svg width="8" height="12" viewBox="0 0 8 12" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.16924 0.0024968L5.52452 0C3.67674 0 2.48262 1.15914 2.48262 2.95322V4.31485H0.828928C0.68603 4.31485 0.570312 4.42446 0.570312 4.55966V6.53251C0.570312 6.66771 0.686162 6.77719 0.828928 6.77719H2.48262V11.7553C2.48262 11.8905 2.59833 12 2.74123 12H4.89883C5.04173 12 5.15744 11.8904 5.15744 11.7553V6.77719H7.09099C7.23389 6.77719 7.34961 6.66771 7.34961 6.53251L7.3504 4.55966C7.3504 4.49474 7.32309 4.43257 7.27466 4.38663C7.22624 4.34069 7.16026 4.31485 7.09165 4.31485H5.15744V3.16058C5.15744 2.60579 5.29717 2.32415 6.06101 2.32415L7.16897 2.32377C7.31174 2.32377 7.42745 2.21416 7.42745 2.07909V0.247183C7.42745 0.112231 7.31187 0.00274648 7.16924 0.0024968Z" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__bottom-box">
+        <div class="footer__bottom-left">
+          <div class="footer__certified">
+            <div class="footer__certified-title">Website is certified by:</div>
+            <div class="footer__certified-list">
+              <div class="footer__certified-item"><img src="data/certified-1.jpg" width="88" height="34" alt="certified"></div>
+              <div class="footer__certified-item"><img src="data/certified-2.jpg" width="88" height="34" alt="certified"></div>
+              <div class="footer__certified-item"><img src="data/certified-3.jpg" width="88" height="34" alt="certified"></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom-right">
+          <div class="footer__copy">Copyright © 2022 All Rights Reserved</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+    <script src="js/app.js"></script>
+  </body>
+</html>
