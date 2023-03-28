@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Sword">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>Sword</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+  <div class="header__container">
+    <div class="header__left">
+      <div class="header__logo">
+        <img src="data/logo.svg" width="237" height="63" alt="logo">
+        <a href="#" class="header__logo-link"></a>
+      </div>
+    </div>
+    <div class="header__right">
+      <div class="header__search">
+        <form action="#" class="header__search-form">
+          <svg class="header__search-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M27.752 25.8654L22.0413 20.156C23.7443 18.0317 24.6705 15.3894 24.6667 12.6667C24.6667 6.04269 19.2907 0.666687 12.6667 0.666687C6.04266 0.666687 0.666664 6.04269 0.666664 12.6667C0.666664 19.2907 6.04266 24.6667 12.6667 24.6667C15.3893 24.6706 18.0316 23.7443 20.156 22.0414L25.8653 27.752L27.752 25.8654ZM22 12.6667C22.0038 15.0939 21.0588 17.4265 19.3667 19.1667L19.1667 19.3667C17.4265 21.0588 15.0939 22.0038 12.6667 22C7.50933 22 3.33333 17.8227 3.33333 12.6667C3.33333 7.50935 7.50933 3.33335 12.6667 3.33335C17.8227 3.33335 22 7.50935 22 12.6667Z"
+              fill="#23272F" />
+          </svg>
+          <input type="text" class="header__search-input" placeholder="Search...">
+        </form>
+        <div class="header__search-mobile-btn">
+          <svg class="header__search-mobile-open" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.7043 16.2848L14.3054 12.8958C15.402 11.4988 15.9971 9.77351 15.9948 7.99743C15.9948 6.41569 15.5258 4.86947 14.647 3.5543C13.7683 2.23913 12.5192 1.21408 11.0579 0.608771C9.59657 0.00346513 7.98855 -0.15491 6.43721 0.153672C4.88586 0.462254 3.46085 1.22393 2.34239 2.34239C1.22393 3.46085 0.462254 4.88586 0.153672 6.43721C-0.15491 7.98855 0.00346513 9.59657 0.608771 11.0579C1.21408 12.5192 2.23913 13.7683 3.5543 14.647C4.86947 15.5258 6.41569 15.9948 7.99743 15.9948C9.77351 15.9971 11.4988 15.402 12.8958 14.3054L16.2848 17.7043C16.3777 17.798 16.4883 17.8724 16.6101 17.9231C16.7319 17.9739 16.8626 18 16.9945 18C17.1265 18 17.2572 17.9739 17.379 17.9231C17.5008 17.8724 17.6114 17.798 17.7043 17.7043C17.798 17.6114 17.8724 17.5008 17.9231 17.379C17.9739 17.2572 18 17.1265 18 16.9945C18 16.8626 17.9739 16.7319 17.9231 16.6101C17.8724 16.4883 17.798 16.3777 17.7043 16.2848V16.2848ZM1.99936 7.99743C1.99936 6.81112 2.35114 5.65146 3.01022 4.66508C3.66929 3.6787 4.60606 2.90991 5.70207 2.45593C6.79807 2.00196 8.00408 1.88317 9.16759 2.11461C10.3311 2.34605 11.3999 2.91731 12.2387 3.75615C13.0775 4.595 13.6488 5.66375 13.8802 6.82726C14.1117 7.99077 13.9929 9.19678 13.5389 10.2928C13.0849 11.3888 12.3162 12.3256 11.3298 12.9846C10.3434 13.6437 9.18373 13.9955 7.99743 13.9955C6.40664 13.9955 4.88101 13.3636 3.75615 12.2387C2.6313 11.1138 1.99936 9.58821 1.99936 7.99743Z" fill="#23272F"/>
+          </svg>
+          <svg class="header__search-mobile-close" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.99998 7.11466L15.6 0.514664L17.4853 2.4L10.8853 9L17.4853 15.6L15.6 17.4853L8.99998 10.8853L2.39998 17.4853L0.514648 15.6L7.11465 9L0.514648 2.4L2.39998 0.514664L8.99998 7.11466Z" fill="#001018"/>
+          </svg>
+        </div>
+      </div>
+      <nav class="header__categories">
+        <ul class="header__categories-list">
+          <li class="menu-item-has-children">
+            <span>Categories</span>
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="data/African-History.jpg" width="56" height="56" alt="African-History">
+                  African History
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="data/Arabic-Middle-Eastern-History.jpg" width="56" height="56" alt="Arabic-Middle-Eastern-History">
+                  Arabic & Middle Eastern History
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="data/Asians-Oriental-History.jpg" width="56" height="56" alt="Asians-Oriental-History">
+                  Asians and Oriental History
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="data/European-History.jpg" width="56" height="56" alt="European-History">
+                  European History
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="data/North-South-American-History.jpg" width="56" height="56" alt="North-South-American-History">
+                  North and South American History
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <a href="#" class="header__home-link">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12.66 20.25V19.92C12.66 15.72 12.66 11.52 12.66 7.32001C12.6573 6.72818 12.8706 6.1557 13.26 5.71001C14.3831 4.35268 15.9542 3.44124 17.69 3.14001C18.5193 2.98802 19.3578 2.89114 20.2 2.85001C20.3324 2.825 20.4688 2.83182 20.598 2.86989C20.7272 2.90796 20.8456 2.9762 20.9432 3.06899C21.0409 3.16177 21.1151 3.27644 21.1597 3.40354C21.2044 3.53064 21.2182 3.66653 21.2 3.80001V16.46C21.2225 16.5964 21.2122 16.7362 21.1699 16.8678C21.1276 16.9994 21.0545 17.119 20.9568 17.2168C20.859 17.3145 20.7394 17.3876 20.6078 17.4299C20.4762 17.4722 20.3364 17.4825 20.2 17.46C18.8423 17.4643 17.4933 17.6768 16.2 18.09C14.92 18.4818 13.749 19.1666 12.78 20.09L12.66 20.25Z"
+            fill="#B89A6E" />
+          <path
+            d="M11.33 20.17C10.77 19.75 10.24 19.32 9.65999 18.95C8.61756 18.2924 7.44928 17.8599 6.22999 17.68C5.42999 17.55 4.61999 17.5 3.80999 17.44C2.99999 17.38 2.80999 17.09 2.80999 16.44V3.85C2.79188 3.7144 2.80527 3.57646 2.84912 3.44688C2.89297 3.3173 2.9661 3.19957 3.06283 3.10284C3.15956 3.00611 3.27729 2.93298 3.40687 2.88913C3.53645 2.84528 3.6744 2.83189 3.80999 2.85C5.17941 2.85772 6.53557 3.11878 7.80999 3.62C9.15409 4.1387 10.2966 5.07445 11.07 6.29C11.1902 6.50719 11.2522 6.75177 11.25 7C11.25 10.66 11.25 14.3267 11.25 18V20C11.34 20 11.33 20.12 11.33 20.17Z"
+            fill="#B89A6E" />
+          <path
+            d="M10 20.94L9.36 20.81C7.15206 20.44 4.89795 20.44 2.69 20.81C2.17 20.89 1.69 21.01 1.15 21.11C1.01036 21.1533 0.862197 21.1615 0.718614 21.134C0.575031 21.1064 0.44045 21.0439 0.326767 20.952C0.213085 20.86 0.123801 20.7415 0.0668096 20.6069C0.00981804 20.4722 -0.0131265 20.3256 4.19747e-06 20.18V6.78C-0.0224952 6.64361 -0.012169 6.50382 0.0301272 6.37221C0.0724235 6.2406 0.145472 6.12097 0.243221 6.02322C0.340969 5.92547 0.460603 5.85242 0.592211 5.81013C0.723818 5.76783 0.86361 5.7575 1 5.78C1.52 5.78 1.52 5.78 1.52 6.27C1.52 9.64334 1.52 13.01 1.52 16.37C1.50039 16.7384 1.57125 17.1059 1.72639 17.4406C1.88152 17.7753 2.11623 18.0669 2.41 18.29C2.83947 18.6006 3.36033 18.759 3.89 18.74C5.1502 18.7477 6.40043 18.964 7.59 19.38C8.43723 19.6798 9.22322 20.1304 9.91 20.71L10.08 20.86L10 20.94Z"
+            fill="#B89A6E" />
+          <path
+            d="M14 20.94C14.5671 20.3577 15.2479 19.8982 16 19.59C17.2712 19.0717 18.6274 18.7936 20 18.77C20.4319 18.7889 20.8626 18.7103 21.26 18.54C21.6548 18.3455 21.9832 18.0385 22.2039 17.6577C22.4245 17.2769 22.5276 16.8393 22.5 16.4V6.32C22.5 5.8 22.5 5.8 23.02 5.81C23.1564 5.7875 23.2962 5.79783 23.4278 5.84012C23.5594 5.88242 23.679 5.95547 23.7768 6.05322C23.8745 6.15097 23.9476 6.2706 23.9899 6.40221C24.0322 6.53382 24.0425 6.67361 24.02 6.81V20.21C24.0404 20.3577 24.0225 20.5082 23.968 20.647C23.9135 20.7859 23.8243 20.9083 23.7088 21.0027C23.5933 21.0971 23.4555 21.1602 23.3086 21.186C23.1618 21.2118 23.0107 21.1994 22.87 21.15C21.272 20.7808 19.6398 20.5797 18 20.55C16.7041 20.5162 15.4087 20.6336 14.14 20.9L14 20.94Z"
+            fill="#B89A6E" />
+        </svg>
+        SwordEncyclopedia.com
+      </a>
+      <div class="header__mobile-menu">
+        <svg class="header__mobile-menu-open" width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.05 0H0.95C0.42533 0 0 0.425329 0 0.95V1.05C0 1.57467 0.42533 2 0.95 2H17.05C17.5747 2 18 1.57467 18 1.05V0.95C18 0.425329 17.5747 0 17.05 0Z" fill="white"/>
+          <path d="M17.05 5H0.95C0.42533 5 0 5.42533 0 5.95V6.05C0 6.57467 0.42533 7 0.95 7H17.05C17.5747 7 18 6.57467 18 6.05V5.95C18 5.42533 17.5747 5 17.05 5Z" fill="white"/>
+          <path d="M17.05 10H0.95C0.42533 10 0 10.4253 0 10.95V11.05C0 11.5747 0.42533 12 0.95 12H17.05C17.5747 12 18 11.5747 18 11.05V10.95C18 10.4253 17.5747 10 17.05 10Z" fill="white"/>
+        </svg>
+        <svg class="header__mobile-menu-close" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.99998 7.11466L15.6 0.514664L17.4853 2.4L10.8853 9L17.4853 15.6L15.6 17.4853L8.99998 10.8853L2.39998 17.4853L0.514648 15.6L7.11465 9L0.514648 2.4L2.39998 0.514664L8.99998 7.11466Z" fill="#fff"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="header__mobile"></div>
+</header>
+  <div class="wrapper">
+    <div class="main">
+      <div class="main__aside">
+        <div class="main__aside-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.0049 27.34C6.64 27.34 0.669922 21.3699 0.669922 14.005C0.669922 6.64009 6.64 0.670013 14.0049 0.670013C21.3698 0.670013 27.3399 6.64009 27.3399 14.005C27.3399 21.3699 21.3698 27.34 14.0049 27.34ZM12.6714 12.6715V20.6725H15.3384V12.6715H12.6714ZM12.6714 7.33751V10.0045H15.3384V7.33751H12.6714Z" fill="#E9C795"/>
+          </svg>
+        </div>
+        <p class="main__aside-info">Swordencyclopedia is a comprehensive resource for information on swords, including their history, development, and modern use. Our wiki pages provide general information about their history while our blog features in-depth articles on specific swords.</p>
+        <div class="feedback">
+          <div class="feedback__title">Noticed any inaccuracies in our content?</div>
+          <div class="feedback__btn">SUBMIT FEEDBACK</div>
+        </div>
+        <a href="#" class="main__aside-link" target="_blank">
+          <span class="main__aside-link-title">More about swords on</span>
+          <span class="main__aside-link-text">SwordEncyclopedia.com</span>
+          <svg class="main__aside-link-icon" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.75 6.25V0.25H7.75001V1.75H11.1888L5.34476 7.59475L6.40526 8.65525L12.25 2.80975V6.25H13.75ZM5.5 4V2.5H1C0.585786 2.5 0.25 2.83579 0.25 3.25V13C0.25 13.4142 0.585786 13.75 1 13.75H10.75C11.1642 13.75 11.5 13.4142 11.5 13V8.5H10V12.25H1.75V4H5.5Z" />
+          </svg>
+        </a>
+        <div class="sign-up">
+          <div class="sign-up__title">Exclusive News & Sword Expert Tips</div>
+          <div class="sign-up__text">Sign up for exclusive insights!</div>
+          <form action="#" class="sign-up__form">
+            <div class="sign-up__form-row">
+              <div class="sign-up__form-row-label">Your Name:</div>
+              <input type="text" class="sign-up__form-input" placeholder="Johnny">
+            </div>
+            <div class="sign-up__form-row">
+              <div class="sign-up__form-row-label">Your Email:</div>
+              <input type="text" class="sign-up__form-input" placeholder="example@company.com">
+            </div>
+            <button class="sign-up__form-btn">
+              SIGN UP
+              <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.172 7.00005L6.808 1.63605L8.222 0.222046L16 8.00005L8.222 15.778L6.808 14.364L12.172 9.00005H0V7.00005H12.172Z" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="main__content">
+        <ul class="breadcrumb">
+          <li><a href="#">Fantasy Swords</a></li>
+          <li><span>Game Swords</span></li>
+        </ul>
+        <div class="atricle">
+          <h1 class="atricle__title">Aikuchi: A Unique and Important Part of Japanese Sword History</h1>
+          <div class="atricle__share">
+            <ul class="share">
+              <li>
+                <button data-sharer="facebook" data-url="https://Lorem">
+                  <img src="data/facebook.svg" width="36" height="36" alt="facebook">
+                  Share
+                </button>
+              </li>
+              <li>
+                <button class="button" data-sharer="twitter" data-title="Lorem" data-hashtags="Lorem, Lorem" data-url="https://Lorem">
+                  <img src="data/twitter.svg" width="36" height="36" alt="twitter">
+                  Tweet
+                </button>
+              </li>
+              <li>
+                <!-- data-to (Phone number 9999999999 format) -->
+                <!-- data-web (send to whatsapp web instead of desktop/mobile version) -->
+                <!-- data-description (optional) -->
+                <button class="button" data-sharer="whatsapp" data-title="Checkout Sharer.js!" data-url="https://Lorem">
+                  <img src="data/whatsapp.svg" width="36" height="36" alt="whatsapp">
+                  Share
+                </button>
+              </li>
+              <li>
+                <button class="button" data-sharer="email" data-title="Awesome Url" data-url="https://ellisonleao.github.io/sharer.js/" data-subject="Hey! Check out that URL" data-to="some@email.com">
+                  <img src="data/mail.svg" width="36" height="36" alt="mail">
+                  Email
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="table-content">
+            <div class="table-content__head">
+              <svg class="table-content__head-icon" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 1H18V3H5V1ZM0 0.5H3V3.5H0V0.5ZM0 7.5H3V10.5H0V7.5ZM0 14.5H3V17.5H0V14.5ZM5 8H18V10H5V8ZM5 15H18V17H5V15Z" />
+              </svg>
+              <div class="table-content__head-title">Table of Contents</div>
+              <svg class="table-content__head-arrow" width="14" height="8" viewBox="0 0 14 8" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.00023 2.828L2.05023 7.778L0.63623 6.364L7.00023 0L13.3642 6.364L11.9502 7.778L7.00023 2.828Z" />
+              </svg>
+            </div>
+            <div class="table-content__body">
+              <ul class="table-content__list">
+                <li><a href="#anchor-1">I. Introduction</a></li>
+                <li class="table-content__list-children"><a href="#anchor-2">1. Definition of Aikuchi</a></li>
+                <li class="table-content__list-children"><a href="#anchor-3">2. History of Aikuchi</a></li>
+                <li><a href="#anchor-4">II. Anatomy of Aikuchi</a></li>
+                <li class="table-content__list-children"><a href="#anchor-5">1. Blade</a></li>
+                <li class="table-content__list-children"><a href="#anchor-6">2. Handle</a></li>
+                <li class="table-content__list-children"><a href="#anchor-7">3. Sheath</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="atricle__content text-content">
+            <h3 id="anchor-1">What is an Aikuchi Sword? H3 Bold</h3>
+            <p>The aikuchi is a type of Japanese sword that was commonly used by samurai warriors during the feudal period of Japan. This sword is characterized by its unique hilt, which has no guard and a simple design. The blade of the aikuchi is also typically shorter than other types of Japanese swords, making it ideal for close-quarter combat. The name "aikuchi" is derived from the Japanese word "aikuchi-gatana," which means "sword with a wrapped handle."</p>
+            <br>
+            <h4 id="anchor-2">The History of the Aikuchi Sword H4 Regular</h4>
+            <p>The history of Asia and the Orient is rich and diverse. It includes the rise and fall of empires, the development of unique philosophical traditions, and the exchange of ideas and goods along the Silk Road. From the construction of the Great Wall of China to the creation of the Taj Mahal in India, many of the world's most iconic landmarks are found in this region. The impact of Western imperialism and colonialism, as well as internal conflicts and revolutions, have shaped the political and social landscape of Asia and the Orient in the modern era. Despite these changes, the region's rich cultural heritage continues to influence the world today.</p>
+            <h4 id="anchor-3">Bullet:</h4>
+            <ul>
+              <li>Aikuchi is a traditional Japanese dagger with a unique design characterized by its lack of guard.</li>
+              <li>The blade of an aikuchi is typically short and single-edged, making it a versatile weapon for close combat.</li>
+              <li>Aikuchi were commonly worn by samurai and other high-ranking officials in Japan during the Edo period.</li>
+              <li>Aikuchi were also used in ritual ceremonies and were considered a symbol of status and power.</li>
+              <li>Today, aikuchi are still used in traditional Japanese martial arts and are valued as a historical artifact and work of art.</li>
+            </ul>
+            <br>
+            <h4 id="anchor-4">Numbering:</h4>
+            <ol>
+              <li>Aikuchi is a traditional Japanese dagger with a unique design characterized by its lack of guard.</li>
+              <li>The blade of an aikuchi is typically short and single-edged, making it a versatile weapon for close combat.</li>
+              <li>Aikuchi were commonly worn by samurai and other high-ranking officials in Japan during the Edo period.</li>
+              <li>Aikuchi were also used in ritual ceremonies and were considered a symbol of status and power.</li>
+              <li>Today, aikuchi are still used in traditional Japanese martial arts and are valued as a historical artifact and work of art.</li>
+            </ol>
+            <hr>
+          </div>
+          <div class="mentioned" id="anchor-5">
+            <h5 class="mentioned__title">Swords Mentioned</h5>
+            <ul class="mentioned__list">
+              <li>
+                <a href="#">
+                  <img src="data/Aikuchi.jpg" width="304" height="159" alt="Aikuchi">
+                  <span class="mentioned__item">Aikuchi</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="data/Arisaka.jpg" width="304" height="159" alt="Arisaka">
+                  <span class="mentioned__item">Arisaka</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="data/Ashigaru.jpg" width="304" height="159" alt="Ashigaru">
+                  <span class="mentioned__item">Ashigaru</span>
+                </a>
+              </li>
+              <li><a href="#"><span class="mentioned__item">Awl Pike</span></a></li>
+              <li><a href="#"><span class="mentioned__item">Aya Nori</span></a></li>
+              <li><a href="#"><span class="mentioned__item">Azuchi-Momoyama</span></a></li>
+              <li class="mentioned__small"><a href="#"><span class="mentioned__item">Ame-no-Ohabari</span></a></li>
+              <li class="mentioned__small"><a href="#"><span class="mentioned__item">Ancestral Sword</span></a></li>
+              <li class="mentioned__small"><a href="#"><span class="mentioned__item">Ashi-Sabaki</span></a></li>
+              <li class="mentioned__small"><a href="#"><span class="mentioned__item">Amigasa</span></a></li>
+            </ul>
+          </div>
+          <div class="sources" id="anchor-6">
+            <div class="sources__head">
+              <div class="sources__title">Sources Cited</div>
+              <div class="sources__head-btn">
+                <span>Hide</span>
+                <span>Show</span>
+                <div class="sources__head-btn-icon"></div>
+              </div>
+            </div>
+            <ol class="sources__list">
+              <li class="sources__item">Li, X. (Ed.). (2022). A General History of Chinese Art: From the Prehistoric Era to the Zhou Dynasty. De Gruyter.</li>
+              <li class="sources__item">Lorge, P. A. (2017). Chinese Martial Arts: From Antiquity to the Twenty-First Century. Cambridge University Press.</li>
+              <li class="sources__item">Schoenke, S. (2016, May 3). Spears of the Qing dynasty. Mandarin Mansion. Retrieved March 7, 2023, from <a href="#" target="_blank">https://www.mandarinmansion.com/article/spears-ping-dynasty</a> </li>
+              <li class="sources__item">Stone, G. C. (1999). A Glossary of the Construction, Decoration, and Use of Arms and Armor in All Countries and in All Times: Together with Some Closely Related Subjects. Dover Publications. </li>
+              <li class="sources__item">Telling apart Chinese polearms: a quick visual guide. (2019, March 5). Great Ming Military. Retrieved March 7, 2023, from <a href="#" target="_blank">https://greatmingmilitary.blogspot.com/2019/03/telling-apart-chinese-polearms-quick.html</a> </li>
+              <li class="sources__item">Wagner, D. B. (2021). Iron and Steel in Ancient China. Brill.</li>
+              <li class="sources__item">Wills, C., & Wills, C. (2005). The Illustrated History of Weaponry: From Flint Axes to Automatic Weapons. Hylas Pub.</li>
+            </ol>
+          </div>
+          <div class="survey" id="anchor-7">
+            <div class="survey__title">Did you find this useful?</div>
+            <div class="survey__row">
+              <div class="survey__btn survey__btn--green">
+                <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M13.193 0.306872L6.793 6.70687C6.60545 6.89436 6.50006 7.14868 6.5 7.41387V18.9999C6.5 19.5522 6.94771 19.9999 7.5 19.9999H18.33C18.7353 20 19.1006 19.7556 19.255 19.3809L22.35 11.8659C22.4493 11.6241 22.5003 11.3652 22.5 11.1039V8.99987C22.5 7.8953 21.6046 6.99987 20.5 6.99987H14.1L15.253 2.46987C15.4026 1.88289 15.1844 1.26354 14.7 0.899872L13.847 0.259872C13.6477 0.110461 13.3689 0.130501 13.193 0.306872ZM4.5 7.99993H1.5C0.947715 7.99993 0.5 8.44765 0.5 8.99993V18.9999C0.5 19.5522 0.947715 19.9999 1.5 19.9999H4.5V7.99993Z" fill="white"/>
+                </svg>
+                YES
+              </div>
+              <div class="survey__btn survey__btn--red">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.307 19.693L15.707 13.293C15.8946 13.1055 16 12.8512 16 12.586V1C16 0.447715 15.5523 0 15 0H4.17C3.76484 0.000399766 3.39996 0.245232 3.246 0.62L0.150004 8.134C0.0506947 8.37576 -0.000265929 8.63464 1.04354e-06 8.896V11C1.04354e-06 12.1046 0.895434 13 2 13H8.4L7.247 17.53C7.09742 18.117 7.31557 18.7363 7.8 19.1L8.653 19.74C8.85228 19.8894 9.13114 19.8694 9.307 19.693ZM18 12H21C21.5523 12 22 11.5523 22 11V1C22 0.447715 21.5523 0 21 0H18V12Z" fill="white"/>
+                </svg>
+                NO
+              </div>
+            </div>
+            <div class="survey__text">92% people found this useful</div>
+            <div class="survey__scale"><div class="survey__scale-inner" style="width: 92%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+  <div class="footer__container">
+    <div class="footer__cell">
+      <div class="footer__logo">
+        <img src="data/logo-white.svg" width="237" height="64" alt="logo">
+        <a href="#" class="footer__logo-link"></a>
+      </div>
+    </div>
+    <div class="footer__copy">© Swordecyclopedia 2022 - All Rights Reserved</div>
+    <div class="footer__cell">
+      <ul class="footer__links">
+        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
