@@ -517,6 +517,7 @@ body {
   line-height: 44px;
   letter-spacing: -0.02em;
   color: #1b1f27;
+  margin-top: 30px;
 }
 @media only screen and (max-width: 1200px) {
   .category__title {
@@ -538,6 +539,14 @@ body {
     margin-bottom: 80px;
   }
 }
+.category__alphabet-holder {
+  margin-bottom: 14px;
+}
+@media only screen and (max-width: 1200px) {
+  .category__alphabet-holder {
+    margin-bottom: 40px;
+  }
+}
 .category__alphabet {
   position: relative;
   display: -webkit-box;
@@ -546,20 +555,6 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-left: -6px;
-  margin-bottom: 14px;
-}
-@media only screen and (max-width: 1200px) {
-  .category__alphabet {
-    max-width: 100vw;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    margin-left: -20px;
-    margin-right: -20px;
-    overflow-x: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 40px;
-  }
 }
 .category__alphabet-item {
   position: relative;
@@ -589,11 +584,20 @@ body {
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 767px) {
   .category__alphabet-item {
-    margin-left: 0;
-    margin-right: 6px;
-    margin-bottom: 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(14.2% - 6px);
+            flex: 0 0 calc(14.2% - 6px);
+    width: calc(14.2% - 6px);
+  }
+  .category__alphabet-item:nth-child(7) ~ .category__alphabet-item {
+    display: none;
+  }
+  .category__alphabet-holder.show-hide-items .category__alphabet-item:nth-child(7) ~ .category__alphabet-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 @media only screen and (min-width: 1025px) {
@@ -658,11 +662,14 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.category__item-mobile-btn {
+.category__alphabet-mobile-btn {
   display: none;
 }
 @media only screen and (max-width: 1200px) {
-  .category__item-mobile-btn {
+  .category__alphabet-mobile-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -675,27 +682,23 @@ body {
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
+    margin-top: 4px;
     color: #23272f;
   }
-  .category__item.hide-items .category__item-mobile-btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .category__item.show-hide-items .category__item-mobile-btn svg {
+  .category__alphabet-holder.show-hide-items .category__alphabet-mobile-btn svg {
     -webkit-transform: scaleY(-1);
             transform: scaleY(-1);
   }
-  .category__item.show-hide-items .category__item-mobile-btn span:nth-child(1) {
+  .category__alphabet-holder.show-hide-items .category__alphabet-mobile-btn span:nth-child(1) {
     display: none;
   }
-  .category__item.show-hide-items .category__item-mobile-btn span:nth-child(2) {
+  .category__alphabet-holder.show-hide-items .category__alphabet-mobile-btn span:nth-child(2) {
     display: block;
   }
-  .category__item-mobile-btn span:nth-child(2) {
+  .category__alphabet-mobile-btn span:nth-child(2) {
     display: none;
   }
-  .category__item-mobile-btn svg {
+  .category__alphabet-mobile-btn svg {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -730,12 +733,6 @@ body {
         -ms-flex: 0 0 calc(50% - 10px);
             flex: 0 0 calc(50% - 10px);
     max-width: calc(50% - 10px);
-  }
-  .category__item-link:nth-child(12) ~ .category__item-link {
-    display: none;
-  }
-  .category__item.show-hide-items .category__item-link:nth-child(12) ~ .category__item-link {
-    display: block;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -1874,8 +1871,11 @@ body {
     color: #23272f;
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
-    margin-bottom: 30px;
     margin-top: 10px;
+  }
+  .mobile-link--home {
+    margin-top: 0;
+    border-bottom: 1px solid #23272f;
   }
 }
 .mobile-link svg {
@@ -2504,11 +2504,36 @@ body {
   background: #009e6a;
 }
 
+.table-content-holder {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 1200px) {
+  .table-content-holder {
+    display: block;
+  }
+}
+.table-content-holder__descriptions {
+  position: relative;
+}
+
 .table-content {
   position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 320px;
+          flex: 0 0 320px;
   max-width: 320px;
   width: 100%;
-  margin-bottom: 40px;
+  margin-right: 40px;
+}
+@media only screen and (max-width: 1200px) {
+  .table-content {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
 }
 .table-content__head {
   position: relative;

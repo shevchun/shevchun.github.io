@@ -11590,14 +11590,8 @@ __webpack_require__.r(__webpack_exports__);
   jquery__WEBPACK_IMPORTED_MODULE_0__('.table-content__head').on('click', function sourcesToggle() {
     jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.table-content').toggleClass('hide');
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.category__item').each(function (i, el) {
-    if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() < 1200) {
-      var countItems = jquery__WEBPACK_IMPORTED_MODULE_0__(el).find(jquery__WEBPACK_IMPORTED_MODULE_0__('.category__item-link')).length;
-      countItems > 12 && jquery__WEBPACK_IMPORTED_MODULE_0__(el).addClass('hide-items');
-    }
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.category__item-mobile-btn').on('click', function toggleItems() {
-    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents(jquery__WEBPACK_IMPORTED_MODULE_0__('.category__item')).toggleClass('show-hide-items');
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.category__alphabet-mobile-btn').on('click', function toggleItems() {
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents(jquery__WEBPACK_IMPORTED_MODULE_0__('.category__alphabet-holder')).toggleClass('show-hide-items');
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.header__search-mobile-btn').on('click', function lang(event) {
     event.stopPropagation();
