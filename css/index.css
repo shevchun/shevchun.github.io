@@ -508,21 +508,6 @@ body {
     padding: 40px 16px 16px;
   }
 }
-@media only screen and (min-width: 1025px) {
-  .accounts__item:hover .accounts__item-hover {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    visibility: visible;
-  }
-  .accounts__item:hover .accounts__item-img {
-    opacity: 1;
-  }
-  .accounts__item:hover .accounts__item-title,
-  .accounts__item:hover .accounts__item-text {
-    font-weight: 600;
-  }
-}
 .accounts__item.active .accounts__item-hover {
   opacity: 1;
   -webkit-transform: scale(1);
@@ -1781,8 +1766,14 @@ body {
   line-height: 155%;
   color: #011955;
 }
-.bonuses__item-text span {
+.bonuses__item-text a {
   color: #0d4ee3;
+  text-decoration: none;
+}
+@media only screen and (min-width: 1025px) {
+  .bonuses__item-text a:hover {
+    text-decoration: underline;
+  }
 }
 .bonuses__item-btn-box {
   position: relative;
@@ -2819,7 +2810,7 @@ body {
 }
 @media only screen and (max-width: 767px) {
   .fan__list {
-    margin-left: 0;
+    margin-left: -16px;
   }
 }
 .fan__item {
@@ -2831,32 +2822,15 @@ body {
   width: 100%;
   margin-left: 20px;
   margin-top: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 @media only screen and (max-width: 1200px) {
   .fan__item {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(50% - 20px);
-            flex: 0 0 calc(50% - 20px);
-    max-width: calc(50% - 20px);
-  }
-}
-@media only screen and (max-width: 767px) {
-  .fan__item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
-    max-width: 100%;
-    margin-left: 0;
+        -ms-flex: 0 0 calc(50% - 16px);
+            flex: 0 0 calc(50% - 16px);
+    max-width: calc(50% - 16px);
+    margin-left: 16px;
+    margin-top: 16px;
   }
 }
 .fan__item-info {
@@ -2896,6 +2870,8 @@ body {
           box-shadow: 5px 10px 40px rgba(0, 12, 40, 0.1);
   border-radius: 5px;
   overflow: hidden;
+  height: 100%;
+  background: #000c28;
 }
 @media only screen and (min-width: 1025px) {
   .fan__item-link:hover .fan__item-title {
@@ -2904,21 +2880,13 @@ body {
 }
 .fan__item-img {
   position: relative;
-}
-@media only screen and (max-width: 767px) {
-  .fan__item-img {
-    height: 180px;
-  }
+  height: 180px;
 }
 .fan__item-img img {
   width: 100%;
-}
-@media only screen and (max-width: 767px) {
-  .fan__item-img img {
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .fan__item-title {
   position: relative;
@@ -2931,6 +2899,11 @@ body {
   background: #000c28;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+}
+@media only screen and (max-width: 1200px) {
+  .fan__item-title {
+    font-size: 16px;
+  }
 }
 
 .fast-payout {
@@ -4260,6 +4233,18 @@ body {
 }
 .holder__aside-games-item-btn svg {
   fill: #000c28;
+}
+.holder__aside-ban-img {
+  display: block;
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 1200px) {
+  .holder__aside-ban-img {
+    display: none;
+  }
+}
+.holder__aside-ban-img img {
+  width: 100%;
 }
 .holder__aside-sticky {
   display: block;
@@ -8585,10 +8570,12 @@ body {
 }
 .text-content a {
   color: #0d4ee3;
+  font-weight: 700;
+  text-decoration: none;
 }
 @media only screen and (min-width: 1025px) {
   .text-content a:hover {
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 .text-content table {

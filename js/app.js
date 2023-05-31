@@ -14180,11 +14180,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         jquery__WEBPACK_IMPORTED_MODULE_0__(this).find('.bonuses__item-label').insertAfter(jquery__WEBPACK_IMPORTED_MODULE_0__(this).find('.bonuses__item-title'));
       });
     }
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.accounts__item').eq(0).addClass('active');
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.accounts__item').on('click', function accFunc() {
-      jquery__WEBPACK_IMPORTED_MODULE_0__('.accounts__item').removeClass('active');
-      jquery__WEBPACK_IMPORTED_MODULE_0__(this).addClass('active');
-    });
+
+    // $('.accounts__item').eq(0).addClass('active')
+    // $('.accounts__item').on('click', function accFunc() {
+    //   $('.accounts__item').removeClass('active')
+    //   $(this).addClass('active')
+    // })
+
     jquery__WEBPACK_IMPORTED_MODULE_0__('.header__mobile-menu').on('click', function () {
       jquery__WEBPACK_IMPORTED_MODULE_0__('.header').toggleClass('active-menu');
       jquery__WEBPACK_IMPORTED_MODULE_0__('.menu-item-has-children').removeClass('active');
