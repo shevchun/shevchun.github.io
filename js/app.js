@@ -14111,6 +14111,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.mobile-table__title').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.mobile-table').toggleClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).siblings('.blog__contents-list--mobile').slideToggle();
+  });
+  var navigationLinks = document.querySelectorAll('.blog__contents-list a');
+  var sidebarMenu = document.querySelector('.blog__contents');
+  function isElementVisible(element) {
+    var rect = element.getBoundingClientRect();
+    return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+  }
+  window.addEventListener('scroll', function () {
+    navigationLinks.forEach(function (link) {
+      var targetSectionId = link.getAttribute('href').substring(1); // Извлекаем id раздела из href, удаляем символ '#'
+      var targetSection = document.getElementById(targetSectionId);
+      if (isElementVisible(targetSection)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+    var sidebarMenuRect = sidebarMenu.getBoundingClientRect();
+    if (sidebarMenuRect.top < 0 || sidebarMenuRect.bottom > window.innerHeight) {
+      sidebarMenu.classList.add('hidden');
+    } else {
+      sidebarMenu.classList.remove('hidden');
+    }
+  });
+  navigationLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      var targetSectionId = link.getAttribute('href').substring(1);
+      var targetSection = document.getElementById(targetSectionId);
+      var targetOffsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
+      var headerHeight = 110;
+      var targetScrollPosition = targetOffsetTop - headerHeight;
+      window.scrollTo({
+        top: targetScrollPosition,
+        behavior: 'smooth'
+      });
+    });
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.faq__head').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.faq__item').toggleClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).siblings('.faq__item-body').slideToggle();
+  });
+  if (jquery__WEBPACK_IMPORTED_MODULE_0__('.js-sticky').length) {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.wrapper').addClass('wrapper--ovv');
+  }
   jquery__WEBPACK_IMPORTED_MODULE_0__('.header__menu-btn').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.header__mobile').addClass('active');
     setTimeout(function () {
@@ -14225,6 +14273,127 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./app/scripts/components/tabs.js":
+/*!****************************************!*\
+  !*** ./app/scripts/components/tabs.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var Tabs = /*#__PURE__*/function () {
+  function Tabs(options) {
+    _classCallCheck(this, Tabs);
+    var defaultOption = {
+      selector: ".tabs-list",
+      activeClass: "active",
+      checkHash: true,
+      tabLinks: "a",
+      attribute: "href",
+      event: "click",
+      onChange: null
+    };
+    this.options = _objectSpread(_objectSpread({}, defaultOption), options);
+    return this.init(this.options);
+  }
+  _createClass(Tabs, [{
+    key: "init",
+    value: function init(options) {
+      var _this = this;
+      var tabs = document.querySelectorAll(options.selector);
+      tabs.forEach(function (element) {
+        _this.setInitialState(element);
+      });
+    }
+  }, {
+    key: "update",
+    value: function update(selector) {
+      var _this2 = this;
+      var tabs = document.querySelectorAll(selector || this.options.selector);
+      tabs.forEach(function (element) {
+        _this2.setInitialState(element);
+      });
+    }
+  }, {
+    key: "setInitialState",
+    value: function setInitialState(element) {
+      var _this3 = this;
+      var links = element.querySelectorAll(this.options.tabLinks);
+      this.addEvents(links);
+      var historyLink = null;
+      if (this.options.checkHash && window.location.hash) {
+        historyLink = element.querySelector("[".concat(this.options.attribute, "=\"").concat(window.location.hash, "\"]"));
+      }
+      if (historyLink) {
+        this.setActiveTab(historyLink);
+      } else {
+        links.forEach(function (link, index) {
+          if (index === 0) {
+            _this3.setActiveTab(link);
+          }
+        });
+      }
+    }
+  }, {
+    key: "addEvents",
+    value: function addEvents(links) {
+      var _this4 = this;
+      links.forEach(function (link) {
+        link.addEventListener(_this4.options.event, function (event) {
+          event.preventDefault();
+          if (!event.currentTarget.classList.contains(_this4.options.activeClass)) {
+            _this4.setActiveTab(link);
+          }
+        });
+      });
+    }
+  }, {
+    key: "setActiveTab",
+    value: function setActiveTab(activeTab) {
+      activeTab.classList.add(this.options.activeClass);
+      var activeTabID = activeTab.getAttribute(this.options.attribute);
+      if (activeTabID === "#") return;
+      var activeTabBlock = document.querySelector(activeTabID);
+      if (activeTabBlock) {
+        activeTabBlock.classList.add("active");
+      }
+      this.removeTabs(activeTab);
+      if (typeof this.options.onChange === "function") {
+        this.options.onChange();
+      }
+    }
+  }, {
+    key: "removeTabs",
+    value: function removeTabs(activeTab) {
+      var _this5 = this;
+      var tabNav = activeTab.closest(this.options.selector);
+      tabNav.querySelectorAll(this.options.tabLinks).forEach(function (element) {
+        if (element !== activeTab) {
+          element.classList.remove("active");
+          var tabID = element.getAttribute(_this5.options.attribute);
+          var tabBlock = document.querySelector(tabID);
+          if (tabBlock) {
+            tabBlock.classList.remove("active");
+          }
+        }
+      });
+    }
+  }]);
+  return Tabs;
+}();
+/* harmony default export */ __webpack_exports__["default"] = (Tabs);
+
+/***/ }),
+
 /***/ "./app/scripts/files.js":
 /*!******************************!*\
   !*** ./app/scripts/files.js ***!
@@ -14250,6 +14419,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svg4everybody */ "./node_modules/svg4everybody/dist/svg4everybody.js");
 /* harmony import */ var _components_sliders_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/sliders.js */ "./app/scripts/components/sliders.js");
 /* harmony import */ var _components_custom_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/custom.js */ "./app/scripts/components/custom.js");
+/* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/tabs.js */ "./app/scripts/components/tabs.js");
+
 
 
 
@@ -14258,7 +14429,7 @@ __webpack_require__.r(__webpack_exports__);
 globalThis.$ = jquery__WEBPACK_IMPORTED_MODULE_1__;
 globalThis.jQuery = jquery__WEBPACK_IMPORTED_MODULE_1__;
 document.addEventListener('DOMContentLoaded', function () {
-  // globalThis.Tabs = new Tabs()
+  globalThis.Tabs = new _components_tabs_js__WEBPACK_IMPORTED_MODULE_5__["default"]();
   svg4everybody__WEBPACK_IMPORTED_MODULE_2__();
   (0,_components_sliders_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_components_custom_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
