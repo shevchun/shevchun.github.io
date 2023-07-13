@@ -925,8 +925,12 @@ body {
           flex: 1 1 auto;
   padding-left: 65px;
   padding-right: 65px;
-  padding-left: 20px;
-  padding-right: 20px;
+}
+@media only screen and (max-width: 1200px) {
+  .blog__center {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .blog__content {
   position: relative;
