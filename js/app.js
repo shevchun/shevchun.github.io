@@ -14123,7 +14123,7 @@ __webpack_require__.r(__webpack_exports__);
   }
   window.addEventListener('scroll', function () {
     navigationLinks.forEach(function (link) {
-      var targetSectionId = link.getAttribute('href').substring(1); // Извлекаем id раздела из href, удаляем символ '#'
+      var targetSectionId = link.getAttribute('href').substring(1);
       var targetSection = document.getElementById(targetSectionId);
       if (isElementVisible(targetSection)) {
         link.classList.add('active');
@@ -14177,69 +14177,18 @@ __webpack_require__.r(__webpack_exports__);
   jquery__WEBPACK_IMPORTED_MODULE_0__('.header__search-overlay').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.header').removeClass('search');
   });
-
-  //   $('.lang__current').on('click', function lang(event) {
-  //     event.stopPropagation();
-  //     $(this).parents('.lang').toggleClass('active')
-  //   })
-
-  //   $(document).on("click", (event) => {
-  //     event.stopPropagation();
-  //     if ($(event.target).closest(".lang__list").length) return;
-  //     $('.lang').removeClass('active')
-  //   });
-
-  //   function isFloat(value) {
-  //     return typeof value === 'number' &&
-  //       !Number.isNaN(value) &&
-  //       !Number.isInteger(value);
-  //   }
-
-  //   $('[data-rate]').each((index, element) => {
-  //     let val = $(element).attr('data-rate')
-  //     if (!isFloat(val)) {
-  //       val = parseFloat(val).toFixed(1)
-  //     }
-  //     const full = val.split('.')[0] || null
-  //     const fraction = val.split('.')[1] || null
-  //     $(element).find($('.rate__item-holder-inner')).each((i, item) => {
-  //       if (i <= +full) {
-  //         $(item).addClass('active')
-  //       }
-  //       if (i === +full) {
-  //         $(item).addClass('active').css('width', `${fraction}0%`)
-  //       }
-  //     })
-  //   })
-
-  //   $(window).on('scroll', function scrollPage() {
-  //     const heightWindow = 50
-  //     if ($(this).scrollTop() >= heightWindow) {
-  //       $('.header').addClass('header--scroll')
-  //     } else {
-  //       $('.header').removeClass('header--scroll')
-  //     }
-  //   })
-
-  //   $('.table-content__list a').on('click', function clickDownScroll() {
-  //     const marginTop = 110
-  //     const scrollEl = $(this).attr('href')
-  //     if ($(scrollEl).length !== 0) {
-  //       $('html, body').animate(
-  //         {
-  //           scrollTop: $(scrollEl).offset().top - marginTop,
-  //         },
-  //         500
-  //       )
-  //     }
-  //     return false
-  //   })
-
-  //   $('.js-scroll-top').on('click', () => {
-  //     $('html, body').animate({
-  //       scrollTop: 0
-  //     }, 500);
-  //   });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.blog__head-cell-author-link').on('click', function lang(event) {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() < 1200) {
+      event.stopPropagation();
+      jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.blog__head-cell-author').toggleClass('active');
+      return false;
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__(document).on("click", function (event) {
+    event.stopPropagation();
+    if (jquery__WEBPACK_IMPORTED_MODULE_0__(event.target).closest(".blog__dropdown").length) return;
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.blog__head-cell-author').removeClass('active');
+  });
 });
 
 /***/ }),
@@ -14402,7 +14351,7 @@ var Tabs = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (["dev", "article.html", "author.html", "editorial-team.html", "index.html"]);
+/* harmony default export */ __webpack_exports__["default"] = (["dev", "article.html", "author.html", "editorial-team.html", "index.html", "search.html"]);
 
 /***/ }),
 
