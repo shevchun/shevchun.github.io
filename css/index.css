@@ -4001,6 +4001,12 @@ body {
 .portfolio-page__item-slider-item {
   vertical-align: top;
 }
+@media only screen and (min-width: 1025px) {
+  .portfolio-page__item-slider-item:hover .portfolio-page__item-nav-item-link {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 .portfolio-page__item-slider-item img {
   width: 100%;
 }
@@ -4071,6 +4077,12 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   text-decoration: none;
+}
+.portfolio-page__item-slider-item .portfolio-page__item-nav-item-link {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .portfolio-page__item-nav-item-link-icon {
   margin-bottom: 2px;
