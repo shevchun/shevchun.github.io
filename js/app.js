@@ -36,17 +36,14 @@ module.exports = (function() {
 /***/ (function(module, exports) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery JavaScript Library v3.6.1
+ * jQuery JavaScript Library v3.7.1
  * https://jquery.com/
- *
- * Includes Sizzle.js
- * https://sizzlejs.com/
  *
  * Copyright OpenJS Foundation and other contributors
  * Released under the MIT license
  * https://jquery.org/license
  *
- * Date: 2022-08-26T17:52Z
+ * Date: 2023-08-28T13:37Z
  */
 ( function( global, factory ) {
 
@@ -187,8 +184,9 @@ function toType( obj ) {
 
 
 
-var
-	version = "3.6.1",
+var version = "3.7.1",
+
+	rhtmlSuffix = /HTML$/i,
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -434,6 +432,38 @@ jQuery.extend( {
 		return obj;
 	},
 
+
+	// Retrieve the text value of an array of DOM nodes
+	text: function( elem ) {
+		var node,
+			ret = "",
+			i = 0,
+			nodeType = elem.nodeType;
+
+		if ( !nodeType ) {
+
+			// If no nodeType, this is expected to be an array
+			while ( ( node = elem[ i++ ] ) ) {
+
+				// Do not traverse comment nodes
+				ret += jQuery.text( node );
+			}
+		}
+		if ( nodeType === 1 || nodeType === 11 ) {
+			return elem.textContent;
+		}
+		if ( nodeType === 9 ) {
+			return elem.documentElement.textContent;
+		}
+		if ( nodeType === 3 || nodeType === 4 ) {
+			return elem.nodeValue;
+		}
+
+		// Do not include comment or processing instruction nodes
+
+		return ret;
+	},
+
 	// results is for internal usage only
 	makeArray: function( arr, results ) {
 		var ret = results || [];
@@ -454,6 +484,15 @@ jQuery.extend( {
 
 	inArray: function( elem, arr, i ) {
 		return arr == null ? -1 : indexOf.call( arr, elem, i );
+	},
+
+	isXMLDoc: function( elem ) {
+		var namespace = elem && elem.namespaceURI,
+			docElem = elem && ( elem.ownerDocument || elem ).documentElement;
+
+		// Assume HTML when documentElement doesn't yet exist, such as inside
+		// document fragments.
+		return !rhtmlSuffix.test( namespace || docElem && docElem.nodeName || "HTML" );
 	},
 
 	// Support: Android <=4.0 only, PhantomJS 1 only
@@ -557,43 +596,98 @@ function isArrayLike( obj ) {
 	return type === "array" || length === 0 ||
 		typeof length === "number" && length > 0 && ( length - 1 ) in obj;
 }
-var Sizzle =
-/*!
- * Sizzle CSS Selector Engine v2.3.6
- * https://sizzlejs.com/
- *
- * Copyright JS Foundation and other contributors
- * Released under the MIT license
- * https://js.foundation/
- *
- * Date: 2021-02-16
- */
-( function( window ) {
+
+
+function nodeName( elem, name ) {
+
+	return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
+
+}
+var pop = arr.pop;
+
+
+var sort = arr.sort;
+
+
+var splice = arr.splice;
+
+
+var whitespace = "[\\x20\\t\\r\\n\\f]";
+
+
+var rtrimCSS = new RegExp(
+	"^" + whitespace + "+|((?:^|[^\\\\])(?:\\\\.)*)" + whitespace + "+$",
+	"g"
+);
+
+
+
+
+// Note: an element does not contain itself
+jQuery.contains = function( a, b ) {
+	var bup = b && b.parentNode;
+
+	return a === bup || !!( bup && bup.nodeType === 1 && (
+
+		// Support: IE 9 - 11+
+		// IE doesn't have `contains` on SVG.
+		a.contains ?
+			a.contains( bup ) :
+			a.compareDocumentPosition && a.compareDocumentPosition( bup ) & 16
+	) );
+};
+
+
+
+
+// CSS string/identifier serialization
+// https://drafts.csswg.org/cssom/#common-serializing-idioms
+var rcssescape = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\x80-\uFFFF\w-]/g;
+
+function fcssescape( ch, asCodePoint ) {
+	if ( asCodePoint ) {
+
+		// U+0000 NULL becomes U+FFFD REPLACEMENT CHARACTER
+		if ( ch === "\0" ) {
+			return "\uFFFD";
+		}
+
+		// Control characters and (dependent upon position) numbers get escaped as code points
+		return ch.slice( 0, -1 ) + "\\" + ch.charCodeAt( ch.length - 1 ).toString( 16 ) + " ";
+	}
+
+	// Other potentially-special ASCII characters get backslash-escaped
+	return "\\" + ch;
+}
+
+jQuery.escapeSelector = function( sel ) {
+	return ( sel + "" ).replace( rcssescape, fcssescape );
+};
+
+
+
+
+var preferredDoc = document,
+	pushNative = push;
+
+( function() {
+
 var i,
-	support,
 	Expr,
-	getText,
-	isXML,
-	tokenize,
-	compile,
-	select,
 	outermostContext,
 	sortInput,
 	hasDuplicate,
+	push = pushNative,
 
 	// Local document vars
-	setDocument,
 	document,
-	docElem,
+	documentElement,
 	documentIsHTML,
 	rbuggyQSA,
-	rbuggyMatches,
 	matches,
-	contains,
 
 	// Instance-specific data
-	expando = "sizzle" + 1 * new Date(),
-	preferredDoc = window.document,
+	expando = jQuery.expando,
 	dirruns = 0,
 	done = 0,
 	classCache = createCache(),
@@ -607,47 +701,22 @@ var i,
 		return 0;
 	},
 
-	// Instance methods
-	hasOwn = ( {} ).hasOwnProperty,
-	arr = [],
-	pop = arr.pop,
-	pushNative = arr.push,
-	push = arr.push,
-	slice = arr.slice,
-
-	// Use a stripped-down indexOf as it's faster than native
-	// https://jsperf.com/thor-indexof-vs-for/5
-	indexOf = function( list, elem ) {
-		var i = 0,
-			len = list.length;
-		for ( ; i < len; i++ ) {
-			if ( list[ i ] === elem ) {
-				return i;
-			}
-		}
-		return -1;
-	},
-
-	booleans = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|" +
-		"ismap|loop|multiple|open|readonly|required|scoped",
+	booleans = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|" +
+		"loop|multiple|open|readonly|required|scoped",
 
 	// Regular expressions
-
-	// http://www.w3.org/TR/css3-selectors/#whitespace
-	whitespace = "[\\x20\\t\\r\\n\\f]",
 
 	// https://www.w3.org/TR/css-syntax-3/#ident-token-diagram
 	identifier = "(?:\\\\[\\da-fA-F]{1,6}" + whitespace +
 		"?|\\\\[^\\r\\n\\f]|[\\w-]|[^\0-\\x7f])+",
 
-	// Attribute selectors: http://www.w3.org/TR/selectors/#attribute-selectors
+	// Attribute selectors: https://www.w3.org/TR/selectors/#attribute-selectors
 	attributes = "\\[" + whitespace + "*(" + identifier + ")(?:" + whitespace +
 
 		// Operator (capture 2)
 		"*([*^$|!~]?=)" + whitespace +
 
-		// "Attribute values must be CSS identifiers [capture 5]
-		// or strings [capture 3 or capture 4]"
+		// "Attribute values must be CSS identifiers [capture 5] or strings [capture 3 or capture 4]"
 		"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(" + identifier + "))|)" +
 		whitespace + "*\\]",
 
@@ -666,40 +735,36 @@ var i,
 
 	// Leading and non-escaped trailing whitespace, capturing some non-whitespace characters preceding the latter
 	rwhitespace = new RegExp( whitespace + "+", "g" ),
-	rtrim = new RegExp( "^" + whitespace + "+|((?:^|[^\\\\])(?:\\\\.)*)" +
-		whitespace + "+$", "g" ),
 
 	rcomma = new RegExp( "^" + whitespace + "*," + whitespace + "*" ),
-	rcombinators = new RegExp( "^" + whitespace + "*([>+~]|" + whitespace + ")" + whitespace +
-		"*" ),
+	rleadingCombinator = new RegExp( "^" + whitespace + "*([>+~]|" + whitespace + ")" +
+		whitespace + "*" ),
 	rdescend = new RegExp( whitespace + "|>" ),
 
 	rpseudo = new RegExp( pseudos ),
 	ridentifier = new RegExp( "^" + identifier + "$" ),
 
 	matchExpr = {
-		"ID": new RegExp( "^#(" + identifier + ")" ),
-		"CLASS": new RegExp( "^\\.(" + identifier + ")" ),
-		"TAG": new RegExp( "^(" + identifier + "|[*])" ),
-		"ATTR": new RegExp( "^" + attributes ),
-		"PSEUDO": new RegExp( "^" + pseudos ),
-		"CHILD": new RegExp( "^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\(" +
-			whitespace + "*(even|odd|(([+-]|)(\\d*)n|)" + whitespace + "*(?:([+-]|)" +
-			whitespace + "*(\\d+)|))" + whitespace + "*\\)|)", "i" ),
-		"bool": new RegExp( "^(?:" + booleans + ")$", "i" ),
+		ID: new RegExp( "^#(" + identifier + ")" ),
+		CLASS: new RegExp( "^\\.(" + identifier + ")" ),
+		TAG: new RegExp( "^(" + identifier + "|[*])" ),
+		ATTR: new RegExp( "^" + attributes ),
+		PSEUDO: new RegExp( "^" + pseudos ),
+		CHILD: new RegExp(
+			"^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\(" +
+				whitespace + "*(even|odd|(([+-]|)(\\d*)n|)" + whitespace + "*(?:([+-]|)" +
+				whitespace + "*(\\d+)|))" + whitespace + "*\\)|)", "i" ),
+		bool: new RegExp( "^(?:" + booleans + ")$", "i" ),
 
 		// For use in libraries implementing .is()
 		// We use this for POS matching in `select`
-		"needsContext": new RegExp( "^" + whitespace +
+		needsContext: new RegExp( "^" + whitespace +
 			"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" + whitespace +
 			"*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
 	},
 
-	rhtml = /HTML$/i,
 	rinputs = /^(?:input|select|textarea|button)$/i,
 	rheader = /^h\d$/i,
-
-	rnative = /^[^{]+\{\s*\[native \w/,
 
 	// Easily-parseable/retrievable ID or TAG or CLASS selectors
 	rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
@@ -707,59 +772,50 @@ var i,
 	rsibling = /[+~]/,
 
 	// CSS escapes
-	// http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
-	runescape = new RegExp( "\\\\[\\da-fA-F]{1,6}" + whitespace + "?|\\\\([^\\r\\n\\f])", "g" ),
+	// https://www.w3.org/TR/CSS21/syndata.html#escaped-characters
+	runescape = new RegExp( "\\\\[\\da-fA-F]{1,6}" + whitespace +
+		"?|\\\\([^\\r\\n\\f])", "g" ),
 	funescape = function( escape, nonHex ) {
 		var high = "0x" + escape.slice( 1 ) - 0x10000;
 
-		return nonHex ?
+		if ( nonHex ) {
 
 			// Strip the backslash prefix from a non-hex escape sequence
-			nonHex :
-
-			// Replace a hexadecimal escape sequence with the encoded Unicode code point
-			// Support: IE <=11+
-			// For values outside the Basic Multilingual Plane (BMP), manually construct a
-			// surrogate pair
-			high < 0 ?
-				String.fromCharCode( high + 0x10000 ) :
-				String.fromCharCode( high >> 10 | 0xD800, high & 0x3FF | 0xDC00 );
-	},
-
-	// CSS string/identifier serialization
-	// https://drafts.csswg.org/cssom/#common-serializing-idioms
-	rcssescape = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\0-\x1f\x7f-\uFFFF\w-]/g,
-	fcssescape = function( ch, asCodePoint ) {
-		if ( asCodePoint ) {
-
-			// U+0000 NULL becomes U+FFFD REPLACEMENT CHARACTER
-			if ( ch === "\0" ) {
-				return "\uFFFD";
-			}
-
-			// Control characters and (dependent upon position) numbers get escaped as code points
-			return ch.slice( 0, -1 ) + "\\" +
-				ch.charCodeAt( ch.length - 1 ).toString( 16 ) + " ";
+			return nonHex;
 		}
 
-		// Other potentially-special ASCII characters get backslash-escaped
-		return "\\" + ch;
+		// Replace a hexadecimal escape sequence with the encoded Unicode code point
+		// Support: IE <=11+
+		// For values outside the Basic Multilingual Plane (BMP), manually construct a
+		// surrogate pair
+		return high < 0 ?
+			String.fromCharCode( high + 0x10000 ) :
+			String.fromCharCode( high >> 10 | 0xD800, high & 0x3FF | 0xDC00 );
 	},
 
-	// Used for iframes
-	// See setDocument()
+	// Used for iframes; see `setDocument`.
+	// Support: IE 9 - 11+, Edge 12 - 18+
 	// Removing the function wrapper causes a "Permission Denied"
-	// error in IE
+	// error in IE/Edge.
 	unloadHandler = function() {
 		setDocument();
 	},
 
 	inDisabledFieldset = addCombinator(
 		function( elem ) {
-			return elem.disabled === true && elem.nodeName.toLowerCase() === "fieldset";
+			return elem.disabled === true && nodeName( elem, "fieldset" );
 		},
 		{ dir: "parentNode", next: "legend" }
 	);
+
+// Support: IE <=9 only
+// Accessing document.activeElement can throw unexpectedly
+// https://bugs.jquery.com/ticket/13393
+function safeActiveElement() {
+	try {
+		return document.activeElement;
+	} catch ( err ) { }
+}
 
 // Optimize for push.apply( _, NodeList )
 try {
@@ -768,32 +824,22 @@ try {
 		preferredDoc.childNodes
 	);
 
-	// Support: Android<4.0
+	// Support: Android <=4.0
 	// Detect silently failing push.apply
 	// eslint-disable-next-line no-unused-expressions
 	arr[ preferredDoc.childNodes.length ].nodeType;
 } catch ( e ) {
-	push = { apply: arr.length ?
-
-		// Leverage slice if possible
-		function( target, els ) {
+	push = {
+		apply: function( target, els ) {
 			pushNative.apply( target, slice.call( els ) );
-		} :
-
-		// Support: IE<9
-		// Otherwise append directly
-		function( target, els ) {
-			var j = target.length,
-				i = 0;
-
-			// Can't trust NodeList.length
-			while ( ( target[ j++ ] = els[ i++ ] ) ) {}
-			target.length = j - 1;
+		},
+		call: function( target ) {
+			pushNative.apply( target, slice.call( arguments, 1 ) );
 		}
 	};
 }
 
-function Sizzle( selector, context, results, seed ) {
+function find( selector, context, results, seed ) {
 	var m, i, elem, nid, match, groups, newSelector,
 		newContext = context && context.ownerDocument,
 
@@ -827,11 +873,10 @@ function Sizzle( selector, context, results, seed ) {
 					if ( nodeType === 9 ) {
 						if ( ( elem = context.getElementById( m ) ) ) {
 
-							// Support: IE, Opera, Webkit
-							// TODO: identify versions
+							// Support: IE 9 only
 							// getElementById can match elements by name instead of ID
 							if ( elem.id === m ) {
-								results.push( elem );
+								push.call( results, elem );
 								return results;
 							}
 						} else {
@@ -841,14 +886,13 @@ function Sizzle( selector, context, results, seed ) {
 					// Element context
 					} else {
 
-						// Support: IE, Opera, Webkit
-						// TODO: identify versions
+						// Support: IE 9 only
 						// getElementById can match elements by name instead of ID
 						if ( newContext && ( elem = newContext.getElementById( m ) ) &&
-							contains( context, elem ) &&
+							find.contains( context, elem ) &&
 							elem.id === m ) {
 
-							results.push( elem );
+							push.call( results, elem );
 							return results;
 						}
 					}
@@ -859,22 +903,15 @@ function Sizzle( selector, context, results, seed ) {
 					return results;
 
 				// Class selector
-				} else if ( ( m = match[ 3 ] ) && support.getElementsByClassName &&
-					context.getElementsByClassName ) {
-
+				} else if ( ( m = match[ 3 ] ) && context.getElementsByClassName ) {
 					push.apply( results, context.getElementsByClassName( m ) );
 					return results;
 				}
 			}
 
 			// Take advantage of querySelectorAll
-			if ( support.qsa &&
-				!nonnativeSelectorCache[ selector + " " ] &&
-				( !rbuggyQSA || !rbuggyQSA.test( selector ) ) &&
-
-				// Support: IE 8 only
-				// Exclude object elements
-				( nodeType !== 1 || context.nodeName.toLowerCase() !== "object" ) ) {
+			if ( !nonnativeSelectorCache[ selector + " " ] &&
+				( !rbuggyQSA || !rbuggyQSA.test( selector ) ) ) {
 
 				newSelector = selector;
 				newContext = context;
@@ -887,7 +924,7 @@ function Sizzle( selector, context, results, seed ) {
 				// as such selectors are not recognized by querySelectorAll.
 				// Thanks to Andrew Dupont for this technique.
 				if ( nodeType === 1 &&
-					( rdescend.test( selector ) || rcombinators.test( selector ) ) ) {
+					( rdescend.test( selector ) || rleadingCombinator.test( selector ) ) ) {
 
 					// Expand context for sibling selectors
 					newContext = rsibling.test( selector ) && testContext( context.parentNode ) ||
@@ -895,11 +932,15 @@ function Sizzle( selector, context, results, seed ) {
 
 					// We can use :scope instead of the ID hack if the browser
 					// supports it & if we're not changing the context.
-					if ( newContext !== context || !support.scope ) {
+					// Support: IE 11+, Edge 17 - 18+
+					// IE/Edge sometimes throw a "Permission denied" error when
+					// strict-comparing two documents; shallow comparisons work.
+					// eslint-disable-next-line eqeqeq
+					if ( newContext != context || !support.scope ) {
 
 						// Capture the context ID, setting it first if necessary
 						if ( ( nid = context.getAttribute( "id" ) ) ) {
-							nid = nid.replace( rcssescape, fcssescape );
+							nid = jQuery.escapeSelector( nid );
 						} else {
 							context.setAttribute( "id", ( nid = expando ) );
 						}
@@ -932,7 +973,7 @@ function Sizzle( selector, context, results, seed ) {
 	}
 
 	// All others
-	return select( selector.replace( rtrim, "$1" ), context, results, seed );
+	return select( selector.replace( rtrimCSS, "$1" ), context, results, seed );
 }
 
 /**
@@ -946,7 +987,8 @@ function createCache() {
 
 	function cache( key, value ) {
 
-		// Use (key + " ") to avoid collision with native prototype properties (see Issue #157)
+		// Use (key + " ") to avoid collision with native prototype properties
+		// (see https://github.com/jquery/sizzle/issues/157)
 		if ( keys.push( key + " " ) > Expr.cacheLength ) {
 
 			// Only keep the most recent entries
@@ -958,7 +1000,7 @@ function createCache() {
 }
 
 /**
- * Mark a function for special use by Sizzle
+ * Mark a function for special use by jQuery selector module
  * @param {Function} fn The function to mark
  */
 function markFunction( fn ) {
@@ -990,55 +1032,12 @@ function assert( fn ) {
 }
 
 /**
- * Adds the same handler for all of the specified attrs
- * @param {String} attrs Pipe-separated list of attributes
- * @param {Function} handler The method that will be applied
- */
-function addHandle( attrs, handler ) {
-	var arr = attrs.split( "|" ),
-		i = arr.length;
-
-	while ( i-- ) {
-		Expr.attrHandle[ arr[ i ] ] = handler;
-	}
-}
-
-/**
- * Checks document order of two siblings
- * @param {Element} a
- * @param {Element} b
- * @returns {Number} Returns less than 0 if a precedes b, greater than 0 if a follows b
- */
-function siblingCheck( a, b ) {
-	var cur = b && a,
-		diff = cur && a.nodeType === 1 && b.nodeType === 1 &&
-			a.sourceIndex - b.sourceIndex;
-
-	// Use IE sourceIndex if available on both nodes
-	if ( diff ) {
-		return diff;
-	}
-
-	// Check if b follows a
-	if ( cur ) {
-		while ( ( cur = cur.nextSibling ) ) {
-			if ( cur === b ) {
-				return -1;
-			}
-		}
-	}
-
-	return a ? 1 : -1;
-}
-
-/**
  * Returns a function to use in pseudos for input types
  * @param {String} type
  */
 function createInputPseudo( type ) {
 	return function( elem ) {
-		var name = elem.nodeName.toLowerCase();
-		return name === "input" && elem.type === type;
+		return nodeName( elem, "input" ) && elem.type === type;
 	};
 }
 
@@ -1048,8 +1047,8 @@ function createInputPseudo( type ) {
  */
 function createButtonPseudo( type ) {
 	return function( elem ) {
-		var name = elem.nodeName.toLowerCase();
-		return ( name === "input" || name === "button" ) && elem.type === type;
+		return ( nodeName( elem, "input" ) || nodeName( elem, "button" ) ) &&
+			elem.type === type;
 	};
 }
 
@@ -1085,14 +1084,13 @@ function createDisabledPseudo( disabled ) {
 					}
 				}
 
-				// Support: IE 6 - 11
+				// Support: IE 6 - 11+
 				// Use the isDisabled shortcut property to check for disabled fieldset ancestors
 				return elem.isDisabled === disabled ||
 
 					// Where there is no isDisabled, check manually
-					/* jshint -W018 */
 					elem.isDisabled !== !disabled &&
-					inDisabledFieldset( elem ) === disabled;
+						inDisabledFieldset( elem ) === disabled;
 			}
 
 			return elem.disabled === disabled;
@@ -1132,7 +1130,7 @@ function createPositionalPseudo( fn ) {
 }
 
 /**
- * Checks a node for validity as a Sizzle context
+ * Checks a node for validity as a jQuery selector context
  * @param {Element|Object=} context
  * @returns {Element|Object|Boolean} The input node if acceptable, otherwise a falsy value
  */
@@ -1140,31 +1138,13 @@ function testContext( context ) {
 	return context && typeof context.getElementsByTagName !== "undefined" && context;
 }
 
-// Expose support vars for convenience
-support = Sizzle.support = {};
-
-/**
- * Detects XML nodes
- * @param {Element|Object} elem An element or a document
- * @returns {Boolean} True iff elem is a non-HTML XML node
- */
-isXML = Sizzle.isXML = function( elem ) {
-	var namespace = elem && elem.namespaceURI,
-		docElem = elem && ( elem.ownerDocument || elem ).documentElement;
-
-	// Support: IE <=8
-	// Assume HTML when documentElement doesn't yet exist, such as inside loading iframes
-	// https://bugs.jquery.com/ticket/4833
-	return !rhtml.test( namespace || docElem && docElem.nodeName || "HTML" );
-};
-
 /**
  * Sets document-related variables once based on the current document
- * @param {Element|Object} [doc] An element or document object to use to set the document
+ * @param {Element|Object} [node] An element or document object to use to set the document
  * @returns {Object} Returns the current document
  */
-setDocument = Sizzle.setDocument = function( node ) {
-	var hasCompare, subWindow,
+function setDocument( node ) {
+	var subWindow,
 		doc = node ? node.ownerDocument || node : preferredDoc;
 
 	// Return early if doc is invalid or already selected
@@ -1178,87 +1158,90 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 	// Update global variables
 	document = doc;
-	docElem = document.documentElement;
-	documentIsHTML = !isXML( document );
+	documentElement = document.documentElement;
+	documentIsHTML = !jQuery.isXMLDoc( document );
+
+	// Support: iOS 7 only, IE 9 - 11+
+	// Older browsers didn't support unprefixed `matches`.
+	matches = documentElement.matches ||
+		documentElement.webkitMatchesSelector ||
+		documentElement.msMatchesSelector;
 
 	// Support: IE 9 - 11+, Edge 12 - 18+
-	// Accessing iframe documents after unload throws "permission denied" errors (jQuery #13936)
-	// Support: IE 11+, Edge 17 - 18+
-	// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-	// two documents; shallow comparisons work.
-	// eslint-disable-next-line eqeqeq
-	if ( preferredDoc != document &&
+	// Accessing iframe documents after unload throws "permission denied" errors
+	// (see trac-13936).
+	// Limit the fix to IE & Edge Legacy; despite Edge 15+ implementing `matches`,
+	// all IE 9+ and Edge Legacy versions implement `msMatchesSelector` as well.
+	if ( documentElement.msMatchesSelector &&
+
+		// Support: IE 11+, Edge 17 - 18+
+		// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
+		// two documents; shallow comparisons work.
+		// eslint-disable-next-line eqeqeq
+		preferredDoc != document &&
 		( subWindow = document.defaultView ) && subWindow.top !== subWindow ) {
 
-		// Support: IE 11, Edge
-		if ( subWindow.addEventListener ) {
-			subWindow.addEventListener( "unload", unloadHandler, false );
-
-		// Support: IE 9 - 10 only
-		} else if ( subWindow.attachEvent ) {
-			subWindow.attachEvent( "onunload", unloadHandler );
-		}
+		// Support: IE 9 - 11+, Edge 12 - 18+
+		subWindow.addEventListener( "unload", unloadHandler );
 	}
 
-	// Support: IE 8 - 11+, Edge 12 - 18+, Chrome <=16 - 25 only, Firefox <=3.6 - 31 only,
-	// Safari 4 - 5 only, Opera <=11.6 - 12.x only
-	// IE/Edge & older browsers don't support the :scope pseudo-class.
-	// Support: Safari 6.0 only
-	// Safari 6.0 supports :scope but it's an alias of :root there.
-	support.scope = assert( function( el ) {
-		docElem.appendChild( el ).appendChild( document.createElement( "div" ) );
-		return typeof el.querySelectorAll !== "undefined" &&
-			!el.querySelectorAll( ":scope fieldset div" ).length;
-	} );
-
-	/* Attributes
-	---------------------------------------------------------------------- */
-
-	// Support: IE<8
-	// Verify that getAttribute really returns attributes and not properties
-	// (excepting IE8 booleans)
-	support.attributes = assert( function( el ) {
-		el.className = "i";
-		return !el.getAttribute( "className" );
-	} );
-
-	/* getElement(s)By*
-	---------------------------------------------------------------------- */
-
-	// Check if getElementsByTagName("*") returns only elements
-	support.getElementsByTagName = assert( function( el ) {
-		el.appendChild( document.createComment( "" ) );
-		return !el.getElementsByTagName( "*" ).length;
-	} );
-
-	// Support: IE<9
-	support.getElementsByClassName = rnative.test( document.getElementsByClassName );
-
-	// Support: IE<10
+	// Support: IE <10
 	// Check if getElementById returns elements by name
 	// The broken getElementById methods don't pick up programmatically-set names,
 	// so use a roundabout getElementsByName test
 	support.getById = assert( function( el ) {
-		docElem.appendChild( el ).id = expando;
-		return !document.getElementsByName || !document.getElementsByName( expando ).length;
+		documentElement.appendChild( el ).id = jQuery.expando;
+		return !document.getElementsByName ||
+			!document.getElementsByName( jQuery.expando ).length;
+	} );
+
+	// Support: IE 9 only
+	// Check to see if it's possible to do matchesSelector
+	// on a disconnected node.
+	support.disconnectedMatch = assert( function( el ) {
+		return matches.call( el, "*" );
+	} );
+
+	// Support: IE 9 - 11+, Edge 12 - 18+
+	// IE/Edge don't support the :scope pseudo-class.
+	support.scope = assert( function() {
+		return document.querySelectorAll( ":scope" );
+	} );
+
+	// Support: Chrome 105 - 111 only, Safari 15.4 - 16.3 only
+	// Make sure the `:has()` argument is parsed unforgivingly.
+	// We include `*` in the test to detect buggy implementations that are
+	// _selectively_ forgiving (specifically when the list includes at least
+	// one valid selector).
+	// Note that we treat complete lack of support for `:has()` as if it were
+	// spec-compliant support, which is fine because use of `:has()` in such
+	// environments will fail in the qSA path and fall back to jQuery traversal
+	// anyway.
+	support.cssHas = assert( function() {
+		try {
+			document.querySelector( ":has(*,:jqfake)" );
+			return false;
+		} catch ( e ) {
+			return true;
+		}
 	} );
 
 	// ID filter and find
 	if ( support.getById ) {
-		Expr.filter[ "ID" ] = function( id ) {
+		Expr.filter.ID = function( id ) {
 			var attrId = id.replace( runescape, funescape );
 			return function( elem ) {
 				return elem.getAttribute( "id" ) === attrId;
 			};
 		};
-		Expr.find[ "ID" ] = function( id, context ) {
+		Expr.find.ID = function( id, context ) {
 			if ( typeof context.getElementById !== "undefined" && documentIsHTML ) {
 				var elem = context.getElementById( id );
 				return elem ? [ elem ] : [];
 			}
 		};
 	} else {
-		Expr.filter[ "ID" ] =  function( id ) {
+		Expr.filter.ID =  function( id ) {
 			var attrId = id.replace( runescape, funescape );
 			return function( elem ) {
 				var node = typeof elem.getAttributeNode !== "undefined" &&
@@ -1269,7 +1252,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 		// Support: IE 6 - 7 only
 		// getElementById is not reliable as a find shortcut
-		Expr.find[ "ID" ] = function( id, context ) {
+		Expr.find.ID = function( id, context ) {
 			if ( typeof context.getElementById !== "undefined" && documentIsHTML ) {
 				var node, i, elems,
 					elem = context.getElementById( id );
@@ -1299,40 +1282,18 @@ setDocument = Sizzle.setDocument = function( node ) {
 	}
 
 	// Tag
-	Expr.find[ "TAG" ] = support.getElementsByTagName ?
-		function( tag, context ) {
-			if ( typeof context.getElementsByTagName !== "undefined" ) {
-				return context.getElementsByTagName( tag );
+	Expr.find.TAG = function( tag, context ) {
+		if ( typeof context.getElementsByTagName !== "undefined" ) {
+			return context.getElementsByTagName( tag );
 
-			// DocumentFragment nodes don't have gEBTN
-			} else if ( support.qsa ) {
-				return context.querySelectorAll( tag );
-			}
-		} :
-
-		function( tag, context ) {
-			var elem,
-				tmp = [],
-				i = 0,
-
-				// By happy coincidence, a (broken) gEBTN appears on DocumentFragment nodes too
-				results = context.getElementsByTagName( tag );
-
-			// Filter out possible comments
-			if ( tag === "*" ) {
-				while ( ( elem = results[ i++ ] ) ) {
-					if ( elem.nodeType === 1 ) {
-						tmp.push( elem );
-					}
-				}
-
-				return tmp;
-			}
-			return results;
-		};
+		// DocumentFragment nodes don't have gEBTN
+		} else {
+			return context.querySelectorAll( tag );
+		}
+	};
 
 	// Class
-	Expr.find[ "CLASS" ] = support.getElementsByClassName && function( className, context ) {
+	Expr.find.CLASS = function( className, context ) {
 		if ( typeof context.getElementsByClassName !== "undefined" && documentIsHTML ) {
 			return context.getElementsByClassName( className );
 		}
@@ -1343,177 +1304,94 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 	// QSA and matchesSelector support
 
-	// matchesSelector(:active) reports false when true (IE9/Opera 11.5)
-	rbuggyMatches = [];
-
-	// qSa(:focus) reports false when true (Chrome 21)
-	// We allow this because of a bug in IE8/9 that throws an error
-	// whenever `document.activeElement` is accessed on an iframe
-	// So, we allow :focus to pass through QSA all the time to avoid the IE error
-	// See https://bugs.jquery.com/ticket/13378
 	rbuggyQSA = [];
 
-	if ( ( support.qsa = rnative.test( document.querySelectorAll ) ) ) {
+	// Build QSA regex
+	// Regex strategy adopted from Diego Perini
+	assert( function( el ) {
 
-		// Build QSA regex
-		// Regex strategy adopted from Diego Perini
-		assert( function( el ) {
+		var input;
 
-			var input;
+		documentElement.appendChild( el ).innerHTML =
+			"<a id='" + expando + "' href='' disabled='disabled'></a>" +
+			"<select id='" + expando + "-\r\\' disabled='disabled'>" +
+			"<option selected=''></option></select>";
 
-			// Select is set to empty string on purpose
-			// This is to test IE's treatment of not explicitly
-			// setting a boolean content attribute,
-			// since its presence should be enough
-			// https://bugs.jquery.com/ticket/12359
-			docElem.appendChild( el ).innerHTML = "<a id='" + expando + "'></a>" +
-				"<select id='" + expando + "-\r\\' msallowcapture=''>" +
-				"<option selected=''></option></select>";
+		// Support: iOS <=7 - 8 only
+		// Boolean attributes and "value" are not treated correctly in some XML documents
+		if ( !el.querySelectorAll( "[selected]" ).length ) {
+			rbuggyQSA.push( "\\[" + whitespace + "*(?:value|" + booleans + ")" );
+		}
 
-			// Support: IE8, Opera 11-12.16
-			// Nothing should be selected when empty strings follow ^= or $= or *=
-			// The test attribute must be unknown in Opera but "safe" for WinRT
-			// https://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
-			if ( el.querySelectorAll( "[msallowcapture^='']" ).length ) {
-				rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
-			}
+		// Support: iOS <=7 - 8 only
+		if ( !el.querySelectorAll( "[id~=" + expando + "-]" ).length ) {
+			rbuggyQSA.push( "~=" );
+		}
 
-			// Support: IE8
-			// Boolean attributes and "value" are not treated correctly
-			if ( !el.querySelectorAll( "[selected]" ).length ) {
-				rbuggyQSA.push( "\\[" + whitespace + "*(?:value|" + booleans + ")" );
-			}
+		// Support: iOS 8 only
+		// https://bugs.webkit.org/show_bug.cgi?id=136851
+		// In-page `selector#id sibling-combinator selector` fails
+		if ( !el.querySelectorAll( "a#" + expando + "+*" ).length ) {
+			rbuggyQSA.push( ".#.+[+~]" );
+		}
 
-			// Support: Chrome<29, Android<4.4, Safari<7.0+, iOS<7.0+, PhantomJS<1.9.8+
-			if ( !el.querySelectorAll( "[id~=" + expando + "-]" ).length ) {
-				rbuggyQSA.push( "~=" );
-			}
+		// Support: Chrome <=105+, Firefox <=104+, Safari <=15.4+
+		// In some of the document kinds, these selectors wouldn't work natively.
+		// This is probably OK but for backwards compatibility we want to maintain
+		// handling them through jQuery traversal in jQuery 3.x.
+		if ( !el.querySelectorAll( ":checked" ).length ) {
+			rbuggyQSA.push( ":checked" );
+		}
 
-			// Support: IE 11+, Edge 15 - 18+
-			// IE 11/Edge don't find elements on a `[name='']` query in some cases.
-			// Adding a temporary attribute to the document before the selection works
-			// around the issue.
-			// Interestingly, IE 10 & older don't seem to have the issue.
-			input = document.createElement( "input" );
-			input.setAttribute( "name", "" );
-			el.appendChild( input );
-			if ( !el.querySelectorAll( "[name='']" ).length ) {
-				rbuggyQSA.push( "\\[" + whitespace + "*name" + whitespace + "*=" +
-					whitespace + "*(?:''|\"\")" );
-			}
+		// Support: Windows 8 Native Apps
+		// The type and name attributes are restricted during .innerHTML assignment
+		input = document.createElement( "input" );
+		input.setAttribute( "type", "hidden" );
+		el.appendChild( input ).setAttribute( "name", "D" );
 
-			// Webkit/Opera - :checked should return selected option elements
-			// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
-			// IE8 throws error here and will not see later tests
-			if ( !el.querySelectorAll( ":checked" ).length ) {
-				rbuggyQSA.push( ":checked" );
-			}
+		// Support: IE 9 - 11+
+		// IE's :disabled selector does not pick up the children of disabled fieldsets
+		// Support: Chrome <=105+, Firefox <=104+, Safari <=15.4+
+		// In some of the document kinds, these selectors wouldn't work natively.
+		// This is probably OK but for backwards compatibility we want to maintain
+		// handling them through jQuery traversal in jQuery 3.x.
+		documentElement.appendChild( el ).disabled = true;
+		if ( el.querySelectorAll( ":disabled" ).length !== 2 ) {
+			rbuggyQSA.push( ":enabled", ":disabled" );
+		}
 
-			// Support: Safari 8+, iOS 8+
-			// https://bugs.webkit.org/show_bug.cgi?id=136851
-			// In-page `selector#id sibling-combinator selector` fails
-			if ( !el.querySelectorAll( "a#" + expando + "+*" ).length ) {
-				rbuggyQSA.push( ".#.+[+~]" );
-			}
+		// Support: IE 11+, Edge 15 - 18+
+		// IE 11/Edge don't find elements on a `[name='']` query in some cases.
+		// Adding a temporary attribute to the document before the selection works
+		// around the issue.
+		// Interestingly, IE 10 & older don't seem to have the issue.
+		input = document.createElement( "input" );
+		input.setAttribute( "name", "" );
+		el.appendChild( input );
+		if ( !el.querySelectorAll( "[name='']" ).length ) {
+			rbuggyQSA.push( "\\[" + whitespace + "*name" + whitespace + "*=" +
+				whitespace + "*(?:''|\"\")" );
+		}
+	} );
 
-			// Support: Firefox <=3.6 - 5 only
-			// Old Firefox doesn't throw on a badly-escaped identifier.
-			el.querySelectorAll( "\\\f" );
-			rbuggyQSA.push( "[\\r\\n\\f]" );
-		} );
+	if ( !support.cssHas ) {
 
-		assert( function( el ) {
-			el.innerHTML = "<a href='' disabled='disabled'></a>" +
-				"<select disabled='disabled'><option/></select>";
-
-			// Support: Windows 8 Native Apps
-			// The type and name attributes are restricted during .innerHTML assignment
-			var input = document.createElement( "input" );
-			input.setAttribute( "type", "hidden" );
-			el.appendChild( input ).setAttribute( "name", "D" );
-
-			// Support: IE8
-			// Enforce case-sensitivity of name attribute
-			if ( el.querySelectorAll( "[name=d]" ).length ) {
-				rbuggyQSA.push( "name" + whitespace + "*[*^$|!~]?=" );
-			}
-
-			// FF 3.5 - :enabled/:disabled and hidden elements (hidden elements are still enabled)
-			// IE8 throws error here and will not see later tests
-			if ( el.querySelectorAll( ":enabled" ).length !== 2 ) {
-				rbuggyQSA.push( ":enabled", ":disabled" );
-			}
-
-			// Support: IE9-11+
-			// IE's :disabled selector does not pick up the children of disabled fieldsets
-			docElem.appendChild( el ).disabled = true;
-			if ( el.querySelectorAll( ":disabled" ).length !== 2 ) {
-				rbuggyQSA.push( ":enabled", ":disabled" );
-			}
-
-			// Support: Opera 10 - 11 only
-			// Opera 10-11 does not throw on post-comma invalid pseudos
-			el.querySelectorAll( "*,:x" );
-			rbuggyQSA.push( ",.*:" );
-		} );
-	}
-
-	if ( ( support.matchesSelector = rnative.test( ( matches = docElem.matches ||
-		docElem.webkitMatchesSelector ||
-		docElem.mozMatchesSelector ||
-		docElem.oMatchesSelector ||
-		docElem.msMatchesSelector ) ) ) ) {
-
-		assert( function( el ) {
-
-			// Check to see if it's possible to do matchesSelector
-			// on a disconnected node (IE 9)
-			support.disconnectedMatch = matches.call( el, "*" );
-
-			// This should fail with an exception
-			// Gecko does not error, returns false instead
-			matches.call( el, "[s!='']:x" );
-			rbuggyMatches.push( "!=", pseudos );
-		} );
+		// Support: Chrome 105 - 110+, Safari 15.4 - 16.3+
+		// Our regular `try-catch` mechanism fails to detect natively-unsupported
+		// pseudo-classes inside `:has()` (such as `:has(:contains("Foo"))`)
+		// in browsers that parse the `:has()` argument as a forgiving selector list.
+		// https://drafts.csswg.org/selectors/#relational now requires the argument
+		// to be parsed unforgivingly, but browsers have not yet fully adjusted.
+		rbuggyQSA.push( ":has" );
 	}
 
 	rbuggyQSA = rbuggyQSA.length && new RegExp( rbuggyQSA.join( "|" ) );
-	rbuggyMatches = rbuggyMatches.length && new RegExp( rbuggyMatches.join( "|" ) );
-
-	/* Contains
-	---------------------------------------------------------------------- */
-	hasCompare = rnative.test( docElem.compareDocumentPosition );
-
-	// Element contains another
-	// Purposefully self-exclusive
-	// As in, an element does not contain itself
-	contains = hasCompare || rnative.test( docElem.contains ) ?
-		function( a, b ) {
-			var adown = a.nodeType === 9 ? a.documentElement : a,
-				bup = b && b.parentNode;
-			return a === bup || !!( bup && bup.nodeType === 1 && (
-				adown.contains ?
-					adown.contains( bup ) :
-					a.compareDocumentPosition && a.compareDocumentPosition( bup ) & 16
-			) );
-		} :
-		function( a, b ) {
-			if ( b ) {
-				while ( ( b = b.parentNode ) ) {
-					if ( b === a ) {
-						return true;
-					}
-				}
-			}
-			return false;
-		};
 
 	/* Sorting
 	---------------------------------------------------------------------- */
 
 	// Document order sorting
-	sortOrder = hasCompare ?
-	function( a, b ) {
+	sortOrder = function( a, b ) {
 
 		// Flag for duplicate removal
 		if ( a === b ) {
@@ -1547,8 +1425,8 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 			// two documents; shallow comparisons work.
 			// eslint-disable-next-line eqeqeq
-			if ( a == document || a.ownerDocument == preferredDoc &&
-				contains( preferredDoc, a ) ) {
+			if ( a === document || a.ownerDocument == preferredDoc &&
+				find.contains( preferredDoc, a ) ) {
 				return -1;
 			}
 
@@ -1556,100 +1434,33 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
 			// two documents; shallow comparisons work.
 			// eslint-disable-next-line eqeqeq
-			if ( b == document || b.ownerDocument == preferredDoc &&
-				contains( preferredDoc, b ) ) {
+			if ( b === document || b.ownerDocument == preferredDoc &&
+				find.contains( preferredDoc, b ) ) {
 				return 1;
 			}
 
 			// Maintain original order
 			return sortInput ?
-				( indexOf( sortInput, a ) - indexOf( sortInput, b ) ) :
+				( indexOf.call( sortInput, a ) - indexOf.call( sortInput, b ) ) :
 				0;
 		}
 
 		return compare & 4 ? -1 : 1;
-	} :
-	function( a, b ) {
-
-		// Exit early if the nodes are identical
-		if ( a === b ) {
-			hasDuplicate = true;
-			return 0;
-		}
-
-		var cur,
-			i = 0,
-			aup = a.parentNode,
-			bup = b.parentNode,
-			ap = [ a ],
-			bp = [ b ];
-
-		// Parentless nodes are either documents or disconnected
-		if ( !aup || !bup ) {
-
-			// Support: IE 11+, Edge 17 - 18+
-			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-			// two documents; shallow comparisons work.
-			/* eslint-disable eqeqeq */
-			return a == document ? -1 :
-				b == document ? 1 :
-				/* eslint-enable eqeqeq */
-				aup ? -1 :
-				bup ? 1 :
-				sortInput ?
-				( indexOf( sortInput, a ) - indexOf( sortInput, b ) ) :
-				0;
-
-		// If the nodes are siblings, we can do a quick check
-		} else if ( aup === bup ) {
-			return siblingCheck( a, b );
-		}
-
-		// Otherwise we need full lists of their ancestors for comparison
-		cur = a;
-		while ( ( cur = cur.parentNode ) ) {
-			ap.unshift( cur );
-		}
-		cur = b;
-		while ( ( cur = cur.parentNode ) ) {
-			bp.unshift( cur );
-		}
-
-		// Walk down the tree looking for a discrepancy
-		while ( ap[ i ] === bp[ i ] ) {
-			i++;
-		}
-
-		return i ?
-
-			// Do a sibling check if the nodes have a common ancestor
-			siblingCheck( ap[ i ], bp[ i ] ) :
-
-			// Otherwise nodes in our document sort first
-			// Support: IE 11+, Edge 17 - 18+
-			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
-			// two documents; shallow comparisons work.
-			/* eslint-disable eqeqeq */
-			ap[ i ] == preferredDoc ? -1 :
-			bp[ i ] == preferredDoc ? 1 :
-			/* eslint-enable eqeqeq */
-			0;
 	};
 
 	return document;
+}
+
+find.matches = function( expr, elements ) {
+	return find( expr, null, null, elements );
 };
 
-Sizzle.matches = function( expr, elements ) {
-	return Sizzle( expr, null, null, elements );
-};
-
-Sizzle.matchesSelector = function( elem, expr ) {
+find.matchesSelector = function( elem, expr ) {
 	setDocument( elem );
 
-	if ( support.matchesSelector && documentIsHTML &&
+	if ( documentIsHTML &&
 		!nonnativeSelectorCache[ expr + " " ] &&
-		( !rbuggyMatches || !rbuggyMatches.test( expr ) ) &&
-		( !rbuggyQSA     || !rbuggyQSA.test( expr ) ) ) {
+		( !rbuggyQSA || !rbuggyQSA.test( expr ) ) ) {
 
 		try {
 			var ret = matches.call( elem, expr );
@@ -1657,9 +1468,9 @@ Sizzle.matchesSelector = function( elem, expr ) {
 			// IE 9's matchesSelector returns false on disconnected nodes
 			if ( ret || support.disconnectedMatch ||
 
-				// As well, disconnected nodes are said to be in a document
-				// fragment in IE 9
-				elem.document && elem.document.nodeType !== 11 ) {
+					// As well, disconnected nodes are said to be in a document
+					// fragment in IE 9
+					elem.document && elem.document.nodeType !== 11 ) {
 				return ret;
 			}
 		} catch ( e ) {
@@ -1667,10 +1478,10 @@ Sizzle.matchesSelector = function( elem, expr ) {
 		}
 	}
 
-	return Sizzle( expr, document, null, [ elem ] ).length > 0;
+	return find( expr, document, null, [ elem ] ).length > 0;
 };
 
-Sizzle.contains = function( context, elem ) {
+find.contains = function( context, elem ) {
 
 	// Set document vars if needed
 	// Support: IE 11+, Edge 17 - 18+
@@ -1680,10 +1491,11 @@ Sizzle.contains = function( context, elem ) {
 	if ( ( context.ownerDocument || context ) != document ) {
 		setDocument( context );
 	}
-	return contains( context, elem );
+	return jQuery.contains( context, elem );
 };
 
-Sizzle.attr = function( elem, name ) {
+
+find.attr = function( elem, name ) {
 
 	// Set document vars if needed
 	// Support: IE 11+, Edge 17 - 18+
@@ -1696,25 +1508,19 @@ Sizzle.attr = function( elem, name ) {
 
 	var fn = Expr.attrHandle[ name.toLowerCase() ],
 
-		// Don't get fooled by Object.prototype properties (jQuery #13807)
+		// Don't get fooled by Object.prototype properties (see trac-13807)
 		val = fn && hasOwn.call( Expr.attrHandle, name.toLowerCase() ) ?
 			fn( elem, name, !documentIsHTML ) :
 			undefined;
 
-	return val !== undefined ?
-		val :
-		support.attributes || !documentIsHTML ?
-			elem.getAttribute( name ) :
-			( val = elem.getAttributeNode( name ) ) && val.specified ?
-				val.value :
-				null;
+	if ( val !== undefined ) {
+		return val;
+	}
+
+	return elem.getAttribute( name );
 };
 
-Sizzle.escape = function( sel ) {
-	return ( sel + "" ).replace( rcssescape, fcssescape );
-};
-
-Sizzle.error = function( msg ) {
+find.error = function( msg ) {
 	throw new Error( "Syntax error, unrecognized expression: " + msg );
 };
 
@@ -1722,16 +1528,20 @@ Sizzle.error = function( msg ) {
  * Document sorting and removing duplicates
  * @param {ArrayLike} results
  */
-Sizzle.uniqueSort = function( results ) {
+jQuery.uniqueSort = function( results ) {
 	var elem,
 		duplicates = [],
 		j = 0,
 		i = 0;
 
 	// Unless we *know* we can detect duplicates, assume their presence
-	hasDuplicate = !support.detectDuplicates;
-	sortInput = !support.sortStable && results.slice( 0 );
-	results.sort( sortOrder );
+	//
+	// Support: Android <=4.0+
+	// Testing for detecting duplicates is unpredictable so instead assume we can't
+	// depend on duplicate detection in all browsers without a stable sort.
+	hasDuplicate = !support.sortStable;
+	sortInput = !support.sortStable && slice.call( results, 0 );
+	sort.call( results, sortOrder );
 
 	if ( hasDuplicate ) {
 		while ( ( elem = results[ i++ ] ) ) {
@@ -1740,7 +1550,7 @@ Sizzle.uniqueSort = function( results ) {
 			}
 		}
 		while ( j-- ) {
-			results.splice( duplicates[ j ], 1 );
+			splice.call( results, duplicates[ j ], 1 );
 		}
 	}
 
@@ -1751,47 +1561,11 @@ Sizzle.uniqueSort = function( results ) {
 	return results;
 };
 
-/**
- * Utility function for retrieving the text value of an array of DOM nodes
- * @param {Array|Element} elem
- */
-getText = Sizzle.getText = function( elem ) {
-	var node,
-		ret = "",
-		i = 0,
-		nodeType = elem.nodeType;
-
-	if ( !nodeType ) {
-
-		// If no nodeType, this is expected to be an array
-		while ( ( node = elem[ i++ ] ) ) {
-
-			// Do not traverse comment nodes
-			ret += getText( node );
-		}
-	} else if ( nodeType === 1 || nodeType === 9 || nodeType === 11 ) {
-
-		// Use textContent for elements
-		// innerText usage removed for consistency of new lines (jQuery #11153)
-		if ( typeof elem.textContent === "string" ) {
-			return elem.textContent;
-		} else {
-
-			// Traverse its children
-			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
-				ret += getText( elem );
-			}
-		}
-	} else if ( nodeType === 3 || nodeType === 4 ) {
-		return elem.nodeValue;
-	}
-
-	// Do not include comment or processing instruction nodes
-
-	return ret;
+jQuery.fn.uniqueSort = function() {
+	return this.pushStack( jQuery.uniqueSort( slice.apply( this ) ) );
 };
 
-Expr = Sizzle.selectors = {
+Expr = jQuery.expr = {
 
 	// Can be adjusted by the user
 	cacheLength: 50,
@@ -1812,12 +1586,12 @@ Expr = Sizzle.selectors = {
 	},
 
 	preFilter: {
-		"ATTR": function( match ) {
+		ATTR: function( match ) {
 			match[ 1 ] = match[ 1 ].replace( runescape, funescape );
 
 			// Move the given value to match[3] whether quoted or unquoted
-			match[ 3 ] = ( match[ 3 ] || match[ 4 ] ||
-				match[ 5 ] || "" ).replace( runescape, funescape );
+			match[ 3 ] = ( match[ 3 ] || match[ 4 ] || match[ 5 ] || "" )
+				.replace( runescape, funescape );
 
 			if ( match[ 2 ] === "~=" ) {
 				match[ 3 ] = " " + match[ 3 ] + " ";
@@ -1826,7 +1600,7 @@ Expr = Sizzle.selectors = {
 			return match.slice( 0, 4 );
 		},
 
-		"CHILD": function( match ) {
+		CHILD: function( match ) {
 
 			/* matches from matchExpr["CHILD"]
 				1 type (only|nth|...)
@@ -1844,29 +1618,30 @@ Expr = Sizzle.selectors = {
 
 				// nth-* requires argument
 				if ( !match[ 3 ] ) {
-					Sizzle.error( match[ 0 ] );
+					find.error( match[ 0 ] );
 				}
 
 				// numeric x and y parameters for Expr.filter.CHILD
 				// remember that false/true cast respectively to 0/1
 				match[ 4 ] = +( match[ 4 ] ?
 					match[ 5 ] + ( match[ 6 ] || 1 ) :
-					2 * ( match[ 3 ] === "even" || match[ 3 ] === "odd" ) );
+					2 * ( match[ 3 ] === "even" || match[ 3 ] === "odd" )
+				);
 				match[ 5 ] = +( ( match[ 7 ] + match[ 8 ] ) || match[ 3 ] === "odd" );
 
-				// other types prohibit arguments
+			// other types prohibit arguments
 			} else if ( match[ 3 ] ) {
-				Sizzle.error( match[ 0 ] );
+				find.error( match[ 0 ] );
 			}
 
 			return match;
 		},
 
-		"PSEUDO": function( match ) {
+		PSEUDO: function( match ) {
 			var excess,
 				unquoted = !match[ 6 ] && match[ 2 ];
 
-			if ( matchExpr[ "CHILD" ].test( match[ 0 ] ) ) {
+			if ( matchExpr.CHILD.test( match[ 0 ] ) ) {
 				return null;
 			}
 
@@ -1895,36 +1670,36 @@ Expr = Sizzle.selectors = {
 
 	filter: {
 
-		"TAG": function( nodeNameSelector ) {
-			var nodeName = nodeNameSelector.replace( runescape, funescape ).toLowerCase();
+		TAG: function( nodeNameSelector ) {
+			var expectedNodeName = nodeNameSelector.replace( runescape, funescape ).toLowerCase();
 			return nodeNameSelector === "*" ?
 				function() {
 					return true;
 				} :
 				function( elem ) {
-					return elem.nodeName && elem.nodeName.toLowerCase() === nodeName;
+					return nodeName( elem, expectedNodeName );
 				};
 		},
 
-		"CLASS": function( className ) {
+		CLASS: function( className ) {
 			var pattern = classCache[ className + " " ];
 
 			return pattern ||
-				( pattern = new RegExp( "(^|" + whitespace +
-					")" + className + "(" + whitespace + "|$)" ) ) && classCache(
-						className, function( elem ) {
-							return pattern.test(
-								typeof elem.className === "string" && elem.className ||
-								typeof elem.getAttribute !== "undefined" &&
-									elem.getAttribute( "class" ) ||
-								""
-							);
+				( pattern = new RegExp( "(^|" + whitespace + ")" + className +
+					"(" + whitespace + "|$)" ) ) &&
+				classCache( className, function( elem ) {
+					return pattern.test(
+						typeof elem.className === "string" && elem.className ||
+							typeof elem.getAttribute !== "undefined" &&
+								elem.getAttribute( "class" ) ||
+							""
+					);
 				} );
 		},
 
-		"ATTR": function( name, operator, check ) {
+		ATTR: function( name, operator, check ) {
 			return function( elem ) {
-				var result = Sizzle.attr( elem, name );
+				var result = find.attr( elem, name );
 
 				if ( result == null ) {
 					return operator === "!=";
@@ -1935,22 +1710,34 @@ Expr = Sizzle.selectors = {
 
 				result += "";
 
-				/* eslint-disable max-len */
+				if ( operator === "=" ) {
+					return result === check;
+				}
+				if ( operator === "!=" ) {
+					return result !== check;
+				}
+				if ( operator === "^=" ) {
+					return check && result.indexOf( check ) === 0;
+				}
+				if ( operator === "*=" ) {
+					return check && result.indexOf( check ) > -1;
+				}
+				if ( operator === "$=" ) {
+					return check && result.slice( -check.length ) === check;
+				}
+				if ( operator === "~=" ) {
+					return ( " " + result.replace( rwhitespace, " " ) + " " )
+						.indexOf( check ) > -1;
+				}
+				if ( operator === "|=" ) {
+					return result === check || result.slice( 0, check.length + 1 ) === check + "-";
+				}
 
-				return operator === "=" ? result === check :
-					operator === "!=" ? result !== check :
-					operator === "^=" ? check && result.indexOf( check ) === 0 :
-					operator === "*=" ? check && result.indexOf( check ) > -1 :
-					operator === "$=" ? check && result.slice( -check.length ) === check :
-					operator === "~=" ? ( " " + result.replace( rwhitespace, " " ) + " " ).indexOf( check ) > -1 :
-					operator === "|=" ? result === check || result.slice( 0, check.length + 1 ) === check + "-" :
-					false;
-				/* eslint-enable max-len */
-
+				return false;
 			};
 		},
 
-		"CHILD": function( type, what, _argument, first, last ) {
+		CHILD: function( type, what, _argument, first, last ) {
 			var simple = type.slice( 0, 3 ) !== "nth",
 				forward = type.slice( -4 ) !== "last",
 				ofType = what === "of-type";
@@ -1963,7 +1750,7 @@ Expr = Sizzle.selectors = {
 				} :
 
 				function( elem, _context, xml ) {
-					var cache, uniqueCache, outerCache, node, nodeIndex, start,
+					var cache, outerCache, node, nodeIndex, start,
 						dir = simple !== forward ? "nextSibling" : "previousSibling",
 						parent = elem.parentNode,
 						name = ofType && elem.nodeName.toLowerCase(),
@@ -1978,7 +1765,7 @@ Expr = Sizzle.selectors = {
 								node = elem;
 								while ( ( node = node[ dir ] ) ) {
 									if ( ofType ?
-										node.nodeName.toLowerCase() === name :
+										nodeName( node, name ) :
 										node.nodeType === 1 ) {
 
 										return false;
@@ -1997,17 +1784,8 @@ Expr = Sizzle.selectors = {
 						if ( forward && useCache ) {
 
 							// Seek `elem` from a previously-cached index
-
-							// ...in a gzip-friendly way
-							node = parent;
-							outerCache = node[ expando ] || ( node[ expando ] = {} );
-
-							// Support: IE <9 only
-							// Defend against cloned attroperties (jQuery gh-1709)
-							uniqueCache = outerCache[ node.uniqueID ] ||
-								( outerCache[ node.uniqueID ] = {} );
-
-							cache = uniqueCache[ type ] || [];
+							outerCache = parent[ expando ] || ( parent[ expando ] = {} );
+							cache = outerCache[ type ] || [];
 							nodeIndex = cache[ 0 ] === dirruns && cache[ 1 ];
 							diff = nodeIndex && cache[ 2 ];
 							node = nodeIndex && parent.childNodes[ nodeIndex ];
@@ -2019,7 +1797,7 @@ Expr = Sizzle.selectors = {
 
 								// When found, cache indexes on `parent` and break
 								if ( node.nodeType === 1 && ++diff && node === elem ) {
-									uniqueCache[ type ] = [ dirruns, nodeIndex, diff ];
+									outerCache[ type ] = [ dirruns, nodeIndex, diff ];
 									break;
 								}
 							}
@@ -2028,17 +1806,8 @@ Expr = Sizzle.selectors = {
 
 							// Use previously-cached element index if available
 							if ( useCache ) {
-
-								// ...in a gzip-friendly way
-								node = elem;
-								outerCache = node[ expando ] || ( node[ expando ] = {} );
-
-								// Support: IE <9 only
-								// Defend against cloned attroperties (jQuery gh-1709)
-								uniqueCache = outerCache[ node.uniqueID ] ||
-									( outerCache[ node.uniqueID ] = {} );
-
-								cache = uniqueCache[ type ] || [];
+								outerCache = elem[ expando ] || ( elem[ expando ] = {} );
+								cache = outerCache[ type ] || [];
 								nodeIndex = cache[ 0 ] === dirruns && cache[ 1 ];
 								diff = nodeIndex;
 							}
@@ -2052,7 +1821,7 @@ Expr = Sizzle.selectors = {
 									( diff = nodeIndex = 0 ) || start.pop() ) ) {
 
 									if ( ( ofType ?
-										node.nodeName.toLowerCase() === name :
+										nodeName( node, name ) :
 										node.nodeType === 1 ) &&
 										++diff ) {
 
@@ -2060,13 +1829,7 @@ Expr = Sizzle.selectors = {
 										if ( useCache ) {
 											outerCache = node[ expando ] ||
 												( node[ expando ] = {} );
-
-											// Support: IE <9 only
-											// Defend against cloned attroperties (jQuery gh-1709)
-											uniqueCache = outerCache[ node.uniqueID ] ||
-												( outerCache[ node.uniqueID ] = {} );
-
-											uniqueCache[ type ] = [ dirruns, diff ];
+											outerCache[ type ] = [ dirruns, diff ];
 										}
 
 										if ( node === elem ) {
@@ -2084,19 +1847,19 @@ Expr = Sizzle.selectors = {
 				};
 		},
 
-		"PSEUDO": function( pseudo, argument ) {
+		PSEUDO: function( pseudo, argument ) {
 
 			// pseudo-class names are case-insensitive
-			// http://www.w3.org/TR/selectors/#pseudo-classes
+			// https://www.w3.org/TR/selectors/#pseudo-classes
 			// Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
 			// Remember that setFilters inherits from pseudos
 			var args,
 				fn = Expr.pseudos[ pseudo ] || Expr.setFilters[ pseudo.toLowerCase() ] ||
-					Sizzle.error( "unsupported pseudo: " + pseudo );
+					find.error( "unsupported pseudo: " + pseudo );
 
 			// The user may use createPseudo to indicate that
 			// arguments are needed to create the filter function
-			// just as Sizzle does
+			// just as jQuery does
 			if ( fn[ expando ] ) {
 				return fn( argument );
 			}
@@ -2110,7 +1873,7 @@ Expr = Sizzle.selectors = {
 							matched = fn( seed, argument ),
 							i = matched.length;
 						while ( i-- ) {
-							idx = indexOf( seed, matched[ i ] );
+							idx = indexOf.call( seed, matched[ i ] );
 							seed[ idx ] = !( matches[ idx ] = matched[ i ] );
 						}
 					} ) :
@@ -2126,14 +1889,14 @@ Expr = Sizzle.selectors = {
 	pseudos: {
 
 		// Potentially complex pseudos
-		"not": markFunction( function( selector ) {
+		not: markFunction( function( selector ) {
 
 			// Trim the selector passed to compile
 			// to avoid treating leading and trailing
 			// spaces as combinators
 			var input = [],
 				results = [],
-				matcher = compile( selector.replace( rtrim, "$1" ) );
+				matcher = compile( selector.replace( rtrimCSS, "$1" ) );
 
 			return matcher[ expando ] ?
 				markFunction( function( seed, matches, _context, xml ) {
@@ -2152,22 +1915,23 @@ Expr = Sizzle.selectors = {
 					input[ 0 ] = elem;
 					matcher( input, null, xml, results );
 
-					// Don't keep the element (issue #299)
+					// Don't keep the element
+					// (see https://github.com/jquery/sizzle/issues/299)
 					input[ 0 ] = null;
 					return !results.pop();
 				};
 		} ),
 
-		"has": markFunction( function( selector ) {
+		has: markFunction( function( selector ) {
 			return function( elem ) {
-				return Sizzle( selector, elem ).length > 0;
+				return find( selector, elem ).length > 0;
 			};
 		} ),
 
-		"contains": markFunction( function( text ) {
+		contains: markFunction( function( text ) {
 			text = text.replace( runescape, funescape );
 			return function( elem ) {
-				return ( elem.textContent || getText( elem ) ).indexOf( text ) > -1;
+				return ( elem.textContent || jQuery.text( elem ) ).indexOf( text ) > -1;
 			};
 		} ),
 
@@ -2177,12 +1941,12 @@ Expr = Sizzle.selectors = {
 		// or beginning with the identifier C immediately followed by "-".
 		// The matching of C against the element's language value is performed case-insensitively.
 		// The identifier C does not have to be a valid language name."
-		// http://www.w3.org/TR/selectors/#lang-pseudo
-		"lang": markFunction( function( lang ) {
+		// https://www.w3.org/TR/selectors/#lang-pseudo
+		lang: markFunction( function( lang ) {
 
 			// lang value must be a valid identifier
 			if ( !ridentifier.test( lang || "" ) ) {
-				Sizzle.error( "unsupported lang: " + lang );
+				find.error( "unsupported lang: " + lang );
 			}
 			lang = lang.replace( runescape, funescape ).toLowerCase();
 			return function( elem ) {
@@ -2201,38 +1965,39 @@ Expr = Sizzle.selectors = {
 		} ),
 
 		// Miscellaneous
-		"target": function( elem ) {
+		target: function( elem ) {
 			var hash = window.location && window.location.hash;
 			return hash && hash.slice( 1 ) === elem.id;
 		},
 
-		"root": function( elem ) {
-			return elem === docElem;
+		root: function( elem ) {
+			return elem === documentElement;
 		},
 
-		"focus": function( elem ) {
-			return elem === document.activeElement &&
-				( !document.hasFocus || document.hasFocus() ) &&
+		focus: function( elem ) {
+			return elem === safeActiveElement() &&
+				document.hasFocus() &&
 				!!( elem.type || elem.href || ~elem.tabIndex );
 		},
 
 		// Boolean properties
-		"enabled": createDisabledPseudo( false ),
-		"disabled": createDisabledPseudo( true ),
+		enabled: createDisabledPseudo( false ),
+		disabled: createDisabledPseudo( true ),
 
-		"checked": function( elem ) {
+		checked: function( elem ) {
 
 			// In CSS3, :checked should return both checked and selected elements
-			// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
-			var nodeName = elem.nodeName.toLowerCase();
-			return ( nodeName === "input" && !!elem.checked ) ||
-				( nodeName === "option" && !!elem.selected );
+			// https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
+			return ( nodeName( elem, "input" ) && !!elem.checked ) ||
+				( nodeName( elem, "option" ) && !!elem.selected );
 		},
 
-		"selected": function( elem ) {
+		selected: function( elem ) {
 
-			// Accessing this property makes selected-by-default
-			// options in Safari work properly
+			// Support: IE <=11+
+			// Accessing the selectedIndex property
+			// forces the browser to treat the default option as
+			// selected when in an optgroup.
 			if ( elem.parentNode ) {
 				// eslint-disable-next-line no-unused-expressions
 				elem.parentNode.selectedIndex;
@@ -2242,9 +2007,9 @@ Expr = Sizzle.selectors = {
 		},
 
 		// Contents
-		"empty": function( elem ) {
+		empty: function( elem ) {
 
-			// http://www.w3.org/TR/selectors/#empty-pseudo
+			// https://www.w3.org/TR/selectors/#empty-pseudo
 			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
 			//   but not by others (comment: 8; processing instruction: 7; etc.)
 			// nodeType < 6 works because attributes (2) do not appear as children
@@ -2256,49 +2021,49 @@ Expr = Sizzle.selectors = {
 			return true;
 		},
 
-		"parent": function( elem ) {
-			return !Expr.pseudos[ "empty" ]( elem );
+		parent: function( elem ) {
+			return !Expr.pseudos.empty( elem );
 		},
 
 		// Element/input types
-		"header": function( elem ) {
+		header: function( elem ) {
 			return rheader.test( elem.nodeName );
 		},
 
-		"input": function( elem ) {
+		input: function( elem ) {
 			return rinputs.test( elem.nodeName );
 		},
 
-		"button": function( elem ) {
-			var name = elem.nodeName.toLowerCase();
-			return name === "input" && elem.type === "button" || name === "button";
+		button: function( elem ) {
+			return nodeName( elem, "input" ) && elem.type === "button" ||
+				nodeName( elem, "button" );
 		},
 
-		"text": function( elem ) {
+		text: function( elem ) {
 			var attr;
-			return elem.nodeName.toLowerCase() === "input" &&
-				elem.type === "text" &&
+			return nodeName( elem, "input" ) && elem.type === "text" &&
 
-				// Support: IE<8
-				// New HTML5 attribute values (e.g., "search") appear with elem.type === "text"
+				// Support: IE <10 only
+				// New HTML5 attribute values (e.g., "search") appear
+				// with elem.type === "text"
 				( ( attr = elem.getAttribute( "type" ) ) == null ||
 					attr.toLowerCase() === "text" );
 		},
 
 		// Position-in-collection
-		"first": createPositionalPseudo( function() {
+		first: createPositionalPseudo( function() {
 			return [ 0 ];
 		} ),
 
-		"last": createPositionalPseudo( function( _matchIndexes, length ) {
+		last: createPositionalPseudo( function( _matchIndexes, length ) {
 			return [ length - 1 ];
 		} ),
 
-		"eq": createPositionalPseudo( function( _matchIndexes, length, argument ) {
+		eq: createPositionalPseudo( function( _matchIndexes, length, argument ) {
 			return [ argument < 0 ? argument + length : argument ];
 		} ),
 
-		"even": createPositionalPseudo( function( matchIndexes, length ) {
+		even: createPositionalPseudo( function( matchIndexes, length ) {
 			var i = 0;
 			for ( ; i < length; i += 2 ) {
 				matchIndexes.push( i );
@@ -2306,7 +2071,7 @@ Expr = Sizzle.selectors = {
 			return matchIndexes;
 		} ),
 
-		"odd": createPositionalPseudo( function( matchIndexes, length ) {
+		odd: createPositionalPseudo( function( matchIndexes, length ) {
 			var i = 1;
 			for ( ; i < length; i += 2 ) {
 				matchIndexes.push( i );
@@ -2314,19 +2079,24 @@ Expr = Sizzle.selectors = {
 			return matchIndexes;
 		} ),
 
-		"lt": createPositionalPseudo( function( matchIndexes, length, argument ) {
-			var i = argument < 0 ?
-				argument + length :
-				argument > length ?
-					length :
-					argument;
+		lt: createPositionalPseudo( function( matchIndexes, length, argument ) {
+			var i;
+
+			if ( argument < 0 ) {
+				i = argument + length;
+			} else if ( argument > length ) {
+				i = length;
+			} else {
+				i = argument;
+			}
+
 			for ( ; --i >= 0; ) {
 				matchIndexes.push( i );
 			}
 			return matchIndexes;
 		} ),
 
-		"gt": createPositionalPseudo( function( matchIndexes, length, argument ) {
+		gt: createPositionalPseudo( function( matchIndexes, length, argument ) {
 			var i = argument < 0 ? argument + length : argument;
 			for ( ; ++i < length; ) {
 				matchIndexes.push( i );
@@ -2336,7 +2106,7 @@ Expr = Sizzle.selectors = {
 	}
 };
 
-Expr.pseudos[ "nth" ] = Expr.pseudos[ "eq" ];
+Expr.pseudos.nth = Expr.pseudos.eq;
 
 // Add button/input type pseudos
 for ( i in { radio: true, checkbox: true, file: true, password: true, image: true } ) {
@@ -2351,7 +2121,7 @@ function setFilters() {}
 setFilters.prototype = Expr.filters = Expr.pseudos;
 Expr.setFilters = new setFilters();
 
-tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
+function tokenize( selector, parseOnly ) {
 	var matched, match, tokens, type,
 		soFar, groups, preFilters,
 		cached = tokenCache[ selector + " " ];
@@ -2379,13 +2149,13 @@ tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
 		matched = false;
 
 		// Combinators
-		if ( ( match = rcombinators.exec( soFar ) ) ) {
+		if ( ( match = rleadingCombinator.exec( soFar ) ) ) {
 			matched = match.shift();
 			tokens.push( {
 				value: matched,
 
 				// Cast descendant combinators to space
-				type: match[ 0 ].replace( rtrim, " " )
+				type: match[ 0 ].replace( rtrimCSS, " " )
 			} );
 			soFar = soFar.slice( matched.length );
 		}
@@ -2412,14 +2182,16 @@ tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
 	// Return the length of the invalid excess
 	// if we're just parsing
 	// Otherwise, throw an error or return tokens
-	return parseOnly ?
-		soFar.length :
-		soFar ?
-			Sizzle.error( selector ) :
+	if ( parseOnly ) {
+		return soFar.length;
+	}
 
-			// Cache the tokens
-			tokenCache( selector, groups ).slice( 0 );
-};
+	return soFar ?
+		find.error( selector ) :
+
+		// Cache the tokens
+		tokenCache( selector, groups ).slice( 0 );
+}
 
 function toSelector( tokens ) {
 	var i = 0,
@@ -2452,7 +2224,7 @@ function addCombinator( matcher, combinator, base ) {
 
 		// Check against all ancestor/preceding elements
 		function( elem, context, xml ) {
-			var oldCache, uniqueCache, outerCache,
+			var oldCache, outerCache,
 				newCache = [ dirruns, doneName ];
 
 			// We can't set arbitrary data on XML nodes, so they don't benefit from combinator caching
@@ -2469,14 +2241,9 @@ function addCombinator( matcher, combinator, base ) {
 					if ( elem.nodeType === 1 || checkNonElements ) {
 						outerCache = elem[ expando ] || ( elem[ expando ] = {} );
 
-						// Support: IE <9 only
-						// Defend against cloned attroperties (jQuery gh-1709)
-						uniqueCache = outerCache[ elem.uniqueID ] ||
-							( outerCache[ elem.uniqueID ] = {} );
-
-						if ( skip && skip === elem.nodeName.toLowerCase() ) {
+						if ( skip && nodeName( elem, skip ) ) {
 							elem = elem[ dir ] || elem;
-						} else if ( ( oldCache = uniqueCache[ key ] ) &&
+						} else if ( ( oldCache = outerCache[ key ] ) &&
 							oldCache[ 0 ] === dirruns && oldCache[ 1 ] === doneName ) {
 
 							// Assign to newCache so results back-propagate to previous elements
@@ -2484,7 +2251,7 @@ function addCombinator( matcher, combinator, base ) {
 						} else {
 
 							// Reuse newcache so results back-propagate to previous elements
-							uniqueCache[ key ] = newCache;
+							outerCache[ key ] = newCache;
 
 							// A match means we're done; a fail means we have to keep checking
 							if ( ( newCache[ 2 ] = matcher( elem, context, xml ) ) ) {
@@ -2516,7 +2283,7 @@ function multipleContexts( selector, contexts, results ) {
 	var i = 0,
 		len = contexts.length;
 	for ( ; i < len; i++ ) {
-		Sizzle( selector, contexts[ i ], results );
+		find( selector, contexts[ i ], results );
 	}
 	return results;
 }
@@ -2550,38 +2317,37 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 		postFinder = setMatcher( postFinder, postSelector );
 	}
 	return markFunction( function( seed, results, context, xml ) {
-		var temp, i, elem,
+		var temp, i, elem, matcherOut,
 			preMap = [],
 			postMap = [],
 			preexisting = results.length,
 
 			// Get initial elements from seed or context
-			elems = seed || multipleContexts(
-				selector || "*",
-				context.nodeType ? [ context ] : context,
-				[]
-			),
+			elems = seed ||
+				multipleContexts( selector || "*",
+					context.nodeType ? [ context ] : context, [] ),
 
 			// Prefilter to get matcher input, preserving a map for seed-results synchronization
 			matcherIn = preFilter && ( seed || !selector ) ?
 				condense( elems, preMap, preFilter, context, xml ) :
-				elems,
+				elems;
 
-			matcherOut = matcher ?
-
-				// If we have a postFinder, or filtered seed, or non-seed postFilter or preexisting results,
-				postFinder || ( seed ? preFilter : preexisting || postFilter ) ?
-
-					// ...intermediate processing is necessary
-					[] :
-
-					// ...otherwise use results directly
-					results :
-				matcherIn;
-
-		// Find primary matches
 		if ( matcher ) {
+
+			// If we have a postFinder, or filtered seed, or non-seed postFilter
+			// or preexisting results,
+			matcherOut = postFinder || ( seed ? preFilter : preexisting || postFilter ) ?
+
+				// ...intermediate processing is necessary
+				[] :
+
+				// ...otherwise use results directly
+				results;
+
+			// Find primary matches
 			matcher( matcherIn, matcherOut, context, xml );
+		} else {
+			matcherOut = matcherIn;
 		}
 
 		// Apply postFilter
@@ -2619,7 +2385,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 				i = matcherOut.length;
 				while ( i-- ) {
 					if ( ( elem = matcherOut[ i ] ) &&
-						( temp = postFinder ? indexOf( seed, elem ) : preMap[ i ] ) > -1 ) {
+						( temp = postFinder ? indexOf.call( seed, elem ) : preMap[ i ] ) > -1 ) {
 
 						seed[ temp ] = !( results[ temp ] = elem );
 					}
@@ -2654,15 +2420,21 @@ function matcherFromTokens( tokens ) {
 			return elem === checkContext;
 		}, implicitRelative, true ),
 		matchAnyContext = addCombinator( function( elem ) {
-			return indexOf( checkContext, elem ) > -1;
+			return indexOf.call( checkContext, elem ) > -1;
 		}, implicitRelative, true ),
 		matchers = [ function( elem, context, xml ) {
-			var ret = ( !leadingRelative && ( xml || context !== outermostContext ) ) || (
+
+			// Support: IE 11+, Edge 17 - 18+
+			// IE/Edge sometimes throw a "Permission denied" error when strict-comparing
+			// two documents; shallow comparisons work.
+			// eslint-disable-next-line eqeqeq
+			var ret = ( !leadingRelative && ( xml || context != outermostContext ) ) || (
 				( checkContext = context ).nodeType ?
 					matchContext( elem, context, xml ) :
 					matchAnyContext( elem, context, xml ) );
 
-			// Avoid hanging onto element (issue #299)
+			// Avoid hanging onto element
+			// (see https://github.com/jquery/sizzle/issues/299)
 			checkContext = null;
 			return ret;
 		} ];
@@ -2687,11 +2459,10 @@ function matcherFromTokens( tokens ) {
 					i > 1 && elementMatcher( matchers ),
 					i > 1 && toSelector(
 
-					// If the preceding token was a descendant combinator, insert an implicit any-element `*`
-					tokens
-						.slice( 0, i - 1 )
-						.concat( { value: tokens[ i - 2 ].type === " " ? "*" : "" } )
-					).replace( rtrim, "$1" ),
+						// If the preceding token was a descendant combinator, insert an implicit any-element `*`
+						tokens.slice( 0, i - 1 )
+							.concat( { value: tokens[ i - 2 ].type === " " ? "*" : "" } )
+					).replace( rtrimCSS, "$1" ),
 					matcher,
 					i < j && matcherFromTokens( tokens.slice( i, j ) ),
 					j < len && matcherFromTokens( ( tokens = tokens.slice( j ) ) ),
@@ -2717,7 +2488,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 				contextBackup = outermostContext,
 
 				// We must always have either seed elements or outermost context
-				elems = seed || byElement && Expr.find[ "TAG" ]( "*", outermost ),
+				elems = seed || byElement && Expr.find.TAG( "*", outermost ),
 
 				// Use integer dirruns iff this is the outermost matcher
 				dirrunsUnique = ( dirruns += contextBackup == null ? 1 : Math.random() || 0.1 ),
@@ -2733,8 +2504,9 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 			}
 
 			// Add elements passing elementMatchers directly to results
-			// Support: IE<9, Safari
-			// Tolerate NodeList properties (IE: "length"; Safari: <number>) matching elements by id
+			// Support: iOS <=7 - 9 only
+			// Tolerate NodeList properties (IE: "length"; Safari: <number>) matching
+			// elements by id. (see trac-14142)
 			for ( ; i !== len && ( elem = elems[ i ] ) != null; i++ ) {
 				if ( byElement && elem ) {
 					j = 0;
@@ -2749,7 +2521,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 					}
 					while ( ( matcher = elementMatchers[ j++ ] ) ) {
 						if ( matcher( elem, context || document, xml ) ) {
-							results.push( elem );
+							push.call( results, elem );
 							break;
 						}
 					}
@@ -2812,7 +2584,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 				if ( outermost && !seed && setMatched.length > 0 &&
 					( matchedCount + setMatchers.length ) > 1 ) {
 
-					Sizzle.uniqueSort( results );
+					jQuery.uniqueSort( results );
 				}
 			}
 
@@ -2830,7 +2602,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 		superMatcher;
 }
 
-compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
+function compile( selector, match /* Internal Use Only */ ) {
 	var i,
 		setMatchers = [],
 		elementMatchers = [],
@@ -2853,27 +2625,25 @@ compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 		}
 
 		// Cache the compiled function
-		cached = compilerCache(
-			selector,
-			matcherFromGroupMatchers( elementMatchers, setMatchers )
-		);
+		cached = compilerCache( selector,
+			matcherFromGroupMatchers( elementMatchers, setMatchers ) );
 
 		// Save selector and tokenization
 		cached.selector = selector;
 	}
 	return cached;
-};
+}
 
 /**
- * A low-level selection function that works with Sizzle's compiled
+ * A low-level selection function that works with jQuery's compiled
  *  selector functions
  * @param {String|Function} selector A selector or a pre-compiled
- *  selector function built with Sizzle.compile
+ *  selector function built with jQuery selector compile
  * @param {Element} context
  * @param {Array} [results]
  * @param {Array} [seed] A set of elements to match against
  */
-select = Sizzle.select = function( selector, context, results, seed ) {
+function select( selector, context, results, seed ) {
 	var i, tokens, token, type, find,
 		compiled = typeof selector === "function" && selector,
 		match = !seed && tokenize( ( selector = compiled.selector || selector ) );
@@ -2887,10 +2657,12 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 		// Reduce context if the leading compound selector is an ID
 		tokens = match[ 0 ] = match[ 0 ].slice( 0 );
 		if ( tokens.length > 2 && ( token = tokens[ 0 ] ).type === "ID" &&
-			context.nodeType === 9 && documentIsHTML && Expr.relative[ tokens[ 1 ].type ] ) {
+				context.nodeType === 9 && documentIsHTML && Expr.relative[ tokens[ 1 ].type ] ) {
 
-			context = ( Expr.find[ "ID" ]( token.matches[ 0 ]
-				.replace( runescape, funescape ), context ) || [] )[ 0 ];
+			context = ( Expr.find.ID(
+				token.matches[ 0 ].replace( runescape, funescape ),
+				context
+			) || [] )[ 0 ];
 			if ( !context ) {
 				return results;
 
@@ -2903,7 +2675,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 		}
 
 		// Fetch a seed set for right-to-left matching
-		i = matchExpr[ "needsContext" ].test( selector ) ? 0 : tokens.length;
+		i = matchExpr.needsContext.test( selector ) ? 0 : tokens.length;
 		while ( i-- ) {
 			token = tokens[ i ];
 
@@ -2916,8 +2688,8 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 				// Search, expanding context for leading sibling combinators
 				if ( ( seed = find(
 					token.matches[ 0 ].replace( runescape, funescape ),
-					rsibling.test( tokens[ 0 ].type ) && testContext( context.parentNode ) ||
-						context
+					rsibling.test( tokens[ 0 ].type ) &&
+						testContext( context.parentNode ) || context
 				) ) ) {
 
 					// If seed is empty or no tokens remain, we can return early
@@ -2944,21 +2716,18 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 		!context || rsibling.test( selector ) && testContext( context.parentNode ) || context
 	);
 	return results;
-};
+}
 
 // One-time assignments
 
+// Support: Android <=4.0 - 4.1+
 // Sort stability
 support.sortStable = expando.split( "" ).sort( sortOrder ).join( "" ) === expando;
-
-// Support: Chrome 14-35+
-// Always assume duplicates if they aren't passed to the comparison function
-support.detectDuplicates = !!hasDuplicate;
 
 // Initialize against the default document
 setDocument();
 
-// Support: Webkit<537.32 - Safari 6.0.3/Chrome 25 (fixed in Chrome 27)
+// Support: Android <=4.0 - 4.1+
 // Detached nodes confoundingly follow *each other*
 support.sortDetached = assert( function( el ) {
 
@@ -2966,68 +2735,29 @@ support.sortDetached = assert( function( el ) {
 	return el.compareDocumentPosition( document.createElement( "fieldset" ) ) & 1;
 } );
 
-// Support: IE<8
-// Prevent attribute/property "interpolation"
-// https://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
-if ( !assert( function( el ) {
-	el.innerHTML = "<a href='#'></a>";
-	return el.firstChild.getAttribute( "href" ) === "#";
-} ) ) {
-	addHandle( "type|href|height|width", function( elem, name, isXML ) {
-		if ( !isXML ) {
-			return elem.getAttribute( name, name.toLowerCase() === "type" ? 1 : 2 );
-		}
-	} );
-}
-
-// Support: IE<9
-// Use defaultValue in place of getAttribute("value")
-if ( !support.attributes || !assert( function( el ) {
-	el.innerHTML = "<input/>";
-	el.firstChild.setAttribute( "value", "" );
-	return el.firstChild.getAttribute( "value" ) === "";
-} ) ) {
-	addHandle( "value", function( elem, _name, isXML ) {
-		if ( !isXML && elem.nodeName.toLowerCase() === "input" ) {
-			return elem.defaultValue;
-		}
-	} );
-}
-
-// Support: IE<9
-// Use getAttributeNode to fetch booleans when getAttribute lies
-if ( !assert( function( el ) {
-	return el.getAttribute( "disabled" ) == null;
-} ) ) {
-	addHandle( booleans, function( elem, name, isXML ) {
-		var val;
-		if ( !isXML ) {
-			return elem[ name ] === true ? name.toLowerCase() :
-				( val = elem.getAttributeNode( name ) ) && val.specified ?
-					val.value :
-					null;
-		}
-	} );
-}
-
-return Sizzle;
-
-} )( window );
-
-
-
-jQuery.find = Sizzle;
-jQuery.expr = Sizzle.selectors;
+jQuery.find = find;
 
 // Deprecated
 jQuery.expr[ ":" ] = jQuery.expr.pseudos;
-jQuery.uniqueSort = jQuery.unique = Sizzle.uniqueSort;
-jQuery.text = Sizzle.getText;
-jQuery.isXMLDoc = Sizzle.isXML;
-jQuery.contains = Sizzle.contains;
-jQuery.escapeSelector = Sizzle.escape;
+jQuery.unique = jQuery.uniqueSort;
 
+// These have always been private, but they used to be documented as part of
+// Sizzle so let's maintain them for now for backwards compatibility purposes.
+find.compile = compile;
+find.select = select;
+find.setDocument = setDocument;
+find.tokenize = tokenize;
 
+find.escape = jQuery.escapeSelector;
+find.getText = jQuery.text;
+find.isXML = jQuery.isXMLDoc;
+find.selectors = jQuery.expr;
+find.support = jQuery.support;
+find.uniqueSort = jQuery.uniqueSort;
+
+	/* eslint-enable */
+
+} )();
 
 
 var dir = function( elem, dir, until ) {
@@ -3061,13 +2791,6 @@ var siblings = function( n, elem ) {
 
 var rneedsContext = jQuery.expr.match.needsContext;
 
-
-
-function nodeName( elem, name ) {
-
-	return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
-
-}
 var rsingleTag = ( /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i );
 
 
@@ -3318,7 +3041,7 @@ jQuery.fn.extend( {
 					if ( cur.nodeType < 11 && ( targets ?
 						targets.index( cur ) > -1 :
 
-						// Don't pass non-elements to Sizzle
+						// Don't pass non-elements to jQuery#find
 						cur.nodeType === 1 &&
 							jQuery.find.matchesSelector( cur, selectors ) ) ) {
 
@@ -3873,7 +3596,7 @@ jQuery.extend( {
 
 											if ( jQuery.Deferred.exceptionHook ) {
 												jQuery.Deferred.exceptionHook( e,
-													process.stackTrace );
+													process.error );
 											}
 
 											// Support: Promises/A+ section 2.3.3.3.4.1
@@ -3901,10 +3624,17 @@ jQuery.extend( {
 								process();
 							} else {
 
-								// Call an optional hook to record the stack, in case of exception
+								// Call an optional hook to record the error, in case of exception
 								// since it's otherwise lost when execution goes async
-								if ( jQuery.Deferred.getStackHook ) {
-									process.stackTrace = jQuery.Deferred.getStackHook();
+								if ( jQuery.Deferred.getErrorHook ) {
+									process.error = jQuery.Deferred.getErrorHook();
+
+								// The deprecated alias of the above. While the name suggests
+								// returning the stack, not an error instance, jQuery just passes
+								// it directly to `console.warn` so both will work; an instance
+								// just better cooperates with source maps.
+								} else if ( jQuery.Deferred.getStackHook ) {
+									process.error = jQuery.Deferred.getStackHook();
 								}
 								window.setTimeout( process );
 							}
@@ -4079,12 +3809,16 @@ jQuery.extend( {
 // warn about them ASAP rather than swallowing them by default.
 var rerrorNames = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
 
-jQuery.Deferred.exceptionHook = function( error, stack ) {
+// If `jQuery.Deferred.getErrorHook` is defined, `asyncError` is an error
+// captured before the async barrier to get the original error cause
+// which may otherwise be hidden.
+jQuery.Deferred.exceptionHook = function( error, asyncError ) {
 
 	// Support: IE 8 - 9 only
 	// Console exists when dev tools are open, which can happen at any time
 	if ( window.console && window.console.warn && error && rerrorNames.test( error.name ) ) {
-		window.console.warn( "jQuery.Deferred exception: " + error.message, error.stack, stack );
+		window.console.warn( "jQuery.Deferred exception: " + error.message,
+			error.stack, asyncError );
 	}
 };
 
@@ -5140,25 +4874,6 @@ function returnFalse() {
 	return false;
 }
 
-// Support: IE <=9 - 11+
-// focus() and blur() are asynchronous, except when they are no-op.
-// So expect focus to be synchronous when the element is already active,
-// and blur to be synchronous when the element is not already active.
-// (focus and blur are always synchronous in other supported browsers,
-// this just defines when we can count on it).
-function expectSync( elem, type ) {
-	return ( elem === safeActiveElement() ) === ( type === "focus" );
-}
-
-// Support: IE <=9 only
-// Accessing document.activeElement can throw unexpectedly
-// https://bugs.jquery.com/ticket/13393
-function safeActiveElement() {
-	try {
-		return document.activeElement;
-	} catch ( err ) { }
-}
-
 function on( elem, types, selector, data, fn, one ) {
 	var origFn, type;
 
@@ -5596,7 +5311,7 @@ jQuery.event = {
 					el.click && nodeName( el, "input" ) ) {
 
 					// dataPriv.set( el, "click", ... )
-					leverageNative( el, "click", returnTrue );
+					leverageNative( el, "click", true );
 				}
 
 				// Return false to allow normal processing in the caller
@@ -5647,10 +5362,10 @@ jQuery.event = {
 // synthetic events by interrupting progress until reinvoked in response to
 // *native* events that it fires directly, ensuring that state changes have
 // already occurred before other listeners are invoked.
-function leverageNative( el, type, expectSync ) {
+function leverageNative( el, type, isSetup ) {
 
-	// Missing expectSync indicates a trigger call, which must force setup through jQuery.event.add
-	if ( !expectSync ) {
+	// Missing `isSetup` indicates a trigger call, which must force setup through jQuery.event.add
+	if ( !isSetup ) {
 		if ( dataPriv.get( el, type ) === undefined ) {
 			jQuery.event.add( el, type, returnTrue );
 		}
@@ -5662,15 +5377,13 @@ function leverageNative( el, type, expectSync ) {
 	jQuery.event.add( el, type, {
 		namespace: false,
 		handler: function( event ) {
-			var notAsync, result,
+			var result,
 				saved = dataPriv.get( this, type );
 
 			if ( ( event.isTrigger & 1 ) && this[ type ] ) {
 
 				// Interrupt processing of the outer synthetic .trigger()ed event
-				// Saved data should be false in such cases, but might be a leftover capture object
-				// from an async native handler (gh-4350)
-				if ( !saved.length ) {
+				if ( !saved ) {
 
 					// Store arguments for use when handling the inner native event
 					// There will always be at least one argument (an event object), so this array
@@ -5679,33 +5392,22 @@ function leverageNative( el, type, expectSync ) {
 					dataPriv.set( this, type, saved );
 
 					// Trigger the native event and capture its result
-					// Support: IE <=9 - 11+
-					// focus() and blur() are asynchronous
-					notAsync = expectSync( this, type );
 					this[ type ]();
 					result = dataPriv.get( this, type );
-					if ( saved !== result || notAsync ) {
-						dataPriv.set( this, type, false );
-					} else {
-						result = {};
-					}
+					dataPriv.set( this, type, false );
+
 					if ( saved !== result ) {
 
 						// Cancel the outer synthetic event
 						event.stopImmediatePropagation();
 						event.preventDefault();
 
-						// Support: Chrome 86+
-						// In Chrome, if an element having a focusout handler is blurred by
-						// clicking outside of it, it invokes the handler synchronously. If
-						// that handler calls `.remove()` on the element, the data is cleared,
-						// leaving `result` undefined. We need to guard against this.
-						return result && result.value;
+						return result;
 					}
 
 				// If this is an inner synthetic event for an event with a bubbling surrogate
-				// (focus or blur), assume that the surrogate already propagated from triggering the
-				// native event and prevent that from happening again here.
+				// (focus or blur), assume that the surrogate already propagated from triggering
+				// the native event and prevent that from happening again here.
 				// This technically gets the ordering wrong w.r.t. to `.trigger()` (in which the
 				// bubbling surrogate propagates *after* the non-bubbling base), but that seems
 				// less bad than duplication.
@@ -5715,22 +5417,25 @@ function leverageNative( el, type, expectSync ) {
 
 			// If this is a native event triggered above, everything is now in order
 			// Fire an inner synthetic event with the original arguments
-			} else if ( saved.length ) {
+			} else if ( saved ) {
 
 				// ...and capture the result
-				dataPriv.set( this, type, {
-					value: jQuery.event.trigger(
+				dataPriv.set( this, type, jQuery.event.trigger(
+					saved[ 0 ],
+					saved.slice( 1 ),
+					this
+				) );
 
-						// Support: IE <=9 - 11+
-						// Extend with the prototype to reset the above stopImmediatePropagation()
-						jQuery.extend( saved[ 0 ], jQuery.Event.prototype ),
-						saved.slice( 1 ),
-						this
-					)
-				} );
-
-				// Abort handling of the native event
-				event.stopImmediatePropagation();
+				// Abort handling of the native event by all jQuery handlers while allowing
+				// native handlers on the same element to run. On target, this is achieved
+				// by stopping immediate propagation just on the jQuery event. However,
+				// the native event is re-wrapped by a jQuery one on each level of the
+				// propagation so the only way to stop it for jQuery is to stop it for
+				// everyone via native `stopPropagation()`. This is not a problem for
+				// focus/blur which don't bubble, but it does also stop click on checkboxes
+				// and radios. We accept this limitation.
+				event.stopPropagation();
+				event.isImmediatePropagationStopped = returnTrue;
 			}
 		}
 	} );
@@ -5869,18 +5574,73 @@ jQuery.each( {
 }, jQuery.event.addProp );
 
 jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateType ) {
+
+	function focusMappedHandler( nativeEvent ) {
+		if ( document.documentMode ) {
+
+			// Support: IE 11+
+			// Attach a single focusin/focusout handler on the document while someone wants
+			// focus/blur. This is because the former are synchronous in IE while the latter
+			// are async. In other browsers, all those handlers are invoked synchronously.
+
+			// `handle` from private data would already wrap the event, but we need
+			// to change the `type` here.
+			var handle = dataPriv.get( this, "handle" ),
+				event = jQuery.event.fix( nativeEvent );
+			event.type = nativeEvent.type === "focusin" ? "focus" : "blur";
+			event.isSimulated = true;
+
+			// First, handle focusin/focusout
+			handle( nativeEvent );
+
+			// ...then, handle focus/blur
+			//
+			// focus/blur don't bubble while focusin/focusout do; simulate the former by only
+			// invoking the handler at the lower level.
+			if ( event.target === event.currentTarget ) {
+
+				// The setup part calls `leverageNative`, which, in turn, calls
+				// `jQuery.event.add`, so event handle will already have been set
+				// by this point.
+				handle( event );
+			}
+		} else {
+
+			// For non-IE browsers, attach a single capturing handler on the document
+			// while someone wants focusin/focusout.
+			jQuery.event.simulate( delegateType, nativeEvent.target,
+				jQuery.event.fix( nativeEvent ) );
+		}
+	}
+
 	jQuery.event.special[ type ] = {
 
 		// Utilize native event if possible so blur/focus sequence is correct
 		setup: function() {
 
+			var attaches;
+
 			// Claim the first handler
 			// dataPriv.set( this, "focus", ... )
 			// dataPriv.set( this, "blur", ... )
-			leverageNative( this, type, expectSync );
+			leverageNative( this, type, true );
 
-			// Return false to allow normal processing in the caller
-			return false;
+			if ( document.documentMode ) {
+
+				// Support: IE 9 - 11+
+				// We use the same native handler for focusin & focus (and focusout & blur)
+				// so we need to coordinate setup & teardown parts between those events.
+				// Use `delegateType` as the key as `type` is already used by `leverageNative`.
+				attaches = dataPriv.get( this, delegateType );
+				if ( !attaches ) {
+					this.addEventListener( delegateType, focusMappedHandler );
+				}
+				dataPriv.set( this, delegateType, ( attaches || 0 ) + 1 );
+			} else {
+
+				// Return false to allow normal processing in the caller
+				return false;
+			}
 		},
 		trigger: function() {
 
@@ -5891,6 +5651,24 @@ jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateTyp
 			return true;
 		},
 
+		teardown: function() {
+			var attaches;
+
+			if ( document.documentMode ) {
+				attaches = dataPriv.get( this, delegateType ) - 1;
+				if ( !attaches ) {
+					this.removeEventListener( delegateType, focusMappedHandler );
+					dataPriv.remove( this, delegateType );
+				} else {
+					dataPriv.set( this, delegateType, attaches );
+				}
+			} else {
+
+				// Return false to indicate standard teardown should be applied
+				return false;
+			}
+		},
+
 		// Suppress native focus or blur if we're currently inside
 		// a leveraged native-event stack
 		_default: function( event ) {
@@ -5898,6 +5676,58 @@ jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateTyp
 		},
 
 		delegateType: delegateType
+	};
+
+	// Support: Firefox <=44
+	// Firefox doesn't have focus(in | out) events
+	// Related ticket - https://bugzilla.mozilla.org/show_bug.cgi?id=687787
+	//
+	// Support: Chrome <=48 - 49, Safari <=9.0 - 9.1
+	// focus(in | out) events fire after focus & blur events,
+	// which is spec violation - http://www.w3.org/TR/DOM-Level-3-Events/#events-focusevent-event-order
+	// Related ticket - https://bugs.chromium.org/p/chromium/issues/detail?id=449857
+	//
+	// Support: IE 9 - 11+
+	// To preserve relative focusin/focus & focusout/blur event order guaranteed on the 3.x branch,
+	// attach a single handler for both events in IE.
+	jQuery.event.special[ delegateType ] = {
+		setup: function() {
+
+			// Handle: regular nodes (via `this.ownerDocument`), window
+			// (via `this.document`) & document (via `this`).
+			var doc = this.ownerDocument || this.document || this,
+				dataHolder = document.documentMode ? this : doc,
+				attaches = dataPriv.get( dataHolder, delegateType );
+
+			// Support: IE 9 - 11+
+			// We use the same native handler for focusin & focus (and focusout & blur)
+			// so we need to coordinate setup & teardown parts between those events.
+			// Use `delegateType` as the key as `type` is already used by `leverageNative`.
+			if ( !attaches ) {
+				if ( document.documentMode ) {
+					this.addEventListener( delegateType, focusMappedHandler );
+				} else {
+					doc.addEventListener( type, focusMappedHandler, true );
+				}
+			}
+			dataPriv.set( dataHolder, delegateType, ( attaches || 0 ) + 1 );
+		},
+		teardown: function() {
+			var doc = this.ownerDocument || this.document || this,
+				dataHolder = document.documentMode ? this : doc,
+				attaches = dataPriv.get( dataHolder, delegateType ) - 1;
+
+			if ( !attaches ) {
+				if ( document.documentMode ) {
+					this.removeEventListener( delegateType, focusMappedHandler );
+				} else {
+					doc.removeEventListener( type, focusMappedHandler, true );
+				}
+				dataPriv.remove( dataHolder, delegateType );
+			} else {
+				dataPriv.set( dataHolder, delegateType, attaches );
+			}
+		}
 	};
 } );
 
@@ -6130,7 +5960,7 @@ function domManip( collection, args, callback, ignored ) {
 			if ( hasScripts ) {
 				doc = scripts[ scripts.length - 1 ].ownerDocument;
 
-				// Reenable scripts
+				// Re-enable scripts
 				jQuery.map( scripts, restoreScript );
 
 				// Evaluate executable scripts on first document insertion
@@ -6201,7 +6031,8 @@ jQuery.extend( {
 		if ( !support.noCloneChecked && ( elem.nodeType === 1 || elem.nodeType === 11 ) &&
 				!jQuery.isXMLDoc( elem ) ) {
 
-			// We eschew Sizzle here for performance reasons: https://jsperf.com/getall-vs-sizzle/2
+			// We eschew jQuery#find here for performance reasons:
+			// https://jsperf.com/getall-vs-sizzle/2
 			destElements = getAll( clone );
 			srcElements = getAll( elem );
 
@@ -6477,15 +6308,6 @@ var swap = function( elem, options, callback ) {
 
 var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 
-var whitespace = "[\\x20\\t\\r\\n\\f]";
-
-
-var rtrimCSS = new RegExp(
-	"^" + whitespace + "+|((?:^|[^\\\\])(?:\\\\.)*)" + whitespace + "+$",
-	"g"
-);
-
-
 
 
 ( function() {
@@ -6595,7 +6417,7 @@ var rtrimCSS = new RegExp(
 				trChild = document.createElement( "div" );
 
 				table.style.cssText = "position:absolute;left:-11111px;border-collapse:separate";
-				tr.style.cssText = "border:1px solid";
+				tr.style.cssText = "box-sizing:content-box;border:1px solid";
 
 				// Support: Chrome 86+
 				// Height set through cssText does not get applied.
@@ -6607,7 +6429,7 @@ var rtrimCSS = new RegExp(
 				// In our bodyBackground.html iframe,
 				// display for all div elements is set to "inline",
 				// which causes a problem only in Android 8 Chrome 86.
-				// Ensuring the div is display: block
+				// Ensuring the div is `display: block`
 				// gets around this issue.
 				trChild.style.display = "block";
 
@@ -6645,17 +6467,37 @@ function curCSS( elem, name, computed ) {
 	//   .css('filter') (IE 9 only, trac-12537)
 	//   .css('--customProperty) (gh-3144)
 	if ( computed ) {
+
+		// Support: IE <=9 - 11+
+		// IE only supports `"float"` in `getPropertyValue`; in computed styles
+		// it's only available as `"cssFloat"`. We no longer modify properties
+		// sent to `.css()` apart from camelCasing, so we need to check both.
+		// Normally, this would create difference in behavior: if
+		// `getPropertyValue` returns an empty string, the value returned
+		// by `.css()` would be `undefined`. This is usually the case for
+		// disconnected elements. However, in IE even disconnected elements
+		// with no styles return `"none"` for `getPropertyValue( "float" )`
 		ret = computed.getPropertyValue( name ) || computed[ name ];
 
-		// trim whitespace for custom property (issue gh-4926)
-		if ( isCustomProp ) {
+		if ( isCustomProp && ret ) {
 
-			// rtrim treats U+000D CARRIAGE RETURN and U+000C FORM FEED
+			// Support: Firefox 105+, Chrome <=105+
+			// Spec requires trimming whitespace for custom properties (gh-4926).
+			// Firefox only trims leading whitespace. Chrome just collapses
+			// both leading & trailing whitespace to a single space.
+			//
+			// Fall back to `undefined` if empty string returned.
+			// This collapses a missing definition with property defined
+			// and set to an empty string but there's no standard API
+			// allowing us to differentiate them without a performance penalty
+			// and returning `undefined` aligns with older jQuery.
+			//
+			// rtrimCSS treats U+000D CARRIAGE RETURN and U+000C FORM FEED
 			// as whitespace while CSS does not, but this is not a problem
 			// because CSS preprocessing replaces them with U+000A LINE FEED
 			// (which *is* CSS whitespace)
 			// https://www.w3.org/TR/css-syntax-3/#input-preprocessing
-			ret = ret.replace( rtrimCSS, "$1" );
+			ret = ret.replace( rtrimCSS, "$1" ) || undefined;
 		}
 
 		if ( ret === "" && !isAttached( elem ) ) {
@@ -6774,7 +6616,8 @@ function setPositiveNumber( _elem, value, subtract ) {
 function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computedVal ) {
 	var i = dimension === "width" ? 1 : 0,
 		extra = 0,
-		delta = 0;
+		delta = 0,
+		marginDelta = 0;
 
 	// Adjustment may not be necessary
 	if ( box === ( isBorderBox ? "border" : "content" ) ) {
@@ -6784,8 +6627,10 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 	for ( ; i < 4; i += 2 ) {
 
 		// Both box models exclude margin
+		// Count margin delta separately to only add it after scroll gutter adjustment.
+		// This is needed to make negative margins work with `outerHeight( true )` (gh-3982).
 		if ( box === "margin" ) {
-			delta += jQuery.css( elem, box + cssExpand[ i ], true, styles );
+			marginDelta += jQuery.css( elem, box + cssExpand[ i ], true, styles );
 		}
 
 		// If we get here with a content-box, we're seeking "padding" or "border" or "margin"
@@ -6836,7 +6681,7 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 		) ) || 0;
 	}
 
-	return delta;
+	return delta + marginDelta;
 }
 
 function getWidthOrHeight( elem, dimension, extra ) {
@@ -6934,26 +6779,35 @@ jQuery.extend( {
 
 	// Don't automatically add "px" to these possibly-unitless properties
 	cssNumber: {
-		"animationIterationCount": true,
-		"columnCount": true,
-		"fillOpacity": true,
-		"flexGrow": true,
-		"flexShrink": true,
-		"fontWeight": true,
-		"gridArea": true,
-		"gridColumn": true,
-		"gridColumnEnd": true,
-		"gridColumnStart": true,
-		"gridRow": true,
-		"gridRowEnd": true,
-		"gridRowStart": true,
-		"lineHeight": true,
-		"opacity": true,
-		"order": true,
-		"orphans": true,
-		"widows": true,
-		"zIndex": true,
-		"zoom": true
+		animationIterationCount: true,
+		aspectRatio: true,
+		borderImageSlice: true,
+		columnCount: true,
+		flexGrow: true,
+		flexShrink: true,
+		fontWeight: true,
+		gridArea: true,
+		gridColumn: true,
+		gridColumnEnd: true,
+		gridColumnStart: true,
+		gridRow: true,
+		gridRowEnd: true,
+		gridRowStart: true,
+		lineHeight: true,
+		opacity: true,
+		order: true,
+		orphans: true,
+		scale: true,
+		widows: true,
+		zIndex: true,
+		zoom: true,
+
+		// SVG-related
+		fillOpacity: true,
+		floodOpacity: true,
+		stopOpacity: true,
+		strokeMiterlimit: true,
+		strokeOpacity: true
 	},
 
 	// Add in properties whose names you wish to fix before
@@ -8679,9 +8533,39 @@ jQuery.each( [ "radio", "checkbox" ], function() {
 
 
 // Return jQuery for attributes-only inclusion
+var location = window.location;
+
+var nonce = { guid: Date.now() };
+
+var rquery = ( /\?/ );
 
 
-support.focusin = "onfocusin" in window;
+
+// Cross-browser xml parsing
+jQuery.parseXML = function( data ) {
+	var xml, parserErrorElem;
+	if ( !data || typeof data !== "string" ) {
+		return null;
+	}
+
+	// Support: IE 9 - 11 only
+	// IE throws on parseFromString with invalid input.
+	try {
+		xml = ( new window.DOMParser() ).parseFromString( data, "text/xml" );
+	} catch ( e ) {}
+
+	parserErrorElem = xml && xml.getElementsByTagName( "parsererror" )[ 0 ];
+	if ( !xml || parserErrorElem ) {
+		jQuery.error( "Invalid XML: " + (
+			parserErrorElem ?
+				jQuery.map( parserErrorElem.childNodes, function( el ) {
+					return el.textContent;
+				} ).join( "\n" ) :
+				data
+		) );
+	}
+	return xml;
+};
 
 
 var rfocusMorph = /^(?:focusinfocus|focusoutblur)$/,
@@ -8867,85 +8751,6 @@ jQuery.fn.extend( {
 		}
 	}
 } );
-
-
-// Support: Firefox <=44
-// Firefox doesn't have focus(in | out) events
-// Related ticket - https://bugzilla.mozilla.org/show_bug.cgi?id=687787
-//
-// Support: Chrome <=48 - 49, Safari <=9.0 - 9.1
-// focus(in | out) events fire after focus & blur events,
-// which is spec violation - http://www.w3.org/TR/DOM-Level-3-Events/#events-focusevent-event-order
-// Related ticket - https://bugs.chromium.org/p/chromium/issues/detail?id=449857
-if ( !support.focusin ) {
-	jQuery.each( { focus: "focusin", blur: "focusout" }, function( orig, fix ) {
-
-		// Attach a single capturing handler on the document while someone wants focusin/focusout
-		var handler = function( event ) {
-			jQuery.event.simulate( fix, event.target, jQuery.event.fix( event ) );
-		};
-
-		jQuery.event.special[ fix ] = {
-			setup: function() {
-
-				// Handle: regular nodes (via `this.ownerDocument`), window
-				// (via `this.document`) & document (via `this`).
-				var doc = this.ownerDocument || this.document || this,
-					attaches = dataPriv.access( doc, fix );
-
-				if ( !attaches ) {
-					doc.addEventListener( orig, handler, true );
-				}
-				dataPriv.access( doc, fix, ( attaches || 0 ) + 1 );
-			},
-			teardown: function() {
-				var doc = this.ownerDocument || this.document || this,
-					attaches = dataPriv.access( doc, fix ) - 1;
-
-				if ( !attaches ) {
-					doc.removeEventListener( orig, handler, true );
-					dataPriv.remove( doc, fix );
-
-				} else {
-					dataPriv.access( doc, fix, attaches );
-				}
-			}
-		};
-	} );
-}
-var location = window.location;
-
-var nonce = { guid: Date.now() };
-
-var rquery = ( /\?/ );
-
-
-
-// Cross-browser xml parsing
-jQuery.parseXML = function( data ) {
-	var xml, parserErrorElem;
-	if ( !data || typeof data !== "string" ) {
-		return null;
-	}
-
-	// Support: IE 9 - 11 only
-	// IE throws on parseFromString with invalid input.
-	try {
-		xml = ( new window.DOMParser() ).parseFromString( data, "text/xml" );
-	} catch ( e ) {}
-
-	parserErrorElem = xml && xml.getElementsByTagName( "parsererror" )[ 0 ];
-	if ( !xml || parserErrorElem ) {
-		jQuery.error( "Invalid XML: " + (
-			parserErrorElem ?
-				jQuery.map( parserErrorElem.childNodes, function( el ) {
-					return el.textContent;
-				} ).join( "\n" ) :
-				data
-		) );
-	}
-	return xml;
-};
 
 
 var
@@ -10792,7 +10597,9 @@ jQuery.fn.extend( {
 	},
 
 	hover: function( fnOver, fnOut ) {
-		return this.mouseenter( fnOver ).mouseleave( fnOut || fnOver );
+		return this
+			.on( "mouseenter", fnOver )
+			.on( "mouseleave", fnOut || fnOver );
 	}
 } );
 
@@ -10967,3026 +10774,6 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 
 /***/ }),
 
-/***/ "./node_modules/slick-carousel/slick/slick.js":
-/*!****************************************************!*\
-  !*** ./node_modules/slick-carousel/slick/slick.js ***!
-  \****************************************************/
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
-     _ _      _       _
- ___| (_) ___| | __  (_)___
-/ __| | |/ __| |/ /  | / __|
-\__ \ | | (__|   < _ | \__ \
-|___/_|_|\___|_|\_(_)/ |___/
-                   |__/
-
- Version: 1.8.1
-  Author: Ken Wheeler
- Website: http://kenwheeler.github.io
-    Docs: http://kenwheeler.github.io/slick
-    Repo: http://github.com/kenwheeler/slick
-  Issues: http://github.com/kenwheeler/slick/issues
-
- */
-/* global window, document, define, jQuery, setInterval, clearInterval */
-;(function(factory) {
-    'use strict';
-    if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-    } else {}
-
-}(function($) {
-    'use strict';
-    var Slick = window.Slick || {};
-
-    Slick = (function() {
-
-        var instanceUid = 0;
-
-        function Slick(element, settings) {
-
-            var _ = this, dataSettings;
-
-            _.defaults = {
-                accessibility: true,
-                adaptiveHeight: false,
-                appendArrows: $(element),
-                appendDots: $(element),
-                arrows: true,
-                asNavFor: null,
-                prevArrow: '<button class="slick-prev" aria-label="Previous" type="button">Previous</button>',
-                nextArrow: '<button class="slick-next" aria-label="Next" type="button">Next</button>',
-                autoplay: false,
-                autoplaySpeed: 3000,
-                centerMode: false,
-                centerPadding: '50px',
-                cssEase: 'ease',
-                customPaging: function(slider, i) {
-                    return $('<button type="button" />').text(i + 1);
-                },
-                dots: false,
-                dotsClass: 'slick-dots',
-                draggable: true,
-                easing: 'linear',
-                edgeFriction: 0.35,
-                fade: false,
-                focusOnSelect: false,
-                focusOnChange: false,
-                infinite: true,
-                initialSlide: 0,
-                lazyLoad: 'ondemand',
-                mobileFirst: false,
-                pauseOnHover: true,
-                pauseOnFocus: true,
-                pauseOnDotsHover: false,
-                respondTo: 'window',
-                responsive: null,
-                rows: 1,
-                rtl: false,
-                slide: '',
-                slidesPerRow: 1,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                speed: 500,
-                swipe: true,
-                swipeToSlide: false,
-                touchMove: true,
-                touchThreshold: 5,
-                useCSS: true,
-                useTransform: true,
-                variableWidth: false,
-                vertical: false,
-                verticalSwiping: false,
-                waitForAnimate: true,
-                zIndex: 1000
-            };
-
-            _.initials = {
-                animating: false,
-                dragging: false,
-                autoPlayTimer: null,
-                currentDirection: 0,
-                currentLeft: null,
-                currentSlide: 0,
-                direction: 1,
-                $dots: null,
-                listWidth: null,
-                listHeight: null,
-                loadIndex: 0,
-                $nextArrow: null,
-                $prevArrow: null,
-                scrolling: false,
-                slideCount: null,
-                slideWidth: null,
-                $slideTrack: null,
-                $slides: null,
-                sliding: false,
-                slideOffset: 0,
-                swipeLeft: null,
-                swiping: false,
-                $list: null,
-                touchObject: {},
-                transformsEnabled: false,
-                unslicked: false
-            };
-
-            $.extend(_, _.initials);
-
-            _.activeBreakpoint = null;
-            _.animType = null;
-            _.animProp = null;
-            _.breakpoints = [];
-            _.breakpointSettings = [];
-            _.cssTransitions = false;
-            _.focussed = false;
-            _.interrupted = false;
-            _.hidden = 'hidden';
-            _.paused = true;
-            _.positionProp = null;
-            _.respondTo = null;
-            _.rowCount = 1;
-            _.shouldClick = true;
-            _.$slider = $(element);
-            _.$slidesCache = null;
-            _.transformType = null;
-            _.transitionType = null;
-            _.visibilityChange = 'visibilitychange';
-            _.windowWidth = 0;
-            _.windowTimer = null;
-
-            dataSettings = $(element).data('slick') || {};
-
-            _.options = $.extend({}, _.defaults, settings, dataSettings);
-
-            _.currentSlide = _.options.initialSlide;
-
-            _.originalSettings = _.options;
-
-            if (typeof document.mozHidden !== 'undefined') {
-                _.hidden = 'mozHidden';
-                _.visibilityChange = 'mozvisibilitychange';
-            } else if (typeof document.webkitHidden !== 'undefined') {
-                _.hidden = 'webkitHidden';
-                _.visibilityChange = 'webkitvisibilitychange';
-            }
-
-            _.autoPlay = $.proxy(_.autoPlay, _);
-            _.autoPlayClear = $.proxy(_.autoPlayClear, _);
-            _.autoPlayIterator = $.proxy(_.autoPlayIterator, _);
-            _.changeSlide = $.proxy(_.changeSlide, _);
-            _.clickHandler = $.proxy(_.clickHandler, _);
-            _.selectHandler = $.proxy(_.selectHandler, _);
-            _.setPosition = $.proxy(_.setPosition, _);
-            _.swipeHandler = $.proxy(_.swipeHandler, _);
-            _.dragHandler = $.proxy(_.dragHandler, _);
-            _.keyHandler = $.proxy(_.keyHandler, _);
-
-            _.instanceUid = instanceUid++;
-
-            // A simple way to check for HTML strings
-            // Strict HTML recognition (must start with <)
-            // Extracted from jQuery v1.11 source
-            _.htmlExpr = /^(?:\s*(<[\w\W]+>)[^>]*)$/;
-
-
-            _.registerBreakpoints();
-            _.init(true);
-
-        }
-
-        return Slick;
-
-    }());
-
-    Slick.prototype.activateADA = function() {
-        var _ = this;
-
-        _.$slideTrack.find('.slick-active').attr({
-            'aria-hidden': 'false'
-        }).find('a, input, button, select').attr({
-            'tabindex': '0'
-        });
-
-    };
-
-    Slick.prototype.addSlide = Slick.prototype.slickAdd = function(markup, index, addBefore) {
-
-        var _ = this;
-
-        if (typeof(index) === 'boolean') {
-            addBefore = index;
-            index = null;
-        } else if (index < 0 || (index >= _.slideCount)) {
-            return false;
-        }
-
-        _.unload();
-
-        if (typeof(index) === 'number') {
-            if (index === 0 && _.$slides.length === 0) {
-                $(markup).appendTo(_.$slideTrack);
-            } else if (addBefore) {
-                $(markup).insertBefore(_.$slides.eq(index));
-            } else {
-                $(markup).insertAfter(_.$slides.eq(index));
-            }
-        } else {
-            if (addBefore === true) {
-                $(markup).prependTo(_.$slideTrack);
-            } else {
-                $(markup).appendTo(_.$slideTrack);
-            }
-        }
-
-        _.$slides = _.$slideTrack.children(this.options.slide);
-
-        _.$slideTrack.children(this.options.slide).detach();
-
-        _.$slideTrack.append(_.$slides);
-
-        _.$slides.each(function(index, element) {
-            $(element).attr('data-slick-index', index);
-        });
-
-        _.$slidesCache = _.$slides;
-
-        _.reinit();
-
-    };
-
-    Slick.prototype.animateHeight = function() {
-        var _ = this;
-        if (_.options.slidesToShow === 1 && _.options.adaptiveHeight === true && _.options.vertical === false) {
-            var targetHeight = _.$slides.eq(_.currentSlide).outerHeight(true);
-            _.$list.animate({
-                height: targetHeight
-            }, _.options.speed);
-        }
-    };
-
-    Slick.prototype.animateSlide = function(targetLeft, callback) {
-
-        var animProps = {},
-            _ = this;
-
-        _.animateHeight();
-
-        if (_.options.rtl === true && _.options.vertical === false) {
-            targetLeft = -targetLeft;
-        }
-        if (_.transformsEnabled === false) {
-            if (_.options.vertical === false) {
-                _.$slideTrack.animate({
-                    left: targetLeft
-                }, _.options.speed, _.options.easing, callback);
-            } else {
-                _.$slideTrack.animate({
-                    top: targetLeft
-                }, _.options.speed, _.options.easing, callback);
-            }
-
-        } else {
-
-            if (_.cssTransitions === false) {
-                if (_.options.rtl === true) {
-                    _.currentLeft = -(_.currentLeft);
-                }
-                $({
-                    animStart: _.currentLeft
-                }).animate({
-                    animStart: targetLeft
-                }, {
-                    duration: _.options.speed,
-                    easing: _.options.easing,
-                    step: function(now) {
-                        now = Math.ceil(now);
-                        if (_.options.vertical === false) {
-                            animProps[_.animType] = 'translate(' +
-                                now + 'px, 0px)';
-                            _.$slideTrack.css(animProps);
-                        } else {
-                            animProps[_.animType] = 'translate(0px,' +
-                                now + 'px)';
-                            _.$slideTrack.css(animProps);
-                        }
-                    },
-                    complete: function() {
-                        if (callback) {
-                            callback.call();
-                        }
-                    }
-                });
-
-            } else {
-
-                _.applyTransition();
-                targetLeft = Math.ceil(targetLeft);
-
-                if (_.options.vertical === false) {
-                    animProps[_.animType] = 'translate3d(' + targetLeft + 'px, 0px, 0px)';
-                } else {
-                    animProps[_.animType] = 'translate3d(0px,' + targetLeft + 'px, 0px)';
-                }
-                _.$slideTrack.css(animProps);
-
-                if (callback) {
-                    setTimeout(function() {
-
-                        _.disableTransition();
-
-                        callback.call();
-                    }, _.options.speed);
-                }
-
-            }
-
-        }
-
-    };
-
-    Slick.prototype.getNavTarget = function() {
-
-        var _ = this,
-            asNavFor = _.options.asNavFor;
-
-        if ( asNavFor && asNavFor !== null ) {
-            asNavFor = $(asNavFor).not(_.$slider);
-        }
-
-        return asNavFor;
-
-    };
-
-    Slick.prototype.asNavFor = function(index) {
-
-        var _ = this,
-            asNavFor = _.getNavTarget();
-
-        if ( asNavFor !== null && typeof asNavFor === 'object' ) {
-            asNavFor.each(function() {
-                var target = $(this).slick('getSlick');
-                if(!target.unslicked) {
-                    target.slideHandler(index, true);
-                }
-            });
-        }
-
-    };
-
-    Slick.prototype.applyTransition = function(slide) {
-
-        var _ = this,
-            transition = {};
-
-        if (_.options.fade === false) {
-            transition[_.transitionType] = _.transformType + ' ' + _.options.speed + 'ms ' + _.options.cssEase;
-        } else {
-            transition[_.transitionType] = 'opacity ' + _.options.speed + 'ms ' + _.options.cssEase;
-        }
-
-        if (_.options.fade === false) {
-            _.$slideTrack.css(transition);
-        } else {
-            _.$slides.eq(slide).css(transition);
-        }
-
-    };
-
-    Slick.prototype.autoPlay = function() {
-
-        var _ = this;
-
-        _.autoPlayClear();
-
-        if ( _.slideCount > _.options.slidesToShow ) {
-            _.autoPlayTimer = setInterval( _.autoPlayIterator, _.options.autoplaySpeed );
-        }
-
-    };
-
-    Slick.prototype.autoPlayClear = function() {
-
-        var _ = this;
-
-        if (_.autoPlayTimer) {
-            clearInterval(_.autoPlayTimer);
-        }
-
-    };
-
-    Slick.prototype.autoPlayIterator = function() {
-
-        var _ = this,
-            slideTo = _.currentSlide + _.options.slidesToScroll;
-
-        if ( !_.paused && !_.interrupted && !_.focussed ) {
-
-            if ( _.options.infinite === false ) {
-
-                if ( _.direction === 1 && ( _.currentSlide + 1 ) === ( _.slideCount - 1 )) {
-                    _.direction = 0;
-                }
-
-                else if ( _.direction === 0 ) {
-
-                    slideTo = _.currentSlide - _.options.slidesToScroll;
-
-                    if ( _.currentSlide - 1 === 0 ) {
-                        _.direction = 1;
-                    }
-
-                }
-
-            }
-
-            _.slideHandler( slideTo );
-
-        }
-
-    };
-
-    Slick.prototype.buildArrows = function() {
-
-        var _ = this;
-
-        if (_.options.arrows === true ) {
-
-            _.$prevArrow = $(_.options.prevArrow).addClass('slick-arrow');
-            _.$nextArrow = $(_.options.nextArrow).addClass('slick-arrow');
-
-            if( _.slideCount > _.options.slidesToShow ) {
-
-                _.$prevArrow.removeClass('slick-hidden').removeAttr('aria-hidden tabindex');
-                _.$nextArrow.removeClass('slick-hidden').removeAttr('aria-hidden tabindex');
-
-                if (_.htmlExpr.test(_.options.prevArrow)) {
-                    _.$prevArrow.prependTo(_.options.appendArrows);
-                }
-
-                if (_.htmlExpr.test(_.options.nextArrow)) {
-                    _.$nextArrow.appendTo(_.options.appendArrows);
-                }
-
-                if (_.options.infinite !== true) {
-                    _.$prevArrow
-                        .addClass('slick-disabled')
-                        .attr('aria-disabled', 'true');
-                }
-
-            } else {
-
-                _.$prevArrow.add( _.$nextArrow )
-
-                    .addClass('slick-hidden')
-                    .attr({
-                        'aria-disabled': 'true',
-                        'tabindex': '-1'
-                    });
-
-            }
-
-        }
-
-    };
-
-    Slick.prototype.buildDots = function() {
-
-        var _ = this,
-            i, dot;
-
-        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
-
-            _.$slider.addClass('slick-dotted');
-
-            dot = $('<ul />').addClass(_.options.dotsClass);
-
-            for (i = 0; i <= _.getDotCount(); i += 1) {
-                dot.append($('<li />').append(_.options.customPaging.call(this, _, i)));
-            }
-
-            _.$dots = dot.appendTo(_.options.appendDots);
-
-            _.$dots.find('li').first().addClass('slick-active');
-
-        }
-
-    };
-
-    Slick.prototype.buildOut = function() {
-
-        var _ = this;
-
-        _.$slides =
-            _.$slider
-                .children( _.options.slide + ':not(.slick-cloned)')
-                .addClass('slick-slide');
-
-        _.slideCount = _.$slides.length;
-
-        _.$slides.each(function(index, element) {
-            $(element)
-                .attr('data-slick-index', index)
-                .data('originalStyling', $(element).attr('style') || '');
-        });
-
-        _.$slider.addClass('slick-slider');
-
-        _.$slideTrack = (_.slideCount === 0) ?
-            $('<div class="slick-track"/>').appendTo(_.$slider) :
-            _.$slides.wrapAll('<div class="slick-track"/>').parent();
-
-        _.$list = _.$slideTrack.wrap(
-            '<div class="slick-list"/>').parent();
-        _.$slideTrack.css('opacity', 0);
-
-        if (_.options.centerMode === true || _.options.swipeToSlide === true) {
-            _.options.slidesToScroll = 1;
-        }
-
-        $('img[data-lazy]', _.$slider).not('[src]').addClass('slick-loading');
-
-        _.setupInfinite();
-
-        _.buildArrows();
-
-        _.buildDots();
-
-        _.updateDots();
-
-
-        _.setSlideClasses(typeof _.currentSlide === 'number' ? _.currentSlide : 0);
-
-        if (_.options.draggable === true) {
-            _.$list.addClass('draggable');
-        }
-
-    };
-
-    Slick.prototype.buildRows = function() {
-
-        var _ = this, a, b, c, newSlides, numOfSlides, originalSlides,slidesPerSection;
-
-        newSlides = document.createDocumentFragment();
-        originalSlides = _.$slider.children();
-
-        if(_.options.rows > 0) {
-
-            slidesPerSection = _.options.slidesPerRow * _.options.rows;
-            numOfSlides = Math.ceil(
-                originalSlides.length / slidesPerSection
-            );
-
-            for(a = 0; a < numOfSlides; a++){
-                var slide = document.createElement('div');
-                for(b = 0; b < _.options.rows; b++) {
-                    var row = document.createElement('div');
-                    for(c = 0; c < _.options.slidesPerRow; c++) {
-                        var target = (a * slidesPerSection + ((b * _.options.slidesPerRow) + c));
-                        if (originalSlides.get(target)) {
-                            row.appendChild(originalSlides.get(target));
-                        }
-                    }
-                    slide.appendChild(row);
-                }
-                newSlides.appendChild(slide);
-            }
-
-            _.$slider.empty().append(newSlides);
-            _.$slider.children().children().children()
-                .css({
-                    'width':(100 / _.options.slidesPerRow) + '%',
-                    'display': 'inline-block'
-                });
-
-        }
-
-    };
-
-    Slick.prototype.checkResponsive = function(initial, forceUpdate) {
-
-        var _ = this,
-            breakpoint, targetBreakpoint, respondToWidth, triggerBreakpoint = false;
-        var sliderWidth = _.$slider.width();
-        var windowWidth = window.innerWidth || $(window).width();
-
-        if (_.respondTo === 'window') {
-            respondToWidth = windowWidth;
-        } else if (_.respondTo === 'slider') {
-            respondToWidth = sliderWidth;
-        } else if (_.respondTo === 'min') {
-            respondToWidth = Math.min(windowWidth, sliderWidth);
-        }
-
-        if ( _.options.responsive &&
-            _.options.responsive.length &&
-            _.options.responsive !== null) {
-
-            targetBreakpoint = null;
-
-            for (breakpoint in _.breakpoints) {
-                if (_.breakpoints.hasOwnProperty(breakpoint)) {
-                    if (_.originalSettings.mobileFirst === false) {
-                        if (respondToWidth < _.breakpoints[breakpoint]) {
-                            targetBreakpoint = _.breakpoints[breakpoint];
-                        }
-                    } else {
-                        if (respondToWidth > _.breakpoints[breakpoint]) {
-                            targetBreakpoint = _.breakpoints[breakpoint];
-                        }
-                    }
-                }
-            }
-
-            if (targetBreakpoint !== null) {
-                if (_.activeBreakpoint !== null) {
-                    if (targetBreakpoint !== _.activeBreakpoint || forceUpdate) {
-                        _.activeBreakpoint =
-                            targetBreakpoint;
-                        if (_.breakpointSettings[targetBreakpoint] === 'unslick') {
-                            _.unslick(targetBreakpoint);
-                        } else {
-                            _.options = $.extend({}, _.originalSettings,
-                                _.breakpointSettings[
-                                    targetBreakpoint]);
-                            if (initial === true) {
-                                _.currentSlide = _.options.initialSlide;
-                            }
-                            _.refresh(initial);
-                        }
-                        triggerBreakpoint = targetBreakpoint;
-                    }
-                } else {
-                    _.activeBreakpoint = targetBreakpoint;
-                    if (_.breakpointSettings[targetBreakpoint] === 'unslick') {
-                        _.unslick(targetBreakpoint);
-                    } else {
-                        _.options = $.extend({}, _.originalSettings,
-                            _.breakpointSettings[
-                                targetBreakpoint]);
-                        if (initial === true) {
-                            _.currentSlide = _.options.initialSlide;
-                        }
-                        _.refresh(initial);
-                    }
-                    triggerBreakpoint = targetBreakpoint;
-                }
-            } else {
-                if (_.activeBreakpoint !== null) {
-                    _.activeBreakpoint = null;
-                    _.options = _.originalSettings;
-                    if (initial === true) {
-                        _.currentSlide = _.options.initialSlide;
-                    }
-                    _.refresh(initial);
-                    triggerBreakpoint = targetBreakpoint;
-                }
-            }
-
-            // only trigger breakpoints during an actual break. not on initialize.
-            if( !initial && triggerBreakpoint !== false ) {
-                _.$slider.trigger('breakpoint', [_, triggerBreakpoint]);
-            }
-        }
-
-    };
-
-    Slick.prototype.changeSlide = function(event, dontAnimate) {
-
-        var _ = this,
-            $target = $(event.currentTarget),
-            indexOffset, slideOffset, unevenOffset;
-
-        // If target is a link, prevent default action.
-        if($target.is('a')) {
-            event.preventDefault();
-        }
-
-        // If target is not the <li> element (ie: a child), find the <li>.
-        if(!$target.is('li')) {
-            $target = $target.closest('li');
-        }
-
-        unevenOffset = (_.slideCount % _.options.slidesToScroll !== 0);
-        indexOffset = unevenOffset ? 0 : (_.slideCount - _.currentSlide) % _.options.slidesToScroll;
-
-        switch (event.data.message) {
-
-            case 'previous':
-                slideOffset = indexOffset === 0 ? _.options.slidesToScroll : _.options.slidesToShow - indexOffset;
-                if (_.slideCount > _.options.slidesToShow) {
-                    _.slideHandler(_.currentSlide - slideOffset, false, dontAnimate);
-                }
-                break;
-
-            case 'next':
-                slideOffset = indexOffset === 0 ? _.options.slidesToScroll : indexOffset;
-                if (_.slideCount > _.options.slidesToShow) {
-                    _.slideHandler(_.currentSlide + slideOffset, false, dontAnimate);
-                }
-                break;
-
-            case 'index':
-                var index = event.data.index === 0 ? 0 :
-                    event.data.index || $target.index() * _.options.slidesToScroll;
-
-                _.slideHandler(_.checkNavigable(index), false, dontAnimate);
-                $target.children().trigger('focus');
-                break;
-
-            default:
-                return;
-        }
-
-    };
-
-    Slick.prototype.checkNavigable = function(index) {
-
-        var _ = this,
-            navigables, prevNavigable;
-
-        navigables = _.getNavigableIndexes();
-        prevNavigable = 0;
-        if (index > navigables[navigables.length - 1]) {
-            index = navigables[navigables.length - 1];
-        } else {
-            for (var n in navigables) {
-                if (index < navigables[n]) {
-                    index = prevNavigable;
-                    break;
-                }
-                prevNavigable = navigables[n];
-            }
-        }
-
-        return index;
-    };
-
-    Slick.prototype.cleanUpEvents = function() {
-
-        var _ = this;
-
-        if (_.options.dots && _.$dots !== null) {
-
-            $('li', _.$dots)
-                .off('click.slick', _.changeSlide)
-                .off('mouseenter.slick', $.proxy(_.interrupt, _, true))
-                .off('mouseleave.slick', $.proxy(_.interrupt, _, false));
-
-            if (_.options.accessibility === true) {
-                _.$dots.off('keydown.slick', _.keyHandler);
-            }
-        }
-
-        _.$slider.off('focus.slick blur.slick');
-
-        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
-            _.$prevArrow && _.$prevArrow.off('click.slick', _.changeSlide);
-            _.$nextArrow && _.$nextArrow.off('click.slick', _.changeSlide);
-
-            if (_.options.accessibility === true) {
-                _.$prevArrow && _.$prevArrow.off('keydown.slick', _.keyHandler);
-                _.$nextArrow && _.$nextArrow.off('keydown.slick', _.keyHandler);
-            }
-        }
-
-        _.$list.off('touchstart.slick mousedown.slick', _.swipeHandler);
-        _.$list.off('touchmove.slick mousemove.slick', _.swipeHandler);
-        _.$list.off('touchend.slick mouseup.slick', _.swipeHandler);
-        _.$list.off('touchcancel.slick mouseleave.slick', _.swipeHandler);
-
-        _.$list.off('click.slick', _.clickHandler);
-
-        $(document).off(_.visibilityChange, _.visibility);
-
-        _.cleanUpSlideEvents();
-
-        if (_.options.accessibility === true) {
-            _.$list.off('keydown.slick', _.keyHandler);
-        }
-
-        if (_.options.focusOnSelect === true) {
-            $(_.$slideTrack).children().off('click.slick', _.selectHandler);
-        }
-
-        $(window).off('orientationchange.slick.slick-' + _.instanceUid, _.orientationChange);
-
-        $(window).off('resize.slick.slick-' + _.instanceUid, _.resize);
-
-        $('[draggable!=true]', _.$slideTrack).off('dragstart', _.preventDefault);
-
-        $(window).off('load.slick.slick-' + _.instanceUid, _.setPosition);
-
-    };
-
-    Slick.prototype.cleanUpSlideEvents = function() {
-
-        var _ = this;
-
-        _.$list.off('mouseenter.slick', $.proxy(_.interrupt, _, true));
-        _.$list.off('mouseleave.slick', $.proxy(_.interrupt, _, false));
-
-    };
-
-    Slick.prototype.cleanUpRows = function() {
-
-        var _ = this, originalSlides;
-
-        if(_.options.rows > 0) {
-            originalSlides = _.$slides.children().children();
-            originalSlides.removeAttr('style');
-            _.$slider.empty().append(originalSlides);
-        }
-
-    };
-
-    Slick.prototype.clickHandler = function(event) {
-
-        var _ = this;
-
-        if (_.shouldClick === false) {
-            event.stopImmediatePropagation();
-            event.stopPropagation();
-            event.preventDefault();
-        }
-
-    };
-
-    Slick.prototype.destroy = function(refresh) {
-
-        var _ = this;
-
-        _.autoPlayClear();
-
-        _.touchObject = {};
-
-        _.cleanUpEvents();
-
-        $('.slick-cloned', _.$slider).detach();
-
-        if (_.$dots) {
-            _.$dots.remove();
-        }
-
-        if ( _.$prevArrow && _.$prevArrow.length ) {
-
-            _.$prevArrow
-                .removeClass('slick-disabled slick-arrow slick-hidden')
-                .removeAttr('aria-hidden aria-disabled tabindex')
-                .css('display','');
-
-            if ( _.htmlExpr.test( _.options.prevArrow )) {
-                _.$prevArrow.remove();
-            }
-        }
-
-        if ( _.$nextArrow && _.$nextArrow.length ) {
-
-            _.$nextArrow
-                .removeClass('slick-disabled slick-arrow slick-hidden')
-                .removeAttr('aria-hidden aria-disabled tabindex')
-                .css('display','');
-
-            if ( _.htmlExpr.test( _.options.nextArrow )) {
-                _.$nextArrow.remove();
-            }
-        }
-
-
-        if (_.$slides) {
-
-            _.$slides
-                .removeClass('slick-slide slick-active slick-center slick-visible slick-current')
-                .removeAttr('aria-hidden')
-                .removeAttr('data-slick-index')
-                .each(function(){
-                    $(this).attr('style', $(this).data('originalStyling'));
-                });
-
-            _.$slideTrack.children(this.options.slide).detach();
-
-            _.$slideTrack.detach();
-
-            _.$list.detach();
-
-            _.$slider.append(_.$slides);
-        }
-
-        _.cleanUpRows();
-
-        _.$slider.removeClass('slick-slider');
-        _.$slider.removeClass('slick-initialized');
-        _.$slider.removeClass('slick-dotted');
-
-        _.unslicked = true;
-
-        if(!refresh) {
-            _.$slider.trigger('destroy', [_]);
-        }
-
-    };
-
-    Slick.prototype.disableTransition = function(slide) {
-
-        var _ = this,
-            transition = {};
-
-        transition[_.transitionType] = '';
-
-        if (_.options.fade === false) {
-            _.$slideTrack.css(transition);
-        } else {
-            _.$slides.eq(slide).css(transition);
-        }
-
-    };
-
-    Slick.prototype.fadeSlide = function(slideIndex, callback) {
-
-        var _ = this;
-
-        if (_.cssTransitions === false) {
-
-            _.$slides.eq(slideIndex).css({
-                zIndex: _.options.zIndex
-            });
-
-            _.$slides.eq(slideIndex).animate({
-                opacity: 1
-            }, _.options.speed, _.options.easing, callback);
-
-        } else {
-
-            _.applyTransition(slideIndex);
-
-            _.$slides.eq(slideIndex).css({
-                opacity: 1,
-                zIndex: _.options.zIndex
-            });
-
-            if (callback) {
-                setTimeout(function() {
-
-                    _.disableTransition(slideIndex);
-
-                    callback.call();
-                }, _.options.speed);
-            }
-
-        }
-
-    };
-
-    Slick.prototype.fadeSlideOut = function(slideIndex) {
-
-        var _ = this;
-
-        if (_.cssTransitions === false) {
-
-            _.$slides.eq(slideIndex).animate({
-                opacity: 0,
-                zIndex: _.options.zIndex - 2
-            }, _.options.speed, _.options.easing);
-
-        } else {
-
-            _.applyTransition(slideIndex);
-
-            _.$slides.eq(slideIndex).css({
-                opacity: 0,
-                zIndex: _.options.zIndex - 2
-            });
-
-        }
-
-    };
-
-    Slick.prototype.filterSlides = Slick.prototype.slickFilter = function(filter) {
-
-        var _ = this;
-
-        if (filter !== null) {
-
-            _.$slidesCache = _.$slides;
-
-            _.unload();
-
-            _.$slideTrack.children(this.options.slide).detach();
-
-            _.$slidesCache.filter(filter).appendTo(_.$slideTrack);
-
-            _.reinit();
-
-        }
-
-    };
-
-    Slick.prototype.focusHandler = function() {
-
-        var _ = this;
-
-        _.$slider
-            .off('focus.slick blur.slick')
-            .on('focus.slick blur.slick', '*', function(event) {
-
-            event.stopImmediatePropagation();
-            var $sf = $(this);
-
-            setTimeout(function() {
-
-                if( _.options.pauseOnFocus ) {
-                    _.focussed = $sf.is(':focus');
-                    _.autoPlay();
-                }
-
-            }, 0);
-
-        });
-    };
-
-    Slick.prototype.getCurrent = Slick.prototype.slickCurrentSlide = function() {
-
-        var _ = this;
-        return _.currentSlide;
-
-    };
-
-    Slick.prototype.getDotCount = function() {
-
-        var _ = this;
-
-        var breakPoint = 0;
-        var counter = 0;
-        var pagerQty = 0;
-
-        if (_.options.infinite === true) {
-            if (_.slideCount <= _.options.slidesToShow) {
-                 ++pagerQty;
-            } else {
-                while (breakPoint < _.slideCount) {
-                    ++pagerQty;
-                    breakPoint = counter + _.options.slidesToScroll;
-                    counter += _.options.slidesToScroll <= _.options.slidesToShow ? _.options.slidesToScroll : _.options.slidesToShow;
-                }
-            }
-        } else if (_.options.centerMode === true) {
-            pagerQty = _.slideCount;
-        } else if(!_.options.asNavFor) {
-            pagerQty = 1 + Math.ceil((_.slideCount - _.options.slidesToShow) / _.options.slidesToScroll);
-        }else {
-            while (breakPoint < _.slideCount) {
-                ++pagerQty;
-                breakPoint = counter + _.options.slidesToScroll;
-                counter += _.options.slidesToScroll <= _.options.slidesToShow ? _.options.slidesToScroll : _.options.slidesToShow;
-            }
-        }
-
-        return pagerQty - 1;
-
-    };
-
-    Slick.prototype.getLeft = function(slideIndex) {
-
-        var _ = this,
-            targetLeft,
-            verticalHeight,
-            verticalOffset = 0,
-            targetSlide,
-            coef;
-
-        _.slideOffset = 0;
-        verticalHeight = _.$slides.first().outerHeight(true);
-
-        if (_.options.infinite === true) {
-            if (_.slideCount > _.options.slidesToShow) {
-                _.slideOffset = (_.slideWidth * _.options.slidesToShow) * -1;
-                coef = -1
-
-                if (_.options.vertical === true && _.options.centerMode === true) {
-                    if (_.options.slidesToShow === 2) {
-                        coef = -1.5;
-                    } else if (_.options.slidesToShow === 1) {
-                        coef = -2
-                    }
-                }
-                verticalOffset = (verticalHeight * _.options.slidesToShow) * coef;
-            }
-            if (_.slideCount % _.options.slidesToScroll !== 0) {
-                if (slideIndex + _.options.slidesToScroll > _.slideCount && _.slideCount > _.options.slidesToShow) {
-                    if (slideIndex > _.slideCount) {
-                        _.slideOffset = ((_.options.slidesToShow - (slideIndex - _.slideCount)) * _.slideWidth) * -1;
-                        verticalOffset = ((_.options.slidesToShow - (slideIndex - _.slideCount)) * verticalHeight) * -1;
-                    } else {
-                        _.slideOffset = ((_.slideCount % _.options.slidesToScroll) * _.slideWidth) * -1;
-                        verticalOffset = ((_.slideCount % _.options.slidesToScroll) * verticalHeight) * -1;
-                    }
-                }
-            }
-        } else {
-            if (slideIndex + _.options.slidesToShow > _.slideCount) {
-                _.slideOffset = ((slideIndex + _.options.slidesToShow) - _.slideCount) * _.slideWidth;
-                verticalOffset = ((slideIndex + _.options.slidesToShow) - _.slideCount) * verticalHeight;
-            }
-        }
-
-        if (_.slideCount <= _.options.slidesToShow) {
-            _.slideOffset = 0;
-            verticalOffset = 0;
-        }
-
-        if (_.options.centerMode === true && _.slideCount <= _.options.slidesToShow) {
-            _.slideOffset = ((_.slideWidth * Math.floor(_.options.slidesToShow)) / 2) - ((_.slideWidth * _.slideCount) / 2);
-        } else if (_.options.centerMode === true && _.options.infinite === true) {
-            _.slideOffset += _.slideWidth * Math.floor(_.options.slidesToShow / 2) - _.slideWidth;
-        } else if (_.options.centerMode === true) {
-            _.slideOffset = 0;
-            _.slideOffset += _.slideWidth * Math.floor(_.options.slidesToShow / 2);
-        }
-
-        if (_.options.vertical === false) {
-            targetLeft = ((slideIndex * _.slideWidth) * -1) + _.slideOffset;
-        } else {
-            targetLeft = ((slideIndex * verticalHeight) * -1) + verticalOffset;
-        }
-
-        if (_.options.variableWidth === true) {
-
-            if (_.slideCount <= _.options.slidesToShow || _.options.infinite === false) {
-                targetSlide = _.$slideTrack.children('.slick-slide').eq(slideIndex);
-            } else {
-                targetSlide = _.$slideTrack.children('.slick-slide').eq(slideIndex + _.options.slidesToShow);
-            }
-
-            if (_.options.rtl === true) {
-                if (targetSlide[0]) {
-                    targetLeft = (_.$slideTrack.width() - targetSlide[0].offsetLeft - targetSlide.width()) * -1;
-                } else {
-                    targetLeft =  0;
-                }
-            } else {
-                targetLeft = targetSlide[0] ? targetSlide[0].offsetLeft * -1 : 0;
-            }
-
-            if (_.options.centerMode === true) {
-                if (_.slideCount <= _.options.slidesToShow || _.options.infinite === false) {
-                    targetSlide = _.$slideTrack.children('.slick-slide').eq(slideIndex);
-                } else {
-                    targetSlide = _.$slideTrack.children('.slick-slide').eq(slideIndex + _.options.slidesToShow + 1);
-                }
-
-                if (_.options.rtl === true) {
-                    if (targetSlide[0]) {
-                        targetLeft = (_.$slideTrack.width() - targetSlide[0].offsetLeft - targetSlide.width()) * -1;
-                    } else {
-                        targetLeft =  0;
-                    }
-                } else {
-                    targetLeft = targetSlide[0] ? targetSlide[0].offsetLeft * -1 : 0;
-                }
-
-                targetLeft += (_.$list.width() - targetSlide.outerWidth()) / 2;
-            }
-        }
-
-        return targetLeft;
-
-    };
-
-    Slick.prototype.getOption = Slick.prototype.slickGetOption = function(option) {
-
-        var _ = this;
-
-        return _.options[option];
-
-    };
-
-    Slick.prototype.getNavigableIndexes = function() {
-
-        var _ = this,
-            breakPoint = 0,
-            counter = 0,
-            indexes = [],
-            max;
-
-        if (_.options.infinite === false) {
-            max = _.slideCount;
-        } else {
-            breakPoint = _.options.slidesToScroll * -1;
-            counter = _.options.slidesToScroll * -1;
-            max = _.slideCount * 2;
-        }
-
-        while (breakPoint < max) {
-            indexes.push(breakPoint);
-            breakPoint = counter + _.options.slidesToScroll;
-            counter += _.options.slidesToScroll <= _.options.slidesToShow ? _.options.slidesToScroll : _.options.slidesToShow;
-        }
-
-        return indexes;
-
-    };
-
-    Slick.prototype.getSlick = function() {
-
-        return this;
-
-    };
-
-    Slick.prototype.getSlideCount = function() {
-
-        var _ = this,
-            slidesTraversed, swipedSlide, centerOffset;
-
-        centerOffset = _.options.centerMode === true ? _.slideWidth * Math.floor(_.options.slidesToShow / 2) : 0;
-
-        if (_.options.swipeToSlide === true) {
-            _.$slideTrack.find('.slick-slide').each(function(index, slide) {
-                if (slide.offsetLeft - centerOffset + ($(slide).outerWidth() / 2) > (_.swipeLeft * -1)) {
-                    swipedSlide = slide;
-                    return false;
-                }
-            });
-
-            slidesTraversed = Math.abs($(swipedSlide).attr('data-slick-index') - _.currentSlide) || 1;
-
-            return slidesTraversed;
-
-        } else {
-            return _.options.slidesToScroll;
-        }
-
-    };
-
-    Slick.prototype.goTo = Slick.prototype.slickGoTo = function(slide, dontAnimate) {
-
-        var _ = this;
-
-        _.changeSlide({
-            data: {
-                message: 'index',
-                index: parseInt(slide)
-            }
-        }, dontAnimate);
-
-    };
-
-    Slick.prototype.init = function(creation) {
-
-        var _ = this;
-
-        if (!$(_.$slider).hasClass('slick-initialized')) {
-
-            $(_.$slider).addClass('slick-initialized');
-
-            _.buildRows();
-            _.buildOut();
-            _.setProps();
-            _.startLoad();
-            _.loadSlider();
-            _.initializeEvents();
-            _.updateArrows();
-            _.updateDots();
-            _.checkResponsive(true);
-            _.focusHandler();
-
-        }
-
-        if (creation) {
-            _.$slider.trigger('init', [_]);
-        }
-
-        if (_.options.accessibility === true) {
-            _.initADA();
-        }
-
-        if ( _.options.autoplay ) {
-
-            _.paused = false;
-            _.autoPlay();
-
-        }
-
-    };
-
-    Slick.prototype.initADA = function() {
-        var _ = this,
-                numDotGroups = Math.ceil(_.slideCount / _.options.slidesToShow),
-                tabControlIndexes = _.getNavigableIndexes().filter(function(val) {
-                    return (val >= 0) && (val < _.slideCount);
-                });
-
-        _.$slides.add(_.$slideTrack.find('.slick-cloned')).attr({
-            'aria-hidden': 'true',
-            'tabindex': '-1'
-        }).find('a, input, button, select').attr({
-            'tabindex': '-1'
-        });
-
-        if (_.$dots !== null) {
-            _.$slides.not(_.$slideTrack.find('.slick-cloned')).each(function(i) {
-                var slideControlIndex = tabControlIndexes.indexOf(i);
-
-                $(this).attr({
-                    'role': 'tabpanel',
-                    'id': 'slick-slide' + _.instanceUid + i,
-                    'tabindex': -1
-                });
-
-                if (slideControlIndex !== -1) {
-                   var ariaButtonControl = 'slick-slide-control' + _.instanceUid + slideControlIndex
-                   if ($('#' + ariaButtonControl).length) {
-                     $(this).attr({
-                         'aria-describedby': ariaButtonControl
-                     });
-                   }
-                }
-            });
-
-            _.$dots.attr('role', 'tablist').find('li').each(function(i) {
-                var mappedSlideIndex = tabControlIndexes[i];
-
-                $(this).attr({
-                    'role': 'presentation'
-                });
-
-                $(this).find('button').first().attr({
-                    'role': 'tab',
-                    'id': 'slick-slide-control' + _.instanceUid + i,
-                    'aria-controls': 'slick-slide' + _.instanceUid + mappedSlideIndex,
-                    'aria-label': (i + 1) + ' of ' + numDotGroups,
-                    'aria-selected': null,
-                    'tabindex': '-1'
-                });
-
-            }).eq(_.currentSlide).find('button').attr({
-                'aria-selected': 'true',
-                'tabindex': '0'
-            }).end();
-        }
-
-        for (var i=_.currentSlide, max=i+_.options.slidesToShow; i < max; i++) {
-          if (_.options.focusOnChange) {
-            _.$slides.eq(i).attr({'tabindex': '0'});
-          } else {
-            _.$slides.eq(i).removeAttr('tabindex');
-          }
-        }
-
-        _.activateADA();
-
-    };
-
-    Slick.prototype.initArrowEvents = function() {
-
-        var _ = this;
-
-        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
-            _.$prevArrow
-               .off('click.slick')
-               .on('click.slick', {
-                    message: 'previous'
-               }, _.changeSlide);
-            _.$nextArrow
-               .off('click.slick')
-               .on('click.slick', {
-                    message: 'next'
-               }, _.changeSlide);
-
-            if (_.options.accessibility === true) {
-                _.$prevArrow.on('keydown.slick', _.keyHandler);
-                _.$nextArrow.on('keydown.slick', _.keyHandler);
-            }
-        }
-
-    };
-
-    Slick.prototype.initDotEvents = function() {
-
-        var _ = this;
-
-        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
-            $('li', _.$dots).on('click.slick', {
-                message: 'index'
-            }, _.changeSlide);
-
-            if (_.options.accessibility === true) {
-                _.$dots.on('keydown.slick', _.keyHandler);
-            }
-        }
-
-        if (_.options.dots === true && _.options.pauseOnDotsHover === true && _.slideCount > _.options.slidesToShow) {
-
-            $('li', _.$dots)
-                .on('mouseenter.slick', $.proxy(_.interrupt, _, true))
-                .on('mouseleave.slick', $.proxy(_.interrupt, _, false));
-
-        }
-
-    };
-
-    Slick.prototype.initSlideEvents = function() {
-
-        var _ = this;
-
-        if ( _.options.pauseOnHover ) {
-
-            _.$list.on('mouseenter.slick', $.proxy(_.interrupt, _, true));
-            _.$list.on('mouseleave.slick', $.proxy(_.interrupt, _, false));
-
-        }
-
-    };
-
-    Slick.prototype.initializeEvents = function() {
-
-        var _ = this;
-
-        _.initArrowEvents();
-
-        _.initDotEvents();
-        _.initSlideEvents();
-
-        _.$list.on('touchstart.slick mousedown.slick', {
-            action: 'start'
-        }, _.swipeHandler);
-        _.$list.on('touchmove.slick mousemove.slick', {
-            action: 'move'
-        }, _.swipeHandler);
-        _.$list.on('touchend.slick mouseup.slick', {
-            action: 'end'
-        }, _.swipeHandler);
-        _.$list.on('touchcancel.slick mouseleave.slick', {
-            action: 'end'
-        }, _.swipeHandler);
-
-        _.$list.on('click.slick', _.clickHandler);
-
-        $(document).on(_.visibilityChange, $.proxy(_.visibility, _));
-
-        if (_.options.accessibility === true) {
-            _.$list.on('keydown.slick', _.keyHandler);
-        }
-
-        if (_.options.focusOnSelect === true) {
-            $(_.$slideTrack).children().on('click.slick', _.selectHandler);
-        }
-
-        $(window).on('orientationchange.slick.slick-' + _.instanceUid, $.proxy(_.orientationChange, _));
-
-        $(window).on('resize.slick.slick-' + _.instanceUid, $.proxy(_.resize, _));
-
-        $('[draggable!=true]', _.$slideTrack).on('dragstart', _.preventDefault);
-
-        $(window).on('load.slick.slick-' + _.instanceUid, _.setPosition);
-        $(_.setPosition);
-
-    };
-
-    Slick.prototype.initUI = function() {
-
-        var _ = this;
-
-        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
-
-            _.$prevArrow.show();
-            _.$nextArrow.show();
-
-        }
-
-        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
-
-            _.$dots.show();
-
-        }
-
-    };
-
-    Slick.prototype.keyHandler = function(event) {
-
-        var _ = this;
-         //Dont slide if the cursor is inside the form fields and arrow keys are pressed
-        if(!event.target.tagName.match('TEXTAREA|INPUT|SELECT')) {
-            if (event.keyCode === 37 && _.options.accessibility === true) {
-                _.changeSlide({
-                    data: {
-                        message: _.options.rtl === true ? 'next' :  'previous'
-                    }
-                });
-            } else if (event.keyCode === 39 && _.options.accessibility === true) {
-                _.changeSlide({
-                    data: {
-                        message: _.options.rtl === true ? 'previous' : 'next'
-                    }
-                });
-            }
-        }
-
-    };
-
-    Slick.prototype.lazyLoad = function() {
-
-        var _ = this,
-            loadRange, cloneRange, rangeStart, rangeEnd;
-
-        function loadImages(imagesScope) {
-
-            $('img[data-lazy]', imagesScope).each(function() {
-
-                var image = $(this),
-                    imageSource = $(this).attr('data-lazy'),
-                    imageSrcSet = $(this).attr('data-srcset'),
-                    imageSizes  = $(this).attr('data-sizes') || _.$slider.attr('data-sizes'),
-                    imageToLoad = document.createElement('img');
-
-                imageToLoad.onload = function() {
-
-                    image
-                        .animate({ opacity: 0 }, 100, function() {
-
-                            if (imageSrcSet) {
-                                image
-                                    .attr('srcset', imageSrcSet );
-
-                                if (imageSizes) {
-                                    image
-                                        .attr('sizes', imageSizes );
-                                }
-                            }
-
-                            image
-                                .attr('src', imageSource)
-                                .animate({ opacity: 1 }, 200, function() {
-                                    image
-                                        .removeAttr('data-lazy data-srcset data-sizes')
-                                        .removeClass('slick-loading');
-                                });
-                            _.$slider.trigger('lazyLoaded', [_, image, imageSource]);
-                        });
-
-                };
-
-                imageToLoad.onerror = function() {
-
-                    image
-                        .removeAttr( 'data-lazy' )
-                        .removeClass( 'slick-loading' )
-                        .addClass( 'slick-lazyload-error' );
-
-                    _.$slider.trigger('lazyLoadError', [ _, image, imageSource ]);
-
-                };
-
-                imageToLoad.src = imageSource;
-
-            });
-
-        }
-
-        if (_.options.centerMode === true) {
-            if (_.options.infinite === true) {
-                rangeStart = _.currentSlide + (_.options.slidesToShow / 2 + 1);
-                rangeEnd = rangeStart + _.options.slidesToShow + 2;
-            } else {
-                rangeStart = Math.max(0, _.currentSlide - (_.options.slidesToShow / 2 + 1));
-                rangeEnd = 2 + (_.options.slidesToShow / 2 + 1) + _.currentSlide;
-            }
-        } else {
-            rangeStart = _.options.infinite ? _.options.slidesToShow + _.currentSlide : _.currentSlide;
-            rangeEnd = Math.ceil(rangeStart + _.options.slidesToShow);
-            if (_.options.fade === true) {
-                if (rangeStart > 0) rangeStart--;
-                if (rangeEnd <= _.slideCount) rangeEnd++;
-            }
-        }
-
-        loadRange = _.$slider.find('.slick-slide').slice(rangeStart, rangeEnd);
-
-        if (_.options.lazyLoad === 'anticipated') {
-            var prevSlide = rangeStart - 1,
-                nextSlide = rangeEnd,
-                $slides = _.$slider.find('.slick-slide');
-
-            for (var i = 0; i < _.options.slidesToScroll; i++) {
-                if (prevSlide < 0) prevSlide = _.slideCount - 1;
-                loadRange = loadRange.add($slides.eq(prevSlide));
-                loadRange = loadRange.add($slides.eq(nextSlide));
-                prevSlide--;
-                nextSlide++;
-            }
-        }
-
-        loadImages(loadRange);
-
-        if (_.slideCount <= _.options.slidesToShow) {
-            cloneRange = _.$slider.find('.slick-slide');
-            loadImages(cloneRange);
-        } else
-        if (_.currentSlide >= _.slideCount - _.options.slidesToShow) {
-            cloneRange = _.$slider.find('.slick-cloned').slice(0, _.options.slidesToShow);
-            loadImages(cloneRange);
-        } else if (_.currentSlide === 0) {
-            cloneRange = _.$slider.find('.slick-cloned').slice(_.options.slidesToShow * -1);
-            loadImages(cloneRange);
-        }
-
-    };
-
-    Slick.prototype.loadSlider = function() {
-
-        var _ = this;
-
-        _.setPosition();
-
-        _.$slideTrack.css({
-            opacity: 1
-        });
-
-        _.$slider.removeClass('slick-loading');
-
-        _.initUI();
-
-        if (_.options.lazyLoad === 'progressive') {
-            _.progressiveLazyLoad();
-        }
-
-    };
-
-    Slick.prototype.next = Slick.prototype.slickNext = function() {
-
-        var _ = this;
-
-        _.changeSlide({
-            data: {
-                message: 'next'
-            }
-        });
-
-    };
-
-    Slick.prototype.orientationChange = function() {
-
-        var _ = this;
-
-        _.checkResponsive();
-        _.setPosition();
-
-    };
-
-    Slick.prototype.pause = Slick.prototype.slickPause = function() {
-
-        var _ = this;
-
-        _.autoPlayClear();
-        _.paused = true;
-
-    };
-
-    Slick.prototype.play = Slick.prototype.slickPlay = function() {
-
-        var _ = this;
-
-        _.autoPlay();
-        _.options.autoplay = true;
-        _.paused = false;
-        _.focussed = false;
-        _.interrupted = false;
-
-    };
-
-    Slick.prototype.postSlide = function(index) {
-
-        var _ = this;
-
-        if( !_.unslicked ) {
-
-            _.$slider.trigger('afterChange', [_, index]);
-
-            _.animating = false;
-
-            if (_.slideCount > _.options.slidesToShow) {
-                _.setPosition();
-            }
-
-            _.swipeLeft = null;
-
-            if ( _.options.autoplay ) {
-                _.autoPlay();
-            }
-
-            if (_.options.accessibility === true) {
-                _.initADA();
-
-                if (_.options.focusOnChange) {
-                    var $currentSlide = $(_.$slides.get(_.currentSlide));
-                    $currentSlide.attr('tabindex', 0).focus();
-                }
-            }
-
-        }
-
-    };
-
-    Slick.prototype.prev = Slick.prototype.slickPrev = function() {
-
-        var _ = this;
-
-        _.changeSlide({
-            data: {
-                message: 'previous'
-            }
-        });
-
-    };
-
-    Slick.prototype.preventDefault = function(event) {
-
-        event.preventDefault();
-
-    };
-
-    Slick.prototype.progressiveLazyLoad = function( tryCount ) {
-
-        tryCount = tryCount || 1;
-
-        var _ = this,
-            $imgsToLoad = $( 'img[data-lazy]', _.$slider ),
-            image,
-            imageSource,
-            imageSrcSet,
-            imageSizes,
-            imageToLoad;
-
-        if ( $imgsToLoad.length ) {
-
-            image = $imgsToLoad.first();
-            imageSource = image.attr('data-lazy');
-            imageSrcSet = image.attr('data-srcset');
-            imageSizes  = image.attr('data-sizes') || _.$slider.attr('data-sizes');
-            imageToLoad = document.createElement('img');
-
-            imageToLoad.onload = function() {
-
-                if (imageSrcSet) {
-                    image
-                        .attr('srcset', imageSrcSet );
-
-                    if (imageSizes) {
-                        image
-                            .attr('sizes', imageSizes );
-                    }
-                }
-
-                image
-                    .attr( 'src', imageSource )
-                    .removeAttr('data-lazy data-srcset data-sizes')
-                    .removeClass('slick-loading');
-
-                if ( _.options.adaptiveHeight === true ) {
-                    _.setPosition();
-                }
-
-                _.$slider.trigger('lazyLoaded', [ _, image, imageSource ]);
-                _.progressiveLazyLoad();
-
-            };
-
-            imageToLoad.onerror = function() {
-
-                if ( tryCount < 3 ) {
-
-                    /**
-                     * try to load the image 3 times,
-                     * leave a slight delay so we don't get
-                     * servers blocking the request.
-                     */
-                    setTimeout( function() {
-                        _.progressiveLazyLoad( tryCount + 1 );
-                    }, 500 );
-
-                } else {
-
-                    image
-                        .removeAttr( 'data-lazy' )
-                        .removeClass( 'slick-loading' )
-                        .addClass( 'slick-lazyload-error' );
-
-                    _.$slider.trigger('lazyLoadError', [ _, image, imageSource ]);
-
-                    _.progressiveLazyLoad();
-
-                }
-
-            };
-
-            imageToLoad.src = imageSource;
-
-        } else {
-
-            _.$slider.trigger('allImagesLoaded', [ _ ]);
-
-        }
-
-    };
-
-    Slick.prototype.refresh = function( initializing ) {
-
-        var _ = this, currentSlide, lastVisibleIndex;
-
-        lastVisibleIndex = _.slideCount - _.options.slidesToShow;
-
-        // in non-infinite sliders, we don't want to go past the
-        // last visible index.
-        if( !_.options.infinite && ( _.currentSlide > lastVisibleIndex )) {
-            _.currentSlide = lastVisibleIndex;
-        }
-
-        // if less slides than to show, go to start.
-        if ( _.slideCount <= _.options.slidesToShow ) {
-            _.currentSlide = 0;
-
-        }
-
-        currentSlide = _.currentSlide;
-
-        _.destroy(true);
-
-        $.extend(_, _.initials, { currentSlide: currentSlide });
-
-        _.init();
-
-        if( !initializing ) {
-
-            _.changeSlide({
-                data: {
-                    message: 'index',
-                    index: currentSlide
-                }
-            }, false);
-
-        }
-
-    };
-
-    Slick.prototype.registerBreakpoints = function() {
-
-        var _ = this, breakpoint, currentBreakpoint, l,
-            responsiveSettings = _.options.responsive || null;
-
-        if ( $.type(responsiveSettings) === 'array' && responsiveSettings.length ) {
-
-            _.respondTo = _.options.respondTo || 'window';
-
-            for ( breakpoint in responsiveSettings ) {
-
-                l = _.breakpoints.length-1;
-
-                if (responsiveSettings.hasOwnProperty(breakpoint)) {
-                    currentBreakpoint = responsiveSettings[breakpoint].breakpoint;
-
-                    // loop through the breakpoints and cut out any existing
-                    // ones with the same breakpoint number, we don't want dupes.
-                    while( l >= 0 ) {
-                        if( _.breakpoints[l] && _.breakpoints[l] === currentBreakpoint ) {
-                            _.breakpoints.splice(l,1);
-                        }
-                        l--;
-                    }
-
-                    _.breakpoints.push(currentBreakpoint);
-                    _.breakpointSettings[currentBreakpoint] = responsiveSettings[breakpoint].settings;
-
-                }
-
-            }
-
-            _.breakpoints.sort(function(a, b) {
-                return ( _.options.mobileFirst ) ? a-b : b-a;
-            });
-
-        }
-
-    };
-
-    Slick.prototype.reinit = function() {
-
-        var _ = this;
-
-        _.$slides =
-            _.$slideTrack
-                .children(_.options.slide)
-                .addClass('slick-slide');
-
-        _.slideCount = _.$slides.length;
-
-        if (_.currentSlide >= _.slideCount && _.currentSlide !== 0) {
-            _.currentSlide = _.currentSlide - _.options.slidesToScroll;
-        }
-
-        if (_.slideCount <= _.options.slidesToShow) {
-            _.currentSlide = 0;
-        }
-
-        _.registerBreakpoints();
-
-        _.setProps();
-        _.setupInfinite();
-        _.buildArrows();
-        _.updateArrows();
-        _.initArrowEvents();
-        _.buildDots();
-        _.updateDots();
-        _.initDotEvents();
-        _.cleanUpSlideEvents();
-        _.initSlideEvents();
-
-        _.checkResponsive(false, true);
-
-        if (_.options.focusOnSelect === true) {
-            $(_.$slideTrack).children().on('click.slick', _.selectHandler);
-        }
-
-        _.setSlideClasses(typeof _.currentSlide === 'number' ? _.currentSlide : 0);
-
-        _.setPosition();
-        _.focusHandler();
-
-        _.paused = !_.options.autoplay;
-        _.autoPlay();
-
-        _.$slider.trigger('reInit', [_]);
-
-    };
-
-    Slick.prototype.resize = function() {
-
-        var _ = this;
-
-        if ($(window).width() !== _.windowWidth) {
-            clearTimeout(_.windowDelay);
-            _.windowDelay = window.setTimeout(function() {
-                _.windowWidth = $(window).width();
-                _.checkResponsive();
-                if( !_.unslicked ) { _.setPosition(); }
-            }, 50);
-        }
-    };
-
-    Slick.prototype.removeSlide = Slick.prototype.slickRemove = function(index, removeBefore, removeAll) {
-
-        var _ = this;
-
-        if (typeof(index) === 'boolean') {
-            removeBefore = index;
-            index = removeBefore === true ? 0 : _.slideCount - 1;
-        } else {
-            index = removeBefore === true ? --index : index;
-        }
-
-        if (_.slideCount < 1 || index < 0 || index > _.slideCount - 1) {
-            return false;
-        }
-
-        _.unload();
-
-        if (removeAll === true) {
-            _.$slideTrack.children().remove();
-        } else {
-            _.$slideTrack.children(this.options.slide).eq(index).remove();
-        }
-
-        _.$slides = _.$slideTrack.children(this.options.slide);
-
-        _.$slideTrack.children(this.options.slide).detach();
-
-        _.$slideTrack.append(_.$slides);
-
-        _.$slidesCache = _.$slides;
-
-        _.reinit();
-
-    };
-
-    Slick.prototype.setCSS = function(position) {
-
-        var _ = this,
-            positionProps = {},
-            x, y;
-
-        if (_.options.rtl === true) {
-            position = -position;
-        }
-        x = _.positionProp == 'left' ? Math.ceil(position) + 'px' : '0px';
-        y = _.positionProp == 'top' ? Math.ceil(position) + 'px' : '0px';
-
-        positionProps[_.positionProp] = position;
-
-        if (_.transformsEnabled === false) {
-            _.$slideTrack.css(positionProps);
-        } else {
-            positionProps = {};
-            if (_.cssTransitions === false) {
-                positionProps[_.animType] = 'translate(' + x + ', ' + y + ')';
-                _.$slideTrack.css(positionProps);
-            } else {
-                positionProps[_.animType] = 'translate3d(' + x + ', ' + y + ', 0px)';
-                _.$slideTrack.css(positionProps);
-            }
-        }
-
-    };
-
-    Slick.prototype.setDimensions = function() {
-
-        var _ = this;
-
-        if (_.options.vertical === false) {
-            if (_.options.centerMode === true) {
-                _.$list.css({
-                    padding: ('0px ' + _.options.centerPadding)
-                });
-            }
-        } else {
-            _.$list.height(_.$slides.first().outerHeight(true) * _.options.slidesToShow);
-            if (_.options.centerMode === true) {
-                _.$list.css({
-                    padding: (_.options.centerPadding + ' 0px')
-                });
-            }
-        }
-
-        _.listWidth = _.$list.width();
-        _.listHeight = _.$list.height();
-
-
-        if (_.options.vertical === false && _.options.variableWidth === false) {
-            _.slideWidth = Math.ceil(_.listWidth / _.options.slidesToShow);
-            _.$slideTrack.width(Math.ceil((_.slideWidth * _.$slideTrack.children('.slick-slide').length)));
-
-        } else if (_.options.variableWidth === true) {
-            _.$slideTrack.width(5000 * _.slideCount);
-        } else {
-            _.slideWidth = Math.ceil(_.listWidth);
-            _.$slideTrack.height(Math.ceil((_.$slides.first().outerHeight(true) * _.$slideTrack.children('.slick-slide').length)));
-        }
-
-        var offset = _.$slides.first().outerWidth(true) - _.$slides.first().width();
-        if (_.options.variableWidth === false) _.$slideTrack.children('.slick-slide').width(_.slideWidth - offset);
-
-    };
-
-    Slick.prototype.setFade = function() {
-
-        var _ = this,
-            targetLeft;
-
-        _.$slides.each(function(index, element) {
-            targetLeft = (_.slideWidth * index) * -1;
-            if (_.options.rtl === true) {
-                $(element).css({
-                    position: 'relative',
-                    right: targetLeft,
-                    top: 0,
-                    zIndex: _.options.zIndex - 2,
-                    opacity: 0
-                });
-            } else {
-                $(element).css({
-                    position: 'relative',
-                    left: targetLeft,
-                    top: 0,
-                    zIndex: _.options.zIndex - 2,
-                    opacity: 0
-                });
-            }
-        });
-
-        _.$slides.eq(_.currentSlide).css({
-            zIndex: _.options.zIndex - 1,
-            opacity: 1
-        });
-
-    };
-
-    Slick.prototype.setHeight = function() {
-
-        var _ = this;
-
-        if (_.options.slidesToShow === 1 && _.options.adaptiveHeight === true && _.options.vertical === false) {
-            var targetHeight = _.$slides.eq(_.currentSlide).outerHeight(true);
-            _.$list.css('height', targetHeight);
-        }
-
-    };
-
-    Slick.prototype.setOption =
-    Slick.prototype.slickSetOption = function() {
-
-        /**
-         * accepts arguments in format of:
-         *
-         *  - for changing a single option's value:
-         *     .slick("setOption", option, value, refresh )
-         *
-         *  - for changing a set of responsive options:
-         *     .slick("setOption", 'responsive', [{}, ...], refresh )
-         *
-         *  - for updating multiple values at once (not responsive)
-         *     .slick("setOption", { 'option': value, ... }, refresh )
-         */
-
-        var _ = this, l, item, option, value, refresh = false, type;
-
-        if( $.type( arguments[0] ) === 'object' ) {
-
-            option =  arguments[0];
-            refresh = arguments[1];
-            type = 'multiple';
-
-        } else if ( $.type( arguments[0] ) === 'string' ) {
-
-            option =  arguments[0];
-            value = arguments[1];
-            refresh = arguments[2];
-
-            if ( arguments[0] === 'responsive' && $.type( arguments[1] ) === 'array' ) {
-
-                type = 'responsive';
-
-            } else if ( typeof arguments[1] !== 'undefined' ) {
-
-                type = 'single';
-
-            }
-
-        }
-
-        if ( type === 'single' ) {
-
-            _.options[option] = value;
-
-
-        } else if ( type === 'multiple' ) {
-
-            $.each( option , function( opt, val ) {
-
-                _.options[opt] = val;
-
-            });
-
-
-        } else if ( type === 'responsive' ) {
-
-            for ( item in value ) {
-
-                if( $.type( _.options.responsive ) !== 'array' ) {
-
-                    _.options.responsive = [ value[item] ];
-
-                } else {
-
-                    l = _.options.responsive.length-1;
-
-                    // loop through the responsive object and splice out duplicates.
-                    while( l >= 0 ) {
-
-                        if( _.options.responsive[l].breakpoint === value[item].breakpoint ) {
-
-                            _.options.responsive.splice(l,1);
-
-                        }
-
-                        l--;
-
-                    }
-
-                    _.options.responsive.push( value[item] );
-
-                }
-
-            }
-
-        }
-
-        if ( refresh ) {
-
-            _.unload();
-            _.reinit();
-
-        }
-
-    };
-
-    Slick.prototype.setPosition = function() {
-
-        var _ = this;
-
-        _.setDimensions();
-
-        _.setHeight();
-
-        if (_.options.fade === false) {
-            _.setCSS(_.getLeft(_.currentSlide));
-        } else {
-            _.setFade();
-        }
-
-        _.$slider.trigger('setPosition', [_]);
-
-    };
-
-    Slick.prototype.setProps = function() {
-
-        var _ = this,
-            bodyStyle = document.body.style;
-
-        _.positionProp = _.options.vertical === true ? 'top' : 'left';
-
-        if (_.positionProp === 'top') {
-            _.$slider.addClass('slick-vertical');
-        } else {
-            _.$slider.removeClass('slick-vertical');
-        }
-
-        if (bodyStyle.WebkitTransition !== undefined ||
-            bodyStyle.MozTransition !== undefined ||
-            bodyStyle.msTransition !== undefined) {
-            if (_.options.useCSS === true) {
-                _.cssTransitions = true;
-            }
-        }
-
-        if ( _.options.fade ) {
-            if ( typeof _.options.zIndex === 'number' ) {
-                if( _.options.zIndex < 3 ) {
-                    _.options.zIndex = 3;
-                }
-            } else {
-                _.options.zIndex = _.defaults.zIndex;
-            }
-        }
-
-        if (bodyStyle.OTransform !== undefined) {
-            _.animType = 'OTransform';
-            _.transformType = '-o-transform';
-            _.transitionType = 'OTransition';
-            if (bodyStyle.perspectiveProperty === undefined && bodyStyle.webkitPerspective === undefined) _.animType = false;
-        }
-        if (bodyStyle.MozTransform !== undefined) {
-            _.animType = 'MozTransform';
-            _.transformType = '-moz-transform';
-            _.transitionType = 'MozTransition';
-            if (bodyStyle.perspectiveProperty === undefined && bodyStyle.MozPerspective === undefined) _.animType = false;
-        }
-        if (bodyStyle.webkitTransform !== undefined) {
-            _.animType = 'webkitTransform';
-            _.transformType = '-webkit-transform';
-            _.transitionType = 'webkitTransition';
-            if (bodyStyle.perspectiveProperty === undefined && bodyStyle.webkitPerspective === undefined) _.animType = false;
-        }
-        if (bodyStyle.msTransform !== undefined) {
-            _.animType = 'msTransform';
-            _.transformType = '-ms-transform';
-            _.transitionType = 'msTransition';
-            if (bodyStyle.msTransform === undefined) _.animType = false;
-        }
-        if (bodyStyle.transform !== undefined && _.animType !== false) {
-            _.animType = 'transform';
-            _.transformType = 'transform';
-            _.transitionType = 'transition';
-        }
-        _.transformsEnabled = _.options.useTransform && (_.animType !== null && _.animType !== false);
-    };
-
-
-    Slick.prototype.setSlideClasses = function(index) {
-
-        var _ = this,
-            centerOffset, allSlides, indexOffset, remainder;
-
-        allSlides = _.$slider
-            .find('.slick-slide')
-            .removeClass('slick-active slick-center slick-current')
-            .attr('aria-hidden', 'true');
-
-        _.$slides
-            .eq(index)
-            .addClass('slick-current');
-
-        if (_.options.centerMode === true) {
-
-            var evenCoef = _.options.slidesToShow % 2 === 0 ? 1 : 0;
-
-            centerOffset = Math.floor(_.options.slidesToShow / 2);
-
-            if (_.options.infinite === true) {
-
-                if (index >= centerOffset && index <= (_.slideCount - 1) - centerOffset) {
-                    _.$slides
-                        .slice(index - centerOffset + evenCoef, index + centerOffset + 1)
-                        .addClass('slick-active')
-                        .attr('aria-hidden', 'false');
-
-                } else {
-
-                    indexOffset = _.options.slidesToShow + index;
-                    allSlides
-                        .slice(indexOffset - centerOffset + 1 + evenCoef, indexOffset + centerOffset + 2)
-                        .addClass('slick-active')
-                        .attr('aria-hidden', 'false');
-
-                }
-
-                if (index === 0) {
-
-                    allSlides
-                        .eq(allSlides.length - 1 - _.options.slidesToShow)
-                        .addClass('slick-center');
-
-                } else if (index === _.slideCount - 1) {
-
-                    allSlides
-                        .eq(_.options.slidesToShow)
-                        .addClass('slick-center');
-
-                }
-
-            }
-
-            _.$slides
-                .eq(index)
-                .addClass('slick-center');
-
-        } else {
-
-            if (index >= 0 && index <= (_.slideCount - _.options.slidesToShow)) {
-
-                _.$slides
-                    .slice(index, index + _.options.slidesToShow)
-                    .addClass('slick-active')
-                    .attr('aria-hidden', 'false');
-
-            } else if (allSlides.length <= _.options.slidesToShow) {
-
-                allSlides
-                    .addClass('slick-active')
-                    .attr('aria-hidden', 'false');
-
-            } else {
-
-                remainder = _.slideCount % _.options.slidesToShow;
-                indexOffset = _.options.infinite === true ? _.options.slidesToShow + index : index;
-
-                if (_.options.slidesToShow == _.options.slidesToScroll && (_.slideCount - index) < _.options.slidesToShow) {
-
-                    allSlides
-                        .slice(indexOffset - (_.options.slidesToShow - remainder), indexOffset + remainder)
-                        .addClass('slick-active')
-                        .attr('aria-hidden', 'false');
-
-                } else {
-
-                    allSlides
-                        .slice(indexOffset, indexOffset + _.options.slidesToShow)
-                        .addClass('slick-active')
-                        .attr('aria-hidden', 'false');
-
-                }
-
-            }
-
-        }
-
-        if (_.options.lazyLoad === 'ondemand' || _.options.lazyLoad === 'anticipated') {
-            _.lazyLoad();
-        }
-    };
-
-    Slick.prototype.setupInfinite = function() {
-
-        var _ = this,
-            i, slideIndex, infiniteCount;
-
-        if (_.options.fade === true) {
-            _.options.centerMode = false;
-        }
-
-        if (_.options.infinite === true && _.options.fade === false) {
-
-            slideIndex = null;
-
-            if (_.slideCount > _.options.slidesToShow) {
-
-                if (_.options.centerMode === true) {
-                    infiniteCount = _.options.slidesToShow + 1;
-                } else {
-                    infiniteCount = _.options.slidesToShow;
-                }
-
-                for (i = _.slideCount; i > (_.slideCount -
-                        infiniteCount); i -= 1) {
-                    slideIndex = i - 1;
-                    $(_.$slides[slideIndex]).clone(true).attr('id', '')
-                        .attr('data-slick-index', slideIndex - _.slideCount)
-                        .prependTo(_.$slideTrack).addClass('slick-cloned');
-                }
-                for (i = 0; i < infiniteCount  + _.slideCount; i += 1) {
-                    slideIndex = i;
-                    $(_.$slides[slideIndex]).clone(true).attr('id', '')
-                        .attr('data-slick-index', slideIndex + _.slideCount)
-                        .appendTo(_.$slideTrack).addClass('slick-cloned');
-                }
-                _.$slideTrack.find('.slick-cloned').find('[id]').each(function() {
-                    $(this).attr('id', '');
-                });
-
-            }
-
-        }
-
-    };
-
-    Slick.prototype.interrupt = function( toggle ) {
-
-        var _ = this;
-
-        if( !toggle ) {
-            _.autoPlay();
-        }
-        _.interrupted = toggle;
-
-    };
-
-    Slick.prototype.selectHandler = function(event) {
-
-        var _ = this;
-
-        var targetElement =
-            $(event.target).is('.slick-slide') ?
-                $(event.target) :
-                $(event.target).parents('.slick-slide');
-
-        var index = parseInt(targetElement.attr('data-slick-index'));
-
-        if (!index) index = 0;
-
-        if (_.slideCount <= _.options.slidesToShow) {
-
-            _.slideHandler(index, false, true);
-            return;
-
-        }
-
-        _.slideHandler(index);
-
-    };
-
-    Slick.prototype.slideHandler = function(index, sync, dontAnimate) {
-
-        var targetSlide, animSlide, oldSlide, slideLeft, targetLeft = null,
-            _ = this, navTarget;
-
-        sync = sync || false;
-
-        if (_.animating === true && _.options.waitForAnimate === true) {
-            return;
-        }
-
-        if (_.options.fade === true && _.currentSlide === index) {
-            return;
-        }
-
-        if (sync === false) {
-            _.asNavFor(index);
-        }
-
-        targetSlide = index;
-        targetLeft = _.getLeft(targetSlide);
-        slideLeft = _.getLeft(_.currentSlide);
-
-        _.currentLeft = _.swipeLeft === null ? slideLeft : _.swipeLeft;
-
-        if (_.options.infinite === false && _.options.centerMode === false && (index < 0 || index > _.getDotCount() * _.options.slidesToScroll)) {
-            if (_.options.fade === false) {
-                targetSlide = _.currentSlide;
-                if (dontAnimate !== true && _.slideCount > _.options.slidesToShow) {
-                    _.animateSlide(slideLeft, function() {
-                        _.postSlide(targetSlide);
-                    });
-                } else {
-                    _.postSlide(targetSlide);
-                }
-            }
-            return;
-        } else if (_.options.infinite === false && _.options.centerMode === true && (index < 0 || index > (_.slideCount - _.options.slidesToScroll))) {
-            if (_.options.fade === false) {
-                targetSlide = _.currentSlide;
-                if (dontAnimate !== true && _.slideCount > _.options.slidesToShow) {
-                    _.animateSlide(slideLeft, function() {
-                        _.postSlide(targetSlide);
-                    });
-                } else {
-                    _.postSlide(targetSlide);
-                }
-            }
-            return;
-        }
-
-        if ( _.options.autoplay ) {
-            clearInterval(_.autoPlayTimer);
-        }
-
-        if (targetSlide < 0) {
-            if (_.slideCount % _.options.slidesToScroll !== 0) {
-                animSlide = _.slideCount - (_.slideCount % _.options.slidesToScroll);
-            } else {
-                animSlide = _.slideCount + targetSlide;
-            }
-        } else if (targetSlide >= _.slideCount) {
-            if (_.slideCount % _.options.slidesToScroll !== 0) {
-                animSlide = 0;
-            } else {
-                animSlide = targetSlide - _.slideCount;
-            }
-        } else {
-            animSlide = targetSlide;
-        }
-
-        _.animating = true;
-
-        _.$slider.trigger('beforeChange', [_, _.currentSlide, animSlide]);
-
-        oldSlide = _.currentSlide;
-        _.currentSlide = animSlide;
-
-        _.setSlideClasses(_.currentSlide);
-
-        if ( _.options.asNavFor ) {
-
-            navTarget = _.getNavTarget();
-            navTarget = navTarget.slick('getSlick');
-
-            if ( navTarget.slideCount <= navTarget.options.slidesToShow ) {
-                navTarget.setSlideClasses(_.currentSlide);
-            }
-
-        }
-
-        _.updateDots();
-        _.updateArrows();
-
-        if (_.options.fade === true) {
-            if (dontAnimate !== true) {
-
-                _.fadeSlideOut(oldSlide);
-
-                _.fadeSlide(animSlide, function() {
-                    _.postSlide(animSlide);
-                });
-
-            } else {
-                _.postSlide(animSlide);
-            }
-            _.animateHeight();
-            return;
-        }
-
-        if (dontAnimate !== true && _.slideCount > _.options.slidesToShow) {
-            _.animateSlide(targetLeft, function() {
-                _.postSlide(animSlide);
-            });
-        } else {
-            _.postSlide(animSlide);
-        }
-
-    };
-
-    Slick.prototype.startLoad = function() {
-
-        var _ = this;
-
-        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
-
-            _.$prevArrow.hide();
-            _.$nextArrow.hide();
-
-        }
-
-        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
-
-            _.$dots.hide();
-
-        }
-
-        _.$slider.addClass('slick-loading');
-
-    };
-
-    Slick.prototype.swipeDirection = function() {
-
-        var xDist, yDist, r, swipeAngle, _ = this;
-
-        xDist = _.touchObject.startX - _.touchObject.curX;
-        yDist = _.touchObject.startY - _.touchObject.curY;
-        r = Math.atan2(yDist, xDist);
-
-        swipeAngle = Math.round(r * 180 / Math.PI);
-        if (swipeAngle < 0) {
-            swipeAngle = 360 - Math.abs(swipeAngle);
-        }
-
-        if ((swipeAngle <= 45) && (swipeAngle >= 0)) {
-            return (_.options.rtl === false ? 'left' : 'right');
-        }
-        if ((swipeAngle <= 360) && (swipeAngle >= 315)) {
-            return (_.options.rtl === false ? 'left' : 'right');
-        }
-        if ((swipeAngle >= 135) && (swipeAngle <= 225)) {
-            return (_.options.rtl === false ? 'right' : 'left');
-        }
-        if (_.options.verticalSwiping === true) {
-            if ((swipeAngle >= 35) && (swipeAngle <= 135)) {
-                return 'down';
-            } else {
-                return 'up';
-            }
-        }
-
-        return 'vertical';
-
-    };
-
-    Slick.prototype.swipeEnd = function(event) {
-
-        var _ = this,
-            slideCount,
-            direction;
-
-        _.dragging = false;
-        _.swiping = false;
-
-        if (_.scrolling) {
-            _.scrolling = false;
-            return false;
-        }
-
-        _.interrupted = false;
-        _.shouldClick = ( _.touchObject.swipeLength > 10 ) ? false : true;
-
-        if ( _.touchObject.curX === undefined ) {
-            return false;
-        }
-
-        if ( _.touchObject.edgeHit === true ) {
-            _.$slider.trigger('edge', [_, _.swipeDirection() ]);
-        }
-
-        if ( _.touchObject.swipeLength >= _.touchObject.minSwipe ) {
-
-            direction = _.swipeDirection();
-
-            switch ( direction ) {
-
-                case 'left':
-                case 'down':
-
-                    slideCount =
-                        _.options.swipeToSlide ?
-                            _.checkNavigable( _.currentSlide + _.getSlideCount() ) :
-                            _.currentSlide + _.getSlideCount();
-
-                    _.currentDirection = 0;
-
-                    break;
-
-                case 'right':
-                case 'up':
-
-                    slideCount =
-                        _.options.swipeToSlide ?
-                            _.checkNavigable( _.currentSlide - _.getSlideCount() ) :
-                            _.currentSlide - _.getSlideCount();
-
-                    _.currentDirection = 1;
-
-                    break;
-
-                default:
-
-
-            }
-
-            if( direction != 'vertical' ) {
-
-                _.slideHandler( slideCount );
-                _.touchObject = {};
-                _.$slider.trigger('swipe', [_, direction ]);
-
-            }
-
-        } else {
-
-            if ( _.touchObject.startX !== _.touchObject.curX ) {
-
-                _.slideHandler( _.currentSlide );
-                _.touchObject = {};
-
-            }
-
-        }
-
-    };
-
-    Slick.prototype.swipeHandler = function(event) {
-
-        var _ = this;
-
-        if ((_.options.swipe === false) || ('ontouchend' in document && _.options.swipe === false)) {
-            return;
-        } else if (_.options.draggable === false && event.type.indexOf('mouse') !== -1) {
-            return;
-        }
-
-        _.touchObject.fingerCount = event.originalEvent && event.originalEvent.touches !== undefined ?
-            event.originalEvent.touches.length : 1;
-
-        _.touchObject.minSwipe = _.listWidth / _.options
-            .touchThreshold;
-
-        if (_.options.verticalSwiping === true) {
-            _.touchObject.minSwipe = _.listHeight / _.options
-                .touchThreshold;
-        }
-
-        switch (event.data.action) {
-
-            case 'start':
-                _.swipeStart(event);
-                break;
-
-            case 'move':
-                _.swipeMove(event);
-                break;
-
-            case 'end':
-                _.swipeEnd(event);
-                break;
-
-        }
-
-    };
-
-    Slick.prototype.swipeMove = function(event) {
-
-        var _ = this,
-            edgeWasHit = false,
-            curLeft, swipeDirection, swipeLength, positionOffset, touches, verticalSwipeLength;
-
-        touches = event.originalEvent !== undefined ? event.originalEvent.touches : null;
-
-        if (!_.dragging || _.scrolling || touches && touches.length !== 1) {
-            return false;
-        }
-
-        curLeft = _.getLeft(_.currentSlide);
-
-        _.touchObject.curX = touches !== undefined ? touches[0].pageX : event.clientX;
-        _.touchObject.curY = touches !== undefined ? touches[0].pageY : event.clientY;
-
-        _.touchObject.swipeLength = Math.round(Math.sqrt(
-            Math.pow(_.touchObject.curX - _.touchObject.startX, 2)));
-
-        verticalSwipeLength = Math.round(Math.sqrt(
-            Math.pow(_.touchObject.curY - _.touchObject.startY, 2)));
-
-        if (!_.options.verticalSwiping && !_.swiping && verticalSwipeLength > 4) {
-            _.scrolling = true;
-            return false;
-        }
-
-        if (_.options.verticalSwiping === true) {
-            _.touchObject.swipeLength = verticalSwipeLength;
-        }
-
-        swipeDirection = _.swipeDirection();
-
-        if (event.originalEvent !== undefined && _.touchObject.swipeLength > 4) {
-            _.swiping = true;
-            event.preventDefault();
-        }
-
-        positionOffset = (_.options.rtl === false ? 1 : -1) * (_.touchObject.curX > _.touchObject.startX ? 1 : -1);
-        if (_.options.verticalSwiping === true) {
-            positionOffset = _.touchObject.curY > _.touchObject.startY ? 1 : -1;
-        }
-
-
-        swipeLength = _.touchObject.swipeLength;
-
-        _.touchObject.edgeHit = false;
-
-        if (_.options.infinite === false) {
-            if ((_.currentSlide === 0 && swipeDirection === 'right') || (_.currentSlide >= _.getDotCount() && swipeDirection === 'left')) {
-                swipeLength = _.touchObject.swipeLength * _.options.edgeFriction;
-                _.touchObject.edgeHit = true;
-            }
-        }
-
-        if (_.options.vertical === false) {
-            _.swipeLeft = curLeft + swipeLength * positionOffset;
-        } else {
-            _.swipeLeft = curLeft + (swipeLength * (_.$list.height() / _.listWidth)) * positionOffset;
-        }
-        if (_.options.verticalSwiping === true) {
-            _.swipeLeft = curLeft + swipeLength * positionOffset;
-        }
-
-        if (_.options.fade === true || _.options.touchMove === false) {
-            return false;
-        }
-
-        if (_.animating === true) {
-            _.swipeLeft = null;
-            return false;
-        }
-
-        _.setCSS(_.swipeLeft);
-
-    };
-
-    Slick.prototype.swipeStart = function(event) {
-
-        var _ = this,
-            touches;
-
-        _.interrupted = true;
-
-        if (_.touchObject.fingerCount !== 1 || _.slideCount <= _.options.slidesToShow) {
-            _.touchObject = {};
-            return false;
-        }
-
-        if (event.originalEvent !== undefined && event.originalEvent.touches !== undefined) {
-            touches = event.originalEvent.touches[0];
-        }
-
-        _.touchObject.startX = _.touchObject.curX = touches !== undefined ? touches.pageX : event.clientX;
-        _.touchObject.startY = _.touchObject.curY = touches !== undefined ? touches.pageY : event.clientY;
-
-        _.dragging = true;
-
-    };
-
-    Slick.prototype.unfilterSlides = Slick.prototype.slickUnfilter = function() {
-
-        var _ = this;
-
-        if (_.$slidesCache !== null) {
-
-            _.unload();
-
-            _.$slideTrack.children(this.options.slide).detach();
-
-            _.$slidesCache.appendTo(_.$slideTrack);
-
-            _.reinit();
-
-        }
-
-    };
-
-    Slick.prototype.unload = function() {
-
-        var _ = this;
-
-        $('.slick-cloned', _.$slider).remove();
-
-        if (_.$dots) {
-            _.$dots.remove();
-        }
-
-        if (_.$prevArrow && _.htmlExpr.test(_.options.prevArrow)) {
-            _.$prevArrow.remove();
-        }
-
-        if (_.$nextArrow && _.htmlExpr.test(_.options.nextArrow)) {
-            _.$nextArrow.remove();
-        }
-
-        _.$slides
-            .removeClass('slick-slide slick-active slick-visible slick-current')
-            .attr('aria-hidden', 'true')
-            .css('width', '');
-
-    };
-
-    Slick.prototype.unslick = function(fromBreakpoint) {
-
-        var _ = this;
-        _.$slider.trigger('unslick', [_, fromBreakpoint]);
-        _.destroy();
-
-    };
-
-    Slick.prototype.updateArrows = function() {
-
-        var _ = this,
-            centerOffset;
-
-        centerOffset = Math.floor(_.options.slidesToShow / 2);
-
-        if ( _.options.arrows === true &&
-            _.slideCount > _.options.slidesToShow &&
-            !_.options.infinite ) {
-
-            _.$prevArrow.removeClass('slick-disabled').attr('aria-disabled', 'false');
-            _.$nextArrow.removeClass('slick-disabled').attr('aria-disabled', 'false');
-
-            if (_.currentSlide === 0) {
-
-                _.$prevArrow.addClass('slick-disabled').attr('aria-disabled', 'true');
-                _.$nextArrow.removeClass('slick-disabled').attr('aria-disabled', 'false');
-
-            } else if (_.currentSlide >= _.slideCount - _.options.slidesToShow && _.options.centerMode === false) {
-
-                _.$nextArrow.addClass('slick-disabled').attr('aria-disabled', 'true');
-                _.$prevArrow.removeClass('slick-disabled').attr('aria-disabled', 'false');
-
-            } else if (_.currentSlide >= _.slideCount - 1 && _.options.centerMode === true) {
-
-                _.$nextArrow.addClass('slick-disabled').attr('aria-disabled', 'true');
-                _.$prevArrow.removeClass('slick-disabled').attr('aria-disabled', 'false');
-
-            }
-
-        }
-
-    };
-
-    Slick.prototype.updateDots = function() {
-
-        var _ = this;
-
-        if (_.$dots !== null) {
-
-            _.$dots
-                .find('li')
-                    .removeClass('slick-active')
-                    .end();
-
-            _.$dots
-                .find('li')
-                .eq(Math.floor(_.currentSlide / _.options.slidesToScroll))
-                .addClass('slick-active');
-
-        }
-
-    };
-
-    Slick.prototype.visibility = function() {
-
-        var _ = this;
-
-        if ( _.options.autoplay ) {
-
-            if ( document[_.hidden] ) {
-
-                _.interrupted = true;
-
-            } else {
-
-                _.interrupted = false;
-
-            }
-
-        }
-
-    };
-
-    $.fn.slick = function() {
-        var _ = this,
-            opt = arguments[0],
-            args = Array.prototype.slice.call(arguments, 1),
-            l = _.length,
-            i,
-            ret;
-        for (i = 0; i < l; i++) {
-            if (typeof opt == 'object' || typeof opt == 'undefined')
-                _[i].slick = new Slick(_[i], opt);
-            else
-                ret = _[i].slick[opt].apply(_[i].slick, args);
-            if (typeof ret != 'undefined') return ret;
-        }
-        return _;
-    };
-
-}));
-
-
-/***/ }),
-
 /***/ "./node_modules/svg4everybody/dist/svg4everybody.js":
 /*!**********************************************************!*\
   !*** ./node_modules/svg4everybody/dist/svg4everybody.js ***!
@@ -14111,272 +10898,142 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() < 1200) {
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.header__menu-nav-link').on('click', function dropMenuFunc() {
-      jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.header__menu-nav-item').toggleClass('active');
-      return false;
-    });
+  if (jquery__WEBPACK_IMPORTED_MODULE_0__('.right-cart').length) {
+    jquery__WEBPACK_IMPORTED_MODULE_0__(".wrapp").addClass("wrapp--ovi");
   }
-  if (jquery__WEBPACK_IMPORTED_MODULE_0__('.article__aside').length) {
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.wrapper').addClass('wrapper--ovv');
-  }
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.resources__head').on('click', function resourcesFunc() {
-    jquery__WEBPACK_IMPORTED_MODULE_0__(this).siblings('.resources__body').slideToggle();
-    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.resources').toggleClass('active');
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.faq__head').on('click', function resourcesFunc() {
-    jquery__WEBPACK_IMPORTED_MODULE_0__(this).siblings('.faq__item-body').slideToggle();
-    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.faq__item').toggleClass('active');
-  });
-  if (jquery__WEBPACK_IMPORTED_MODULE_0__('.article__aside').length) {
-    var isElementVisible = function isElementVisible(element) {
-      var rect = element.getBoundingClientRect();
-      return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-    };
-    var navigationLinks = document.querySelectorAll('.article__nav a');
-    var sidebarMenu = document.querySelector('.article__aside');
-    window.addEventListener('scroll', function () {
-      navigationLinks.forEach(function (link) {
-        var targetSectionId = link.getAttribute('href').substring(1);
-        var targetSection = document.getElementById(targetSectionId);
-        if (isElementVisible(targetSection)) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-      var sidebarMenuRect = sidebarMenu.getBoundingClientRect();
-      if (sidebarMenuRect.top < 0 || sidebarMenuRect.bottom > window.innerHeight) {
-        sidebarMenu.classList.add('hidden');
+  var lastScrollTop = 0;
+  jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('scroll', function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0__(this).scrollTop() >= 40) {
+      jquery__WEBPACK_IMPORTED_MODULE_0__(".header-wrapper a.mobile-popup").addClass("active");
+      jquery__WEBPACK_IMPORTED_MODULE_0__(".header-wrapper a.mobile-popup").addClass("active");
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0__(".header-wrapper a.mobile-popup").removeClass("active");
+    }
+    if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() < 992) {
+      var st = jquery__WEBPACK_IMPORTED_MODULE_0__(this).scrollTop();
+
+      // Check if the user is scrolling up
+      if (st > lastScrollTop) {
+        jquery__WEBPACK_IMPORTED_MODULE_0__('body').addClass('scrolling-up');
       } else {
-        sidebarMenu.classList.remove('hidden');
+        jquery__WEBPACK_IMPORTED_MODULE_0__('body').removeClass('scrolling-up');
       }
-    });
-    navigationLinks.forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        var targetSectionId = link.getAttribute('href').substring(1);
-        var targetSection = document.getElementById(targetSectionId);
-        var targetOffsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
-        var headerHeight = jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() < 1200 ? 82 : 110;
-        var targetScrollPosition = targetOffsetTop - headerHeight;
-        window.scrollTo({
-          top: targetScrollPosition,
-          behavior: 'smooth'
-        });
-      });
-    });
-  }
-  var counters = document.querySelectorAll('.js-count');
-  counters.forEach(function (counter) {
-    var targetValue = parseInt(counter.getAttribute('data-count'));
-    var currentValue = 0;
-    var increment = Math.ceil(targetValue / 200);
-    var updateCounter = function updateCounter() {
-      if (currentValue < targetValue) {
-        currentValue += increment;
-        if (currentValue > targetValue) {
-          currentValue = targetValue;
-        }
-        counter.textContent = new Intl.NumberFormat('en-US').format(currentValue);
-        requestAnimationFrame(updateCounter);
-      }
-    };
-    updateCounter();
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-menu').on('click', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.header').addClass('open-menu');
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-close-menu').on('click', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.header').removeClass('open-menu');
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.header__menu-nav-item').removeClass('active');
-  });
-});
-
-/***/ }),
-
-/***/ "./app/scripts/components/sliders.js":
-/*!*******************************************!*\
-  !*** ./app/scripts/components/sliders.js ***!
-  \*******************************************/
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! slick-carousel */ "./node_modules/slick-carousel/slick/slick.js");
-
-
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  var portfolioSettings = {
-    slidesToShow: 1,
-    prevArrow: '<span class="slick-prev"><svg width="10" height="18" viewBox="0 0 10 18" xmlns="http://www.w3.org/2000/svg"><path d="M9.53061 15.9694C9.60029 16.0391 9.65556 16.1218 9.69327 16.2129C9.73099 16.3039 9.7504 16.4015 9.7504 16.5001C9.7504 16.5986 9.73099 16.6962 9.69327 16.7872C9.65556 16.8783 9.60029 16.961 9.53061 17.0307C9.46092 17.1004 9.3782 17.1556 9.28715 17.1933C9.19611 17.2311 9.09853 17.2505 8.99998 17.2505C8.90143 17.2505 8.80385 17.2311 8.71281 17.1933C8.62176 17.1556 8.53904 17.1004 8.46935 17.0307L0.969354 9.53068C0.899622 9.46102 0.844303 9.3783 0.80656 9.28726C0.768817 9.19621 0.74939 9.09861 0.74939 9.00005C0.74939 8.90149 0.768817 8.80389 0.80656 8.71285C0.844303 8.6218 0.899622 8.53908 0.969354 8.46943L8.46935 0.969426C8.61009 0.828695 8.80096 0.749634 8.99998 0.749634C9.199 0.749634 9.38987 0.828695 9.53061 0.969426C9.67134 1.11016 9.7504 1.30103 9.7504 1.50005C9.7504 1.69907 9.67134 1.88995 9.53061 2.03068L2.56029 9.00005L9.53061 15.9694Z" fill="#111111"/></svg></span>',
-    nextArrow: '<span class="slick-next"><svg width="10" height="18" viewBox="0 0 10 18" xmlns="http://www.w3.org/2000/svg"><path d="M9.53061 15.9694C9.60029 16.0391 9.65556 16.1218 9.69327 16.2129C9.73099 16.3039 9.7504 16.4015 9.7504 16.5001C9.7504 16.5986 9.73099 16.6962 9.69327 16.7872C9.65556 16.8783 9.60029 16.961 9.53061 17.0307C9.46092 17.1004 9.3782 17.1556 9.28715 17.1933C9.19611 17.2311 9.09853 17.2505 8.99998 17.2505C8.90143 17.2505 8.80385 17.2311 8.71281 17.1933C8.62176 17.1556 8.53904 17.1004 8.46935 17.0307L0.969354 9.53068C0.899622 9.46102 0.844303 9.3783 0.80656 9.28726C0.768817 9.19621 0.74939 9.09861 0.74939 9.00005C0.74939 8.90149 0.768817 8.80389 0.80656 8.71285C0.844303 8.6218 0.899622 8.53908 0.969354 8.46943L8.46935 0.969426C8.61009 0.828695 8.80096 0.749634 8.99998 0.749634C9.199 0.749634 9.38987 0.828695 9.53061 0.969426C9.67134 1.11016 9.7504 1.30103 9.7504 1.50005C9.7504 1.69907 9.67134 1.88995 9.53061 2.03068L2.56029 9.00005L9.53061 15.9694Z" fill="#111111"/></svg></span>',
-    fade: true,
-    responsive: [{
-      breakpoint: 1201,
-      settings: "unslick"
-    }]
-  };
-  var portfolioSlider = jquery__WEBPACK_IMPORTED_MODULE_0__('.portfolio__slider').slick(portfolioSettings);
-  jquery__WEBPACK_IMPORTED_MODULE_0__(window).on('load resize', function () {
-    if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() > 1200 && !portfolioSlider.hasClass('slick-initialized')) {
-      jquery__WEBPACK_IMPORTED_MODULE_0__(portfolioSlider).slick(portfolioSettings);
+      lastScrollTop = st;
     }
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.portfolio-page__item').each(function (i, element) {
-    jquery__WEBPACK_IMPORTED_MODULE_0__(element).find('.portfolio-page__item-slider').slick({
-      slidesToShow: 1,
-      arrows: false,
-      fade: true,
-      asNavFor: jquery__WEBPACK_IMPORTED_MODULE_0__(element).find('.portfolio-page__item-nav')
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0__(element).find('.portfolio-page__item-nav').slick({
-      slidesToShow: 5,
-      asNavFor: jquery__WEBPACK_IMPORTED_MODULE_0__(element).find('.portfolio-page__item-slider'),
-      arrows: false,
-      focusOnSelect: true
-    });
+  var scrollDiv = jquery__WEBPACK_IMPORTED_MODULE_0__('.scroll-to-bottom');
+  if (scrollDiv.length > 0) {
+    scrollDiv.animate({
+      scrollTop: scrollDiv[0].scrollHeight
+    }, 'slow');
+  }
+
+  // Open popup
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.view-all-button').on('click', function (e) {
+    e.preventDefault();
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-sword-part').addClass('active');
   });
-  if (jquery__WEBPACK_IMPORTED_MODULE_0__('.reviews__slider').length) {
-    var reviewsSettings = {
-      slidesToShow: 3,
-      prevArrow: '<span class="slick-prev"><svg width="10" height="18" viewBox="0 0 10 18" xmlns="http://www.w3.org/2000/svg"><path d="M9.53061 15.9694C9.60029 16.0391 9.65556 16.1218 9.69327 16.2129C9.73099 16.3039 9.7504 16.4015 9.7504 16.5001C9.7504 16.5986 9.73099 16.6962 9.69327 16.7872C9.65556 16.8783 9.60029 16.961 9.53061 17.0307C9.46092 17.1004 9.3782 17.1556 9.28715 17.1933C9.19611 17.2311 9.09853 17.2505 8.99998 17.2505C8.90143 17.2505 8.80385 17.2311 8.71281 17.1933C8.62176 17.1556 8.53904 17.1004 8.46935 17.0307L0.969354 9.53068C0.899622 9.46102 0.844303 9.3783 0.80656 9.28726C0.768817 9.19621 0.74939 9.09861 0.74939 9.00005C0.74939 8.90149 0.768817 8.80389 0.80656 8.71285C0.844303 8.6218 0.899622 8.53908 0.969354 8.46943L8.46935 0.969426C8.61009 0.828695 8.80096 0.749634 8.99998 0.749634C9.199 0.749634 9.38987 0.828695 9.53061 0.969426C9.67134 1.11016 9.7504 1.30103 9.7504 1.50005C9.7504 1.69907 9.67134 1.88995 9.53061 2.03068L2.56029 9.00005L9.53061 15.9694Z" fill="#111111"/></svg></span>',
-      nextArrow: '<span class="slick-next"><svg width="10" height="18" viewBox="0 0 10 18" xmlns="http://www.w3.org/2000/svg"><path d="M9.53061 15.9694C9.60029 16.0391 9.65556 16.1218 9.69327 16.2129C9.73099 16.3039 9.7504 16.4015 9.7504 16.5001C9.7504 16.5986 9.73099 16.6962 9.69327 16.7872C9.65556 16.8783 9.60029 16.961 9.53061 17.0307C9.46092 17.1004 9.3782 17.1556 9.28715 17.1933C9.19611 17.2311 9.09853 17.2505 8.99998 17.2505C8.90143 17.2505 8.80385 17.2311 8.71281 17.1933C8.62176 17.1556 8.53904 17.1004 8.46935 17.0307L0.969354 9.53068C0.899622 9.46102 0.844303 9.3783 0.80656 9.28726C0.768817 9.19621 0.74939 9.09861 0.74939 9.00005C0.74939 8.90149 0.768817 8.80389 0.80656 8.71285C0.844303 8.6218 0.899622 8.53908 0.969354 8.46943L8.46935 0.969426C8.61009 0.828695 8.80096 0.749634 8.99998 0.749634C9.199 0.749634 9.38987 0.828695 9.53061 0.969426C9.67134 1.11016 9.7504 1.30103 9.7504 1.50005C9.7504 1.69907 9.67134 1.88995 9.53061 2.03068L2.56029 9.00005L9.53061 15.9694Z" fill="#111111"/></svg></span>',
-      responsive: [{
-        breakpoint: 1201,
-        settings: "unslick"
-      }]
-    };
-    var reviewsSlider = jquery__WEBPACK_IMPORTED_MODULE_0__('.reviews__slider').slick(reviewsSettings);
-    jquery__WEBPACK_IMPORTED_MODULE_0__(window).on('load resize', function () {
-      if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() > 1200 && !reviewsSlider.hasClass('slick-initialized')) {
-        jquery__WEBPACK_IMPORTED_MODULE_0__(reviewsSlider).slick(reviewsSettings);
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-sword-part ul li').on('click', function () {
+    var getDesktopImage = jquery__WEBPACK_IMPORTED_MODULE_0__(this).data('img');
+    var getMobileImage = jquery__WEBPACK_IMPORTED_MODULE_0__(this).data('mobile');
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-sword-part ul li').removeClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).addClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-sword-part .img-wrapper').find('img').attr('src', getDesktopImage);
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-sword-part .img-wrapper').find('source').attr('srcset', getMobileImage);
+  });
+  // Close custom popup
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-sword-part .close, .popup-sword-part .popup-sword-part-overlay').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-sword-part').removeClass('active');
+  });
+  // open mobile cart
+  jquery__WEBPACK_IMPORTED_MODULE_0__('#open-mobile-cart').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).toggleClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.cart-content-wrapper').toggleClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__('body').toggleClass("hide-overflow");
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-on-mobile .close').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.cart-content-wrapper').removeClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__('body').removeClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.open-confirm').on('click', function (e) {
+    e.preventDefault();
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-confirmation').toggleClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-confirmation .close-popup, .popup-confirmation .popup-confirmation-overlay').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-confirmation').removeClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.selec-input input').on('change', function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0__(this).is(":checked")) {
+      jquery__WEBPACK_IMPORTED_MODULE_0__(this).closest('.single-selection, .row-selected').addClass('active');
+      jquery__WEBPACK_IMPORTED_MODULE_0__(this).closest('.single-selection');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0__(this).closest('.single-selection, .row-selected').removeClass('active');
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.selec-input input').on('change', function () {
+    var contentArea = jquery__WEBPACK_IMPORTED_MODULE_0__(this).closest('.wrap-single-row').find('.content-area');
+    if (jquery__WEBPACK_IMPORTED_MODULE_0__(this).is(":checked")) {
+      // Check if content area is available before toggling
+      if (contentArea.length > 0) {
+        contentArea.addClass('active');
+        contentArea.find('textarea').focus();
       }
-    });
+    } else {
+      // Check if content area is available before toggling
+      if (contentArea.length > 0) {
+        contentArea.removeClass('active');
+      }
+    }
+  });
+  var ele = jquery__WEBPACK_IMPORTED_MODULE_0__('.view-images');
+  ele.on('click', function () {
+    var getImages = JSON.parse(jquery__WEBPACK_IMPORTED_MODULE_0__(this).attr('data-images'));
+    new Fancybox(getImages);
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.wrap-selection').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent().find('.dropdown').toggleClass('active');
+  });
+
+  // select handler
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.dropdown li').on('click', function () {
+    var getSelected = jquery__WEBPACK_IMPORTED_MODULE_0__(this).find('.value').html();
+    var getPrice = jquery__WEBPACK_IMPORTED_MODULE_0__(this).find('.price').html();
+    var setName = "".concat(getSelected, " (<b>").concat(getPrice, "</b>)");
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).closest('.lenght-selection').find('.wrap-selection span').html(setName);
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).closest('.dropdown').removeClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__(document).on("click", function (event) {
+    // Check if the clicked element is not within the target div
+    if (!jquery__WEBPACK_IMPORTED_MODULE_0__('.wrap-selection').is(event.target) && !jquery__WEBPACK_IMPORTED_MODULE_0__('.dropdown').is(event.target) && jquery__WEBPACK_IMPORTED_MODULE_0__('.dropdown').has(event.target).length === 0) {
+      // This click event occurred outside the div
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.dropdown').removeClass('active');
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.wrap-row-collaps .header-collaps').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).toggleClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent().find('.content-of-collaps').slideToggle();
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.cart-item-row .row-head').on('click', function () {
+    var $row = jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent('.cart-item-row');
+    var $content = $row.find('.row-content');
+    var $rowHead = jquery__WEBPACK_IMPORTED_MODULE_0__(this);
+    if ($rowHead.hasClass('active')) {
+      // If the row is already active, slide up the content and remove the 'active' class
+      $rowHead.removeClass('active');
+      $content.slideUp();
+    } else {
+      // If the row is not active, close all other rows and open this one
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.cart-item-row .row-head.active').removeClass('active');
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.cart-item-row .row-content:visible').slideUp();
+      $rowHead.addClass('active');
+      $content.slideDown();
+    }
+  });
+  var getLength = jquery__WEBPACK_IMPORTED_MODULE_0__('.expanded-rows .single-item-row').length;
+  if (getLength <= 2 && jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() > 1200) {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.expanded-rows .single-item-row .row-content').css("max-height", "320px");
   }
 });
-
-/***/ }),
-
-/***/ "./app/scripts/components/tabs.js":
-/*!****************************************!*\
-  !*** ./app/scripts/components/tabs.js ***!
-  \****************************************/
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-var Tabs = /*#__PURE__*/function () {
-  function Tabs(options) {
-    _classCallCheck(this, Tabs);
-    var defaultOption = {
-      selector: ".tabs-list",
-      activeClass: "active",
-      checkHash: true,
-      tabLinks: "a",
-      attribute: "href",
-      event: "click",
-      onChange: null
-    };
-    this.options = _objectSpread(_objectSpread({}, defaultOption), options);
-    return this.init(this.options);
-  }
-  _createClass(Tabs, [{
-    key: "init",
-    value: function init(options) {
-      var _this = this;
-      var tabs = document.querySelectorAll(options.selector);
-      tabs.forEach(function (element) {
-        _this.setInitialState(element);
-      });
-    }
-  }, {
-    key: "update",
-    value: function update(selector) {
-      var _this2 = this;
-      var tabs = document.querySelectorAll(selector || this.options.selector);
-      tabs.forEach(function (element) {
-        _this2.setInitialState(element);
-      });
-    }
-  }, {
-    key: "setInitialState",
-    value: function setInitialState(element) {
-      var _this3 = this;
-      var links = element.querySelectorAll(this.options.tabLinks);
-      this.addEvents(links);
-      var historyLink = null;
-      if (this.options.checkHash && window.location.hash) {
-        historyLink = element.querySelector("[".concat(this.options.attribute, "=\"").concat(window.location.hash, "\"]"));
-      }
-      if (historyLink) {
-        this.setActiveTab(historyLink);
-      } else {
-        links.forEach(function (link, index) {
-          if (index === 0) {
-            _this3.setActiveTab(link);
-          }
-        });
-      }
-    }
-  }, {
-    key: "addEvents",
-    value: function addEvents(links) {
-      var _this4 = this;
-      links.forEach(function (link) {
-        link.addEventListener(_this4.options.event, function (event) {
-          event.preventDefault();
-          if (!event.currentTarget.classList.contains(_this4.options.activeClass)) {
-            _this4.setActiveTab(link);
-          }
-        });
-      });
-    }
-  }, {
-    key: "setActiveTab",
-    value: function setActiveTab(activeTab) {
-      activeTab.classList.add(this.options.activeClass);
-      var activeTabID = activeTab.getAttribute(this.options.attribute);
-      if (activeTabID === "#") return;
-      var activeTabBlock = document.querySelector(activeTabID);
-      if (activeTabBlock) {
-        activeTabBlock.classList.add("active");
-      }
-      this.removeTabs(activeTab);
-      if (typeof this.options.onChange === "function") {
-        this.options.onChange();
-      }
-    }
-  }, {
-    key: "removeTabs",
-    value: function removeTabs(activeTab) {
-      var _this5 = this;
-      var tabNav = activeTab.closest(this.options.selector);
-      tabNav.querySelectorAll(this.options.tabLinks).forEach(function (element) {
-        if (element !== activeTab) {
-          element.classList.remove("active");
-          var tabID = element.getAttribute(_this5.options.attribute);
-          var tabBlock = document.querySelector(tabID);
-          if (tabBlock) {
-            tabBlock.classList.remove("active");
-          }
-        }
-      });
-    }
-  }]);
-  return Tabs;
-}();
-/* harmony default export */ __webpack_exports__["default"] = (Tabs);
 
 /***/ }),
 
@@ -14388,7 +11045,7 @@ var Tabs = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (["dev", "404.html", "Commercial-Renovation-and-Remodeling.html", "Construction-Management-Services.html", "Full-Service-Architectural-Design.html", "Home-Remodeling-Renovation.html", "Interior-Design-Services.html", "article.html", "author.html", "blog.html", "contacts.html", "index.html", "portfolio.html", "project-page.html"]);
+/* harmony default export */ __webpack_exports__["default"] = (["dev", "index.html", "step-1.html", "step-10.html", "step-2.html", "step-3.html", "step-4.html", "step-5.html", "step-6.html", "step-7.html", "step-8.html", "step-9.html"]);
 
 /***/ }),
 
@@ -14404,10 +11061,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svg4everybody */ "./node_modules/svg4everybody/dist/svg4everybody.js");
 /* harmony import */ var _components_custom_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/custom.js */ "./app/scripts/components/custom.js");
-/* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/tabs.js */ "./app/scripts/components/tabs.js");
-/* harmony import */ var _components_sliders_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/sliders.js */ "./app/scripts/components/sliders.js");
-
-
 
 
 
@@ -14415,10 +11068,15 @@ __webpack_require__.r(__webpack_exports__);
 globalThis.$ = jquery__WEBPACK_IMPORTED_MODULE_1__;
 globalThis.jQuery = jquery__WEBPACK_IMPORTED_MODULE_1__;
 document.addEventListener('DOMContentLoaded', function () {
-  globalThis.Tabs = new _components_tabs_js__WEBPACK_IMPORTED_MODULE_4__["default"]();
   svg4everybody__WEBPACK_IMPORTED_MODULE_2__();
-  (0,_components_sliders_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
   (0,_components_custom_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
+});
+jquery__WEBPACK_IMPORTED_MODULE_1__(window).on('load resize', function () {
+  if (jquery__WEBPACK_IMPORTED_MODULE_1__(window).width() < 1200) {
+    jquery__WEBPACK_IMPORTED_MODULE_1__('.left-content-wrapper').append(jquery__WEBPACK_IMPORTED_MODULE_1__('.js-mobile-actions'));
+  } else {
+    jquery__WEBPACK_IMPORTED_MODULE_1__('.controls').append(jquery__WEBPACK_IMPORTED_MODULE_1__('.js-mobile-actions'));
+  }
 });
 
 /***/ }),
