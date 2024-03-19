@@ -10898,6 +10898,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  var isMobile = jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() < 1200;
+  if (isMobile) {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('[data-placeholder-mobile]').each(function (_, element) {
+      var mobileImg = jquery__WEBPACK_IMPORTED_MODULE_0__(element).attr('data-placeholder-mobile');
+      jquery__WEBPACK_IMPORTED_MODULE_0__(element).attr('src', mobileImg);
+    });
+    jquery__WEBPACK_IMPORTED_MODULE_0__('[data-mobile]').each(function (_, element) {
+      var mobileStyle = jquery__WEBPACK_IMPORTED_MODULE_0__(element).attr('data-mobile');
+      jquery__WEBPACK_IMPORTED_MODULE_0__(element).attr('style', mobileStyle);
+    });
+  }
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-get-part').on(isMobile ? 'click' : 'mouseenter', function getInfoFunc() {
+    var currentId = jquery__WEBPACK_IMPORTED_MODULE_0__(this).attr('data-id');
+    var getPictureObj = dataPictures.find(function (item) {
+      return (item === null || item === void 0 ? void 0 : item.id) === currentId;
+    });
+    var parentBlock = jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.js-get-part-parent');
+    jquery__WEBPACK_IMPORTED_MODULE_0__(parentBlock).addClass('active').find('.popup-parts__child-title').html(getPictureObj === null || getPictureObj === void 0 ? void 0 : getPictureObj.title).end().find('.popup-parts__child-customisable-value').html(getPictureObj === null || getPictureObj === void 0 ? void 0 : getPictureObj.customisableWith).end().find('.popup-parts__child-img').attr('src', isMobile ? getPictureObj === null || getPictureObj === void 0 ? void 0 : getPictureObj.imgMobile : getPictureObj === null || getPictureObj === void 0 ? void 0 : getPictureObj.img);
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.js-get-part').removeClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).addClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-get-part').on('mouseleave', function backFuncParent() {
+    var parentBlock = jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.js-get-part-parent');
+    var imgPlaceholder = jquery__WEBPACK_IMPORTED_MODULE_0__(parentBlock).find('.popup-parts__child-img').attr(isMobile ? 'data-placeholder-mobile' : 'data-placeholder');
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).removeClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__(parentBlock).removeClass('active').find('.popup-parts__child-img').attr('src', imgPlaceholder);
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-back').on('click', function backFunc() {
+    var parentBlock = jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.js-get-part-parent');
+    var imgPlaceholder = jquery__WEBPACK_IMPORTED_MODULE_0__(parentBlock).find('.popup-parts__child-img').attr(isMobile ? 'data-placeholder-mobile' : 'data-placeholder');
+    jquery__WEBPACK_IMPORTED_MODULE_0__(parentBlock).removeClass('active').find('.popup-parts__child-img').attr('src', imgPlaceholder);
+  });
   if (jquery__WEBPACK_IMPORTED_MODULE_0__('.right-cart').length) {
     jquery__WEBPACK_IMPORTED_MODULE_0__(".wrapp").addClass("wrapp--ovi");
   }
@@ -10931,7 +10963,11 @@ __webpack_require__.r(__webpack_exports__);
   // Open popup
   jquery__WEBPACK_IMPORTED_MODULE_0__('.view-all-button').on('click', function (e) {
     e.preventDefault();
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-sword-part').addClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-parts').addClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-close-parts').on('click', function (e) {
+    e.preventDefault();
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-parts').removeClass('active');
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-sword-part ul li').on('click', function () {
     var getDesktopImage = jquery__WEBPACK_IMPORTED_MODULE_0__(this).data('img');
@@ -11037,6 +11073,132 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./app/scripts/components/tabs.js":
+/*!****************************************!*\
+  !*** ./app/scripts/components/tabs.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var Tabs = /*#__PURE__*/function () {
+  function Tabs(options) {
+    _classCallCheck(this, Tabs);
+    var defaultOption = {
+      selector: ".tabs-list",
+      activeClass: "active",
+      checkHash: true,
+      tabLinks: "a",
+      attribute: "href",
+      event: "click",
+      onChange: null
+    };
+    this.options = _objectSpread(_objectSpread({}, defaultOption), options);
+
+    // Не возвращаем результат вызова init из конструктора
+    this.init();
+  }
+  _createClass(Tabs, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+      var tabs = document.querySelectorAll(this.options.selector);
+      tabs.forEach(function (element) {
+        _this.setInitialState(element);
+      });
+    }
+  }, {
+    key: "update",
+    value: function update(selector) {
+      var _this2 = this;
+      var tabs = document.querySelectorAll(selector || this.options.selector);
+      tabs.forEach(function (element) {
+        _this2.setInitialState(element);
+      });
+    }
+  }, {
+    key: "setInitialState",
+    value: function setInitialState(element) {
+      var _this3 = this;
+      var links = element.querySelectorAll(this.options.tabLinks);
+      this.addEvents(links);
+      var historyLink = null;
+      if (this.options.checkHash && window.location.hash) {
+        historyLink = element.querySelector("[".concat(this.options.attribute, "=\"").concat(window.location.hash, "\"]"));
+      }
+      if (historyLink) {
+        this.setActiveTab(historyLink);
+      } else {
+        links.forEach(function (link, index) {
+          if (index === 0) {
+            _this3.setActiveTab(link);
+          }
+        });
+      }
+    }
+  }, {
+    key: "addEvents",
+    value: function addEvents(links) {
+      var _this4 = this;
+      links.forEach(function (link) {
+        link.addEventListener(_this4.options.event, function (event) {
+          event.preventDefault();
+          if (!event.currentTarget.classList.contains(_this4.options.activeClass)) {
+            _this4.setActiveTab(link);
+          }
+        });
+      });
+    }
+  }, {
+    key: "setActiveTab",
+    value: function setActiveTab(activeTab) {
+      // Проверяем наличие атрибута href у активной ссылки
+      var activeTabID = activeTab.getAttribute(this.options.attribute);
+      if (!activeTabID) return;
+      activeTab.classList.add(this.options.activeClass);
+      var activeTabBlock = document.querySelector(activeTabID);
+      if (activeTabBlock) {
+        activeTabBlock.classList.add("active");
+      }
+      this.removeTabs(activeTab);
+      if (typeof this.options.onChange === "function") {
+        this.options.onChange();
+      }
+    }
+  }, {
+    key: "removeTabs",
+    value: function removeTabs(activeTab) {
+      var _this5 = this;
+      var tabNav = activeTab.closest(this.options.selector);
+      tabNav.querySelectorAll(this.options.tabLinks).forEach(function (element) {
+        if (element !== activeTab) {
+          element.classList.remove("active");
+          var tabID = element.getAttribute(_this5.options.attribute);
+          if (tabID) {
+            var tabBlock = document.querySelector(tabID);
+            if (tabBlock) {
+              tabBlock.classList.remove("active");
+            }
+          }
+        }
+      });
+    }
+  }]);
+  return Tabs;
+}();
+/* harmony default export */ __webpack_exports__["default"] = (Tabs);
+
+/***/ }),
+
 /***/ "./app/scripts/files.js":
 /*!******************************!*\
   !*** ./app/scripts/files.js ***!
@@ -11060,7 +11222,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _markup_menu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./markup-menu.js */ "./app/scripts/markup-menu.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svg4everybody */ "./node_modules/svg4everybody/dist/svg4everybody.js");
-/* harmony import */ var _components_custom_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/custom.js */ "./app/scripts/components/custom.js");
+/* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/tabs.js */ "./app/scripts/components/tabs.js");
+/* harmony import */ var _components_custom_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/custom.js */ "./app/scripts/components/custom.js");
+
 
 
 
@@ -11069,7 +11233,18 @@ globalThis.$ = jquery__WEBPACK_IMPORTED_MODULE_1__;
 globalThis.jQuery = jquery__WEBPACK_IMPORTED_MODULE_1__;
 document.addEventListener('DOMContentLoaded', function () {
   svg4everybody__WEBPACK_IMPORTED_MODULE_2__();
-  (0,_components_custom_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  globalThis.Tabs = new _components_tabs_js__WEBPACK_IMPORTED_MODULE_3__["default"]();
+  (0,_components_custom_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  jquery__WEBPACK_IMPORTED_MODULE_1__('.popup-parts__overview-label').on('click', function (e) {
+    e.preventDefault();
+    var target = jquery__WEBPACK_IMPORTED_MODULE_1__(this).attr('href');
+    var $targetLink = jquery__WEBPACK_IMPORTED_MODULE_1__('ul.tabs-list').find('a[href="' + target + '"]');
+    var event = new Event('click', {
+      bubbles: true,
+      cancelable: true
+    });
+    $targetLink.get(0).dispatchEvent(event);
+  });
 });
 jquery__WEBPACK_IMPORTED_MODULE_1__(window).on('load resize', function () {
   if (jquery__WEBPACK_IMPORTED_MODULE_1__(window).width() < 1200) {
