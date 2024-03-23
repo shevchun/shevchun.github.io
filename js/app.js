@@ -10999,9 +10999,16 @@ __webpack_require__.r(__webpack_exports__);
     jquery__WEBPACK_IMPORTED_MODULE_0__('.popup-confirmation').removeClass('active');
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.selec-input input').on('change', function () {
+    var allInput = jquery__WEBPACK_IMPORTED_MODULE_0__('.selec-input input').filter(':checked');
+    if (allInput.length) {
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.js-next-btn').addClass('active');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.js-next-btn').removeClass('active');
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.selec-input input').on('change', function () {
     if (jquery__WEBPACK_IMPORTED_MODULE_0__(this).is(":checked")) {
       jquery__WEBPACK_IMPORTED_MODULE_0__(this).closest('.single-selection, .row-selected').addClass('active');
-      jquery__WEBPACK_IMPORTED_MODULE_0__(this).closest('.single-selection');
     } else {
       jquery__WEBPACK_IMPORTED_MODULE_0__(this).closest('.single-selection, .row-selected').removeClass('active');
     }
