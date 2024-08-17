@@ -2,8 +2,7 @@
 * node ^16.13.0
 * node ^16.13.0
 * npm ^8.7.0
-* npm ^8.7.0
-
+from local
 ##You must be globally installed *gulp*
 To set the type in the console `npm install gulp -g`
 
