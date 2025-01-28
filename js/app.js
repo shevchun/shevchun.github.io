@@ -17330,11 +17330,17 @@ __webpack_require__.r(__webpack_exports__);
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-menu').removeClass('active');
     jquery__WEBPACK_IMPORTED_MODULE_0__('.header__mobile').removeClass('active');
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-accordion-btn').on('click', function accordion() {
-    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.accordion__item').toggleClass('active');
+  document.querySelectorAll('.js-accordion-btn').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var accordionItem = this.closest('.accordion__item');
+      accordionItem.classList.toggle('active');
+    });
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-accordion-full-btn').on('click', function accordionFull() {
-    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.accordion__item').toggleClass('full');
+  document.querySelectorAll('.js-accordion-full-btn').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var accordionItem = this.closest('.accordion__item');
+      accordionItem.classList.toggle('full');
+    });
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.info').on('click', function hint(event) {
     event.stopPropagation();
@@ -17379,18 +17385,15 @@ __webpack_require__.r(__webpack_exports__);
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-notify-me').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-notify-me').addClass('active');
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-discount-btn').on('click', function discountFunc() {
-    if (!jquery__WEBPACK_IMPORTED_MODULE_0__(this).hasClass('copy') && !jquery__WEBPACK_IMPORTED_MODULE_0__(this).hasClass('copied')) {
-      jquery__WEBPACK_IMPORTED_MODULE_0__(this).addClass('copy');
-      jquery__WEBPACK_IMPORTED_MODULE_0__('.js-discount-value').addClass('copy');
-    } else if (jquery__WEBPACK_IMPORTED_MODULE_0__(this).hasClass('copy')) {
-      jquery__WEBPACK_IMPORTED_MODULE_0__(this).removeClass('copy').addClass('copied');
-      navigator.clipboard.writeText(document.querySelector('.js-discount-value').textContent).then(function () {
-        console.log('Текст успешно скопирован в буфер обмена');
-      }).catch(function (err) {
-        console.error('Ошибка при копировании текста: ', err);
-      });
-    }
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-popup-unlock-discount').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-unlock-discount').addClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '.js-discount-btn', function discountFunc() {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.js-discount-btn').addClass('copied');
+    navigator.clipboard.writeText(jquery__WEBPACK_IMPORTED_MODULE_0__('.js-discount-value').text().trim());
+    setTimeout(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.js-discount-btn').removeClass('copied');
+    }, 1000);
   });
 
   // $('.header__mobile-menu').on('click', () => {
@@ -17720,7 +17723,7 @@ var Tabs = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (["dev", "index.html"]);
+/* harmony default export */ __webpack_exports__["default"] = (["dev", "index.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html"]);
 
 /***/ }),
 
