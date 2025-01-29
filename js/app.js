@@ -17293,11 +17293,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-menu').on('click', function toggleMenu() {
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.header__mobile').toggleClass('active');
-    jquery__WEBPACK_IMPORTED_MODULE_0__('body').toggleClass('ovh');
-    jquery__WEBPACK_IMPORTED_MODULE_0__(this).toggleClass('active');
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.search').removeClass('active');
+  var searchButton = document.querySelector('.search__mobile-btn');
+  var menuButton = document.querySelector('.js-open-menu');
+  var body = document.body;
+  var headerMobile = document.querySelector('.header__mobile');
+  var search = document.querySelector('.search');
+  if (!searchButton || !menuButton || !headerMobile) return;
+  searchButton.addEventListener('click', function () {
+    var search = this.closest('.search');
+    if (!search) return;
+    if (body.classList.contains('ovh') && !search.classList.contains('active-mobile')) {
+      search.classList.add('active-mobile');
+    } else {
+      search.classList.toggle('active-mobile');
+      body.classList.toggle('ovh');
+    }
+    menuButton.classList.remove('active');
+    headerMobile.classList.remove('active');
+  });
+  if (!menuButton || !headerMobile || !search) return;
+  menuButton.addEventListener('click', function () {
+    var isActive = body.classList.contains('ovh') && !menuButton.classList.contains('active') && !headerMobile.classList.contains('active');
+    if (isActive) {
+      menuButton.classList.add('active');
+      headerMobile.classList.add('active');
+    } else {
+      body.classList.toggle('ovh');
+      headerMobile.classList.toggle('active');
+      menuButton.classList.toggle('active');
+    }
+    search.classList.remove('active-mobile');
   });
   if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() < 1200) {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.menu-item-has-children > a').on('click', function mobileNav(event) {
@@ -17324,12 +17349,6 @@ __webpack_require__.r(__webpack_exports__);
       jquery__WEBPACK_IMPORTED_MODULE_0__(this).remove();
     });
   }
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.search__mobile-btn').on('click', function searchFunc() {
-    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.search').toggleClass('active');
-    jquery__WEBPACK_IMPORTED_MODULE_0__('body').toggleClass('ovh');
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-menu').removeClass('active');
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.header__mobile').removeClass('active');
-  });
   document.querySelectorAll('.js-accordion-btn').forEach(function (button) {
     button.addEventListener('click', function () {
       var accordionItem = this.closest('.accordion__item');
@@ -17760,6 +17779,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 jquery__WEBPACK_IMPORTED_MODULE_1__(window).on('load resize', function () {
   if (jquery__WEBPACK_IMPORTED_MODULE_1__(window).width() < 1200) {
+    var getElementHeight = function getElementHeight(selector) {
+      var element = document.querySelector(selector);
+      return element ? element.getBoundingClientRect().height : 0;
+    };
+    requestAnimationFrame(function () {
+      var height = getElementHeight('.header');
+      jquery__WEBPACK_IMPORTED_MODULE_1__('.header__mobile, .search__form-holder').css('height', "calc(100dvh - ".concat(height, "px)"));
+    });
     jquery__WEBPACK_IMPORTED_MODULE_1__('.header__logo').insertAfter('.header__left');
     jquery__WEBPACK_IMPORTED_MODULE_1__('.header__mobile').append(jquery__WEBPACK_IMPORTED_MODULE_1__('.header__nav'));
     if (jquery__WEBPACK_IMPORTED_MODULE_1__('.product__title-box').length) {
@@ -17767,6 +17794,7 @@ jquery__WEBPACK_IMPORTED_MODULE_1__(window).on('load resize', function () {
       jquery__WEBPACK_IMPORTED_MODULE_1__('.product__reviews').insertAfter('.product__title-box');
     }
   } else {
+    jquery__WEBPACK_IMPORTED_MODULE_1__('.header__mobile, .search__form-holder').css('height', '');
     jquery__WEBPACK_IMPORTED_MODULE_1__('.header__logo').insertAfter('.header__menu-btn');
     jquery__WEBPACK_IMPORTED_MODULE_1__('.header__bottom > .container').append(jquery__WEBPACK_IMPORTED_MODULE_1__('.header__nav'));
     if (jquery__WEBPACK_IMPORTED_MODULE_1__('.product__title-box').length) {
