@@ -19508,6 +19508,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.accordion__handler').on('click', function accordionFunc() {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() > 1200) {
+      jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent('.accordion__item').toggleClass('active');
+      jquery__WEBPACK_IMPORTED_MODULE_0__(this).siblings('.accordion__slide').slideToggle();
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.accordion__item').not(jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent()).css('display', 'none'); // Скрываем все, кроме текущего
+      jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent('.accordion__item').addClass('active').css('display', 'block'); // Делаем текущий видимым
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.filters-top-get-back').addClass('level');
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '.filters-top-get-back.level', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.accordion__item').css('display', 'block').removeClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).removeClass('level');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.filters-top-get-back').on('click', function () {
+    if (!jquery__WEBPACK_IMPORTED_MODULE_0__(this).hasClass('level')) {
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.category__filters').removeClass('active');
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-mobile-filters-btn').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.category__filters').addClass('active');
+  });
   function adjustDropdown(dropdown) {
     var rect = dropdown.getBoundingClientRect();
     if (rect.right > window.innerWidth) {
@@ -19563,6 +19585,7 @@ __webpack_require__.r(__webpack_exports__);
     search.classList.remove('active-mobile');
   });
   if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() < 1200) {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.accordion__item').removeClass('active');
     jquery__WEBPACK_IMPORTED_MODULE_0__('.menu-item-has-children > a').on('click', function mobileNav(event) {
       var parent = jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent('.menu-item-has-children');
       var parents = jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.menu-item-has-children').length;
@@ -19587,6 +19610,12 @@ __webpack_require__.r(__webpack_exports__);
       jquery__WEBPACK_IMPORTED_MODULE_0__(this).remove();
     });
   }
+  document.querySelectorAll('.js-show-text').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var btn = this.closest('.js-show-text-parent');
+      btn.classList.toggle('active');
+    });
+  });
   document.querySelectorAll('.js-accordion-btn').forEach(function (button) {
     button.addEventListener('click', function () {
       var accordionItem = this.closest('.accordion__item');
@@ -19639,7 +19668,8 @@ __webpack_require__.r(__webpack_exports__);
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-money-back').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-money-back').addClass('active');
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-notify-me').on('click', function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-notify-me').on('click', function (event) {
+    event.preventDefault();
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-notify-me').addClass('active');
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-popup-unlock-discount').on('click', function () {
@@ -19678,15 +19708,6 @@ __webpack_require__.r(__webpack_exports__);
   //     $('.lang').removeClass('active')
   //   })
 
-  //   $(window).on('scroll', function scrollPage() {
-  //     const heightWindow = 50
-  //     if ($(this).scrollTop() >= heightWindow) {
-  //       $('.header').addClass('header--scroll')
-  //     } else {
-  //       $('.header').removeClass('header--scroll')
-  //     }
-  //   })
-
   //   $('.table-content__list a').on('click', function clickDownScroll() {
   //     const marginTop = 110
   //     const scrollEl = $(this).attr('href')
@@ -19700,12 +19721,29 @@ __webpack_require__.r(__webpack_exports__);
   //     }
   //     return false
   //   })
-
-  //   $('.js-scroll-top').on('click', () => {
-  //     $('html, body').animate({
-  //       scrollTop: 0
-  //     }, 500)
-  //   })
+  var lastScrollTop = 0;
+  jquery__WEBPACK_IMPORTED_MODULE_0__(window).on('scroll', function scrollPage() {
+    var heightWindow = 50;
+    if (jquery__WEBPACK_IMPORTED_MODULE_0__(this).scrollTop() >= heightWindow) {
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.js-scroll-top').addClass('scroll');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.js-scroll-top').removeClass('scroll');
+    }
+    var currentScroll = jquery__WEBPACK_IMPORTED_MODULE_0__(this).scrollTop();
+    if (currentScroll < 50) {
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.category__mobile-filter-btn--fixed').removeClass('visible');
+    } else if (currentScroll < lastScrollTop) {
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.category__mobile-filter-btn--fixed').addClass('visible');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0__('.category__mobile-filter-btn--fixed').removeClass('visible');
+    }
+    lastScrollTop = currentScroll;
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-scroll-top').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('html, body').animate({
+      scrollTop: 0
+    }, 500);
+  });
 });
 
 /***/ }),
@@ -20112,7 +20150,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (["dev", "index.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html", "wishlist.html"]);
+/* harmony default export */ __webpack_exports__["default"] = (["dev", "category.html", "index.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html", "wishlist.html"]);
 
 /***/ }),
 
