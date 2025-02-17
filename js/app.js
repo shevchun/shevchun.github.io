@@ -19628,15 +19628,6 @@ __webpack_require__.r(__webpack_exports__);
       accordionItem.classList.toggle('full');
     });
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.info').on('click', function hint(event) {
-    event.stopPropagation();
-    jquery__WEBPACK_IMPORTED_MODULE_0__(this).toggleClass('active');
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0__(document).on("click", function (event) {
-    event.stopPropagation();
-    if (jquery__WEBPACK_IMPORTED_MODULE_0__(event.target).closest(".info").length) return;
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.info').removeClass('active');
-  });
   function isFloat(value) {
     return typeof value === 'number' && !Number.isNaN(value) && !Number.isInteger(value);
   }
@@ -19766,7 +19757,12 @@ __webpack_require__.r(__webpack_exports__);
       return option.text;
     }
     var price = jquery__WEBPACK_IMPORTED_MODULE_0__(option.element).data('price') || '';
-    return jquery__WEBPACK_IMPORTED_MODULE_0__("<span class='select-option'><span class='select-option-text'>".concat(option.text, "</span> <span class='select-option-price'>").concat(price, "</span></span>"));
+    var icon = jquery__WEBPACK_IMPORTED_MODULE_0__(option.element).data('icon') || '';
+    var iconHtml = '';
+    if (icon) {
+      iconHtml = "<span class='select-option-icon'><img src=\"".concat(icon, "\" width=\"24\" height=\"24\" alt=\"\" /></span>");
+    }
+    return jquery__WEBPACK_IMPORTED_MODULE_0__("<span class='select-option'>\n            ".concat(iconHtml, "\n            <span class='select-option-text'>").concat(option.text, "</span>\n            <span class='select-option-price'>").concat(price, "</span>\n        </span>"));
   }
   jquery__WEBPACK_IMPORTED_MODULE_0__('.init-select2').each(function (index, element) {
     jquery__WEBPACK_IMPORTED_MODULE_0__(element).select2({
@@ -20041,22 +20037,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                // Получаем элемент стрелки внутри tooltip (его необходимо добавить в разметку, например: <div class="arrow"></div>)
                 arrowElement = tooltip.querySelector('.info__arrow');
                 _context.next = 3;
                 return (0,_floating_ui_dom__WEBPACK_IMPORTED_MODULE_0__.computePosition)(trigger, tooltip, {
                   placement: 'top',
-                  // предпочитаемое положение (можно менять)
-                  middleware: [(0,_floating_ui_dom__WEBPACK_IMPORTED_MODULE_0__.offset)(8),
-                  // отступ в 8px между элементами
-                  (0,_floating_ui_dom__WEBPACK_IMPORTED_MODULE_0__.flip)(),
-                  // смена стороны, если места недостаточно
-                  (0,_floating_ui_dom__WEBPACK_IMPORTED_MODULE_0__.shift)({
+                  middleware: [(0,_floating_ui_dom__WEBPACK_IMPORTED_MODULE_0__.offset)(8), (0,_floating_ui_dom__WEBPACK_IMPORTED_MODULE_0__.flip)(), (0,_floating_ui_dom__WEBPACK_IMPORTED_MODULE_0__.shift)({
                     padding: 5
-                  }),
-                  // сдвиг, чтобы tooltip не выходил за границы экрана
-                  // Добавляем middleware для стрелки, если arrowElement найден
-                  (0,_floating_ui_dom__WEBPACK_IMPORTED_MODULE_0__.arrow)({
+                  }), (0,_floating_ui_dom__WEBPACK_IMPORTED_MODULE_0__.arrow)({
                     element: arrowElement
                   })]
                 });
@@ -20066,15 +20053,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 y = _yield$computePositio.y;
                 placement = _yield$computePositio.placement;
                 middlewareData = _yield$computePositio.middlewareData;
-                // Позиционируем tooltip
                 Object.assign(tooltip.style, {
                   left: "".concat(x, "px"),
                   top: "".concat(y, "px")
                 });
-
-                // Если стрелка есть, вычисляем её позицию
                 if (arrowElement && middlewareData.arrow) {
-                  _middlewareData$arrow = middlewareData.arrow, arrowX = _middlewareData$arrow.x, arrowY = _middlewareData$arrow.y; // Определяем сторону, противоположную placement
+                  _middlewareData$arrow = middlewareData.arrow, arrowX = _middlewareData$arrow.x, arrowY = _middlewareData$arrow.y;
                   staticSide = {
                     top: 'bottom',
                     right: 'left',
@@ -20101,7 +20085,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       tooltip.style.display = 'block';
       trigger.setAttribute('aria-expanded', 'true');
       updateTooltipPosition();
-      // Автообновление позиции при изменениях (например, прокрутка или изменение размеров)
       cleanupAutoUpdate = (0,_floating_ui_dom__WEBPACK_IMPORTED_MODULE_0__.autoUpdate)(trigger, tooltip, updateTooltipPosition);
     }
     function hideTooltip() {
@@ -20112,24 +20095,38 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         cleanupAutoUpdate = null;
       }
     }
-
-    // По клику на кнопку переключаем видимость tooltip
+    function isMobileView() {
+      return window.innerWidth < 1200;
+    }
     trigger.addEventListener('click', function (event) {
+      if (!isMobileView()) return;
       event.stopPropagation();
       tooltipVisible = !tooltipVisible;
       tooltipVisible ? showTooltip() : hideTooltip();
     });
-
-    // Закрываем tooltip при клике вне trigger и tooltip
+    function handleMouseEnter() {
+      if (isMobileView()) return;
+      tooltipVisible = true;
+      showTooltip();
+    }
+    function handleMouseLeave() {
+      if (isMobileView()) return;
+      tooltipVisible = false;
+      hideTooltip();
+    }
+    trigger.addEventListener('mouseenter', handleMouseEnter);
+    trigger.addEventListener('mouseleave', handleMouseLeave);
     document.addEventListener('click', function (event) {
       if (!trigger.contains(event.target) && !tooltip.contains(event.target)) {
         tooltipVisible = false;
         hideTooltip();
       }
     });
+    window.addEventListener('resize', function () {
+      tooltipVisible = false;
+      hideTooltip();
+    });
   }
-
-  // Находим все карточки товара и инициализируем tooltip для каждой из них
   var productCards = document.querySelectorAll('.info');
   productCards.forEach(function (card) {
     var trigger = card.querySelector('svg');
