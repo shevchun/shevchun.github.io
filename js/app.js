@@ -19508,6 +19508,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-cart-popup').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.cart-popup').addClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-cart-popup-close').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.cart-popup').removeClass('active');
+  });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.accordion__handler').on('click', function accordionFunc() {
     if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() > 1200) {
       jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent('.accordion__item').toggleClass('active');
@@ -19844,6 +19850,15 @@ __webpack_require__.r(__webpack_exports__);
     productGallery.init();
     productGallery.on('change', function () {
       mainSlider.slideTo(productGallery.pswp.currIndex, false);
+    });
+  }
+  if (jquery__WEBPACK_IMPORTED_MODULE_1__('.cart-popup__recommended-slider')) {
+    var _mainSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.cart-popup__recommended-slider', {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation],
+      navigation: {
+        nextEl: ".cart-popup__recommended-arrow--next",
+        prevEl: ".cart-popup__recommended-arrow--prev"
+      }
     });
   }
   var swiperInstances = [];
