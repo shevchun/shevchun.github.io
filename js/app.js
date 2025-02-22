@@ -19656,6 +19656,9 @@ __webpack_require__.r(__webpack_exports__);
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-close-popup').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.popup').removeClass('active');
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-configuration-btn').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-configuration').addClass('active');
+  });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-popup-tags').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-tags').addClass('active');
   });
@@ -19858,6 +19861,31 @@ __webpack_require__.r(__webpack_exports__);
       navigation: {
         nextEl: ".cart-popup__recommended-arrow--next",
         prevEl: ".cart-popup__recommended-arrow--prev"
+      }
+    });
+  }
+  if (document.querySelector('.js-desktop-mobile-slider')) {
+    var _mainSlider2 = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-desktop-mobile-slider', {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+          spaceBetween: 8,
+          pagination: {
+            el: ".thumbs-box__mobile-pagination",
+            clickable: true
+          },
+          navigation: false
+        },
+        1200: {
+          slidesPerView: 5,
+          spaceBetween: 20,
+          pagination: false,
+          navigation: {
+            nextEl: ".thumbs-box__arrow--next",
+            prevEl: ".thumbs-box__arrow--prev"
+          }
+        }
       }
     });
   }
@@ -20162,7 +20190,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (["dev", "category.html", "index.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html", "wishlist.html"]);
+/* harmony default export */ __webpack_exports__["default"] = (["dev", "cart-page-empty.html", "cart-page.html", "category.html", "index.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html", "wishlist.html"]);
 
 /***/ }),
 
