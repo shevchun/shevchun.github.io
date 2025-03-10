@@ -19508,6 +19508,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '.js-order-btn', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.checkout__right').toggleClass('active');
+  });
+  function updateRadioBodies() {
+    document.querySelectorAll('.checkout__radio-body').forEach(function (body) {
+      body.style.display = 'none';
+    });
+    document.querySelectorAll('.checkout__radio-label > input').forEach(function (input) {
+      if (input.checked) {
+        var radioItem = input.closest('.checkout__radio-item');
+        var radioBody = radioItem.querySelector('.checkout__radio-body');
+        if (radioBody) radioBody.style.display = 'block';
+      }
+    });
+  }
+  document.querySelectorAll('input[name="payment"]').forEach(function (input) {
+    input.addEventListener('change', updateRadioBodies);
+  });
+  updateRadioBodies();
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-close-popup').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.popup').removeClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-forgot-btn').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-forgot').addClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-login-btn').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-login').addClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-show-password').on('click', function showPassword() {
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent('.input-style__show-password-parent').toggleClass('show');
+    if (jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent('.input-style__show-password-parent').hasClass('show')) {
+      jquery__WEBPACK_IMPORTED_MODULE_0__(this).siblings('.input-style__input').attr('type', 'text');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0__(this).siblings('.input-style__input').attr('type', 'password');
+    }
+  });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-cart-popup').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.cart-popup').addClass('active');
   });
@@ -19652,9 +19688,6 @@ __webpack_require__.r(__webpack_exports__);
         jquery__WEBPACK_IMPORTED_MODULE_0__(item).addClass('active').css('width', "".concat(fraction, "0%"));
       }
     });
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-close-popup').on('click', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.popup').removeClass('active');
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-configuration-btn').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-configuration').addClass('active');
@@ -20190,7 +20223,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (["dev", "cart-page-empty.html", "cart-page.html", "category.html", "contact.html", "index.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html", "wishlist.html"]);
+/* harmony default export */ __webpack_exports__["default"] = (["dev", "cart-page-empty.html", "cart-page.html", "category.html", "checkout-Error-Product-in-Cart.html", "checkout-logged-in.html", "checkout-payment.html", "checkout-shipping.html", "checkout-thank-you-page.html", "checkout.html", "contact.html", "index.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html", "wishlist.html"]);
 
 /***/ }),
 

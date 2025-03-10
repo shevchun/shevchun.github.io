@@ -3549,6 +3549,92 @@
   </div>
 </div>
 
+<div class="popup js-popup-login">
+  <div class="popup__overlay js-close-popup"></div>
+  <div style="max-width: 480px" class="popup__box">
+    <div class="popup__close js-close-popup">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+    <form action="#" class="popup__form">
+      <div class="popup__title">Sign In to Your Account</div>
+      <div class="popup__descriptions">If you have shopped with us before, please enter your login details below.</div>
+      <div class="input-style">
+        <div class="input-style__label">Email Address *</div>
+        <input type="email" class="input-style__input" placeholder="emailname@company.com">
+      </div>
+      <div class="input-style">
+        <div class="input-style__label">Password *</div>
+        <div class="input-style__show-password-parent">
+          <input type="password" class="input-style__input" placeholder="Enter Password">
+          <span class="input-style__show-password js-show-password">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.3866 7.99995C10.3866 9.31995 9.31995 10.3866 7.99995 10.3866C6.67995 10.3866 5.61328 9.31995 5.61328 7.99995C5.61328 6.67995 6.67995 5.61328 7.99995 5.61328C9.31995 5.61328 10.3866 6.67995 10.3866 7.99995Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.9999 13.5138C10.3532 13.5138 12.5466 12.1271 14.0732 9.72714C14.6732 8.78714 14.6732 7.20714 14.0732 6.26714C12.5466 3.86714 10.3532 2.48047 7.9999 2.48047C5.64656 2.48047 3.45323 3.86714 1.92656 6.26714C1.32656 7.20714 1.32656 8.78714 1.92656 9.72714C3.45323 12.1271 5.64656 13.5138 7.9999 13.5138Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div class="popup__form-forgot">
+        <label class="checkbox-style">
+          <input type="checkbox">
+          <span>Remember me</span>
+        </label>
+        <div class="popup__form-forgot-btn js-popup-forgot-btn">Forgot your Password?</div>
+      </div>
+      <button type="submit" class="popup__form-btn btn">Login</button>
+      <div class="popup__form-continue js-close-popup">Or continue as guest</div>
+    </form>
+  </div>
+</div>
+
+<div class="popup js-popup-forgot">
+  <div class="popup__overlay js-close-popup"></div>
+  <div style="max-width: 480px" class="popup__box">
+    <div class="popup__close js-close-popup">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+    <form action="#" class="popup__form">
+      <div class="popup__title">Lost your password?</div>
+      <div class="popup__descriptions">Please enter your username or email address. You will receive a link to create a new password via email.</div>
+      <div class="input-style">
+        <div class="input-style__label">Email Address *</div>
+        <input type="email" class="input-style__input" placeholder="emailname@company.com">
+      </div>
+      <button type="submit" class="popup__form-btn btn">Reset password</button>
+      <div class="popup__form-continue js-close-popup">I remembered the password</div>
+    </form>
+  </div>
+</div>
+
+<!-- to display the success popup for forgot popup you need to add the "active" class -->
+<div class="popup js-popup-contact-success">
+  <div class="popup__overlay js-close-popup"></div>
+  <div style="max-width: 480px" class="popup__box">
+    <div class="popup__close js-close-popup">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+    <div class="notify-me">
+      <svg class="notify-me__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M43 36L23 47L3 36V14L23 3L43 14V36Z" fill="white"/>
+        <path d="M38.8 33.4004L23 42.0004L7.2 33.4004L3 36.0004L23 47.0004L43 36.0004L38.8 33.4004Z" fill="#BBE8E2"/>
+        <path d="M43 36L23 47L3 36V14L23 3L43 14V36Z" stroke="#0D9A88" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 25L21 33L34 17" stroke="#0D9A88" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="notify-me__title">A password reset email has been sent to the email address, but may take several minutes to show up in your inbox.</div>
+      <div class="popup__descriptions">Please wait at least 5 minutes before attempting another reset.</div>
+    </div>
+  </div>
+</div>
+
 <div class="cart-popup">
   <div class="cart-popup__overlay js-cart-popup-close"></div>
   <div class="cart-popup__box">
