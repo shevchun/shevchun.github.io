@@ -19781,6 +19781,80 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./app/scripts/components/faq.js":
+/*!***************************************!*\
+  !*** ./app/scripts/components/faq.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var navItems = document.querySelectorAll('.faq__nav-list > li > div');
+  navItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      var targetId = item.getAttribute('data-target');
+      var targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+  var sections = document.querySelectorAll('.faq__section');
+  var updateActiveSection = function updateActiveSection() {
+    var activeSection = null;
+    var minDistance = Infinity;
+    sections.forEach(function (section) {
+      var rect = section.getBoundingClientRect();
+      var distance = Math.abs(rect.top - 100);
+      if (distance < minDistance) {
+        minDistance = distance;
+        activeSection = section;
+      }
+    });
+    if (activeSection) {
+      navItems.forEach(function (item) {
+        return item.classList.remove('active');
+      });
+      var activeNav = document.querySelector(".faq__nav-list > li > div[data-target=\"".concat(activeSection.id, "\"]"));
+      if (activeNav) {
+        activeNav.classList.add('active');
+      }
+    }
+  };
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        updateActiveSection();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  updateActiveSection();
+  var faqHeaders = document.querySelectorAll('.faq__section-item-head');
+  faqHeaders.forEach(function (header) {
+    header.addEventListener('click', function () {
+      var body = this.nextElementSibling;
+      var isOpen = body.style.display === 'block';
+      document.querySelectorAll('.faq__section-item-body').forEach(function (item) {
+        item.style.display = 'none';
+        item.previousElementSibling.classList.remove('active');
+      });
+      if (!isOpen) {
+        body.style.display = 'block';
+        this.classList.add('active');
+      }
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./app/scripts/components/select2.js":
 /*!*******************************************!*\
   !*** ./app/scripts/components/select2.js ***!
@@ -20223,7 +20297,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (["dev", "cart-page-empty.html", "cart-page.html", "category.html", "checkout-Error-Product-in-Cart.html", "checkout-logged-in.html", "checkout-payment.html", "checkout-shipping.html", "checkout-thank-you-page.html", "checkout.html", "contact.html", "index.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html", "wishlist.html"]);
+/* harmony default export */ __webpack_exports__["default"] = (["dev", "cart-page-empty.html", "cart-page.html", "category.html", "checkout-Error-Product-in-Cart.html", "checkout-logged-in.html", "checkout-payment.html", "checkout-shipping.html", "checkout-thank-you-page.html", "checkout.html", "contact.html", "frequently-asked-questions.html", "index.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html", "wishlist.html"]);
 
 /***/ }),
 
@@ -20239,10 +20313,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svg4everybody */ "./node_modules/svg4everybody/dist/svg4everybody.js");
 /* harmony import */ var _components_custom_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/custom.js */ "./app/scripts/components/custom.js");
-/* harmony import */ var _components_sliders_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/sliders.js */ "./app/scripts/components/sliders.js");
-/* harmony import */ var _components_select2_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/select2.js */ "./app/scripts/components/select2.js");
-/* harmony import */ var _components_tooltip_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/tooltip.js */ "./app/scripts/components/tooltip.js");
-/* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/tabs.js */ "./app/scripts/components/tabs.js");
+/* harmony import */ var _components_faq_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/faq.js */ "./app/scripts/components/faq.js");
+/* harmony import */ var _components_sliders_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/sliders.js */ "./app/scripts/components/sliders.js");
+/* harmony import */ var _components_select2_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/select2.js */ "./app/scripts/components/select2.js");
+/* harmony import */ var _components_tooltip_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/tooltip.js */ "./app/scripts/components/tooltip.js");
+/* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/tabs.js */ "./app/scripts/components/tabs.js");
+
 
 
 
@@ -20254,11 +20330,12 @@ __webpack_require__.r(__webpack_exports__);
 globalThis.$ = jquery__WEBPACK_IMPORTED_MODULE_1__;
 globalThis.jQuery = jquery__WEBPACK_IMPORTED_MODULE_1__;
 document.addEventListener('DOMContentLoaded', function () {
-  globalThis.Tabs = new _components_tabs_js__WEBPACK_IMPORTED_MODULE_7__["default"]();
+  globalThis.Tabs = new _components_tabs_js__WEBPACK_IMPORTED_MODULE_8__["default"]();
   svg4everybody__WEBPACK_IMPORTED_MODULE_2__();
-  (0,_components_sliders_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  (0,_components_select2_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  (0,_components_tooltip_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  (0,_components_sliders_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  (0,_components_select2_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  (0,_components_tooltip_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  (0,_components_faq_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_components_custom_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
 });
 jquery__WEBPACK_IMPORTED_MODULE_1__(window).on('load resize', function () {
@@ -20277,6 +20354,9 @@ jquery__WEBPACK_IMPORTED_MODULE_1__(window).on('load resize', function () {
       jquery__WEBPACK_IMPORTED_MODULE_1__('.product__title-box').insertBefore('.product__sliders-box');
       jquery__WEBPACK_IMPORTED_MODULE_1__('.product__reviews').insertAfter('.product__title-box');
     }
+    if (jquery__WEBPACK_IMPORTED_MODULE_1__('.faq__info-title').length) {
+      jquery__WEBPACK_IMPORTED_MODULE_1__('.faq__info-title').insertBefore('.faq__box');
+    }
   } else {
     jquery__WEBPACK_IMPORTED_MODULE_1__('.header__mobile, .search__form-holder').css('height', '');
     jquery__WEBPACK_IMPORTED_MODULE_1__('.header__logo').insertAfter('.header__menu-btn');
@@ -20284,6 +20364,9 @@ jquery__WEBPACK_IMPORTED_MODULE_1__(window).on('load resize', function () {
     if (jquery__WEBPACK_IMPORTED_MODULE_1__('.product__title-box').length) {
       jquery__WEBPACK_IMPORTED_MODULE_1__('.product__title-box').insertBefore('.product__tags');
       jquery__WEBPACK_IMPORTED_MODULE_1__('.product__reviews').insertAfter('.product__title-box');
+    }
+    if (jquery__WEBPACK_IMPORTED_MODULE_1__('.faq__info-title').length) {
+      jquery__WEBPACK_IMPORTED_MODULE_1__('.faq__info').prepend(jquery__WEBPACK_IMPORTED_MODULE_1__('.faq__info-title'));
     }
   }
 });
