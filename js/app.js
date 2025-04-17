@@ -19509,7 +19509,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '.js-more-category-btn', function moreCategory() {
-    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.brands__item').toggleClass('active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.brands__item').toggleClass('active').find('.brands__item-category-list').slideToggle();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '.js-order-btn', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.checkout__right').toggleClass('active');
@@ -19957,6 +19957,65 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  if (document.querySelector('.js-testimonials-slider')) {
+    var testimonialsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-testimonials-slider', {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: ".brand__testimonials-slider-pagination"
+      },
+      navigation: {
+        nextEl: ".brand__testimonials-slider-btn--next",
+        prevEl: ".brand__testimonials-slider-btn--prev"
+      },
+      breakpoints: {
+        0: {
+          spaceBetween: 16
+        },
+        1200: {
+          spaceBetween: 80
+        }
+      }
+    });
+  }
+  if (document.querySelector('.js-reviews-slider')) {
+    var reviewsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-reviews-slider', {
+      spaceBetween: 16,
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation],
+      navigation: {
+        nextEl: ".brand__reviews-slider-btn--next",
+        prevEl: ".brand__reviews-slider-btn--prev"
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1
+        },
+        768: {
+          slidesPerView: 2
+        },
+        1200: {
+          slidesPerView: 4
+        }
+      }
+    });
+  }
+  if (document.querySelector('.js-archive-slider')) {
+    var archiveSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-archive-slider', {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
+      spaceBetween: 12,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: ".brand__archive-pagination"
+      },
+      breakpoints: {
+        1200: {
+          spaceBetween: 24
+        }
+      }
+    });
+  }
   if (jquery__WEBPACK_IMPORTED_MODULE_1__('.product__thumbnails-slider') && jquery__WEBPACK_IMPORTED_MODULE_1__('.product__main-slider')) {
     var navSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product__thumbnails-slider', {
       direction: 'vertical',
@@ -20366,7 +20425,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (["dev", "brands.html", "cart-page-empty.html", "cart-page.html", "category.html", "checkout-Error-Product-in-Cart.html", "checkout-logged-in.html", "checkout-payment.html", "checkout-shipping.html", "checkout-thank-you-page.html", "checkout.html", "contact.html", "frequently-asked-questions.html", "index.html", "portfolio-individual.html", "portfolio.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html", "shipping-returns.html", "wishlist.html"]);
+/* harmony default export */ __webpack_exports__["default"] = (["dev", "brand.html", "brands.html", "cart-page-empty.html", "cart-page.html", "category.html", "checkout-Error-Product-in-Cart.html", "checkout-logged-in.html", "checkout-payment.html", "checkout-shipping.html", "checkout-thank-you-page.html", "checkout.html", "contact.html", "frequently-asked-questions.html", "index.html", "portfolio-individual.html", "portfolio.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html", "shipping-returns.html", "wishlist.html"]);
 
 /***/ }),
 
