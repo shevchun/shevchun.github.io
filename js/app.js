@@ -20100,28 +20100,34 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
   if (document.querySelector('.js-desktop-mobile-slider')) {
-    var _mainSlider2 = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-desktop-mobile-slider', {
-      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
-      breakpoints: {
-        0: {
-          slidesPerView: 2,
-          spaceBetween: 8,
-          pagination: {
-            el: ".thumbs-box__mobile-pagination",
-            clickable: true
+    document.querySelectorAll('.js-desktop-mobile-slider').forEach(function (sliderEl) {
+      var parent = sliderEl.parentElement;
+      var paginationEl = parent.querySelector('.thumbs-box__mobile-pagination');
+      var nextEl = parent.querySelector('.thumbs-box__arrow--next');
+      var prevEl = parent.querySelector('.thumbs-box__arrow--prev');
+      new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
+        modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
+        breakpoints: {
+          0: {
+            slidesPerView: 2,
+            spaceBetween: 8,
+            pagination: paginationEl ? {
+              el: paginationEl,
+              clickable: true
+            } : false,
+            navigation: false
           },
-          navigation: false
-        },
-        1200: {
-          slidesPerView: 5,
-          spaceBetween: 20,
-          pagination: false,
-          navigation: {
-            nextEl: ".thumbs-box__arrow--next",
-            prevEl: ".thumbs-box__arrow--prev"
+          1200: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+            pagination: false,
+            navigation: nextEl && prevEl ? {
+              nextEl: nextEl,
+              prevEl: prevEl
+            } : false
           }
         }
-      }
+      });
     });
   }
   var swiperInstances = [];
@@ -20425,7 +20431,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (["dev", "brand.html", "brands.html", "cart-page-empty.html", "cart-page.html", "category.html", "checkout-Error-Product-in-Cart.html", "checkout-logged-in.html", "checkout-payment.html", "checkout-shipping.html", "checkout-thank-you-page.html", "checkout.html", "contact.html", "frequently-asked-questions.html", "index.html", "portfolio-individual.html", "portfolio.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html", "shipping-returns.html", "wishlist.html"]);
+/* harmony default export */ __webpack_exports__["default"] = (["dev", "brand.html", "brands.html", "cart-page-empty.html", "cart-page.html", "category.html", "checkout-Error-Product-in-Cart.html", "checkout-logged-in.html", "checkout-payment.html", "checkout-shipping.html", "checkout-thank-you-page.html", "checkout.html", "contact.html", "frequently-asked-questions.html", "home.html", "index.html", "portfolio-individual.html", "portfolio.html", "product-card-normal-price.html", "product-card-out-of-stock.html", "product-card-ready-to-ship.html", "shipping-returns.html", "wishlist.html"]);
 
 /***/ }),
 
