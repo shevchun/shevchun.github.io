@@ -17760,6 +17760,7 @@ div.pswp__img--placeholder,
   margin-bottom: 24px;
 }
 .shipping__top-text {
+  font-size: 16px;
   line-height: 24px;
   margin-bottom: 24px;
 }
@@ -17779,6 +17780,13 @@ div.pswp__img--placeholder,
 }
 .shipping__top-text p:last-child {
   margin-bottom: 0;
+}
+.shipping__nav-title {
+  position: relative;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
 }
 .shipping__nav {
   position: relative;
