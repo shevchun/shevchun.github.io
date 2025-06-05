@@ -19832,21 +19832,6 @@ __webpack_require__.r(__webpack_exports__);
   jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '.mobile-table-content__title', function mobileContentFunc() {
     jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent('.mobile-table-content').toggleClass('active');
   });
-
-  // $('.header__mobile-menu').on('click', () => {
-  //   $('.header__mobile').addClass('active')
-  //   setTimeout(() => {
-  //     $('.header__mobile-box').addClass('active')
-  //   }, 300)
-  // })
-
-  // $('.header__mobile-overlay').on('click', () => {
-  //   $('.header__mobile-box').removeClass('active')
-  //   setTimeout(() => {
-  //     $('.header__mobile').removeClass('active')
-  //   }, 300)
-  // })
-
   if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() < 1200) {
     jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '.post__create-item-author-title', function (event) {
       event.stopPropagation();
