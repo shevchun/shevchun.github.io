@@ -19509,6 +19509,35 @@ __webpack_require__.r(__webpack_exports__);
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  var engravingParent = document.getElementById('engraving');
+  var toggle = document.getElementById('engraving-toggle');
+  var body = document.getElementById('engraving-body');
+  var radios = document.querySelectorAll('input[name="engraving-type"]');
+  var options = document.querySelectorAll('.engraving__option');
+  var textInput = document.getElementById('engraving-text-input');
+  var textCounter = document.getElementById('text-counter');
+  function updateBodyVisibility() {
+    body.style.display = toggle.checked ? 'block' : 'none';
+    engravingParent.classList.toggle('active', toggle.checked);
+  }
+  function updateTextCounter() {
+    var length = textInput.value.length;
+    textCounter.textContent = "".concat(length);
+  }
+  function updateOptionVisibility() {
+    var selectedValue = document.querySelector('input[name="engraving-type"]:checked').value;
+    options.forEach(function (opt) {
+      opt.style.display = opt.id === selectedValue ? 'block' : 'none';
+    });
+  }
+  toggle.addEventListener('change', updateBodyVisibility);
+  radios.forEach(function (radio) {
+    radio.addEventListener('change', updateOptionVisibility);
+  });
+  textInput.addEventListener('input', updateTextCounter);
+  updateBodyVisibility();
+  updateOptionVisibility();
+  updateTextCounter();
   $('.builder__upgrades-item input').on('change', function () {
     if ($(this).is(":checked")) {
       $(this).closest('.builder__upgrades-item').addClass('active');
@@ -19595,6 +19624,20 @@ __webpack_require__.r(__webpack_exports__);
   checkboxes.forEach(function (cb) {
     cb.addEventListener('change', function () {
       return updateActiveState(cb);
+    });
+  });
+  var galleries = document.querySelectorAll('.builder__item-gallery');
+  galleries.forEach(function (gallery) {
+    gallery.addEventListener('click', function (event) {
+      // Если клик внутри иконки (или на ней), ничего не делаем
+      if (event.target.closest('.builder__item-gallery-icon')) return;
+
+      // Иначе переключаем соответствующий чекбокс
+      var item = gallery.closest('.builder__item');
+      var checkbox = item.querySelector('.builder__item-checkbox input[type="checkbox"]');
+      if (!checkbox) return;
+      checkbox.checked = !checkbox.checked;
+      updateActiveState(checkbox);
     });
   });
 });
@@ -19746,6 +19789,12 @@ __webpack_require__.r(__webpack_exports__);
     search.classList.remove('active-mobile');
   });
   if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() < 1200) {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.input-style__label--mobile-btn').on('click', function showTextarea() {
+      jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.builder__order-form').toggleClass('active');
+    });
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.builder__order-cell-title').on('click', function orderF() {
+      jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.builder__order-cell').toggleClass('active');
+    });
     jquery__WEBPACK_IMPORTED_MODULE_0__('.accordion__item').removeClass('active');
     jquery__WEBPACK_IMPORTED_MODULE_0__('.menu-item-has-children > a').on('click', function mobileNav(event) {
       var parent = jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent('.menu-item-has-children');
@@ -20781,6 +20830,9 @@ jquery__WEBPACK_IMPORTED_MODULE_1__(window).on('load resize', function () {
         jquery__WEBPACK_IMPORTED_MODULE_1__(el).find('.individual__info-right').insertAfter(jquery__WEBPACK_IMPORTED_MODULE_1__(el).find('.individual__small-title'));
       });
     }
+    if (jquery__WEBPACK_IMPORTED_MODULE_1__('.builder__order-form').length) {
+      jquery__WEBPACK_IMPORTED_MODULE_1__('.builder__order-box').append(jquery__WEBPACK_IMPORTED_MODULE_1__('.builder__order-form'));
+    }
   } else {
     jquery__WEBPACK_IMPORTED_MODULE_1__('.builder__controls-btns').insertAfter('.builder__controls-price');
     jquery__WEBPACK_IMPORTED_MODULE_1__('.header__mobile, .search__form-holder').css('height', '');
@@ -20803,6 +20855,9 @@ jquery__WEBPACK_IMPORTED_MODULE_1__(window).on('load resize', function () {
       jquery__WEBPACK_IMPORTED_MODULE_1__('.individual__info').each(function (i, el) {
         jquery__WEBPACK_IMPORTED_MODULE_1__(el).find('.individual__info-right').insertAfter(jquery__WEBPACK_IMPORTED_MODULE_1__(el).find('.individual__info-left'));
       });
+    }
+    if (jquery__WEBPACK_IMPORTED_MODULE_1__('.builder__order-form').length) {
+      jquery__WEBPACK_IMPORTED_MODULE_1__('.js-order-cell-form').append(jquery__WEBPACK_IMPORTED_MODULE_1__('.builder__order-form'));
     }
   }
 });

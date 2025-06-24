@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="body-builder">
       <header class="header">
     <div class="header__label">Free shipping on all orders from <a href="#">real swords</a> category over <span>$199</span> | ⚔️ Offer available from 26th April to 26th May ⚔️</div>
     <div class="header__top">
@@ -501,7 +501,7 @@
     <div class="header__mobile"></div>
   </header>
     <div class="wrapper">
-      <div class="builder">
+      <div class="builder builder--last">
         <div class="container">
           <div class="builder__order-title title">Order summary</div>
           <div class="builder__order-description">
@@ -509,7 +509,12 @@
           </div>
           <form action="#" class="builder__order-box">
             <div class="builder__order-cell">
-              <div class="builder__order-cell-title">Blade</div>
+              <div class="builder__order-cell-title">
+                Blade
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.2788 10.6992L8.93208 6.35255C8.41875 5.83922 7.57875 5.83922 7.06542 6.35255L2.71875 10.6992" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <div class="builder__order-body">
                 <div class="builder__order-body-row">
                   <div class="builder__order-body-title">Types of steel</div>
@@ -654,7 +659,12 @@
               </div>
             </div>
             <div class="builder__order-cell">
-              <div class="builder__order-cell-title">Mounting</div>
+              <div class="builder__order-cell-title">
+                Mounting
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.2788 10.6992L8.93208 6.35255C8.41875 5.83922 7.57875 5.83922 7.06542 6.35255L2.71875 10.6992" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <div class="builder__order-body">
                 <div class="builder__order-body-row">
                   <div class="builder__order-body-title">Tsuka Length</div>
@@ -826,8 +836,13 @@
                 </div>
               </div>
             </div>
-            <div class="builder__order-cell">
-              <div class="builder__order-cell-title">Scabbard</div>
+            <div class="builder__order-cell js-order-cell-form">
+              <div class="builder__order-cell-title">
+                Scabbard
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.2788 10.6992L8.93208 6.35255C8.41875 5.83922 7.57875 5.83922 7.06542 6.35255L2.71875 10.6992" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <div class="builder__order-body">
                 <div class="builder__order-body-row">
                   <div class="builder__order-body-title">Handle/Hilt (Tsuka)</div>
@@ -876,9 +891,24 @@
 
               </div>
               <div class="builder__order-form">
-                <div class="input-style">
-                  <div class="input-style__label">Add Comment (Optional)</div>
-                  <textarea class="input-style__textarea" placeholder="How can we help you today?"></textarea>
+                <div class="builder__order-form-input">
+                  <div class="input-style">
+                    <div class="input-style__label input-style__label--mobile-btn">
+                      <span class="input-style__label-box">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18.3346 6.66602C18.3346 3.33268 16.668 1.66602 13.3346 1.66602H6.66797C3.33464 1.66602 1.66797 3.33268 1.66797 6.66602V17.4993C1.66797 17.9577 2.04297 18.3327 2.5013 18.3327H13.3346C16.668 18.3327 18.3346 16.666 18.3346 13.3327V9.99935" stroke="#FF3D00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12.082 10H12.9154" stroke="#FF3D00" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M7.08203 10H9.9987" stroke="#FF3D00" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M10 12.9173V7.08398" stroke="#FF3D00" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Add Comment (Optional)
+                      </span>
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.2788 10.6992L8.93208 6.35255C8.41875 5.83922 7.57875 5.83922 7.06542 6.35255L2.71875 10.6992" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <textarea class="input-style__textarea" placeholder="How can we help you today?"></textarea>
+                  </div>
                 </div>
                 <div class="builder__order-form-total">
                   <div class="builder__order-form-total-title">Total:</div>
