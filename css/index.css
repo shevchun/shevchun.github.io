@@ -5582,8 +5582,10 @@ body.ovh {
     min-height: 5lh;
   }
 }
-.builder__order-form.active .builder__order-form-input textarea {
-  display: block;
+@media only screen and (max-width: 1200px) {
+  .builder__order-form.active .builder__order-form-input textarea {
+    display: block;
+  }
 }
 .builder__order-form-total {
   position: relative;

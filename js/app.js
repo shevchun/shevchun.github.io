@@ -19509,35 +19509,37 @@ __webpack_require__.r(__webpack_exports__);
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  var engravingParent = document.getElementById('engraving');
-  var toggle = document.getElementById('engraving-toggle');
-  var body = document.getElementById('engraving-body');
-  var radios = document.querySelectorAll('input[name="engraving-type"]');
-  var options = document.querySelectorAll('.engraving__option');
-  var textInput = document.getElementById('engraving-text-input');
-  var textCounter = document.getElementById('text-counter');
-  function updateBodyVisibility() {
-    body.style.display = toggle.checked ? 'block' : 'none';
-    engravingParent.classList.toggle('active', toggle.checked);
-  }
-  function updateTextCounter() {
-    var length = textInput.value.length;
-    textCounter.textContent = "".concat(length);
-  }
-  function updateOptionVisibility() {
-    var selectedValue = document.querySelector('input[name="engraving-type"]:checked').value;
-    options.forEach(function (opt) {
-      opt.style.display = opt.id === selectedValue ? 'block' : 'none';
+  if (document.getElementById('engraving')) {
+    var updateBodyVisibility = function updateBodyVisibility() {
+      body.style.display = toggle.checked ? 'block' : 'none';
+      engravingParent.classList.toggle('active', toggle.checked);
+    };
+    var updateTextCounter = function updateTextCounter() {
+      var length = textInput.value.length;
+      textCounter.textContent = "".concat(length);
+    };
+    var updateOptionVisibility = function updateOptionVisibility() {
+      var selectedValue = document.querySelector('input[name="engraving-type"]:checked').value;
+      options.forEach(function (opt) {
+        opt.style.display = opt.id === selectedValue ? 'block' : 'none';
+      });
+    };
+    var engravingParent = document.getElementById('engraving');
+    var toggle = document.getElementById('engraving-toggle');
+    var body = document.getElementById('engraving-body');
+    var radios = document.querySelectorAll('input[name="engraving-type"]');
+    var options = document.querySelectorAll('.engraving__option');
+    var textInput = document.getElementById('engraving-text-input');
+    var textCounter = document.getElementById('text-counter');
+    toggle.addEventListener('change', updateBodyVisibility);
+    radios.forEach(function (radio) {
+      radio.addEventListener('change', updateOptionVisibility);
     });
+    textInput.addEventListener('input', updateTextCounter);
+    updateBodyVisibility();
+    updateOptionVisibility();
+    updateTextCounter();
   }
-  toggle.addEventListener('change', updateBodyVisibility);
-  radios.forEach(function (radio) {
-    radio.addEventListener('change', updateOptionVisibility);
-  });
-  textInput.addEventListener('input', updateTextCounter);
-  updateBodyVisibility();
-  updateOptionVisibility();
-  updateTextCounter();
   $('.builder__upgrades-item input').on('change', function () {
     if ($(this).is(":checked")) {
       $(this).closest('.builder__upgrades-item').addClass('active');
@@ -19788,13 +19790,14 @@ __webpack_require__.r(__webpack_exports__);
     }
     search.classList.remove('active-mobile');
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.input-style__label--mobile-btn').on('click', function showTextarea() {
+    console.log(3);
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.builder__order-form').toggleClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.builder__order-cell-title').on('click', function orderF() {
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.builder__order-cell').toggleClass('active');
+  });
   if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).width() < 1200) {
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.input-style__label--mobile-btn').on('click', function showTextarea() {
-      jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.builder__order-form').toggleClass('active');
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0__('.builder__order-cell-title').on('click', function orderF() {
-      jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.builder__order-cell').toggleClass('active');
-    });
     jquery__WEBPACK_IMPORTED_MODULE_0__('.accordion__item').removeClass('active');
     jquery__WEBPACK_IMPORTED_MODULE_0__('.menu-item-has-children > a').on('click', function mobileNav(event) {
       var parent = jquery__WEBPACK_IMPORTED_MODULE_0__(this).parent('.menu-item-has-children');
