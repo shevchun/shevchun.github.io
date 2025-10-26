@@ -20136,6 +20136,9 @@ __webpack_require__.r(__webpack_exports__);
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-individual-popup-btn').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-individual').addClass('active');
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.js-shadow-dancer-popup-btn').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-shadow-dancer').addClass('active');
+  });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-login-btn').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-login').addClass('active');
   });
@@ -20268,12 +20271,132 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  if (document.querySelector('.js-notes-slider')) {
+    var notesSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-notes-slider', {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectCoverflow],
+      // loop: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      spaceBetween: 0,
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 0,
+        // вращение боковых слайдов
+        stretch: 60,
+        // насколько "заходит" боковой слайд под центр
+        depth: 180,
+        // глубина 3D (чем больше — тем сильнее заезд назад)
+        modifier: 1,
+        // множитель эффекта
+        slideShadows: false
+      },
+      speed: 600
+      // опционально: навигация / пагинация
+      // navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      // pagination: { el: '.swiper-pagination', clickable: true }
+    });
+  }
+
+  if (document.querySelector('.js-video-popup-aside-thumbs-slider-parent')) {
+    document.querySelectorAll('.js-video-popup-aside-thumbs-slider-parent').forEach(function (sliderEl) {
+      var parent = sliderEl.parentElement;
+      var nextEl = parent.querySelector('.video-popup__aside-thumbs-arrow--next');
+      var prevEl = parent.querySelector('.video-popup__aside-thumbs-arrow--prev');
+      var slider = sliderEl.querySelector('.js-video-popup-aside-thumbs-slider');
+      console.log(nextEl);
+      new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
+        modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation],
+        spaceBetween: 20,
+        breakpoints: {
+          0: {
+            slidesPerView: 2,
+            spaceBetween: 10
+          },
+          1200: {
+            slidesPerView: 2.35
+          }
+        },
+        navigation: {
+          nextEl: nextEl,
+          prevEl: prevEl
+        }
+      });
+    });
+  }
+  if (document.querySelector('.js-video-popup-aside-slider')) {
+    var videPopupAsideSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-video-popup-aside-slider', {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation],
+      pagination: {
+        el: ".video-popup__aside-slider-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".video-popup__aside-slider-arrow--next",
+        prevEl: ".video-popup__aside-slider-arrow--prev"
+      }
+    });
+  }
+  if (document.querySelector('.js-video-popup-slider')) {
+    var videPopupSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-video-popup-slider', {
+      initialSlide: 0,
+      slidesPerView: 1,
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectFade],
+      // direction: 'vertical',
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true
+      },
+      navigation: {
+        nextEl: ".video-popup__arrow--next",
+        prevEl: ".video-popup__arrow--prev"
+      }
+    });
+    jquery__WEBPACK_IMPORTED_MODULE_1__('.js-open-video-popup').on('click', function (e) {
+      e.preventDefault();
+      var index = Number(jquery__WEBPACK_IMPORTED_MODULE_1__(this).data('index')) || 0;
+      jquery__WEBPACK_IMPORTED_MODULE_1__('.js-video-popup').addClass('active');
+      if (videPopupSlider) {
+        videPopupSlider.slideTo(index, 0);
+      }
+    });
+    videPopupSlider.on('slideChange', function () {
+      console.log(22);
+      jquery__WEBPACK_IMPORTED_MODULE_1__('video').each(function () {
+        try {
+          this.pause();
+          this.currentTime = 0;
+        } catch (err) {
+          console.warn('Video stop error', err);
+        }
+      });
+    });
+    jquery__WEBPACK_IMPORTED_MODULE_1__('.js-close-video-popup').on('click', function (e) {
+      e.stopPropagation();
+      jquery__WEBPACK_IMPORTED_MODULE_1__('.js-video-popup').removeClass('active');
+      jquery__WEBPACK_IMPORTED_MODULE_1__('.video-popup__slide').removeClass('active-info');
+      jquery__WEBPACK_IMPORTED_MODULE_1__('video').each(function () {
+        try {
+          this.pause();
+          this.currentTime = 0; // убрать, если не нужно сбрасывать позицию
+        } catch (err) {
+          console.warn('Video stop error', err);
+        }
+      });
+    });
+    jquery__WEBPACK_IMPORTED_MODULE_1__('.js-mobile-open-info').on('click', function mobileOpenInfo() {
+      jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents('.video-popup__slide').addClass('active-info');
+      jquery__WEBPACK_IMPORTED_MODULE_1__('.video-popup__arrow').addClass('hide');
+    });
+    jquery__WEBPACK_IMPORTED_MODULE_1__('.js-mobile-close-info').on('click', function mobileHideInfo() {
+      jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents('.video-popup__slide').removeClass('active-info');
+      jquery__WEBPACK_IMPORTED_MODULE_1__('.video-popup__arrow').removeClass('hide');
+    });
+  }
   if (document.querySelector('.js-video-slider-home')) {
-    var videoSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-video-slider-home', {
+    var videoHomeSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-video-slider-home', {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation],
       centeredSlides: true,
       spaceBetween: 16,
-      loop: true,
       pagination: {
         el: ".video__pagination-home",
         clickable: true
@@ -20298,11 +20421,10 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
   if (document.querySelector('.js-video-slider')) {
-    var _videoSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-video-slider', {
+    var videoSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-video-slider', {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
-      centeredSlides: true,
+      initialSlide: 3,
       slidesPerView: 3,
-      loop: true,
       pagination: {
         el: ".video__pagination",
         clickable: true
@@ -20322,7 +20444,6 @@ __webpack_require__.r(__webpack_exports__);
     var testimonialsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-testimonials-slider', {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
       centeredSlides: true,
-      loop: true,
       pagination: {
         el: ".brand__testimonials-slider-pagination"
       },
@@ -20366,9 +20487,11 @@ __webpack_require__.r(__webpack_exports__);
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
       spaceBetween: 12,
       centeredSlides: true,
-      loop: true,
+      initialSlide: 2,
+      slidesPerView: 1,
       pagination: {
-        el: ".brand__archive-pagination"
+        el: ".brand__archive-pagination",
+        clickable: true
       },
       breakpoints: {
         1200: {
@@ -20866,7 +20989,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ video; }
+/* harmony export */   "enableHoverMuted": function() { return /* binding */ enableHoverMuted; },
+/* harmony export */   "video": function() { return /* binding */ video; }
 /* harmony export */ });
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator.return && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, catch: function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
@@ -20875,14 +20999,14 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-function video() {
+var video = function video() {
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var _options$root = options.root,
     root = _options$root === void 0 ? document : _options$root,
     _options$containerSel = options.containerSelector,
-    containerSelector = _options$containerSel === void 0 ? '.video-item' : _options$containerSel,
+    containerSelector = _options$containerSel === void 0 ? '.js-video-item' : _options$containerSel,
     _options$videoSelecto = options.videoSelector,
-    videoSelector = _options$videoSelecto === void 0 ? 'video.video-item__source' : _options$videoSelecto,
+    videoSelector = _options$videoSelecto === void 0 ? 'video.js-video-item-source' : _options$videoSelecto,
     _options$exclusive = options.exclusive,
     exclusive = _options$exclusive === void 0 ? true : _options$exclusive,
     _options$retryMutedOn = options.retryMutedOnFail,
@@ -20971,7 +21095,7 @@ function video() {
     item.classList.toggle('is-paused', !isPlaying);
 
     // Обновляем кнопку в панели управления
-    var controlPlay = item.querySelector('.video-item__controls-play');
+    var controlPlay = item.querySelector('.js-video-item-controls-play');
     if (controlPlay) {
       controlPlay.classList.toggle('is-playing', isPlaying);
     }
@@ -20981,8 +21105,8 @@ function video() {
   function updateTime(videoEl) {
     var item = videoEl.closest(containerSelector);
     if (!item) return;
-    var timeDisplay = item.querySelector('.video-item__controls-time');
-    var progressBar = item.querySelector('.video-item__controls-progress');
+    var timeDisplay = item.querySelector('.js-video-item-controls-time');
+    var progressBar = item.querySelector('.js-video-item-controls-progress');
     if (timeDisplay) {
       timeDisplay.textContent = formatTime(videoEl.currentTime);
     }
@@ -20996,7 +21120,7 @@ function video() {
   function updateDuration(videoEl) {
     var item = videoEl.closest(containerSelector);
     if (!item) return;
-    var lengthDisplay = item.querySelector('.video-item__controls-length');
+    var lengthDisplay = item.querySelector('.js-video-item-controls-length');
     if (lengthDisplay && !isNaN(videoEl.duration)) {
       lengthDisplay.textContent = formatTime(videoEl.duration);
     }
@@ -21006,7 +21130,7 @@ function video() {
   function updateMuteState(videoEl) {
     var item = videoEl.closest(containerSelector);
     if (!item) return;
-    var muteBtn = item.querySelector('.video-item__controls-mute');
+    var muteBtn = item.querySelector('.js-video-item-controls-mute');
     if (muteBtn) {
       muteBtn.classList.toggle('is-muted', videoEl.muted);
     }
@@ -21094,8 +21218,8 @@ function video() {
   // Привязка контролов
   function attachControls(item, videoEl) {
     // Основные кнопки play/pause (большие)
-    var playBtn = item.querySelector('.video-item__play');
-    var pauseBtn = item.querySelector('.video-item__pause');
+    var playBtn = item.querySelector('.js-video-item-play');
+    var pauseBtn = item.querySelector('.js-video-item-pause');
     if (playBtn && !playBtn.hasAttribute('data-attached')) {
       playBtn.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -21116,9 +21240,9 @@ function video() {
     }
 
     // Контролы в панели
-    var controlPlay = item.querySelector('.video-item__controls-play');
-    var muteBtn = item.querySelector('.video-item__controls-mute');
-    var progressBar = item.querySelector('.video-item__controls-progress');
+    var controlPlay = item.querySelector('.js-video-item-controls-play');
+    var muteBtn = item.querySelector('.js-video-item-controls-mute');
+    var progressBar = item.querySelector('.js-video-item-controls-progress');
     if (controlPlay && !controlPlay.hasAttribute('data-attached')) {
       controlPlay.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -21237,7 +21361,64 @@ function video() {
       observer.disconnect();
     }
   };
-}
+};
+var enableHoverMuted = function enableHoverMuted() {
+  var containerSelector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '.js-hover-video';
+  var containers = document.querySelectorAll(containerSelector);
+  if (!containers.length) return;
+  containers.forEach(function (container) {
+    var video = container.querySelector('video');
+    if (!video) return;
+
+    // Настройки для корректного автоплея превью
+    video.muted = true;
+    video.playsInline = true;
+    video.preload = video.preload || 'metadata';
+    var hoverTimeout = null;
+
+    // При наведении — запускаем (muted)
+    function onPointerEnter() {
+      clearTimeout(hoverTimeout);
+      // Небольшая задержка, чтобы уменьшить ложные срабатывания
+      hoverTimeout = setTimeout(function () {
+        video.muted = true;
+        var p = video.play();
+        if (p && p.catch) p.catch(function () {/* autoplay может быть заблокирован — игнорируем */});
+      }, 50);
+    }
+
+    // При уходе курсора — останавливаем (pause)
+    function onPointerLeave() {
+      clearTimeout(hoverTimeout);
+      try {
+        video.pause();
+      } catch (e) {}
+      // Если хочется полностью "остановить" и сбросить время — раскомментируйте:
+      // try { video.currentTime = 0; } catch (e) {}
+    }
+
+    container.addEventListener('pointerenter', onPointerEnter);
+    container.addEventListener('pointerleave', onPointerLeave);
+
+    // Простая поддержка тач-устройств: при касании проигрываем превью (muted),
+    // при окончании касания останавливаем.
+    container.addEventListener('touchstart', function () {
+      clearTimeout(hoverTimeout);
+      video.muted = true;
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    }, {
+      passive: true
+    });
+    container.addEventListener('touchend', function () {
+      try {
+        video.pause();
+      } catch (e) {}
+    }, {
+      passive: true
+    });
+  });
+};
 
 /***/ }),
 
@@ -21271,11 +21452,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_tooltip_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/tooltip.js */ "./app/scripts/components/tooltip.js");
 /* harmony import */ var _components_popups_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/popups.js */ "./app/scripts/components/popups.js");
 /* harmony import */ var _components_post_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/post.js */ "./app/scripts/components/post.js");
-/* harmony import */ var _components_video_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/video.js */ "./app/scripts/components/video.js");
-/* harmony import */ var _components_popup_parts_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/popup-parts.js */ "./app/scripts/components/popup-parts.js");
-/* harmony import */ var _components_builder_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/builder.js */ "./app/scripts/components/builder.js");
-/* harmony import */ var _components_types_filters_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/types-filters.js */ "./app/scripts/components/types-filters.js");
-/* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/tabs.js */ "./app/scripts/components/tabs.js");
+/* harmony import */ var _components_popup_parts_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/popup-parts.js */ "./app/scripts/components/popup-parts.js");
+/* harmony import */ var _components_builder_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/builder.js */ "./app/scripts/components/builder.js");
+/* harmony import */ var _components_types_filters_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/types-filters.js */ "./app/scripts/components/types-filters.js");
+/* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/tabs.js */ "./app/scripts/components/tabs.js");
+/* harmony import */ var _components_video_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/video.js */ "./app/scripts/components/video.js");
 
 
 
@@ -21294,7 +21475,7 @@ __webpack_require__.r(__webpack_exports__);
 globalThis.$ = jquery__WEBPACK_IMPORTED_MODULE_1__;
 globalThis.jQuery = jquery__WEBPACK_IMPORTED_MODULE_1__;
 document.addEventListener('DOMContentLoaded', function () {
-  globalThis.Tabs = new _components_tabs_js__WEBPACK_IMPORTED_MODULE_14__["default"]();
+  globalThis.Tabs = new _components_tabs_js__WEBPACK_IMPORTED_MODULE_13__["default"]();
   svg4everybody__WEBPACK_IMPORTED_MODULE_2__();
   (0,_components_sliders_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
   (0,_components_select2_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
@@ -21302,10 +21483,11 @@ document.addEventListener('DOMContentLoaded', function () {
   (0,_components_faq_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_components_popups_js__WEBPACK_IMPORTED_MODULE_8__["default"])();
   (0,_components_post_js__WEBPACK_IMPORTED_MODULE_9__["default"])();
-  (0,_components_builder_js__WEBPACK_IMPORTED_MODULE_12__["default"])();
-  (0,_components_popup_parts_js__WEBPACK_IMPORTED_MODULE_11__["default"])();
-  (0,_components_types_filters_js__WEBPACK_IMPORTED_MODULE_13__["default"])();
-  (0,_components_video_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  (0,_components_builder_js__WEBPACK_IMPORTED_MODULE_11__["default"])();
+  (0,_components_popup_parts_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  (0,_components_types_filters_js__WEBPACK_IMPORTED_MODULE_12__["default"])();
+  (0,_components_video_js__WEBPACK_IMPORTED_MODULE_14__.video)();
+  (0,_components_video_js__WEBPACK_IMPORTED_MODULE_14__.enableHoverMuted)();
   (0,_components_custom_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
   jquery__WEBPACK_IMPORTED_MODULE_1__(document).on('click', '.popup-parts__overview-label', function overviewFunc(e) {
     e.preventDefault();
