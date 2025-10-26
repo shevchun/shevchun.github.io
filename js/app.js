@@ -20395,7 +20395,7 @@ __webpack_require__.r(__webpack_exports__);
   if (document.querySelector('.js-video-slider-home')) {
     var videoHomeSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-video-slider-home', {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation],
-      centeredSlides: true,
+      // centeredSlides: true,
       spaceBetween: 16,
       pagination: {
         el: ".video__pagination-home",
