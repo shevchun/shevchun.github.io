@@ -20308,32 +20308,34 @@ __webpack_require__.r(__webpack_exports__);
       }
     });
   }
-  if (document.querySelector('.js-video-popup-aside-thumbs-slider-parent')) {
-    document.querySelectorAll('.js-video-popup-aside-thumbs-slider-parent').forEach(function (sliderEl) {
-      var parent = sliderEl.parentElement;
-      var nextEl = parent.querySelector('.video-popup__aside-thumbs-arrow--next');
-      var prevEl = parent.querySelector('.video-popup__aside-thumbs-arrow--prev');
-      var slider = sliderEl.querySelector('.js-video-popup-aside-thumbs-slider');
-      console.log(nextEl);
-      new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
-        modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation],
-        spaceBetween: 20,
-        breakpoints: {
-          0: {
-            slidesPerView: 2,
-            spaceBetween: 10
-          },
-          1200: {
-            slidesPerView: 2.35
-          }
-        },
-        navigation: {
-          nextEl: nextEl,
-          prevEl: prevEl
-        }
-      });
-    });
-  }
+
+  // if (document.querySelector('.js-video-popup-aside-thumbs-slider-parent')) {
+  //   document.querySelectorAll('.js-video-popup-aside-thumbs-slider-parent').forEach((sliderEl) => {
+  //     const parent = sliderEl.parentElement
+  //     const nextEl = parent.querySelector('.video-popup__aside-thumbs-arrow--next')
+  //     const prevEl = parent.querySelector('.video-popup__aside-thumbs-arrow--prev')
+  //     const slider = sliderEl.querySelector('.js-video-popup-aside-thumbs-slider')
+  //     console.log(nextEl)
+  //     new Swiper(slider, {
+  //       modules: [Navigation],
+  //       spaceBetween: 20,
+  //       breakpoints: {
+  //         0: {
+  //           slidesPerView: 2,
+  //           spaceBetween: 10,
+  //         },
+  //         1200: {
+  //           slidesPerView: 2.35,
+  //         }
+  //       },
+  //       navigation: {
+  //         nextEl: nextEl,
+  //         prevEl: prevEl,
+  //       }
+  //     })
+  //   })
+  // }
+
   if (document.querySelector('.js-video-popup-aside-slider')) {
     var videPopupAsideSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-video-popup-aside-slider', {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation],
@@ -20348,12 +20350,39 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
   if (document.querySelector('.js-video-popup-slider')) {
+    // helper: остановить все видео
+    var stopAllVideos = function stopAllVideos() {
+      var resetTime = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+      jquery__WEBPACK_IMPORTED_MODULE_1__('video').each(function () {
+        try {
+          this.pause();
+          if (resetTime) this.currentTime = 0;
+        } catch (err) {
+          console.warn('Video stop error', err);
+        }
+      });
+    }; // helper: воспроизвести видео в активном слайде
+    var playActiveVideo = function playActiveVideo() {
+      var activeSlide = document.querySelector('.swiper-slide-active .video-popup__slide');
+      console.log(activeSlide);
+      if (!activeSlide) return;
+      var video = activeSlide.querySelector('video');
+      if (!video) return;
+
+      // попытка воспроизвести (в catch — предупреждение о блокировке autoplay)
+      video.play().catch(function (err) {
+        console.warn('Video play error (maybe autoplay blocked):', err);
+        // при желании можно попробовать включить muted и повторить:
+        // video.muted = true
+        // video.play().catch(()=>{})
+      });
+    };
     var videPopupSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-video-popup-slider', {
       initialSlide: 0,
       slidesPerView: 1,
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectFade],
-      // direction: 'vertical',
-      effect: "fade",
+      direction: 'vertical',
+      // effect: "fade",
       fadeEffect: {
         crossFade: true
       },
@@ -20367,33 +20396,33 @@ __webpack_require__.r(__webpack_exports__);
       var index = Number(jquery__WEBPACK_IMPORTED_MODULE_1__(this).data('index')) || 0;
       jquery__WEBPACK_IMPORTED_MODULE_1__('.js-video-popup').addClass('active');
       if (videPopupSlider) {
+        // переключаемся на нужный слайд
         videPopupSlider.slideTo(index, 0);
+
+        // если уже на этом слайде — проигрываем сразу
+        if (videPopupSlider.activeIndex === index) {
+          // даём небольшой таймаут, чтобы DOM/рендер успел обновиться (обычно 0-50ms достаточно)
+          setTimeout(playActiveVideo, 50);
+        }
       }
     });
+
+    // при смене слайда — останавливаем все видео (чтобы не играли в фоне)
     videPopupSlider.on('slideChange', function () {
-      console.log(22);
-      jquery__WEBPACK_IMPORTED_MODULE_1__('video').each(function () {
-        try {
-          this.pause();
-          this.currentTime = 0;
-        } catch (err) {
-          console.warn('Video stop error', err);
-        }
-      });
+      stopAllVideos(true);
+    });
+
+    // после окончания перехода — запускаем видео в активном слайде
+    videPopupSlider.on('slideChangeTransitionEnd', function () {
+      playActiveVideo();
     });
     jquery__WEBPACK_IMPORTED_MODULE_1__('.js-close-video-popup').on('click', function (e) {
       e.stopPropagation();
       jquery__WEBPACK_IMPORTED_MODULE_1__('.js-video-popup').removeClass('active');
       jquery__WEBPACK_IMPORTED_MODULE_1__('.video-popup__slide').removeClass('active-info');
-      jquery__WEBPACK_IMPORTED_MODULE_1__('video').each(function () {
-        try {
-          this.pause();
-          this.currentTime = 0; // убрать, если не нужно сбрасывать позицию
-        } catch (err) {
-          console.warn('Video stop error', err);
-        }
-      });
+      stopAllVideos(true); // остановить + сбросить позицию
     });
+
     jquery__WEBPACK_IMPORTED_MODULE_1__('.js-mobile-open-info').on('click', function mobileOpenInfo() {
       jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents('.video-popup__slide').addClass('active-info');
       jquery__WEBPACK_IMPORTED_MODULE_1__('.video-popup__arrow').addClass('hide');
@@ -20406,7 +20435,8 @@ __webpack_require__.r(__webpack_exports__);
   if (document.querySelector('.js-video-slider-home')) {
     var videoHomeSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-video-slider-home', {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation],
-      // centeredSlides: true,
+      loop: true,
+      centeredSlides: true,
       spaceBetween: 16,
       pagination: {
         el: ".video__pagination-home",
@@ -20434,8 +20464,9 @@ __webpack_require__.r(__webpack_exports__);
   if (document.querySelector('.js-video-slider')) {
     var videoSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-video-slider', {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
-      initialSlide: 3,
       slidesPerView: 3,
+      loop: true,
+      centeredSlides: true,
       pagination: {
         el: ".video__pagination",
         clickable: true
@@ -20455,6 +20486,7 @@ __webpack_require__.r(__webpack_exports__);
     var testimonialsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-testimonials-slider', {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
       centeredSlides: true,
+      loop: true,
       pagination: {
         el: ".brand__testimonials-slider-pagination"
       },
@@ -20464,9 +20496,11 @@ __webpack_require__.r(__webpack_exports__);
       },
       breakpoints: {
         0: {
+          slidesPerView: 1,
           spaceBetween: 16
         },
         1200: {
+          slidesPerView: 1.5,
           spaceBetween: 80
         }
       }
@@ -20476,6 +20510,7 @@ __webpack_require__.r(__webpack_exports__);
     var reviewsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-reviews-slider', {
       spaceBetween: 16,
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation],
+      loop: true,
       navigation: {
         nextEl: ".brand__reviews-slider-btn--next",
         prevEl: ".brand__reviews-slider-btn--prev"
@@ -20588,6 +20623,7 @@ __webpack_require__.r(__webpack_exports__);
   if (jquery__WEBPACK_IMPORTED_MODULE_1__('.cart-popup__recommended-slider')) {
     var _mainSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.cart-popup__recommended-slider', {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation],
+      loop: true,
       navigation: {
         nextEl: ".cart-popup__recommended-arrow--next",
         prevEl: ".cart-popup__recommended-arrow--prev"
@@ -20602,6 +20638,7 @@ __webpack_require__.r(__webpack_exports__);
       var prevEl = parent.querySelector('.thumbs-box__arrow--prev');
       new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderEl, {
         modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
+        loop: true,
         breakpoints: {
           0: {
             slidesPerView: 2,
@@ -20631,6 +20668,7 @@ __webpack_require__.r(__webpack_exports__);
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
       slidesPerView: 2,
       spaceBetween: 8,
+      loop: true,
       pagination: {
         el: ".thumbs-box__mobile-pagination",
         clickable: true

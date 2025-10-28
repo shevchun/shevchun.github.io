@@ -2633,13 +2633,12 @@ body.ovh {
 }
 .brand__testimonials-slider-box {
   position: relative;
-  max-width: 980px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
 }
-.brand__testimonials-slider.swiper {
-  overflow: visible;
+@media only screen and (max-width: 1200px) {
+  .brand__testimonials-slider-box {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 .brand__testimonials-item {
   position: relative;
@@ -24802,7 +24801,7 @@ div.pswp__img--placeholder,
 .video-popup__aside-rate-val {
   position: relative;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 24px;
 }
 .video-popup__aside-rate-star {
@@ -24819,8 +24818,6 @@ div.pswp__img--placeholder,
   color: var(--Primary-Accent, #ff3d00);
   font-weight: 500;
   line-height: 24px;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 .video-popup__aside-title {
   display: block;
