@@ -19791,7 +19791,6 @@ __webpack_require__.r(__webpack_exports__);
     search.classList.remove('active-mobile');
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.input-style__label--mobile-btn').on('click', function showTextarea() {
-    console.log(3);
     jquery__WEBPACK_IMPORTED_MODULE_0__(this).parents('.builder__order-form').toggleClass('active');
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.builder__order-cell-title').on('click', function orderF() {
@@ -20364,7 +20363,6 @@ __webpack_require__.r(__webpack_exports__);
     }; // helper: воспроизвести видео в активном слайде
     var playActiveVideo = function playActiveVideo() {
       var activeSlide = document.querySelector('.swiper-slide-active .video-popup__slide');
-      console.log(activeSlide);
       if (!activeSlide) return;
       var video = activeSlide.querySelector('video');
       if (!video) return;
@@ -20382,6 +20380,7 @@ __webpack_require__.r(__webpack_exports__);
       slidesPerView: 1,
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectFade],
       direction: 'vertical',
+      loop: true,
       // effect: "fade",
       fadeEffect: {
         crossFade: true
@@ -21536,7 +21535,7 @@ document.addEventListener('DOMContentLoaded', function () {
   (0,_components_popup_parts_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
   (0,_components_types_filters_js__WEBPACK_IMPORTED_MODULE_12__["default"])();
   (0,_components_video_js__WEBPACK_IMPORTED_MODULE_14__.video)();
-  (0,_components_video_js__WEBPACK_IMPORTED_MODULE_14__.enableHoverMuted)();
+  if (jquery__WEBPACK_IMPORTED_MODULE_1__(window).width() > 1200) (0,_components_video_js__WEBPACK_IMPORTED_MODULE_14__.enableHoverMuted)();
   (0,_components_custom_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
   jquery__WEBPACK_IMPORTED_MODULE_1__(document).on('click', '.popup-parts__overview-label', function overviewFunc(e) {
     e.preventDefault();
