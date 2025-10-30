@@ -19657,6 +19657,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.wishlist-btn').on('click', function wishlistBtn() {
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).addClass('animation');
+  });
   var tables = document.querySelectorAll('.js-wrapper-for-table table');
   tables.forEach(function (table) {
     var wrapper = document.createElement('div');
@@ -20075,13 +20078,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scrollLock.js */ "./app/scripts/components/scrollLock.js");
+
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '.js-open-types-popup', function builderInfo() {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-type').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '.js-builder-info-toggle-mobile', function builderInfo() {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-builder').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '.js-open-aside-builder', function builderOpenAside() {
     var element = document.querySelector('.progress-mobile');
@@ -20103,43 +20110,56 @@ __webpack_require__.r(__webpack_exports__);
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-cart-popup').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.cart-popup').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-cart-popup-close').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.cart-popup').removeClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.unlock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-close-popup').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.popup').removeClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.unlock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-configuration-btn').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-configuration').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-popup-tags').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-tags').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-return-policy').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-return-policy').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-money-back').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-money-back').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-notify-me').on('click', function (event) {
     event.preventDefault();
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-notify-me').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-open-popup-unlock-discount').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-unlock-discount').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-forgot-btn').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-forgot').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-individual-popup-btn').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-individual').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-shadow-dancer-popup-btn').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-shadow-dancer').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-login-btn').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.js-popup-login').addClass('active');
+    _scrollLock_js__WEBPACK_IMPORTED_MODULE_1__.scrollLock.lock();
   });
 });
 
@@ -20204,6 +20224,55 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./app/scripts/components/scrollLock.js":
+/*!**********************************************!*\
+  !*** ./app/scripts/components/scrollLock.js ***!
+  \**********************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "scrollLock": function() { return /* binding */ scrollLock; }
+/* harmony export */ });
+var scrollLock = function () {
+  var scrollTop = 0;
+  var locked = false;
+  return {
+    lock: function lock() {
+      if (locked) return;
+      scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var body = document.body;
+
+      // компенсируем ширину скроллбара, чтобы не дергался layout (на десктопе)
+      var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      if (scrollbarWidth > 0) body.style.paddingRight = "".concat(scrollbarWidth, "px");
+      body.style.position = 'fixed';
+      body.style.top = "-".concat(scrollTop, "px");
+      body.style.left = '0';
+      body.style.right = '0';
+      // при желании можно добавить body.style.width = '100%'
+
+      locked = true;
+    },
+    unlock: function unlock() {
+      if (!locked) return;
+      var body = document.body;
+      body.style.position = '';
+      body.style.top = '';
+      body.style.left = '';
+      body.style.right = '';
+      body.style.paddingRight = '';
+
+      // восстанавливаем позицию прокрутки
+      window.scrollTo(0, scrollTop);
+      locked = false;
+    }
+  };
+}();
+
+/***/ }),
+
 /***/ "./app/scripts/components/select2.js":
 /*!*******************************************!*\
   !*** ./app/scripts/components/select2.js ***!
@@ -20265,6 +20334,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
 /* harmony import */ var photoswipe_lightbox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! photoswipe/lightbox */ "./node_modules/photoswipe/dist/photoswipe-lightbox.esm.js");
+/* harmony import */ var _scrollLock_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scrollLock.js */ "./app/scripts/components/scrollLock.js");
+
 
 
 
@@ -20299,7 +20370,7 @@ __webpack_require__.r(__webpack_exports__);
       },
       breakpoints: {
         0: {
-          slidesPerView: 1
+          slidesPerView: 1.2
         },
         1200: {
           slidesPerView: 3
@@ -20367,12 +20438,20 @@ __webpack_require__.r(__webpack_exports__);
       var video = activeSlide.querySelector('video');
       if (!video) return;
 
-      // попытка воспроизвести (в catch — предупреждение о блокировке autoplay)
+      // Важные атрибуты для мобильных устройств
+      video.setAttribute('playsinline', 'true');
+      video.setAttribute('webkit-playsinline', 'true');
+      video.setAttribute('muted', 'true');
+      video.muted = true;
+
+      // Попытка воспроизвести
       video.play().catch(function (err) {
-        console.warn('Video play error (maybe autoplay blocked):', err);
-        // при желании можно попробовать включить muted и повторить:
-        // video.muted = true
-        // video.play().catch(()=>{})
+        // Если первая попытка не удалась, убеждаемся что звук выключен и пробуем снова
+        video.muted = true;
+        video.volume = 0;
+        video.play().catch(function (secondErr) {
+          console.warn('Video autoplay blocked:', secondErr);
+        });
       });
     };
     var videPopupSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-video-popup-slider', {
@@ -20394,6 +20473,7 @@ __webpack_require__.r(__webpack_exports__);
       e.preventDefault();
       var index = Number(jquery__WEBPACK_IMPORTED_MODULE_1__(this).data('index')) || 0;
       jquery__WEBPACK_IMPORTED_MODULE_1__('.js-video-popup').addClass('active');
+      _scrollLock_js__WEBPACK_IMPORTED_MODULE_4__.scrollLock.lock();
       if (videPopupSlider) {
         // переключаемся на нужный слайд
         videPopupSlider.slideTo(index, 0);
@@ -20420,8 +20500,8 @@ __webpack_require__.r(__webpack_exports__);
       jquery__WEBPACK_IMPORTED_MODULE_1__('.js-video-popup').removeClass('active');
       jquery__WEBPACK_IMPORTED_MODULE_1__('.video-popup__slide').removeClass('active-info');
       stopAllVideos(true); // остановить + сбросить позицию
+      _scrollLock_js__WEBPACK_IMPORTED_MODULE_4__.scrollLock.unlock();
     });
-
     jquery__WEBPACK_IMPORTED_MODULE_1__('.js-mobile-open-info').on('click', function mobileOpenInfo() {
       jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents('.video-popup__slide').addClass('active-info');
       jquery__WEBPACK_IMPORTED_MODULE_1__('.video-popup__arrow').addClass('hide');
