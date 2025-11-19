@@ -24497,8 +24497,8 @@ div.pswp__img--placeholder,
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(57, 57, 57, 0.6);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -24575,8 +24575,8 @@ div.pswp__img--placeholder,
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(57, 57, 57, 0.6);
   position: absolute;
   width: 40px;
   height: 40px;
@@ -24703,8 +24703,8 @@ div.pswp__img--placeholder,
     margin-top: 48px;
     width: 40px;
     height: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(57, 57, 57, 0.6);
     border-radius: 50%;
   }
 }
@@ -24738,8 +24738,10 @@ div.pswp__img--placeholder,
   position: absolute;
   cursor: pointer;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(57, 57, 57, 0.6);
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24772,7 +24774,6 @@ div.pswp__img--placeholder,
 @media only screen and (min-width: 1025px) {
   .video-popup__arrow:hover {
     background: #fff;
-    border-color: #fff;
   }
   .video-popup__arrow:hover svg {
     stroke: #000;
@@ -25148,8 +25149,8 @@ div.pswp__img--placeholder,
   .video-popup__mobile-card-info-btn {
     position: relative;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(57, 57, 57, 0.6);
     -webkit-backdrop-filter: blur(2px);
             backdrop-filter: blur(2px);
     width: 40px;
@@ -25168,10 +25169,10 @@ div.pswp__img--placeholder,
 .video-popup__mobile-card-box {
   position: relative;
   border-radius: 12px;
-  border: 1px solid rgba(234, 234, 234, 0.16);
-  background: rgba(255, 255, 255, 0.12);
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(57, 57, 57, 0.6);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
