@@ -24492,7 +24492,7 @@ div.pswp__img--placeholder,
 @media only screen and (max-width: 1200px) {
   .video-popup__aside-mobile-btn {
     position: absolute;
-    right: 12px;
+    left: 16px;
     bottom: calc(100% + 16px);
     width: 40px;
     height: 40px;
@@ -24591,6 +24591,10 @@ div.pswp__img--placeholder,
   .video-popup__close {
     top: 24px;
     left: 16px;
+  }
+  .hide-close-btn .video-popup__close {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 @media only screen and (min-width: 1025px) {

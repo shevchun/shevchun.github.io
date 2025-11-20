@@ -20489,6 +20489,8 @@ __webpack_require__.r(__webpack_exports__);
     // при смене слайда — останавливаем все видео (чтобы не играли в фоне)
     videPopupSlider.on('slideChange', function () {
       stopAllVideos(true);
+      jquery__WEBPACK_IMPORTED_MODULE_1__('.js-video-popup-slider').find('.video-popup__slide').removeClass('active-info');
+      jquery__WEBPACK_IMPORTED_MODULE_1__('.js-video-popup').removeClass('hide-close-btn');
     });
 
     // после окончания перехода — запускаем видео в активном слайде
@@ -20504,10 +20506,12 @@ __webpack_require__.r(__webpack_exports__);
     });
     jquery__WEBPACK_IMPORTED_MODULE_1__('.js-mobile-open-info').on('click', function mobileOpenInfo() {
       jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents('.video-popup__slide').addClass('active-info');
+      jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents('.js-video-popup').addClass('hide-close-btn');
       jquery__WEBPACK_IMPORTED_MODULE_1__('.video-popup__arrow').addClass('hide');
     });
     jquery__WEBPACK_IMPORTED_MODULE_1__('.js-mobile-close-info').on('click', function mobileHideInfo() {
       jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents('.video-popup__slide').removeClass('active-info');
+      jquery__WEBPACK_IMPORTED_MODULE_1__(this).parents('.js-video-popup').removeClass('hide-close-btn');
       jquery__WEBPACK_IMPORTED_MODULE_1__('.video-popup__arrow').removeClass('hide');
     });
   }
