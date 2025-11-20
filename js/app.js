@@ -20461,6 +20461,7 @@ __webpack_require__.r(__webpack_exports__);
       direction: 'vertical',
       loop: true,
       // effect: "fade",
+      noSwipingClass: 'video-popup__aside-inner',
       fadeEffect: {
         crossFade: true
       },
